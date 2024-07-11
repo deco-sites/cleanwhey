@@ -156,5 +156,9 @@
     "path": "/women",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/deco-vtex.json": {
+    "blockType": "apps",
+    "__resolveType": "site/apps/deco/vtex.ts"
   }
 }
