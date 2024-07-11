@@ -22,9 +22,15 @@
           },
           {
             "weight": "700"
+          },
+          {
+            "weight": "800"
+          },
+          {
+            "weight": "900"
           }
         ],
-        "family": "Inter Tight"
+        "family": "Maven Pro"
       }
     ]
   },
