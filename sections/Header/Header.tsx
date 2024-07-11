@@ -68,8 +68,8 @@ const Desktop = (
       </div>
     </Modal>
 
-    <div class="flex flex-col gap-4 pt-5 container border-b border-gray-300">
-      <div class="grid grid-cols-3 place-items-center">
+    <div class="flex flex-col gap-4 pt-5 border-b  border-gray-300">
+      <div class="grid grid-cols-3 place-items-center container">
         <div class="place-self-start">
           <a href="/" aria-label="Store logo">
             <Image
@@ -98,7 +98,7 @@ const Desktop = (
         </div>
       </div>
 
-      <div class="flex justify-between items-center text-base-300">
+      <div class="flex justify-between items-center container text-base-300">
         <ul class="flex">
           {navItems?.slice(0, 4).map((item) => <NavItem item={item} />)}
         </ul>
@@ -209,7 +209,7 @@ function Header({
           : HEADER_HEIGHT_MOBILE,
       }}
     >
-      <div class="bg-base-100 fixed w-full z-40">
+      <div class="bg-base-100 fixed w-full z-40 bg-orange-300">
         {alerts.length > 0 && <Alert alerts={alerts} />}
         {device === "desktop"
           ? <Desktop logo={logo} {...props} />

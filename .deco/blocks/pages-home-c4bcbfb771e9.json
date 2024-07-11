@@ -54,7 +54,8 @@
         "props": {
           "sort": "",
           "count": 12,
-          "query": "a"
+          "query": "a",
+          "fuzzy": "automatic"
         },
         "filters": {
           "tags": [],

@@ -4,7 +4,7 @@
     "__resolveType": "navbar"
   },
   "searchbar": {
-    "placeholder": "What are you looking for?",
+    "placeholder": "O que você procura?",
     "loader": {
       "__resolveType": "resolved",
       "data": null
@@ -15,9 +15,9 @@
   ],
   "variant": "initial",
   "logo": {
-    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/ed9f7e80-86a8-4b72-9809-2e4e2e5f0e53",
-    "alt": "Deco Storefront",
-    "width": 160,
-    "height": 40
+    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/fcd294a1-e22c-4c02-a69b-a0b72bfeb626",
+    "alt": "Clean Whey",
+    "width": 134,
+    "height": 68
   }
 }
