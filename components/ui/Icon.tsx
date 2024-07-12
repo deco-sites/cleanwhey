@@ -4,6 +4,9 @@ import type { JSX } from "preact";
 export type AvailableIcons =
   | "search"
   | "shopping_bag"
+  | "arrow-right-custom"
+  | "wishlist_button"
+  | "duvidas"
   | "menu"
   | "account_circle"
   | "close"

@@ -31,26 +31,24 @@ function SignIn({ variant }: { variant: "mobile" | "desktop" }) {
     <div id={id}>
       <a
         class={clx(
-          "btn btn-sm font-thin btn-ghost no-animation",
+          "btn btn-sm hover:!bg-transparent font-thin btn-ghost no-animation text-white p-0",
           variant === "mobile" && "btn-square",
         )}
         href="/login"
         aria-label="Login"
       >
-        <Icon id="account_circle" />
-        {variant === "desktop" && <span>Sign in</span>}
+        <Icon id="account_circle" class="w-8 h-8" />
       </a>
       <a
         class={clx(
           "hidden",
-          "btn btn-sm font-thin btn-ghost no-animation",
+          "btn btn-sm hover:!bg-transparent font-thin btn-ghost no-animation text-white p-0",
           variant === "mobile" && "btn-square",
         )}
         href="/account"
         aria-label="Account"
       >
-        <Icon id="account_circle" />
-        {variant === "desktop" && <span>My account</span>}
+        <Icon id="account_circle" class="w-8 h-8" />
       </a>
       <script
         type="module"

@@ -37,8 +37,8 @@ function Bag() {
           class="hidden indicator-item badge badge-primary badge-sm font-thin"
         />
 
-        <span class="btn btn-square btn-sm btn-ghost no-animation">
-          <Icon id="shopping_bag" />
+        <span class="text-white hover:!bg-transparent btn btn-square btn-sm btn-ghost no-animation">
+          <Icon id="shopping_bag" class="w-8 h-8" />
         </span>
       </label>
       <script
