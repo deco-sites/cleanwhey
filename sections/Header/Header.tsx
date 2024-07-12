@@ -3,7 +3,7 @@ import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
 import { useSection } from "deco/hooks/useSection.ts";
-import Alert from "../../components/header/Alert.tsx";
+import Alert, { alert } from "../../components/header/Alert.tsx";
 import Bag from "../../components/header/Bag.tsx";
 import Menu from "../../components/header/Menu.tsx";
 import NavItem from "../../components/header/NavItem.tsx";
@@ -32,7 +32,7 @@ export interface Logo {
 }
 
 export interface SectionProps {
-  alerts?: HTMLWidget[];
+  alerts?: alert[];
 
   /**
    * @title Navigation items
@@ -59,17 +59,17 @@ const Desktop = (
   { navItems, logo, searchbar }: Props,
 ) => (
   <>
-    <Modal id={SEARCHBAR_POPUP_ID}>
+    {/* <Modal id={SEARCHBAR_POPUP_ID}>
       <div
         class="absolute top-0 bg-base-100 container"
         style={{ marginTop: HEADER_HEIGHT_MOBILE }}
       >
         <Searchbar {...searchbar} />
       </div>
-    </Modal>
+    </Modal> */}
 
-    <div class="flex flex-col gap-4 pt-5 border-b  border-gray-300">
-      <div class="grid grid-cols-3 place-items-center container">
+    <div class="flex flex-col gap-4 pt-5">
+      <div class="container flex justify-between items-center">
         <div class="place-self-start">
           <a href="/" aria-label="Store logo">
             <Image
@@ -81,29 +81,40 @@ const Desktop = (
           </a>
         </div>
 
-        <label
+        {/* <label
           for={SEARCHBAR_POPUP_ID}
-          class="input input-bordered flex items-center gap-2 w-full"
+          class="input input-bordered flex items-center gap-2 w-full max-w-[675px]"
           aria-label="search icon button"
         >
           <Icon id="search" />
           <span class="text-base-300 truncate">
             Search products, brands...
           </span>
-        </label>
+        </label> */}
 
-        <div class="flex gap-4 place-self-end">
+        <Searchbar {...searchbar} />
+
+        <div class="flex gap-4">
+          <a class="text-white hover:!bg-transparent btn btn-sm font-thin btn-ghost no-animation gap-2 flex items-center" href="/wishlist">
+            <Icon id="duvidas" class="h-8 w-8" />
+            <p>
+              Dúvidas<br />Frequentes
+            </p>
+          </a>
+          <a class="p-0 hover:!bg-transparent text-white btn btn-sm font-thin btn-ghost no-animation" href="/wishlist">
+            <Icon id="wishlist_button" class="h-8 w-8" />
+          </a>
           <SignIn variant="desktop" />
           <Bag />
         </div>
       </div>
 
-      <div class="flex justify-between items-center container text-base-300">
-        <ul class="flex">
-          {navItems?.slice(0, 4).map((item) => <NavItem item={item} />)}
+      <div class="flex justify-between items-center text-base- bg-orange-400">
+        <div className="container">
+
+        <ul class="flex justify-between">
+          {navItems?.slice(0, 8).map((item) => <NavItem item={item} />)}
         </ul>
-        <div>
-          {/* ship to */}
         </div>
       </div>
     </div>

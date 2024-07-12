@@ -7,6 +7,9 @@ export default {
   theme: {
     container: { center: true },
     extend: {
+      fontFamily: {
+        lato: ["Lato", "sans-serif"]
+      },
       animation: {
         sliding: "sliding 30s linear infinite",
       },
@@ -57,12 +60,13 @@ export default {
       "gray-400": "#464B59",
 
       // WHITE COLORS
+      "white": "#FFFFFF",
       "white-200": "#F4F4F4",
       "white-300": "#F7FAFB",
 
       // BLACK COLORS
       "black-100": "#13181D",
       "black-200": "#EC8583",
-    }
+    },
   },
 };

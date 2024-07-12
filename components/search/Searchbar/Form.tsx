@@ -79,24 +79,15 @@ export default function Searchbar(
 
   return (
     <div
-      class="w-full grid gap-8 px-4 py-6"
+      class="w-full max-w-[675px] grid"
       style={{ gridTemplateRows: "min-content auto" }}
     >
-      <form id={SEARCHBAR_INPUT_FORM_ID} action={ACTION} class="join">
-        <button
-          type="submit"
-          class="btn join-item btn-square no-animation"
-          aria-label="Search"
-          for={SEARCHBAR_INPUT_FORM_ID}
-          tabIndex={-1}
-        >
-          <span class="loading loading-spinner loading-xs hidden [.htmx-request_&]:inline" />
-          <Icon id="search" class="inline [.htmx-request_&]:hidden" />
-        </button>
+      <form id={SEARCHBAR_INPUT_FORM_ID} action={ACTION} class="join rounded-lg">
+        
         <input
           autoFocus
           tabIndex={0}
-          class="input input-bordered join-item flex-grow"
+          class="input input-bordered join-item flex-grow outline-none focus:outline-none border-0"
           name={NAME}
           placeholder={placeholder}
           autocomplete="off"
@@ -108,14 +99,25 @@ export default function Searchbar(
           hx-indicator={`#${SEARCHBAR_INPUT_FORM_ID}`}
           hx-swap="innerHTML"
         />
-        <label
+
+        <button
+          type="submit"
+          class="btn join-item btn-square no-animation border-0"
+          aria-label="Search"
+          for={SEARCHBAR_INPUT_FORM_ID}
+          tabIndex={-1}
+        >
+          <span class="loading loading-spinner loading-xs hidden [.htmx-request_&]:inline" />
+          <Icon id="search" class="inline [.htmx-request_&]:hidden max-h-4 max-w-4" />
+        </button>
+        {/* <label
           type="button"
           class="join-item btn btn-ghost btn-square hidden sm:inline-flex no-animation"
           for={SEARCHBAR_POPUP_ID}
           aria-label="Toggle searchbar"
         >
           <Icon id="close" />
-        </label>
+        </label> */}
       </form>
 
       {/* Suggestions slot */}
