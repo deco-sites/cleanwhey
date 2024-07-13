@@ -36,42 +36,49 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
             }}
           >
             <div className="container flex items-center justify-between">
-
-            
-            <ul class="flex relative flex-col items-start justify-center gap-2 min-w-[200px] border-r-gray-200 border-r pr-5">
-              <li><h2 class="font-lato text-lg text-orange-300 font-bold">{name}</h2></li>
-              {children.map((node) => (
-                <li class="p-0 group/lastmenu w-full">
-                  <a class="group-hover/lastmenu:text-orange-300 text-gray-300 font-lato text-base font-bold flex items-center justify-between" href={node.url}>
-                    <span>{node.name}</span>
-                    {node.children && node.children.length > 0 && (
-                      <Icon id="arrow-right-custom" class="text-orange-300"/>
-                    )}
-                  </a>
-
-                  <ul class="after:content-[' '] after:absolute after:right-[80%] after:h-full after:bg-transparent after:w-full min-w-[200px] ml-5 h-full group-hover/lastmenu:flex hidden flex-col gap-1 mt-4 absolute top-0 left-full">
-                    {node.children?.map((leaf) => (
-                      <li>
-                        <a class="hover:underline" href={leaf.url}>
-                          <span class="text-base text-gray-300 font-bold font-lato uppercase">{leaf.name}</span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
+              <ul class="flex relative flex-col items-start justify-center gap-2 min-w-[200px] border-r-gray-200 border-r pr-5">
+                <li>
+                  <h2 class="font-lato text-lg text-orange-300 font-bold">
+                    {name}
+                  </h2>
                 </li>
-              ))}
-            </ul>
+                {children.map((node) => (
+                  <li class="p-0 group/lastmenu w-full">
+                    <a
+                      class="group-hover/lastmenu:text-orange-300 text-gray-300 font-lato text-base font-bold flex items-center justify-between"
+                      href={node.url}
+                    >
+                      <span>{node.name}</span>
+                      {node.children && node.children.length > 0 && (
+                        <Icon id="arrow-right-custom" class="text-orange-300" />
+                      )}
+                    </a>
 
-            {image?.url && (
-              <Image
-                class="p-0"
-                src={image.url}
-                alt={image.alternateName}
-                width={345}
-                height={189}
-                loading="lazy"
-              />
-            )}
+                    <ul class="after:content-[' '] after:absolute after:right-[80%] after:h-full after:bg-transparent after:w-full min-w-[200px] ml-5 h-full group-hover/lastmenu:flex hidden flex-col gap-1 mt-4 absolute top-0 left-full">
+                      {node.children?.map((leaf) => (
+                        <li>
+                          <a class="hover:underline" href={leaf.url}>
+                            <span class="text-base text-gray-300 font-bold font-lato uppercase">
+                              {leaf.name}
+                            </span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ))}
+              </ul>
+
+              {image?.url && (
+                <Image
+                  class="p-0"
+                  src={image.url}
+                  alt={image.alternateName}
+                  width={345}
+                  height={189}
+                  loading="lazy"
+                />
+              )}
             </div>
           </div>
         )}

@@ -20,12 +20,22 @@ function Alert({ alerts = [], interval = 5 }: Props) {
   const id = useId();
 
   return (
-    <div id={id} class="grid grid-rows-[1fr_32px_1fr_64px] grid-cols-[32px_1fr_32px] sm:grid-cols-[112px_1fr_112px] w-screen bg-blue-400 max-h-8">
+    <div
+      id={id}
+      class="grid grid-rows-[1fr_32px_1fr_64px] grid-cols-[32px_1fr_32px] sm:grid-cols-[112px_1fr_112px] w-screen bg-blue-400 max-h-8"
+    >
       <div class="col-span-full row-span-full max-h-8">
         <Slider class="carousel carousel-center w-screen gap-6 text-secondary-content text-sm/4">
           {alerts.map((alert, index) => (
-            <Slider.Item index={index} class="carousel-item w-screen justify-center">
-              <img loading="lazy" src={alert.alertImage} alt={alert.alertText} />
+            <Slider.Item
+              index={index}
+              class="carousel-item w-screen justify-center"
+            >
+              <img
+                loading="lazy"
+                src={alert.alertImage}
+                alt={alert.alertText}
+              />
               <span
                 class="px-2 py-2 text-center text-white"
                 dangerouslySetInnerHTML={{ __html: alert.alertText }}

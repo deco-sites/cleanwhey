@@ -82,8 +82,11 @@ export default function Searchbar(
       class="w-full max-w-[675px] grid"
       style={{ gridTemplateRows: "min-content auto" }}
     >
-      <form id={SEARCHBAR_INPUT_FORM_ID} action={ACTION} class="join rounded-lg">
-        
+      <form
+        id={SEARCHBAR_INPUT_FORM_ID}
+        action={ACTION}
+        class="join rounded-lg"
+      >
         <input
           autoFocus
           tabIndex={0}
@@ -108,16 +111,21 @@ export default function Searchbar(
           tabIndex={-1}
         >
           <span class="loading loading-spinner loading-xs hidden [.htmx-request_&]:inline" />
-          <Icon id="search" class="inline [.htmx-request_&]:hidden max-h-4 max-w-4" />
+          <Icon
+            id="search"
+            class="inline [.htmx-request_&]:hidden max-h-4 max-w-4"
+          />
         </button>
-        {/* <label
+        {
+          /* <label
           type="button"
           class="join-item btn btn-ghost btn-square hidden sm:inline-flex no-animation"
           for={SEARCHBAR_POPUP_ID}
           aria-label="Toggle searchbar"
         >
           <Icon id="close" />
-        </label> */}
+        </label> */
+        }
       </form>
 
       {/* Suggestions slot */}
