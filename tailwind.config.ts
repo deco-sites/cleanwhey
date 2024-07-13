@@ -8,7 +8,7 @@ export default {
     container: { center: true },
     extend: {
       fontFamily: {
-        lato: ["Lato", "sans-serif"]
+        lato: ["Lato", "sans-serif"],
       },
       animation: {
         sliding: "sliding 30s linear infinite",

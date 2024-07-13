@@ -59,14 +59,16 @@ const Desktop = (
   { navItems, logo, searchbar }: Props,
 ) => (
   <>
-    {/* <Modal id={SEARCHBAR_POPUP_ID}>
+    {
+      /* <Modal id={SEARCHBAR_POPUP_ID}>
       <div
         class="absolute top-0 bg-base-100 container"
         style={{ marginTop: HEADER_HEIGHT_MOBILE }}
       >
         <Searchbar {...searchbar} />
       </div>
-    </Modal> */}
+    </Modal> */
+    }
 
     <div class="flex flex-col gap-4 pt-5">
       <div class="container flex justify-between items-center">
@@ -81,7 +83,8 @@ const Desktop = (
           </a>
         </div>
 
-        {/* <label
+        {
+          /* <label
           for={SEARCHBAR_POPUP_ID}
           class="input input-bordered flex items-center gap-2 w-full max-w-[675px]"
           aria-label="search icon button"
@@ -90,18 +93,25 @@ const Desktop = (
           <span class="text-base-300 truncate">
             Search products, brands...
           </span>
-        </label> */}
+        </label> */
+        }
 
         <Searchbar {...searchbar} />
 
         <div class="flex gap-4">
-          <a class="text-white hover:!bg-transparent btn btn-sm font-thin btn-ghost no-animation gap-2 flex items-center" href="/wishlist">
+          <a
+            class="text-white hover:!bg-transparent btn btn-sm font-thin btn-ghost no-animation gap-2 flex items-center"
+            href="/wishlist"
+          >
             <Icon id="duvidas" class="h-8 w-8" />
             <p>
               Dúvidas<br />Frequentes
             </p>
           </a>
-          <a class="p-0 hover:!bg-transparent text-white btn btn-sm font-thin btn-ghost no-animation" href="/wishlist">
+          <a
+            class="p-0 hover:!bg-transparent text-white btn btn-sm font-thin btn-ghost no-animation"
+            href="/wishlist"
+          >
             <Icon id="wishlist_button" class="h-8 w-8" />
           </a>
           <SignIn variant="desktop" />
@@ -111,10 +121,9 @@ const Desktop = (
 
       <div class="flex justify-between items-center text-base- bg-orange-400">
         <div className="container">
-
-        <ul class="flex justify-between">
-          {navItems?.slice(0, 8).map((item) => <NavItem item={item} />)}
-        </ul>
+          <ul class="flex justify-between">
+            {navItems?.slice(0, 8).map((item) => <NavItem item={item} />)}
+          </ul>
         </div>
       </div>
     </div>
