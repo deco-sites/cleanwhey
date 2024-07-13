@@ -46,6 +46,9 @@
       ]
     },
     {
+      "__resolveType": "Regua"
+    },
+    {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "title": "Featured Products",
       "cta": "/mono",
