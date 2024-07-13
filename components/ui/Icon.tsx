@@ -5,6 +5,7 @@ export type AvailableIcons =
   | "search"
   | "shopping_bag"
   | "arrow-right-custom"
+  | "info_custom"
   | "wishlist_button"
   | "duvidas"
   | "menu"
