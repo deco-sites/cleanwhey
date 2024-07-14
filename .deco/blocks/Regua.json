@@ -1,0 +1,25 @@
+{
+  "__resolveType": "site/sections/Content/Regua.tsx",
+  "items": [
+    {
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/41c2fdd8-f149-4707-b921-c8b7b5575271",
+      "title": "Frete grátis para todo Brasil",
+      "subtitle": "Rápido e seguro."
+    },
+    {
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/092cd17c-be8f-492b-ba70-bedafd0f1b93",
+      "title": "Até 6x no cartão",
+      "subtitle": "Sem juros no cartão de crédito."
+    },
+    {
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/02d7b416-eeef-43a1-9910-14ce50fa4c44",
+      "title": "15% de desconto",
+      "subtitle": "Para pagamentos com PIX."
+    },
+    {
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/55e695a0-2422-436e-9949-bc6202fffd75",
+      "title": "Compra segura",
+      "subtitle": "Segurança e qualidade garantidos."
+    }
+  ]
+}
