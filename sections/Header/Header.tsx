@@ -132,7 +132,7 @@ const Desktop = (
 
 const Mobile = ({ logo, searchbar }: Props) => (
   <>
-    <Drawer
+    {/* <Drawer
       id={SEARCHBAR_DRAWER_ID}
       aside={
         <Drawer.Aside title="Search" drawer={SEARCHBAR_DRAWER_ID}>
@@ -141,7 +141,7 @@ const Mobile = ({ logo, searchbar }: Props) => (
           </div>
         </Drawer.Aside>
       }
-    />
+    /> */}
     <Drawer
       id={SIDEMENU_DRAWER_ID}
       aside={
@@ -158,52 +158,58 @@ const Mobile = ({ logo, searchbar }: Props) => (
     />
 
     <div
-      class="grid place-items-center w-screen px-5 gap-4"
+      class="grid place-items-start items-center w-screen px-5 pt-4 pb-3 gap-4"
       style={{
-        height: NAVBAR_HEIGHT_MOBILE,
+        // height: NAVBAR_HEIGHT_MOBILE,
         gridTemplateColumns:
-          "min-content auto min-content min-content min-content",
+          "auto min-content min-content",
       }}
     >
-      <label
-        for={SIDEMENU_DRAWER_ID}
-        class="btn btn-square btn-sm btn-ghost"
-        aria-label="open menu"
-        hx-target={`#${SIDEMENU_CONTAINER_ID}`}
-        hx-swap="outerHTML"
-        hx-trigger="click once"
-        hx-get={useSection({ props: { variant: "menu" } })}
-      >
-        <Icon id="menu" />
-      </label>
+      <div class={"flex-grow inline-flex items-center justify-center gap-3"}>
 
-      {logo && (
-        <a
-          href="/"
-          class="flex-grow inline-flex items-center justify-center"
-          style={{ minHeight: NAVBAR_HEIGHT_MOBILE }}
-          aria-label="Store logo"
-        >
-          <Image
-            src={logo.src}
-            alt={logo.alt}
-            width={logo.width || 100}
-            height={logo.height || 13}
-          />
-        </a>
-      )}
+        <label
+          for={SIDEMENU_DRAWER_ID}
+          class="btn btn-square btn-sm btn-ghost"
+          aria-label="open menu"
+          hx-target={`#${SIDEMENU_CONTAINER_ID}`}
+          hx-swap="outerHTML"
+          hx-trigger="click once"
+          hx-get={useSection({ props: { variant: "menu" } })}
+          >
+          <Icon id="menu" class="text-white h-8 w-8"/>
+        </label>
+      
+        {logo && (
+          <a
+            href="/"
+            class="flex-grow inline-flex items-center justify-center"
+            style={{ minHeight: NAVBAR_HEIGHT_MOBILE }}
+            aria-label="Store logo"
+          >
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              width={96}
+              height={48}
+            />
+          </a>
+        )}
+      </div>
 
-      <label
+      {/* <label
         for={SEARCHBAR_DRAWER_ID}
         class="btn btn-square btn-sm btn-ghost"
         aria-label="search icon button"
       >
         <Icon id="search" />
-      </label>
+      </label> */}
 
       <SignIn variant="mobile" />
 
       <Bag />
+    </div>
+    <div className="container px-5 pb-5">
+      <Searchbar {...searchbar} />
     </div>
   </>
 );

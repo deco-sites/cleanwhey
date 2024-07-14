@@ -2,31 +2,23 @@ import { HTMLWidget } from "apps/admin/widgets.ts";
 import Section, {
   type Props as SectionHeaderProps,
 } from "../../components/ui/Section.tsx";
+import Icon from "../../components/ui/Icon.tsx";
 
 export interface Question {
   question: string;
 
   answer: HTMLWidget;
 }
-
-export interface Contact {
-  title?: string;
-  description?: HTMLWidget;
-  link?: {
-    text: string;
-    href: string;
-  };
-}
-
 export interface Props extends SectionHeaderProps {
   questions?: Question[];
-  contact?: Contact;
+  subtitle?: HTMLWidget;
 }
 
 function Question({ question, answer }: Question) {
   return (
-    <details class="collapse collapse-arrow border-t border-base-200">
-      <summary class="collapse-title text-lg font-medium">
+    <details class="max-w-[1008px] m-auto collapse collapse-arrow border border-gray-100 bg-white">
+      <summary class="collapse-title after:!h-3 after:!w-3 after:text-orange-300 text-lg font-medium gap-2 !flex items-center">
+        <Icon id="info_custom" class="text-orange-300 w-4 h-4"/>
         {question}
       </summary>
       <div
@@ -37,27 +29,9 @@ function Question({ question, answer }: Question) {
   );
 }
 
-function Contact({ title, description, link }: Contact) {
-  return (
-    <div class="flex flex-col gap-6 items-center text-center">
-      <div class="flex flex-col gap-2">
-        {title && <h2 class="text-xl lg:text-3xl">{title}</h2>}
-        {description && (
-          <div
-            class="text-lg lg:text-xl"
-            dangerouslySetInnerHTML={{ __html: description }}
-          />
-        )}
-      </div>
-      {link &&
-        <a href={link.href} class="btn">{link.text}</a>}
-    </div>
-  );
-}
-
 export default function FAQ({
   title,
-  cta,
+  subtitle,
   questions = [
     {
       question: "Como faço para acompanhar o meu pedido?",
@@ -69,27 +43,22 @@ export default function FAQ({
       answer:
         "Oferecemos uma política de devolução sem complicações. Se você não estiver completamente satisfeito(a) com a sua compra, pode devolver o item em até 30 dias após a entrega para obter um reembolso total ou troca. Certifique-se de que o item esteja sem uso, na embalagem original e acompanhado do recibo. Entre em contato com a nossa equipe de atendimento ao cliente e eles o(a) orientarão pelo processo de devolução.",
     },
-  ],
-  contact = {
-    title: "",
-    description: "",
-    link: {
-      text: "",
-      href: "",
-    },
-  },
+  ]
 }: Props) {
   return (
-    <Section.Container>
-      <Section.Header title={title} cta={cta} />
-
+    <div class={"bg-white-200"}>
+    <Section.Container >
+      {/* <Section.Header title={title} cta={cta} /> */}
+      <h3 class="text-center font-bold text-gray-300 text-sm">{title}</h3>
+      {subtitle && (
+        <h2 class="text-gray-300 text-2xl font-bold text-center" dangerouslySetInnerHTML={{__html: subtitle}} />
+        )}
       <ul class="w-full">
-        <li>
+        <li class="gap-2 flex flex-col">
           {questions.map((question) => <Question {...question} />)}
         </li>
       </ul>
-
-      <Contact {...contact} />
     </Section.Container>
+    </div>
   );
 }
