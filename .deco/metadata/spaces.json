@@ -1656,7 +1656,7 @@
       "id": "/.deco/blocks/Navegue%20por%20Categorias.json",
       "name": "Navegue por Categorias",
       "pinned": false,
-      "icon": "block",
+      "icon": "rocket-launch",
       "layout": {
         "settings": {
           "hasHeaders": true,
@@ -1732,7 +1732,6 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2FNavegue%2520por%2520Categorias.json::Preview::visibility::Preview::%7B%7D"
                     },
-                    "width": 70,
                     "isClosable": true,
                     "reorderEnabled": true
                   }
@@ -1887,9 +1886,8 @@
           "icon": "visibility",
           "accepts": "function",
           "render": "function",
-          "viewId": "Preview",
-          "width": 70,
-          "id": "%2F.deco%2Fblocks%2Fpages-home-c4bcbfb771e9.json::Preview::visibility::Preview::%7B%7D",
+          "viewId": "Environment",
+          "id": "Publish::Environment::rocket-launch::Environment::%7B%7D",
           "state": {
             "__signal": null
           }
