@@ -2,7 +2,7 @@ import { ImageWidget } from "apps/admin/widgets.ts";
 import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
 import Icon from "../ui/Icon.tsx";
-import { AlertError } from "../../static/adminIcons.ts";
+// import { AlertError } from "../../static/adminIcons.ts";
 export interface alert {
   alertText: string;
   alertImage?: ImageWidget;
@@ -45,7 +45,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
         </Slider>
       </div>
 
-      <div class="hidden sm:flex items-center justify-center z-10 col-start-1 row-start-2">
+      <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
         <Slider.PrevButton
           class="cursor-pointer"
           disabled={false}
@@ -54,7 +54,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
         </Slider.PrevButton>
       </div>
 
-      <div class="hidden sm:flex items-center justify-center z-10 col-start-3 row-start-2">
+      <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
         <Slider.NextButton
           class="cursor-pointer"
           disabled={false}

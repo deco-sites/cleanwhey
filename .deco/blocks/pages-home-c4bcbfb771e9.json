@@ -49,6 +49,12 @@
       "__resolveType": "Regua"
     },
     {
+      "__resolveType": "FAQ - 01"
+    },
+    {
+      "__resolveType": "Navegue por Categorias"
+    },
+    {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "title": "Featured Products",
       "cta": "/mono",

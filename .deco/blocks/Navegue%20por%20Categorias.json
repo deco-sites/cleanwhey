@@ -1,0 +1,38 @@
+{
+  "__resolveType": "site/sections/Images/CategoryGallery.tsx",
+  "items": [
+    {
+      "images": {
+        "onHover": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/5eef1368-2ad9-4272-914c-3fa78fc46256",
+        "normal": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/8a453adf-ba89-4a6b-94aa-d81bf9a6c1a7"
+      },
+      "link": "/categoria",
+      "textLabel": "Combos e promoções"
+    },
+    {
+      "images": {
+        "onHover": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/11e225de-33f9-4782-80a9-316141adf950",
+        "normal": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/13887ff6-9681-47a6-a0f1-2074e0aef320"
+      },
+      "link": "/categoria",
+      "textLabel": "Saúde e bem-estar"
+    },
+    {
+      "images": {
+        "onHover": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/32b50e6f-bec4-4c94-bcd3-af477a8e896a",
+        "normal": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/3512966f-b27d-42a5-aca1-daa94712a738"
+      },
+      "link": "/categoria",
+      "textLabel": "Emagrecimento"
+    },
+    {
+      "images": {
+        "onHover": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/0c853e48-bb75-4471-b7c1-0a8bd7093705",
+        "normal": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/d3456602-ee65-4fbc-9ad6-5673d409beb5"
+      },
+      "link": "/categoria",
+      "textLabel": "Massa Muscular"
+    }
+  ],
+  "title": "<p>Navegue por <span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">categoria</span></p>"
+}
