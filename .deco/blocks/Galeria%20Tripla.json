@@ -1,0 +1,49 @@
+{
+  "__resolveType": "site/sections/Images/TripleGallery.tsx",
+  "items": [
+    {
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/68ee1be4-06ac-4c25-aa47-2a29ad183ffc",
+      "link": {
+        "0": "/",
+        "1": "l",
+        "2": "i",
+        "3": "n",
+        "4": "k",
+        "url": "/link",
+        "title": "Clique para ver mais dicas"
+      },
+      "subtitle": "Matéria Prima",
+      "title": "O único com ingredientes da Glanbia Nutritionals",
+      "flag": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/89721ea4-ec88-481b-8a7a-555fc4ca1b95"
+    },
+    {
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/ad83fc9f-45b2-4f43-ae93-3049e0cb2d69",
+      "link": {
+        "0": "/",
+        "1": "l",
+        "2": "i",
+        "3": "n",
+        "4": "k",
+        "url": "/link",
+        "title": "Clique para ver mais dicas"
+      },
+      "subtitle": "Preparação",
+      "title": "Tipo de whey"
+    },
+    {
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/7f4464cb-1111-484c-9139-9fd88de02454",
+      "link": {
+        "0": "/",
+        "1": "l",
+        "2": "i",
+        "3": "n",
+        "4": "k",
+        "url": "/link",
+        "title": "Clique para ver mais dicas"
+      },
+      "subtitle": "Sustentabilidade",
+      "title": "Compromisso com o planeta",
+      "flag": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/50d32b22-b053-41a9-a4b1-526a1bba5156"
+    }
+  ]
+}

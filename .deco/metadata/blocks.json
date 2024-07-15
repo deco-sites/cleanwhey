@@ -172,5 +172,9 @@
   "/.deco/blocks/Navegue%20por%20Categorias.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/Images/CategoryGallery.tsx"
+  },
+  "/.deco/blocks/Galeria%20Tripla.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/Images/TripleGallery.tsx"
   }
 }
