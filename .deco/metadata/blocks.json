@@ -176,5 +176,9 @@
   "/.deco/blocks/Galeria%20Tripla.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/Images/TripleGallery.tsx"
+  },
+  "/.deco/blocks/Preview%20%2Fsections%2FContent%2FRegua.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/Content/Regua.tsx"
   }
 }
