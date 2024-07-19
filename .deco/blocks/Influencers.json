@@ -1,0 +1,43 @@
+{
+  "__resolveType": "site/sections/Images/InfluencersGallery.tsx",
+  "items": [
+    {
+      "images": {
+        "normal": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/2ae0f7be-55f0-4bee-92ec-877f84854c3e"
+      },
+      "link": "/influencer",
+      "textLabel": "Nome do influencer",
+      "description": "<p>Como influenciador fitness e personal trainer, estou sempre em busca dos melhores produtos para complementar minha rotina de treinos e ajudar meus seguidores a alcançar seus objetivos de forma saudável. Recentemente, comecei a usar os suplementos da marca e a diferença que fizeram foi impressionante!</p>"
+    },
+    {
+      "images": {
+        "normal": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c082b1de-7691-4d75-a312-d747bf27bda9"
+      },
+      "link": "/influencer",
+      "textLabel": "Nome do influencer",
+      "description": "<p>Como influenciador fitness e personal trainer, estou sempre em busca dos melhores produtos para complementar minha rotina de treinos e ajudar meus seguidores a alcançar seus objetivos de forma saudável. Recentemente, comecei a usar os suplementos da marca e a diferença que fizeram foi impressionante!</p>"
+    },
+    {
+      "images": {
+        "normal": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/33ff2fc6-7f68-4ba2-b3e2-b59f3879c95f"
+      },
+      "link": "/influencer",
+      "textLabel": "Nome do influencer",
+      "description": "<p>Como influenciador fitness e personal trainer, estou sempre em busca dos melhores produtos para complementar minha rotina de treinos e ajudar meus seguidores a alcançar seus objetivos de forma saudável. Recentemente, comecei a usar os suplementos da marca e a diferença que fizeram foi impressionante!</p>"
+    },
+    {
+      "images": {
+        "normal": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/3acde6f2-67e6-4dd1-a69d-e758235cbec0"
+      },
+      "link": "/influencer",
+      "textLabel": "Nome do influencer",
+      "description": "<p>Como influenciador fitness e personal trainer, estou sempre em busca dos melhores produtos para complementar minha rotina de treinos e ajudar meus seguidores a alcançar seus objetivos de forma saudável. Recentemente, comecei a usar os suplementos da marca e a diferença que fizeram foi impressionante!</p>"
+    }
+  ],
+  "title": "<p>Eles já fizeram a escolha correta, só falta <span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">você!</span></p>",
+  "conteudoFlutuante": {
+    "link": "/saiba-mais",
+    "label": "Saiba mais",
+    "text": "<p>Nosso objetivo de levar excelência em proteínas do soro do leite ao mercado consumidor, proporcionando seu uso por diversos tipos de usuários, desde<strong> <span style=\"color: rgb(0, 0, 0);\" data-mce-style=\"color: rgb(0, 0, 0);\">atletas de alta performance</span></strong> a <strong><span style=\"color: rgb(0, 0, 0);\" data-mce-style=\"color: rgb(0, 0, 0);\">pacientes debilitados.</span></strong></p>"
+  }
+}
