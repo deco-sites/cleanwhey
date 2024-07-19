@@ -37,7 +37,7 @@ const Desktop = ({ items }: Props) => {
                             <img src={item.images.onHover} />
                         </div>
                     </a>
-                    <p class="z-20 w-auto absolute bottom-0 bg-orange-300 p-3 rounded text-white font-bold font-lato text-center text-lg uppercase">
+                    <p class="z-20 w-auto absolute bottom-0 bg-orange-300 p-3 rounded text-white font-bold  text-center text-lg uppercase">
                         {item.textLabel}
                     </p>
                 </div>
@@ -67,7 +67,7 @@ const Mobile = ({ items }: Props) => {
                                 <img src={item.images.onHover} />
                             </div>
                         </a>
-                        <p class="z-20 w-auto absolute bottom-0 bg-orange-300 p-3 rounded text-white font-bold font-lato text-center text-lg uppercase">
+                        <p class="z-20 w-auto absolute bottom-0 bg-orange-300 p-3 rounded text-white font-bold  text-center text-lg uppercase">
                             {item.textLabel}
                         </p>
                     </Slider.Item>
@@ -106,7 +106,7 @@ export default function CategoryGallery({ title, items }: Props) {
             {title && (
                 <div class={"title"}>
                     <h2
-                        class={"text-2xl font-lato font-bold text-gray-200 text-center mb-4"}
+                        class={"text-2xl  font-bold text-gray-200 text-center mb-4"}
                         dangerouslySetInnerHTML={{ __html: title }} />
                 </div>
             )}

@@ -17,7 +17,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
     >
       <a
         href={url}
-        class="group-hover:underline flex items-center gap-1 text-white font-lato text-base font-bold"
+        class="group-hover:underline flex items-center gap-1 text-white  text-base font-bold"
       >
         {name}
         {children && children.length > 0 && (
@@ -38,14 +38,14 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
             <div className="container flex items-center justify-between">
               <ul class="flex relative flex-col items-start justify-center gap-2 min-w-[200px] border-r-gray-200 border-r pr-5">
                 <li>
-                  <h2 class="font-lato text-lg text-orange-300 font-bold">
+                  <h2 class=" text-lg text-orange-300 font-bold">
                     {name}
                   </h2>
                 </li>
                 {children.map((node) => (
                   <li class="p-0 group/lastmenu w-full">
                     <a
-                      class="group-hover/lastmenu:text-orange-300 text-gray-300 font-lato text-base font-bold flex items-center justify-between"
+                      class="group-hover/lastmenu:text-orange-300 text-gray-300  text-base font-bold flex items-center justify-between"
                       href={node.url}
                     >
                       <span>{node.name}</span>
@@ -58,7 +58,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
                       {node.children?.map((leaf) => (
                         <li>
                           <a class="hover:underline" href={leaf.url}>
-                            <span class="text-base text-gray-300 font-bold font-lato uppercase">
+                            <span class="text-base text-gray-300 font-bold  uppercase">
                               {leaf.name}
                             </span>
                           </a>

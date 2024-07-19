@@ -48,6 +48,9 @@
       "__resolveType": "Navegue por Categorias"
     },
     {
+      "__resolveType": "Influencers"
+    },
+    {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "title": "Featured Products",
       "cta": "/mono",

@@ -39,7 +39,7 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
                             <p dangerouslySetInnerHTML={{__html: item.description}} />
                         </div>
                     </a>
-                    <p class="z-20 w-[90%] group-hover:hidden absolute top-8 bg-[#163E73D9] p-1.5 font-regular rounded-lg text-white font-lato text-center text-lg">
+                    <p class="z-20 w-[90%] group-hover:hidden absolute top-8 bg-[#163E73D9] p-1.5 font-regular rounded-lg text-white  text-center text-lg">
                         {item.textLabel}
                     </p>
                 </div>
@@ -73,7 +73,7 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
                                 <p dangerouslySetInnerHTML={{__html: item.description}} />
                             </div>
                         </a>
-                        <p class="z-20 w-[90%] group-hover:hidden absolute top-8 bg-[#163E73D9] p-1.5 font-regular rounded-lg text-white font-lato text-center text-lg">
+                        <p class="z-20 w-[90%] group-hover:hidden absolute top-8 bg-[#163E73D9] p-1.5 font-regular rounded-lg text-white  text-center text-lg">
                             {item.textLabel}
                         </p>
                     </Slider.Item>
@@ -115,11 +115,11 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
 export default function InfluencersGallery({ title, items, conteudoFlutuante }: Props) {
     const device = useDevice();
     return (
-        <section class="section container">
+        <section class="section container mb-24">
             {title && (
                 <div class={"title"}>
                     <h2
-                        class={"text-2xl font-lato font-bold text-gray-200 text-center mb-4"}
+                        class={"text-2xl font-bold text-gray-200 text-center mb-4"}
                         dangerouslySetInnerHTML={{ __html: title }} />
                 </div>
             )}

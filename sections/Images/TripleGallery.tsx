@@ -39,7 +39,7 @@ const Desktop = ({ items }: Props) => {
                     <div class="text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.50)] 
                     absolute top-0  left-0 w-full h-full flex flex-col 
                     items-center justify-center
-                    text-white font-lato text-center
+                    text-white  text-center
                     ">
                         <p class="mb-3 font-regular text-sm text-white">
                         {item.subtitle}
@@ -79,7 +79,7 @@ const Mobile = ({ items }: Props) => {
                         <div class="text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.50)] 
                         absolute top-0  left-0 w-full h-full flex flex-col 
                         items-center justify-center
-                        text-white font-lato text-center
+                        text-white  text-center
                         ">
                             <p class="mb-3 font-regular text-sm text-white">
                             {item.subtitle}
