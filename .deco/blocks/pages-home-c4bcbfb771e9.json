@@ -16,9 +16,12 @@
           "alt": "Spring",
           "action": {
             "href": "#",
-            "title": "Title",
-            "subTitle": "Subtitle",
-            "label": "Botão"
+            "title": "<p>No secret, <span style=\"color: rgb(25, 56, 97);\" data-mce-style=\"color: rgb(25, 56, 97);\"><strong>protein only!</strong></span></p>",
+            "label": "Explorar produtos"
+          },
+          "extraLink": {
+            "href": "#",
+            "label": "Saiba por que eles escolhem >"
           }
         },
         {

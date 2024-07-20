@@ -13,6 +13,7 @@ export type AvailableIcons =
   | "close"
   | "chevron-right"
   | "favorite"
+  | "favorite-new"
   | "home_pin"
   | "call"
   | "local_shipping"
