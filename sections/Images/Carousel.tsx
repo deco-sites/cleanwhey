@@ -1,4 +1,4 @@
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import Slider from "../../components/ui/Slider.tsx";
@@ -23,12 +23,22 @@ export interface Banner {
     /** @description when user clicks on the image, go to this link */
     href: string;
     /** @description Image text title */
-    title: string;
-    /** @description Image text subtitle */
-    subTitle: string;
+    title: HTMLWidget;
     /** @description Button label */
     label: string;
   };
+  extraLink?: {
+        /** @description go to this link */
+        href: string;
+        /** @description Button label */
+        label: string;
+  }
+  selos?: Selo[]
+}
+
+interface Selo {
+  image: ImageWidget;
+  label?: string;
 }
 
 export interface Props {
@@ -54,6 +64,8 @@ function BannerItem(
     mobile,
     desktop,
     action,
+    extraLink,
+    selos
   } = image;
   const params = { promotion_name: image.alt };
 
@@ -77,24 +89,42 @@ function BannerItem(
       {action && (
         <div
           class={clx(
-            "absolute h-full w-full top-0 left-0",
+            "absolute h-auto md:h-full w-full top-5 md:top-0 right-0",
             "flex flex-col justify-center items-center",
             "px-5 sm:px-0",
-            "sm:left-40 sm:items-start sm:max-w-96",
+            "sm:right-40 md:right-50 sm:items-start sm:max-w-xl",
           )}
         >
-          <span class="text-7xl font-bold text-base-100">
-            {action.title}
-          </span>
-          <span class="font-normal text-base text-base-100 pt-4 pb-12">
+          <span class="text-[32px] text-center md:text-left md:text-7xl font-normal leading-10 md:leading-[80px] font-lato text-gray-200" 
+          dangerouslySetInnerHTML={{__html: action.title}} />
+            
+
+          {/* <span class="font-normal text-base text-base-100 pt-4 pb-12">
             {action.subTitle}
-          </span>
-          <button
-            class="btn btn-primary btn-outline bg-base-100"
+          </span> */}
+          <div className="actions flex flex-col md:flex-row items-center gap-2 mt-4">
+            <button
+            class="border w-full md:w-auto border-orange-300 hover:bg-orange-300 !text-white hover:text-white !bg-orange-300 btn btn-primary rounded-lg btn-outline bg-base-100"
             aria-label={action.label}
-          >
+            >
             {action.label}
-          </button>
+            </button>
+
+            <button
+            class="btn btn-primary rounded-lg btn-outline hover:text-blue-300 hover:bg-transparent bg-transparent border !text-blue-300 border-blue-300"
+            aria-label={extraLink?.href}
+            >
+            {extraLink?.label}
+            </button>
+          </div>
+
+          <div class={"selos mt-8"}>
+            <div className="flex gap-4">
+              {selos?.map((selo) => (
+                  <img width={32} height={32} src={selo.image} alt={selo.label} />
+              ))}
+            </div>
+          </div>
         </div>
       )}
       <Picture preload={lcp} {...viewPromotionEvent}>
@@ -147,7 +177,7 @@ function Carousel({ images = [], preload, interval }: Props) {
         </Slider>
       </div>
 
-      <div class="hidden sm:flex items-center justify-center z-10 col-start-1 row-start-2">
+      <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
         <Slider.PrevButton
           class="btn btn-neutral btn-outline btn-circle no-animation btn-sm"
           disabled={false}
@@ -156,7 +186,7 @@ function Carousel({ images = [], preload, interval }: Props) {
         </Slider.PrevButton>
       </div>
 
-      <div class="hidden sm:flex items-center justify-center z-10 col-start-3 row-start-2">
+      <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
         <Slider.NextButton
           class="btn btn-neutral btn-outline btn-circle no-animation btn-sm"
           disabled={false}
@@ -165,7 +195,7 @@ function Carousel({ images = [], preload, interval }: Props) {
         </Slider.NextButton>
       </div>
 
-      <ul
+      {/* <ul
         class={clx(
           "col-span-full row-start-4 z-10",
           "carousel justify-center gap-3",
@@ -183,7 +213,7 @@ function Carousel({ images = [], preload, interval }: Props) {
             </Slider.Dot>
           </li>
         ))}
-      </ul>
+      </ul> */}
 
       <Slider.JS rootId={id} interval={interval && interval * 1e3} infinite />
     </div>

@@ -149,13 +149,13 @@ function ProductCard({
           </span>
         </div>
 
-        <div class="absolute bottom-0 right-0">
+        <div class="absolute top-0 left-0">
           <WishlistButton item={item} variant="icon" />
         </div>
       </figure>
 
-      <a href={relativeUrl} class="pt-5">
-        <span class="font-medium">
+      <a href={relativeUrl} class="pt-5 text-center">
+        <span class="font-bold text-gray-400 text-lg text-center">
           {title}
         </span>
 
@@ -173,7 +173,7 @@ function ProductCard({
 
       {/* SKU Selector */}
       {variants.length > 1 && (
-        <ul class="flex items-center justify-start gap-2 pt-4 pb-1 pl-1 overflow-x-auto">
+        <ul class="mb-4 flex items-center justify-start gap-2 pt-4 pb-1 pl-1 overflow-x-auto">
           {variants.map(([value, link]) => [value, relative(link)] as const)
             .map(([value, link]) => (
               <li>
@@ -201,11 +201,10 @@ function ProductCard({
               seller={seller}
               item={item}
               class={clx(
-                "btn",
-                "btn-outline justify-start border-none !text-sm !font-medium px-0 no-animation w-full",
-                "hover:!bg-transparent",
-                "disabled:!bg-transparent disabled:!opacity-50",
-                "btn-primary hover:!text-primary disabled:!text-primary",
+                "btn uppercase",
+                "btn-outline rounded-lg border-none px-0 no-animation w-full",
+                "bg-orange-300 text-white h-14 font-semibold",
+                "hover:bg-orange-300"
               )}
             />
           )
@@ -213,14 +212,10 @@ function ProductCard({
             <a
               href={relativeUrl}
               class={clx(
-                "btn",
-                "btn-outline justify-start border-none !text-sm !font-medium px-0 no-animation w-full",
-                "hover:!bg-transparent",
-                "disabled:!bg-transparent disabled:!opacity-75",
-                "btn-error hover:!text-error disabled:!text-error",
+                "w-full"
               )}
             >
-              Sold out
+              AVISE-ME
             </a>
           )}
       </div>
