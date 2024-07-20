@@ -184,5 +184,13 @@
   "/.deco/blocks/Influencers.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/Images/InfluencersGallery.tsx"
+  },
+  "/.deco/blocks/Preview%20site%2Fsections%2FNewsletter%2FNewsletter.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/Newsletter/Newsletter.tsx"
+  },
+  "/.deco/blocks/Newsletter%20Home.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/Newsletter/Newsletter.tsx"
   }
 }

@@ -1,0 +1,18 @@
+{
+  "__resolveType": "site/sections/Newsletter/Newsletter.tsx",
+  "label": "Cadastrar",
+  "placeholder": "Insira seu e-mail",
+  "empty": {
+    "title": "Newsletter",
+    "description": "Fique por dentro de todas as novidades e promoções"
+  },
+  "success": {
+    "title": "Obrigado por se cadastrar"
+  },
+  "failed": {
+    "title": "Oops!. Algo deu errado!",
+    "description": "Alguma coisa deu errado. Se o erro persistir entre em contato com a gente"
+  },
+  "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/a63d5ddc-e5d3-424f-aec4-0ab08878508a",
+  "status": "success"
+}
