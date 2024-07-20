@@ -5,6 +5,7 @@ import Section from "../../components/ui/Section.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
 import { useComponent } from "../Component.tsx";
+import { ImageWidget } from "apps/admin/widgets.ts";
 
 interface NoticeProps {
   title?: string;
@@ -12,6 +13,7 @@ interface NoticeProps {
 }
 
 export interface Props {
+  icon?: ImageWidget;
   empty?: NoticeProps;
   success?: NoticeProps;
   failed?: NoticeProps;
@@ -49,14 +51,15 @@ export function loader(props: Props) {
 }
 
 function Notice(
-  { title, description }: { title?: string; description?: string },
+  { title, description, icon }: { title?: string; description?: string, icon?: ImageWidget },
 ) {
   return (
-    <div class="flex flex-col justify-center items-center sm:items-start gap-4">
-      <span class="text-3xl font-semibold text-center sm:text-start">
+    <div class="flex flex-col gap-3 justify-start items-start sm:items-start">
+      <span class="text-2xl gap-2 font-bold text-white text-start flex items-center">
+        <img src={icon} loading={'lazy'} />
         {title}
       </span>
-      <span class="text-sm font-normal text-base-300 text-center sm:text-start">
+      <span class="text-white text-sm sm:text-base font-normal text-start">
         {description}
       </span>
     </div>
@@ -82,6 +85,7 @@ function Newsletter({
   label = "Sign up",
   placeholder = "Enter your email address",
   status,
+  icon
 }: SectionProps<typeof loader, typeof action>) {
   if (status === "success" || status === "failed") {
     return (
@@ -101,35 +105,37 @@ function Newsletter({
   }
 
   return (
-    <Section.Container class="bg-base-200">
-      <div class="p-14 grid grid-flow-row sm:grid-cols-2 gap-10 sm:gap-20 place-items-center">
-        <Notice {...empty} />
+    <section class="bg-orange-300">
+      <Section.Container class="border-b border-b-orange-200">
+        <div class="px-4 sm:px-14 py-4 flex flex-col sm:flex-row items-center justify-start sm:justify-center gap-8">
+          <Notice {...empty} icon={icon} />
 
-        <form
-          hx-target="closest section"
-          hx-swap="outerHTML"
-          hx-post={useComponent(import.meta.url)}
-          class="flex flex-col sm:flex-row gap-4 w-full"
-        >
-          <input
-            name="email"
-            class="input input-bordered flex-grow"
-            type="text"
-            placeholder={placeholder}
-          />
-
-          <button
-            class="btn btn-primary"
-            type="submit"
+          <form
+            hx-target="closest section"
+            hx-swap="outerHTML"
+            hx-post={useComponent(import.meta.url)}
+            class="flex flex-col sm:flex-row gap-4 w-full max-w-96"
           >
-            <span class="[.htmx-request_&]:hidden inline">
-              {label}
-            </span>
-            <span class="[.htmx-request_&]:inline hidden loading loading-spinner" />
-          </button>
-        </form>
-      </div>
-    </Section.Container>
+            <input
+              name="email"
+              class="input input-bordered rounded-lg flex-grow"
+              type="text"
+              placeholder={placeholder}
+            />
+
+            <button
+              class="btn btn-primary rounded-lg bg-blue-300 border-blue-300"
+              type="submit"
+            >
+              <span class="[.htmx-request_&]:hidden inline">
+                {label}
+              </span>
+              <span class="[.htmx-request_&]:inline hidden loading loading-spinner" />
+            </button>
+          </form>
+        </div>
+      </Section.Container>
+    </section>
   );
 }
 

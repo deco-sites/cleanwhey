@@ -134,7 +134,7 @@ function Carousel({ images = [], preload, interval }: Props) {
         "grid-rows-[1fr_32px_1fr_64px]",
         "grid-cols-[32px_1fr_32px]",
         "sm:grid-cols-[112px_1fr_112px] sm:min-h-min",
-        "w-screen",
+        "w-screen max-w-full",
       )}
     >
       <div class="col-span-full row-span-full">

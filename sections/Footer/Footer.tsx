@@ -1,6 +1,7 @@
 import { type ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
+import { useDevice } from "deco/hooks/useDevice.ts";
 
 /** @titleBy title */
 interface Item {
@@ -11,6 +12,20 @@ interface Item {
 /** @titleBy title */
 interface Link extends Item {
   children: Item[];
+}
+
+/** @titleBy label */
+interface Selos {
+  image: ImageWidget;
+  link?: string;
+  label?: string;
+}
+
+/** @titleBy label */
+interface Segurancas {
+  image: ImageWidget;
+  link?: string;
+  label?: string;
 }
 
 /** @titleBy alt */
@@ -24,96 +39,166 @@ interface Props {
   links?: Link[];
   social?: Social[];
   paymentMethods?: Social[];
-  policies?: Item[];
   logo?: ImageWidget;
   trademark?: string;
+  selos?: Selos[]
+  seguranca?: Segurancas[]
 }
 
 function Footer({
   links = [],
   social = [],
-  policies = [],
   paymentMethods = [],
+  selos = [],
+  seguranca = [],
   logo,
   trademark,
 }: Props) {
+  const device = useDevice();
   return (
     <footer
-      class="px-5 sm:px-0 mt-5 sm:mt-10"
-      style={{ backgroundColor: "#EFF0F0" }}
+      class="sm:px-0 bg-orange-300"
+      // style={{ backgroundColor: "#EFF0F0" }}
     >
-      <div class="container flex flex-col gap-5 sm:gap-10 py-10">
-        <ul class="grid grid-flow-row sm:grid-flow-col gap-6 ">
-          {links.map(({ title, href, children }) => (
-            <li class="flex flex-col gap-4">
-              <a class="text-base font-semibold" href={href}>{title}</a>
-              <ul class="flex flex-col gap-2">
-                {children.map(({ title, href }) => (
+      <div class="flex flex-col gap-5 sm:gap-10 pt-10">
+        <ul class="container sm:px-0 px-5 md:gap-0 gap-4 flex sm:flex-row flex-col justify-between">
+
+          <li class="flex gap-4 items-start flex-col">
+            <div class={"flex gap-4 items-center mb-6 w-full sm:w-auto space-between"}>
+              <img class={"max-w-[136px]"} loading="lazy" src={logo} />
+
+              <ul class="flex gap-4">
+                {social.map(({ image, href, alt }) => (
                   <li>
-                    <a class="text-sm font-medium text-base-300" href={href}>
-                      {title}
+                    <a href={href}>
+                      <Image
+                        src={image}
+                        alt={alt}
+                        loading="lazy"
+                        width={32}
+                        height={32}
+                        />
                     </a>
                   </li>
                 ))}
               </ul>
-            </li>
+            </div>
+            <div class="text-white md:max-w-[328px]">
+              <p>
+                R. Eng. Haroldo Cavalcanti, 360 | Sal 305 Recreio 
+                dos Bandeirantes, Rio de Janeiro - RJ
+              </p>
+            </div>
+            
+          </li>
+
+          
+
+          {links.map(({ title, href, children }, index) => (
+            <>
+              {device === "desktop" ? (
+                <li class="flex flex-col gap-4">
+                <a class="text-white font-semibold" href={href}>{title}</a>
+                <ul class="flex flex-col gap-2">
+                  {children.map(({ title, href }) => (
+                    <li>
+                      <a class="text-sm text-white" href={href}>
+                        {title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+              ) : (
+                <div class="p-0 text-white font-semibold text-base collapse collapse-arrow bg-transparent border-0">
+                  <input type="checkbox" class="max-h-10 min-h-10"/>
+                  <div class="after:!top-5 flex max-h-10 min-h-10 items-center justify-start collapse-title p-0 text-base font-semibold">{title}</div>
+                  <div class="collapse-content p-0">
+                    <ul class="flex flex-col gap-2">
+                      {children.map(({ title, href }) => (
+                        <li>
+                          <a class="text-sm text-white font-normal" href={href}>
+                            {title}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
+              
+            </>
           ))}
+
+          <li class={"flex flex-col gap-4"}>
+            <a href="#" class="text-white font-semibold">Formas de pagamento</a>
+            <div class="flex flex-col sm:flex-row gap-12 justify-between items-start sm:items-center">
+              <ul class="flex flex-wrap gap-2 md:max-w-64">
+                {paymentMethods.map(({ image, alt }) => (
+                  <li class="h-8 md:w-1/5 w-1/6 border border-base-100 bg-white rounded flex justify-center items-center">
+                    <Image
+                      src={image}
+                      alt={alt}
+                      width={50}
+                      height={32}
+                      loading="lazy"
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </li>
         </ul>
 
-        <div class="flex flex-col sm:flex-row gap-12 justify-between items-start sm:items-center">
-          <ul class="flex gap-4">
-            {social.map(({ image, href, alt }) => (
-              <li>
-                <a href={href}>
-                  <Image
-                    src={image}
-                    alt={alt}
-                    loading="lazy"
-                    width={24}
-                    height={24}
-                  />
-                </a>
-              </li>
-            ))}
-          </ul>
-          <ul class="flex flex-wrap gap-2">
-            {paymentMethods.map(({ image, alt }) => (
-              <li class="h-8 w-10 border border-base-100 rounded flex justify-center items-center">
-                <Image
-                  src={image}
-                  alt={alt}
-                  width={20}
-                  height={20}
-                  loading="lazy"
-                />
-              </li>
-            ))}
-          </ul>
+
+        <div class="container  sm:px-0 px-5 flex items-center justify-between ">
+          <ul class="flex flex-wrap md:flex-nowrap items-center gap-2">
+                {selos.map(({ image, label }) => (
+                  <li class="h-8 md:w-1/5 w-1/5 flex justify-center items-center">
+                    <Image
+                      src={image}
+                      alt={label}
+                      width={77}
+                      height={41}
+                      loading="lazy"
+                    />
+                  </li>
+                ))}
+                {device === "mobile" ? (
+                  <>
+                    {seguranca.map(({ image, label }) => (
+                      <li class="h-8 w-1/5 flex justify-center items-center">
+                        <Image
+                          src={image}
+                          alt={label}
+                          width={42}
+                          height={42}
+                          loading="lazy"
+                        />
+                      </li>
+                    ))}
+                  </>
+                ) : ("")}
+            </ul>
+
+            <ul class="hidden sm:flex items-center gap-2">
+                {seguranca.map(({ image, label }) => (
+                  <li class="h-8 w-1/3 flex justify-center items-center">
+                    <Image
+                      src={image}
+                      alt={label}
+                      width={42}
+                      height={42}
+                      loading="lazy"
+                    />
+                  </li>
+                ))}
+            </ul>
         </div>
 
-        <hr class="w-full text-base-300" />
-
-        <div class="grid grid-flow-row sm:grid-flow-col gap-8">
-          <ul class="flex flex-col sm:flex-row gap-2 sm:gap-4 sm:items-center">
-            {policies.map(({ title, href }) => (
-              <li>
-                <a class="text-xs font-medium" href={href}>
-                  {title}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <div class="flex flex-nowrap items-center justify-between sm:justify-center gap-4">
-            <div>
-              <img loading="lazy" src={logo} />
-            </div>
-            <span class="text-xs font-normal text-base-300">{trademark}</span>
-          </div>
-
-          <div class="flex flex-nowrap items-center justify-center gap-4">
-            <span class="text-sm font-normal text-base-300">Powered by</span>
-            <PoweredByDeco />
+        <div class="grid bg-blue-300 py-4 grid-flow-row sm:grid-flow-col gap-8">
+          <div class="container  sm:px-0 px-5 flex flex-nowrap items-center justify-between sm:justify-center gap-4">
+            <span class="text-base font-normal text-white text-center">{trademark}</span>
           </div>
         </div>
       </div>
