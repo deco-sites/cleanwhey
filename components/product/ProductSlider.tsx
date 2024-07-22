@@ -17,24 +17,24 @@ function ProductSlider({ products, itemListName }: Props) {
     <>
       <div
         id={id}
-        class="flex items-center"
+        class="flex items-center justify-between sm:justify-unset"
         // style={{
         //   gridTemplateColumns: "min-content 1fr min-content",
         // }}
       >
         <div>
-          <Slider.PrevButton class="hidden disable:bg-transparent sm:flex btn !bg-transparent border-none btn-neutral btn-sm btn-circle no-animation">
+          <Slider.PrevButton class="disable:bg-transparent flex btn !bg-transparent border-none btn-neutral btn-sm btn-circle no-animation">
             <Icon id="arrow-right-custom" class="rotate-180 text-orange-300" />
           </Slider.PrevButton>
         </div>
 
-        <div class="w-full px-4">
-          <Slider class="carousel w-full gap-4 py-4">
+        <div class="w-full px-0 sm:px-4 max-w-[85%] sm:max-w-full">
+          <Slider class="carousel sm:carousel-end carousel-center w-full gap-4 py-4">
             {products?.map((product, index) => (
               <Slider.Item
                 index={index}
                 class={clx(
-                  "carousel-item w-[calc(25%-16px)]",
+                  "carousel-item w-full md:w-[calc(25%-16px)]",
                   "first:pl-0 first:sm:pl-2",
                   "last:pr-0 last:sm:pr-2",
                 )}
@@ -43,7 +43,7 @@ function ProductSlider({ products, itemListName }: Props) {
                   index={index}
                   product={product}
                   itemListName={itemListName}
-                  class="p-4 w-full border border-gray-100 shadow-[0_0_10px_0_rgba(0,0,0,0.1)]"
+                  class="mx-4 sm:mx-0 p-4 w-full border border-gray-100 shadow-[0_0_10px_0_rgba(0,0,0,0.1)]"
                 />
               </Slider.Item>
             ))}
@@ -51,7 +51,7 @@ function ProductSlider({ products, itemListName }: Props) {
         </div>
 
         <div>
-          <Slider.NextButton class="hidden disabled:bg-transparent sm:flex btn btn-neutral border-none !bg-transparent btn-sm btn-circle no-animation">
+          <Slider.NextButton class="disabled:bg-transparent flex btn btn-neutral border-none !bg-transparent btn-sm btn-circle no-animation">
             <Icon id="arrow-right-custom" class="text-orange-300" />
           </Slider.NextButton>
         </div>

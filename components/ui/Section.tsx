@@ -2,16 +2,17 @@ import { useSection } from "deco/hooks/useSection.ts";
 import { JSX } from "preact";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
+import { HTMLWidget } from "apps/admin/widgets.ts";
 
 export interface Props {
   /** @description Section title */
-  title?: string;
+  title?: HTMLWidget;
 
-  /** @description See all link */
-  cta?: string;
+  // /** @description See all link */
+  // cta?: string;
 }
 
-function Header({ title, cta }: Props) {
+function Header({ title }: Props) {
   if (!title) {
     return null;
   }
@@ -19,16 +20,16 @@ function Header({ title, cta }: Props) {
   return (
     <div
       class={clx(
-        "flex justify-between items-center gap-2",
+        "flex justify-center items-center gap-2",
         "px-5 sm:px-0",
       )}
     >
-      <span class="text-2xl sm:text-3xl font-semibold">{title}</span>
-      {cta && (
+      <span class="text-2xl text-center sm:text-2xl font-semibold text-gray-300" dangerouslySetInnerHTML={{__html: title}} />
+      {/* {cta && (
         <a class="text-sm font-medium text-primary" href={cta}>
           See all
         </a>
-      )}
+      )} */}
     </div>
   );
 }

@@ -42,20 +42,11 @@
       "__resolveType": "Regua"
     },
     {
-      "__resolveType": "Galeria Tripla"
-    },
-    {
-      "__resolveType": "FAQ - 01"
-    },
-    {
       "__resolveType": "Navegue por Categorias"
     },
     {
-      "__resolveType": "Influencers"
-    },
-    {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
-      "title": "Featured Products",
+      "title": "<p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">Ofertas</span> imperdíveis!</p>",
       "cta": "/mono",
       "products": {
         "__resolveType": "shopify/loaders/ProductList.ts",
@@ -72,6 +63,36 @@
           "variantOptions": []
         }
       }
+    },
+    {
+      "__resolveType": "site/sections/Product/ProductShelf.tsx",
+      "title": "<p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">Lançamentos</span></p>",
+      "cta": "/mono",
+      "products": {
+        "__resolveType": "shopify/loaders/ProductList.ts",
+        "props": {
+          "sort": "",
+          "count": 12,
+          "query": "b",
+          "fuzzy": "automatic",
+          "collection": "b"
+        },
+        "filters": {
+          "tags": [],
+          "productTypes": [],
+          "productVendors": [],
+          "variantOptions": []
+        }
+      }
+    },
+    {
+      "__resolveType": "Influencers"
+    },
+    {
+      "__resolveType": "Galeria Tripla"
+    },
+    {
+      "__resolveType": "FAQ - 01"
     },
     {
       "__resolveType": "site/sections/Category/CategoryGrid.tsx",
