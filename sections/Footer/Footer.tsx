@@ -152,7 +152,7 @@ function Footer({
 
 
         <div class="container  sm:px-0 px-5 flex items-center justify-between ">
-          <ul class="flex flex-wrap md:flex-nowrap items-center gap-2">
+          <ul class="flex flex-wrap md:flex-nowrap items-center gap-4 md:gap-2">
                 {selos.map(({ image, label }) => (
                   <li class="h-8 md:w-1/5 w-1/5 flex justify-center items-center">
                     <Image

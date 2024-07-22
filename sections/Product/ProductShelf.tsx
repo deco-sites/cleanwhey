@@ -11,7 +11,7 @@ export interface Props extends SectionHeaderProps {
   products: Product[] | null;
 }
 
-export default function ProductShelf({ products, title, cta }: Props) {
+export default function ProductShelf({ products, title, isFeatured, icon }: Props) {
   if (!products || products.length === 0) {
     return null;
   }
@@ -36,11 +36,11 @@ export default function ProductShelf({ products, title, cta }: Props) {
   return (
     <Section.Container
       {...viewItemListEvent}
-      class="[view-transition-name:loading-fallback-2]"
+      class={`${isFeatured ? "bg-blue-300 rounded-lg mt-12 max-w-[95%] !container" : ""} [view-transition-name:loading-fallback-2]`}
     >
-      <Section.Header title={title} cta={cta} />
+      <Section.Header title={title} isFeatured={isFeatured} icon={icon} />
 
-      <ProductSlider products={products} itemListName={title} />
+      <ProductSlider products={products} itemListName={title} isFeatured={isFeatured} />
     </Section.Container>
   );
 }

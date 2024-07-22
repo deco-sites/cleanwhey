@@ -24,9 +24,10 @@ export interface Banner {
     href: string;
     /** @description Image text title */
     title: HTMLWidget;
-    /** @description Button label */
-    label: string;
+    /** @description Button label, deixe vazio para não aparecer o botão laranja */
+    label?: string;
   };
+  position?: "Left" | "Right"
   extraLink?: {
         /** @description go to this link */
         href: string;
@@ -88,14 +89,15 @@ function BannerItem(
     >
       {action && (
         <div
-          class={clx(
-            "absolute h-auto md:h-full w-full top-5 md:top-0 right-0",
-            "flex flex-col justify-center items-center",
-            "px-5 sm:px-0",
-            "sm:right-40 md:right-50 sm:items-start sm:max-w-xl",
-          )}
+          class={`
+            ${image.position == "Left" ? "left-0 sm:left-40 md:left-50" : "" }
+            ${image.position == "Right" ? "right-0 sm:right-40 md:right-50" : "" }
+            absolute h-auto md:h-full w-full top-5 md:top-0
+            flex flex-col justify-center items-center
+            px-5 sm:px-0
+            sm:items-start sm:max-w-xl`}
         >
-          <span class="text-[32px] text-center md:text-left md:text-7xl font-normal leading-10 md:leading-[80px] font-lato text-gray-200" 
+          <span class={`${image.position == "Left" ? "md:text-5xl" : "md:text-7xl"} text-[32px] text-center md:text-left font-normal leading-10 md:leading-[80px] font-lato text-gray-200`} 
           dangerouslySetInnerHTML={{__html: action.title}} />
             
 
@@ -103,12 +105,14 @@ function BannerItem(
             {action.subTitle}
           </span> */}
           <div className="actions flex flex-col md:flex-row items-center gap-2 mt-4">
-            <button
-            class="border w-full md:w-auto border-orange-300 hover:bg-orange-300 !text-white hover:text-white !bg-orange-300 btn btn-primary rounded-lg btn-outline bg-base-100"
-            aria-label={action.label}
-            >
-            {action.label}
-            </button>
+            {action.label != undefined && (
+              <button
+                class="border w-full md:w-auto border-orange-300 hover:bg-orange-300 !text-white hover:text-white !bg-orange-300 btn btn-primary rounded-lg btn-outline bg-base-100"
+                aria-label={action.label}
+              >
+                {action.label}
+              </button>
+            )}
 
             <button
             class="btn btn-primary rounded-lg btn-outline hover:text-blue-300 hover:bg-transparent bg-transparent border !text-blue-300 border-blue-300"
@@ -164,7 +168,7 @@ function Carousel({ images = [], preload, interval }: Props) {
         "grid-rows-[1fr_32px_1fr_64px]",
         "grid-cols-[32px_1fr_32px]",
         "sm:grid-cols-[112px_1fr_112px] sm:min-h-min",
-        "w-screen max-w-full",
+        "w-screen max-w-full md:mb-8 mb-6",
       )}
     >
       <div class="col-span-full row-span-full">
@@ -176,24 +180,24 @@ function Carousel({ images = [], preload, interval }: Props) {
           ))}
         </Slider>
       </div>
-
-      <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
-        <Slider.PrevButton
-          class="btn btn-neutral btn-outline btn-circle no-animation btn-sm"
-          disabled={false}
-        >
-          <Icon id="chevron-right" class="rotate-180" />
-        </Slider.PrevButton>
-      </div>
-
-      <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
-        <Slider.NextButton
-          class="btn btn-neutral btn-outline btn-circle no-animation btn-sm"
-          disabled={false}
-        >
-          <Icon id="chevron-right" />
-        </Slider.NextButton>
-      </div>
+      {images.length > 1 && (
+        <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
+          <Slider.PrevButton
+            class="btn btn-neutral btn-outline btn-circle no-animation btn-sm"
+            disabled={false}>
+            <Icon id="chevron-right" class="rotate-180" />
+          </Slider.PrevButton>
+        </div>
+      )}
+      {images.length > 1 && (
+        <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
+          <Slider.NextButton
+            class="btn btn-neutral btn-outline btn-circle no-animation btn-sm"
+            disabled={false}>
+            <Icon id="chevron-right" />
+          </Slider.NextButton>
+        </div>
+      )}
 
       {/* <ul
         class={clx(
