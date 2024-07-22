@@ -2,29 +2,30 @@ import { useSection } from "deco/hooks/useSection.ts";
 import { JSX } from "preact";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
-import { HTMLWidget } from "apps/admin/widgets.ts";
+import { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 
 export interface Props {
   /** @description Section title */
   title?: HTMLWidget;
+  /** @description ativar seção em destaque */
+  isFeatured?: boolean;
+  icon?: ImageWidget;
 
   // /** @description See all link */
   // cta?: string;
 }
 
-function Header({ title }: Props) {
+function Header({ title, isFeatured, icon }: Props) {
   if (!title) {
     return null;
   }
 
   return (
     <div
-      class={clx(
-        "flex justify-center items-center gap-2",
-        "px-5 sm:px-0",
-      )}
+      class={`flex justify-center items-center gap-2 px-5 sm:px-0`}
     >
-      <span class="text-2xl text-center sm:text-2xl font-semibold text-gray-300" dangerouslySetInnerHTML={{__html: title}} />
+      <span class={`${isFeatured ? "font-normal !text-white" : "font-semibold text-gray-300"} text-2xl text-center sm:text-2xl`} dangerouslySetInnerHTML={{__html: title}} />
+      <img loading={"lazy"} src={icon} />
       {/* {cta && (
         <a class="text-sm font-medium text-primary" href={cta}>
           See all
@@ -88,7 +89,7 @@ function Container({ class: _class, ...props }: JSX.IntrinsicElements["div"]) {
     <div
       {...props}
       class={clx(
-        "container flex flex-col gap-4 sm:gap-6 w-full py-5 sm:py-10",
+        "container flex flex-col gap-4 sm:gap-6 w-full py-5 sm:pt-6",
         _class?.toString(),
       )}
     />
