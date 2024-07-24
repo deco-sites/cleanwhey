@@ -4,6 +4,7 @@
     "channelPrivacy": "public"
   },
   "platform": "vtex",
-  "account": "cleanweb",
-  "publicUrl": "cleanweb.myvtex.com"
+  "account": "bravtexfashionstore",
+  "publicUrl": "fashion.bravtexstores.com.br",
+  "salesChannel": "1"
 }
