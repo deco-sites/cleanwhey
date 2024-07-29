@@ -63,5 +63,6 @@
   },
   "flavor": {
     "framework": "htmx"
-  }
+  },
+  "pageSections": []
 }

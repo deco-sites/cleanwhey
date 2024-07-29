@@ -100,7 +100,7 @@ const Desktop = (
 
         <div class="flex gap-4">
           <a
-            class="text-white hover:!bg-transparent btn btn-sm font-thin btn-ghost no-animation gap-2 flex items-center"
+            class="text-white hover:!bg-transparent btn btn-sm font-normal btn-ghost no-animation gap-2 flex items-center"
             href="/wishlist"
           >
             <Icon id="duvidas" class="h-8 w-8" />
@@ -109,7 +109,7 @@ const Desktop = (
             </p>
           </a>
           <a
-            class="p-0 hover:!bg-transparent text-white btn btn-sm font-thin btn-ghost no-animation"
+            class="p-0 hover:!bg-transparent text-white btn btn-sm font-normal btn-ghost no-animation"
             href="/wishlist"
           >
             <Icon id="wishlist_button" class="h-8 w-8" />

@@ -37,11 +37,11 @@ function Sort({ sortOptions, url }: Props) {
   }));
 
   return (
-    <>
-      <label for="sort" class="sr-only">Sort by</label>
+    <div class={"flex items-center gap-4 text-gray-300"}>
+      <label for="sort" class="hidden sm:block w-full text-sm text-gray-300">Ordenar por</label>
       <select
         name="sort"
-        class="select w-full max-w-sm rounded-lg"
+        class="!appearance-none focus:outline-none select w-full max-w-sm text-orange-300 rounded-lg border border-orange-300"
         hx-on:change={useScript(() => {
           const select = event!.currentTarget as HTMLSelectElement;
           window.location.href = select.value;
@@ -57,7 +57,7 @@ function Sort({ sortOptions, url }: Props) {
           </option>
         ))}
       </select>
-    </>
+    </div>
   );
 }
 

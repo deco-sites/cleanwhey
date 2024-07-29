@@ -65,7 +65,7 @@ export default function Results({ result }: ComponentProps<typeof action>) {
           </span>
         </li>
       ))}
-      <span class="text-xs font-thin">
+      <span class="text-xs font-normal">
         Os prazos de entrega começam a contar a partir da confirmação do
         pagamento e podem variar de acordo com a quantidade de produtos na
         sacola.

@@ -12,29 +12,6 @@
       {
         "variations": [
           {
-            "weight": "400"
-          },
-          {
-            "weight": "500"
-          },
-          {
-            "weight": "600"
-          },
-          {
-            "weight": "700"
-          },
-          {
-            "weight": "800"
-          },
-          {
-            "weight": "900"
-          }
-        ],
-        "family": "Maven Pro"
-      },
-      {
-        "variations": [
-          {
             "weight": "100"
           },
           {
@@ -57,9 +34,35 @@
           },
           {
             "weight": "800"
+          },
+          {
+            "weight": "900"
           }
         ],
         "family": "Lato"
+      },
+      {
+        "variations": [
+          {
+            "weight": "400"
+          },
+          {
+            "weight": "500"
+          },
+          {
+            "weight": "600"
+          },
+          {
+            "weight": "700"
+          },
+          {
+            "weight": "800"
+          },
+          {
+            "weight": "900"
+          }
+        ],
+        "family": "Maven Pro"
       }
     ]
   },

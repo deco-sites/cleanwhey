@@ -1,4 +1,4 @@
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 import type { SectionProps } from "deco/types.ts";
 
@@ -9,9 +9,10 @@ export interface Banner {
   /** @description RegExp to enable this banner on the current URL. Use /feminino/* to display this banner on feminino category  */
   matcher: string;
   /** @description text to be rendered on top of the image */
-  title?: string;
+  title?: HTMLWidget;
   /** @description text to be rendered on top of the image */
-  subtitle?: string;
+  buttonLabel?: string;
+  link?: string;
   image: {
     /** @description Image for big screens */
     desktop: ImageWidget;
@@ -34,7 +35,8 @@ const DEFAULT_PROPS = {
       },
       title: "Woman",
       matcher: "/*",
-      subtitle: "As",
+      buttonLabel: "As",
+      link: "/"
     },
   ],
 };
@@ -46,36 +48,40 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
     return null;
   }
 
-  const { title, subtitle, image } = banner;
+  const { title, buttonLabel, link, image } = banner;
 
   return (
     <div class="grid grid-cols-1 grid-rows-1">
       <Picture preload class="col-start-1 col-span-1 row-start-1 row-span-1">
         <Source
           src={image.mobile}
-          width={360}
-          height={120}
+          width={380}
+          height={330}
           media="(max-width: 767px)"
         />
         <Source
           src={image.desktop}
-          width={1440}
-          height={200}
+          width={1366}
+          height={232}
           media="(min-width: 767px)"
         />
         <img class="w-full" src={image.desktop} alt={image.alt ?? title} />
       </Picture>
 
-      <div class="container flex flex-col items-center justify-center sm:items-start col-start-1 col-span-1 row-start-1 row-span-1 w-full">
+      <div class="
+      container flex flex-col gap-8 
+      items-start justify-start pt-8 pl-8 sm:justify-center sm:items-start col-start-1 
+      col-span-1 row-start-1 row-span-1 w-full">
         <h1>
-          <span class="text-5xl font-medium text-base-100">
-            {title}
-          </span>
+          {title && (
+            <span class="text-sm sm:text-base font-normal text-gray-400" dangerouslySetInnerHTML={{__html: title }} />
+          )}
         </h1>
         <h2>
-          <span class="text-xl font-medium text-base-100">
-            {subtitle}
-          </span>
+          <a href={link} class="text-sm font-normal text-white 
+          p-4 bg-orange-300 rounded-lg uppercase">
+            {buttonLabel}
+          </a>
         </h2>
       </div>
     </div>

@@ -31,7 +31,7 @@ function SignIn({ variant }: { variant: "mobile" | "desktop" }) {
     <div id={id}>
       <a
         class={clx(
-          "btn btn-sm hover:!bg-transparent font-thin btn-ghost no-animation text-white p-0",
+          "btn btn-sm hover:!bg-transparent font-normal btn-ghost no-animation text-white p-0",
           variant === "mobile" && "btn-square",
         )}
         href="/login"
@@ -42,7 +42,7 @@ function SignIn({ variant }: { variant: "mobile" | "desktop" }) {
       <a
         class={clx(
           "hidden",
-          "btn btn-sm hover:!bg-transparent font-thin btn-ghost no-animation text-white p-0",
+          "btn btn-sm hover:!bg-transparent font-normal btn-ghost no-animation text-white p-0",
           variant === "mobile" && "btn-square",
         )}
         href="/account"

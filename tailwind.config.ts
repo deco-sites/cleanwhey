@@ -5,7 +5,13 @@ export default {
   daisyui: { themes: [], logs: false },
   content: ["./**/*.tsx"],
   theme: {
-    container: { center: true },
+    container: { 
+      center: true,
+      screens: {
+        lg: '1216px',
+        xl: '1216px'
+      }
+    },
     extend: {
       fontFamily: {
         lato: ["Lato", "sans-serif"],

@@ -1,0 +1,16 @@
+{
+  "__resolveType": "site/sections/Institucional/BannerInstitucional.tsx",
+  "img": {
+    "desktop": {
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/4aa4bc0c-8cfc-49f5-aa22-4e62bac441e6",
+      "width": 904,
+      "height": 127
+    },
+    "mobile": {
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/78ab430e-0a80-479f-8629-b4c2b231eccd",
+      "width": 348,
+      "height": 127
+    },
+    "alt": "Banner Institucional"
+  }
+}

@@ -108,7 +108,7 @@ function PageResult(props: SectionProps<typeof loader>) {
         class={clx(
           "grid items-center",
           "grid-cols-2 gap-2",
-          "sm:grid-cols-4 sm:gap-10",
+          "sm:grid-cols-3 sm:gap-10",
           "w-full",
         )}
       >
@@ -118,7 +118,8 @@ function PageResult(props: SectionProps<typeof loader>) {
             product={product}
             preload={index === 0}
             index={offset + index}
-            class="h-full min-w-[160px] max-w-[300px]"
+            class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
+            shadow-[0_0_10px_0_rgba(0,0,0,0.1)] p-4"
           />
         ))}
       </div>
@@ -260,7 +261,7 @@ function Result(props: SectionProps<typeof loader>) {
                     <div class="bg-base-100 flex flex-col h-full divide-y overflow-y-hidden">
                       <div class="flex justify-between items-center">
                         <h1 class="px-4 py-3">
-                          <span class="font-medium text-2xl">Filters</span>
+                          <span class="font-medium text-2xl">Filtros</span>
                         </h1>
                         <label class="btn btn-ghost" for={controls}>
                           <Icon id="close" />
@@ -273,23 +274,30 @@ function Result(props: SectionProps<typeof loader>) {
                   }
                 >
                   <div class="flex sm:hidden justify-between items-end">
+                    <label class="btn btn-ghost
+                    text-orange-300 rounded-lg border border-orange-300" 
+                    for={controls}>
+                      Filtros
+                    </label>
+
                     <div class="flex flex-col">
                       {results}
                       {sortBy}
                     </div>
-
-                    <label class="btn btn-ghost" for={controls}>
-                      Filters
-                    </label>
                   </div>
                 </Drawer>
               )}
 
               <div class="grid place-items-center grid-cols-1 sm:grid-cols-[250px_1fr]">
                 {device === "desktop" && (
-                  <aside class="place-self-start flex flex-col gap-9">
-                    <span class="text-base font-semibold h-12 flex items-center">
-                      Filters
+                  <aside class="
+                  place-self-start flex flex-col gap-9
+                  border border-gray-100 border-b border-b-orange-300
+                  bg-white-300 rounded-t-lg p-4
+                  ">
+                    <span class="text-base font-normal text-gray-300 h-12 flex gap-2 items-center">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.667 2H1.333l5.334 6.307v4.36L9.333 14V8.307z" stroke="#A1A6B7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      Filtros
                     </span>
 
                     <Filters filters={filters} />
@@ -330,7 +338,7 @@ function SearchResult({
   page,
   ...props
 }: SectionProps<typeof loader>) {
-  if (!page) {
+  if (!page || page.pageInfo.records == 0) {
     return <NotFound />;
   }
 

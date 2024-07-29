@@ -1,1 +1,16 @@
-{"banners":[{"image":{"mobile":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/91102b71-4832-486a-b683-5f7b06f649af","desktop":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/ec597b6a-dcf1-48ca-a99d-95b3c6304f96"},"title":"Woman","matcher":"/feminino/*","subtitle":"As"},{"image":{"mobile":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/91102b71-4832-486a-b683-5f7b06f649af","desktop":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/ec597b6a-dcf1-48ca-a99d-95b3c6304f96"},"title":"Woman","matcher":"/*","subtitle":"As"}],"__resolveType":"site/sections/Category/CategoryBanner.tsx"}
+{
+  "banners": [
+    {
+      "image": {
+        "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/ba27590c-87d3-44fc-b836-aa294e781e65",
+        "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/1417f209-aaaf-472b-8513-055e61b9e292"
+      },
+      "title": "<p><em><strong><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">100%</span></strong></em> PURO</p><p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\"><strong><em>LIVRE DE </em></strong></span>CONSERVANTES E CORANTES </p><p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\"><em><strong>0% ADIÇÃO</strong></em> </span>DE AÇÚCARES</p>",
+      "matcher": "/*",
+      "subtitle": "Quero fazer a escolha certa",
+      "buttonLabel": "Quero fazer a escolha certa!",
+      "link": "/algum-lugar"
+    }
+  ],
+  "__resolveType": "site/sections/Category/CategoryBanner.tsx"
+}
