@@ -1,0 +1,69 @@
+{
+  "name": "Politica de privacidade",
+  "path": "/politica-de-privacidade",
+  "sections": [
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Header"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institucional/SectionInstitucional.tsx",
+        "conteudos": [
+          {
+            "__resolveType": "site/sections/Institucional/ConteudoInstitucional.tsx",
+            "conteudoTextual": "<h1><span style=\"color: rgb(224, 103, 65); font-size: 18pt;\" data-mce-style=\"color: rgb(224, 103, 65); font-size: 18pt;\"><strong>Política de privacidade</strong></span></h1><p><span style=\"color: rgb(224, 103, 65); font-size: 18pt;\" data-mce-style=\"color: rgb(224, 103, 65); font-size: 18pt;\"><strong><br data-mce-bogus=\"1\"></strong></span></p>"
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Institucional/ConteudoInstitucional.tsx",
+              "conteudoTextual": "<p><span style=\"color: rgb(161, 166, 183); font-size: 14pt;\" data-mce-style=\"color: rgb(161, 166, 183); font-size: 14pt;\"><span style=\"font-size: 12pt;\" data-mce-style=\"font-size: 12pt;\"><strong>1. Introdução<br></strong></span></span><span style=\"color: rgb(161, 166, 183); font-size: 14pt;\" data-mce-style=\"color: rgb(161, 166, 183); font-size: 14pt;\"><span style=\"font-size: 12pt;\" data-mce-style=\"font-size: 12pt;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br><br><strong>2. Coleta de Informações</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><br><strong>3. Uso das Informações</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br><br><strong>4. Compartilhamento de Informações</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br><strong>5. Segurança das Informações</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.<br><br><strong>6. Seus Direitos</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.<br><br><strong>7. Alterações na Política de Privacidade</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat.<br><br><strong>8. Contato</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin feugiat orci vehicula urna fringilla, sit amet tempor erat gravida.</span><br><br></span></p>"
+            }
+          }
+        ],
+        "menus": [
+          {
+            "texto": "Quem somos",
+            "link": "/quem-somos",
+            "active": false
+          },
+          {
+            "texto": "Onde encontrar",
+            "link": "/onde-encontrar"
+          },
+          {
+            "texto": "Cód. de defesa do consumidor",
+            "link": "/codigo-consumidor"
+          },
+          {
+            "texto": "Politica de privacidade",
+            "link": "/politica-de-privacidade",
+            "active": true
+          },
+          {
+            "texto": "Termos e condições",
+            "link": "/termos-e-condicoes"
+          }
+        ],
+        "conteudo": {},
+        "myProp": {
+          "__resolveType": "Preview site/sections/Institucional/BannerInstitucional.tsx"
+        }
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Footer"
+      }
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
