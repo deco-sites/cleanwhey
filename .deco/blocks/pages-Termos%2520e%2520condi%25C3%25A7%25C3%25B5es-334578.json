@@ -42,11 +42,12 @@
           {
             "texto": "Politica de privacidade",
             "link": "/politica-de-privacidade",
-            "active": true
+            "active": false
           },
           {
             "texto": "Termos e condições",
-            "link": "/termos-e-condicoes"
+            "link": "/termos-e-condicoes",
+            "active": true
           }
         ],
         "conteudo": {},
