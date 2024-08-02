@@ -204,7 +204,7 @@ function ProductCard({
                 "btn uppercase",
                 "btn-outline rounded-lg border-none px-0 no-animation w-full",
                 "bg-orange-300 text-white h-14 font-semibold",
-                "hover:bg-orange-300"
+                "hover:bg-orange-300",
               )}
             />
           )
@@ -212,7 +212,7 @@ function ProductCard({
             <a
               href={relativeUrl}
               class={clx(
-                "w-full"
+                "w-full",
               )}
             >
               AVISE-ME

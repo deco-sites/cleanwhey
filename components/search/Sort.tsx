@@ -38,7 +38,9 @@ function Sort({ sortOptions, url }: Props) {
 
   return (
     <div class={"flex items-center gap-4 text-gray-300"}>
-      <label for="sort" class="hidden sm:block w-full text-sm text-gray-300">Ordenar por</label>
+      <label for="sort" class="hidden sm:block w-full text-sm text-gray-300">
+        Ordenar por
+      </label>
       <select
         name="sort"
         class="!appearance-none focus:outline-none select w-full max-w-sm text-orange-300 rounded-lg border border-orange-300"

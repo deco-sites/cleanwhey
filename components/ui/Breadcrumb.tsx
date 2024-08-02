@@ -15,10 +15,15 @@ function Breadcrumb({ itemListElement = [] }: Props) {
           .filter(({ name, item }) => name && item)
           .map(({ name, item }, index) => (
             <li>
-              <a class={`
+              <a
+                class={`
               ${index === items.length - 1 ? "text-orange-300 font-bold" : ""}
               text-sm text-gray-300
-              `} href={relative(item)}>{name}</a>
+              `}
+                href={relative(item)}
+              >
+                {name}
+              </a>
             </li>
           ))}
       </ul>

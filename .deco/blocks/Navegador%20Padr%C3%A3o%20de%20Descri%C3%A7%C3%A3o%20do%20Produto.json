@@ -1,0 +1,21 @@
+{
+  "__resolveType": "site/sections/ProductPage/DescriptionNavigator.tsx",
+  "links": [
+    {
+      "title": "Visão Geral",
+      "url": "#visaogeral"
+    },
+    {
+      "title": "Informação Nutricional",
+      "url": "#informacao-nutricional"
+    },
+    {
+      "title": "Modo de Preparo",
+      "url": "#modo-de-preparo"
+    },
+    {
+      "title": "Avaliações e Dúvidas",
+      "url": "#avaliacoes"
+    }
+  ]
+}

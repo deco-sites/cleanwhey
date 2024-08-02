@@ -132,7 +132,8 @@ const Desktop = (
 
 const Mobile = ({ logo, searchbar }: Props) => (
   <>
-    {/* <Drawer
+    {
+      /* <Drawer
       id={SEARCHBAR_DRAWER_ID}
       aside={
         <Drawer.Aside title="Search" drawer={SEARCHBAR_DRAWER_ID}>
@@ -141,7 +142,8 @@ const Mobile = ({ logo, searchbar }: Props) => (
           </div>
         </Drawer.Aside>
       }
-    /> */}
+    /> */
+    }
     <Drawer
       id={SIDEMENU_DRAWER_ID}
       aside={
@@ -161,12 +163,10 @@ const Mobile = ({ logo, searchbar }: Props) => (
       class="grid place-items-start items-center w-screen px-5 pt-4 pb-3 gap-4"
       style={{
         // height: NAVBAR_HEIGHT_MOBILE,
-        gridTemplateColumns:
-          "auto min-content min-content",
+        gridTemplateColumns: "auto min-content min-content",
       }}
     >
       <div class={"flex-grow inline-flex items-center justify-center gap-3"}>
-
         <label
           for={SIDEMENU_DRAWER_ID}
           class="btn btn-square btn-sm btn-ghost"
@@ -175,10 +175,10 @@ const Mobile = ({ logo, searchbar }: Props) => (
           hx-swap="outerHTML"
           hx-trigger="click once"
           hx-get={useSection({ props: { variant: "menu" } })}
-          >
-          <Icon id="menu" class="text-white h-8 w-8"/>
+        >
+          <Icon id="menu" class="text-white h-8 w-8" />
         </label>
-      
+
         {logo && (
           <a
             href="/"
@@ -196,13 +196,15 @@ const Mobile = ({ logo, searchbar }: Props) => (
         )}
       </div>
 
-      {/* <label
+      {
+        /* <label
         for={SEARCHBAR_DRAWER_ID}
         class="btn btn-square btn-sm btn-ghost"
         aria-label="search icon button"
       >
         <Icon id="search" />
-      </label> */}
+      </label> */
+      }
 
       <SignIn variant="mobile" />
 

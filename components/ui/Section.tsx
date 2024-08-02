@@ -24,13 +24,20 @@ function Header({ title, isFeatured, icon }: Props) {
     <div
       class={`flex justify-center items-center gap-2 px-5 sm:px-0`}
     >
-      <span class={`${isFeatured ? "font-normal !text-white" : "font-semibold text-gray-300"} text-2xl text-center sm:text-2xl`} dangerouslySetInnerHTML={{__html: title}} />
+      <span
+        class={`${
+          isFeatured ? "font-normal !text-white" : "font-semibold text-gray-300"
+        } text-2xl text-center sm:text-2xl`}
+        dangerouslySetInnerHTML={{ __html: title }}
+      />
       <img loading={"lazy"} src={icon} />
-      {/* {cta && (
+      {
+        /* {cta && (
         <a class="text-sm font-medium text-primary" href={cta}>
           See all
         </a>
-      )} */}
+      )} */
+      }
     </div>
   );
 }

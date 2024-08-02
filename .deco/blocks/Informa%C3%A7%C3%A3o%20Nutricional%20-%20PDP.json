@@ -1,0 +1,41 @@
+{
+  "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
+  "table": {
+    "desktop": {
+      "src": "https://fakeimg.pl/666x718/ffffff/000",
+      "width": 666,
+      "height": 718
+    },
+    "mobile": {
+      "src": "https://fakeimg.pl/350x718/ffffff/000",
+      "width": 350,
+      "height": 718
+    },
+    "altText": "Tabela nutricional"
+  },
+  "ingredients": {
+    "title": "Ingredientes",
+    "content": "<p>Proteína hidrolisada do Soro do Leite termoestável (WPH), aroma idêntico ao natural de capuccino, coffee arabica, aromas idênticos aos naturais de baunilha e chocolate, adoçante natural stévia e canela em pó. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA (LECITINA DE SOJA) *ingrediente utilizado no processo de instantaneização da proteína do soro do leite. Contém açúcares próprios dos ingredientes.</p>"
+  },
+  "nutritionalPromotionImage": {
+    "desktop": {
+      "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/cdb3e193-d05e-4543-bb68-2edd8a050d44",
+      "width": 462,
+      "height": 514
+    },
+    "mobile": {
+      "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/6ec30b28-7ced-4e89-ac83-8191ed60d424",
+      "height": 514,
+      "width": 462
+    },
+    "altText": "Imagem Nutricional"
+  },
+  "id": "informacao-nutricional",
+  "title": "Informação Nutricional",
+  "questions": [
+    {
+      "question": "Modo de preparo",
+      "answer": "<p>Diluir 2 dosadores (scoops) em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.<br><br>Manter este produto bem fechado em local fresco, seco e ao abrigo da luz solar. Após aberto consumir em até 30 dias. Este produto é recomendado para adultos (≥19 anos). “Este produto não é um medicamento.” “Não exceder a recomendação diária de consumo indicada na embalagem.” “Mantenha fora do alcance de crianças.”</p>"
+    }
+  ]
+}

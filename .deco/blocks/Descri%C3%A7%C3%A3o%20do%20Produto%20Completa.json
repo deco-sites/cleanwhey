@@ -1,0 +1,13 @@
+{
+  "__resolveType": "site/sections/ProductPage/DescriptionContent.tsx",
+  "contents": [
+    {
+      "secoes": [],
+      "matcher": "/"
+    },
+    {
+      "secoes": [],
+      "matcher": "/*"
+    }
+  ]
+}

@@ -144,7 +144,28 @@ function AddToCartButton(props: Props) {
         hx-on:click={useScript(onClick)}
       >
         Adicionar À Sacola
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2.667 4 8v18.667a2.667 2.667 0 0 0 2.667 2.666h18.666A2.667 2.667 0 0 0 28 26.667V8l-4-5.333zM4 8h24" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.333 13.333a5.333 5.333 0 1 1-10.666 0" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 2.667 4 8v18.667a2.667 2.667 0 0 0 2.667 2.666h18.666A2.667 2.667 0 0 0 28 26.667V8l-4-5.333zM4 8h24"
+            stroke="#fff"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M21.333 13.333a5.333 5.333 0 1 1-10.666 0"
+            stroke="#fff"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </button>
 
       {/* Quantity Input */}

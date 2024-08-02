@@ -5,12 +5,12 @@ export default {
   daisyui: { themes: [], logs: false },
   content: ["./**/*.tsx"],
   theme: {
-    container: { 
+    container: {
       center: true,
       screens: {
-        lg: '1216px',
-        xl: '1216px'
-      }
+        lg: "1216px",
+        xl: "1216px",
+      },
     },
     extend: {
       fontFamily: {

@@ -1,0 +1,23 @@
+{
+  "__resolveType": "site/sections/ProductPage/DescriptionMoreInfos.tsx",
+  "cards": [
+    {
+      "title": "Proteína limpa, 100% premium.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo.",
+      "content": "<ul><li style=\"line-height: 2;\" data-mce-style=\"line-height: 2;\">minim veniam, quis nostrud exercitation ullamco</li><li style=\"line-height: 2;\" data-mce-style=\"line-height: 2;\">minim veniam, quis nostrud exercitation ullamco</li><li style=\"line-height: 2;\" data-mce-style=\"line-height: 2;\">minim veniam, quis nostrud exercitation ullamco</li><li style=\"line-height: 2;\" data-mce-style=\"line-height: 2;\">minim veniam, quis nostrud exercitation ullamco</li></ul>"
+    },
+    {
+      "title": "Tecnologia Glanbia",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "title": "Matéria prima Protherma"
+    }
+  ],
+  "rightImage": {
+    "desktopSize": 514,
+    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/8e60e175-c3fd-404e-b6e9-4727503ce816",
+    "mobileSize": 316
+  }
+}

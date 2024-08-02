@@ -36,7 +36,7 @@ const DEFAULT_PROPS = {
       title: "Woman",
       matcher: "/*",
       buttonLabel: "As",
-      link: "/"
+      link: "/",
     },
   ],
 };
@@ -74,12 +74,18 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
       col-span-1 row-start-1 row-span-1 w-full">
         <h1>
           {title && (
-            <span class="text-sm sm:text-base font-normal text-gray-400" dangerouslySetInnerHTML={{__html: title }} />
+            <span
+              class="text-sm sm:text-base font-normal text-gray-400"
+              dangerouslySetInnerHTML={{ __html: title }}
+            />
           )}
         </h1>
         <h2>
-          <a href={link} class="text-sm font-normal text-white 
-          p-4 bg-orange-300 rounded-lg uppercase">
+          <a
+            href={link}
+            class="text-sm font-normal text-white 
+          p-4 bg-orange-300 rounded-lg uppercase"
+          >
             {buttonLabel}
           </a>
         </h2>

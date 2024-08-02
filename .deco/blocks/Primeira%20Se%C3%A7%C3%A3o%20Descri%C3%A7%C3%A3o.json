@@ -1,0 +1,16 @@
+{
+  "__resolveType": "site/sections/ProductPage/DescriptionBannerRight.tsx",
+  "percentageBanner": {
+    "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/a8385c03-19b6-4add-8182-0c1dc22a83f1",
+    "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/4e8e2d00-760a-45f2-bc9b-b8bf938cfc69",
+    "alt": "Banner Percentage"
+  },
+  "rightImage": {
+    "alt": "Banner Right",
+    "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/49c19239-ebf4-4301-bbfe-2116bd6bb5d0",
+    "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/0d2392ff-39b0-4992-b5f5-6b5dd80d4a21"
+  },
+  "title": "Whey Mocaccino",
+  "description": "<p><span style=\"font-size: 12pt; color: rgb(161, 166, 183);\" data-mce-style=\"font-size: 12pt; color: rgb(161, 166, 183);\">Feito com tecnologia Glanbia, a matéria-prima Protherma, conta com um método de hidrólise específico que faz com que sua proteína mantenha todas as suas características mesmo depois de aquecida.</span></p>",
+  "id": "visao-geral"
+}

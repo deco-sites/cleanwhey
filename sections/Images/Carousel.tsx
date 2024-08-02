@@ -27,14 +27,14 @@ export interface Banner {
     /** @description Button label, deixe vazio para não aparecer o botão laranja */
     label?: string;
   };
-  position?: "Left" | "Right"
+  position?: "Left" | "Right";
   extraLink?: {
-        /** @description go to this link */
-        href: string;
-        /** @description Button label */
-        label: string;
-  }
-  selos?: Selo[]
+    /** @description go to this link */
+    href: string;
+    /** @description Button label */
+    label: string;
+  };
+  selos?: Selo[];
 }
 
 interface Selo {
@@ -66,7 +66,7 @@ function BannerItem(
     desktop,
     action,
     extraLink,
-    selos
+    selos,
   } = image;
   const params = { promotion_name: image.alt };
 
@@ -90,20 +90,27 @@ function BannerItem(
       {action && (
         <div
           class={`
-            ${image.position == "Left" ? "left-0 sm:left-40 md:left-50" : "" }
-            ${image.position == "Right" ? "right-0 sm:right-40 md:right-50" : "" }
+            ${image.position == "Left" ? "left-0 sm:left-40 md:left-50" : ""}
+            ${
+            image.position == "Right" ? "right-0 sm:right-40 md:right-50" : ""
+          }
             absolute h-auto md:h-full w-full top-5 md:top-0
             flex flex-col justify-center items-center
             px-5 sm:px-0
             sm:items-start sm:max-w-xl`}
         >
-          <span class={`${image.position == "Left" ? "md:text-5xl" : "md:text-7xl"} text-[32px] text-center md:text-left font-normal leading-10 md:leading-[80px] font-lato text-gray-200`} 
-          dangerouslySetInnerHTML={{__html: action.title}} />
-            
+          <span
+            class={`${
+              image.position == "Left" ? "md:text-5xl" : "md:text-7xl"
+            } text-[32px] text-center md:text-left font-normal leading-10 md:leading-[80px] font-lato text-gray-200`}
+            dangerouslySetInnerHTML={{ __html: action.title }}
+          />
 
-          {/* <span class="font-normal text-base text-base-100 pt-4 pb-12">
+          {
+            /* <span class="font-normal text-base text-base-100 pt-4 pb-12">
             {action.subTitle}
-          </span> */}
+          </span> */
+          }
           <div className="actions flex flex-col md:flex-row items-center gap-2 mt-4">
             {action.label != undefined && (
               <button
@@ -115,17 +122,17 @@ function BannerItem(
             )}
 
             <button
-            class="btn btn-primary rounded-lg btn-outline hover:text-blue-300 hover:bg-transparent bg-transparent border !text-blue-300 border-blue-300"
-            aria-label={extraLink?.href}
+              class="btn btn-primary rounded-lg btn-outline hover:text-blue-300 hover:bg-transparent bg-transparent border !text-blue-300 border-blue-300"
+              aria-label={extraLink?.href}
             >
-            {extraLink?.label}
+              {extraLink?.label}
             </button>
           </div>
 
           <div class={"selos mt-8"}>
             <div className="flex gap-4">
               {selos?.map((selo) => (
-                  <img width={32} height={32} src={selo.image} alt={selo.label} />
+                <img width={32} height={32} src={selo.image} alt={selo.label} />
               ))}
             </div>
           </div>
@@ -184,7 +191,8 @@ function Carousel({ images = [], preload, interval }: Props) {
         <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
           <Slider.PrevButton
             class="btn btn-neutral btn-outline btn-circle no-animation btn-sm"
-            disabled={false}>
+            disabled={false}
+          >
             <Icon id="chevron-right" class="rotate-180" />
           </Slider.PrevButton>
         </div>
@@ -193,13 +201,15 @@ function Carousel({ images = [], preload, interval }: Props) {
         <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
           <Slider.NextButton
             class="btn btn-neutral btn-outline btn-circle no-animation btn-sm"
-            disabled={false}>
+            disabled={false}
+          >
             <Icon id="chevron-right" />
           </Slider.NextButton>
         </div>
       )}
 
-      {/* <ul
+      {
+        /* <ul
         class={clx(
           "col-span-full row-start-4 z-10",
           "carousel justify-center gap-3",
@@ -217,7 +227,8 @@ function Carousel({ images = [], preload, interval }: Props) {
             </Slider.Dot>
           </li>
         ))}
-      </ul> */}
+      </ul> */
+      }
 
       <Slider.JS rootId={id} interval={interval && interval * 1e3} infinite />
     </div>

@@ -51,12 +51,16 @@ export function loader(props: Props) {
 }
 
 function Notice(
-  { title, description, icon }: { title?: string; description?: string, icon?: ImageWidget },
+  { title, description, icon }: {
+    title?: string;
+    description?: string;
+    icon?: ImageWidget;
+  },
 ) {
   return (
     <div class="flex flex-col gap-3 justify-start items-start sm:items-start">
       <span class="text-2xl gap-2 font-bold text-white text-start flex items-center">
-        <img src={icon} loading={'lazy'} />
+        <img src={icon} loading={"lazy"} />
         {title}
       </span>
       <span class="text-white text-sm sm:text-base font-normal text-start">
@@ -85,7 +89,7 @@ function Newsletter({
   label = "Sign up",
   placeholder = "Enter your email address",
   status,
-  icon
+  icon,
 }: SectionProps<typeof loader, typeof action>) {
   if (status === "success" || status === "failed") {
     return (

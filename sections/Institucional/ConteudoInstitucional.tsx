@@ -1,13 +1,13 @@
 import { HTMLWidget } from "apps/admin/widgets.ts";
 
 interface Props {
-    conteudoTextual: HTMLWidget;
+  conteudoTextual: HTMLWidget;
 }
 
-export default function ConteudoInstitucional({conteudoTextual}: Props) {
-    return (
-        <>
-            <div dangerouslySetInnerHTML={{__html: conteudoTextual}}/>
-        </>
-    )
+export default function ConteudoInstitucional({ conteudoTextual }: Props) {
+  return (
+    <>
+      <div dangerouslySetInnerHTML={{ __html: conteudoTextual }} />
+    </>
+  );
 }

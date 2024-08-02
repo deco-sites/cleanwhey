@@ -18,7 +18,7 @@ function Question({ question, answer }: Question) {
   return (
     <details class="max-w-[1008px] m-auto collapse collapse-arrow border border-gray-100 bg-white">
       <summary class="collapse-title after:!h-3 after:!w-3 after:text-orange-300 text-lg font-medium gap-2 !flex items-center">
-        <Icon id="info_custom" class="text-orange-300 w-4 h-4"/>
+        <Icon id="info_custom" class="text-orange-300 w-4 h-4" />
         {question}
       </summary>
       <div
@@ -43,22 +43,25 @@ export default function FAQ({
       answer:
         "Oferecemos uma política de devolução sem complicações. Se você não estiver completamente satisfeito(a) com a sua compra, pode devolver o item em até 30 dias após a entrega para obter um reembolso total ou troca. Certifique-se de que o item esteja sem uso, na embalagem original e acompanhado do recibo. Entre em contato com a nossa equipe de atendimento ao cliente e eles o(a) orientarão pelo processo de devolução.",
     },
-  ]
+  ],
 }: Props) {
   return (
     <div class={"bg-white-200"}>
-    <Section.Container >
-      {/* <Section.Header title={title} cta={cta} /> */}
-      <h3 class="text-center font-bold text-gray-300 text-sm">{title}</h3>
-      {subtitle && (
-        <h2 class="text-gray-300 text-2xl font-bold text-center" dangerouslySetInnerHTML={{__html: subtitle}} />
+      <Section.Container>
+        {/* <Section.Header title={title} cta={cta} /> */}
+        <h3 class="text-center font-bold text-gray-300 text-sm">{title}</h3>
+        {subtitle && (
+          <h2
+            class="text-gray-300 text-2xl font-bold text-center"
+            dangerouslySetInnerHTML={{ __html: subtitle }}
+          />
         )}
-      <ul class="w-full px-4 md:px-0">
-        <li class="gap-2 flex flex-col">
-          {questions.map((question) => <Question {...question} />)}
-        </li>
-      </ul>
-    </Section.Container>
+        <ul class="w-full px-4 md:px-0">
+          <li class="gap-2 flex flex-col">
+            {questions.map((question) => <Question {...question} />)}
+          </li>
+        </ul>
+      </Section.Container>
     </div>
   );
 }

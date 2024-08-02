@@ -274,9 +274,11 @@ function Result(props: SectionProps<typeof loader>) {
                   }
                 >
                   <div class="flex sm:hidden justify-between items-end">
-                    <label class="btn btn-ghost
-                    text-orange-300 rounded-lg border border-orange-300" 
-                    for={controls}>
+                    <label
+                      class="btn btn-ghost
+                    text-orange-300 rounded-lg border border-orange-300"
+                      for={controls}
+                    >
                       Filtros
                     </label>
 
@@ -296,7 +298,20 @@ function Result(props: SectionProps<typeof loader>) {
                   bg-white-300 rounded-t-lg p-4
                   ">
                     <span class="text-base font-normal text-gray-300 h-12 flex gap-2 items-center">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.667 2H1.333l5.334 6.307v4.36L9.333 14V8.307z" stroke="#A1A6B7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.667 2H1.333l5.334 6.307v4.36L9.333 14V8.307z"
+                          stroke="#A1A6B7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                       Filtros
                     </span>
 
