@@ -1,0 +1,22 @@
+{
+  "__resolveType": "site/sections/ProductPage/DescriptionFullbanner.tsx",
+  "banner": {
+    "desktop": {
+      "alt": "Fullbanner",
+      "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/9a51774a-ef39-45e0-9fe8-110f4608b3b3"
+    },
+    "mobile": {
+      "alt": "Fullbanner",
+      "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/240baaa0-18f5-4e61-b168-d1141955d981",
+      "width": 380,
+      "height": 1087
+    }
+  },
+  "title": "Faça a escolha certa você também!",
+  "subtitle": "Confira os diferenciais que te proporcionam uma qualidade superior",
+  "content": "<ul><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li></ul>",
+  "rightCard": {
+    "title": "Ingredientes glanbia",
+    "content": "<ul><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li></ul>"
+  }
+}

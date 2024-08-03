@@ -1,5 +1,6 @@
 import { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
+import { useDevice } from "deco/hooks/useDevice.ts";
 
 interface Props {
     id: string;
@@ -19,46 +20,88 @@ interface Props {
 
 export default function DescriptionBannerRight(props: Props) {
     const {id, title, description, percentageBanner, rightImage} = props;
+    const device = useDevice();
     return (
-        <section class="bg-white-300" id={id}>
-            <div class="container flex items-start justify-between">
-                <div class="content flex flex-col items-start justify-start w-1/2">
+        <section class="bg-white-300 pb-8 md:pb-16" id={id}>
+            <div class="container px-4 md:px-0 flex items-start md:flex-row flex-col justify-between">
+                <div class="max-w-[522px] content flex flex-col items-center justify-start w-full">
                     <h2 class={"text-gray-400 font-bold text-5xl mb-6"}>{title}</h2>
                     <div class="max-w-lg text-gray-300 text-base font-normal mb-16" dangerouslySetInnerHTML={{__html: description}} />
-                    <Picture>
-                        <Source
-                        src={percentageBanner.mobile}
-                        width={348}
-                        height={93}
-                        media="(max-width: 767px)"
-                        />
-                        <Source
-                        src={percentageBanner.desktop}
-                        width={522}
-                        height={139}
-                        media="(min-width: 767px)"
-                        />
-                        <img class="w-full max-w-[522px]" src={percentageBanner.desktop} 
-                        alt={percentageBanner.alt ?? title} />
-                    </Picture>
+                    {device === "desktop" && (
+                        <Picture>
+                            <Source
+                            src={percentageBanner.mobile}
+                            width={348}
+                            height={92}
+                            media="(max-width: 767px)"
+                            />
+                            <Source
+                            src={percentageBanner.desktop}
+                            width={522}
+                            height={139}
+                            media="(min-width: 767px)"
+                            />
+                            <img class="w-full max-w-[522px]" src={percentageBanner.desktop} 
+                            alt={percentageBanner.alt ?? title} />
+                        </Picture>
+                    )}
+                    {device === "mobile" && (
+                        <Picture>
+                            <Source
+                            src={rightImage.mobile}
+                            width={348}
+                            height={238}
+                            media="(max-width: 767px)"
+                            />
+                            <Source
+                            src={rightImage.desktop}
+                            width={624}
+                            height={428}
+                            media="(min-width: 767px)"
+                            />
+                            <img class="w-full" src={rightImage.desktop} 
+                            alt={rightImage.alt} />
+                        </Picture>
+                    )}
+                    
                 </div>
-                <div class={"banner w-1/2"}>
-                    <Picture>
-                        <Source
-                        src={rightImage.mobile}
-                        width={348}
-                        height={238}
-                        media="(max-width: 767px)"
-                        />
-                        <Source
-                        src={rightImage.desktop}
-                        width={624}
-                        height={428}
-                        media="(min-width: 767px)"
-                        />
-                        <img class="w-full" src={rightImage.desktop} 
-                        alt={rightImage.alt} />
-                    </Picture>
+                <div class={"banner w-full max-w-[624px]"}>
+                    {device === "desktop" && (
+                        <Picture>
+                            <Source
+                            src={rightImage.mobile}
+                            width={348}
+                            height={238}
+                            media="(max-width: 767px)"
+                            />
+                            <Source
+                            src={rightImage.desktop}
+                            width={624}
+                            height={428}
+                            media="(min-width: 767px)"
+                            />
+                            <img class="w-full" src={rightImage.desktop} 
+                            alt={rightImage.alt} />
+                        </Picture>
+                    )}
+                    {device === "mobile" && (
+                        <Picture>
+                            <Source
+                            src={percentageBanner.mobile}
+                            width={348}
+                            height={92}
+                            media="(max-width: 767px)"
+                            />
+                            <Source
+                            src={percentageBanner.desktop}
+                            width={522}
+                            height={139}
+                            media="(min-width: 767px)"
+                            />
+                            <img class="w-full max-w-[522px]" src={percentageBanner.desktop} 
+                            alt={percentageBanner.alt ?? title} />
+                        </Picture>
+                    )}
                 </div>
             </div>
         </section>

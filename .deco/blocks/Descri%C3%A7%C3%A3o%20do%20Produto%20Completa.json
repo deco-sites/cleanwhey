@@ -2,11 +2,50 @@
   "__resolveType": "site/sections/ProductPage/DescriptionContent.tsx",
   "contents": [
     {
-      "secoes": [],
-      "matcher": "/"
-    },
-    {
-      "secoes": [],
+      "secoes": [
+        {
+          "__resolveType": "website/sections/Rendering/Lazy.tsx",
+          "section": {
+            "__resolveType": "Navegador Padrão de Descrição do Produto"
+          }
+        },
+        {
+          "__resolveType": "website/sections/Rendering/Lazy.tsx",
+          "section": {
+            "__resolveType": "Primeira Seção Descrição"
+          }
+        },
+        {
+          "__resolveType": "website/sections/Rendering/Lazy.tsx",
+          "section": {
+            "__resolveType": "Segunda Seção Descrição - Beneficios"
+          }
+        },
+        {
+          "__resolveType": "website/sections/Rendering/Lazy.tsx",
+          "section": {
+            "__resolveType": "Terceira Seção Descrição - More Infos"
+          }
+        },
+        {
+          "__resolveType": "website/sections/Rendering/Lazy.tsx",
+          "section": {
+            "__resolveType": "Fullbanner da PDP "
+          }
+        },
+        {
+          "__resolveType": "website/sections/Rendering/Lazy.tsx",
+          "section": {
+            "__resolveType": "Informação Nutricional - PDP"
+          }
+        },
+        {
+          "__resolveType": "website/sections/Rendering/Lazy.tsx",
+          "section": {
+            "__resolveType": "Galeria Tripla"
+          }
+        }
+      ],
       "matcher": "/*"
     }
   ]

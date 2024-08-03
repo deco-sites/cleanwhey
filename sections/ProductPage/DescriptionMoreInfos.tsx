@@ -15,7 +15,7 @@ interface Props {
 export default function DescriptionMoreInfos(props: Props) {
     const {cards, rightImage} = props;
     return (
-        <section class="bg-white-300">
+        <section class="bg-white-300 pb-8 md:pb-16">
             <div className="container h-full flex px-4 md:px-0 md:flex-row flex-col-reverse items-center">
                 <div class="relative z-10 w-full md:w-[50%] gap-4 flex flex-row flex-wrap justify-center items-stretch">
                     {cards && cards.slice(0,3).map((card, index) => (

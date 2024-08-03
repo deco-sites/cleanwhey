@@ -1,17 +1,12 @@
 {
   "__resolveType": "site/sections/Product/ProductShelf.tsx",
   "products": {
-    "__resolveType": "shopify/loaders/ProductList.ts",
+    "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
     "props": {
       "sort": "",
-      "query": "shirts",
-      "count": 10
-    },
-    "filters": {
-      "tags": [],
-      "productTypes": [],
-      "productVendors": [],
-      "variantOptions": []
+      "query": "clean",
+      "count": 10,
+      "fuzzy": "automatic"
     }
   },
   "variant": "normal"

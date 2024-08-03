@@ -27,8 +27,8 @@ interface Props {
 export default function DescriptionBannerBenefits(props: Props) {
     const { leftImage, title, benefits } = props;
     return (
-        <section class="bg-white-300" >
-            <div className="container flex items-center justify-between">
+        <section class="bg-white-300 pb-8 md:pb-16" >
+            <div className="container px-4 md:px-0 flex flex-col md:flex-row items-center justify-between">
                 <div class={"banner w-auto"}>
                     <Picture>
                         <Source
@@ -48,11 +48,11 @@ export default function DescriptionBannerBenefits(props: Props) {
                     </Picture>
                 </div>
 
-                <div class={"w-[65%] max-w-[668px]"}>
-                    <h2 class="mb-4" dangerouslySetInnerHTML={{__html: title}} />
+                <div class={"md:w-[65%] w-full max-w-[668px]"}>
+                    <h2 class="mb-4 md:text-start text-center" dangerouslySetInnerHTML={{__html: title}} />
                     <ul class="flex flex-col gap-2">
                         {benefits && benefits.map(benefit => (
-                            <li class="py-6 px-4 bg-white border rounded-lg border-gray-100 flex items-center gap-4">
+                            <li class="py-6 px-4 bg-white border rounded-lg border-gray-100 flex flex-col text-center md:flex-row md:text-start items-center gap-4">
                                 <div className="icone">
                                     <img src={benefit.icon} loading={"lazy"}/>
                                 </div>
