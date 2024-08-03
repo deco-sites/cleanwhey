@@ -1,6 +1,6 @@
 {
   "name": "Product Page",
-  "path": "/products/:slug",
+  "path": "/:slug/p",
   "default": {
     "possiblePaths": []
   },
@@ -20,7 +20,17 @@
     {
       "__resolveType": "site/sections/Product/ProductDetails.tsx",
       "page": {
-        "__resolveType": "PDP Loader"
+        "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+        "slug": {
+          "__resolveType": "website/functions/requestToParam.ts",
+          "param": "slug"
+        }
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Descrição do Produto Completa"
       }
     },
     {
