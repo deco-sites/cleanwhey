@@ -49,6 +49,7 @@ export default function BannerInstitucional({
           <video
             poster={img.videoThumbnail}
             class="h-full w-full cursor-pointer rounded-lg"
+            controls
           >
             <source
               src={img.video}

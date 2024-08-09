@@ -143,7 +143,7 @@ function AddToCartButton(props: Props) {
         class={clx("flex-grow peer-checked:hidden", _class?.toString())}
         hx-on:click={useScript(onClick)}
       >
-        Adicionar À Sacola
+        COMPRAR AGORA
         <svg
           width="32"
           height="32"
@@ -169,10 +169,10 @@ function AddToCartButton(props: Props) {
       </button>
 
       {/* Quantity Input */}
-      <div class="flex-grow hidden peer-checked:flex">
+      <div class="flex-grow hidden">
         <QuantitySelector
           disabled
-          min={0}
+          min={1}
           max={100}
           hx-on:change={useScript(onChange)}
         />

@@ -1,6 +1,6 @@
 import type { ProductLeaf, PropertyValue } from "apps/commerce/types.ts";
 
-export type Possibilities = Record<string, Record<string, string | undefined>>;
+export type Possibilities = Record<string, Record<string, { url: string | undefined; image: string | undefined; } | undefined>>;
 
 const hash = ({ name, value }: PropertyValue) => `${name}::${value}`;
 
@@ -14,9 +14,10 @@ export const useVariantPossibilities = (
   const selectedSpecs = new Set(selected.additionalProperty?.map(hash));
 
   for (const variant of variants) {
-    const { url, additionalProperty = [], productID } = variant;
+    const { url, additionalProperty = [], productID, image = [] } = variant;
     const isSelected = productID === selected.productID;
     const specs = additionalProperty.filter(({ name }) => !omit.has(name!));
+    const firstImage = image[0].url
 
     for (let it = 0; it < specs.length; it++) {
       const name = specs[it].name!;
@@ -31,11 +32,11 @@ export const useVariantPossibilities = (
       // First row is always selectable
       const isSelectable = it === 0 ||
         specs.every((s) => s.name === name || selectedSpecs.has(hash(s)));
-
+      
       possibilities[name][value] = isSelected
-        ? url
+        ? { url, image: firstImage}
         : isSelectable
-        ? possibilities[name][value] || url
+        ? possibilities[name][value] || {url, image: firstImage}
         : possibilities[name][value];
     }
   }

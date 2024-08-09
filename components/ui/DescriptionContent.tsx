@@ -21,11 +21,11 @@ function Content(props: SectionProps<ReturnType<typeof loader>>) {
 
   return (
     <div class="grid grid-cols-1 grid-rows-1 bg-white-300">
-        {secoes.map((secao) => (
-            <div class="bg-white-300">
-              <secao.Component {...secao.props} />
-            </div>
-          ))}
+      {secoes.map((secao) => (
+        <div class="bg-white-300">
+          <secao.Component {...secao.props} />
+        </div>
+      ))}
     </div>
   );
 }
@@ -35,11 +35,35 @@ export interface Props {
 }
 
 export const loader = (props: Props, req: Request) => {
-  const { contents } = {...props };
+  const { contents } = { ...props };
 
-  const content = contents?.find(({ matcher }) =>
-    new URLPattern({ pathname: matcher }).test(req.url)
-  );
+  const reqUrl = new URL(req.url);
+  const reqPathname = reqUrl.pathname;
+  const reqSearchParams = reqUrl.searchParams;
+
+  const content = contents?.find(({ matcher }) => {
+    // Separa o matcher em pathname e queryString manualmente
+    const [matcherPathname, matcherQueryString] = matcher.split('?');
+
+    // Verifica o pathname manualmente
+    const isPathnameMatch = reqPathname === matcherPathname;
+
+    if (!isPathnameMatch) {
+      return false;
+    }
+
+    // Verifica a queryString se ela existir no matcher
+    if (matcherQueryString) {
+      const matcherSearchParams = new URLSearchParams(matcherQueryString);
+      for (const [key, value] of matcherSearchParams.entries()) {
+        if (reqSearchParams.get(key) !== value) {
+          return false;
+        }
+      }
+    }
+
+    return true;
+  });
 
   return { content };
 };

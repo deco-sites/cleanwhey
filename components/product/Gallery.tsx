@@ -5,7 +5,8 @@ import Icon from "../ui/Icon.tsx";
 import Slider from "../ui/Slider.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
-import page from "deco/blocks/page.tsx";
+// import page from "deco/blocks/page.tsx";
+import { useOffer } from "../../sdk/useOffer.ts";
 
 export interface Props {
   /** @title Integration */
@@ -30,7 +31,16 @@ export default function GallerySlider(props: Props) {
     throw new Error("Missing Product Details Page Info");
   }
 
-  const { page: { product: { name, isVariantOf, image } } } = props;
+  const { page: { product: { name, offers, isVariantOf, image } } } = props;
+
+  const {
+    price = 0,
+    listPrice,
+  } = useOffer(offers);
+
+  const percent = listPrice && price
+    ? Math.round(((listPrice - price) / listPrice) * 100)
+    : 0;
 
   // Filter images when image's alt text matches product name
   // More info at: https://community.shopify.com/c/shopify-discussions/i-can-not-add-multiple-pictures-for-my-variants/m-p/2416533
@@ -47,6 +57,17 @@ export default function GallerySlider(props: Props) {
         {/* Image Slider */}
         <div class="col-start-1 col-span-1 sm:col-start-2">
           <div class="relative h-min flex-grow">
+
+          <span
+            class={clx("absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase text-center font-bold",
+              percent < 1 && "opacity-0",
+              "w-fit",
+            )}
+          >
+            {percent}%
+            PIX
+          </span>
+
             <Slider class="carousel carousel-center gap-6 w-full">
               {props.page.product.image?.map((img, index) => (
                 <Slider.Item
@@ -76,19 +97,19 @@ export default function GallerySlider(props: Props) {
               <Icon id="chevron-right" class="rotate-180" />
             </Slider.PrevButton>
             {groupImages && groupImages.length > 0 && (
-                <Slider.NextButton
-                  class="no-animation absolute right-2 top-1/2 btn btn-circle btn-outline disabled:invisible"
-                  disabled={groupImages.length < 2}
-                  >
+              <Slider.NextButton
+                class="no-animation absolute right-2 top-1/2 btn btn-circle btn-outline disabled:invisible"
+                disabled={groupImages.length < 2}
+              >
                 <Icon id="chevron-right" />
               </Slider.NextButton>
             )}
 
-            <div class="absolute top-2 right-2 bg-base-100 rounded-full">
+            {/* <div class="absolute top-2 right-2 bg-base-100 rounded-full">
               <label class="btn btn-ghost hidden sm:inline-flex" for={zoomId}>
                 <Icon id="pan_zoom" />
               </label>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -103,13 +124,13 @@ export default function GallerySlider(props: Props) {
             style={{ maxHeight: "600px" }}
           >
             {props.page.product.image?.map((img, index) => (
-              <li class="carousel-item w-16 h-16">
+              <li class="carousel-item w-[72px] h-[72px]">
                 <Slider.Dot index={index}>
                   <Image
                     style={{ aspectRatio: "1 / 1" }}
-                    class="group-disabled:border-base-300 border rounded object-cover w-full h-full"
-                    width={64}
-                    height={64}
+                    class="group-disabled:border-orange-300 border-gray-200 border rounded-lg object-cover w-full h-full"
+                    width={72}
+                    height={72}
                     src={img.url!}
                     alt={img.alternateName}
                   />
@@ -121,14 +142,14 @@ export default function GallerySlider(props: Props) {
 
         <Slider.JS rootId={id} />
       </div>
-      {groupImages && groupImages?.length > 0 && ( 
-          <ProductImageZoom
+      {groupImages && groupImages?.length > 0 && (
+        <ProductImageZoom
           id={zoomId}
           images={groupImages}
           width={700}
           height={Math.trunc(700 * HEIGHT / WIDTH)}
-          />
-        )}
+        />
+      )}
     </>
   );
 }

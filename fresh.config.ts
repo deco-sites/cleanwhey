@@ -8,5 +8,6 @@ export default defineConfig({
     manifest,
     // @ts-expect-error somehow this typing doesnt work
     tailwind,
+    htmx: true,
   }),
 });

@@ -37,10 +37,10 @@ export default function ProductDetails({ page }: Props) {
           "sm:grid-cols-5 sm:gap-6",
         )}
       >
-        <div class="sm:col-span-3">
+        <div class="sm:col-span-3 md:pr-12">
           <ImageGallerySlider page={page} />
         </div>
-        <div class="sm:col-span-2">
+        <div class="sm:col-span-2 md:pl-12 md:border-l md:border-gray-100">
           <ProductInfo page={page} />
         </div>
       </div>

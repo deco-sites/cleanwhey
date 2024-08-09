@@ -1,0 +1,8 @@
+{
+  "name": "collections/blog/categories/c1136c060e65",
+  "__resolveType": "blog/loaders/Category.ts",
+  "category": {
+    "name": "Receitas",
+    "slug": "/receitas"
+  }
+}

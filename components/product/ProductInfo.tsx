@@ -18,6 +18,8 @@ interface Props {
 function ProductInfo({ page }: Props) {
   const id = useId();
 
+  // console.log(page?.product);
+
   if (page === null) {
     throw new Error("Missing Product Details Page Info");
   }
@@ -34,9 +36,9 @@ function ProductInfo({ page }: Props) {
     availability,
   } = useOffer(offers);
 
-  const percent = listPrice && price
-    ? Math.round(((listPrice - price) / listPrice) * 100)
-    : 0;
+  // const percent = listPrice && price
+  //   ? Math.round(((listPrice - price) / listPrice) * 100)
+  //   : 0;
 
   const breadcrumb = {
     ...breadcrumbList,
@@ -66,7 +68,7 @@ function ProductInfo({ page }: Props) {
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
       {/* Price tag */}
-      <span
+      {/* <span
         class={clx(
           "text-sm/4 font-normal text-black bg-primary bg-opacity-15 text-center rounded-badge px-2 py-1",
           percent < 1 && "opacity-0",
@@ -74,26 +76,48 @@ function ProductInfo({ page }: Props) {
         )}
       >
         {percent} % off
-      </span>
+      </span> */}
 
       {/* Product Name */}
-      <span class={clx("text-3xl font-semibold", "pt-4")}>
+      <span class={clx("text-2xl font-bold text-gray-400 flex items-start justify-between", "pt-4")}>
         {title}
+        <WishlistButton item={item} variant="icon"/>
       </span>
 
-      {/* Prices */}
-      <div class="flex gap-3 pt-1">
-        <span class="text-3xl font-semibold text-base-300">
-          {formatPrice(price, offers?.priceCurrency)}
-        </span>
-        <span class="line-through text-sm font-medium text-gray-400">
-          {formatPrice(listPrice, offers?.priceCurrency)}
+      {/* Description card */}
+      <div class="mt-4">
+        <span class="text-sm">
+          {description && (
+              <div
+                class="text-gray-300 text-sm font-normal"
+                dangerouslySetInnerHTML={{ __html: description }}
+              />
+          )}
         </span>
       </div>
 
       {/* Sku Selector */}
-      <div class="mt-4 sm:mt-8">
+      <div class="mt-4">
         <ProductSelector product={product} />
+      </div>
+
+      {/* Prices */}
+      <div class="flex flex-col pt-4">
+        <span class="line-through text-sm font-normal text-gray-300">
+          {formatPrice(listPrice, offers?.priceCurrency)}
+        </span>
+
+        <span class="text-[32px] font-bold flex gap-2 items-center text-gray-400">
+          {formatPrice(price, offers?.priceCurrency)}
+          <p class="text-sm text-gray-300">no PIX</p>
+        </span>
+      </div>
+
+      {/* Shipping Simulation */}
+      <div class="mt-4">
+        <ShippingSimulationForm
+          items={[{ id: Number(product.sku), quantity: 1, seller: seller }]}
+        />
       </div>
 
       {/* Add to Cart and Favorites button */}
@@ -105,36 +129,15 @@ function ProductInfo({ page }: Props) {
                 item={item}
                 seller={seller}
                 product={product}
-                class="btn btn-primary no-animation"
+                class="btn btn-primary hover:bg-orange-300 hover:border-orange-300 no-animation bg-orange-300 border-orange-300 rounded-lg h-14"
                 disabled={false}
               />
-              <WishlistButton item={item} />
             </>
           )
           : <OutOfStock productID={productID} />}
       </div>
 
-      {/* Shipping Simulation */}
-      <div class="mt-8">
-        <ShippingSimulationForm
-          items={[{ id: Number(product.sku), quantity: 1, seller: seller }]}
-        />
-      </div>
-
-      {/* Description card */}
-      <div class="mt-4 sm:mt-6">
-        <span class="text-sm">
-          {description && (
-            <details>
-              <summary class="cursor-pointer">Description</summary>
-              <div
-                class="ml-2 mt-2"
-                dangerouslySetInnerHTML={{ __html: description }}
-              />
-            </details>
-          )}
-        </span>
-      </div>
+      
     </div>
   );
 }

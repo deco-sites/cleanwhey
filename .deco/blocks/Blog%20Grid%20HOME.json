@@ -1,0 +1,97 @@
+{
+  "__resolveType": "site/sections/BlogGrid/BlogPosts.tsx",
+  "posts": [
+    {
+      "authors": [],
+      "categories": [
+        {
+          "name": "Receitas",
+          "slug": "/receitas"
+        }
+      ],
+      "date": "2024-08-06",
+      "slug": "/pode-cozinhar-com-whey",
+      "content": "<p>Conteudo</p>",
+      "seo": {
+        "noIndexing": false,
+        "title": ".",
+        "description": "..",
+        "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c7a37145-73ac-4294-a4df-dfbbc11db99a",
+        "canonical": "canon"
+      },
+      "title": "Pode cozinhar com Whey protein? Desnatura a proteína?",
+      "excerpt": "Excerpt",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c7a37145-73ac-4294-a4df-dfbbc11db99a"
+    },
+    {
+      "authors": [],
+      "categories": [
+        {
+          "name": "Receitas",
+          "slug": "/receitas"
+        }
+      ],
+      "content": "<p>Conteudo</p>",
+      "date": "2024-08-06",
+      "slug": "/pode-cozinhar-com-whey",
+      "seo": {
+        "noIndexing": false,
+        "title": ".",
+        "description": "..",
+        "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c7a37145-73ac-4294-a4df-dfbbc11db99a",
+        "canonical": "canon"
+      },
+      "title": "Pode cozinhar com Whey protein? Desnatura a proteína?",
+      "excerpt": "Excerpt",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c7a37145-73ac-4294-a4df-dfbbc11db99a"
+    },
+    {
+      "authors": [],
+      "categories": [
+        {
+          "name": "Receitas",
+          "slug": "/receitas"
+        }
+      ],
+      "content": "<p>Conteudo</p>",
+      "date": "2024-08-06",
+      "slug": "/pode-cozinhar-com-whey",
+      "seo": {
+        "noIndexing": false,
+        "title": ".",
+        "description": "..",
+        "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c7a37145-73ac-4294-a4df-dfbbc11db99a",
+        "canonical": "canon"
+      },
+      "title": "Pode cozinhar com Whey protein? Desnatura a proteína?",
+      "excerpt": "Excerpt",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c7a37145-73ac-4294-a4df-dfbbc11db99a"
+    },
+    {
+      "authors": [],
+      "categories": [
+        {
+          "name": "Receitas",
+          "slug": "/receitas"
+        }
+      ],
+      "content": "<p>Conteudo</p>",
+      "date": "2024-05-14",
+      "slug": "/pode-cozinhar-com-whey",
+      "seo": {
+        "noIndexing": false,
+        "title": ".",
+        "description": "..",
+        "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c7a37145-73ac-4294-a4df-dfbbc11db99a",
+        "canonical": "canon"
+      },
+      "title": "Pode cozinhar com Whey protein? Desnatura a proteína?",
+      "excerpt": "Excerpt",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c7a37145-73ac-4294-a4df-dfbbc11db99a"
+    }
+  ],
+  "cta": {
+    "text": "Ver todas as postagens >"
+  },
+  "sectionTitle": "<p>Nosso <span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">blog</span></p>"
+}

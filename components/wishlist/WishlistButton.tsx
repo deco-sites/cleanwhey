@@ -65,7 +65,7 @@ function WishlistButton({ item, variant = "full" }: Props) {
         class={clx(
           "btn no-animation",
           variant === "icon"
-            ? "btn-circle btn-ghost btn-sm"
+            ? "w-[44px] h-[44px] hover:bg-transparent btn-circle btn-ghost btn-sm border border-gray-100"
             : "btn-primary btn-outline gap-2 w-full",
         )}
       >
