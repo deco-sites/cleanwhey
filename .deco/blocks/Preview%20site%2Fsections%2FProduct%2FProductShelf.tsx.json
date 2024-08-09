@@ -4,8 +4,8 @@
     "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
     "props": {
       "sort": "",
-      "query": "clean",
       "count": 10,
+      "query": "clean",
       "fuzzy": "automatic"
     }
   },
