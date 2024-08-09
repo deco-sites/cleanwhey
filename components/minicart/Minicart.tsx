@@ -73,6 +73,13 @@ const sendBeginCheckoutEvent = () => {
   });
 };
 
+const onClick = () => {
+  const miniDrawer = document.getElementById("minicart-drawer") as HTMLInputElement | null
+  if(miniDrawer) { 
+    miniDrawer.checked = false;
+  }
+}
+
 export const action = async (
   _props: unknown,
   req: Request,
@@ -182,14 +189,14 @@ export default function Cart({
             : (
               <>
                 {/* Free Shipping Bar */}
-                <div class="px-2 py-4 w-full">
+                {/* <div class="px-2 py-4 w-full">
                   <FreeShippingProgressBar
                     total={total}
                     locale={locale}
                     currency={currency}
                     target={freeShippingTarget}
                   />
-                </div>
+                </div> */}
 
                 {/* Cart Items */}
                 <ul
@@ -197,7 +204,7 @@ export default function Cart({
                   class="mt-6 px-2 flex-grow overflow-y-auto flex flex-col gap-6 w-full"
                 >
                   {items.map((item, index) => (
-                    <li>
+                    <li class="border-b border-gray-100 pb-4">
                       <CartItem
                         item={item}
                         index={index}
@@ -209,7 +216,7 @@ export default function Cart({
                 </ul>
 
                 {/* Cart Footer */}
-                <footer class="w-full">
+                <footer class="w-full border-t border-gray-200">
                   {/* Subtotal */}
                   <div class="border-t border-base-200 py-2 flex flex-col">
                     {discounts > 0 && (
@@ -220,41 +227,44 @@ export default function Cart({
                         </span>
                       </div>
                     )}
-                    <div class="w-full flex justify-between px-4 text-sm">
+                    {/* <div class="w-full flex justify-between px-4 text-sm">
                       <span>Subtotal</span>
                       <output form={MINICART_FORM_ID}>
                         {formatPrice(subtotal, currency, locale)}
                       </output>
-                    </div>
-                    {enableCoupon && <Coupon coupon={coupon} />}
+                    </div> */}
+                    {/* {enableCoupon && <Coupon coupon={coupon} />} */}
                   </div>
 
                   {/* Total */}
-                  <div class="border-t border-base-200 pt-4 flex flex-col justify-end items-end gap-2 mx-4">
+                  <div class="border-b border-gray-100 pt-4 pb-4 flex flex-col justify-end items-end gap-2 mx-4">
                     <div class="flex justify-between items-center w-full">
-                      <span>Total</span>
+                      <span class="text-base text-gray-200 font-normal">Total</span>
                       <output
                         form={MINICART_FORM_ID}
-                        class="font-medium text-xl"
+                        class="text-base text-gray-400 font-bold"
                       >
                         {formatPrice(total, currency, locale)}
                       </output>
                     </div>
-                    <span class="text-sm text-base-300">
+                    {/* <span class="text-sm text-base-300">
                       Taxas e fretes serão calculados no checkout
-                    </span>
+                    </span> */}
                   </div>
 
                   <div class="p-4">
                     <a
-                      class="btn btn-primary w-full no-animation"
+                      class="btn w-full hover:bg-orange-300 hover:border-bg-300 no-animation bg-orange-300 rounded-lg"
                       href={checkoutHref}
                       hx-on:click={useScript(sendBeginCheckoutEvent)}
                     >
-                      <span class="[.htmx-request_&]:hidden">
-                        Begin Checkout
+                      <span class="[.htmx-request_&]:hidden text-white text-base font-bold">
+                        Ir para o pagamento
                       </span>
                       <span class="[.htmx-request_&]:inline hidden loading loading-spinner" />
+                    </a>
+                    <a class="text-center pt-5 block text-orange-300 font-bold text-base" href="javascript:void(0)" hx-on:click={useScript(onClick)}>
+                      Continuar comprando
                     </a>
                   </div>
                 </footer>

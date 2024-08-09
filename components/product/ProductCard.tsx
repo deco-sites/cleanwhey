@@ -24,6 +24,7 @@ interface Props {
   index?: number;
 
   class?: string;
+  isFeatured?: boolean;
 }
 
 const WIDTH = 287;
@@ -35,6 +36,7 @@ function ProductCard({
   preload,
   itemListName,
   index,
+  isFeatured,
   class: _class,
 }: Props) {
   const id = useId();
@@ -71,13 +73,12 @@ function ProductCard({
   return (
     <div
       {...event}
-      class={clx("card card-compact group text-sm", _class)}
+      class={clx("card card-compact group bg-white hover:bg-[#F7EDDF] text-sm", _class)}
     >
       <figure
         class={clx(
           "relative bg-base-200",
           "rounded border border-transparent",
-          "group-hover:border-primary",
         )}
         style={{ aspectRatio: ASPECT_RATIO }}
       >
@@ -155,26 +156,27 @@ function ProductCard({
       </figure>
 
       <a href={relativeUrl} class="pt-5 text-center">
-        <span class="font-bold text-gray-400 text-lg text-center">
+        <span class={`font-bold text-gray-400 text-lg text-center`}>
           {title}
         </span>
-
-        <div class="flex gap-2 pt-2">
-          {listPrice && (
-            <span class="line-through font-normal text-gray-400">
+        {!isFeatured && (
+          <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
+            <span class="line-through text-sm font-normal text-gray-300">
               {formatPrice(listPrice, offers?.priceCurrency)}
             </span>
-          )}
-          <span class="font-medium text-base-300">
-            {formatPrice(price, offers?.priceCurrency)}
-          </span>
-        </div>
+
+            <span class="text-xl font-bold flex gap-2 items-center text-gray-400">
+              {formatPrice(price, offers?.priceCurrency)}
+              <p class="text-sm text-gray-300">no PIX</p>
+            </span>
+          </div>
+        )}
       </a>
 
       {/* SKU Selector */}
       {variants.length > 1 && (
         <ul class="mb-4 flex items-center justify-start gap-2 pt-4 pb-1 pl-1 overflow-x-auto">
-          {variants.map(([value, link]) => [value, relative(link)] as const)
+          {variants.map(([value, link]) => [value, relative(link?.url)] as const)
             .map(([value, link]) => (
               <li>
                 <a href={link} class="cursor-pointer">
@@ -193,19 +195,31 @@ function ProductCard({
 
       <div class="flex-grow" />
 
-      <div>
+      <div class={`${isFeatured ? "mt-5 flex items-center justify-between gap-4" : ""}`}>
+        {isFeatured && (
+          <div class="flex flex-col items-start justify-center gap-1">
+            <span class="line-through text-xs font-normal text-gray-300">
+              {formatPrice(listPrice, offers?.priceCurrency)}
+            </span>
+
+            <span class="text-lg font-bold flex gap-2 items-center text-gray-400">
+              {formatPrice(price, offers?.priceCurrency)}
+            </span>
+          </div>
+        )}
         {inStock
           ? (
             <AddToCartButton
               product={product}
               seller={seller}
               item={item}
-              class={clx(
+              ctaText="ADICIONAR À SACOLA"
+              class={`${isFeatured ? "px-1.5" : ""} ${clx(
                 "btn uppercase",
                 "btn-outline rounded-lg border-none px-0 no-animation w-full",
                 "bg-orange-300 text-white h-14 font-semibold",
                 "hover:bg-orange-300",
-              )}
+              )}`}
             />
           )
           : (

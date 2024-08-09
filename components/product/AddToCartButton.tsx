@@ -10,6 +10,7 @@ export interface Props extends JSX.HTMLAttributes<HTMLButtonElement> {
   product: Product;
   seller: string;
   item: AnalyticsItem;
+  ctaText?: string;
 }
 
 const onClick = () => {
@@ -19,6 +20,7 @@ const onClick = () => {
   const { item, platformProps } = JSON.parse(
     decodeURIComponent(container.getAttribute("data-cart-item")!),
   );
+  console.log("Item a ser adicionado:", item)
   window.STOREFRONT.CART.addToCart(item, platformProps);
 };
 
@@ -140,10 +142,10 @@ function AddToCartButton(props: Props) {
 
       <button
         disabled
-        class={clx("flex-grow peer-checked:hidden", _class?.toString())}
+        class={clx("flex-grow", _class?.toString())}
         hx-on:click={useScript(onClick)}
       >
-        COMPRAR AGORA
+        {props.ctaText ?? "COMPRAR AGORA"}
         <svg
           width="32"
           height="32"

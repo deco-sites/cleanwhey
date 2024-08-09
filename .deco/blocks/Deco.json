@@ -40,29 +40,6 @@
           }
         ],
         "family": "Lato"
-      },
-      {
-        "variations": [
-          {
-            "weight": "400"
-          },
-          {
-            "weight": "500"
-          },
-          {
-            "weight": "600"
-          },
-          {
-            "weight": "700"
-          },
-          {
-            "weight": "800"
-          },
-          {
-            "weight": "900"
-          }
-        ],
-        "family": "Maven Pro"
       }
     ]
   },
@@ -74,7 +51,7 @@
     "--tab-border": "1px",
     "--tab-radius": "0.5rem"
   },
-  "mode": "dark",
+  "mode": "light",
   "mainColors": {
     "primary": "#27AE6B",
     "base-100": "#ffffff",

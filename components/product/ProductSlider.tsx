@@ -33,7 +33,7 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
 
         <div
           class={`${
-            isFeatured ? "max-w-[80%]" : "sm:max-w-[95%] max-w-[80%]"
+            isFeatured ? "max-w-[90%]" : "sm:max-w-[95%] max-w-[80%]"
           } w-full px-0 sm:px-4`}
         >
           <Slider class="carousel sm:carousel-end carousel-center w-full gap-4 py-4">
@@ -52,6 +52,7 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
                 <ProductCard
                   index={index}
                   product={product}
+                  isFeatured={isFeatured}
                   itemListName={itemListName}
                   class={`mx-4 sm:mx-0 p-4 w-full 
                   ${isFeatured ? "bg-white" : ""}

@@ -82,15 +82,20 @@ function Aside(
   return (
     <div
       data-aside
-      class="bg-base-100 grid grid-rows-[auto_1fr] h-full divide-y"
+      class="bg-base-100 grid grid-rows-[auto_1fr] h-full"
       style={{ maxWidth: "100vw" }}
     >
-      <div class="flex justify-between items-center">
+      <div class="flex justify-between items-center border-b border-gray-200">
         <h1 class="px-4 py-3">
-          <span class="font-medium text-2xl">{title}</span>
+          <span class="font-medium text-xl flex items-center gap-2 text-orange-300">
+            {drawer == "minicart-drawer" && (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18" stroke="#E06741" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 10a4 4 0 1 1-8 0" stroke="#E06741" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            )}
+            {title}
+          </span>
         </h1>
         <label for={drawer} aria-label="X" class="btn btn-ghost">
-          <Icon id="close" />
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6 6 18M6 6l12 12" stroke="#464B59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </label>
       </div>
       {children}
