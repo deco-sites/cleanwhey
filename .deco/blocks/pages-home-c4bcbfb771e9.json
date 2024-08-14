@@ -91,9 +91,10 @@
       "products": {
         "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
         "props": {
-          "sort": "",
           "count": 12,
-          "collection": "137"
+          "sort": "orders:desc",
+          "fuzzy": "automatic",
+          "query": "clean"
         }
       },
       "isFeatured": true,
@@ -120,9 +121,9 @@
       "products": {
         "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
         "props": {
-          "collection": "137",
           "sort": "",
-          "count": 12
+          "count": 12,
+          "collection": "137"
         }
       },
       "isFeatured": false

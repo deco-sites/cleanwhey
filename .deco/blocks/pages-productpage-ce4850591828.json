@@ -24,7 +24,8 @@
         "slug": {
           "__resolveType": "website/functions/requestToParam.ts",
           "param": "slug"
-        }
+        },
+        "similars": true
       }
     },
     {
@@ -137,17 +138,12 @@
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "title": "You may also like",
       "products": {
-        "__resolveType": "shopify/loaders/ProductList.ts",
-        "props": {
-          "sort": "",
-          "query": "a",
-          "count": 9
-        },
-        "filters": {
-          "tags": [],
-          "productTypes": [],
-          "productVendors": [],
-          "variantOptions": []
+        "__resolveType": "vtex/loaders/legacy/relatedProductsLoader.ts",
+        "crossSelling": "similars",
+        "count": 8,
+        "slug": {
+          "__resolveType": "website/functions/requestToParam.ts",
+          "param": "slug"
         }
       }
     },
