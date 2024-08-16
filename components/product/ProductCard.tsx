@@ -50,7 +50,7 @@ function ProductCard({
   const inStock = availability === "https://schema.org/InStock";
   const possibilities = useVariantPossibilities(hasVariant, product);
   const firstSkuVariations = Object.entries(possibilities)[0];
-  const variants = Object.entries(firstSkuVariations[1] ?? {});
+  // const variants = Object.entries(firstSkuVariations[1] ?? {});
   const relativeUrl = relative(url);
   const percent = listPrice && price
     ? Math.round(((listPrice - price) / listPrice) * 100)
@@ -174,7 +174,7 @@ function ProductCard({
       </a>
 
       {/* SKU Selector */}
-      {variants.length > 1 && (
+      {/* {variants.length > 1 && (
         <ul class="mb-4 flex items-center justify-start gap-2 pt-4 pb-1 pl-1 overflow-x-auto">
           {variants.map(([value, link]) => [value, relative(link?.url)] as const)
             .map(([value, link]) => (
@@ -191,7 +191,7 @@ function ProductCard({
               </li>
             ))}
         </ul>
-      )}
+      )} */}
 
       <div class="flex-grow" />
 
