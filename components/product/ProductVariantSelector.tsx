@@ -71,68 +71,119 @@ function VariantSelector({ product }: Props) {
   const { url, isVariantOf } = product;
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const possibilities = useVariantPossibilities(hasVariant, product);
+  const tastes = product.isSimilarTo;
   const relativeUrl = relative(url);
   const id = useId();
 
-  console.log(possibilities)
+  console.log(product.isSimilarTo)
 
   return (
-    <ul
-      class="flex flex-col gap-4"
-      hx-target="body"
-      hx-swap="outerHTML"
-      hx-replace-url="true"
-      hx-sync="this:replace"
-    >
-      {Object.keys(possibilities).map((name) => (
-        <li class="flex flex-col gap-2">
-          <span class="text-sm text-gray-300 font-normal mb-2">{name}</span>
-          <ul class="flex flex-row gap-4">
-            {Object.entries(possibilities[name])
-              .filter(([value]) => value)
-              .map(([value, link]) => {
-                const relativeLink = relative(link?.url);
-                const checked = relativeLink === relativeUrl;
+    <>
+      <ul
+        class="flex flex-col gap-4"
+        hx-target="body"
+        hx-swap="outerHTML"
+        hx-replace-url="true"
+        hx-sync="this:replace"
+      >
+        {tastes?.map((item) => {
+          const relativeLink = relative(item.url);
+        return (
+          
+          <li class="flex flex-col gap-2">
+                      <label
+                        class="cursor-pointer grid grid-cols-1 grid-rows-1 place-items-center"
+                        hx-get={relativeLink}
+                      >
+                        {/* Checkbox for radio button on the frontend */}
+                        <input
+                          class="hidden peer"
+                          type="radio"
+                          name={`${id}-${item.name}`}
+                          checked={false}
+                        />
+                        <div
+                          class={clx(
+                            "col-start-1 row-start-1 col-span-1 row-span-1",
+                            "transition-opacity",
+                          )}
+                        >
+                          {item.image && item.image?.length > 0 && (
+                            <Ring value={item.isVariantOf?.name || 'Sabor'} image={item?.image[0]?.url} checked={false} />
+                          )}
+                        </div>
+                        {/* Loading spinner */}
+                        <div
+                          class={clx(
+                            "col-start-1 row-start-1 col-span-1 row-span-1",
+                            "opacity-0 [.htmx-request_&]:opacity-100 transition-opacity",
+                            "flex justify-center items-center",
+                          )}
+                        >
+                          <span class="loading loading-sm loading-spinner" />
+                        </div>
+                      </label>
+                    </li>
+          )}
+        )}  
+      </ul>
+      <ul
+        class="flex flex-col gap-4"
+        hx-target="body"
+        hx-swap="outerHTML"
+        hx-replace-url="true"
+        hx-sync="this:replace"
+      >
+        {Object.keys(possibilities).map((name) => (
+          <li class="flex flex-col gap-2">
+            <span class="text-sm text-gray-300 font-normal mb-2">{name}</span>
+            <ul class="flex flex-row gap-4">
+              {Object.entries(possibilities[name])
+                .filter(([value]) => value)
+                .map(([value, link]) => {
+                  const relativeLink = relative(link?.url);
+                  const checked = relativeLink === relativeUrl;
 
-                return (
-                  <li>
-                    <label
-                      class="cursor-pointer grid grid-cols-1 grid-rows-1 place-items-center"
-                      hx-get={relativeLink}
-                    >
-                      {/* Checkbox for radio button on the frontend */}
-                      <input
-                        class="hidden peer"
-                        type="radio"
-                        name={`${id}-${name}`}
-                        checked={checked}
-                      />
-                      <div
-                        class={clx(
-                          "col-start-1 row-start-1 col-span-1 row-span-1",
-                          "transition-opacity",
-                        )}
+                  return (
+                    <li>
+                      <label
+                        class="cursor-pointer grid grid-cols-1 grid-rows-1 place-items-center"
+                        hx-get={relativeLink}
                       >
-                        <Ring value={value} image={link?.image} checked={checked} />
-                      </div>
-                      {/* Loading spinner */}
-                      <div
-                        class={clx(
-                          "col-start-1 row-start-1 col-span-1 row-span-1",
-                          "opacity-0 [.htmx-request_&]:opacity-100 transition-opacity",
-                          "flex justify-center items-center",
-                        )}
-                      >
-                        <span class="loading loading-sm loading-spinner" />
-                      </div>
-                    </label>
-                  </li>
-                );
-              })}
-          </ul>
-        </li>
-      ))}
-    </ul>
+                        {/* Checkbox for radio button on the frontend */}
+                        <input
+                          class="hidden peer"
+                          type="radio"
+                          name={`${id}-${name}`}
+                          checked={checked}
+                        />
+                        <div
+                          class={clx(
+                            "col-start-1 row-start-1 col-span-1 row-span-1",
+                            "transition-opacity",
+                          )}
+                        >
+                          <Ring value={value} image={link?.image} checked={checked} />
+                        </div>
+                        {/* Loading spinner */}
+                        <div
+                          class={clx(
+                            "col-start-1 row-start-1 col-span-1 row-span-1",
+                            "opacity-0 [.htmx-request_&]:opacity-100 transition-opacity",
+                            "flex justify-center items-center",
+                          )}
+                        >
+                          <span class="loading loading-sm loading-spinner" />
+                        </div>
+                      </label>
+                    </li>
+                  );
+                })}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 
