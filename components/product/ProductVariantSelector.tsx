@@ -52,15 +52,17 @@ export const Ring = (
   // const styles = clx(useStyles(value, checked), _class);
 
   return (
-    <div class={`uppercase flex flex-col gap-1 items-center text-xs font-bold text-center
-    ${checked ? "text-orange-300" : "text-gray-300"}`}>
-      <span style={{ backgroundColor: color }} 
-      class={`btn hover:border-orange-300 btn-ghost hover:bg-transparent bg-transparent rounded-full h-12 w-12 p-0 overflow-hidden
+    <div
+      class={`uppercase flex flex-col gap-1 items-center text-xs font-bold text-center
+    ${checked ? "text-orange-300" : "text-gray-300"}`}
+    >
+      <span
+        style={{ backgroundColor: color }}
+        class={`btn hover:border-orange-300 btn-ghost hover:bg-transparent bg-transparent rounded-full h-12 w-12 p-0 overflow-hidden
       ${checked ? "ring-primary border-orange-300" : "border-gray-200"}
-      `}>
-        {image && (
-          <img width={40} height={40} loading={"lazy"} src={image} />
-        )}
+      `}
+      >
+        {image && <img width={40} height={40} loading={"lazy"} src={image} />}
       </span>
       {color ? null : value}
     </div>
@@ -75,7 +77,7 @@ function VariantSelector({ product }: Props) {
   const relativeUrl = relative(url);
   const id = useId();
 
-  console.log(product.isSimilarTo)
+  console.log(product.isSimilarTo);
 
   return (
     <>
@@ -88,44 +90,47 @@ function VariantSelector({ product }: Props) {
       >
         {tastes?.map((item) => {
           const relativeLink = relative(item.url);
-        return (
-          
-          <li class="flex flex-col gap-2">
-                      <label
-                        class="cursor-pointer grid grid-cols-1 grid-rows-1 place-items-center"
-                        hx-get={relativeLink}
-                      >
-                        {/* Checkbox for radio button on the frontend */}
-                        <input
-                          class="hidden peer"
-                          type="radio"
-                          name={`${id}-${item.name}`}
-                          checked={false}
-                        />
-                        <div
-                          class={clx(
-                            "col-start-1 row-start-1 col-span-1 row-span-1",
-                            "transition-opacity",
-                          )}
-                        >
-                          {item.image && item.image?.length > 0 && (
-                            <Ring value={item.isVariantOf?.name || 'Sabor'} image={item?.image[0]?.url} checked={false} />
-                          )}
-                        </div>
-                        {/* Loading spinner */}
-                        <div
-                          class={clx(
-                            "col-start-1 row-start-1 col-span-1 row-span-1",
-                            "opacity-0 [.htmx-request_&]:opacity-100 transition-opacity",
-                            "flex justify-center items-center",
-                          )}
-                        >
-                          <span class="loading loading-sm loading-spinner" />
-                        </div>
-                      </label>
-                    </li>
-          )}
-        )}  
+          return (
+            <li class="flex flex-col gap-2">
+              <label
+                class="cursor-pointer grid grid-cols-1 grid-rows-1 place-items-center"
+                hx-get={relativeLink}
+              >
+                {/* Checkbox for radio button on the frontend */}
+                <input
+                  class="hidden peer"
+                  type="radio"
+                  name={`${id}-${item.name}`}
+                  checked={false}
+                />
+                <div
+                  class={clx(
+                    "col-start-1 row-start-1 col-span-1 row-span-1",
+                    "transition-opacity",
+                  )}
+                >
+                  {item.image && item.image?.length > 0 && (
+                    <Ring
+                      value={item.isVariantOf?.name || "Sabor"}
+                      image={item?.image[0]?.url}
+                      checked={false}
+                    />
+                  )}
+                </div>
+                {/* Loading spinner */}
+                <div
+                  class={clx(
+                    "col-start-1 row-start-1 col-span-1 row-span-1",
+                    "opacity-0 [.htmx-request_&]:opacity-100 transition-opacity",
+                    "flex justify-center items-center",
+                  )}
+                >
+                  <span class="loading loading-sm loading-spinner" />
+                </div>
+              </label>
+            </li>
+          );
+        })}
       </ul>
       <ul
         class="flex flex-col gap-4"
@@ -163,7 +168,11 @@ function VariantSelector({ product }: Props) {
                             "transition-opacity",
                           )}
                         >
-                          <Ring value={value} image={link?.image} checked={checked} />
+                          <Ring
+                            value={value}
+                            image={link?.image}
+                            checked={checked}
+                          />
                         </div>
                         {/* Loading spinner */}
                         <div

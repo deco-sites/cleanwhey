@@ -73,7 +73,10 @@ function ProductCard({
   return (
     <div
       {...event}
-      class={clx("card card-compact group bg-white hover:bg-[#F7EDDF] text-sm", _class)}
+      class={clx(
+        "card card-compact group bg-white hover:bg-[#F7EDDF] text-sm",
+        _class,
+      )}
     >
       <figure
         class={clx(
@@ -174,7 +177,8 @@ function ProductCard({
       </a>
 
       {/* SKU Selector */}
-      {/* {variants.length > 1 && (
+      {
+        /* {variants.length > 1 && (
         <ul class="mb-4 flex items-center justify-start gap-2 pt-4 pb-1 pl-1 overflow-x-auto">
           {variants.map(([value, link]) => [value, relative(link?.url)] as const)
             .map(([value, link]) => (
@@ -191,11 +195,16 @@ function ProductCard({
               </li>
             ))}
         </ul>
-      )} */}
+      )} */
+      }
 
       <div class="flex-grow" />
 
-      <div class={`${isFeatured ? "mt-5 flex items-center justify-between gap-4" : ""}`}>
+      <div
+        class={`${
+          isFeatured ? "mt-5 flex items-center justify-between gap-4" : ""
+        }`}
+      >
         {isFeatured && (
           <div class="flex flex-col items-start justify-center gap-1">
             <span class="line-through text-xs font-normal text-gray-300">
@@ -214,12 +223,14 @@ function ProductCard({
               seller={seller}
               item={item}
               ctaText="ADICIONAR À SACOLA"
-              class={`${isFeatured ? "px-1.5" : ""} ${clx(
-                "btn uppercase",
-                "btn-outline rounded-lg border-none px-0 no-animation w-full",
-                "bg-orange-300 text-white h-14 font-semibold",
-                "hover:bg-orange-300",
-              )}`}
+              class={`${isFeatured ? "px-1.5" : ""} ${
+                clx(
+                  "btn uppercase",
+                  "btn-outline rounded-lg border-none px-0 no-animation w-full",
+                  "bg-orange-300 text-white h-14 font-semibold",
+                  "hover:bg-orange-300",
+                )
+              }`}
             />
           )
           : (

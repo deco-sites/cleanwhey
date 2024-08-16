@@ -43,7 +43,7 @@ export const loader = (props: Props, req: Request) => {
 
   const content = contents?.find(({ matcher }) => {
     // Separa o matcher em pathname e queryString manualmente
-    const [matcherPathname, matcherQueryString] = matcher.split('?');
+    const [matcherPathname, matcherQueryString] = matcher.split("?");
 
     // Verifica o pathname manualmente
     const isPathnameMatch = reqPathname === matcherPathname;

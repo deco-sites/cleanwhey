@@ -74,11 +74,13 @@ const sendBeginCheckoutEvent = () => {
 };
 
 const onClick = () => {
-  const miniDrawer = document.getElementById("minicart-drawer") as HTMLInputElement | null
-  if(miniDrawer) { 
+  const miniDrawer = document.getElementById("minicart-drawer") as
+    | HTMLInputElement
+    | null;
+  if (miniDrawer) {
     miniDrawer.checked = false;
   }
-}
+};
 
 export const action = async (
   _props: unknown,
@@ -189,14 +191,16 @@ export default function Cart({
             : (
               <>
                 {/* Free Shipping Bar */}
-                {/* <div class="px-2 py-4 w-full">
+                {
+                  /* <div class="px-2 py-4 w-full">
                   <FreeShippingProgressBar
                     total={total}
                     locale={locale}
                     currency={currency}
                     target={freeShippingTarget}
                   />
-                </div> */}
+                </div> */
+                }
 
                 {/* Cart Items */}
                 <ul
@@ -227,19 +231,23 @@ export default function Cart({
                         </span>
                       </div>
                     )}
-                    {/* <div class="w-full flex justify-between px-4 text-sm">
+                    {
+                      /* <div class="w-full flex justify-between px-4 text-sm">
                       <span>Subtotal</span>
                       <output form={MINICART_FORM_ID}>
                         {formatPrice(subtotal, currency, locale)}
                       </output>
-                    </div> */}
+                    </div> */
+                    }
                     {/* {enableCoupon && <Coupon coupon={coupon} />} */}
                   </div>
 
                   {/* Total */}
                   <div class="border-b border-gray-100 pt-4 pb-4 flex flex-col justify-end items-end gap-2 mx-4">
                     <div class="flex justify-between items-center w-full">
-                      <span class="text-base text-gray-200 font-normal">Total</span>
+                      <span class="text-base text-gray-200 font-normal">
+                        Total
+                      </span>
                       <output
                         form={MINICART_FORM_ID}
                         class="text-base text-gray-400 font-bold"
@@ -247,9 +255,11 @@ export default function Cart({
                         {formatPrice(total, currency, locale)}
                       </output>
                     </div>
-                    {/* <span class="text-sm text-base-300">
+                    {
+                      /* <span class="text-sm text-base-300">
                       Taxas e fretes serão calculados no checkout
-                    </span> */}
+                    </span> */
+                    }
                   </div>
 
                   <div class="p-4">
@@ -263,7 +273,11 @@ export default function Cart({
                       </span>
                       <span class="[.htmx-request_&]:inline hidden loading loading-spinner" />
                     </a>
-                    <a class="text-center pt-5 block text-orange-300 font-bold text-base" href="javascript:void(0)" hx-on:click={useScript(onClick)}>
+                    <a
+                      class="text-center pt-5 block text-orange-300 font-bold text-base"
+                      href="javascript:void(0)"
+                      hx-on:click={useScript(onClick)}
+                    >
                       Continuar comprando
                     </a>
                   </div>

@@ -47,7 +47,7 @@ function CartItem({ item, index, locale, currency }: Props) {
     >
       <Image
         alt={name}
-        src={image.replace('-55-55', '')}
+        src={image.replace("-55-55", "")}
         style={{ aspectRatio: "80 / 80" }}
         width={80}
         height={80}
@@ -66,13 +66,26 @@ function CartItem({ item, index, locale, currency }: Props) {
             )}
             hx-on:click={useScript(removeItemHandler)}
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" stroke="#CF2424" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"
+                stroke="#CF2424"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </button>
         </div>
 
         {/* Price Block */}
         <div class="flex items-end justify-between">
-
           <div class="flex flex-col items-start gap-1">
             <span class="line-through text-sm text-gray-200 font-normal">
               {formatPrice(listPrice, currency, locale)}
@@ -89,7 +102,7 @@ function CartItem({ item, index, locale, currency }: Props) {
               max={QUANTITY_MAX_VALUE}
               value={quantity}
               name={`item::${index}`}
-              />
+            />
           </div>
         </div>
       </div>

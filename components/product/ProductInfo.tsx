@@ -68,7 +68,8 @@ function ProductInfo({ page }: Props) {
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
       {/* Price tag */}
-      {/* <span
+      {
+        /* <span
         class={clx(
           "text-sm/4 font-normal text-black bg-primary bg-opacity-15 text-center rounded-badge px-2 py-1",
           percent < 1 && "opacity-0",
@@ -76,22 +77,28 @@ function ProductInfo({ page }: Props) {
         )}
       >
         {percent} % off
-      </span> */}
+      </span> */
+      }
 
       {/* Product Name */}
-      <span class={clx("text-2xl font-bold text-gray-400 flex items-start justify-between", "pt-4")}>
+      <span
+        class={clx(
+          "text-2xl font-bold text-gray-400 flex items-start justify-between",
+          "pt-4",
+        )}
+      >
         {title}
-        <WishlistButton item={item} variant="icon"/>
+        <WishlistButton item={item} variant="icon" />
       </span>
 
       {/* Description card */}
       <div class="mt-4">
         <span class="text-sm">
           {description && (
-              <div
-                class="text-gray-300 text-sm font-normal"
-                dangerouslySetInnerHTML={{ __html: description }}
-              />
+            <div
+              class="text-gray-300 text-sm font-normal"
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
           )}
         </span>
       </div>
@@ -136,8 +143,6 @@ function ProductInfo({ page }: Props) {
           )
           : <OutOfStock productID={productID} />}
       </div>
-
-      
     </div>
   );
 }

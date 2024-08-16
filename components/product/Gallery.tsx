@@ -57,16 +57,15 @@ export default function GallerySlider(props: Props) {
         {/* Image Slider */}
         <div class="col-start-1 col-span-1 sm:col-start-2">
           <div class="relative h-min flex-grow">
-
-          <span
-            class={clx("absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase text-center font-bold",
-              percent < 1 && "opacity-0",
-              "w-fit",
-            )}
-          >
-            {percent}%
-            PIX
-          </span>
+            <span
+              class={clx(
+                "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase text-center font-bold",
+                percent < 1 && "opacity-0",
+                "w-fit",
+              )}
+            >
+              {percent}% PIX
+            </span>
 
             <Slider class="carousel carousel-center gap-6 w-full">
               {props.page.product.image?.map((img, index) => (
@@ -105,11 +104,13 @@ export default function GallerySlider(props: Props) {
               </Slider.NextButton>
             )}
 
-            {/* <div class="absolute top-2 right-2 bg-base-100 rounded-full">
+            {
+              /* <div class="absolute top-2 right-2 bg-base-100 rounded-full">
               <label class="btn btn-ghost hidden sm:inline-flex" for={zoomId}>
                 <Icon id="pan_zoom" />
               </label>
-            </div> */}
+            </div> */
+            }
           </div>
         </div>
 
