@@ -34,12 +34,6 @@
   ],
   "routes": [
     {
-      "__resolveType": "shopify/loaders/proxy.ts",
-      "extraPathsToProxy": [],
-      "includeSiteMap": [],
-      "excludePathsFromDecoSiteMap": []
-    },
-    {
       "__resolveType": "website/loaders/pages.ts"
     },
     {

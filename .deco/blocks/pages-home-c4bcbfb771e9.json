@@ -91,8 +91,8 @@
       "products": {
         "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
         "props": {
-          "count": 12,
           "sort": "orders:desc",
+          "count": 12,
           "fuzzy": "automatic",
           "query": "clean"
         }
