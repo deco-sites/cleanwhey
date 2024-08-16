@@ -1,11 +1,11 @@
-import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
+import type { ImageWidget } from "apps/admin/widgets.ts";
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
 import { useSection } from "deco/hooks/useSection.ts";
 import Alert, { alert } from "../../components/header/Alert.tsx";
 import Bag from "../../components/header/Bag.tsx";
-import Menu from "../../components/header/Menu.tsx";
+
 import NavItem from "../../components/header/NavItem.tsx";
 import SignIn from "../../components/header/SignIn.tsx";
 import Searchbar, {
@@ -13,16 +13,17 @@ import Searchbar, {
 } from "../../components/search/Searchbar/Form.tsx";
 import Drawer from "../../components/ui/Drawer.tsx";
 import Icon from "../../components/ui/Icon.tsx";
-import Modal from "../../components/ui/Modal.tsx";
+// import Modal from "../../components/ui/Modal.tsx";
 import {
   HEADER_HEIGHT_DESKTOP,
   HEADER_HEIGHT_MOBILE,
   NAVBAR_HEIGHT_MOBILE,
-  SEARCHBAR_DRAWER_ID,
-  SEARCHBAR_POPUP_ID,
+  // SEARCHBAR_DRAWER_ID,
+  // SEARCHBAR_POPUP_ID,
   SIDEMENU_CONTAINER_ID,
   SIDEMENU_DRAWER_ID,
 } from "../../constants.ts";
+import Menu from "../../islands/Menu.tsx";
 
 export interface Logo {
   src: ImageWidget;
@@ -101,7 +102,7 @@ const Desktop = (
         <div class="flex gap-4">
           <a
             class="text-white hover:!bg-transparent btn btn-sm font-normal btn-ghost no-animation gap-2 flex items-center"
-            href="/wishlist"
+            href="/duvidas-frequentes"
           >
             <Icon id="duvidas" class="h-8 w-8" />
             <p>

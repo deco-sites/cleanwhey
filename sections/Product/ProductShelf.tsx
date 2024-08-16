@@ -40,7 +40,7 @@ export default function ProductShelf(
       {...viewItemListEvent}
       class={`${
         isFeatured ? "bg-blue-300 rounded-lg mt-12 max-w-[95%] !container" : ""
-      } [view-transition-name:loading-fallback-2]`}
+      }`}
     >
       <Section.Header title={title} isFeatured={isFeatured} icon={icon} />
 
@@ -57,7 +57,7 @@ export function LoadingFallback() {
   return (
     <div
       style={{ height: "716px" }}
-      class="flex justify-center items-center [view-transition-name:loading-fallback-2]"
+      class="flex justify-center items-center"
     >
       <span class="loading loading-spinner" />
     </div>
