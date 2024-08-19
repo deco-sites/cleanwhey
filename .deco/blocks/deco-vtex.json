@@ -1,10 +1,1 @@
-{
-  "__resolveType": "site/apps/deco/vtex.ts",
-  "defaultSegment": {
-    "channelPrivacy": "public"
-  },
-  "platform": "vtex",
-  "account": "cleanweb",
-  "publicUrl": "www.cleanweb.myvtex.com",
-  "salesChannel": "1"
-}
+{"__resolveType":"site/apps/deco/vtex.ts","salesChannel":"1","defaultSegment":{"channelPrivacy":"public"},"platform":"vtex","account":"cleanweb","publicUrl":"cleanweb.myvtex.com"}
