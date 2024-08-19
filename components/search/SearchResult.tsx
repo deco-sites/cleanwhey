@@ -290,10 +290,10 @@ function Result(props: SectionProps<typeof loader>) {
                 </Drawer>
               )}
 
-              <div class="grid place-items-center grid-cols-1 sm:grid-cols-[250px_1fr]">
+              <div class="md:gap-8 grid place-items-center grid-cols-1 sm:grid-cols-[250px_1fr]">
                 {device === "desktop" && (
                   <aside class="
-                  place-self-start flex flex-col gap-9
+                  place-self-start flex flex-col gap-3
                   border border-gray-100 border-b border-b-orange-300
                   bg-white-300 rounded-t-lg p-4
                   ">
