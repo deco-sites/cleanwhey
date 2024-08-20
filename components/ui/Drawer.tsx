@@ -144,24 +144,26 @@ function Aside(
             </svg>
           </label>
         </div>
-        <div class="flex justify-between items-center">
-          <a
-            class="p-4 h-auto text-white hover:!bg-transparent btn btn-sm font-normal btn-ghost no-animation gap-2 flex items-center"
-            href="/duvidas-frequentes"
-          >
-            <Icon id="duvidas" class="h-8 w-8" />
-            <p>
-              Dúvidas<br />Frequentes
-            </p>
-          </a>
+        {drawer == "sidemenu-drawer" && (
+          <div class="flex justify-between items-center">
+            <a
+              class="p-4 h-auto text-white hover:!bg-transparent btn btn-sm font-normal btn-ghost no-animation gap-2 flex items-center"
+              href="/duvidas-frequentes"
+            >
+              <Icon id="duvidas" class="h-8 w-8" />
+              <p>
+                Dúvidas<br />Frequentes
+              </p>
+            </a>
 
-          <a
-            class="p-4 h-auto hoverflex flex-col h-full overflow-y-auto:!bg-transparent text-white btn btn-sm font-normal btn-ghost no-animation"
-            href="/wishlist"
-          >
-            <Icon id="wishlist_button" class="h-8 w-8" />
-          </a>
-        </div>
+            <a
+              class="p-4 h-auto hoverflex flex-col h-full overflow-y-auto:!bg-transparent text-white btn btn-sm font-normal btn-ghost no-animation"
+              href="/wishlist"
+            >
+              <Icon id="wishlist_button" class="h-8 w-8" />
+            </a>
+          </div>
+        )}
       </div>
       {children}
     </div>

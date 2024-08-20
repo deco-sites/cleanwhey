@@ -53,7 +53,7 @@ export const Ring = (
 
   return (
     <div
-      class={`uppercase flex flex-col gap-1 items-center text-xs font-bold text-center
+      class={`flex flex-col gap-1 items-center text-xs font-bold text-center
     ${checked ? "text-orange-300" : "text-gray-300"}`}
     >
       <span
@@ -69,6 +69,26 @@ export const Ring = (
   );
 };
 
+export const Box = (
+  { value, checked = false, class: _class }: {
+    value: string;
+    checked?: boolean;
+    class?: string;
+  },
+) => {
+
+  return (
+    <div
+      class={`rounded-lg min-w-[60px] px-2
+      ${checked ? "bg-gray-400 text-white" : "bg-gray-100 text-gray-300"}`}
+    >
+      <span class={`font-bold text-xs text-center ${checked ? "text-white" : "text-grat-300"}`}>
+        {value}
+      </span>
+    </div>
+  );
+};
+
 function VariantSelector({ product }: Props) {
   const { url, isVariantOf } = product;
   const hasVariant = isVariantOf?.hasVariant ?? [];
@@ -77,12 +97,13 @@ function VariantSelector({ product }: Props) {
   const relativeUrl = relative(url);
   const id = useId();
 
-  console.log(product.isSimilarTo);
-
   return (
     <>
+      {tastes && tastes.length > 0 && (
+        <span class="text-sm text-gray-300 font-normal mb-2">Sabores</span>
+      )}
       <ul
-        class="flex flex-col gap-4"
+        class="flex flex-row flex-wrap gap-4"
         hx-target="body"
         hx-swap="outerHTML"
         hx-replace-url="true"
@@ -90,6 +111,7 @@ function VariantSelector({ product }: Props) {
       >
         {tastes?.map((item) => {
           const relativeLink = relative(item.url);
+          const filteredProperties = product.isVariantOf?.additionalProperty.filter(({ name }) => name === "Nome nos similares");
           return (
             <li class="flex flex-col gap-2">
               <label
@@ -109,9 +131,9 @@ function VariantSelector({ product }: Props) {
                     "transition-opacity",
                   )}
                 >
-                  {item.image && item.image?.length > 0 && (
+                  {item.image && item.image?.length > 0 && filteredProperties && (
                     <Ring
-                      value={item.isVariantOf?.name || "Sabor"}
+                      value={filteredProperties[0]?.value || item.name || "Sabor"}
                       image={item?.image[0]?.url}
                       checked={false}
                     />
@@ -141,8 +163,8 @@ function VariantSelector({ product }: Props) {
       >
         {Object.keys(possibilities).map((name) => (
           <li class="flex flex-col gap-2">
-            <span class="text-sm text-gray-300 font-normal mb-2">{name}</span>
-            <ul class="flex flex-row gap-4">
+            <span class="text-sm text-gray-300 font-normal capitalize mb-2">{name}</span>
+            <ul class="flex flex-row flex-wrap gap-4">
               {Object.entries(possibilities[name])
                 .filter(([value]) => value)
                 .map(([value, link]) => {
@@ -168,9 +190,9 @@ function VariantSelector({ product }: Props) {
                             "transition-opacity",
                           )}
                         >
-                          <Ring
+                          <Box
                             value={value}
-                            image={link?.image}
+                            // image={link?.image}
                             checked={checked}
                           />
                         </div>

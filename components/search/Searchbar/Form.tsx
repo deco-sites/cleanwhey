@@ -79,7 +79,7 @@ export default function Searchbar(
 
   return (
     <div
-      class="w-full max-w-[675px] grid"
+      class="w-full max-w-[675px] grid relative"
       style={{ gridTemplateRows: "min-content auto" }}
     >
       <form
@@ -129,7 +129,7 @@ export default function Searchbar(
       </form>
 
       {/* Suggestions slot */}
-      <div id={slot} />
+      <div class="absolute left-0 top-full w-full bg-white" id={slot} />
 
       {/* Send search events as the user types */}
       <script

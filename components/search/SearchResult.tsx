@@ -107,7 +107,7 @@ function PageResult(props: SectionProps<typeof loader>) {
         data-product-list
         class={clx(
           "grid items-center",
-          "grid-cols-2 gap-2",
+          "grid-cols-2 gap-1",
           "sm:grid-cols-3 sm:gap-10",
           "w-full",
         )}
@@ -119,7 +119,7 @@ function PageResult(props: SectionProps<typeof loader>) {
             preload={index === 0}
             index={offset + index}
             class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
-            shadow-[0_0_10px_0_rgba(0,0,0,0.1)] p-4"
+            shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
           />
         ))}
       </div>

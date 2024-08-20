@@ -12,7 +12,7 @@ export default function Form({ items }: Props) {
   return (
     <div class="flex flex-row gap-2 items-center justify-between">
       <div class="flex flex-col w-2/5">
-        <span class="flex gap-2 text-gray-300 text-sm font-normal">
+        <span class="whitespace-nowrap flex gap-2 text-gray-300 text-sm font-normal">
           <svg
             width="24"
             height="24"

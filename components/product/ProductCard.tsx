@@ -159,7 +159,7 @@ function ProductCard({
       </figure>
 
       <a href={relativeUrl} class="pt-5 text-center">
-        <span class={`font-bold text-gray-400 text-lg text-center`}>
+        <span class={`font-bold text-gray-400 text-base md:text-lg text-center`}>
           {title}
         </span>
         {!isFeatured && (
@@ -227,7 +227,7 @@ function ProductCard({
                 clx(
                   "btn uppercase",
                   "btn-outline rounded-lg border-none px-0 no-animation w-full",
-                  "bg-orange-300 text-white h-14 font-semibold",
+                  "bg-orange-300 text-white h-14 font-semibold md:text-base text-xs",
                   "hover:bg-orange-300",
                 )
               }`}
