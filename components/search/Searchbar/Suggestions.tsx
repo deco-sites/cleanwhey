@@ -94,7 +94,7 @@ function Suggestions(
             {products.map((product, index) => (
               <Slider.Item
                 index={index}
-                class="carousel-item first:ml-4 last:mr-4 min-w-[200px] max-w-[200px]"
+                class="carousel-item first:ml-4 last:mr-4 w-1/2"
               >
                 <ProductCard
                   product={product}
