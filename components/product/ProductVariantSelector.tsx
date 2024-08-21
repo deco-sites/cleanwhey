@@ -111,7 +111,7 @@ function VariantSelector({ product }: Props) {
       >
         {tastes?.map((item) => {
           const relativeLink = relative(item.url);
-          const filteredProperties = product.isVariantOf?.additionalProperty.filter(({ name }) => name === "Nome nos similares");
+          const filteredProperties = item.isVariantOf?.additionalProperty.filter(({ name }) => name === "Nome nos similares");
           return (
             <li class="flex flex-col gap-2">
               <label
@@ -133,7 +133,7 @@ function VariantSelector({ product }: Props) {
                 >
                   {item.image && item.image?.length > 0 && filteredProperties && (
                     <Ring
-                      value={filteredProperties[0]?.value || item.name || "Sabor"}
+                      value={filteredProperties[0]?.value || "Sabor"}
                       image={item?.image[0]?.url}
                       checked={false}
                     />
