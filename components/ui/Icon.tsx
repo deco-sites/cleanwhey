@@ -21,6 +21,7 @@ export type AvailableIcons =
   | "share"
   | "sell"
   | "check-circle"
+  | "WhatsApp"
   | "error"
   | "trash";
 
