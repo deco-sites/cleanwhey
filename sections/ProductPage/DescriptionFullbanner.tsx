@@ -2,7 +2,7 @@ import { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 
 interface Props {
-  banner: {
+  banner?: {
     desktop: {
       src: ImageWidget;
       alt: string;
@@ -16,8 +16,8 @@ interface Props {
       height?: number;
     };
   };
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
   content?: HTMLWidget;
   rightCard?: {
     title: string;
@@ -30,25 +30,27 @@ export default function DescriptionFullbanner(props: Props) {
   return (
     <section>
       <div class="relative w-full pb-8 md:pb-16">
-        <Picture>
-          <Source
-            media="(max-width: 640px)"
-            src={banner.mobile.src}
-            width={banner.mobile.width ?? 380}
-            height={banner.mobile.height ?? 1087}
-          />
-          <Source
-            media="(min-width: 640px)"
-            src={banner.desktop.src}
-            width={banner.desktop.width ?? 1366}
-            height={banner.desktop.height ?? 424}
-          />
-          <img
-            src={banner.desktop.src}
-            alt={title}
-            class="w-full object-cover"
-          />
-        </Picture>
+        {banner && (
+          <Picture>
+            <Source
+              media="(max-width: 640px)"
+              src={banner.mobile.src}
+              width={banner.mobile.width ?? 380}
+              height={banner.mobile.height ?? 1087}
+            />
+            <Source
+              media="(min-width: 640px)"
+              src={banner.desktop.src}
+              width={banner.desktop.width ?? 1366}
+              height={banner.desktop.height ?? 424}
+            />
+            <img
+              src={banner.desktop.src}
+              alt={title}
+              class="w-full object-cover"
+            />
+          </Picture>
+        )}
         <div class="absolute w-full top-0 left-0 h-full flex flex-col md:flex-row items-center">
           <div
             class={"flex px-4 pt-12 md:px-0 md:items-start items-center flex-col md:flex-row h-auto gap-8 md:gap-16 container justify-end "}

@@ -76,13 +76,16 @@ export const Box = (
     class?: string;
   },
 ) => {
-
   return (
     <div
       class={`rounded-lg min-w-[60px] px-2
       ${checked ? "bg-gray-400 text-white" : "bg-gray-100 text-gray-300"}`}
     >
-      <span class={`font-bold text-xs text-center ${checked ? "text-white" : "text-grat-300"}`}>
+      <span
+        class={`font-bold text-xs text-center ${
+          checked ? "text-white" : "text-grat-300"
+        }`}
+      >
         {value}
       </span>
     </div>
@@ -111,7 +114,8 @@ function VariantSelector({ product }: Props) {
       >
         {tastes?.map((item) => {
           const relativeLink = relative(item.url);
-          const filteredProperties = item.isVariantOf?.additionalProperty.filter(({ name }) => name === "Nome nos similares");
+          const filteredProperties = item.isVariantOf?.additionalProperty
+            .filter(({ name }) => name === "Nome nos similares");
           return (
             <li class="flex flex-col gap-2">
               <label
@@ -131,13 +135,14 @@ function VariantSelector({ product }: Props) {
                     "transition-opacity",
                   )}
                 >
-                  {item.image && item.image?.length > 0 && filteredProperties && (
-                    <Ring
-                      value={filteredProperties[0]?.value || "Sabor"}
-                      image={item?.image[0]?.url}
-                      checked={false}
-                    />
-                  )}
+                  {item.image && item.image?.length > 0 && filteredProperties &&
+                    (
+                      <Ring
+                        value={filteredProperties[0]?.value || "Sabor"}
+                        image={item?.image[0]?.url}
+                        checked={false}
+                      />
+                    )}
                 </div>
                 {/* Loading spinner */}
                 <div
@@ -163,7 +168,9 @@ function VariantSelector({ product }: Props) {
       >
         {Object.keys(possibilities).map((name) => (
           <li class="flex flex-col gap-2">
-            <span class="text-sm text-gray-300 font-normal capitalize mb-2">{name}</span>
+            <span class="text-sm text-gray-300 font-normal capitalize mb-2">
+              {name}
+            </span>
             <ul class="flex flex-row flex-wrap gap-4">
               {Object.entries(possibilities[name])
                 .filter(([value]) => value)

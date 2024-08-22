@@ -159,7 +159,9 @@ function ProductCard({
       </figure>
 
       <a href={relativeUrl} class="pt-5 text-center">
-        <span class={`font-bold text-gray-400 text-base md:text-lg text-center`}>
+        <span
+          class={`font-bold text-gray-400 text-base md:text-lg text-center`}
+        >
           {title}
         </span>
         {!isFeatured && (

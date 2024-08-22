@@ -1,7 +1,6 @@
 import { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
-import Icon from "../../components/ui/Icon.tsx";
 
 export interface Question {
   question: string;
@@ -9,9 +8,9 @@ export interface Question {
 }
 
 interface Props {
-  id: string;
-  title: string;
-  table: {
+  id?: string;
+  title?: string;
+  table?: {
     altText: string;
     desktop: {
       src: ImageWidget;
@@ -24,11 +23,11 @@ interface Props {
       height?: number;
     };
   };
-  ingredients: {
+  ingredients?: {
     title: string;
     content: HTMLWidget;
   };
-  nutritionalPromotionImage: {
+  nutritionalPromotionImage?: {
     altText: string;
     desktop: {
       src: ImageWidget;
@@ -85,38 +84,42 @@ export default function NutritionalInformation(props: Props) {
       </div>
       <div className="container flex flex-col md:flex-row px-4 md:px-0">
         <div class="tabela mb-6 w-full rounded-lg md:px-8 md:bg-white md:max-w-[730px] md:mr-6">
-          <Picture>
-            <Source
-              src={table.mobile.src}
-              width={table.mobile.width ?? 350}
-              height={table.mobile.height ?? 718}
-              media="(max-width: 767px)"
-            />
-            <Source
-              src={table.desktop.src}
-              width={table.desktop.width ?? 350}
-              height={table.desktop.height ?? 718}
-              media="(min-width: 767px)"
-            />
-            <img
-              class="w-full"
-              src={table.desktop.src}
-              loading={"lazy"}
-              alt={table.altText ?? title}
-            />
-          </Picture>
+          {table && (
+            <Picture>
+              <Source
+                src={table.mobile.src}
+                width={table.mobile.width ?? 350}
+                height={table.mobile.height ?? 718}
+                media="(max-width: 767px)"
+              />
+              <Source
+                src={table.desktop.src}
+                width={table.desktop.width ?? 350}
+                height={table.desktop.height ?? 718}
+                media="(min-width: 767px)"
+              />
+              <img
+                class="w-full"
+                src={table.desktop.src}
+                loading={"lazy"}
+                alt={table.altText ?? title}
+              />
+            </Picture>
+          )}
         </div>
         <div class="double-content flex flex-col w-full md:max-w-[462px]">
-          <div className="ingredientes mb-6 bg-white rounded-lg p-4">
-            <h3 class="mb-4 text-gray-400 text-base font-bold">
-              {ingredients.title}
-            </h3>
-            <hr class={"mb-4 text-gray-100"} />
-            <div
-              class="text-gray-300 font-normal text-base"
-              dangerouslySetInnerHTML={{ __html: ingredients.content }}
-            />
-          </div>
+          {ingredients && (
+            <div className="ingredientes mb-6 bg-white rounded-lg p-4">
+              <h3 class="mb-4 text-gray-400 text-base font-bold">
+                {ingredients.title}
+              </h3>
+              <hr class={"mb-4 text-gray-100"} />
+              <div
+                class="text-gray-300 font-normal text-base"
+                dangerouslySetInnerHTML={{ __html: ingredients.content }}
+              />
+            </div>
+          )}
 
           {device === "mobile" && (
             <div class="mb-6">
@@ -127,28 +130,29 @@ export default function NutritionalInformation(props: Props) {
               </ul>
             </div>
           )}
-
-          <div class="promotion-image mb-8">
-            <Picture>
-              <Source
-                src={nutritionalPromotionImage.mobile.src}
-                width={nutritionalPromotionImage.mobile.width ?? 350}
-                height={nutritionalPromotionImage.mobile.height ?? 718}
-                media="(max-width: 767px)"
-              />
-              <Source
-                src={nutritionalPromotionImage.desktop.src}
-                width={nutritionalPromotionImage.desktop.width ?? 350}
-                height={nutritionalPromotionImage.desktop.height ?? 718}
-                media="(min-width: 767px)"
-              />
-              <img
-                class="w-full"
-                src={nutritionalPromotionImage.desktop.src}
-                alt={nutritionalPromotionImage.altText ?? title}
-              />
-            </Picture>
-          </div>
+          {nutritionalPromotionImage && (
+            <div class="promotion-image mb-8">
+              <Picture>
+                <Source
+                  src={nutritionalPromotionImage.mobile.src}
+                  width={nutritionalPromotionImage.mobile.width ?? 350}
+                  height={nutritionalPromotionImage.mobile.height ?? 718}
+                  media="(max-width: 767px)"
+                />
+                <Source
+                  src={nutritionalPromotionImage.desktop.src}
+                  width={nutritionalPromotionImage.desktop.width ?? 350}
+                  height={nutritionalPromotionImage.desktop.height ?? 718}
+                  media="(min-width: 767px)"
+                />
+                <img
+                  class="w-full"
+                  src={nutritionalPromotionImage.desktop.src}
+                  alt={nutritionalPromotionImage.altText ?? title}
+                />
+              </Picture>
+            </div>
+          )}
         </div>
       </div>
       {device === "desktop" && (

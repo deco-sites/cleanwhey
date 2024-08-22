@@ -3,7 +3,7 @@ interface Link {
   url: string;
 }
 export interface Props {
-  links: Link[];
+  links?: Link[];
 }
 
 export default function DescriptionNavigator({ links }: Props) {
@@ -18,7 +18,7 @@ export default function DescriptionNavigator({ links }: Props) {
                 md:items-center overflow-x-auto justify-start 
                 md:justify-center gap-8`}
         >
-          {links.map((link) => (
+          {links && links.map((link) => (
             <li class="p-3 flex-shrink-0">
               <a
                 href={link.url}

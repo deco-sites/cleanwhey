@@ -6,8 +6,8 @@ interface Card {
   content?: HTMLWidget;
 }
 interface Props {
-  cards: Card[];
-  rightImage: {
+  cards?: Card[];
+  rightImage?: {
     src: ImageWidget;
   };
 }
@@ -49,9 +49,11 @@ export default function DescriptionMoreInfos(props: Props) {
             ))}
         </div>
         <div class="w-full md:w-[60%] max-w-[696px] px-4 md:px-0 -mb-8 md:-ml-20">
-          <figure>
-            <img class="w-full max-w-[696px]" src={rightImage.src} />
-          </figure>
+          {rightImage && (
+            <figure>
+              <img class="w-full max-w-[696px]" src={rightImage.src} />
+            </figure>
+          )}
         </div>
       </div>
     </section>

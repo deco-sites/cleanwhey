@@ -8,7 +8,7 @@ interface Benefit {
 }
 
 interface Props {
-  leftImage: {
+  leftImage?: {
     desktop: {
       src: ImageWidget;
       width?: number;
@@ -21,8 +21,8 @@ interface Props {
     };
     alt: string;
   };
-  title: HTMLWidget;
-  benefits: Benefit[];
+  title?: HTMLWidget;
+  benefits?: Benefit[];
 }
 export default function DescriptionBannerBenefits(props: Props) {
   const { leftImage, title, benefits } = props;
@@ -30,32 +30,36 @@ export default function DescriptionBannerBenefits(props: Props) {
     <section class="bg-white-300 pb-8 md:pb-16">
       <div className="container px-4 md:px-0 flex flex-col md:flex-row items-center justify-between">
         <div class={"banner w-auto"}>
-          <Picture>
-            <Source
-              src={leftImage.mobile.src}
-              width={leftImage.mobile.width ?? 356}
-              height={leftImage.mobile.height ?? 277}
-              media="(max-width: 767px)"
-            />
-            <Source
-              src={leftImage.desktop.src}
-              width={leftImage.desktop.width ?? 1052}
-              height={leftImage.desktop.height ?? 948}
-              media="(min-width: 767px)"
-            />
-            <img
-              class="w-full max-w-[576px]"
-              src={leftImage.desktop.src}
-              alt={leftImage.alt}
-            />
-          </Picture>
+          {leftImage && (
+            <Picture>
+              <Source
+                src={leftImage.mobile.src}
+                width={leftImage.mobile.width ?? 356}
+                height={leftImage.mobile.height ?? 277}
+                media="(max-width: 767px)"
+              />
+              <Source
+                src={leftImage.desktop.src}
+                width={leftImage.desktop.width ?? 1052}
+                height={leftImage.desktop.height ?? 948}
+                media="(min-width: 767px)"
+              />
+              <img
+                class="w-full max-w-[576px]"
+                src={leftImage.desktop.src}
+                alt={leftImage.alt}
+              />
+            </Picture>
+          )}
         </div>
 
         <div class={"md:w-[65%] w-full max-w-[668px]"}>
-          <h2
-            class="mb-4 md:text-start text-center"
-            dangerouslySetInnerHTML={{ __html: title }}
-          />
+          {title && (
+            <h2
+              class="mb-4 md:text-start text-center"
+              dangerouslySetInnerHTML={{ __html: title }}
+            />
+          )}
           <ul class="flex flex-col gap-2">
             {benefits &&
               benefits.map((benefit) => (

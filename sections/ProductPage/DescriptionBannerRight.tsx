@@ -3,15 +3,15 @@ import { Picture, Source } from "apps/website/components/Picture.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
 
 interface Props {
-  id: string;
-  title: string;
-  description: HTMLWidget;
-  percentageBanner: {
+  id?: string;
+  title?: string;
+  description?: HTMLWidget;
+  percentageBanner?: {
     desktop: ImageWidget;
     mobile: ImageWidget;
     alt?: string;
   };
-  rightImage: {
+  rightImage?: {
     desktop: ImageWidget;
     mobile: ImageWidget;
     alt: string;
@@ -26,11 +26,13 @@ export default function DescriptionBannerRight(props: Props) {
       <div class="container px-4 md:px-0 flex items-start md:flex-row flex-col justify-between">
         <div class="max-w-[522px] content flex flex-col items-center justify-start w-full">
           <h2 class={"text-gray-400 font-bold text-5xl mb-6"}>{title}</h2>
-          <div
-            class="max-w-lg text-gray-300 text-base font-normal mb-16"
-            dangerouslySetInnerHTML={{ __html: description }}
-          />
-          {device === "desktop" && (
+          {description && (
+            <div
+              class="max-w-lg text-gray-300 text-base font-normal mb-16"
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
+          )}
+          {device === "desktop" && percentageBanner && (
             <Picture>
               <Source
                 src={percentageBanner.mobile}
@@ -51,7 +53,7 @@ export default function DescriptionBannerRight(props: Props) {
               />
             </Picture>
           )}
-          {device === "mobile" && (
+          {device === "mobile" && rightImage && (
             <Picture>
               <Source
                 src={rightImage.mobile}
@@ -74,7 +76,7 @@ export default function DescriptionBannerRight(props: Props) {
           )}
         </div>
         <div class={"banner w-full max-w-[624px]"}>
-          {device === "desktop" && (
+          {device === "desktop" && rightImage && (
             <Picture>
               <Source
                 src={rightImage.mobile}
@@ -95,7 +97,7 @@ export default function DescriptionBannerRight(props: Props) {
               />
             </Picture>
           )}
-          {device === "mobile" && (
+          {device === "mobile" && percentageBanner && (
             <Picture>
               <Source
                 src={percentageBanner.mobile}
