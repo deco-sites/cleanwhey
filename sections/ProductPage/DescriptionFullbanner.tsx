@@ -3,13 +3,13 @@ import { Picture, Source } from "apps/website/components/Picture.tsx";
 
 interface Props {
   banner?: {
-    desktop: {
+    desktop?: {
       src: ImageWidget;
       alt: string;
       width?: number;
       height?: number;
     };
-    mobile: {
+    mobile?: {
       src: ImageWidget;
       alt: string;
       width?: number;
@@ -20,8 +20,8 @@ interface Props {
   subtitle?: string;
   content?: HTMLWidget;
   rightCard?: {
-    title: string;
-    content: HTMLWidget;
+    title?: string;
+    content?: HTMLWidget;
   };
 }
 
@@ -30,7 +30,7 @@ export default function DescriptionFullbanner(props: Props) {
   return (
     <section>
       <div class="relative w-full pb-8 md:pb-16">
-        {banner && (
+        {banner && banner.mobile && banner.desktop && (
           <Picture>
             <Source
               media="(max-width: 640px)"
@@ -69,16 +69,19 @@ export default function DescriptionFullbanner(props: Props) {
                 />
               )}
             </div>
-            <div class="bg-white rounded-lg p-4 max-w-[384px]">
+            {rightCard && (
+
+              <div class="bg-white rounded-lg p-4 max-w-[384px]">
               <h3 class="mb-4 text-gray-400 font-bold">{rightCard?.title}</h3>
               <hr class="mb-4 text-gray-100" />
               {rightCard?.content && (
                 <div
-                  class="font-normal text-gray-300 font-base [&>ul]:pl-8 [&>ul>li]:mb-2 [&>ul>li]:!list-disc"
-                  dangerouslySetInnerHTML={{ __html: rightCard?.content }}
+                class="font-normal text-gray-300 font-base [&>ul]:pl-8 [&>ul>li]:mb-2 [&>ul>li]:!list-disc"
+                dangerouslySetInnerHTML={{ __html: rightCard?.content }}
                 />
               )}
             </div>
+            )}
           </div>
         </div>
       </div>
