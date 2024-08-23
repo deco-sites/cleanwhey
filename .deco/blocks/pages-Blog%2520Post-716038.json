@@ -11,6 +11,28 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
+        "__resolveType": "blog/sections/Seo/SeoBlogPost.tsx",
+        "jsonLD": {
+          "__resolveType": "Preview blog/loaders/BlogPostPage.ts"
+        }
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "blog/sections/Template.tsx",
+        "post": {
+          "__resolveType": "blog/loaders/BlogPostItem.ts",
+          "slug": {
+            "__resolveType": "website/functions/requestToParam.ts",
+            "param": "slug"
+          }
+        }
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
         "__resolveType": "Footer"
       }
     }

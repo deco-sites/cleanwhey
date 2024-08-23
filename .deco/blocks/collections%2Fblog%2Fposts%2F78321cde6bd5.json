@@ -1,0 +1,14 @@
+{
+  "name": "collections/blog/posts/78321cde6bd5",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [],
+    "categories": [],
+    "extraProps": [],
+    "slug": "pode-cozinhar-com-whey-protein",
+    "title": "Massa!",
+    "excerpt": "todo",
+    "content": "<p>todo</p>",
+    "date": "2024-08-23"
+  }
+}
