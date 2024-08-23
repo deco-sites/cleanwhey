@@ -1,1 +1,37 @@
-{"name":"Blog","path":"/blog","sections":[{"__resolveType":"website/sections/Rendering/Lazy.tsx","section":{"__resolveType":"Header"}},{"__resolveType":"website/sections/Rendering/Lazy.tsx","section":{"__resolveType":"site/sections/BlogGrid/BlogPosts.tsx","posts":{"__resolveType":"blog/loaders/BlogpostList.ts","sortBy":"date_desc","count":2,"slug":{"__resolveType":"website/functions/requestToParam.ts","param":"slug"}}}},{"__resolveType":"website/sections/Rendering/Lazy.tsx","section":{"__resolveType":"Footer"}}],"seo":{"__resolveType":"website/sections/Seo/SeoV2.tsx"},"__resolveType":"website/pages/Page.tsx"}
+{
+  "name": "Blog",
+  "path": "/blog",
+  "sections": [
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Header"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/BlogGrid/BlogPosts.tsx",
+        "posts": {
+          "__resolveType": "blog/loaders/BlogpostList.ts",
+          "sortBy": "date_desc",
+          "count": 8,
+          "slug": {
+            "__resolveType": "website/functions/requestToParam.ts",
+            "param": "slug"
+          }
+        }
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Footer"
+      }
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
