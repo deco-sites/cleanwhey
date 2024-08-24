@@ -129,6 +129,8 @@ function AddToCartButton(props: Props) {
   const platformProps = useAddToCart(props);
   const id = useId();
 
+  console.log("addToCartButton:",product)
+
   return (
     <div
       id={id}

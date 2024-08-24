@@ -225,7 +225,7 @@ function ProductCard({
               seller={seller}
               item={item}
               ctaText="ADICIONAR À SACOLA"
-              class={`${isFeatured ? "px-1.5" : ""} ${
+              class={`${isFeatured ? "px-1.5 md:text-sm" : ""} ${
                 clx(
                   "btn uppercase",
                   "btn-outline rounded-lg border-none px-0 no-animation w-full",

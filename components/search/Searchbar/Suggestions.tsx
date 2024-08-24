@@ -82,7 +82,7 @@ function Suggestions(
             ))}
           </ul>
         </div>
-        <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
+        {/* <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
           <span
             class="font-medium text-xl"
             role="heading"
@@ -104,7 +104,7 @@ function Suggestions(
               </Slider.Item>
             ))}
           </Slider>
-        </div>
+        </div> */}
       </div>
     </div>
   );
