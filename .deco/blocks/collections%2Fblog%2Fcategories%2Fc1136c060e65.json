@@ -3,6 +3,6 @@
   "__resolveType": "blog/loaders/Category.ts",
   "category": {
     "name": "Receitas",
-    "slug": "/receitas"
+    "slug": "receitas"
   }
 }

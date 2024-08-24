@@ -1,0 +1,8 @@
+{
+  "name": "collections/blog/categories/72fc2406ecc2",
+  "__resolveType": "blog/loaders/Category.ts",
+  "category": {
+    "name": "CleanWhey",
+    "slug": "cleanwhey"
+  }
+}

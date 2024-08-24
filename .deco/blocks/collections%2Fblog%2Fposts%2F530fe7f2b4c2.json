@@ -1,0 +1,25 @@
+{
+  "name": "collections/blog/posts/530fe7f2b4c2",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [
+      {
+        "name": "Clean Whey",
+        "email": "sac@cleanwhey.com.br"
+      }
+    ],
+    "categories": [
+      {
+        "name": "Receitas",
+        "slug": "/receitas"
+      }
+    ],
+    "extraProps": [],
+    "title": "Pode cozinhar com Whey protein? Desnatura a proteína?",
+    "excerpt": "Sim, pode cozinhar com whey protein!⁣ E sim, a proteína desnatura quando é aquecida ou quando seu PH é alterado. ⁣ ⁣",
+    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/8733f33b-846f-4dc2-af18-66a7963af3c3",
+    "date": "2024-01-08",
+    "content": "<p><span style=\"color: rgb(40, 40, 40); font-size: 16px\">Sim, pode cozinhar com whey protein!⁣ E sim, a proteína desnatura quando é aquecida ou quando seu PH é alterado. ⁣ ⁣</span><br><br><span style=\"color: rgb(40, 40, 40); font-size: 16px\">Mas isso não irá torná-la menos nutritiva ou diminuir os seus benefícios para a saúde.⁣ ⁣</span><br><br><span style=\"color: rgb(40, 40, 40); font-size: 16px\">As proteínas são macromoléculas constituídas por cadeias de aminoácidos. A desnaturação nada mais é do que uma alteração na ordem desses aminoácidos, como se a gente \"sacudisse\" a proteína e “embaralhasse” tudo.⁣ ⁣</span><br><br><span style=\"color: rgb(40, 40, 40); font-size: 16px\">Quando a proteína tem uma função, como é o caso da insulina ou a hemoglobina, a ordem dos aminoácidos não pode ser alterada.⁣ ⁣</span><br><br><span style=\"color: rgb(40, 40, 40); font-size: 16px\">Mas as proteínas do whey não têm função, são apenas uma cadeia de aminoácidos. Com a desnaturação essa cadeia se altera, ocorre uma pequena perda do seu valor biológico, mas os aminoácidos continuam todos lá. ⁣ ⁣</span><br><br><span style=\"color: rgb(40, 40, 40); font-size: 16px\">Isso não acontece apenas com o whey protein, acontece com todas as proteínas de alimentação. Quando cozinhamos o ovo, ele fica mais firme e muda de cor, isso também é desnaturação proteica; ou quando fervemos o leite, a nata é proteína desnaturada. ⁣ ⁣</span><br><br><span style=\"color: rgb(40, 40, 40); font-size: 16px\">Mas atenção, o que não pode é carbonizar uma proteína, pois aí sim os aminoácidos serão destruídos! Sabe quando deixamos torrar sem querer a carne até ela ficar preta, como um carvão? Neste caso a proteína já era, foi destruída e não deve mais ser consumida.⁣ ⁣</span><br><br><span style=\"color: rgb(40, 40, 40); font-size: 16px\">No mais, continue fazendo suas receitas doces e salgadas utilizando o seu Clean Whey que está tudo certo!</span></p>",
+    "slug": "pode-cozinhar-com-whey-protein-desnatura-a-proteina"
+  }
+}

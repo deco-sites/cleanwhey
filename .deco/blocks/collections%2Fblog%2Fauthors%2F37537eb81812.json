@@ -1,0 +1,8 @@
+{
+  "name": "collections/blog/authors/37537eb81812",
+  "__resolveType": "blog/loaders/Author.ts",
+  "author": {
+    "name": "Clean Whey",
+    "email": "sac@cleanwhey.com.br"
+  }
+}

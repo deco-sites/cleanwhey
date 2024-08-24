@@ -1,0 +1,25 @@
+{
+  "name": "collections/blog/posts/f5f9efa49577",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [
+      {
+        "name": "Clean Whey",
+        "email": "sac@cleanwhey.com.br"
+      }
+    ],
+    "categories": [
+      {
+        "name": "CleanWhey",
+        "slug": "cleanwhey"
+      }
+    ],
+    "extraProps": [],
+    "title": "Whey protein: benefícios para todos",
+    "excerpt": "“Pensei que whey era só para quem malhava”. Esse é o comentário mais comum quando explicamos que whey protein não é coisa apenas para frequentador de academia.",
+    "date": "2023-12-14",
+    "slug": "whey-protein-beneficios-para-todos",
+    "content": "<p><span style=\"color: rgb(40, 40, 40); font-size: 16px\">“Pensei que whey era só para quem malhava”. Esse é o comentário mais comum quando explicamos que whey protein não é coisa apenas para frequentador de academia.</span><br><br><span style=\"color: rgb(40, 40, 40); font-size: 16px\">Com exceção àqueles que têm alergia ao leite, todos podem consumir whey protein: de crianças e adultos, de pacientes enfermos a atletas de alta performance.</span><br><br><span style=\"color: rgb(40, 40, 40); font-size: 16px\">O whey possui excelentes propriedades nutritivas e funcionais que derivam da composição dos seus aminoácidos e que atendem a maioria das exigências fisiológicas do ser humano, porém, ele atua em três pontos fundamentais para o nosso organismo:</span><br><br><span style=\"color: rgb(40, 40, 40); font-size: 16px\">Fortalecimento da imunidade: as proteínas de alto valor biológico do whey aumentam bastante os níveis de glutationa, um antioxidante essencial para a saúde do nosso sistema imunológico, e influenciam positivamente na produção de anticorpos, em especial das imunoglobulinas. A caseína e a lactoferrina, presentes no whey, possuem atividades antivirais e já se mostraram capazes de inibir diversos vírus. Combate à obesidade: para aqueles que estão querendo emagrecer, Clean Whey é um grande aliado ao proporcionar saciedade e estimular o crescimento muscular e a perda de gordura corporal. Além disso, a proteína do soro do leite aumenta a energia para as atividades e combate a fadiga, e ainda ajuda no controle glicêmico e arterial. Manutenção da massa muscular: o whey é a suplementação proteica que nosso corpo precisa para construir e recuperar músculos, principalmente após os 40 anos, pois ajuda na prevenção de perda de massa muscular e óssea, prevenindo a sarcopenia (diminuição de massa e força na musculatura esquelética). Para os atletas e praticantes de atividades físicas, ele pode fazer uma grande diferença para estimular o desempenho e os resultados dos treinos.</span><br><br><span style=\"color: rgb(40, 40, 40); font-size: 16px\">Lembrando que a qualidade vem da pureza do whey protein, e todos os produtos Clean Whey são feitos exclusivamente com a proteína do soro do leite produzida pela americana Glanbia Nutritionals, líder e pioneira na produção de proteínas extraídas do soro de leite. São 100% puros, 100% instantâneos, sem adição de açúcares e livres de conservantes, corantes, edulcorantes e glúten.</span><br><br><span style=\"color: rgb(40, 40, 40); font-size: 16px\">E para aproveitar todos os seus benefícios, a inclusão do whey na sua dieta diária pode ser feita por meio da diluição em líquidos (água de coco, sucos, shakes) ou no preparo de receitas doces ou salgadas, como cremes, omeletes, bolos e sorvetes. Aprenda como fazer no nosso canal no Youtube: Clean Whey TV.</span></p>",
+    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c9c0f8e9-8b8c-4c4f-9199-8846ca96ea85"
+  }
+}

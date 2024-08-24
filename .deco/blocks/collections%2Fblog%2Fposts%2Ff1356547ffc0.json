@@ -1,0 +1,25 @@
+{
+  "name": "collections/blog/posts/f1356547ffc0",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [
+      {
+        "name": "Clean Whey",
+        "email": "sac@cleanwhey.com.br"
+      }
+    ],
+    "categories": [
+      {
+        "name": "CleanWhey",
+        "slug": "cleanwhey"
+      }
+    ],
+    "extraProps": [],
+    "title": "Concentrado, Isolado ou Hidrolisado? Qual Clean Whey escolher?",
+    "content": "<p><span style=\"color: rgb(40, 40, 40); font-size: 16px\">Vamos ajudar na sua escolha: quaisquer dos tipos de whey protein que você escolher proporcionará diversos benefícios, tais como: nutrição muscular, auxílio na imunidade, melhora das funções cardíacas, na cicatrização de tecidos e, no geral, uma melhor disposição para enfrentar as tarefas do dia a dia.</span><br><br><span style=\"color: rgb(40, 40, 40); font-size: 16px\">O whey concentrado traz um excelente custo-benefício para quem não tem restrição à lactose. Clean Whey Concentrate Classic oferece 81% de concentração proteica em 100g de produto; isso quer dizer que, em um scoop de 15g, você terá 13g da mais pura proteína do mercado. A proteína concentrada é indicada para qualquer idade e pode ser consumida a qualquer hora do dia, sendo ideal para aquele momento que “bate uma fominha”.</span><br><br><span style=\"color: rgb(40, 40, 40); font-size: 16px\">O whey isolado tem um teor muito menor de lactose - 0,6g em 100g de produto - e isso significa que, na dose de 15g, você terá apenas traços de lactose, ou seja, valores quase indetectáveis. Por outro lado, terá uma concentração proteica acima de 90%. Em relação ao Clean Whey Isolate Classic, uma vantagem: você terá 94% de concentração proteica em 100g de produto, o que representa, em um scoop de 15g, 14g de proteína pura. A proteína isolada é indicada para qualquer idade, e apropriada para praticantes de atividades físicas e no pós-operatório tardio de cirurgias, entre outras indicações.</span><br><br><span style=\"color: rgb(40, 40, 40); font-size: 16px\">Já o whey hidrolisado pode ter sua origem na proteína concentrada ou isolada; no caso do Clean Whey Hydrolysate Classic, ele provém da proteína isolada, atingindo a concentração de 91%. Nesse produto, você terá apenas a proteína hidrolisada, o que torna sua absorção mais rápida. Seu teor de lactose - 0,3g em 100g de produto - é mais baixo que nas outras duas proteínas. Indicado para pessoas que possuem alguma restrição à lactose, de qualquer idade, pacientes em pós-operatório imediato e praticantes de atividade física moderada à alta.</span><br><br><span style=\"color: rgb(40, 40, 40); font-size: 16px\">Clean Whey não contém adição de açúcares, é livre de conservantes, corantes, edulcorantes e glúten. Sua pureza vem do método de filtração utilizado em sua fabricação - o Cross Flow Microfiltration (CFM) - que é patenteado pela Glanbia Nutritionals, fornecedora exclusiva da Clean Whey.</span></p>",
+    "slug": "concentrado-isolado-ou-hidrolisado-qual-clean-whey-escolher",
+    "date": "2023-12-11",
+    "excerpt": "Vamos ajudar na sua escolha: quaisquer dos tipos de whey protein que você escolher proporcionará diversos benefícios, tais como: nutrição muscular, auxílio na imunidade, melhora das funções cardíacas, na cicatrização de tecidos e, no geral, uma melhor disposição para enfrentar as tarefas do dia a dia",
+    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/6b6068e6-aa24-4dbe-9f7f-592cc3ff4c09"
+  }
+}
