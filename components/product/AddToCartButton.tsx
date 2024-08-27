@@ -20,7 +20,6 @@ const onClick = () => {
   const { item, platformProps } = JSON.parse(
     decodeURIComponent(container.getAttribute("data-cart-item")!),
   );
-  console.log("Item a ser adicionado:", item);
   window.STOREFRONT.CART.addToCart(item, platformProps);
 };
 

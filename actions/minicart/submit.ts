@@ -65,6 +65,8 @@ const cartFrom = (form: FormData) => {
     }
   }
 
+  console.log("cart:", cart)
+
   return cart;
 };
 

@@ -1,1 +1,189 @@
-{"items":[{"@type":"SiteNavigationElement","url":"/todos-os-produtos","name":"Todos os Produtos","children":[{"image":[],"children":[{"image":[],"children":[],"name":"IMMUNOFERRIN","url":"/suplementos/imunidade/immunoferrin"}],"name":"Imunidade","url":"/suplementos/imunidade"},{"image":[],"children":[{"image":[],"children":[{"image":[],"children":[],"name":"Neutro","url":"/suplementos/proteinas/isolado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=isolado&filter.sabor=neutro&page=1"},{"image":[],"children":[],"name":"Cacau Belga","url":"/suplementos/proteinas/isolado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=isolado&filter.sabor=cacau-belga&page=1"},{"image":[],"children":[],"name":"Vanilla","url":"/suplementos/proteinas/isolado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=isolado&filter.sabor=vanilla&page=1"},{"image":[],"children":[],"name":"Limão","url":"/suplementos/proteinas/isolado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=isolado&filter.sabor=limao&page=1"},{"image":[],"children":[],"name":"Maracujá","url":"/suplementos/proteinas/isolado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=isolado&filter.sabor=maracuja&page=1"},{"image":[],"children":[],"name":"Água de Coco","url":"/suplementos/proteinas/isolado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=isolado&filter.sabor=agua-de-coco&page=1"}],"name":"ISOLADO","url":"/suplementos/proteinas/isolado"},{"image":[],"children":[{"image":[],"children":[],"name":"Neutro","url":"/suplementos/proteinas/concentrado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=concentrado&filter.sabor=neutro&page=1"},{"image":[],"children":[],"name":"Cacau Belga","url":"/suplementos/proteinas/concentrado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=concentrado&filter.sabor=cacau-belga&page=1"},{"image":[],"children":[],"name":"Vanilla","url":"/suplementos/proteinas/concentrado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=concentrado&filter.sabor=vanilla&page=1"},{"image":[],"children":[],"name":"Limão","url":"/suplementos/proteinas/concentrado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=concentrado&filter.sabor=limao&page=1"},{"image":[],"children":[],"name":"Maracujá","url":"/suplementos/proteinas/concentrado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=concentrado&filter.sabor=maracuja&page=1"},{"image":[],"children":[],"name":"Água de Coco","url":"/suplementos/proteinas/concentrado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=concentrado&filter.sabor=agua-de-coco&page=1"}],"name":"CONCENTRADO","url":"/suplementos/proteinas/concentrado"},{"image":[],"children":[{"image":[],"children":[],"name":"Neutro","url":"/suplementos/proteinas/hidrolisado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=hidrolisado&filter.sabor=neutro&page=1"},{"image":[],"children":[],"name":"Cacau Belga","url":"/suplementos/proteinas/hidrolisado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=hidrolisado&filter.sabor=cacau-belga&page=1"}],"name":"HIDROLISADO","url":"/suplementos/proteinas/hidrolisado"},{"image":[],"children":[],"name":"IMMUNOFERRIN","url":"/suplementos/proteinas/clean-whey-medical"},{"image":[],"children":[{"image":[],"children":[],"name":"Neutro","url":"/suplementos/proteinas/hidrolisado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=hidrolisado&filter.sabor=neutro&page=1"}],"name":"SPECIAL","url":"/suplementos/proteinas/special"}],"name":"Proteínas","url":"/suplementos/proteinas"},{"image":[],"children":[{"image":[],"children":[],"name":"Pote","url":"/todos-os-produtos?q=clean&sort=price%3Adesc&filter.tamanho=pote-1020g&filter.tamanho=pote-600g&filter.tamanho=pote-900g&page=1"},{"image":[],"children":[],"name":"Saco","url":"/todos-os-produtos?q=clean&sort=price%3Adesc&filter.tamanho=saco-5kg&page=1"},{"image":[],"children":[],"name":"Refil","url":"/todos-os-produtos?q=clean&sort=price%3Adesc&filter.tamanho=refil-1800g&filter.tamanho=refil-450g&page=1"},{"image":[],"children":[],"name":"Lata","url":"/todos-os-produtos?q=clean&sort=price%3Adesc&filter.tamanho=lata-300g&filter.tamanho=lata-360g&page=1"},{"image":[],"children":[],"name":"Sachê","url":"/todos-os-produtos?q=clean&sort=price%3Adesc&filter.tamanho=sache-15g&filter.tamanho=sachet-30g&filter.tamanho=sache-30g&page=1"}],"name":"Embalagem","url":"/embalagem"},{"image":[],"children":[{"image":[],"children":[],"name":"CANECA","url":"/acessorios/caneca"},{"image":[],"children":[],"name":"COQUETELEIRA","url":"/acessorios/coqueteleira"}],"name":"Acessórios","url":"/acessorios"},{"image":[],"children":[],"name":"Combos e descontos","url":"/combos-e-descontos"},{"image":[],"children":[],"name":"Mais Vendidos","url":"/todos-os-produtos?sort=orders%3Adesc&page=1"},{"image":[],"name":"Assinaturas","url":"/assinaturas"}],"image":[{"url":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/67cb6efb-15d3-4de6-b8a2-8fd6ca111d66"}]},{"children":[],"image":[],"name":"Mais vendidos","url":"/mais-vendidos"},{"children":[],"image":[],"name":"Combos e descontos","url":"/combos-e-descontos"},{"children":[],"image":[],"name":"Proteínas","url":"/suplementos/proteinas"},{"children":[],"image":[],"name":"Imunidade","url":"/suplementos/imunidade"},{"children":[],"image":[],"name":"Assinaturas","url":"/assinaturas"},{"children":[],"image":[],"name":"Conheça nosso time","url":"/nosso-time"}],"__resolveType":"commerce/loaders/navbar.ts"}
+{
+  "items": [
+    {
+      "@type": "SiteNavigationElement",
+      "url": "/todos-os-produtos",
+      "name": "Todos os Produtos",
+      "children": [
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "name": "IMMUNOFERRIN",
+              "url": "/suplementos/imunidade/immunoferrin"
+            }
+          ],
+          "name": "Imunidade",
+          "url": "/suplementos/imunidade"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "name": "ISOLADO",
+              "url": "/suplementos/proteinas/isolado"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "CONCENTRADO",
+              "url": "/suplementos/proteinas/concentrado"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "HIDROLISADO",
+              "url": "/suplementos/proteinas/hidrolisado"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "IMMUNOFERRIN",
+              "url": "/suplementos/proteinas/clean-whey-medical"
+            },
+            {
+              "image": [],
+              "children": [
+                {
+                  "image": [],
+                  "children": [],
+                  "name": "Moccacino",
+                  "url": "/suplementos/proteinas/special?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=special&filter.sabor=mocaccino&page=1"
+                },
+                {
+                  "image": [],
+                  "children": [],
+                  "url": "/suplementos/proteinas/special?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=special&filter.sabor=xr--extended-release-&page=1",
+                  "name": "XR"
+                }
+              ],
+              "name": "SPECIAL",
+              "url": "/suplementos/proteinas/special"
+            }
+          ],
+          "name": "Proteínas",
+          "url": "/suplementos/proteinas"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "name": "Pote",
+              "url": "/todos-os-produtos?q=clean&sort=price%3Adesc&filter.tamanho=pote-1020g&filter.tamanho=pote-600g&filter.tamanho=pote-900g&page=1"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Saco",
+              "url": "/todos-os-produtos?q=clean&sort=price%3Adesc&filter.tamanho=saco-5kg&page=1"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Refil",
+              "url": "/todos-os-produtos?q=clean&sort=price%3Adesc&filter.tamanho=refil-1800g&filter.tamanho=refil-450g&page=1"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Lata",
+              "url": "/todos-os-produtos?q=clean&sort=price%3Adesc&filter.tamanho=lata-300g&filter.tamanho=lata-360g&page=1"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Sachê",
+              "url": "/todos-os-produtos?q=clean&sort=price%3Adesc&filter.tamanho=sache-15g&filter.tamanho=sachet-30g&filter.tamanho=sache-30g&page=1"
+            }
+          ],
+          "name": "Embalagem",
+          "url": "/embalagem"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "name": "CANECA",
+              "url": "/acessorios/caneca"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "COQUETELEIRA",
+              "url": "/acessorios/coqueteleira"
+            }
+          ],
+          "name": "Acessórios",
+          "url": "/acessorios"
+        },
+        {
+          "image": [],
+          "children": [],
+          "name": "Combos e descontos",
+          "url": "/combos-e-descontos"
+        },
+        {
+          "image": [],
+          "children": [],
+          "name": "Mais Vendidos",
+          "url": "/todos-os-produtos?sort=orders%3Adesc&page=1"
+        },
+        {
+          "image": [],
+          "name": "Assinaturas",
+          "url": "/assinaturas"
+        }
+      ],
+      "image": [
+        {
+          "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/67cb6efb-15d3-4de6-b8a2-8fd6ca111d66"
+        }
+      ]
+    },
+    {
+      "children": [],
+      "image": [],
+      "name": "Mais vendidos",
+      "url": "/mais-vendidos"
+    },
+    {
+      "children": [],
+      "image": [],
+      "name": "Combos e descontos",
+      "url": "/combos-e-descontos"
+    },
+    {
+      "children": [],
+      "image": [],
+      "name": "Proteínas",
+      "url": "/suplementos/proteinas"
+    },
+    {
+      "children": [],
+      "image": [],
+      "name": "Imunidade",
+      "url": "/suplementos/imunidade"
+    },
+    {
+      "children": [],
+      "image": [],
+      "name": "Assinaturas",
+      "url": "/assinaturas"
+    },
+    {
+      "children": [],
+      "image": [],
+      "name": "Conheça nosso time",
+      "url": "/nosso-time"
+    }
+  ],
+  "__resolveType": "commerce/loaders/navbar.ts"
+}

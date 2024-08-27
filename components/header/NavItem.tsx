@@ -54,14 +54,29 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
                       )}
                     </a>
 
-                    <ul class="after:content-[' '] after:absolute after:right-[80%] after:h-full after:bg-transparent after:w-full min-w-[200px] ml-5 h-full group-hover/lastmenu:flex hidden flex-col gap-1 mt-4 absolute top-0 left-full">
+                    <ul class="after:content-[' '] border-r-gray-200 border-r after:absolute after:right-[90%] after:h-full after:bg-transparent after:w-1/2 min-w-[200px] ml-5 h-full group-hover/lastmenu:flex hidden flex-col gap-1 mt-4 absolute top-0 left-full">
                       {node.children?.map((leaf) => (
-                        <li>
-                          <a class="hover:underline" href={leaf.url}>
+                        <li class="p-0 group/finalmenu w-full">
+                          <a class="hover:underline group-hover/finalmenu:text-orange-300 text-gray-300 flex items-center justify-between" href={leaf.url}>
                             <span class="text-base text-gray-300 font-bold  uppercase">
                               {leaf.name}
                             </span>
+                            {leaf.children && leaf.children.length > 0 && (
+                              <Icon id="arrow-right-custom" class="text-orange-300" />
+                            )}
                           </a>
+
+                          <ul class="after:content-[' '] after:absolute after:right-[90%] after:h-full after:bg-transparent after:w-1/2 min-w-[200px] ml-5 h-full group-hover/finalmenu:flex hidden flex-col gap-1 mt-4 absolute top-0 left-full">
+                            {leaf.children?.map((final) => (
+                              <li>
+                                <a class="hover:underline" href={final.url}>
+                                  <span class="text-base text-gray-300 font-bold  uppercase">
+                                    {final.name}
+                                  </span>
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
                         </li>
                       ))}
                     </ul>

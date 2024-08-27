@@ -33,7 +33,7 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
 
         <div
           class={`${
-            isFeatured ? "max-w-[90%]" : "sm:max-w-[95%] max-w-[80%]"
+            isFeatured ? "md:max-w-[90%] max-w-[85%]" : "sm:max-w-[95%] max-w-[80%]"
           } w-full px-0 sm:px-4`}
         >
           <Slider class="carousel sm:carousel-end carousel-center w-full gap-4 py-4">

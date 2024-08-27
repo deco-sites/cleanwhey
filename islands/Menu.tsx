@@ -97,14 +97,13 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
                     </p>
                   </a>
                 </li>
-                {
-                  /* {node.children && node.children.length > 0 && node.children!.map((child) => {
+                {node.children && node.children.length > 0 && node.children!.map((child) => {
                   if (child.name != "Ver tudo") {
                     return (
-                      <li>
+                      <li class="pl-3">
                         <a
                           href={child.url}
-                          class="py-[20px] pl-[30px] pr-[12px] flex-grow min-h-[40px] flex items-center justify-start text-[#252526] text-[14px]"
+                          class="py-2 pl-[30px] pr-[12px] flex-grow min-h-[30px] flex items-center justify-start text-[#252526] text-[14px]"
                         >
                           <p class="text-[#252526] text-[14px]">
                             {child.name}
@@ -113,8 +112,7 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
                       </li>
                     );
                   }
-                })} */
-                }
+                })}
               </>
             ))}
           </ul>

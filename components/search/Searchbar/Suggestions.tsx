@@ -69,17 +69,15 @@ function Suggestions(
           </span>
 
           <ul class="flex flex-col gap-6">
-            {searches.map(({ term }) => (
+            {searches.map(({ term }, index) => (
               <li>
                 {/* TODO @gimenes: use name and action from searchbar form */}
                 <a
                   href={`${ACTION}?${NAME}=${term}`}
-                  class="flex gap-4 items-center"
+                  class="flex gap-1 items-center"
                 >
-                  <span>
-                    <Icon id="search" />
-                  </span>
-                  <span dangerouslySetInnerHTML={{ __html: term }} />
+                  {/* <Icon id="searchRecent" class={"text-[#A1A6B7]"}/> */}
+                  {index + 1} - <span dangerouslySetInnerHTML={{ __html: term }} />
                 </a>
               </li>
             ))}

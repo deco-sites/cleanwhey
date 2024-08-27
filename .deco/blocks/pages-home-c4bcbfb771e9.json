@@ -176,7 +176,12 @@
       "__resolveType": "FAQ - 01"
     },
     {
-      "__resolveType": "Blog Grid HOME"
+      "__resolveType": "site/sections/BlogGrid/BlogPosts.tsx",
+      "posts": {
+        "__resolveType": "blog/loaders/BlogpostList.ts",
+        "count": 4,
+        "sortBy": "date_desc"
+      }
     },
     {
       "__resolveType": "Newsletter Home"
