@@ -1,6 +1,5 @@
 import Icon from "../../components/ui/Icon.tsx";
 
-
 export interface Props {
   link?: string;
 }

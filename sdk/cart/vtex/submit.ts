@@ -30,7 +30,7 @@ const actions: CartSubmitActions<AppContext> = {
     );
 
     return cartFrom(response, req.url);
-  }
+  },
 };
 
 export default actions;

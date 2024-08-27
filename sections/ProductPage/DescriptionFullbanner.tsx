@@ -70,17 +70,16 @@ export default function DescriptionFullbanner(props: Props) {
               )}
             </div>
             {rightCard && (
-
               <div class="bg-white rounded-lg p-4 max-w-[384px]">
-              <h3 class="mb-4 text-gray-400 font-bold">{rightCard?.title}</h3>
-              <hr class="mb-4 text-gray-100" />
-              {rightCard?.content && (
-                <div
-                class="font-normal text-gray-300 font-base [&>ul]:pl-8 [&>ul>li]:mb-2 [&>ul>li]:!list-disc"
-                dangerouslySetInnerHTML={{ __html: rightCard?.content }}
-                />
-              )}
-            </div>
+                <h3 class="mb-4 text-gray-400 font-bold">{rightCard?.title}</h3>
+                <hr class="mb-4 text-gray-100" />
+                {rightCard?.content && (
+                  <div
+                    class="font-normal text-gray-300 font-base [&>ul]:pl-8 [&>ul>li]:mb-2 [&>ul>li]:!list-disc"
+                    dangerouslySetInnerHTML={{ __html: rightCard?.content }}
+                  />
+                )}
+              </div>
             )}
           </div>
         </div>
