@@ -112,16 +112,23 @@ function PageResult(props: SectionProps<typeof loader>) {
           "w-full",
         )}
       >
-        {products?.map((product, index) => (
-          <ProductCard
-            key={`product-card-${product.productID}`}
-            product={product}
-            preload={index === 0}
-            index={offset + index}
-            class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
-            shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
-          />
-        ))}
+        {products?.map((product) => {
+          const { isVariantOf } = product;
+          const hasVariant = isVariantOf?.hasVariant ?? [];
+          return hasVariant.map((item, index) => (
+            <ProductCard
+              key={`product-card-${item.productID}`}
+              product={item}
+              productName={product.isVariantOf?.name}
+              preload={index === 0}
+              index={offset + index}
+              class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
+              shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
+            />
+          ))
+          
+        }
+        )}
       </div>
 
       <div class={clx("pt-2 sm:pt-10 w-full", "")}>
@@ -215,6 +222,8 @@ function Result(props: SectionProps<typeof loader>) {
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
 
+  console.log(pageInfo)
+
   const viewItemListEvent = useSendEvent({
     on: "view",
     event: {
@@ -237,7 +246,7 @@ function Result(props: SectionProps<typeof loader>) {
 
   const results = (
     <span class="text-sm font-normal">
-      {page.pageInfo.recordPerPage} of {page.pageInfo.records} results
+      Exibindo {page.pageInfo.recordPerPage} de {page.pageInfo.records} resultados
     </span>
   );
 

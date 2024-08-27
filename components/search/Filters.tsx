@@ -69,7 +69,7 @@ function FilterValues({ key, values }: FilterToggle) {
 }
 
 function Filters({ filters }: Props) {
-  console.log("filtros:", filters);
+  // console.log("filtros:", filters);
   return (
     <ul class="flex flex-col gap-6 p-4 sm:p-0">
       {filters

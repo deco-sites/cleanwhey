@@ -30,6 +30,7 @@ export interface CartSubmitActions<AC = unknown> {
   addToCart?: (props: CartForm, req: Request, ctx: AC) => Promise<Minicart>;
   setQuantity?: (props: CartForm, req: Request, ctx: AC) => Promise<Minicart>;
   setCoupon?: (props: CartForm, req: Request, ctx: AC) => Promise<Minicart>;
+  setSubscription?: (props: CartForm, req: Request, ctx: AC) => Promise<Minicart>;
 }
 
 const safeParse = (payload: string | null) => {
@@ -65,8 +66,6 @@ const cartFrom = (form: FormData) => {
     }
   }
 
-  console.log("cart:", cart)
-
   return cart;
 };
 
@@ -79,11 +78,7 @@ async function action(
 
   const form = cartFrom(await req.formData());
 
-  const handler = form.action === "set-coupon"
-    ? setCoupon
-    : form.action === "add-to-cart"
-    ? addToCart
-    : setQuantity;
+  const handler = form.action === "set-coupon" ? setCoupon : form.action === "add-to-cart" ? addToCart : setQuantity;
 
   if (!handler) {
     throw new Error(`Unsupported action on platform ${usePlatform()}`);

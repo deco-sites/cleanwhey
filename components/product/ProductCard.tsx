@@ -16,6 +16,7 @@ interface Props {
   product: Product;
   /** Preload card image */
   preload?: boolean;
+  productName?: string;
 
   /** @description used for analytics event */
   itemListName?: string;
@@ -36,6 +37,7 @@ function ProductCard({
   preload,
   itemListName,
   index,
+  productName,
   isFeatured,
   class: _class,
 }: Props) {
@@ -69,6 +71,8 @@ function ProductCard({
       },
     },
   });
+
+  const variantName = title?.replace("TAMANHO:", "").replace(";", "").split(":")[0].replace("SABOR", "");
 
   return (
     <div
@@ -162,7 +166,8 @@ function ProductCard({
         <span
           class={`font-bold text-gray-400 text-base md:text-lg text-center`}
         >
-          {title}
+          {productName == title ? title : `${productName} ${variantName ? `- ${variantName}` : "" }`} 
+          
         </span>
         {!isFeatured && (
           <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">

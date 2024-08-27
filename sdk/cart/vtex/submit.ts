@@ -31,6 +31,18 @@ const actions: CartSubmitActions<AppContext> = {
 
     return cartFrom(response, req.url);
   },
+
+  setSubscription: async ({ addToCart }, req, ctx) => {
+    const response = await ctx.invoke(
+      "vtex/actions/cart/addItems.ts",
+      // @ts-expect-error I don't know how to fix this
+      addToCart,
+    );
+
+    console.log("response", response)
+
+    return cartFrom(response, req.url);
+  },
 };
 
 export default actions;

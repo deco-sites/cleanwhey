@@ -94,7 +94,8 @@
           "sort": "orders:desc",
           "count": 12,
           "fuzzy": "automatic",
-          "query": "clean"
+          "query": "clean",
+          "hideUnavailableItems": false
         }
       },
       "isFeatured": true,
@@ -109,7 +110,8 @@
         "props": {
           "sort": "",
           "count": 12,
-          "collection": "137"
+          "collection": "137",
+          "hideUnavailableItems": true
         }
       },
       "isFeatured": false
@@ -123,7 +125,8 @@
         "props": {
           "sort": "",
           "count": 12,
-          "collection": "137"
+          "collection": "137",
+          "hideUnavailableItems": true
         }
       },
       "isFeatured": false
