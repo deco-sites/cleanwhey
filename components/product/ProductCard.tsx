@@ -72,8 +72,8 @@ function ProductCard({
     },
   });
 
-  const variantName = title?.replace("TAMANHO:", "").replace(";", "").split(":")[0].replace("SABOR", "");
-
+  const variantName = title?.replace("COR:", "").replace("TAMANHO:", "").replace("SABOR:", "").replace(/;/g, "").split(":").map((item) => item.trim()).join(" "); 
+  console.log(title)
   return (
     <div
       {...event}

@@ -222,7 +222,6 @@ function Result(props: SectionProps<typeof loader>) {
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
 
-  console.log(pageInfo)
 
   const viewItemListEvent = useSendEvent({
     on: "view",
