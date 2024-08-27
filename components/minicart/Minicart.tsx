@@ -154,6 +154,9 @@ export default function Cart({
         <input name="add-to-cart" type="hidden" />
         <button hidden name="action" value="add-to-cart" />
 
+        <input name="add-to-attachment" type="hidden" value={"1 month"} />
+        <button hidden name="action" value="add-to-attachment" />
+
         {/* This contains the STOREFRONT cart. */}
         <input
           type="hidden"

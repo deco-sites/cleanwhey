@@ -17,6 +17,16 @@ const actions: Record<string, CartSubmitActions> = {
   shopify: shopify as CartSubmitActions,
   nuvemshop: nuvemshop as CartSubmitActions,
 };
+interface Attachment {
+  id: number;
+  value: string;
+}
+interface CustomizationData {
+  value: string;
+  orderFormID: string;
+  attachments: Attachment[];
+  productId: string;
+}
 
 interface CartForm {
   items: number[];
@@ -24,13 +34,13 @@ interface CartForm {
   action: string | null;
   platformCart: unknown;
   addToCart: unknown;
+  customizationData: string | null;
 }
 
 export interface CartSubmitActions<AC = unknown> {
   addToCart?: (props: CartForm, req: Request, ctx: AC) => Promise<Minicart>;
   setQuantity?: (props: CartForm, req: Request, ctx: AC) => Promise<Minicart>;
   setCoupon?: (props: CartForm, req: Request, ctx: AC) => Promise<Minicart>;
-  setSubscription?: (props: CartForm, req: Request, ctx: AC) => Promise<Minicart>;
 }
 
 const safeParse = (payload: string | null) => {
@@ -49,6 +59,7 @@ const cartFrom = (form: FormData) => {
     platformCart: null,
     action: null,
     addToCart: null,
+    customizationData: null
   };
 
   for (const [name, value] of form.entries()) {
@@ -63,6 +74,9 @@ const cartFrom = (form: FormData) => {
       cart.items[Number(it)] = Number(value);
     } else if (name === "add-to-cart") {
       cart.addToCart = safeParse(decodeURIComponent(value.toString()));
+    } else if (name === "add-to-attachment") {
+      // console.log(safeParse(decodeURIComponent(value)));
+      // cart.customizationData = safeParse(decodeURIComponent(value));
     }
   }
 

@@ -83,7 +83,7 @@ function ProductInfo({ page }: Props) {
       {/* Product Name */}
       <span
         class={clx(
-          "text-2xl font-bold text-gray-400 flex items-start justify-between",
+          "font-bold text-gray-400 flex items-start justify-between text-2xl",
           "pt-4",
         )}
       >
@@ -146,5 +146,14 @@ function ProductInfo({ page }: Props) {
     </div>
   );
 }
+
+// export const loader = async await (props: Props, req: Request, ctx: AppContext) => {
+//   if (!props.page || !props.page.product) return null;
+
+
+//   const cookies = req.headers.get("cookie");
+//   const orderFormIdMatch = cookies && cookies.match(/checkout.vtex.com=__ofid=([^;]+)/);
+//   const orderFormID = orderFormIdMatch ? orderFormIdMatch[1] : undefined;
+// }
 
 export default ProductInfo;

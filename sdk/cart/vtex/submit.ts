@@ -3,12 +3,21 @@ import { type CartSubmitActions } from "../../../actions/minicart/submit.ts";
 import { cartFrom } from "./loader.ts";
 
 const actions: CartSubmitActions<AppContext> = {
-  addToCart: async ({ addToCart }, req, ctx) => {
+  addToCart: async ({ addToCart, customizationData }, req, ctx) => {
     const response = await ctx.invoke(
       "vtex/actions/cart/addItems.ts",
       // @ts-expect-error I don't know how to fix this
       addToCart,
     );
+
+    console.log("customization", customizationData)
+
+    if(customizationData) {
+      const value = customizationData.value;
+      const orderFormID = customizationData.orderFormID;
+
+      console.log("value", value)
+    }
 
     return cartFrom(response, req.url);
   },
@@ -28,18 +37,6 @@ const actions: CartSubmitActions<AppContext> = {
       "vtex/actions/cart/updateCoupons.ts",
       { text: coupon ?? undefined },
     );
-
-    return cartFrom(response, req.url);
-  },
-
-  setSubscription: async ({ addToCart }, req, ctx) => {
-    const response = await ctx.invoke(
-      "vtex/actions/cart/addItems.ts",
-      // @ts-expect-error I don't know how to fix this
-      addToCart,
-    );
-
-    console.log("response", response)
 
     return cartFrom(response, req.url);
   },
