@@ -26,6 +26,23 @@ export default {
         },
       },
     },
+    fontSize: {
+      10: "0.625rem",
+      11: "0.6875rem",
+      12: "0.75rem",
+      13: "0.8125rem",
+      14: "0.875rem",
+      16: "1rem",
+      18: "1.125rem",
+      20: "1.25rem",
+      24: "1.5rem",
+      28: "1.75rem",
+      32: "2rem",
+      42: "2.625rem",
+      44: "2.75rem",
+      48: "3rem",
+      72: "4.5rem",
+    },
     colors: {
       // ORANGE COLORS
       "orange-100": "#E89D6E",

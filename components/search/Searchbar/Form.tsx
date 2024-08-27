@@ -129,7 +129,7 @@ export default function Searchbar(
       </form>
 
       {/* Suggestions slot */}
-      <div class="absolute left-0 top-full w-full bg-white" id={slot} />
+      <div class="absolute left-0 top-[110%] w-full bg-white rounded-lg" id={slot} />
 
       {/* Send search events as the user types */}
       <script
