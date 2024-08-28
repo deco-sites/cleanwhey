@@ -48,7 +48,7 @@ function ProductCard({
   const title = isVariantOf?.name ?? product.name;
   const [front, back] = images ?? [];
 
-  const { listPrice, price, seller = "1", availability } = useOffer(offers);
+  const { listPrice, price, seller = "1", availability, installments } = useOffer(offers);
   const inStock = availability === "https://schema.org/InStock";
   const possibilities = useVariantPossibilities(hasVariant, product);
   const firstSkuVariations = Object.entries(possibilities)[0];
@@ -170,6 +170,7 @@ function ProductCard({
           
         </span>
         {!isFeatured && (
+          <>
           <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
             <span class="line-through text-sm font-normal text-gray-300">
               {formatPrice(listPrice, offers?.priceCurrency)}
@@ -180,6 +181,10 @@ function ProductCard({
               <p class="text-sm text-gray-300">no PIX</p>
             </span>
           </div>
+          <div>
+            {installments}
+          </div>
+          </>
         )}
       </a>
 

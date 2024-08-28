@@ -1,0 +1,34 @@
+{
+  "name": "Favoritos",
+  "path": "/wishlist",
+  "sections": [
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Header"
+      }
+    },
+    {
+      "__resolveType": "site/sections/Product/SearchResult.tsx",
+      "page": {
+        "__resolveType": "vtex/loaders/product/wishlist.ts",
+        "count": 12,
+        "offset": 1
+      },
+      "layout": {
+        "pagination": "show-more"
+      },
+      "startingPage": 1
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Footer"
+      }
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}

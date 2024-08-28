@@ -102,7 +102,7 @@ const Desktop = (
         <div class="flex gap-4">
           <a
             class="text-white hover:!bg-transparent btn btn-sm font-normal btn-ghost no-animation gap-2 flex items-center"
-            href="/duvidas-frequentes"
+            href="#1840087127-0"
           >
             <Icon id="duvidas" class="h-8 w-8" />
             <p>

@@ -135,13 +135,13 @@ export default function NutritionalInformation(props: Props) {
               <Picture>
                 <Source
                   src={nutritionalPromotionImage.mobile.src}
-                  width={nutritionalPromotionImage.mobile.width ?? 350}
+                  width={nutritionalPromotionImage.mobile.width ?? 666}
                   height={nutritionalPromotionImage.mobile.height ?? 718}
                   media="(max-width: 767px)"
                 />
                 <Source
                   src={nutritionalPromotionImage.desktop.src}
-                  width={nutritionalPromotionImage.desktop.width ?? 350}
+                  width={nutritionalPromotionImage.desktop.width ?? 666}
                   height={nutritionalPromotionImage.desktop.height ?? 718}
                   media="(min-width: 767px)"
                 />

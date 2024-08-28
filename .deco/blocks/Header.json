@@ -1,1 +1,37 @@
-{"__resolveType":"site/sections/Header/Header.tsx","navItems":{"__resolveType":"navbar"},"searchbar":{"placeholder":"O que você procura?","loader":{"__resolveType":"resolved","data":{"__resolveType":"vtex/loaders/intelligentSearch/suggestions.ts","count":4}}},"alerts":[{"alertText":"Frete Grátis SP e MG: acima de R$ 339","alertImage":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/eec1449e-864e-44e8-b499-cfed64aa1029"},{"alertText":"Frete Grátis SP e MG: acima de R$ 349","alertImage":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/eec1449e-864e-44e8-b499-cfed64aa1029"},{"alertText":"Frete Grátis SP e MG: acima de R$ 399","alertImage":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/eec1449e-864e-44e8-b499-cfed64aa1029"}],"variant":"initial","logo":{"src":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/fcd294a1-e22c-4c02-a69b-a0b72bfeb626","alt":"Clean Whey","width":134,"height":68}}
+{
+  "__resolveType": "site/sections/Header/Header.tsx",
+  "navItems": {
+    "__resolveType": "navbar"
+  },
+  "searchbar": {
+    "placeholder": "O que você procura?",
+    "loader": {
+      "__resolveType": "resolved",
+      "data": {
+        "__resolveType": "vtex/loaders/intelligentSearch/suggestions.ts",
+        "count": 4
+      }
+    }
+  },
+  "alerts": [
+    {
+      "alertText": "Frete Grátis SP e MG: acima de R$ 339",
+      "alertImage": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/a57e8b69-e992-41d7-9e01-88391b9ea0bd"
+    },
+    {
+      "alertText": "Frete Grátis SP e MG: acima de R$ 349",
+      "alertImage": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/d11292c4-5959-45ce-81e4-061ea8dcaf3f"
+    },
+    {
+      "alertText": "Frete Grátis SP e MG: acima de R$ 399",
+      "alertImage": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/1972c342-7d1a-49f5-957b-449638e51395"
+    }
+  ],
+  "variant": "initial",
+  "logo": {
+    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/fcd294a1-e22c-4c02-a69b-a0b72bfeb626",
+    "alt": "Clean Whey",
+    "width": 134,
+    "height": 68
+  }
+}

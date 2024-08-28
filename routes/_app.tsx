@@ -18,7 +18,7 @@ export default defineApp(async (_req, ctx) => {
         {/* Enable View Transitions API */}
         <style
           dangerouslySetInnerHTML={{
-            __html: `@view-transition { navigation: auto; }`,
+            __html: `@view-transition { navigation: auto; } html { scroll-behavior: smooth }`,
           }}
         />
 
@@ -33,7 +33,9 @@ export default defineApp(async (_req, ctx) => {
       </Head>
 
       {/* Rest of Preact tree */}
-      <ctx.Component />
+      <div class="font-lato">
+        <ctx.Component />
+      </div>
 
       <script
         type="module"

@@ -32,7 +32,7 @@ function ValueItem(
 }
 
 function FilterValues({ key, values }: FilterToggle) {
-  const avatars = key === "tamanho" || key === "cor";
+  const avatars = key === "cor";
   const flexDirection = avatars ? "flex-row items-center" : "flex-col";
 
   return (
