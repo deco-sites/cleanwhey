@@ -141,12 +141,10 @@ function ProductInfo({ page }: Props) {
                 disabled={false}
               />
 
-              {
-                /* <AddToCartButtonVTEX
+              <AddToCartButtonVTEX
                 productID={productID}
                 seller={seller}
-              /> */
-              }
+              />
             </>
           )
           : <OutOfStock productID={productID} />}

@@ -7,19 +7,12 @@ export interface Props extends Omit<BtnProps, "onAddItem"> {
   productID: string;
   /** @format color */
   buttonColor?: string;
-  i?: number;
-  attach?: string;
-  cont?: {
-    key: string;
-    value: string;
-  };
 }
 
 function AddToCartButton(
-  { seller, productID, buttonColor, i, attach, cont }: Props,
+  { seller, productID, buttonColor }: Props,
 ) {
   const { addItems, addItemAttachment } = useCart();
-  const { key, value } = cont;
   const count = useSignal(1);
 
   const onAddItem = () =>
@@ -33,10 +26,10 @@ function AddToCartButton(
 
   const onAddAttachment = () =>
     addItemAttachment({
-      index: i ? i : 0,
-      attachment: attach ? attach : "vtex.subscriptions.assinatura",
+      index:  0,
+      attachment: "vtex.subscription.assinatura",
       content: {
-        key: value,
+        "vtex.subscription.key.frequency": "1 month",
       },
     });
 
