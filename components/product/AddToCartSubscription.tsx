@@ -26,7 +26,7 @@ function AddToCartButton(
 
   const onAddAttachment = () =>
     addItemAttachment({
-      index:  0,
+      index: 0,
       attachment: "vtex.subscription.assinatura",
       content: {
         "vtex.subscription.key.frequency": "1 month",

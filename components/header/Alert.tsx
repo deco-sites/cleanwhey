@@ -37,7 +37,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
                 alt={alert.alertText}
                 width={16}
                 height={16}
-                style={{maxHeight: '16px', height: '16px'}}
+                style={{ maxHeight: "16px", height: "16px" }}
               />
               <span
                 class="px-2 py-2 text-center text-white"

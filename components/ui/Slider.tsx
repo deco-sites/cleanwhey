@@ -37,9 +37,7 @@ function NextButton(props: JSX.IntrinsicElements["button"]) {
 }
 
 function PrevButton(props: JSX.IntrinsicElements["button"]) {
-  return (
-    <button data-slide="prev" aria-label="Previous item" {...props} />
-  );
+  return <button data-slide="prev" aria-label="Previous item" {...props} />;
 }
 
 export interface Props {

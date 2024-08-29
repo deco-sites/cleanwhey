@@ -99,9 +99,11 @@ function VariantSelector({ product }: Props) {
   const tastes = product.isSimilarTo;
   const relativeUrl = relative(url);
   const id = useId();
-  const productTaste = product.additionalProperty?.find((item) => item.name == "SABOR")
+  const productTaste = product.additionalProperty?.find((item) =>
+    item.name == "SABOR"
+  );
 
-  console.log(product.offers)
+  console.log(product.offers);
 
   return (
     <>
@@ -118,13 +120,13 @@ function VariantSelector({ product }: Props) {
         hx-sync="this:replace"
       >
         <li class="flex flex-col gap-2 min-w-[80px]">
-        {product.image && product.image?.length > 0 && (
-          <Ring
-            value={productTaste?.value?.toLowerCase() || "Sabor"}
-            image={product?.image[0]?.url}
-            checked={true}
-          />
-        )}
+          {product.image && product.image?.length > 0 && (
+            <Ring
+              value={productTaste?.value?.toLowerCase() || "Sabor"}
+              image={product?.image[0]?.url}
+              checked={true}
+            />
+          )}
         </li>
         {tastes?.map((item) => {
           const relativeLink = relative(item.url);
