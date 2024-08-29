@@ -148,7 +148,7 @@ function Aside(
           <div class="flex justify-between items-center">
             <a
               class="p-4 h-auto text-white hover:!bg-transparent btn btn-sm font-normal btn-ghost no-animation gap-2 flex items-center"
-              href="/duvidas-frequentes"
+              href="#1840087127-0"
             >
               <Icon id="duvidas" class="h-8 w-8" />
               <p>

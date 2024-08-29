@@ -10,13 +10,13 @@ const actions: CartSubmitActions<AppContext> = {
       addToCart,
     );
 
-    console.log("customization", customizationData)
+    console.log("customization", customizationData);
 
-    if(customizationData) {
+    if (customizationData) {
       const value = customizationData.value;
       const orderFormID = customizationData.orderFormID;
 
-      console.log("value", value)
+      console.log("value", value);
     }
 
     return cartFrom(response, req.url);

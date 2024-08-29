@@ -83,7 +83,7 @@ export default function BlogPosts({
   const ContainerComponent = page === 0 ? Container : Fragment;
 
   return (
-    <ContainerComponent >
+    <ContainerComponent>
       <>
         {sectionTitle && (
           <h2

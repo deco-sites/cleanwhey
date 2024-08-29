@@ -8653,7 +8653,7 @@
     },
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
-      "title": "You may also like",
+      "title": "<p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">Compre</span> <span style=\"color: rgb(161, 166, 183);\" data-mce-style=\"color: rgb(161, 166, 183);\">também:</span></p>",
       "products": {
         "__resolveType": "vtex/loaders/legacy/relatedProductsLoader.ts",
         "crossSelling": "similars",
@@ -8662,7 +8662,8 @@
           "__resolveType": "website/functions/requestToParam.ts",
           "param": "slug"
         }
-      }
+      },
+      "isFeatured": false
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",

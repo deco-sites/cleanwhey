@@ -32,7 +32,7 @@ function ValueItem(
 }
 
 function FilterValues({ key, values }: FilterToggle) {
-  const avatars = key === "tamanho" || key === "cor";
+  const avatars = key === "cor";
   const flexDirection = avatars ? "flex-row items-center" : "flex-col";
 
   return (
@@ -53,12 +53,33 @@ function FilterValues({ key, values }: FilterToggle) {
 
         if (key === "price") {
           const range = parseRange(item.value);
+          // console.log(values)
 
           return range && (
-            <ValueItem
-              {...item}
-              label={`${formatPrice(range.from)} - ${formatPrice(range.to)}`}
-            />
+            <>
+              <ValueItem
+                {...item}
+                label={`${formatPrice(range.from)} - ${formatPrice(range.to)}`}
+              />
+              {
+                /* <div class="grid border-solid border-b border-gray-200 grid-rows-[1fr] transition-[grid-template-rows] duration-600 ease-in-out">
+                <div class="overflow-y-auto overflow-x-hidden max-h-[400px]">
+                  <div class="false h-16 mt-4">
+                    <div class="container-slideri">
+                      <input type="range" min={range.from} max={range.to} value={range.from} class="thumb_ thumb--zindex-3 false" />
+                      <input type="range" min={range.from} max={range.to} value={range.to} class="thumb_ thumb--zindex-4" />
+                      <div class="slider_">
+                        <div class="slider__track"></div>
+                        <div class="slider__range"></div>
+                        <div class="slider__left-value">{range.from}</div>
+                        <div class="slider__right-value">{range.to}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> */
+              }
+            </>
           );
         }
 

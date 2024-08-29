@@ -10,6 +10,7 @@ import WishlistButton from "../wishlist/WishlistButton.tsx";
 import AddToCartButton from "./AddToCartButton.tsx";
 import OutOfStock from "./OutOfStock.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
+import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -139,6 +140,13 @@ function ProductInfo({ page }: Props) {
                 class="btn btn-primary hover:bg-orange-300 hover:border-orange-300 no-animation bg-orange-300 border-orange-300 rounded-lg h-14"
                 disabled={false}
               />
+
+              {
+                /* <AddToCartButtonVTEX
+                productID={productID}
+                seller={seller}
+              /> */
+              }
             </>
           )
           : <OutOfStock productID={productID} />}
@@ -149,7 +157,6 @@ function ProductInfo({ page }: Props) {
 
 // export const loader = async await (props: Props, req: Request, ctx: AppContext) => {
 //   if (!props.page || !props.page.product) return null;
-
 
 //   const cookies = req.headers.get("cookie");
 //   const orderFormIdMatch = cookies && cookies.match(/checkout.vtex.com=__ofid=([^;]+)/);

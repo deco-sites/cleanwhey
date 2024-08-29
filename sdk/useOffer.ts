@@ -2,6 +2,7 @@ import type {
   AggregateOffer,
   UnitPriceSpecification,
 } from "apps/commerce/types.ts";
+import { formatPrice } from "./format.ts";
 
 const bestInstallment = (
   acc: UnitPriceSpecification | null,
@@ -45,9 +46,9 @@ const installmentToString = (
 
   const withTaxes = sellingPrice < price;
 
-  return `${billingDuration}x de R$ ${billingIncrement} ${
-    withTaxes ? "com juros" : "sem juros"
-  }`;
+  return `ou ${formatPrice(price)} em ${billingDuration}x de ${
+    formatPrice(billingIncrement)
+  } ${withTaxes ? "no cartão com juros" : "no cartão sem juros"}`;
 };
 
 export const useOffer = (aggregateOffer?: AggregateOffer) => {

@@ -125,10 +125,8 @@ function PageResult(props: SectionProps<typeof loader>) {
               class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
               shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
             />
-          ))
-          
-        }
-        )}
+          ));
+        })}
       </div>
 
       <div class={clx("pt-2 sm:pt-10 w-full", "")}>
@@ -222,7 +220,6 @@ function Result(props: SectionProps<typeof loader>) {
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
 
-
   const viewItemListEvent = useSendEvent({
     on: "view",
     event: {
@@ -245,7 +242,8 @@ function Result(props: SectionProps<typeof loader>) {
 
   const results = (
     <span class="text-sm font-normal">
-      Exibindo {page.pageInfo.recordPerPage} de {page.pageInfo.records} resultados
+      Exibindo {page.pageInfo.recordPerPage} de {page.pageInfo.records}{" "}
+      resultados
     </span>
   );
 

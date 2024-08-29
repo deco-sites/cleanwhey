@@ -140,6 +140,12 @@
           "image": [],
           "name": "Assinaturas",
           "url": "/assinaturas"
+        },
+        {
+          "image": [],
+          "children": [],
+          "url": "/suplementos/performance",
+          "name": "Performance"
         }
       ],
       "image": [
@@ -182,7 +188,7 @@
       "children": [],
       "image": [],
       "name": "Conheça nosso time",
-      "url": "/nosso-time"
+      "url": "/quem-somos"
     }
   ],
   "__resolveType": "commerce/loaders/navbar.ts"

@@ -78,7 +78,7 @@ export const Box = (
 ) => {
   return (
     <div
-      class={`rounded-lg min-w-[60px] px-2
+      class={`rounded-lg min-w-[60px] py-1 px-4
       ${checked ? "bg-gray-400 text-white" : "bg-gray-100 text-gray-300"}`}
     >
       <span
@@ -103,10 +103,12 @@ function VariantSelector({ product }: Props) {
   return (
     <>
       {tastes && tastes.length > 0 && (
-        <span class="text-sm text-gray-300 font-normal mb-2">Sabores</span>
+        <span class="text-sm text-gray-300 font-normal mb-2 uppercase">
+          SABORES
+        </span>
       )}
       <ul
-        class="flex flex-row flex-wrap gap-4"
+        class="flex flex-row flex-wrap gap-2 mb-4"
         hx-target="body"
         hx-swap="outerHTML"
         hx-replace-url="true"
@@ -117,7 +119,7 @@ function VariantSelector({ product }: Props) {
           const filteredProperties = item.isVariantOf?.additionalProperty
             .filter(({ name }) => name === "Nome nos similares");
           return (
-            <li class="flex flex-col gap-2">
+            <li class="flex flex-col gap-2 min-w-16">
               <label
                 class="cursor-pointer grid grid-cols-1 grid-rows-1 place-items-center"
                 hx-get={relativeLink}
@@ -160,15 +162,19 @@ function VariantSelector({ product }: Props) {
         })}
       </ul>
       <ul
-        class="flex flex-col gap-4"
+        class="flex flex-col gap-2"
         hx-target="body"
         hx-swap="outerHTML"
         hx-replace-url="true"
         hx-sync="this:replace"
       >
         {Object.keys(possibilities).map((name) => (
-          <li class="flex flex-col gap-2">
-            <span class="text-sm text-gray-300 font-normal capitalize mb-2">
+          <li
+            class={`flex flex-col gap-2 ${
+              name == "SABOR" || name == "activeSubscriptions" ? "hidden" : ""
+            }`}
+          >
+            <span class="text-sm text-gray-300 font-normal uppercase mb-2">
               {name}
             </span>
             <ul class="flex flex-row flex-wrap gap-4">

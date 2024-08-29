@@ -77,7 +77,8 @@ function Suggestions(
                   class="flex gap-1 items-center"
                 >
                   {/* <Icon id="searchRecent" class={"text-[#A1A6B7]"}/> */}
-                  {index + 1} - <span dangerouslySetInnerHTML={{ __html: term }} />
+                  {index + 1} -{" "}
+                  <span dangerouslySetInnerHTML={{ __html: term }} />
                 </a>
               </li>
             ))}

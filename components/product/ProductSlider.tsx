@@ -24,15 +24,19 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
           <Slider.PrevButton class="disable:bg-transparent flex btn !bg-transparent border-none btn-neutral btn-sm btn-circle no-animation">
             <Icon
               id="arrow-right-custom"
-              class={`${isFeatured ? "text-white" : "text-orange-300"
-                } rotate-180`}
+              class={`${
+                isFeatured ? "text-white" : "text-orange-300"
+              } rotate-180`}
             />
           </Slider.PrevButton>
         </div>
 
         <div
-          class={`${isFeatured ? "md:max-w-[90%] max-w-[85%]" : "sm:max-w-[95%] max-w-[80%]"
-            } w-full px-0 sm:px-4`}
+          class={`${
+            isFeatured
+              ? "md:max-w-[90%] max-w-[85%]"
+              : "sm:max-w-[95%] max-w-[80%]"
+          } w-full px-0 sm:px-4`}
         >
           <Slider class="carousel sm:carousel-end carousel-center w-full gap-4 py-4">
             {products?.map((product) => {

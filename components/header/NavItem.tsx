@@ -57,12 +57,18 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
                     <ul class="after:content-[' '] border-r-gray-200 border-r after:absolute after:right-[90%] after:h-full after:bg-transparent after:w-1/2 min-w-[200px] ml-5 h-full group-hover/lastmenu:flex hidden flex-col gap-1 mt-4 absolute top-0 left-full">
                       {node.children?.map((leaf) => (
                         <li class="p-0 group/finalmenu w-full">
-                          <a class="hover:underline group-hover/finalmenu:text-orange-300 text-gray-300 flex items-center justify-between" href={leaf.url}>
+                          <a
+                            class="hover:underline group-hover/finalmenu:text-orange-300 text-gray-300 flex items-center justify-between"
+                            href={leaf.url}
+                          >
                             <span class="text-base text-gray-300 font-bold  uppercase">
                               {leaf.name}
                             </span>
                             {leaf.children && leaf.children.length > 0 && (
-                              <Icon id="arrow-right-custom" class="text-orange-300" />
+                              <Icon
+                                id="arrow-right-custom"
+                                class="text-orange-300"
+                              />
                             )}
                           </a>
 

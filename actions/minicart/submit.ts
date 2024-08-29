@@ -59,7 +59,7 @@ const cartFrom = (form: FormData) => {
     platformCart: null,
     action: null,
     addToCart: null,
-    customizationData: null
+    customizationData: null,
   };
 
   for (const [name, value] of form.entries()) {
@@ -92,7 +92,11 @@ async function action(
 
   const form = cartFrom(await req.formData());
 
-  const handler = form.action === "set-coupon" ? setCoupon : form.action === "add-to-cart" ? addToCart : setQuantity;
+  const handler = form.action === "set-coupon"
+    ? setCoupon
+    : form.action === "add-to-cart"
+    ? addToCart
+    : setQuantity;
 
   if (!handler) {
     throw new Error(`Unsupported action on platform ${usePlatform()}`);
