@@ -53,7 +53,7 @@ export const Ring = (
 
   return (
     <div
-      class={`flex flex-col gap-1 items-center text-xs font-bold text-center
+      class={`flex flex-col gap-1 capitalize items-center text-xs font-bold text-center
     ${checked ? "text-orange-300" : "text-gray-300"}`}
     >
       <span
@@ -99,6 +99,9 @@ function VariantSelector({ product }: Props) {
   const tastes = product.isSimilarTo;
   const relativeUrl = relative(url);
   const id = useId();
+  const productTaste = product.additionalProperty?.find((item) => item.name == "SABOR")
+
+  console.log(product.offers)
 
   return (
     <>
@@ -114,12 +117,21 @@ function VariantSelector({ product }: Props) {
         hx-replace-url="true"
         hx-sync="this:replace"
       >
+        <li class="flex flex-col gap-2 min-w-[80px]">
+        {product.image && product.image?.length > 0 && (
+          <Ring
+            value={productTaste?.value?.toLowerCase() || "Sabor"}
+            image={product?.image[0]?.url}
+            checked={true}
+          />
+        )}
+        </li>
         {tastes?.map((item) => {
           const relativeLink = relative(item.url);
           const filteredProperties = item.isVariantOf?.additionalProperty
             .filter(({ name }) => name === "Nome nos similares");
           return (
-            <li class="flex flex-col gap-2 min-w-16">
+            <li class="flex flex-col gap-2 min-w-[80px]">
               <label
                 class="cursor-pointer grid grid-cols-1 grid-rows-1 place-items-center"
                 hx-get={relativeLink}

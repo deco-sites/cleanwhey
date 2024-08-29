@@ -112,9 +112,23 @@ function PageResult(props: SectionProps<typeof loader>) {
           "w-full",
         )}
       >
-        {products?.map((product) => {
+        {products?.map((product, i) => {
           const { isVariantOf } = product;
           const hasVariant = isVariantOf?.hasVariant ?? [];
+          const isAcessory = product.additionalProperty?.filter((item) => item.name == "category" && item.value == "Acessórios")
+          
+          {isAcessory && (
+            <ProductCard
+                key={`product-card-${product.productID}`}
+                product={product}
+                productName={product.isVariantOf?.name}
+                preload={i === 0}
+                index={offset + i}
+                class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
+                shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
+              />
+          )}
+
           return hasVariant.map((item, index) => (
             <ProductCard
               key={`product-card-${item.productID}`}
@@ -242,7 +256,9 @@ function Result(props: SectionProps<typeof loader>) {
 
   const results = (
     <span class="text-sm font-normal">
-      Exibindo {page.pageInfo.recordPerPage} de {page.pageInfo.records}{" "}
+      Exibindo {page.pageInfo.records 
+      && page.pageInfo.recordPerPage
+      && page.pageInfo.recordPerPage > page.pageInfo.records ? page.pageInfo.records : page.pageInfo.recordPerPage} de {page.pageInfo.records}{" "}
       resultados
     </span>
   );

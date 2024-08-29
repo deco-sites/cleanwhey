@@ -40,16 +40,16 @@ function FilterValues({ key, values }: FilterToggle) {
       {values.map((item) => {
         const { url, selected, value } = item;
 
-        if (avatars) {
-          return (
-            <a href={url} rel="nofollow">
-              <Avatar
-                content={value}
-                variant={selected ? "active" : "default"}
-              />
-            </a>
-          );
-        }
+        // if (avatars) {
+        //   return (
+        //     <a href={url} rel="nofollow">
+        //       <Avatar
+        //         content={value}
+        //         variant={selected ? "active" : "default"}
+        //       />
+        //     </a>
+        //   );
+        // }
 
         if (key === "price") {
           const range = parseRange(item.value);
