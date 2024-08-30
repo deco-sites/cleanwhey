@@ -2,22 +2,22 @@
   "__resolveType": "site/sections/Content/Regua.tsx",
   "items": [
     {
-      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/41c2fdd8-f149-4707-b921-c8b7b5575271",
       "title": "Frete grátis para todo Brasil",
-      "subtitle": "Rápido e seguro."
+      "subtitle": "Rápido e seguro.",
+      "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/62a02480-6b0e-4dfa-90cb-7348e48de9f3/truck.png"
     },
     {
-      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/092cd17c-be8f-492b-ba70-bedafd0f1b93",
+      "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/7e79f644-74d1-4567-8d17-f0a2c6de1ce6/credit-card.png",
       "title": "Até 6x no cartão",
       "subtitle": "Sem juros no cartão de crédito."
     },
     {
-      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/02d7b416-eeef-43a1-9910-14ce50fa4c44",
+      "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/daebb8c4-fd2a-42a2-9b59-2da12560895a/tags.png",
       "title": "15% de desconto",
       "subtitle": "Para pagamentos com PIX."
     },
     {
-      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/55e695a0-2422-436e-9949-bc6202fffd75",
+      "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/5e455fff-6a4a-44e4-8bd5-3f18b50b1f00/shield.png",
       "title": "Compra segura",
       "subtitle": "Segurança e qualidade garantidos."
     }
