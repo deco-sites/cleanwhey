@@ -42,7 +42,7 @@ function CartItem({ item, index, locale, currency }: Props) {
     <fieldset
       // deno-lint-ignore no-explicit-any
       data-item-id={(item as any).item_id}
-      class="grid grid-rows-1 gap-2"
+      class="grid grid-rows-1 gap-2 px-4"
       style={{ gridTemplateColumns: "auto 1fr" }}
     >
       <Image
@@ -57,8 +57,10 @@ function CartItem({ item, index, locale, currency }: Props) {
       {/* Info */}
       <div class="flex flex-col gap-2">
         {/* Name and Remove button */}
-        <div class="flex justify-between items-center">
-          <legend class="text-sm font-normal text-gray-400">{name}</legend>
+        <div class="flex justify-between items-center ">
+          <legend class="text-sm font-normal text-gray-400"
+          style={"    display: block; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis"}
+          >{name}</legend>
           <button
             class={clx(
               isGift && "hidden",
@@ -86,10 +88,10 @@ function CartItem({ item, index, locale, currency }: Props) {
 
         {/* Price Block */}
         <div class="flex items-end justify-between">
-          <div class="flex flex-col items-start gap-1">
-            <span class="line-through text-sm text-gray-200 font-normal">
+          <div class="flex flex-col items-start ">
+            {listPrice != price && <span class="line-through text-sm text-gray-200 font-normal">
               {formatPrice(listPrice, currency, locale)}
-            </span>
+            </span>}
             <span class="text-lg font-bold text-gray-400">
               {isGift ? "Grátis" : formatPrice(price, currency, locale)}
             </span>

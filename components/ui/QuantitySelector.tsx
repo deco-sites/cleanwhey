@@ -19,35 +19,15 @@ function QuantitySelector(
   { id = useId(), disabled, ...props }: JSX.IntrinsicElements["input"],
 ) {
   return (
-    <div class="h-10 join border rounded-lg w-full border-gray-200 py-3 px-2">
+    <div class="h-7 join border border-gray-200 min-w-[120px] w-auto justify-between rounded-lg">
       <button
         type="button"
-        class="btn h-auto min-h-full !p-0 hover:bg-transparent bg-transparent"
+        class="btn h-auto min-h-full hover:bg-transparent  bg-gray-100 justify-center items-center"
+        style={"border-radius: 8px 0px 0px 8px;"}
         hx-on:click={useScript(onClick, -1)}
         disabled={disabled}
       >
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            clip-path="url(#a)"
-            stroke="#A1A6B7"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M8 14.667A6.667 6.667 0 1 0 8 1.333a6.667 6.667 0 0 0 0 13.334M5.334 8h5.333" />
-          </g>
-          <defs>
-            <clipPath id="a">
-              <path fill="#fff" d="M0 0h16v16H0z" />
-            </clipPath>
-          </defs>
-        </svg>
+<span>-</span>
       </button>
       <div
         data-tip={`Quantity must be between ${props.min} and ${props.max}`}
@@ -60,7 +40,7 @@ function QuantitySelector(
         <input
           id={id}
           class={clx(
-            "input text-center h-auto [appearance:textfield]",
+            "input text-center h-auto p-0 [appearance:textfield]",
             "invalid:input-error",
           )}
           disabled={disabled}
@@ -71,33 +51,13 @@ function QuantitySelector(
       </div>
       <button
         type="button"
-        class="btn h-auto min-h-full !p-0 hover:bg-transparent bg-transparent"
+        class="btn h-auto min-h-full hover:bg-transparent bg-gray-100 justify-center items-center"
+        style={"border-radius: 0px 8px 8px 0px;"}
         hx-on:click={useScript(onClick, 1)}
         disabled={disabled}
       >
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            clip-path="url(#a)"
-            stroke="#A1A6B7"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M8 14.667A6.667 6.667 0 1 0 8 1.333a6.667 6.667 0 0 0 0 13.334m0-9.334v5.334M5.334 8h5.333" />
-          </g>
-          <defs>
-            <clipPath id="a">
-              <path fill="#fff" d="M0 0h16v16H0z" />
-            </clipPath>
-          </defs>
-        </svg>
-      </button>
+        <span>+</span>
+        </button>
     </div>
   );
 }
