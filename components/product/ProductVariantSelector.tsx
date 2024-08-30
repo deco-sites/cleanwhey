@@ -103,8 +103,6 @@ function VariantSelector({ product }: Props) {
     item.name == "SABOR"
   );
 
-  console.log(product.offers);
-
   return (
     <>
       {tastes && tastes.length > 0 && (
@@ -119,15 +117,17 @@ function VariantSelector({ product }: Props) {
         hx-replace-url="true"
         hx-sync="this:replace"
       >
-        <li class="flex flex-col gap-2 min-w-[80px]">
-          {product.image && product.image?.length > 0 && (
-            <Ring
+        {tastes && tastes.length > 0 && (
+          <li class="flex flex-col gap-2 min-w-[80px]">
+            {product.image && product.image?.length > 0 && (
+              <Ring
               value={productTaste?.value?.toLowerCase() || "Sabor"}
               image={product?.image[0]?.url}
               checked={true}
-            />
-          )}
-        </li>
+              />
+            )}
+          </li>
+        )}
         {tastes?.map((item) => {
           const relativeLink = relative(item.url);
           const filteredProperties = item.isVariantOf?.additionalProperty

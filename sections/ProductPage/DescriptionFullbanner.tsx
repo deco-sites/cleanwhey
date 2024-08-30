@@ -1,5 +1,6 @@
 import { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
+import { useDevice } from "deco/hooks/useDevice.ts";
 
 interface Props {
   banner?: {
@@ -27,10 +28,11 @@ interface Props {
 
 export default function DescriptionFullbanner(props: Props) {
   const { banner, title, subtitle, content, rightCard } = props;
+  const device = useDevice();
   return (
     <section>
-      <div class="relative w-full pb-8 md:pb-16">
-        {banner && banner.mobile && banner.desktop && (
+      <div class={`relative w-full pb-8 md:pb-16 md:mb-16 bg-no-repeat bg-center bg-cover`} style={{backgroundImage: `${device == "desktop" ? `url(${banner?.desktop?.src}` : `${banner?.mobile?.src}`})`}}>
+        {/* {banner && banner.mobile && banner.desktop && (
           <Picture>
             <Source
               media="(max-width: 640px)"
@@ -50,10 +52,10 @@ export default function DescriptionFullbanner(props: Props) {
               class="w-full object-cover"
             />
           </Picture>
-        )}
-        <div class="absolute w-full top-0 left-0 h-full flex flex-col md:flex-row items-center">
+        )} */}
+        <div class="w-full top-0 left-0 h-full flex flex-col md:flex-row items-center">
           <div
-            class={"flex px-4 pt-12 md:px-0 md:items-start items-center flex-col md:flex-row h-auto gap-8 md:gap-16 container justify-end "}
+            class={`flex px-4 pt-12 md:px-0 md:items-start items-center flex-col md:flex-row h-auto gap-8 md:gap-16 container justify-end`}
           >
             <div class="max-w-[384px]">
               <h2 class="font-bold text-white text-[32px] mb-2 leading-9 text-center md:text-start">
@@ -69,7 +71,7 @@ export default function DescriptionFullbanner(props: Props) {
                 />
               )}
             </div>
-            {rightCard && (
+            {rightCard && rightCard.title != "" && (
               <div class="bg-white rounded-lg p-4 max-w-[384px]">
                 <h3 class="mb-4 text-gray-400 font-bold">{rightCard?.title}</h3>
                 <hr class="mb-4 text-gray-100" />
@@ -85,5 +87,16 @@ export default function DescriptionFullbanner(props: Props) {
         </div>
       </div>
     </section>
+  );
+}
+
+export function LoadingFallback() {
+  return (
+    <div
+      style={{ height: "716px" }}
+      class="flex justify-center items-center"
+    >
+      <span class="loading loading-spinner" />
+    </div>
   );
 }

@@ -10,6 +10,8 @@ export default function Form({ items }: Props) {
   const slot = useId();
 
   return (
+    <>
+    
     <div class="flex flex-row gap-2 items-center justify-between">
       <div class="flex flex-col w-2/5">
         <span class="whitespace-nowrap flex gap-2 text-gray-300 text-sm font-normal">
@@ -72,7 +74,9 @@ export default function Form({ items }: Props) {
       </form>
 
       {/* Results Slot */}
-      <div id={slot} />
+      
     </div>
+    <div id={slot} class={"mt-5"} />
+    </>
   );
 }

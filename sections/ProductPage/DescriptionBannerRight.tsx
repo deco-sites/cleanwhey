@@ -3,7 +3,6 @@ import { Picture, Source } from "apps/website/components/Picture.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
 
 interface Props {
-  id?: string;
   title?: string;
   description?: HTMLWidget;
   percentageBanner?: {
@@ -19,10 +18,10 @@ interface Props {
 }
 
 export default function DescriptionBannerRight(props: Props) {
-  const { id, title, description, percentageBanner, rightImage } = props;
+  const { title, description, percentageBanner, rightImage } = props;
   const device = useDevice();
   return (
-    <section class="bg-white-300 pb-8 md:pb-16" id={id}>
+    <section class="bg-white-300 pb-8 md:pb-16" id={"visaogeral"}>
       <div class="container px-4 md:px-0 flex items-start md:flex-row flex-col justify-between">
         <div class="max-w-[522px] content flex flex-col items-center justify-start w-full">
           <h2 class={"text-gray-400 font-bold text-5xl mb-6"}>{title}</h2>
@@ -121,5 +120,16 @@ export default function DescriptionBannerRight(props: Props) {
         </div>
       </div>
     </section>
+  );
+}
+
+export function LoadingFallback() {
+  return (
+    <div
+      style={{ height: "716px" }}
+      class="flex justify-center items-center"
+    >
+      <span class="loading loading-spinner" />
+    </div>
   );
 }

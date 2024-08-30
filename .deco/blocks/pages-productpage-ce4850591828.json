@@ -2854,11 +2854,13 @@
                       "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/3544b19c-ffee-43c4-bc71-d328986acd46",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       },
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/66de1c74-056a-4e25-afbf-87fd8c871f5c",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       }
                     }
                   },
@@ -2884,11 +2886,13 @@
                       "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/8cd34f5e-3d0c-4996-8e9a-1d12dfc29d2c",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       },
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c0f28750-c0e6-4337-8543-2022d2a2d272",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       }
                     },
                     "ingredients": {
@@ -4518,11 +4522,13 @@
                       "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/3230a73d-ad85-4eec-9638-f139250eb8e7",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       },
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/be68d7b3-7580-4bf9-9460-65ff1bf4ed33",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       }
                     }
                   },
@@ -4548,11 +4554,13 @@
                       "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/0cb0b156-a582-44f1-875c-353f6f3503cf",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       },
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/73034dd7-242a-454b-84cf-366a18dba5c7",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       }
                     }
                   },
@@ -4578,11 +4586,13 @@
                       "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/ee31fba8-2bc9-49ab-907a-082a7bc7fd46",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       },
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/ad10784f-5f96-4edc-b5d0-7949d30c2acc",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       }
                     }
                   },
@@ -5814,11 +5824,13 @@
                       "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/cbf3355a-0cd2-41f0-a665-d14d566ff68c",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       },
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/6fdc836f-27a5-4eee-909c-17eb4dc1c8cb",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       }
                     }
                   },
@@ -5844,11 +5856,13 @@
                       "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/3f788c30-64d7-41cf-9484-e9589a4f84f5",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       },
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/0f3583ad-4a01-4901-b055-91b07ee492e0",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       }
                     }
                   },
@@ -5874,11 +5888,13 @@
                       "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/a8e6734a-fc9c-4e4a-8575-b0aa18fdd132",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       },
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/797187a3-a8c6-45d1-bdea-eaaac00217de",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       }
                     }
                   },
@@ -5904,11 +5920,13 @@
                       "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/e9100bf9-ca87-4ea3-afc5-0bc1b8e8f6c5",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       },
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/8273cd83-823b-484b-b9c7-24a7e74b3fa9",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       }
                     }
                   },
@@ -5934,11 +5952,13 @@
                       "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/2193ea1c-28a2-4aed-917a-a0c23d6be655",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       },
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/9089cfba-973a-46d4-99a3-d1740b63ac07",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       }
                     }
                   },
@@ -7080,11 +7100,13 @@
                       "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/3803e3da-52a6-404c-beaf-be0e511fc00c",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       },
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/ead537be-2bab-4acb-9217-72a5df5b3594",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       }
                     }
                   },
@@ -7110,11 +7132,13 @@
                       "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/804f75de-4799-462f-aace-606cae7a9f1d",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       },
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/3e1ec302-2012-4542-9f3a-fa40ee47d57e",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       }
                     }
                   },
@@ -7140,11 +7164,13 @@
                       "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/5088c60c-1b1a-4032-95f5-ae730b63ce91",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       },
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/33d3f0d1-e202-4a2d-991d-3859dd9fa344",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       }
                     }
                   },
@@ -7170,11 +7196,13 @@
                       "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/9bd2b866-fedb-45ad-910b-bad55abb22f6",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       },
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/cbd93f08-f2f9-4d86-9e08-811977c146f8",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       }
                     }
                   },
@@ -7200,11 +7228,13 @@
                       "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/2c65558a-d8bd-4f93-a54f-8d6c684d7d35",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       },
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/f4cdc51b-c7c2-4b44-8b4c-2adf596a015a",
-                        "width": 730
+                        "width": 730,
+                        "height": 782
                       }
                     }
                   },
@@ -8587,23 +8617,17 @@
                 "__resolveType": "site/sections/ProductPage/DescriptionFullbanner.tsx",
                 "banner": {
                   "desktop": {
-                    "alt": "Fullbanner",
-                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/9285a7fa-162b-4c66-8eb5-783fb1c4dffe"
+                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/9285a7fa-162b-4c66-8eb5-783fb1c4dffe",
+                    "alt": "immunoferrin"
                   },
                   "mobile": {
-                    "alt": "Fullbanner",
                     "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/88302a19-770d-4b55-99a8-66197d856cf8",
-                    "width": 380,
-                    "height": 1087
+                    "alt": "immunoferrin"
                   }
                 },
+                "content": "<ul><li>100% Glanbia Nutritionals</li><li>Efeito positivo no tratamento da disbiose e imunidade intestinal através do efeito Bifidogênico</li><li>Efeito antiinflamatório, reduzindo a produção de citocinas pró inflamatórias;</li><li>Participa ativamente no transporte e doação de ferro no ogranismo, prevenindo a anemia, principalmente em mulheres gestantes</li><li>Eficácia comprovada e uso seguro por crianças, gestantes, idosos e pacientes imunosuprimidos</li></ul>",
                 "title": "Faça a escolha certa você também!",
-                "subtitle": "Confira os diferenciais que te proporcionam uma qualidade superior",
-                "content": "<ul><li>100% Glanbia Nutritionals </li><li>Efeito positivo no tratamento da disbiose e imunidade intestinal através do efeito Bifidogênico </li><li>Efeito antiinflamatório, reduzindo a produção de citocinas pró inflamatórias; </li><li>Participa ativamente no transporte e doação de ferro no ogranismo, prevenindo a anemia, principalmente em mulheres gestantes </li><li>Eficácia comprovada e uso seguro por crianças, gestantes, idosos e pacientes imunosuprimidos</li></ul>",
-                "rightCard": {
-                  "title": "Ingredientes glanbia",
-                  "content": "<ul><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li></ul>"
-                }
+                "subtitle": "Confira os diferenciais que te proporcionam uma qualidade superior"
               }
             },
             {

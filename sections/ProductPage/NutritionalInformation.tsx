@@ -8,7 +8,6 @@ export interface Question {
 }
 
 interface Props {
-  id?: string;
   title?: string;
   table?: {
     altText: string;
@@ -66,7 +65,6 @@ function Question({ question, answer }: Question) {
 
 export default function NutritionalInformation(props: Props) {
   const {
-    id,
     title,
     table,
     ingredients,
@@ -76,7 +74,7 @@ export default function NutritionalInformation(props: Props) {
   const device = useDevice();
 
   return (
-    <section class="bg-white-300 pb-8 md:pb-8" id={id}>
+    <section class="bg-white-300 pb-8 md:pb-8" id={"informacao-nutricional"}>
       <div className="container px-4 md:px-0">
         <h2 class={"font-bold mb-6 text-gray-400 text-[32px] md:text-5xl"}>
           {title}
@@ -156,7 +154,7 @@ export default function NutritionalInformation(props: Props) {
         </div>
       </div>
       {device === "desktop" && (
-        <div className="container px-4 md:px-0">
+        <div className="container px-4 md:px-0" id={"modo-de-preparo"}>
           <div class="pb-6">
             <ul class="w-full">
               <li class="gap-2 flex flex-col">
