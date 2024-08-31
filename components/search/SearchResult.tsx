@@ -261,8 +261,8 @@ function Result(props: SectionProps<typeof loader>) {
   const results = (
     <span class="text-sm font-normal">
       Exibindo {page.pageInfo.records &&
-          page.pageInfo.recordPerPage &&
-          page.pageInfo.recordPerPage > page.pageInfo.records
+        page.pageInfo.recordPerPage &&
+        page.pageInfo.recordPerPage > page.pageInfo.records
         ? page.pageInfo.records
         : page.pageInfo.recordPerPage} de {page.pageInfo.records} resultados
     </span>
