@@ -1,4 +1,4 @@
-import { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
+import { ImageWidget, RichText } from "apps/admin/widgets.ts";
 import { useDevice } from "deco/hooks/useDevice.ts";
 import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
@@ -10,13 +10,13 @@ interface influencers {
   };
   link: string;
   textLabel: string;
-  description: HTMLWidget;
+  description: RichText;
 }
 export interface Props {
-  title?: HTMLWidget;
+  title?: RichText;
   items: influencers[];
   conteudoFlutuante: {
-    text: HTMLWidget;
+    text: RichText;
     link: string;
     label?: string;
   };
@@ -30,18 +30,18 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
           items.map((item, index) => (
             <div class="relative group flex w-full duration-300 h-full transition-all items-center justify-center">
               <a
-                class={`rounded-lg w-full h-full transition-all duration-300 relative overflow-hidden`}
+                class={`rounded-lg w-full h-full transition-all duration-300 relative overflow-hidde`}
                 href={item.link}
               >
                 <img
-                  class={`rounded-lg w-full duration-300 transition-all group-hover:blur`}
+                  class={`rounded-lg w-full duration-300 transition-all group-hover:blur h-full`}
                   src={item.images.normal}
                   loading={"lazy"}
                 />
 
-                <div class="font-regular text-sm leading-4 transition-all text-left text-white z-10 py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 flex items-start justify-start">
+                <div class="font-regular text-sm leading-4 transition-all text-left text-white z-10 py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 overflow-y-scroll items-start justify-start scroll-custom overflow-x-hidden rounded-md">
                   <h2 class={"font-bold mb-6"}>{item.textLabel}</h2>
-                  <p dangerouslySetInnerHTML={{ __html: item.description }} />
+                  <span dangerouslySetInnerHTML={{ __html: item.description }} />
                 </div>
               </a>
               <p class="z-20 w-[90%] group-hover:hidden absolute top-8 bg-[#163E73D9] p-1.5 font-regular rounded-lg text-white  text-center text-lg">
@@ -88,9 +88,9 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
                     loading={"lazy"}
                   />
 
-                  <div class="font-regular text-sm leading-4 transition-all text-left text-white z-10 py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 flex items-start justify-start">
+                  <div class="font-regular text-sm leading-4 transition-all text-left text-white z-10 py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 overflow-y-scroll items-start justify-start scroll-custom overflow-x-hidden rounded-md">
                     <h2 class={"font-bold mb-6"}>{item.textLabel}</h2>
-                    <p dangerouslySetInnerHTML={{ __html: item.description }} />
+                    <span dangerouslySetInnerHTML={{ __html: item.description }} />
                   </div>
                 </a>
                 <p class="z-20 w-[90%] group-hover:hidden absolute top-8 bg-[#163E73D9] p-1.5 font-regular rounded-lg text-white  text-center text-lg">
