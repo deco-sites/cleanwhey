@@ -79,5 +79,3 @@ _docker_deps.ts
 .metadata/changeset.json
 
 .env
-
-tailwind.css
