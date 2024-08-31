@@ -26,10 +26,7 @@
     {
       "__resolveType": "site/sections/Product/SearchResult.tsx",
       "page": {
-        "__resolveType": "vtex/loaders/legacy/productListingPage.ts",
-        "sort": "OrderByPriceDESC",
-        "filters": "dynamic",
-        "count": 24
+        "__resolveType": "PLP loader vtex"
       },
       "layout": {
         "columns": {

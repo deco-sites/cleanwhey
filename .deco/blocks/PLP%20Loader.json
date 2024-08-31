@@ -1,7 +1,20 @@
 {
   "data": {
     "__resolveType": "vtex/loaders/ProductListingPage.ts",
-    "count": 12
+    "count": 12,
+    "@type": "ProductListingPage",
+    "breadcrumb": {
+      "@type": "BreadcrumbList"
+    },
+    "filters": [],
+    "products": [],
+    "pageInfo": {
+      "pageTypes": []
+    },
+    "sortOptions": [],
+    "sort": "OrderByPriceDESC",
+    "fuzzy": "automatic",
+    "selectedFacets": []
   },
   "extensions": [],
   "__resolveType": "commerce/loaders/product/extensions/listingPage.ts"
