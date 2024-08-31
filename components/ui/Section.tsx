@@ -27,7 +27,7 @@ function Header({ title, isFeatured, icon }: Props) {
       <span
         class={`${
           isFeatured ? "font-normal !text-white" : "font-semibold text-gray-300"
-        } text-2xl text-center sm:text-2xl`}
+        } text-2xl text-center sm:text-2xl pt-3`}
         dangerouslySetInnerHTML={{ __html: title }}
       />
       <img loading={"lazy"} src={icon} />
@@ -96,7 +96,7 @@ function Container({ class: _class, ...props }: JSX.IntrinsicElements["div"]) {
     <div
       {...props}
       class={clx(
-        "container flex flex-col gap-4 sm:gap-6 w-full py-5 sm:pt-10",
+        "container flex flex-col gap-4 w-full py-5 sm:pt-10",
         _class?.toString(),
       )}
     />

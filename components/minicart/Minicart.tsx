@@ -133,7 +133,7 @@ export default function Cart({
   },
 }: { cart: Minicart }) {
   const count = items.length;
-
+  
   return (
     <>
       <form
@@ -175,7 +175,7 @@ export default function Cart({
 
         <div
           class={clx(
-            "flex flex-col flex-grow justify-center items-center overflow-hidden w-full",
+            "flex flex-col flex-grow justify-start items-center overflow-hidden w-full ",
             "[.htmx-request_&]:pointer-events-none [.htmx-request_&]:opacity-60 [.htmx-request_&]:cursor-wait transition-opacity duration-300",
           )}
         >
@@ -192,23 +192,10 @@ export default function Cart({
               </div>
             )
             : (
-              <>
-                {/* Free Shipping Bar */}
-                {
-                  /* <div class="px-2 py-4 w-full">
-                  <FreeShippingProgressBar
-                    total={total}
-                    locale={locale}
-                    currency={currency}
-                    target={freeShippingTarget}
-                  />
-                </div> */
-                }
-
-                {/* Cart Items */}
+              <div class="w-full h-full flex justify-between flex-col ">
                 <ul
                   role="list"
-                  class="mt-6 px-2 flex-grow overflow-y-auto flex flex-col gap-6 w-full"
+                  class="mt-6 px-2 flex-grow overflow-y-auto flex flex-col gap-6 w-full overflow-scroll pb-[290px]"
                 >
                   {items.map((item, index) => (
                     <li class="border-b border-gray-100 pb-4">
@@ -223,7 +210,7 @@ export default function Cart({
                 </ul>
 
                 {/* Cart Footer */}
-                <footer class="w-full border-t border-gray-200">
+                <footer class="w-full border-t border-gray-200 bg-white absolute bottom-0">
                   {/* Subtotal */}
                   <div class="border-t border-base-200 py-2 flex flex-col">
                     {discounts > 0 && (
@@ -277,7 +264,7 @@ export default function Cart({
                       <span class="[.htmx-request_&]:inline hidden loading loading-spinner" />
                     </a>
                     <a
-                      class="text-center pt-5 block text-orange-300 font-bold text-base"
+                      class="text-center mt-3 block text-orange-300 font-bold text-base py-4"
                       href="javascript:void(0)"
                       hx-on:click={useScript(onClick)}
                     >
@@ -285,7 +272,7 @@ export default function Cart({
                     </a>
                   </div>
                 </footer>
-              </>
+              </div>
             )}
         </div>
       </form>

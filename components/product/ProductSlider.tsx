@@ -38,7 +38,7 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
               : "sm:max-w-[95%] max-w-[80%]"
           } w-full px-0 sm:px-4`}
         >
-          <Slider class="carousel w-full gap-4 py-4">
+          <Slider class="carousel w-full gap-4 pt-4">
             {products?.map((product) => {
               const { isVariantOf } = product;
               const hasVariant = isVariantOf?.hasVariant ?? [];

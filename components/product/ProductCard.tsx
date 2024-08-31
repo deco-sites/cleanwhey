@@ -61,7 +61,7 @@ function ProductCard({
 
   const item = mapProductToAnalyticsItem({ product, price, listPrice, index });
 
-  {/* Add click event to dataLayer */}
+  {/* Add click event to dataLayer */ }
   const event = useSendEvent({
     on: "click",
     event: {
@@ -138,16 +138,6 @@ function ProductCard({
 
         {/* Wishlist button */}
         <div class="absolute top-0 left-0 w-full flex items-center justify-between">
-          {/* Notify Me */}
-          <span
-            class={clx(
-              "text-sm/4 font-normal text-black bg-error bg-opacity-15 text-center rounded-badge px-2 py-1",
-              inStock && "opacity-0",
-            )}
-          >
-            Notify me
-          </span>
-
           {/* Discounts */}
           <span
             class={clx(
@@ -175,9 +165,9 @@ function ProductCard({
         {!isFeatured && (
           <>
             <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
-              <span class="line-through text-sm font-normal text-gray-300">
+              {listPrice != price && <span class="line-through text-sm font-normal text-gray-300">
                 {formatPrice(listPrice, offers?.priceCurrency)}
-              </span>
+              </span>}
 
               <span class="text-xl font-bold flex gap-2 items-center text-gray-400">
                 {formatPrice(price, offers?.priceCurrency)}
@@ -198,7 +188,7 @@ function ProductCard({
         <ul class="mb-4 flex items-center justify-start gap-2 pt-4 pb-1 pl-1 overflow-x-auto">
           {variants.map(([value, link]) => [value, relative(link?.url)] as const)
             .map(([value, link]) => (
-              <li>
+              <li>x
                 <a href={link} class="cursor-pointer">
                   <input
                     class="hidden peer"
@@ -217,9 +207,8 @@ function ProductCard({
       <div class="flex-grow" />
 
       <div
-        class={`${
-          isFeatured ? "mt-5 flex items-center justify-between gap-4" : ""
-        }`}
+        class={`${isFeatured ? "mt-5 flex items-center justify-between gap-4" : ""
+          }`}
       >
         {isFeatured && (
           <div class="flex flex-col items-start justify-center gap-1">
@@ -239,27 +228,25 @@ function ProductCard({
               seller={seller}
               item={item}
               ctaText="ADICIONAR À SACOLA"
-              class={`${isFeatured ? "px-1.5 md:text-sm" : ""} ${
-                clx(
-                  "btn uppercase",
-                  "btn-outline rounded-lg border-none px-0 no-animation w-full",
-                  "bg-orange-300 text-white h-14 font-semibold md:text-base text-xs",
-                  "hover:bg-orange-300",
-                )
-              }`}
+              class={`${isFeatured ? "px-1.5 md:text-sm" : ""} ${clx(
+                "btn uppercase",
+                "btn-outline rounded-lg border-none px-0 no-animation w-full",
+                "bg-orange-300 text-white h-14 font-semibold md:text-base text-xs",
+                "hover:bg-orange-300",
+              )
+                }`}
             />
           )
           : (
             <a
               href={relativeUrl}
-              class={`${
-                clx(
-                  "btn uppercase shrink",
-                  "btn-outline rounded-lg border-none px-0 no-animation w-full",
-                  "bg-orange-300 text-white h-14 font-semibold md:text-base text-xs",
-                  "hover:bg-orange-300",
-                )
-              }`}
+              class={`${clx(
+                "btn uppercase shrink",
+                "btn-outline rounded-lg border-none px-0 no-animation w-full",
+                "bg-orange-300 text-white h-14 font-semibold md:text-base text-xs",
+                "hover:bg-orange-300",
+              )
+                }`}
             >
               AVISE-ME
             </a>
