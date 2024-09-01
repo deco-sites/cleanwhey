@@ -28,7 +28,7 @@ export default function DescriptionBannerBenefits(props: Props) {
   const { leftImage, title, benefits } = props;
   return (
     <section class="bg-white-300 pb-8 md:pb-16">
-      <div className="container px-4 md:px-0 flex flex-col md:flex-row items-center justify-between">
+      <div className="container px-4 md:px-0 flex flex-col md:flex-row items-center justify-between md:gap-5">
         <div class={"banner w-auto"}>
           {leftImage && (
             <Picture>

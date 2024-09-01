@@ -5,13 +5,15 @@ import Slider from "../ui/Slider.tsx";
 import ProductCard from "./ProductCard.tsx";
 import { useId } from "../../sdk/useId.ts";
 import { Props as SectionHeaderProps } from "../../components/ui/Section.tsx";
+import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 
 interface Props extends SectionHeaderProps {
   products: Product[];
   itemListName?: string;
+  pix: Pix;
 }
 
-function ProductSlider({ products, itemListName, isFeatured }: Props) {
+function ProductSlider({ products, itemListName, isFeatured, pix }: Props) {
   const id = useId();
 
   return (
@@ -24,19 +26,17 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
           <Slider.PrevButton class="disable:bg-transparent flex btn !bg-transparent border-none btn-neutral btn-sm btn-circle no-animation">
             <Icon
               id="arrow-right-custom"
-              class={`${
-                isFeatured ? "text-white" : "text-orange-300"
-              } rotate-180`}
+              class={`${isFeatured ? "text-white" : "text-orange-300"
+                } rotate-180`}
             />
           </Slider.PrevButton>
         </div>
 
         <div
-          class={`${
-            isFeatured
-              ? "md:max-w-[90%] max-w-[85%]"
-              : "sm:max-w-[95%] max-w-[80%]"
-          } w-full px-0 sm:px-4`}
+          class={`${isFeatured
+            ? "md:max-w-[90%] max-w-[85%]"
+            : "sm:max-w-[95%] max-w-[80%]"
+            } w-full px-0 sm:px-4`}
         >
           <Slider class="carousel w-full gap-4 pt-4">
             {products?.map((product) => {
@@ -62,6 +62,7 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
             ${isFeatured ? "bg-white" : ""}
             border border-gray-100 
             shadow-[0_0_10px_0_rgba(0,0,0,0.1)]`}
+                    pix={pix}
                   />
                 </Slider.Item>
               ));

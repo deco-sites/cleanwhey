@@ -11,12 +11,15 @@ import AddToCartButton from "./AddToCartButton.tsx";
 import OutOfStock from "./OutOfStock.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
+import { Pix } from "../../loaders/BusnissRule/Pix.ts";
+import { formatPix } from "../../sdk/formatPix.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
+  pix: Pix;
 }
 
-function ProductInfo({ page }: Props) {
+function ProductInfo({ page, pix }: Props) {
   const id = useId();
 
   // console.log(page?.product);
@@ -35,6 +38,7 @@ function ProductInfo({ page }: Props) {
     listPrice,
     seller = "1",
     availability,
+    installments
   } = useOffer(offers);
 
   // const percent = listPrice && price
@@ -66,22 +70,11 @@ function ProductInfo({ page }: Props) {
     },
   });
 
+  const pricePix = formatPix(price ?? 0, pix.porcentagePix, pix.valueMax)
+
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
-      {/* Price tag */}
-      {
-        /* <span
-        class={clx(
-          "text-sm/4 font-normal text-black bg-primary bg-opacity-15 text-center rounded-badge px-2 py-1",
-          percent < 1 && "opacity-0",
-          "w-fit",
-        )}
-      >
-        {percent} % off
-      </span> */
-      }
 
-      {/* Product Name */}
       <span
         class={clx(
           "font-bold text-gray-400 flex items-start justify-between text-2xl",
@@ -111,13 +104,16 @@ function ProductInfo({ page }: Props) {
 
       {/* Prices */}
       <div class="flex flex-col pt-4">
-        {listPrice != price && <span class="line-through text-sm font-normal text-gray-300">
+        <span class="line-through text-sm font-normal text-gray-300">
           {formatPrice(listPrice, offers?.priceCurrency)}
-        </span>}
+        </span>
 
         <span class="text-[32px] font-bold flex gap-2 items-center text-gray-400">
-          {formatPrice(price, offers?.priceCurrency)}
+          {formatPrice(pricePix)}
           <p class="text-sm text-gray-300">no PIX</p>
+        </span>
+        <span class="max-w-[265px] text-sm font-normal text-gray-300">
+          {installments}
         </span>
       </div>
 
@@ -149,7 +145,7 @@ function ProductInfo({ page }: Props) {
           )
           : <OutOfStock productID={productID} />}
       </div>
-    </div>
+    </div >
   );
 }
 

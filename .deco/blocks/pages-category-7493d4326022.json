@@ -50,7 +50,10 @@
         "variant": "aside",
         "pagination": "pagination"
       },
-      "startingPage": 1
+      "startingPage": 1,
+      "pix": {
+        "__resolveType": "Payment - Pix"
+      }
     },
     {
       "__resolveType": "website/sections/Rendering/SingleDeferred.tsx",

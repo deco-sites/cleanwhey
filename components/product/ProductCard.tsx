@@ -11,6 +11,8 @@ import WishlistButton from "../wishlist/WishlistButton.tsx";
 import AddToCartButton from "./AddToCartButton.tsx";
 import { Ring } from "./ProductVariantSelector.tsx";
 import { useId } from "../../sdk/useId.ts";
+import { Pix } from "../../loaders/BusnissRule/Pix.ts";
+import { formatPix } from "../../sdk/formatPix.tsx";
 
 interface Props {
   product: Product;
@@ -26,6 +28,7 @@ interface Props {
 
   class?: string;
   isFeatured?: boolean;
+  pix: Pix;
 }
 
 const WIDTH = 287;
@@ -39,6 +42,7 @@ function ProductCard({
   index,
   productName,
   isFeatured,
+  pix,
   class: _class,
 }: Props) {
   const id = useId();
@@ -59,6 +63,9 @@ function ProductCard({
     ? Math.round(((listPrice - price) / listPrice) * 100)
     : 0;
 
+
+  const pricePix = formatPix(price ?? 0, pix.porcentagePix, pix.valueMax)
+
   const item = mapProductToAnalyticsItem({ product, price, listPrice, index });
 
   {/* Add click event to dataLayer */ }
@@ -76,11 +83,13 @@ function ProductCard({
   const variantName = title?.replace("COR:", "").replace("TAMANHO:", "")
     .replace(/SABOR:[^;]*/g, "").replace(/;/g, "").trim();
 
+  const off = listPrice && price && listPrice != price && (listPrice * 100) / price
+
   return (
     <div
       {...event}
       class={clx(
-        "card card-compact group bg-white hover:bg-[#F7EDDF] text-sm",
+        "card card-compact group bg-white hover:bg-[#F7EDDF] text-sm grid grid-rows-[auto_1fr_auto]",
         _class,
       )}
     >
@@ -139,22 +148,36 @@ function ProductCard({
         {/* Wishlist button */}
         <div class="absolute top-0 left-0 w-full flex items-center justify-between">
           {/* Discounts */}
-          <span
-            class={clx(
-              "text-sm/4 font-normal text-black bg-primary bg-opacity-15 text-center rounded-badge px-2 py-1",
-              (percent < 1 || !inStock) && "opacity-0",
-            )}
-          >
-            {percent} % off
-          </span>
+          {inStock && off && off != 0 ?
+            < span
+              class={clx(
+                "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:bottom-[-10px] after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[10px]  after:border-t-red-300 after:absolute",
+                "opacity-1",
+                "w-fit",
+              )}
+            >
+              {off - 100 + "% OFF"}
+            </span>
+            : inStock && pix.porcentagePix != 0 ?
+              < span
+                class={clx(
+                  "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:bottom-[-10px] after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[10px]  after:border-t-red-300 after:absolute",
+                  "opacity-1",
+                  "w-fit",
+                )}
+              >
+                {pix.porcentagePix * 100 + "% PIX"}
+              </span>
+              :
+              null
+          }
         </div>
 
         <div class="absolute top-0 left-0">
           <WishlistButton item={item} variant="icon" />
         </div>
       </figure>
-
-      <a href={relativeUrl} class="pt-5 text-center">
+      <a href={relativeUrl} class="pt-5 text-center flex flex-col justify-between">
         <span
           class={`font-bold text-gray-400 text-base md:text-lg text-center`}
         >
@@ -163,21 +186,30 @@ function ProductCard({
             : `${productName} ${variantName ? `- ${variantName}` : ""}`}
         </span>
         {!isFeatured && (
-          <>
-            <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
-              {listPrice != price && <span class="line-through text-sm font-normal text-gray-300">
-                {formatPrice(listPrice, offers?.priceCurrency)}
-              </span>}
+          <>{
+            inStock ? <>
+              <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
+                <span class="line-through text-sm font-normal text-gray-300">
+                  {formatPrice(listPrice, offers?.priceCurrency)}
+                </span>
 
-              <span class="text-xl font-bold flex gap-2 items-center text-gray-400">
-                {formatPrice(price, offers?.priceCurrency)}
-                <p class="text-sm text-gray-300">no PIX</p>
-              </span>
+                <span class="text-xl font-bold flex gap-2 text-gray-400 items-center">
+                  {formatPrice(pricePix)}
+                  <p class="text-sm text-gray-300">no PIX</p>
+                </span>
 
-              <span class="text-gray-400 text-md font-semibold">
-                {installments}
-              </span>
-            </div>
+                <span class="text-gray-400 text-md font-semibold">
+                  {installments}
+                </span>
+              </div>
+
+            </>
+              : <>
+                <div class="flex-grow" />
+                <span class=" text-2xl text-center font-bold">Produto Indisponivel</span>
+                <div class="flex-grow" />
+              </>
+          }
           </>
         )}
       </a>
@@ -203,9 +235,7 @@ function ProductCard({
         </ul>
       )} */
       }
-
       <div class="flex-grow" />
-
       <div
         class={`${isFeatured ? "mt-5 flex items-center justify-between gap-4" : ""
           }`}
@@ -231,7 +261,7 @@ function ProductCard({
               class={`${isFeatured ? "px-1.5 md:text-sm" : ""} ${clx(
                 "btn uppercase",
                 "btn-outline rounded-lg border-none px-0 no-animation w-full",
-                "bg-orange-300 text-white h-14 font-semibold md:text-base text-xs",
+                "bg-orange-300 text-white h-14 font-semibold  md:text-sm lg:text-xs xl:text-sm text-xs  flex-nowrap",
                 "hover:bg-orange-300",
               )
                 }`}
@@ -243,7 +273,7 @@ function ProductCard({
               class={`${clx(
                 "btn uppercase shrink",
                 "btn-outline rounded-lg border-none px-0 no-animation w-full",
-                "bg-orange-300 text-white h-14 font-semibold md:text-base text-xs",
+                "bg-orange-300 text-white h-14 font-semibold  md:text-sm lg:text-xs xl:text-sm text-xs flex-nowrap",
                 "hover:bg-orange-300",
               )
                 }`}

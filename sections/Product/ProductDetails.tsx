@@ -3,13 +3,15 @@ import ImageGallerySlider from "../../components/product/Gallery.tsx";
 import ProductInfo from "../../components/product/ProductInfo.tsx";
 import Breadcrumb from "../../components/ui/Breadcrumb.tsx";
 import { clx } from "../../sdk/clx.ts";
+import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 
 export interface Props {
   /** @title Integration */
   page: ProductDetailsPage | null;
+  pix: Pix;
 }
 
-export default function ProductDetails({ page }: Props) {
+export default function ProductDetails({ page, pix }: Props) {
   /**
    * Rendered when a not found is returned by any of the loaders run on this page
    */
@@ -38,10 +40,10 @@ export default function ProductDetails({ page }: Props) {
         )}
       >
         <div class="sm:col-span-3 md:pr-12">
-          <ImageGallerySlider page={page} />
+          <ImageGallerySlider page={page} pix={pix}/>
         </div>
         <div class="sm:col-span-2 md:pl-12 md:border-l md:border-gray-100">
-          <ProductInfo page={page} />
+          <ProductInfo page={page} pix={pix} />
         </div>
       </div>
     </div>

@@ -99,7 +99,10 @@
         }
       },
       "isFeatured": true,
-      "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/90f54c54-8cc8-4fc7-98b9-2dd9b0cc71eb"
+      "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/90f54c54-8cc8-4fc7-98b9-2dd9b0cc71eb",
+      "pix": {
+        "__resolveType": "Payment - Pix"
+      }
     },
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
@@ -114,7 +117,10 @@
           "hideUnavailableItems": true
         }
       },
-      "isFeatured": false
+      "isFeatured": false,
+      "pix": {
+        "__resolveType": "Payment - Pix"
+      }
     },
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
@@ -129,7 +135,10 @@
           "hideUnavailableItems": true
         }
       },
-      "isFeatured": false
+      "isFeatured": false,
+      "pix": {
+        "__resolveType": "Payment - Pix"
+      }
     },
     {
       "__resolveType": "site/sections/Images/Carousel.tsx",

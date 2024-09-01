@@ -6,13 +6,15 @@ import Section, {
 } from "../../components/ui/Section.tsx";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
+import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 
 export interface Props extends SectionHeaderProps {
   products: Product[] | null;
+  pix: Pix;
 }
 
 export default function ProductShelf(
-  { products, title, isFeatured, icon }: Props,
+  { products, title, isFeatured, icon, pix }: Props,
 ) {
   if (!products || products.length === 0) {
     return null;
@@ -38,9 +40,8 @@ export default function ProductShelf(
   return (
     <Section.Container
       {...viewItemListEvent}
-      class={`${
-        isFeatured ? "bg-blue-300 rounded-lg mt-12 max-w-[95%] !container" : ""
-      }`}
+      class={`${isFeatured ? "bg-blue-300 rounded-lg mt-12 max-w-[95%] !container" : ""
+        }`}
     >
       <Section.Header title={title} isFeatured={isFeatured} icon={icon} />
 
@@ -48,6 +49,7 @@ export default function ProductShelf(
         products={products}
         itemListName={title}
         isFeatured={isFeatured}
+        pix={pix}
       />
     </Section.Container>
   );

@@ -26,7 +26,11 @@
     {
       "__resolveType": "site/sections/Product/SearchResult.tsx",
       "page": {
-        "__resolveType": "PLP loader vtex"
+        "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
+        "sort": "release:desc",
+        "fuzzy": "automatic",
+        "selectedFacets": [],
+        "count": 24
       },
       "layout": {
         "columns": {
@@ -36,7 +40,10 @@
         "variant": "aside",
         "pagination": "show-more"
       },
-      "startingPage": 1
+      "startingPage": 1,
+      "pix": {
+        "__resolveType": "Payment - Pix"
+      }
     },
     {
       "__resolveType": "website/sections/Rendering/SingleDeferred.tsx",
