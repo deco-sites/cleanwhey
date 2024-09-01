@@ -81,7 +81,7 @@ export default function NutritionalInformation(props: Props) {
         </h2>
       </div>
       <div className="container flex flex-col md:flex-row px-4 md:px-0">
-        <div class="tabela mb-6 w-full rounded-lg md:px-8 md:bg-white md:max-w-[730px] md:mr-6">
+        <div class="tabela mb-6 w-full rounded-lg md:px-8 md:bg-white md:max-w-[730px] md:mr-6 ">
           {table && (
             <Picture>
               <Source
