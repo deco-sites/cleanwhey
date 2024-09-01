@@ -40,7 +40,10 @@
         "variant": "aside",
         "pagination": "show-more"
       },
-      "startingPage": 1
+      "startingPage": 1,
+      "pix": {
+        "__resolveType": "Payment - Pix"
+      }
     },
     {
       "__resolveType": "website/sections/Rendering/SingleDeferred.tsx",

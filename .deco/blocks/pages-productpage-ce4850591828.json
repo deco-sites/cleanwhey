@@ -31,6 +31,9 @@
           "param": "slug"
         },
         "similars": true
+      },
+      "pix": {
+        "__resolveType": "Payment - Pix"
       }
     },
     {
@@ -8687,7 +8690,10 @@
           "param": "slug"
         }
       },
-      "isFeatured": false
+      "isFeatured": false,
+      "pix": {
+        "__resolveType": "Payment - Pix"
+      }
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",

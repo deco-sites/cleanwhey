@@ -11,6 +11,8 @@ import WishlistButton from "../wishlist/WishlistButton.tsx";
 import AddToCartButton from "./AddToCartButton.tsx";
 import { Ring } from "./ProductVariantSelector.tsx";
 import { useId } from "../../sdk/useId.ts";
+import { Pix } from "../../loaders/BusnissRule/Pix.ts";
+import { formatPix } from "../../sdk/formatPix.tsx";
 
 interface Props {
   product: Product;
@@ -26,6 +28,7 @@ interface Props {
 
   class?: string;
   isFeatured?: boolean;
+  pix: Pix;
 }
 
 const WIDTH = 287;
@@ -39,6 +42,7 @@ function ProductCard({
   index,
   productName,
   isFeatured,
+  pix,
   class: _class,
 }: Props) {
   const id = useId();
@@ -58,6 +62,9 @@ function ProductCard({
   const percent = listPrice && price
     ? Math.round(((listPrice - price) / listPrice) * 100)
     : 0;
+
+
+  const pricePix = formatPix(price ?? 0, pix.porcentagePix, pix.valueMax)
 
   const item = mapProductToAnalyticsItem({ product, price, listPrice, index });
 
@@ -80,7 +87,7 @@ function ProductCard({
     <div
       {...event}
       class={clx(
-        "card card-compact group bg-white hover:bg-[#F7EDDF] text-sm",
+        "card card-compact group bg-white hover:bg-[#F7EDDF] text-sm grid grid-rows-[auto_1fr_auto]",
         _class,
       )}
     >
@@ -153,8 +160,7 @@ function ProductCard({
           <WishlistButton item={item} variant="icon" />
         </div>
       </figure>
-
-      <a href={relativeUrl} class="pt-5 text-center">
+      <a href={relativeUrl} class="pt-5 text-center flex flex-col justify-between">
         <span
           class={`font-bold text-gray-400 text-base md:text-lg text-center`}
         >
@@ -163,21 +169,30 @@ function ProductCard({
             : `${productName} ${variantName ? `- ${variantName}` : ""}`}
         </span>
         {!isFeatured && (
-          <>
-            <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
-              {listPrice != price && <span class="line-through text-sm font-normal text-gray-300">
-                {formatPrice(listPrice, offers?.priceCurrency)}
-              </span>}
+          <>{
+            inStock ? <>
+              <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
+                <span class="line-through text-sm font-normal text-gray-300">
+                  {formatPrice(listPrice, offers?.priceCurrency)}
+                </span>
 
-              <span class="text-xl font-bold flex gap-2 items-center text-gray-400">
-                {formatPrice(price, offers?.priceCurrency)}
-                <p class="text-sm text-gray-300">no PIX</p>
-              </span>
+                <span class="text-xl font-bold flex gap-2 text-gray-400 items-center">
+                  {formatPrice(pricePix)}
+                  <p class="text-sm text-gray-300">no PIX</p>
+                </span>
 
-              <span class="text-gray-400 text-md font-semibold">
-                {installments}
-              </span>
-            </div>
+                <span class="text-gray-400 text-md font-semibold">
+                  {installments}
+                </span>
+              </div>
+
+            </>
+              : <>
+                <div class="flex-grow" />
+                <span class=" text-2xl text-center font-bold">Produto Indisponivel</span>
+                <div class="flex-grow" />
+              </>
+          }
           </>
         )}
       </a>
@@ -203,9 +218,7 @@ function ProductCard({
         </ul>
       )} */
       }
-
       <div class="flex-grow" />
-
       <div
         class={`${isFeatured ? "mt-5 flex items-center justify-between gap-4" : ""
           }`}

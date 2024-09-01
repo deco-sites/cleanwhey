@@ -14,6 +14,7 @@ import Breadcrumb from "../ui/Breadcrumb.tsx";
 import Drawer from "../ui/Drawer.tsx";
 import Sort from "./Sort.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
+import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 
 export interface Layout {
   /**
@@ -26,6 +27,8 @@ export interface Layout {
 export interface Props {
   /** @title Integration */
   page: ProductListingPage | null;
+  pix: Pix
+
   layout?: Layout;
 
   /** @description 0 for ?page=0 as your first page */
@@ -62,7 +65,7 @@ const useUrlRebased = (overrides: string | undefined, base: string) => {
 };
 
 function PageResult(props: SectionProps<typeof loader>) {
-  const { layout, startingPage = 0, url, partial } = props;
+  const { layout, startingPage = 0, url, partial, pix } = props;
   const page = props.page!;
   const { products, pageInfo } = page;
   const perPage = pageInfo?.recordPerPage || products.length;
@@ -129,6 +132,7 @@ function PageResult(props: SectionProps<typeof loader>) {
                 index={offset + i}
                 class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
                 shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
+                pix={pix}
               />
             );
           }
@@ -142,6 +146,7 @@ function PageResult(props: SectionProps<typeof loader>) {
               index={offset + index}
               class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
               shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
+              pix={pix}
             />
           ));
         })}
