@@ -28,3 +28,30 @@ input[type="number"] {
     border-radius: 20px;
     /* roundness of the scroll thumb */
 }
+
+.flag {
+    display: inline-block;
+    background-color: #E30613; /* Cor de fundo da flag */
+    color: white; /* Cor do texto */
+    padding: 6px 8px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+    text-align: center; /* Centralizar o texto */
+    border-radius: 10px 10px 0 0; /* Arredondamento do topo */
+    position: relative;
+    width: 60px; /* Largura da flag */
+}
+
+.flag::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 10px solid #E30613; /* Cor da parte triangular */
+}

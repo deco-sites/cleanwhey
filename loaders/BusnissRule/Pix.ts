@@ -1,4 +1,7 @@
 export interface Props {
+    /**
+     * @description 15% = 0.15
+     */
     porcentagePix: number;
     valueMax: number
 }

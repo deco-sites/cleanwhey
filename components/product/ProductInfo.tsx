@@ -70,26 +70,11 @@ function ProductInfo({ page, pix }: Props) {
     },
   });
 
-  console.log("pix", pix.porcentagePix, pix.valueMax)
-
   const pricePix = formatPix(price ?? 0, pix.porcentagePix, pix.valueMax)
 
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
-      {/* Price tag */}
-      {
-        /* <span
-        class={clx(
-          "text-sm/4 font-normal text-black bg-primary bg-opacity-15 text-center rounded-badge px-2 py-1",
-          percent < 1 && "opacity-0",
-          "w-fit",
-        )}
-      >
-        {percent} % off
-      </span> */
-      }
 
-      {/* Product Name */}
       <span
         class={clx(
           "font-bold text-gray-400 flex items-start justify-between text-2xl",
@@ -160,7 +145,7 @@ function ProductInfo({ page, pix }: Props) {
           )
           : <OutOfStock productID={productID} />}
       </div>
-    </div>
+    </div >
   );
 }
 

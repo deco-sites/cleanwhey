@@ -7,10 +7,12 @@ import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
 // import page from "deco/blocks/page.tsx";
 import { useOffer } from "../../sdk/useOffer.ts";
+import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 
 export interface Props {
   /** @title Integration */
   page: ProductDetailsPage | null;
+  pix: Pix
 }
 
 const WIDTH = 650;
@@ -31,11 +33,12 @@ export default function GallerySlider(props: Props) {
     throw new Error("Missing Product Details Page Info");
   }
 
-  const { page: { product: { name, offers, isVariantOf, image } } } = props;
+  const { page: { product: { name, offers, isVariantOf, image } }, pix } = props;
 
   const {
     price = 0,
     listPrice,
+    availability
   } = useOffer(offers);
 
   const percent = listPrice && price
@@ -47,6 +50,8 @@ export default function GallerySlider(props: Props) {
   const groupImages = isVariantOf?.image ? image : [];
   // const filtered = groupImages.filter((img) => img.alternateName);
   // const images = groupImages.length > 0 ? groupImages : [];
+  const inStock = availability === "https://schema.org/InStock";
+  const off = listPrice && listPrice != price && (listPrice * 100) / price
 
   return (
     <>
@@ -57,15 +62,29 @@ export default function GallerySlider(props: Props) {
         {/* Image Slider */}
         <div class="col-start-1 col-span-1 sm:col-start-2">
           <div class="relative h-min flex-grow">
-            <span
-              class={clx(
-                "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase text-center font-bold",
-                percent < 1 && "opacity-0",
-                "w-fit",
-              )}
-            >
-              {percent}% PIX
-            </span>
+            {inStock && off && off != 0 ?
+              < span
+                class={clx(
+                  "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:bottom-[-10px] after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[10px]  after:border-t-red-300 after:absolute",
+                  "opacity-1",
+                  "w-fit",
+                )}
+              >
+                {off - 100 + "% OFF"}
+              </span>
+              : inStock && pix.porcentagePix != 0 ?
+                < span
+                  class={clx(
+                    "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:bottom-[-10px] after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[10px]  after:border-t-red-300 after:absolute",
+                    "opacity-1",
+                    "w-fit",
+                  )}
+                >
+                  {pix.porcentagePix * 100 + "% PIX"}
+                </span>
+                :
+                null
+            }
 
             <Slider class="carousel carousel-center gap-6 w-full">
               {props.page.product.image?.map((img, index) => (
@@ -142,7 +161,7 @@ export default function GallerySlider(props: Props) {
         </div>
 
         <Slider.JS rootId={id} />
-      </div>
+      </div >
       {groupImages && groupImages?.length > 0 && (
         <ProductImageZoom
           id={zoomId}
@@ -150,7 +169,8 @@ export default function GallerySlider(props: Props) {
           width={700}
           height={Math.trunc(700 * HEIGHT / WIDTH)}
         />
-      )}
+      )
+      }
     </>
   );
 }
