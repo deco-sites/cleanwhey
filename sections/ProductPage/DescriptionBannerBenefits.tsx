@@ -56,7 +56,7 @@ export default function DescriptionBannerBenefits(props: Props) {
         <div class={"md:w-[65%] w-full max-w-[668px]"}>
           {title && (
             <h2
-              class="mb-4 md:text-start text-center"
+              class="mb-4 md:text-start text-center text-2xl md:text-3xl"
               dangerouslySetInnerHTML={{ __html: title }}
             />
           )}

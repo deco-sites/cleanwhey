@@ -106,7 +106,7 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
                             href={child.url}
                             class="py-2 pl-[30px] pr-[12px] flex-grow min-h-[30px] flex items-center justify-start text-[#252526] text-[14px]"
                           >
-                            <p class="text-[#252526] text-[14px]">
+                            <p class="text-[#252526] text-[14px] l">
                               {child.name}
                             </p>
                           </a>
