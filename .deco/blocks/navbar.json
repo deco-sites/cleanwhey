@@ -11,8 +11,8 @@
             {
               "image": [],
               "children": [],
-              "name": "IMMUNOFERRIN",
-              "url": "/suplementos/imunidade/immunoferrin"
+              "url": "/suplementos/imunidade/immunoferrin",
+              "name": "Immunoferrin"
             }
           ],
           "name": "Imunidade",
@@ -24,19 +24,19 @@
             {
               "image": [],
               "children": [],
-              "name": "ISOLADO",
+              "name": "Isolado",
               "url": "/suplementos/proteinas/isolado"
             },
             {
               "image": [],
               "children": [],
-              "name": "CONCENTRADO",
+              "name": "Concentrado",
               "url": "/suplementos/proteinas/concentrado"
             },
             {
               "image": [],
               "children": [],
-              "name": "HIDROLISADO",
+              "name": "Hidrolisado",
               "url": "/suplementos/proteinas/hidrolisado"
             },
             {
@@ -61,7 +61,7 @@
                   "name": "XR"
                 }
               ],
-              "name": "SPECIAL",
+              "name": "Special",
               "url": "/suplementos/proteinas/special"
             }
           ],
@@ -111,13 +111,13 @@
             {
               "image": [],
               "children": [],
-              "name": "CANECA",
+              "name": "Caneca",
               "url": "/acessorios/caneca"
             },
             {
               "image": [],
               "children": [],
-              "name": "COQUETELEIRA",
+              "name": "Coqueteleira",
               "url": "/acessorios/coqueteleira"
             }
           ],

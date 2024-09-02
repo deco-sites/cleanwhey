@@ -26,7 +26,7 @@ export const action = async (props: Props, req: Request, ctx: AppContext) => {
     query,
   }) as Suggestion | null;
 
-  return { suggestion };
+  return { suggestion, query };
 };
 
 export const loader = async (props: Props, req: Request, ctx: AppContext) => {
@@ -40,11 +40,11 @@ export const loader = async (props: Props, req: Request, ctx: AppContext) => {
     query,
   }) as Suggestion | null;
 
-  return { suggestion };
+  return { suggestion, query };
 };
 
 function Suggestions(
-  { suggestion }: ComponentProps<typeof loader, typeof action>,
+  { suggestion, query }: ComponentProps<typeof loader, typeof action>,
 ) {
   const { products = [], searches = [] } = suggestion ?? {};
   const recentSearches = searches;
@@ -69,7 +69,7 @@ function Suggestions(
           </span>
 
           <ul class="flex flex-col gap-6">
-            {searches.map(({ term }, index) => (
+            {searches.length > 0 && searches.map(({ term }, index) => (
               <li>
                 {/* TODO @gimenes: use name and action from searchbar form */}
                 <a
@@ -79,6 +79,19 @@ function Suggestions(
                   {/* <Icon id="searchRecent" class={"text-[#A1A6B7]"}/> */}
                   {index + 1} -{" "}
                   <span dangerouslySetInnerHTML={{ __html: term }} />
+                </a>
+              </li>
+            ))}
+            {products.length > 0 && searches.length === 0 && products.map(({ name }, index) => (
+              <li>
+                {/* TODO @gimenes: use name and action from searchbar form */}
+                <a
+                  href={`${ACTION}?${NAME}=${query}`}
+                  class="flex gap-1 items-center"
+                >
+                  {/* <Icon id="searchRecent" class={"text-[#A1A6B7]"}/> */}
+                  {index + 1} -{" "}
+                  <span dangerouslySetInnerHTML={{ __html: name || "" }} />
                 </a>
               </li>
             ))}
