@@ -152,7 +152,7 @@ function PageResult(props: SectionProps<typeof loader>) {
         })}
       </div>
 
-      <div class={clx("pt-2 sm:pt-10 w-full", "")}>
+      <div class={clx("pt-2 sm:pt-10 w-full flex justify-center", "")}>
         {infinite
           ? (
             <div class="flex justify-center [&_section]:contents">
@@ -172,7 +172,7 @@ function PageResult(props: SectionProps<typeof loader>) {
               </a>
             </div>
           )
-          : (
+          : (  
             <div class={clx("join", infinite && "hidden")}>
               <a
                 rel="prev"
