@@ -65,7 +65,7 @@ export default function GallerySlider(props: Props) {
             {inStock && off && off != 0 ?
               < span
                 class={clx(
-                  "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:bottom-[-10px] after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[11px]  after:border-t-red-300 after:absolute",
+                  "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:bottom-[-9px] after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[11px]  after:border-t-red-300 after:absolute",
                   "opacity-1",
                   "w-fit",
                 )}
@@ -75,7 +75,7 @@ export default function GallerySlider(props: Props) {
               : inStock && pix.porcentagePix != 0 ?
                 < span
                   class={clx(
-                    "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:bottom-[-10px] after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[11px]  after:border-t-red-300 after:absolute",
+                    "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:bottom-[-9px] after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[11px]  after:border-t-red-300 after:absolute",
                     "opacity-1",
                     "w-fit",
                   )}
