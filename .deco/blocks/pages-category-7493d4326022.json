@@ -19,10 +19,7 @@
       "__resolveType": "Header"
     },
     {
-      "__resolveType": "website/sections/Rendering/SingleDeferred.tsx",
-      "section": {
-        "__resolveType": "Category Banner - 01"
-      }
+      "__resolveType": "Category Banner - 01"
     },
     {
       "__resolveType": "site/sections/Product/SearchResult.tsx",
