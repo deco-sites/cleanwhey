@@ -81,5 +81,6 @@
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
     "experimentalDecorators": true
-  }
+  },
+  "lock": false
 }
