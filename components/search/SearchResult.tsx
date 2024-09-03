@@ -85,6 +85,10 @@ function PageResult(props: SectionProps<typeof loader>) {
 
   const infinite = layout?.pagination !== "pagination";
 
+  products.map((product) => {
+    console.log('ID', product.productID)
+  })
+
   return (
     <div class="grid grid-flow-row grid-cols-1 place-items-center">
       <div
@@ -115,6 +119,20 @@ function PageResult(props: SectionProps<typeof loader>) {
           "w-full",
         )}
       >
+
+        {products.map((product, i) =>
+          <ProductCard
+            key={`product-card-${product.productID}`}
+            product={product}
+            productName={product.name}
+            preload={i === 0}
+            index={offset + i}
+            class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
+                      shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
+            pix={pix}
+          />)
+
+        }
         {products?.map((product, i) => {
           const { isVariantOf } = product;
           const hasVariant = isVariantOf?.hasVariant ?? [];
@@ -172,7 +190,7 @@ function PageResult(props: SectionProps<typeof loader>) {
               </a>
             </div>
           )
-          : (  
+          : (
             <div class={clx("join", infinite && "hidden")}>
               <a
                 rel="prev"
