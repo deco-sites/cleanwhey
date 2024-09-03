@@ -88,7 +88,13 @@ function Suggestions(
                 </a>
               </li>
             ))}
-            {products.length > 0 && searches.length === 0 && products.map((product, index) => {
+            {products.length > 0 && searches.length === 0 && products.map((product) => {
+
+              const title = product.isVariantOf?.name ?? product.name;
+              const variantName = title?.replace("COR:", "").replace("TAMANHO:", "")
+                .replace(/SABOR:[^;]*/g, "").replace(/;/g, "").trim();
+
+              const size = product?.additionalProperty?.find((property) => property.name == "TAMANHO")
 
               const [front, back] = product.image ?? [];
               const { price, installments } = useOffer(product?.offers)
@@ -112,7 +118,9 @@ function Suggestions(
                         />
                         <div class={"flex flex-col justify-between gap-1"}>
                           <span class={"text-ellipsis-custom text-sm"}>
-                            {product.name}
+                            {product.isVariantOf?.name == title
+                              ? `${title} ${size?.value ? '- ' + size.value : ""}`
+                            : `${product.isVariantOf?.name} ${variantName ? `- ${variantName}` : ""} ${size?.value ? '- ' + size.value : ""}`}
                           </span>
                           <span class="text-lg font-bold">
                             {formatPrice(valuePix) + " "}<span class="text-sm text-gray-300">no Pix</span>
