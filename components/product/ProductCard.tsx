@@ -189,10 +189,11 @@ function ProductCard({
           <>{
             inStock ? <>
               <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
-                <span class="line-through text-sm font-normal text-gray-300">
-                  {formatPrice(listPrice, offers?.priceCurrency)}
-                </span>
-
+                {listPrice != pricePix && (
+                  <span class="line-through text-sm font-normal text-gray-300">
+                    {formatPrice(listPrice, offers?.priceCurrency)}
+                  </span>
+                )}
                 <span class="text-xl font-bold flex gap-2 text-gray-400 items-center">
                   {formatPrice(pricePix)}
                   <p class="text-sm text-gray-300">no PIX</p>
@@ -242,9 +243,11 @@ function ProductCard({
       >
         {isFeatured && (
           <div class="flex flex-col items-start justify-center gap-1">
-            <span class="line-through text-xs font-normal text-gray-300">
-              {formatPrice(listPrice, offers?.priceCurrency)}
-            </span>
+            {listPrice != price && (
+              <span class="line-through text-xs font-normal text-gray-300">
+                {formatPrice(listPrice, offers?.priceCurrency)}
+              </span>
+            )}
 
             <span class="text-lg font-bold flex gap-2 items-center text-gray-400">
               {formatPrice(price, offers?.priceCurrency)}
