@@ -9,9 +9,12 @@
       "__resolveType": "resolved",
       "data": {
         "__resolveType": "vtex/loaders/intelligentSearch/suggestions.ts",
-        "count": 4,
-        "similars": true
+        "similars": true,
+        "count": 3
       }
+    },
+    "pix": {
+      "__resolveType": "Payment - Pix"
     }
   },
   "alerts": [
