@@ -144,7 +144,7 @@
         {
           "image": [],
           "children": [],
-          "url": "/suplementos/performance",
+          "url": "/141?map=productClusterIds",
           "name": "Performance"
         }
       ],
@@ -158,13 +158,13 @@
       "children": [],
       "image": [],
       "name": "Mais vendidos",
-      "url": "/mais-vendidos"
+      "url": "/142?map=productClusterIds"
     },
     {
       "children": [],
       "image": [],
       "name": "Combos e descontos",
-      "url": "/combos-e-descontos"
+      "url": "/139?map=productClusterIds"
     },
     {
       "children": [],
