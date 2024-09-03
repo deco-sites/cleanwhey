@@ -91,8 +91,8 @@ function Suggestions(
             {products.length > 0 && searches.length === 0 && products.map((product) => {
 
               const title = product.isVariantOf?.name ?? product.name;
-              const variantName = title?.replace("COR:", "").replace("TAMANHO:", "")
-                .replace(/SABOR:[^;]*/g, "").replace(/;/g, "").trim();
+              const variantName = title?.replace("Cor:", "").replace("Tamanho:", "")
+                .replace(/Sabor:[^;]*/g, "").replace(/;/g, "").trim();
 
               const size = product?.additionalProperty?.find((property) => property.name == "TAMANHO")
 

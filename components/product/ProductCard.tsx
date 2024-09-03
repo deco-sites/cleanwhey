@@ -80,8 +80,8 @@ function ProductCard({
     },
   });
 
-  const variantName = title?.replace("COR:", "").replace("TAMANHO:", "")
-    .replace(/SABOR:[^;]*/g, "").replace(/;/g, "").trim();
+  const variantName = title?.replace("Cor:", "").replace("Tamanho:", "")
+    .replace(/sabor:[^;]*/g, "").replace(/;/g, "").trim();
 
   const off = listPrice && price && listPrice != price && (listPrice * 100) / price
 
@@ -179,7 +179,7 @@ function ProductCard({
       </figure>
       <a href={relativeUrl} class="pt-5 text-center flex flex-col justify-between">
         <span
-          class={`font-bold text-gray-400 text-base md:text-lg text-center`}
+          class={`font-bold text-gray-400 text-base md:text-lg text-center capitalize`}
         >
           {productName == title
             ? title

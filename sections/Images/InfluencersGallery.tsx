@@ -44,7 +44,7 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
                   <span dangerouslySetInnerHTML={{ __html: item.description }} />
                 </div>
               </a>
-              <p class="z-20 w-[90%] group-hover:hidden absolute top-8 bg-[#163E73D9] p-1.5 font-regular rounded-lg text-white  text-center text-lg">
+              <p class="z-20 w-[90%] group-hover:hidden absolute top-8 bg-[#163E73D9] p-1.5 font-regular rounded-lg text-white  text-center text-lg ">
                 {item.textLabel}
               </p>
             </div>
@@ -148,7 +148,7 @@ export default function InfluencersGallery(
       {title && (
         <div class={"title"}>
           <h2
-            class={"text-2xl font-bold text-gray-200 text-center mb-4"}
+            class={"text-2xl font-bold text-gray-200 text-center mb-4 px-4"}
             dangerouslySetInnerHTML={{ __html: title }}
           />
         </div>
