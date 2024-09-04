@@ -1,0 +1,39 @@
+{
+  "__resolveType": "site/sections/Category/CategoryCards.tsx",
+  "title": "<p><span>Por que incluir </span><span style=\"color: #e06741\">proteínas</span><span> na sua dieta?</span></p>",
+  "cards": [
+    {
+      "title": "Construção Muscular",
+      "description": "<p><span>Proteínas são essenciais para a reparação e crescimento dos músculos, auxiliando no ganho de massa muscular.</span></p>"
+    },
+    {
+      "title": "Recuperação Rápida",
+      "description": "<p><span>A ingestão adequada de proteínas ajuda na recuperação muscular após exercícios intensos, reduzindo a fadiga e o tempo de recuperação.</span></p>"
+    },
+    {
+      "title": "Controle de Peso",
+      "description": "<p><span>Proteínas aumentam a sensação de saciedade, ajudando no controle do apetite e na manutenção de um peso saudável.</span></p>"
+    }
+  ],
+  "banners": [],
+  "sections": [
+    {
+      "cards": [
+        {
+          "subtitle": "Construção Muscular",
+          "description": "<p><span>Proteínas são essenciais para a reparação e crescimento dos músculos, auxiliando no ganho de massa muscular.</span></p>"
+        },
+        {
+          "subtitle": "Recuperação Rápida",
+          "description": "<p><span>A ingestão adequada de proteínas ajuda na recuperação muscular após exercícios intensos, reduzindo a fadiga e o tempo de recuperação.</span></p>"
+        },
+        {
+          "subtitle": "Controle de Peso",
+          "description": "<p><span>Proteínas aumentam a sensação de saciedade, ajudando no controle do apetite e na manutenção de um peso saudável.</span></p>"
+        }
+      ],
+      "matcher": "/*",
+      "title": "<p><span>Por que incluir </span><span style=\"color: #e06741\">proteínas</span><span> na sua dieta?</span></p>"
+    }
+  ]
+}
