@@ -69,8 +69,6 @@ function ProductCard({
   const item = mapProductToAnalyticsItem({ product, price, listPrice, index });
 
 
-  console.log("name", title)
-
   {/* Add click event to dataLayer */ }
   const event = useSendEvent({
     on: "click",

@@ -1,5 +1,6 @@
 import type {
   Filter,
+  FilterRange,
   FilterToggle,
   FilterToggleValue,
   ProductListingPage,
@@ -24,7 +25,7 @@ function ValueItem(
         aria-checked={selected}
         class="[--chkbg:#E06741] [--chkfg:white] checkbox w-4 h-4 rounded border border-gray-300 bg-white"
       />
-      <span class="text-sm">{label}</span>
+      <span class="text-sm capitalize">{label.toLowerCase()}</span>
       {quantity > 0 && <span class="text-sm text-base-300">({quantity})</span>}
     </a>
   );
@@ -101,9 +102,24 @@ function FilterValues({ key, values }: FilterToggle) {
 
 function Filters({ filters }: Props) {
 
+  const filtersArray: Filter[] = []
+
+  filters.forEach((filter) => {
+    // Verifica se já existe um item no filtersArray com a mesma chave
+    const existingFilter = filtersArray.find((item) => item.key === filter.key);
+
+    if (existingFilter) {
+      // Se o filtro já existe, adiciona os valores do novo filtro ao array de valores existente
+      existingFilter.values = [...new Set([...existingFilter.values, ...filter.values])];
+    } else {
+      // Se o filtro não existe, adiciona ao filtersArray
+      filtersArray.push(filter);
+    }
+  });
+
   return (
     <ul class="flex flex-col gap-6 p-4 sm:p-0">
-      {filters
+      {filtersArray
         .filter(isToggle)
         .map((filter, index) => (
           <>
@@ -115,8 +131,8 @@ function Filters({ filters }: Props) {
                     className={"peer"}
                     name={`my-accordion-${index}`}
                   />
-                  <div className="collapse-title after:!h-3 after:!w-3 after:text-gray-300 after:peer-checked:text-orange-300 text-gray-300 text-lg font-bold gap-2 !flex items-center p-0 peer-checked:text-orange-300">
-                    {filter.label.replace("TAMANHO", "Tamanho").replace("COR", "Cor").replace("SABOR", "Sabor")}
+                  <div className="collapse-title after:!h-3 after:!w-3 after:text-gray-300 after:peer-checked:text-orange-300 text-gray-300 text-lg font-bold gap-2 !flex items-center p-0 peer-checked:text-orange-300 capitalize">
+                    {filter.label.toLowerCase()}
                   </div>
                   <div className="collapse-content">
                     <FilterValues {...filter} />
