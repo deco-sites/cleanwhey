@@ -1,4 +1,4 @@
-import type { ProductListingPage } from "apps/commerce/types.ts";
+import type { ProductGroup, ProductLeaf, ProductListingPage, PropertyValue } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { useScript } from "deco/hooks/useScript.ts";
 import { useSection } from "deco/hooks/useSection.ts";
@@ -15,6 +15,7 @@ import Drawer from "../ui/Drawer.tsx";
 import Sort from "./Sort.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
 import { Pix } from "../../loaders/BusnissRule/Pix.ts";
+import { Product } from "apps/vtex/utils/types.ts";
 
 export interface Layout {
   /**
@@ -151,18 +152,26 @@ function PageResult(props: SectionProps<typeof loader>) {
             );
           }
 
-          return hasVariant.map((item, index) => (
-            <ProductCard
-              key={`product-card-${item.productID}`}
-              product={item}
-              productName={product.isVariantOf?.name}
-              preload={index === 0}
-              index={offset + index}
-              class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
-              shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
-              pix={pix}
-            />
-          ));
+          return hasVariant.map((item, index) => {
+
+            if (item.sku != product.sku) {
+
+              return (
+                <ProductCard
+                  key={`product-card-${item.productID}`}
+                  product={item}
+                  productName={product.isVariantOf?.name}
+                  preload={index === 0}
+                  index={offset + index}
+                  class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
+                  shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
+                  pix={pix}
+                />
+              )
+            }
+            return null
+          }
+          );
         })}
       </div>
 
