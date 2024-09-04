@@ -183,7 +183,8 @@ function ProductCard({
         >
           {productName == title
             ? title
-            : `${productName} ${variantName ? `- ${variantName}` : ""}`}
+            : title == variantName ? `${title} - ${productName?.replace("Tamanho:", "").replace(/sabor:[^;]*/g, "").replace(";", "").replace("Cor:", "")}` :
+              `${productName} ${variantName ? `- ${variantName}` : ""}`}
         </span>
         {!isFeatured && (
           <>{
@@ -206,7 +207,7 @@ function ProductCard({
             </>
               : <>
                 <div class="flex-grow" />
-                <span class=" text-2xl text-center font-bold min-h-[132px] md:min-h-[112px] flex items-center flex-wrap">Produto Indisponivel</span>
+                <span class=" text-2xl text-center font-bold min-h-[132px] md:min-h-[112px] flex items-center flex-wrap justify-center">Produto Indisponivel</span>
                 <div class="flex-grow" />
               </>
           }

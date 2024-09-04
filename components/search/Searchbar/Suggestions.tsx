@@ -119,8 +119,8 @@ function Suggestions(
                         <div class={"flex flex-col justify-between gap-1"}>
                           <span class={"text-ellipsis-custom text-sm"}>
                             {product.isVariantOf?.name == title
-                              ? `${title} ${size?.value ? '- ' + size.value : ""}`
-                            : `${product.isVariantOf?.name} ${variantName ? `- ${variantName}` : ""} ${size?.value ? '- ' + size.value : ""}`}
+                              ? `${title} ${size?.value ? '- ' + size.value : ""}` : title == variantName ? `${title} - ${product.isVariantOf?.name?.replace("Tamanho:", "").replace(/sabor:[^;]*/g, "").replace(";", "").replace("Cor:", "")}` :
+                                `${product.isVariantOf?.name} ${variantName ? `- ${variantName}` : ""} ${size?.value ? '- ' + size.value : ""}`}
                           </span>
                           <span class="text-lg font-bold">
                             {formatPrice(valuePix) + " "}<span class="text-sm text-gray-300">no Pix</span>
