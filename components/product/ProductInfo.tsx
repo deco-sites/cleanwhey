@@ -77,11 +77,11 @@ function ProductInfo({ page, pix }: Props) {
 
       <span
         class={clx(
-          "font-bold text-gray-400 flex items-start justify-between text-2xl",
+          "font-bold text-gray-400 flex items-start justify-between text-2xl capitalize",
           "pt-4",
         )}
       >
-        {title.toLowerCase()}
+        {title?.toLowerCase()}
         <WishlistButton item={item} variant="icon" />
       </span>
 
