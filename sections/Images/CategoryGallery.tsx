@@ -26,14 +26,14 @@ const Desktop = ({ items }: Props) => {
             <a
               class={`${index == 0 ? "rounded-l-lg" : ""} 
                             ${index == 3 ? "rounded-r-lg" : ""} 
-                            w-full h-full transition-all duration-300 relative overflow-hidden`}
+                            w-full h-full transition-all duration-300 relative overflow-hidden max-h-[386px]`}
               href={item.link}
             >
               <img
                 class={`${index == 0 ? "rounded-l-lg" : ""} 
                             ${
                   index == 3 ? "rounded-r-lg" : ""
-                } w-full duration-300 transition-all group-hover:scale-125`}
+                } w-full duration-300 transition-all group-hover:scale-125 max-h-[386px]`}
                 src={item.images.normal}
                 loading={"lazy"}
               />
@@ -72,7 +72,7 @@ const Mobile = ({ items }: Props) => {
                   class={`${index == 0 ? "rounded-l-lg" : ""} 
                                 ${
                     index == 3 ? "rounded-r-lg" : ""
-                  } w-full duration-300 transition-all group-hover:scale-125`}
+                  } w-full duration-300 transition-all group-hover:scale-125 max-h-[386px]`}
                   src={item.images.normal}
                   loading={"lazy"}
                 />

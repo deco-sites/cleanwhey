@@ -18,27 +18,31 @@ export interface Banner {
 
   /** @description Image's alt text */
   alt: string;
+  /**
+   * @description Ativar customização HTML no Banner, mesmo desativado, inserir o link no campo de action
+   */
+  activateContent?: boolean;
 
   action?: {
     /** @description when user clicks on the image, go to this link */
-    href: string;
+    href?: string;
     /** @description Image text title */
-    title: HTMLWidget;
+    title?: HTMLWidget;
     /** @description Button label, deixe vazio para não aparecer o botão laranja */
     label?: string;
   };
   position?: "Left" | "Right";
   extraLink?: {
     /** @description go to this link */
-    href: string;
+    href?: string;
     /** @description Button label */
-    label: string;
+    label?: string;
   };
   selos?: Selo[];
 }
 
 interface Selo {
-  image: ImageWidget;
+  image?: ImageWidget;
   label?: string;
 }
 
@@ -67,6 +71,7 @@ function BannerItem(
     action,
     extraLink,
     selos,
+    activateContent
   } = image;
   const params = { promotion_name: image.alt };
 
@@ -98,42 +103,48 @@ function BannerItem(
             px-5 sm:px-0
             sm:items-start sm:max-w-xl`}
         >
-          <span
-            class={`${image.position == "Left" ? "md:text-5xl" : "md:text-7xl"
-              } text-[32px] text-center md:text-left font-normal leading-10 md:leading-[80px] font-lato text-gray-200`}
-            dangerouslySetInnerHTML={{ __html: action.title }}
-          />
+          {activateContent && action.title &&(
+            <span
+              class={`${image.position == "Left" ? "md:text-5xl" : "md:text-7xl"
+                } text-[32px] text-center md:text-left font-normal leading-10 md:leading-[80px] font-lato text-gray-200`}
+              dangerouslySetInnerHTML={{ __html: action.title }}
+            />
+          )}
 
           {
             /* <span class="font-normal text-base text-base-100 pt-4 pb-12">
             {action.subTitle}
           </span> */
           }
-          <div className="actions flex flex-col md:flex-row items-center gap-2 mt-4">
-            {action.label != undefined && (
+          {activateContent && (
+            <div className="actions flex flex-col md:flex-row items-center gap-2 mt-4">
+              {action.label != undefined && (
+                <button
+                  class="border w-full md:w-auto !border-orange-300 hover:bg-orange-300 !text-white hover:text-white !bg-orange-300 btn btn-primary rounded-lg btn-outline"
+                  aria-label={action.label}
+                >
+                  {action.label}
+                </button>
+              )}
+
               <button
-                class="border w-full md:w-auto !border-orange-300 hover:bg-orange-300 !text-white hover:text-white !bg-orange-300 btn btn-primary rounded-lg btn-outline"
-                aria-label={action.label}
+                class="btn btn-primary rounded-lg btn-outline hover:text-blue-300 hover:bg-transparent border !text-blue-300 !border-blue-300 !bg-transparent"
+                aria-label={extraLink?.href}
               >
-                {action.label}
+                {extraLink?.label}
               </button>
-            )}
-
-            <button
-              class="btn btn-primary rounded-lg btn-outline hover:text-blue-300 hover:bg-transparent border !text-blue-300 !border-blue-300 !bg-transparent"
-              aria-label={extraLink?.href}
-            >
-              {extraLink?.label}
-            </button>
-          </div>
-
-          <div class={"selos mt-8"}>
-            <div className="flex gap-4">
-              {selos?.map((selo) => (
-                <img width={32} height={32} src={selo.image} alt={selo.label} />
-              ))}
             </div>
-          </div>
+          )}
+          
+          {activateContent && (
+            <div class={"selos mt-8"}>
+              <div className="flex gap-4">
+                {selos?.map((selo) => (
+                  <img width={32} height={32} src={selo.image} alt={selo.label} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
       <Picture preload={lcp} {...viewPromotionEvent}>

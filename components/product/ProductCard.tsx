@@ -81,7 +81,7 @@ function ProductCard({
     },
   });
 
-  const variantName = title?.replace("Cor:", "").replace("Tamanho:", "")
+  const variantName = title?.toLowerCase().replace("cor:", "").replace("tamanho:", "")
     .replace(/sabor:[^;]*/g, "").replace(/;/g, "").trim();
 
   const off = listPrice && price && listPrice != price && (listPrice * 100) / price
@@ -183,9 +183,9 @@ function ProductCard({
           class={`font-bold text-gray-400 text-base md:text-lg text-center capitalize`}
         >
           {productName == title
-            ? title
-            : title == variantName ? `${title} - ${productName?.replace("Tamanho:", "").replace(/sabor:[^;]*/g, "").replace(";", "").replace("Cor:", "")}` :
-              `${productName} ${variantName ? `- ${variantName}` : ""}`}
+            ? title?.toLowerCase()
+            : title?.toLowerCase() == variantName ? `${title?.toLowerCase()} - ${productName?.toLowerCase()?.replace("tamanho:", "").replace(/sabor:[^;]*/g, "").replace(";", "").replace("cor:", "")}` :
+              `${productName?.toLowerCase()} ${variantName?.toLowerCase() ? `- ${variantName?.toLowerCase()}` : ""}`}
         </span>
         {!isFeatured && (
           <>{

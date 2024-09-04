@@ -81,7 +81,7 @@ function ProductInfo({ page, pix }: Props) {
           "pt-4",
         )}
       >
-        {title}
+        {title.toLowerCase()}
         <WishlistButton item={item} variant="icon" />
       </span>
 
