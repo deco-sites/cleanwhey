@@ -53,8 +53,6 @@ function FilterValues({ key, values }: FilterToggle) {
   const avatars = key === "cor";
   const flexDirection = avatars ? "flex-row items-center" : "flex-col";
 
-  console.log("key", key, avatars)
-
   return (
     <ul class={clx(`flex flex-wrap gap-2`, flexDirection)}>
       {values.map((item) => {
