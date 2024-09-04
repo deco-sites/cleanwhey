@@ -46,10 +46,14 @@
         "variant": "aside",
         "pagination": "pagination"
       },
+<<<<<<< HEAD
       "startingPage": 1,
       "pix": {
         "__resolveType": "Payment - Pix"
       }
+=======
+      "startingPage": 1
+>>>>>>> b713d37387c703e099615f8c773460e1279cfb96
     },
     {
       "__resolveType": "website/sections/Rendering/SingleDeferred.tsx",

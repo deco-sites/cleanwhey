@@ -1,1 +1,10 @@
-{"__resolveType":"site/apps/deco/vtex.ts","salesChannel":"1","defaultSegment":{"channelPrivacy":"public"},"platform":"vtex","account":"cleanweb","publicUrl":"cleanweb.myvtex.com"}
+{
+  "__resolveType": "site/apps/deco/vtex.ts",
+  "salesChannel": "1",
+  "defaultSegment": {
+    "channelPrivacy": "public"
+  },
+  "platform": "vtex",
+  "account": "cleanweb",
+  "publicUrl": "secure.cleanwhey.com.br"
+}
