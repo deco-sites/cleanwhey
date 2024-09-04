@@ -80,8 +80,8 @@ function ProductCard({
     },
   });
 
-  const variantName = title?.replace("COR:", "").replace("TAMANHO:", "")
-    .replace(/SABOR:[^;]*/g, "").replace(/;/g, "").trim();
+  const variantName = title?.replace("Cor:", "").replace("Tamanho:", "")
+    .replace(/sabor:[^;]*/g, "").replace(/;/g, "").trim();
 
   const off = listPrice && price && listPrice != price && (listPrice * 100) / price
 
@@ -151,7 +151,7 @@ function ProductCard({
           {inStock && off && off != 0 ?
             < span
               class={clx(
-                "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:bottom-[-9px] after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[10px]  after:border-t-red-300 after:absolute",
+                "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:bottom-[-10px] after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[10px]  after:border-t-red-300 after:absolute",
                 "opacity-1",
                 "w-fit",
               )}
@@ -161,7 +161,7 @@ function ProductCard({
             : inStock && pix.porcentagePix != 0 ?
               < span
                 class={clx(
-                  "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:bottom-[-9px] after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[10px]  after:border-t-red-300 after:absolute",
+                  "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:bottom-[-10px] after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[10px]  after:border-t-red-300 after:absolute",
                   "opacity-1",
                   "w-fit",
                 )}
@@ -179,11 +179,12 @@ function ProductCard({
       </figure>
       <a href={relativeUrl} class="pt-5 text-center flex flex-col justify-between">
         <span
-          class={`font-bold text-gray-400 text-base md:text-lg text-center`}
+          class={`font-bold text-gray-400 text-base md:text-lg text-center capitalize`}
         >
           {productName == title
             ? title
-            : `${productName} ${variantName ? `- ${variantName}` : ""}`}
+            : title == variantName ? `${title} - ${productName?.replace("Tamanho:", "").replace(/sabor:[^;]*/g, "").replace(";", "").replace("Cor:", "")}` :
+              `${productName} ${variantName ? `- ${variantName}` : ""}`}
         </span>
         {!isFeatured && (
           <>{
@@ -207,7 +208,7 @@ function ProductCard({
             </>
               : <>
                 <div class="flex-grow" />
-                <span class=" text-2xl text-center font-bold min-h-[132px] md:min-h-[112px] flex items-center flex-wrap">Produto Indisponivel</span>
+                <span class=" text-2xl text-center font-bold min-h-[132px] md:min-h-[112px] flex items-center flex-wrap justify-center">Produto Indisponivel</span>
                 <div class="flex-grow" />
               </>
           }

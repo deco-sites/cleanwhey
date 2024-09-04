@@ -31,6 +31,8 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Web Manifest */}
         <link rel="manifest" href={asset("/site.webmanifest")} />
+
+        <link rel="icon" type="image/png" href={asset("/favicon-16x16.png")} />
       </Head>
 
       {/* Rest of Preact tree */}

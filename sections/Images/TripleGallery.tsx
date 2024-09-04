@@ -48,9 +48,8 @@ const Desktop = ({ items }: Props) => {
                 {item.subtitle}
               </p>
               <h2
-                class={`max-w-[275px] ${
-                  item.flag ? "mb-6" : "mb-12"
-                } font-bold text-xl text-white`}
+                class={`max-w-[275px] ${item.flag ? "mb-6" : "mb-12"
+                  } font-bold text-xl md:text-2xl text-white`}
               >
                 {item.title}
               </h2>
@@ -91,15 +90,14 @@ const Mobile = ({ items }: Props) => {
               <div class="text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.50)] 
                         absolute top-0  left-0 w-full h-full flex flex-col 
                         items-center justify-center
-                        text-white  text-center
+                        text-center
                         ">
                 <p class="mb-3 font-regular text-sm text-white">
                   {item.subtitle}
                 </p>
                 <h2
-                  class={`max-w-[275px] ${
-                    item.flag ? "mb-6" : "mb-12"
-                  } font-bold text-xl text-white`}
+                  class={`max-w-[275px] ${item.flag ? "mb-6" : "mb-12"
+                    } font-bold text-xl md:text-2xl text-white`}
                 >
                   {item.title}
                 </h2>

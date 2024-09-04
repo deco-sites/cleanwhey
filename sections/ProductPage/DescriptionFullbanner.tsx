@@ -55,7 +55,7 @@ export default function DescriptionFullbanner(props: Props) {
         )} */}
         <div class="w-full top-0 left-0 h-full flex flex-col md:flex-row items-center">
           <div
-            class={`flex px-4 pt-12 md:px-0 md:items-start items-center flex-col md:flex-row h-auto gap-8 md:gap-16 container justify-end mb-96`}
+            class={`flex px-4 pt-12 md:px-0 md:items-start items-center flex-col md:flex-row h-auto gap-8 md:gap-16 container justify-end mb-96 md:mb-0`}
           >
             <div class="max-w-[384px]">
               <h2 class="font-bold text-white text-[32px] mb-2 leading-9 text-center md:text-start">

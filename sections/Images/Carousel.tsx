@@ -91,18 +91,16 @@ function BannerItem(
         <div
           class={`
             ${image.position == "Left" ? "left-0 sm:left-40 md:left-50" : ""}
-            ${
-            image.position == "Right" ? "right-0 sm:right-40 md:right-50" : ""
-          }
+            ${image.position == "Right" ? "right-0 sm:right-40 md:right-50" : ""
+            }
             absolute h-auto md:h-full w-full top-5 md:top-0
             flex flex-col justify-center items-center
             px-5 sm:px-0
             sm:items-start sm:max-w-xl`}
         >
           <span
-            class={`${
-              image.position == "Left" ? "md:text-5xl" : "md:text-7xl"
-            } text-[32px] text-center md:text-left font-normal leading-10 md:leading-[80px] font-lato text-gray-200`}
+            class={`${image.position == "Left" ? "md:text-5xl" : "md:text-7xl"
+              } text-[32px] text-center md:text-left font-normal leading-10 md:leading-[80px] font-lato text-gray-200`}
             dangerouslySetInnerHTML={{ __html: action.title }}
           />
 
@@ -114,7 +112,7 @@ function BannerItem(
           <div className="actions flex flex-col md:flex-row items-center gap-2 mt-4">
             {action.label != undefined && (
               <button
-                class="border w-full md:w-auto border-orange-300 hover:bg-orange-300 !text-white hover:text-white !bg-orange-300 btn btn-primary rounded-lg btn-outline bg-base-100"
+                class="border w-full md:w-auto !border-orange-300 hover:bg-orange-300 !text-white hover:text-white !bg-orange-300 btn btn-primary rounded-lg btn-outline"
                 aria-label={action.label}
               >
                 {action.label}
@@ -122,7 +120,7 @@ function BannerItem(
             )}
 
             <button
-              class="btn btn-primary rounded-lg btn-outline hover:text-blue-300 hover:bg-transparent bg-transparent border !text-blue-300 border-blue-300"
+              class="btn btn-primary rounded-lg btn-outline hover:text-blue-300 hover:bg-transparent border !text-blue-300 !border-blue-300 !bg-transparent"
               aria-label={extraLink?.href}
             >
               {extraLink?.label}

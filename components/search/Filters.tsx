@@ -53,8 +53,6 @@ function FilterValues({ key, values }: FilterToggle) {
   const avatars = key === "cor";
   const flexDirection = avatars ? "flex-row items-center" : "flex-col";
 
-  console.log("key", key, avatars)
-
   return (
     <ul class={clx(`flex flex-wrap gap-2`, flexDirection)}>
       {values.map((item) => {
@@ -102,6 +100,7 @@ function FilterValues({ key, values }: FilterToggle) {
 }
 
 function Filters({ filters }: Props) {
+
   return (
     <ul class="flex flex-col gap-6 p-4 sm:p-0">
       {filters
@@ -117,7 +116,7 @@ function Filters({ filters }: Props) {
                     name={`my-accordion-${index}`}
                   />
                   <div className="collapse-title after:!h-3 after:!w-3 after:text-gray-300 after:peer-checked:text-orange-300 text-gray-300 text-lg font-bold gap-2 !flex items-center p-0 peer-checked:text-orange-300">
-                    {filter.label}
+                    {filter.label.replace("TAMANHO", "Tamanho").replace("COR", "Cor").replace("SABOR", "Sabor")}
                   </div>
                   <div className="collapse-content">
                     <FilterValues {...filter} />

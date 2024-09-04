@@ -1,12 +1,12 @@
 {
   "seo": {
     "type": "website",
-    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/a5d890ba-e5b8-471e-8b77-7412c1d4fa56",
+    "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/1037d464-6c7f-400b-865b-07044f4f1b20/whey-protein.png",
     "title": "CleanWhey",
     "jsonLDs": [],
     "noIndexing": false,
     "description": "Build profitable websites with deco.cx",
-    "titleTemplate": "%s | deco.cx",
+    "titleTemplate": "%s | Clean Whey",
     "descriptionTemplate": "%s | deco.cx"
   },
   "theme": {
