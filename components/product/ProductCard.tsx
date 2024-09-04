@@ -159,7 +159,7 @@ function ProductCard({
             >
               {off - 100 + "% OFF"}
             </span>
-            : inStock && pix.porcentagePix != 0 ?
+            : inStock && pix?.porcentagePix != 0 ?
               < span
                 class={clx(
                   "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:bottom-[-10px] after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[10px]  after:border-t-red-300 after:absolute",
@@ -167,7 +167,7 @@ function ProductCard({
                   "w-fit",
                 )}
               >
-                {pix.porcentagePix * 100 + "% PIX"}
+                {pix?.porcentagePix * 100 + "% PIX"}
               </span>
               :
               null
@@ -191,10 +191,11 @@ function ProductCard({
           <>{
             inStock ? <>
               <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
-                <span class="line-through text-sm font-normal text-gray-300">
-                  {formatPrice(listPrice, offers?.priceCurrency)}
-                </span>
-
+                {listPrice != pricePix && (
+                  <span class="line-through text-sm font-normal text-gray-300">
+                    {formatPrice(listPrice, offers?.priceCurrency)}
+                  </span>
+                )}
                 <span class="text-xl font-bold flex gap-2 text-gray-400 items-center">
                   {formatPrice(pricePix)}
                   <p class="text-sm text-gray-300">no PIX</p>
@@ -244,9 +245,11 @@ function ProductCard({
       >
         {isFeatured && (
           <div class="flex flex-col items-start justify-center gap-1">
-            <span class="line-through text-xs font-normal text-gray-300">
-              {formatPrice(listPrice, offers?.priceCurrency)}
-            </span>
+            {listPrice != price && (
+              <span class="line-through text-xs font-normal text-gray-300">
+                {formatPrice(listPrice, offers?.priceCurrency)}
+              </span>
+            )}
 
             <span class="text-lg font-bold flex gap-2 items-center text-gray-400">
               {formatPrice(price, offers?.priceCurrency)}

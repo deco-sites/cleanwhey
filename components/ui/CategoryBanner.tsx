@@ -80,15 +80,17 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
             />
           )}
         </h1>
-        <h2>
-          <a
-            href={link}
-            class="text-sm font-normal text-white 
-          p-4 bg-orange-300 rounded-lg uppercase"
-          >
-            {buttonLabel}
-          </a>
-        </h2>
+        {link && (
+          <h2>
+            <a
+              href={link}
+              class="text-sm font-normal text-white 
+              p-4 bg-orange-300 rounded-lg uppercase"
+              >
+              {buttonLabel}
+            </a>
+          </h2>
+        )}
       </div>
     </div>
   );

@@ -2,14 +2,59 @@
   "banners": [
     {
       "image": {
-        "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/ba27590c-87d3-44fc-b836-aa294e781e65",
-        "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/1417f209-aaaf-472b-8513-055e61b9e292"
+        "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/b4552192-9fb0-4620-94ef-be1be6c542e9/ACESSORIOS-(1).png",
+        "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/283e646a-9f4a-4a18-8a36-0519b80d234d/ACESSORIOS.png"
       },
-      "title": "<p><em><strong><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">100%</span></strong></em> PURO</p><p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\"><strong><em>LIVRE DE </em></strong></span>CONSERVANTES E CORANTES </p><p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\"><em><strong>0% ADIÇÃO</strong></em> </span>DE AÇÚCARES</p>",
-      "matcher": "/*",
-      "subtitle": "Quero fazer a escolha certa",
-      "buttonLabel": "Quero fazer a escolha certa!",
-      "link": "/algum-lugar"
+      "matcher": "/acessorios"
+    },
+    {
+      "image": {
+        "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/6d3d04c5-cefc-4e19-aa27-519bf6a59e01/IMMUNIDADE.png",
+        "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/4af9e4c8-0b10-452f-a4f4-a76ecf59133f/IMMUNIDADE-(1).png"
+      },
+      "matcher": "/suplementos/imunidade"
+    },
+    {
+      "image": {
+        "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/cbc78c32-4903-4a2e-afb7-63a554a332cd/ISOLADO.png",
+        "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/9478a736-a9e1-4c48-b598-db06613ac0a4/ISOLADO-(1).png"
+      },
+      "matcher": "/suplementos/proteinas/isolado"
+    },
+    {
+      "image": {
+        "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/651183b3-8742-4a72-963a-3b3e2d25090b/HIDROLISADO.png",
+        "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/943c56f5-bcc3-4253-ba3c-85a37ea9d7ec/HIDROLISADO-(1).png"
+      },
+      "matcher": "/suplementos/proteinas/hidrolisado"
+    },
+    {
+      "image": {
+        "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/8195e300-5b72-4f95-bee0-62cc9dd051e2/CONCENTRADO.png",
+        "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/55d3b8f5-1cc5-40ea-883d-3868c41b4910/CONCENTRADO-(1).png"
+      },
+      "matcher": "/suplementos/proteinas/concentrado"
+    },
+    {
+      "image": {
+        "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/0c89831d-bfe3-496c-b7db-9664943ec1d3/MAIS-VENDIDOS.png",
+        "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/f221190a-50de-46dd-bb3f-4be84484878c/MAIS-VENDIDOS-(1).png"
+      },
+      "matcher": "/mais-vendidos"
+    },
+    {
+      "image": {
+        "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/4fefbb97-88c5-41fd-b238-2f56182be926/SPECIAL.png",
+        "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/c6d569db-eb0e-40d1-a964-129e9d61a9fb/SPECIAL-(1).png"
+      },
+      "matcher": "/suplementos/proteinas/special"
+    },
+    {
+      "image": {
+        "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/b79086c2-f020-4266-8ea3-76ba85dda089/COMBOS-E-PROMOCOES.png",
+        "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/dc54a034-71c7-4594-a79c-c31a8f18bb50/COMBOS-E-PROMOCOES.png"
+      },
+      "matcher": "/combos-e-descontos"
     }
   ],
   "__resolveType": "site/sections/Category/CategoryBanner.tsx"
