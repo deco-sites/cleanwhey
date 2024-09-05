@@ -106,7 +106,7 @@ function BannerItem(
           {activateContent && action.title &&(
             <span
               class={`${image.position == "Left" ? "md:text-5xl" : "md:text-7xl"
-                } text-[32px] text-center md:text-left font-normal leading-10 md:leading-[80px] font-lato text-gray-200`}
+                } text-[32px] text-center md:text-left font-normal leading md:leading-[60px] font-lato text-gray-200`}
               dangerouslySetInnerHTML={{ __html: action.title }}
             />
           )}
