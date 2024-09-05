@@ -1,6 +1,6 @@
 {
   "name": "Blog Category",
-  "path": "/blog/:category",
+  "path": "/blog/category/:category",
   "sections": [
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
