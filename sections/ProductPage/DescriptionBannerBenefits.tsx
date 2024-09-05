@@ -21,6 +21,7 @@ interface Props {
     };
     alt: string;
   };
+  /**@description  Recomendado no maximo 110 caracters*/
   title?: HTMLWidget;
   benefits?: Benefit[];
 }
