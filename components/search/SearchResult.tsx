@@ -86,6 +86,19 @@ function PageResult(props: SectionProps<typeof loader>) {
 
   const infinite = layout?.pagination !== "pagination";
 
+  const pageFormated = pageInfo.nextPage
+    ? pageInfo.nextPage.split("page=")[0]
+    : "?";
+  const links = [];
+  const totalPages = Math.ceil(pageInfo.records / pageInfo.recordPerPage);
+
+  for (let i = 1; i <= totalPages; i++) {
+    links.push({
+      "label": i,
+      "href": `${pageFormated}page=${i}`,
+    });
+  }
+
   return (
     <div class="grid grid-flow-row grid-cols-1 place-items-center">
       <div
@@ -196,29 +209,45 @@ function PageResult(props: SectionProps<typeof loader>) {
             </div>
           )
           : (
-            <div class={clx("join", infinite && "hidden")}>
-              <a
-                rel="prev"
-                aria-label="previous page link"
-                href={prevPageUrl ?? "#"}
-                disabled={!prevPageUrl}
-                class="btn btn-ghost join-item"
-              >
-                <Icon id="chevron-right" class="rotate-180" />
-              </a>
-              <span class="btn btn-ghost join-item">
-                Page {zeroIndexedOffsetPage + 1}
-              </span>
-              <a
-                rel="next"
-                aria-label="next page link"
-                href={nextPageUrl ?? "#"}
-                disabled={!nextPageUrl}
-                class="btn btn-ghost join-item"
-              >
-                <Icon id="chevron-right" />
-              </a>
-            </div>
+            <div class="flex justify-center my-4">
+          <div class="join gap-2">
+            <a
+              aria-label="previous page link"
+              rel="prev"
+              href={pageInfo.previousPage ?? "#"}
+              class="btn btn-ghost join-item"
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.333 16H6.667M16 25.333 6.667 16 16 6.667" stroke="#E06741" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            {links.map((link) => {
+              return (
+                <a
+                  href={link.href}
+                  class={`btn !rounded-lg ${
+                    pageInfo.currentPage == link.label
+                      ? "btn-primary hover:bg-orange-300 bg-orange-300 border-orange-300 hover:border-orange-300"
+                      : "btn-ghost"
+                  } join-item`}
+                >
+                  <span>
+                    {link.label}
+                  </span>
+                </a>
+              );
+            })}
+            <a
+              aria-label="next page link"
+              rel="next"
+              href={pageInfo.nextPage ?? "#"}
+              class="btn btn-ghost join-item"
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.66663 16H25.3333" stroke="#E06741" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 6.66666L25.3333 16L16 25.3333" stroke="#E06741" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
           )}
       </div>
     </div>

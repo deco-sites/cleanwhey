@@ -32,7 +32,7 @@ function Section(props: SectionProps<ReturnType<typeof loader>>) {
                 <h2 class="text-2xl font-bold text-gray-200 md:text-left text-center mb-4 pb-2 md:px-0 px-4" dangerouslySetInnerHTML={{__html: title}} />
             </div>
         )}
-        <div class="grid md:grid-cols-3 grid-cols-1 gap-2 md:px-0 px-4">
+        <div class="grid md:grid-cols-3 mb-4 grid-cols-1 gap-2 md:px-0 px-4">
             {cards && cards.length > 0 && cards.map((card) => (
                 <div class="border border-gray-100 bg-white-300 rounded p-4">
                     <h3 class="text-base font-bold md:text-left text-center text-orange-300">{card.subtitle}</h3>
