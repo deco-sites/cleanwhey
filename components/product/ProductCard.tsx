@@ -185,7 +185,7 @@ function ProductCard({
           {productName == title
             ? title?.toLowerCase()
             : title?.toLowerCase() == variantName ? `${title?.toLowerCase()} - ${productName?.toLowerCase()?.replace("tamanho:", "").replace(/sabor:[^;]*/g, "").replace(";", "").replace("cor:", "")}` :
-                `${productName?.toLowerCase()} ${variantName?.toLowerCase() ? `- ${variantName?.toLowerCase()}` : ""}`}
+              `${productName?.toLowerCase()} ${variantName?.toLowerCase() ? `- ${variantName?.toLowerCase()}` : ""}`}
         </span>
         {!isFeatured && (
           <>{
