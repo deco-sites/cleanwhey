@@ -6,12 +6,6 @@ export default function WishlistClick() {
     const { user } = useUser();
     const isUserLoggedIn = Boolean(user.value?.email)
 
-    const onClick = () => {
-        if (!isUserLoggedIn) {
-          window.alert(`Por favor, faça login para adicionar a sua Wishlist`);
-        }
-      };
-
     return (
         <>
             {isUserLoggedIn && (
@@ -23,12 +17,12 @@ export default function WishlistClick() {
             </a>
             )}
             {!isUserLoggedIn && (
-              <a
+              <div
               class="p-1 hover:!bg-transparent text-white btn btn-sm font-normal btn-ghost no-animation"
-              hx-on:click={useScript(onClick)}
+              hx-on:click={"window.alert(`Por favor, faça login para adicionar a sua Wishlist`)"}
               >
                 <Icon id="wishlist_button" class="h-8 w-8" />
-              </a>
+              </div>
             )}
         </>
     )
