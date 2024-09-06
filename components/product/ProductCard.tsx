@@ -209,7 +209,7 @@ function ProductCard({
             </>
               : <>
                 <div class="flex-grow" />
-                <span class=" text-2xl text-center font-bold min-h-[132px] md:min-h-[112px] flex items-center flex-wrap justify-center">Produto Indisponivel</span>
+                <span class=" text-2xl text-center font-bold min-h-[132px] md:min-h-[112px] flex items-center flex-wrap justify-center">Produto Indisponível</span>
                 <div class="flex-grow" />
               </>
           }
