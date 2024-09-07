@@ -27,7 +27,7 @@ function QuantitySelector(
         hx-on:click={useScript(onClick, -1)}
         disabled={disabled}
       >
-<span>-</span>
+        <span>-</span>
       </button>
       <div
         data-tip={`Quantity must be between ${props.min} and ${props.max}`}
@@ -57,7 +57,7 @@ function QuantitySelector(
         disabled={disabled}
       >
         <span>+</span>
-        </button>
+      </button>
     </div>
   );
 }

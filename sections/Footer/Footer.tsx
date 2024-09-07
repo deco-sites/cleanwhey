@@ -1,6 +1,6 @@
 import { type ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
+// import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
 
 /** @titleBy title */
@@ -90,7 +90,7 @@ function Footer({
             </div>
           </li>
 
-          {links.map(({ title, href, children }, index) => (
+          {links.map(({ title, href, children }) => (
             <>
               {device === "desktop"
                 ? (

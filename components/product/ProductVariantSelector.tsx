@@ -1,5 +1,4 @@
 import type { Product } from "apps/commerce/types.ts";
-import { useSection } from "deco/hooks/useSection.ts";
 import { clx } from "../../sdk/clx.ts";
 import { relative } from "../../sdk/url.ts";
 import { useId } from "../../sdk/useId.ts";
@@ -121,9 +120,9 @@ function VariantSelector({ product }: Props) {
           <li class="flex flex-col gap-2 min-w-[80px]">
             {product.image && product.image?.length > 0 && (
               <Ring
-              value={productTaste?.value?.toLowerCase() || "Sabor"}
-              image={product?.image[0]?.url}
-              checked={true}
+                value={productTaste?.value?.toLowerCase() || "Sabor"}
+                image={product?.image[0]?.url}
+                checked={true}
               />
             )}
           </li>

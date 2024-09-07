@@ -50,7 +50,11 @@ export const loader = async (props: Props, req: Request, ctx: AppContext) => {
 };
 
 function Suggestions(
-  { suggestion, query, pix }: ComponentProps<typeof loader, typeof action>,
+  {
+    suggestion,
+    // query,
+    pix,
+  }: ComponentProps<typeof loader, typeof action>,
 ) {
   const { products = [], searches = [] } = suggestion ?? {};
   const recentSearches = searches;
@@ -71,7 +75,9 @@ function Suggestions(
             role="heading"
             aria-level={3}
           >
-            {products.length > 0 && searches.length === 0 ? "Produtos" : "Buscas populares"}
+            {products.length > 0 && searches.length === 0
+              ? "Produtos"
+              : "Buscas populares"}
           </span>
 
           <ul class="flex flex-col gap-6">
@@ -88,79 +94,103 @@ function Suggestions(
                 </a>
               </li>
             ))}
-            {products.length > 0 && searches.length === 0 && products.map((product) => {
+            {products.length > 0 && searches.length === 0 &&
+              products.map((product) => {
+                const title = product.isVariantOf?.name ?? product.name;
+                const variantName = title?.toLowerCase().replace("cor:", "")
+                  .replace("tamanho:", "")
+                  .replace(/sabor:[^;]*/g, "").replace(/;/g, "").trim();
 
-              const title = product.isVariantOf?.name ?? product.name;
-              const variantName = title?.toLowerCase().replace("cor:", "").replace("tamanho:", "")
-                .replace(/sabor:[^;]*/g, "").replace(/;/g, "").trim();
+                const size = product?.additionalProperty?.find((property) =>
+                  property.name == "TAMANHO"
+                );
 
-              const size = product?.additionalProperty?.find((property) => property.name == "TAMANHO")
-
-              const [front, back] = product.image ?? [];
-              const { price, installments } = useOffer(product?.offers)
-              const valuePix = formatPix(price || 0, pix.porcentagePix, pix.valueMax)
-              return (
-                <li>
-                  {/* TODO @gimenes: use name and action from searchbar form */}
-                  <a
-                    href={`${product.url}`}
-                    class="flex gap-1 items-center"
-                  >
-                    <div class="flex flex-row w-full">
-                      <div class="flex flex-row w-full gap-2">
-                        <Image
-                          width={80}
-                          height={80}
-                          loading="lazy"
-                          src={back?.url ?? front.url!}
-                          alt={back?.alternateName ?? front.alternateName}
-                          class=" object-cover min-h-20 "
-                        />
-                        <div class={"flex flex-col justify-between gap-1"}>
-                          <span class={"text-ellipsis-custom text-sm"}>
-                            {product.isVariantOf?.name == title
-                              ? `${title?.toLowerCase()} ${size?.value ? '- ' + size.value : ""}` : title?.toLowerCase() == variantName ? `${title?.toLowerCase()} - ${product.isVariantOf?.name?.toLowerCase().replace("tamanho:", "").replace(/sabor:[^;]*/g, "").replace(";", "").replace("cor:", "")}` :
-                                `${product.isVariantOf?.name?.toLowerCase()} ${variantName?.toLowerCase() ? `- ${variantName?.toLowerCase()}` : ""} ${size?.value ? '- ' + size.value : ""}`}
-                          </span>
-                          <span class="text-lg font-bold">
-                            {formatPrice(valuePix) + " "}<span class="text-sm text-gray-300">no Pix</span>
-                          </span>
-                          <span class="text-xs">{installments}</span>
+                const [front, back] = product.image ?? [];
+                const { price, installments } = useOffer(product?.offers);
+                const valuePix = formatPix(
+                  price || 0,
+                  pix.porcentagePix,
+                  pix.valueMax,
+                );
+                return (
+                  <li>
+                    {/* TODO @gimenes: use name and action from searchbar form */}
+                    <a
+                      href={`${product.url}`}
+                      class="flex gap-1 items-center"
+                    >
+                      <div class="flex flex-row w-full">
+                        <div class="flex flex-row w-full gap-2">
+                          <Image
+                            width={80}
+                            height={80}
+                            loading="lazy"
+                            src={back?.url ?? front.url!}
+                            alt={back?.alternateName ?? front.alternateName}
+                            class=" object-cover min-h-20 "
+                          />
+                          <div class={"flex flex-col justify-between gap-1"}>
+                            <span class={"text-ellipsis-custom text-sm"}>
+                              {product.isVariantOf?.name == title
+                                ? `${title?.toLowerCase()} ${
+                                  size?.value ? "- " + size.value : ""
+                                }`
+                                : title?.toLowerCase() == variantName
+                                ? `${title?.toLowerCase()} - ${
+                                  product.isVariantOf?.name?.toLowerCase()
+                                    .replace("tamanho:", "").replace(
+                                      /sabor:[^;]*/g,
+                                      "",
+                                    ).replace(";", "").replace("cor:", "")
+                                }`
+                                : `${product.isVariantOf?.name?.toLowerCase()} ${
+                                  variantName?.toLowerCase()
+                                    ? `- ${variantName?.toLowerCase()}`
+                                    : ""
+                                } ${size?.value ? "- " + size.value : ""}`}
+                            </span>
+                            <span class="text-lg font-bold">
+                              {formatPrice(valuePix) + " "}
+                              <span class="text-sm text-gray-300">no Pix</span>
+                            </span>
+                            <span class="text-xs">{installments}</span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </a>
-                </li>
-              )
-            })}
+                    </a>
+                  </li>
+                );
+              })}
           </ul>
         </div>
         {recentSearches.length > 0 &&
-          <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
-            <span
-              class="font-bold text-18 text-blue-300 border-b border-blue-300 pb-2 w-36"
-              role="heading"
-              aria-level={3}
-            >
-              Buscas Recentes
-            </span>
-            <ul class="flex flex-col gap-6">
-              {recentSearches.map(({ term }) => (
-                <li>
-                  {/* TODO @gimenes: use name and action from searchbar form */}
-                  <a
-                    href={`${ACTION}?${NAME}=${term}`}
-                    class="flex gap-4 items-center"
-                  >
-                    <span>
-                      <Icon id="search" />
-                    </span>
-                    <span dangerouslySetInnerHTML={{ __html: term }} />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>}
+          (
+            <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
+              <span
+                class="font-bold text-18 text-blue-300 border-b border-blue-300 pb-2 w-36"
+                role="heading"
+                aria-level={3}
+              >
+                Buscas Recentes
+              </span>
+              <ul class="flex flex-col gap-6">
+                {recentSearches.map(({ term }) => (
+                  <li>
+                    {/* TODO @gimenes: use name and action from searchbar form */}
+                    <a
+                      href={`${ACTION}?${NAME}=${term}`}
+                      class="flex gap-4 items-center"
+                    >
+                      <span>
+                        <Icon id="search" />
+                      </span>
+                      <span dangerouslySetInnerHTML={{ __html: term }} />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
       </div>
     </div>
   );

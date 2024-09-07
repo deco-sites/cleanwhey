@@ -1,11 +1,11 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
-import type { Person, SiteNavigationElement } from "apps/commerce/types.ts";
+import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
 import { useSection } from "deco/hooks/useSection.ts";
 import Alert, { alert } from "../../components/header/Alert.tsx";
 import Bag from "../../components/header/Bag.tsx";
-import { useUser } from "apps/vtex/hooks/useUser.ts";
+// import { useUser } from "apps/vtex/hooks/useUser.ts";
 import NavItem from "../../components/header/NavItem.tsx";
 import SignIn from "../../components/header/SignIn.tsx";
 import Searchbar, {
@@ -24,7 +24,7 @@ import {
   SIDEMENU_DRAWER_ID,
 } from "../../constants.ts";
 import Menu from "../../islands/Menu.tsx";
-import { useScript } from "deco/hooks/useScript.ts";
+// import { useScript } from "deco/hooks/useScript.ts";
 import WishlistClick from "../../components/header/WishlistClick.tsx";
 
 export interface Logo {
@@ -61,7 +61,6 @@ type Props = Omit<SectionProps, "alert" | "variant">;
 const Desktop = (
   { navItems, logo, searchbar }: Props,
 ) => {
-  
   return (
     <>
       <div class="flex flex-col gap-4 pt-5">
@@ -91,8 +90,7 @@ const Desktop = (
             </a>
 
             <WishlistClick />
-            
-            
+
             <SignIn variant="desktop" />
             <Bag />
           </div>
@@ -107,11 +105,11 @@ const Desktop = (
         </div>
       </div>
     </>
-  )
+  );
 };
 
-const Mobile = ({ logo, searchbar,  }: Props) => {
-  const { user } = useUser();
+const Mobile = ({ logo, searchbar }: Props) => {
+  // const { user } = useUser();
   return (
     <>
       <Drawer
@@ -173,7 +171,7 @@ const Mobile = ({ logo, searchbar,  }: Props) => {
         <Searchbar {...searchbar} />
       </div>
     </>
-  )
+  );
 };
 
 function Header({
@@ -188,7 +186,7 @@ function Header({
   ...props
 }: Props) {
   const device = useDevice();
-  const user = useUser();
+  // const user = useUser();
   return (
     <header
       style={{

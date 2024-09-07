@@ -10,7 +10,7 @@ import WishlistButton from "../wishlist/WishlistButton.tsx";
 import AddToCartButton from "./AddToCartButton.tsx";
 import OutOfStock from "./OutOfStock.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
-import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
+// import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
 import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 import { formatPix } from "../../sdk/formatPix.tsx";
 
@@ -38,7 +38,7 @@ function ProductInfo({ page, pix }: Props) {
     listPrice,
     seller = "1",
     availability,
-    installments
+    installments,
   } = useOffer(offers);
 
   // const percent = listPrice && price
@@ -70,11 +70,10 @@ function ProductInfo({ page, pix }: Props) {
     },
   });
 
-  const pricePix = formatPix(price ?? 0, pix.porcentagePix, pix.valueMax)
+  const pricePix = formatPix(price ?? 0, pix.porcentagePix, pix.valueMax);
 
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
-
       <span
         class={clx(
           "font-bold text-gray-400 flex items-start justify-between text-2xl capitalize",
@@ -137,15 +136,17 @@ function ProductInfo({ page, pix }: Props) {
                 disabled={false}
               />
 
-              <AddToCartButtonVTEX
+              {
+                /* <AddToCartButtonVTEX
                 productID={productID}
                 seller={seller}
-              />
+              /> */
+              }
             </>
           )
           : <OutOfStock productID={productID} />}
       </div>
-    </div >
+    </div>
   );
 }
 

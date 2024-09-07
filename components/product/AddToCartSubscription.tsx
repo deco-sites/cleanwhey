@@ -1,4 +1,3 @@
-// deno-lint-ignore-file no-constant-condition
 import { useCart } from "apps/vtex/hooks/useCart.ts";
 import Button, { Props as BtnProps } from "./common.tsx";
 import { useSignal } from "@preact/signals";
@@ -12,7 +11,7 @@ export interface Props extends Omit<BtnProps, "onAddItem"> {
 function AddToCartButton(
   { seller, productID, buttonColor }: Props,
 ) {
-  const { addItems, addItemAttachment } = useCart();
+  const { addItems, addItemAttachment, sendAttachment } = useCart();
   const count = useSignal(1);
 
   const onAddItem = () =>
@@ -31,7 +30,23 @@ function AddToCartButton(
       content: {
         "assinatura": "mensal",
       },
-  });
+    });
+  const updateAttachment = () =>
+    sendAttachment({
+      attachment: "subscriptionData",
+      body: {
+        subscriptions: [
+          {
+            plan: {
+              frequency: {
+                interval: 1,
+                periodicity: "MONTH",
+              },
+            },
+          },
+        ],
+      },
+    });
 
   return (
     <div class="flex items-center gap-3">
@@ -39,6 +54,7 @@ function AddToCartButton(
         buttonColor={buttonColor}
         onAddItem={onAddItem}
         onAddAttachment={onAddAttachment}
+        updateAttachment={updateAttachment}
       />
     </div>
   );
