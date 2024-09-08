@@ -10,7 +10,9 @@ export interface Props {
   buttonColor?: string;
 }
 
-const useAddToCart = ({ onAddItem, onAddAttachment }: Props) => {
+const useAddToCart = (
+  { onAddItem, onAddAttachment }: Props,
+) => {
   const [loading, setLoading] = useState(false);
 
   const onClick = async (e: MouseEvent) => {
