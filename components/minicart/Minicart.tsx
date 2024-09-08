@@ -195,7 +195,7 @@ export default function Cart({
               <div class="w-full h-full flex justify-between flex-col ">
                 <ul
                   role="list"
-                  class="mt-6 px-2 flex-grow overflow-y-auto flex flex-col gap-6 w-full overflow-scroll pb-[290px]"
+                  class="mt-6 px-2 flex-grow overflow-y-auto flex flex-col gap-6 w-full overflow-scroll pb-[290px] overflow-x-hidden"
                 >
                   {items.map((item, index) => (
                     <li class="border-b border-gray-100 pb-4">

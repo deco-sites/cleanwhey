@@ -24,15 +24,16 @@ function AddToCartButton(
       }],
     });
 
-  const onAddAttachment = () =>
+  const onAddAttachment = () => {
+
     addItemAttachment({
       index: 0,
       attachment: "vtex.subscription.assinatura",
       content: {
-        "vtex.subscription.key.frequency": "1 month",
+        "assinatura": "mensal",
       },
     });
-
+  }
   return (
     <div class="flex items-center gap-3">
       <Button
