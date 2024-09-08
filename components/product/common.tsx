@@ -29,7 +29,11 @@ const useAddToCart = (
 
       await onAddItem();
       await onAddAttachment();
+<<<<<<< Updated upstream
       await updateAttachment();
+=======
+
+>>>>>>> Stashed changes
     } finally {
       setLoading(false);
     }

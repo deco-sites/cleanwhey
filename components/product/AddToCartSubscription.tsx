@@ -11,8 +11,12 @@ export interface Props extends Omit<BtnProps, "onAddItem"> {
 function AddToCartButton(
   { seller, productID, buttonColor }: Props,
 ) {
+<<<<<<< Updated upstream
   const { addItems, addItemAttachment, sendAttachment } = useCart();
   const { addItems, addItemAttachment, sendAttachment } = useCart();
+=======
+  const { addItems, addItemAttachment, } = useCart();
+>>>>>>> Stashed changes
   const count = useSignal(1);
 
   const onAddItem = () =>
@@ -34,7 +38,7 @@ function AddToCartButton(
       },
     });
   }
-  
+
   return (
     <div class="flex items-center gap-3">
       <Button
