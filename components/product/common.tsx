@@ -6,13 +6,14 @@ export interface Props {
   /** @description: sku name */
   onAddItem: () => Promise<void>;
   onAddAttachment: () => Promise<void>;
-  updateAttachment: () => Promise<void>;
   /** @format color */
   buttonColor?: string;
 }
 
 const useAddToCart = (
-  { onAddItem, onAddAttachment, updateAttachment }: Props,
+
+  { onAddItem, onAddAttachment }: Props,
+
 ) => {
   const [loading, setLoading] = useState(false);
 
@@ -25,7 +26,6 @@ const useAddToCart = (
 
       await onAddItem();
       await onAddAttachment();
-      await updateAttachment();
     } finally {
       setLoading(false);
     }

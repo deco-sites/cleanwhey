@@ -11,7 +11,7 @@ export interface Props extends Omit<BtnProps, "onAddItem"> {
 function AddToCartButton(
   { seller, productID, buttonColor }: Props,
 ) {
-  const { addItems, addItemAttachment, sendAttachment } = useCart();
+  const { addItems, addItemAttachment } = useCart();
   const count = useSignal(1);
 
   const onAddItem = () =>
@@ -23,7 +23,8 @@ function AddToCartButton(
       }],
     });
 
-  const onAddAttachment = () =>
+  const onAddAttachment = () => {
+
     addItemAttachment({
       index: 0,
       attachment: "vtex.subscription.assinatura",
@@ -31,22 +32,7 @@ function AddToCartButton(
         "assinatura": "mensal",
       },
     });
-  const updateAttachment = () =>
-    sendAttachment({
-      attachment: "subscriptionData",
-      body: {
-        subscriptions: [
-          {
-            plan: {
-              frequency: {
-                interval: 1,
-                periodicity: "MONTH",
-              },
-            },
-          },
-        ],
-      },
-    });
+  }
 
   return (
     <div class="flex items-center gap-3">
@@ -54,7 +40,6 @@ function AddToCartButton(
         buttonColor={buttonColor}
         onAddItem={onAddItem}
         onAddAttachment={onAddAttachment}
-        updateAttachment={updateAttachment}
       />
     </div>
   );
