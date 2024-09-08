@@ -11,12 +11,7 @@ export interface Props extends Omit<BtnProps, "onAddItem"> {
 function AddToCartButton(
   { seller, productID, buttonColor }: Props,
 ) {
-<<<<<<< Updated upstream
-  const { addItems, addItemAttachment, sendAttachment } = useCart();
-  const { addItems, addItemAttachment, sendAttachment } = useCart();
-=======
-  const { addItems, addItemAttachment, } = useCart();
->>>>>>> Stashed changes
+  const { addItems, addItemAttachment } = useCart();
   const count = useSignal(1);
 
   const onAddItem = () =>
@@ -45,7 +40,6 @@ function AddToCartButton(
         buttonColor={buttonColor}
         onAddItem={onAddItem}
         onAddAttachment={onAddAttachment}
-        updateAttachment={updateAttachment}
       />
     </div>
   );
