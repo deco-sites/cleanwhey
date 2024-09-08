@@ -1,6 +1,5 @@
 import { type ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
 
 /** @titleBy title */
@@ -94,8 +93,10 @@ function Footer({
             <>
               {device === "desktop"
                 ? (
-                  <li class="flex flex-col gap-4">
-                    <a class="text-white font-semibold" href={href}>{title}</a>
+                  <li key={index} class="flex flex-col gap-4">
+                    <a class="text-white font-semibold" href={href}>
+                      {title}
+                    </a>
                     <ul class="flex flex-col gap-2">
                       {children.map(({ title, href }) => (
                         <li>
@@ -133,7 +134,9 @@ function Footer({
           ))}
 
           <li class={"flex flex-col gap-4"}>
-            <a href="#" class="text-white font-semibold">Formas de pagamento</a>
+            <a href="#" class="text-white font-semibold">
+              Formas de pagamento
+            </a>
             <div class="flex flex-col sm:flex-row gap-12 justify-between items-start sm:items-center">
               <ul class="flex flex-wrap gap-2 md:max-w-64">
                 {paymentMethods.map(({ image, alt }) => (
@@ -181,7 +184,9 @@ function Footer({
                   ))}
                 </>
               )
-              : ("")}
+              : (
+                ""
+              )}
           </ul>
 
           <ul class="hidden sm:flex items-center gap-2">

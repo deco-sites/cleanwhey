@@ -1,5 +1,4 @@
 import { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
-import { Picture, Source } from "apps/website/components/Picture.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
 
 interface Props {
@@ -31,8 +30,18 @@ export default function DescriptionFullbanner(props: Props) {
   const device = useDevice();
   return (
     <section>
-      <div class={`relative w-full pb-8 md:pb-16 md:mb-16 bg-no-repeat bg-center bg-cover`} style={{backgroundImage: `${device == "desktop" ? `url(${banner?.desktop?.src}` : `url(${banner?.mobile?.src}`})`}}>
-        {/* {banner && banner.mobile && banner.desktop && (
+      <div
+        class={`relative w-full pb-8 md:pb-16 md:mb-16 bg-no-repeat bg-center bg-cover`}
+        style={{
+          backgroundImage: `${
+            device == "desktop"
+              ? `url(${banner?.desktop?.src}`
+              : `url(${banner?.mobile?.src}`
+          })`,
+        }}
+      >
+        {
+          /* {banner && banner.mobile && banner.desktop && (
           <Picture>
             <Source
               media="(max-width: 640px)"
@@ -52,7 +61,8 @@ export default function DescriptionFullbanner(props: Props) {
               class="w-full object-cover"
             />
           </Picture>
-        )} */}
+        )} */
+        }
         <div class="w-full top-0 left-0 h-full flex flex-col md:flex-row items-center">
           <div
             class={`flex px-4 pt-12 md:px-0 md:items-start items-center flex-col md:flex-row h-auto gap-8 md:gap-16 container justify-end mb-96 md:mb-0`}

@@ -4,8 +4,8 @@ import { MINICART_DRAWER_ID, MINICART_FORM_ID } from "../../constants.ts";
 import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 import { useComponent } from "../../sections/Component.tsx";
-import Coupon from "./Coupon.tsx";
-import FreeShippingProgressBar from "./FreeShippingProgressBar.tsx";
+//import Coupon from "./Coupon.tsx";
+//import FreeShippingProgressBar from "./FreeShippingProgressBar.tsx";
 import CartItem, { Item } from "./Item.tsx";
 
 export interface Minicart {
@@ -121,19 +121,19 @@ export default function Cart({
     storefront: {
       items,
       total,
-      subtotal,
+      //subtotal,
       coupon,
       discounts,
       locale,
       currency,
-      enableCoupon = true,
-      freeShippingTarget,
+      //enableCoupon = true,
+      //freeShippingTarget,
       checkoutHref,
     },
   },
 }: { cart: Minicart }) {
   const count = items.length;
-  
+
   return (
     <>
       <form

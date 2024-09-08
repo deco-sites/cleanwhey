@@ -1,4 +1,4 @@
-import type { ProductGroup, ProductLeaf, ProductListingPage, PropertyValue } from "apps/commerce/types.ts";
+import type { ProductListingPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { useScript } from "deco/hooks/useScript.ts";
 import { useSection } from "deco/hooks/useSection.ts";
@@ -15,7 +15,6 @@ import Drawer from "../ui/Drawer.tsx";
 import Sort from "./Sort.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
 import { Pix } from "../../loaders/BusnissRule/Pix.ts";
-import { Product } from "apps/vtex/utils/types.ts";
 
 export interface Layout {
   /**
@@ -28,7 +27,7 @@ export interface Layout {
 export interface Props {
   /** @title Integration */
   page: ProductListingPage | null;
-  pix: Pix
+  pix: Pix;
 
   layout?: Layout;
 
@@ -94,8 +93,8 @@ function PageResult(props: SectionProps<typeof loader>) {
 
   for (let i = 1; i <= totalPages; i++) {
     links.push({
-      "label": i,
-      "href": `${pageFormated}page=${i}`,
+      label: i,
+      href: `${pageFormated}page=${i}`,
     });
   }
 
@@ -113,9 +112,7 @@ function PageResult(props: SectionProps<typeof loader>) {
           hx-swap="outerHTML show:parent:top"
           hx-get={partialPrev}
         >
-          <span class="inline [.htmx-request_&]:hidden">
-            Show Less
-          </span>
+          <span class="inline [.htmx-request_&]:hidden">Show Less</span>
           <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
         </a>
       </div>
@@ -129,8 +126,7 @@ function PageResult(props: SectionProps<typeof loader>) {
           "w-full",
         )}
       >
-
-        {products.map((product, i) =>
+        {products.map((product, i) => (
           <ProductCard
             key={`product-card-${product.productID}`}
             product={product}
@@ -140,14 +136,13 @@ function PageResult(props: SectionProps<typeof loader>) {
             class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
                       shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
             pix={pix}
-          />)
-
-        }
+          />
+        ))}
         {products?.map((product, i) => {
           const { isVariantOf } = product;
           const hasVariant = isVariantOf?.hasVariant ?? [];
-          const isAcessory = product.additionalProperty?.filter((item) =>
-            item.name == "category" && item.value == "Acessórios"
+          const isAcessory = product.additionalProperty?.filter(
+            (item) => item.name == "category" && item.value == "Acessórios",
           );
 
           {
@@ -166,9 +161,7 @@ function PageResult(props: SectionProps<typeof loader>) {
           }
 
           return hasVariant.map((item, index) => {
-
             if (item.sku != product.sku) {
-
               return (
                 <ProductCard
                   key={`product-card-${item.productID}`}
@@ -180,11 +173,10 @@ function PageResult(props: SectionProps<typeof loader>) {
                   shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
                   pix={pix}
                 />
-              )
+              );
             }
-            return null
-          }
-          );
+            return null;
+          });
         })}
       </div>
 
@@ -201,53 +193,81 @@ function PageResult(props: SectionProps<typeof loader>) {
                 hx-swap="outerHTML show:parent:top"
                 hx-get={partialNext}
               >
-                <span class="inline [.htmx-request_&]:hidden">
-                  Show More
-                </span>
+                <span class="inline [.htmx-request_&]:hidden">Show More</span>
                 <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
               </a>
             </div>
           )
           : (
             <div class="flex justify-center my-4">
-          <div class="join gap-2">
-            <a
-              aria-label="previous page link"
-              rel="prev"
-              href={pageInfo.previousPage ?? "#"}
-              class="btn btn-ghost join-item"
-            >
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.333 16H6.667M16 25.333 6.667 16 16 6.667" stroke="#E06741" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            {links.map((link) => {
-              return (
+              <div class="join gap-2">
                 <a
-                  href={link.href}
-                  class={`btn !rounded-lg ${
-                    pageInfo.currentPage == link.label
-                      ? "btn-primary hover:bg-orange-300 bg-orange-300 border-orange-300 hover:border-orange-300"
-                      : "btn-ghost"
-                  } join-item`}
+                  aria-label="previous page link"
+                  rel="prev"
+                  href={pageInfo.previousPage ?? "#"}
+                  class="btn btn-ghost join-item"
                 >
-                  <span>
-                    {link.label}
-                  </span>
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25.333 16H6.667M16 25.333 6.667 16 16 6.667"
+                      stroke="#E06741"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
                 </a>
-              );
-            })}
-            <a
-              aria-label="next page link"
-              rel="next"
-              href={pageInfo.nextPage ?? "#"}
-              class="btn btn-ghost join-item"
-            >
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.66663 16H25.3333" stroke="#E06741" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M16 6.66666L25.3333 16L16 25.3333" stroke="#E06741" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
+                {links.map((link) => {
+                  return (
+                    <a
+                      href={link.href}
+                      class={`btn !rounded-lg ${
+                        pageInfo.currentPage == link.label
+                          ? "btn-primary hover:bg-orange-300 bg-orange-300 border-orange-300 hover:border-orange-300"
+                          : "btn-ghost"
+                      } join-item`}
+                    >
+                      <span>{link.label}</span>
+                    </a>
+                  );
+                })}
+                <a
+                  aria-label="next page link"
+                  rel="next"
+                  href={pageInfo.nextPage ?? "#"}
+                  class="btn btn-ghost join-item"
+                >
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.66663 16H25.3333"
+                      stroke="#E06741"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16 6.66666L25.3333 16L16 25.3333"
+                      stroke="#E06741"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
           )}
       </div>
     </div>
@@ -255,9 +275,9 @@ function PageResult(props: SectionProps<typeof loader>) {
 }
 
 const setPageQuerystring = (page: string, id: string) => {
-  const element = document.getElementById(id)?.querySelector(
-    "[data-product-list]",
-  );
+  const element = document
+    .getElementById(id)
+    ?.querySelector("[data-product-list]");
 
   if (!element) {
     return;
@@ -305,7 +325,7 @@ function Result(props: SectionProps<typeof loader>) {
         item_list_id: breadcrumb.itemListElement?.at(-1)?.item,
         items: page.products?.map((product, index) =>
           mapProductToAnalyticsItem({
-            ...(useOffer(product.offers)),
+            ...useOffer(product.offers),
             index: offset + index,
             product,
             breadcrumbList: page.breadcrumb,
@@ -318,8 +338,8 @@ function Result(props: SectionProps<typeof loader>) {
   const results = (
     <span class="text-sm font-normal">
       Exibindo {page.pageInfo.records &&
-        page.pageInfo.recordPerPage &&
-        page.pageInfo.recordPerPage > page.pageInfo.records
+          page.pageInfo.recordPerPage &&
+          page.pageInfo.recordPerPage > page.pageInfo.records
         ? page.pageInfo.records
         : page.pageInfo.recordPerPage} de {page.pageInfo.records} resultados
     </span>
@@ -407,9 +427,7 @@ function Result(props: SectionProps<typeof loader>) {
                   {device === "desktop" && (
                     <div class="flex justify-between items-center">
                       {results}
-                      <div>
-                        {sortBy}
-                      </div>
+                      <div>{sortBy}</div>
                     </div>
                   )}
                   <PageResult {...props} />
@@ -433,10 +451,7 @@ function Result(props: SectionProps<typeof loader>) {
   );
 }
 
-function SearchResult({
-  page,
-  ...props
-}: SectionProps<typeof loader>) {
+function SearchResult({ page, ...props }: SectionProps<typeof loader>) {
   if (!page || page.pageInfo.records == 0) {
     return <NotFound />;
   }

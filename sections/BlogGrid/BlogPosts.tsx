@@ -1,9 +1,8 @@
 import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import { usePartialSection } from "deco/hooks/usePartialSection.ts";
+//import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 import { ComponentChildren, Fragment } from "preact";
 import { BlogPost } from "apps/blog/types.ts";
-import { useId } from "../../sdk/useId.ts";
 import Icon from "../../components/ui/Icon.tsx";
 
 export interface CTA {
@@ -52,33 +51,27 @@ export default function BlogPosts({
   cta = { text: "Ver todas as postagens" },
   sectionTitle,
   posts = [],
-  pagination: {
-    page = 0,
-    perPage = 6,
-  } = {},
+  pagination: { page = 0, perPage = 6 } = {},
 }: Props) {
   const from = perPage * page;
   const to = perPage * (page + 1);
 
-  // It's boring to generate ids. Let's autogen them
-  const postList = useId();
+  // // Get the HTMX link for this section
+  // const fetchMoreLink = usePartialSection({
+  //   mode: "append",
+  //   // Renders this section with the next page
+  //   props: {
+  //     pagination: { perPage, page: page + 1 },
+  //   },
+  // })["f-partial"];
 
-  // Get the HTMX link for this section
-  const fetchMoreLink = usePartialSection({
-    mode: "append",
-    // Renders this section with the next page
-    props: {
-      pagination: { perPage, page: page + 1 },
-    },
-  })["f-partial"];
+  // function calculateReadingTime(words: number): string {
+  //   const wordsPerMinute = 250;
+  //   const estimatedTimeMinutes = words / wordsPerMinute;
 
-  function calculateReadingTime(words: number): string {
-    const wordsPerMinute = 250;
-    const estimatedTimeMinutes = words / wordsPerMinute;
-
-    const roundedReadingTime = Math.round(estimatedTimeMinutes);
-    return `${roundedReadingTime} min`;
-  }
+  //   const roundedReadingTime = Math.round(estimatedTimeMinutes);
+  //   return `${roundedReadingTime} min`;
+  // }
 
   const ContainerComponent = page === 0 ? Container : Fragment;
 
@@ -129,14 +122,15 @@ export default function BlogPosts({
                 <div class="flex flex-wrap gap-2 items-center justify-between">
                   <span class="text-gray-300 text-sm font-normal">
                     {post.date
-                      ? new Date(post.date).toLocaleDateString("pt-BR", {
-                        month: "short", // Retorna o mês abreviado (ex: "mai")
-                        day: "numeric",
-                        year: "2-digit", // Retorna o ano com dois dígitos (ex: "24")
-                      }).replace(" de ", " ").replace(".", "").replace(
-                        " de ",
-                        ", ",
-                      )
+                      ? new Date(post.date)
+                        .toLocaleDateString("pt-BR", {
+                          month: "short", // Retorna o mês abreviado (ex: "mai")
+                          day: "numeric",
+                          year: "2-digit", // Retorna o ano com dois dígitos (ex: "24")
+                        })
+                        .replace(" de ", " ")
+                        .replace(".", "")
+                        .replace(" de ", ", ")
                       : ""}
                   </span>
                   <a

@@ -3,7 +3,6 @@ import Image from "apps/website/components/Image.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 import { useScript } from "deco/hooks/useScript.ts";
-import Icon from "../ui/Icon.tsx";
 import QuantitySelector from "../ui/QuantitySelector.tsx";
 
 export type Item = AnalyticsItem & {
@@ -58,9 +57,12 @@ function CartItem({ item, index, locale, currency }: Props) {
       <div class="flex flex-col gap-2">
         {/* Name and Remove button */}
         <div class="flex justify-between items-center ">
-          <legend class="text-sm font-normal text-gray-400"
-          style={"    display: block; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis"}
-          >{name}</legend>
+          <legend
+            class="text-sm font-normal text-gray-400"
+            style={"    display: block; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis"}
+          >
+            {name}
+          </legend>
           <button
             class={clx(
               isGift && "hidden",
@@ -89,9 +91,11 @@ function CartItem({ item, index, locale, currency }: Props) {
         {/* Price Block */}
         <div class="flex items-end justify-between">
           <div class="flex flex-col items-start ">
-           {price != listPrice &&  <span class="line-through text-sm text-gray-200 font-normal">
-              {formatPrice(price, currency, locale)}
-            </span>}
+            {price != listPrice && (
+              <span class="line-through text-sm text-gray-200 font-normal">
+                {formatPrice(price, currency, locale)}
+              </span>
+            )}
             <span class="text-lg font-bold text-gray-400">
               {isGift ? "Grátis" : formatPrice(price, currency, locale)}
             </span>

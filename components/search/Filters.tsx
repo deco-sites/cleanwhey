@@ -1,6 +1,5 @@
 import type {
   Filter,
-  FilterRange,
   FilterToggle,
   FilterToggleValue,
   ProductListingPage,
@@ -31,14 +30,12 @@ function ValueItem(
   );
 }
 function ValueItemColor(
-  { url, selected, label, quantity }: FilterToggleValue,
+  { url, selected, label }: FilterToggleValue,
 ) {
-
-
   const COLORS = {
     "LARANJA": "#E06741",
     "AZUL": " #2b41c6",
-  }
+  };
   return (
     <a href={url} rel="nofollow" class="flex items-center gap-2">
       <div
@@ -59,7 +56,6 @@ function FilterValues({ key, values }: FilterToggle) {
       {values.map((item) => {
         if (key === "price") {
           const range = parseRange(item.value);
-          // console.log(values)
 
           return range && (
             <>
@@ -87,11 +83,12 @@ function FilterValues({ key, values }: FilterToggle) {
               }
             </>
           );
-        }
-        else if (avatars) {
-          return <ValueItemColor
-            {...item}
-          />
+        } else if (avatars) {
+          return (
+            <ValueItemColor
+              {...item}
+            />
+          );
         } else {
           return <ValueItem {...item} />;
         }
@@ -101,8 +98,7 @@ function FilterValues({ key, values }: FilterToggle) {
 }
 
 function Filters({ filters }: Props) {
-
-  const filtersArray: Filter[] = []
+  const filtersArray: Filter[] = [];
 
   filters.forEach((filter) => {
     // Verifica se já existe um item no filtersArray com a mesma chave
@@ -110,7 +106,9 @@ function Filters({ filters }: Props) {
 
     if (existingFilter) {
       // Se o filtro já existe, adiciona os valores do novo filtro ao array de valores existente
-      existingFilter.values = [...new Set([...existingFilter.values, ...filter.values])];
+      existingFilter.values = [
+        ...new Set([...existingFilter.values, ...filter.values]),
+      ];
     } else {
       // Se o filtro não existe, adiciona ao filtersArray
       filtersArray.push(filter);
@@ -125,20 +123,20 @@ function Filters({ filters }: Props) {
           <>
             {filter.label != "Departamento" &&
               filter.label != "Category 4" && (
-                <div className="collapse rounded-none collapse-arrow border-b border-gray-100">
-                  <input
-                    type="checkbox"
-                    className={"peer"}
-                    name={`my-accordion-${index}`}
-                  />
-                  <div className="collapse-title after:!h-3 after:!w-3 after:text-gray-300 after:peer-checked:text-orange-300 text-gray-300 text-lg font-bold gap-2 !flex items-center p-0 peer-checked:text-orange-300 capitalize">
-                    {filter.label.toLowerCase()}
-                  </div>
-                  <div className="collapse-content">
-                    <FilterValues {...filter} />
-                  </div>
+              <div className="collapse rounded-none collapse-arrow border-b border-gray-100">
+                <input
+                  type="checkbox"
+                  className={"peer"}
+                  name={`my-accordion-${index}`}
+                />
+                <div className="collapse-title after:!h-3 after:!w-3 after:text-gray-300 after:peer-checked:text-orange-300 text-gray-300 text-lg font-bold gap-2 !flex items-center p-0 peer-checked:text-orange-300 capitalize">
+                  {filter.label.toLowerCase()}
                 </div>
-              )}
+                <div className="collapse-content">
+                  <FilterValues {...filter} />
+                </div>
+              </div>
+            )}
           </>
         ))}
     </ul>

@@ -40,7 +40,7 @@ export default function ProductDetails({ page, pix }: Props) {
         )}
       >
         <div class="sm:col-span-3 md:pr-12">
-          <ImageGallerySlider page={page} pix={pix}/>
+          <ImageGallerySlider page={page} pix={pix} />
         </div>
         <div class="sm:col-span-2 md:pl-12 md:border-l md:border-gray-100">
           <ProductInfo page={page} pix={pix} />
