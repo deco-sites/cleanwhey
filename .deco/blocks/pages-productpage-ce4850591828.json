@@ -5409,28 +5409,25 @@
               "title": "<p><strong><span style=\"font-size: 24pt; color: rgb(161, 166, 183);\" data-mce-style=\"font-size: 24pt; color: rgb(161, 166, 183);\">Clean Whey® Tasty Isolate água de coco se diferencia por utilizar uma tecnologia capaz de adoçar sem usar qualquer tipo de adoçante</span></strong></p>"
             },
             {
-              "__resolveType": "website/sections/Rendering/Lazy.tsx",
-              "section": {
-                "__resolveType": "site/sections/ProductPage/DescriptionFullbanner.tsx",
-                "banner": {
-                  "desktop": {
-                    "alt": "Fullbanner",
-                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/e83ef2f8-5dfd-4cd5-ad5b-30563dec1998"
-                  },
-                  "mobile": {
-                    "alt": "Fullbanner",
-                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/72169b0a-1d63-4c1f-9ebc-2598be16e9c2",
-                    "width": 380,
-                    "height": 1087
-                  }
+              "__resolveType": "site/sections/ProductPage/DescriptionFullbanner.tsx",
+              "banner": {
+                "desktop": {
+                  "alt": "Fullbanner",
+                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/e83ef2f8-5dfd-4cd5-ad5b-30563dec1998"
                 },
-                "title": "Faça a escolha certa você também!",
-                "subtitle": "Confira os diferenciais que te proporcionam uma qualidade superior",
-                "content": "<ul><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li></ul>",
-                "rightCard": {
-                  "title": "Ingredientes glanbia",
-                  "content": "<ul><li>Proteína isolada Provon 292&nbsp;</li><li>&nbsp;Possui certificado antidoping </li><li>Produto Non-GMO (non-genetically modified), ou seja, livre de transgênicos&nbsp;</li><li>&nbsp;Livre dos hormônios rbST e rbGH (hormônio do crescimento artificial)&nbsp;</li><li>&nbsp;Alto valor biológico: 22% de glicomacropeptídeo</li></ul>"
+                "mobile": {
+                  "alt": "Fullbanner",
+                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/72169b0a-1d63-4c1f-9ebc-2598be16e9c2",
+                  "width": 380,
+                  "height": 1087
                 }
+              },
+              "title": "Faça a escolha certa você também!",
+              "subtitle": "Confira os diferenciais que te proporcionam uma qualidade superior",
+              "content": "<ul><li>100% instantâneo </li><li>Dissolução fácil e rápida</li><li>Reduzidos teores de gordura, carboidrato e sódio </li><li>Baixíssimos teores de lactose: 0,6g a cada 100g de produto </li><li>Sem adição de açúcares ou adoçantes </li><li>Sem conservantes, corantes ou edulcorantes </li><li>Sem glúten</li></ul>",
+              "rightCard": {
+                "title": "Ingredientes glanbia",
+                "content": "<ul><li>Proteína isolada Provon 292 </li><li>Possui certificado antidoping </li><li>Produto Non-GMO (non-genetically modified), ou seja, livre de transgênicos </li><li>Livre dos hormônios rbST e rbGH (hormônio do crescimento artificial)</li><li>Alto valor biológico: 22% de glicomacropeptídeo</li></ul>"
               }
             },
             {

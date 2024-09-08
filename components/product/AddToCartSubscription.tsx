@@ -1,4 +1,3 @@
-// deno-lint-ignore-file no-constant-condition
 import { useCart } from "apps/vtex/hooks/useCart.ts";
 import Button, { Props as BtnProps } from "./common.tsx";
 import { useSignal } from "@preact/signals";

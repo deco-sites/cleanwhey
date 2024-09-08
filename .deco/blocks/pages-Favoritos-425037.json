@@ -13,18 +13,19 @@
       "page": {
         "__resolveType": "vtex/loaders/product/wishlist.ts",
         "count": 12,
-        "offset": 1
+        "offset": 0
+      },
+      "pix": {
+        "valueMax": 0,
+        "porcentagePix": 0
       },
       "layout": {
-        "pagination": "show-more"
+        "pagination": "pagination"
       },
       "startingPage": 1
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "Footer"
-      }
+      "__resolveType": "Footer"
     }
   ],
   "seo": {

@@ -15,7 +15,8 @@ export interface Props extends SectionHeaderProps {
 }
 
 export default function ProductShelf(
-  { products, title, isFeatured, icon, pix, activePaddingBotton = false }: Props,
+  { products, title, isFeatured, icon, pix, activePaddingBotton = false }:
+    Props,
 ) {
   if (!products || products.length === 0) {
     return null;
@@ -41,8 +42,9 @@ export default function ProductShelf(
   return (
     <Section.Container
       {...viewItemListEvent}
-      class={`${isFeatured ? "bg-blue-300 rounded-lg mt-12 max-w-[95%] !container" : ""
-        } ${!activePaddingBotton ? "pb-0" : "pb-5"}`}
+      class={`${
+        isFeatured ? "bg-blue-300 rounded-lg mt-12 max-w-[95%] !container" : ""
+      } ${!activePaddingBotton ? "pb-0" : "pb-5"}`}
     >
       <Section.Header title={title} isFeatured={isFeatured} icon={icon} />
 

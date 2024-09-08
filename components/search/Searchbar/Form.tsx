@@ -98,7 +98,8 @@ export default function Searchbar(
           autocomplete="off"
           hx-target={`#${slot}`}
           hx-post={loader && useComponent<SuggestionProps>(Suggestions, {
-            loader: asResolved(loader), pix
+            loader: asResolved(loader),
+            pix,
           })}
           hx-trigger={`click, input changed delay:300ms, ${NAME}`}
           hx-indicator={`#${SEARCHBAR_INPUT_FORM_ID}`}

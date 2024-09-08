@@ -1,4 +1,4 @@
-import { asset } from "$fresh/runtime.ts";
+// import { asset } from "$fresh/runtime.ts";
 import { useScript } from "deco/hooks/useScript.ts";
 import { type ComponentChildren } from "preact";
 import { clx } from "../../sdk/clx.ts";

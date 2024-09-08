@@ -5,7 +5,7 @@ import { useDevice } from "deco/hooks/useDevice.ts";
 import { useSection } from "deco/hooks/useSection.ts";
 import Alert, { alert } from "../../components/header/Alert.tsx";
 import Bag from "../../components/header/Bag.tsx";
-
+// import { useUser } from "apps/vtex/hooks/useUser.ts";
 import NavItem from "../../components/header/NavItem.tsx";
 import SignIn from "../../components/header/SignIn.tsx";
 import Searchbar, {
@@ -24,6 +24,8 @@ import {
   SIDEMENU_DRAWER_ID,
 } from "../../constants.ts";
 import Menu from "../../islands/Menu.tsx";
+// import { useScript } from "deco/hooks/useScript.ts";
+import WishlistClick from "../../components/header/WishlistClick.tsx";
 
 export interface Logo {
   src: ImageWidget;
@@ -58,164 +60,119 @@ type Props = Omit<SectionProps, "alert" | "variant">;
 
 const Desktop = (
   { navItems, logo, searchbar }: Props,
-) => (
-  <>
-    {
-      /* <Modal id={SEARCHBAR_POPUP_ID}>
-      <div
-        class="absolute top-0 bg-base-100 container"
-        style={{ marginTop: HEADER_HEIGHT_MOBILE }}
-      >
-        <Searchbar {...searchbar} />
-      </div>
-    </Modal> */
-    }
+) => {
+  return (
+    <>
+      <div class="flex flex-col gap-4 pt-5">
+        <div class="container flex justify-between items-center">
+          <div class="place-self-start">
+            <a href="/" aria-label="Store logo">
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width || 100}
+                height={logo.height || 23}
+              />
+            </a>
+          </div>
 
-    <div class="flex flex-col gap-4 pt-5">
-      <div class="container flex justify-between items-center">
-        <div class="place-self-start">
-          <a href="/" aria-label="Store logo">
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              width={logo.width || 100}
-              height={logo.height || 23}
-            />
-          </a>
+          <Searchbar {...searchbar} />
+
+          <div class="flex gap-4">
+            <a
+              class="text-white hover:!bg-transparent btn btn-sm font-normal btn-ghost no-animation gap-2 flex items-center"
+              href="#1840087127-0"
+            >
+              <Icon id="duvidas" class="h-8 w-8" />
+              <p>
+                Dúvidas<br />Frequentes
+              </p>
+            </a>
+
+            <WishlistClick />
+
+            <SignIn variant="desktop" />
+            <Bag />
+          </div>
         </div>
 
-        {
-          /* <label
-          for={SEARCHBAR_POPUP_ID}
-          class="input input-bordered flex items-center gap-2 w-full max-w-[675px]"
-          aria-label="search icon button"
-        >
-          <Icon id="search" />
-          <span class="text-base-300 truncate">
-            Search products, brands...
-          </span>
-        </label> */
+        <div class="flex justify-between items-center text-base- bg-orange-400">
+          <div className="container">
+            <ul class="flex justify-between">
+              {navItems?.slice(0, 8).map((item) => <NavItem item={item} />)}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+const Mobile = ({ logo, searchbar }: Props) => {
+  // const { user } = useUser();
+  return (
+    <>
+      <Drawer
+        id={SIDEMENU_DRAWER_ID}
+        aside={
+          <Drawer.Aside title="Menu" drawer={SIDEMENU_DRAWER_ID}>
+            <div
+              id={SIDEMENU_CONTAINER_ID}
+              class="h-full flex items-center justify-center"
+              style={{ minWidth: "100vw" }}
+            >
+              <span class="loading loading-spinner" />
+            </div>
+          </Drawer.Aside>
         }
+      />
 
-        <Searchbar {...searchbar} />
-
-        <div class="flex gap-4">
-          <a
-            class="text-white hover:!bg-transparent btn btn-sm font-normal btn-ghost no-animation gap-2 flex items-center"
-            href="#1840087127-0"
-          >
-            <Icon id="duvidas" class="h-8 w-8" />
-            <p>
-              Dúvidas<br />Frequentes
-            </p>
-          </a>
-          <a
-            class="p-0 hover:!bg-transparent text-white btn btn-sm font-normal btn-ghost no-animation"
-            href="/wishlist"
-          >
-            <Icon id="wishlist_button" class="h-8 w-8" />
-          </a>
-          <SignIn variant="desktop" />
-          <Bag />
-        </div>
-      </div>
-
-      <div class="flex justify-between items-center text-base- bg-orange-400">
-        <div className="container">
-          <ul class="flex justify-between">
-            {navItems?.slice(0, 8).map((item) => <NavItem item={item} />)}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </>
-);
-
-const Mobile = ({ logo, searchbar }: Props) => (
-  <>
-    {
-      /* <Drawer
-      id={SEARCHBAR_DRAWER_ID}
-      aside={
-        <Drawer.Aside title="Search" drawer={SEARCHBAR_DRAWER_ID}>
-          <div class="w-screen overflow-y-auto">
-            <Searchbar {...searchbar} />
-          </div>
-        </Drawer.Aside>
-      }
-    /> */
-    }
-    <Drawer
-      id={SIDEMENU_DRAWER_ID}
-      aside={
-        <Drawer.Aside title="Menu" drawer={SIDEMENU_DRAWER_ID}>
-          <div
-            id={SIDEMENU_CONTAINER_ID}
-            class="h-full flex items-center justify-center"
-            style={{ minWidth: "100vw" }}
-          >
-            <span class="loading loading-spinner" />
-          </div>
-        </Drawer.Aside>
-      }
-    />
-
-    <div
-      class="grid place-items-start items-center w-screen px-5 pt-4 pb-3 gap-4"
-      style={{
-        // height: NAVBAR_HEIGHT_MOBILE,
-        gridTemplateColumns: "auto min-content min-content",
-      }}
-    >
-      <div class={"flex-grow inline-flex items-center justify-center gap-3"}>
-        <label
-          for={SIDEMENU_DRAWER_ID}
-          class="btn btn-square btn-sm btn-ghost"
-          aria-label="open menu"
-          hx-target={`#${SIDEMENU_CONTAINER_ID}`}
-          hx-swap="outerHTML"
-          hx-trigger="click once"
-          hx-get={useSection({ props: { variant: "menu" } })}
-        >
-          <Icon id="menu" class="text-white h-8 w-8" />
-        </label>
-
-        {logo && (
-          <a
-            href="/"
-            class="flex-grow inline-flex items-center justify-center"
-            style={{ minHeight: NAVBAR_HEIGHT_MOBILE }}
-            aria-label="Store logo"
-          >
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              width={96}
-              height={48}
-            />
-          </a>
-        )}
-      </div>
-
-      {
-        /* <label
-        for={SEARCHBAR_DRAWER_ID}
-        class="btn btn-square btn-sm btn-ghost"
-        aria-label="search icon button"
+      <div
+        class="grid place-items-start items-center w-screen px-5 pt-4 pb-3 gap-4"
+        style={{
+          gridTemplateColumns: "auto min-content min-content",
+        }}
       >
-        <Icon id="search" />
-      </label> */
-      }
+        <div class={"flex-grow inline-flex items-center justify-center gap-3"}>
+          <label
+            for={SIDEMENU_DRAWER_ID}
+            class="btn btn-square btn-sm btn-ghost"
+            aria-label="open menu"
+            hx-target={`#${SIDEMENU_CONTAINER_ID}`}
+            hx-swap="outerHTML"
+            hx-trigger="click once"
+            hx-get={useSection({ props: { variant: "menu" } })}
+          >
+            <Icon id="menu" class="text-white h-8 w-8" />
+          </label>
 
-      <SignIn variant="mobile" />
+          {logo && (
+            <a
+              href="/"
+              class="flex-grow inline-flex items-center justify-center"
+              style={{ minHeight: NAVBAR_HEIGHT_MOBILE }}
+              aria-label="Store logo"
+            >
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={96}
+                height={48}
+              />
+            </a>
+          )}
+        </div>
 
-      <Bag />
-    </div>
-    <div className="container px-5 pb-5">
-      <Searchbar {...searchbar} />
-    </div>
-  </>
-);
+        <SignIn variant="mobile" />
+
+        <Bag />
+      </div>
+      <div className="container px-5 pb-5">
+        <Searchbar {...searchbar} />
+      </div>
+    </>
+  );
+};
 
 function Header({
   alerts = [],
@@ -229,7 +186,7 @@ function Header({
   ...props
 }: Props) {
   const device = useDevice();
-
+  // const user = useUser();
   return (
     <header
       style={{
@@ -238,7 +195,7 @@ function Header({
           : HEADER_HEIGHT_MOBILE,
       }}
     >
-      <div class="bg-base-100 fixed w-full z-40 bg-orange-300">
+      <div class="fixed w-full z-40 bg-orange-300">
         {alerts.length > 0 && <Alert alerts={alerts} />}
         {device === "desktop"
           ? <Desktop logo={logo} {...props} />

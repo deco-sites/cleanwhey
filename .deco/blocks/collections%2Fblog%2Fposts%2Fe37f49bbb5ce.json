@@ -1,0 +1,25 @@
+{
+  "name": "collections/blog/posts/e37f49bbb5ce",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [
+      {
+        "name": "Clean Whey",
+        "email": "sac@cleanwhey.com.br"
+      }
+    ],
+    "categories": [
+      {
+        "name": "Influencers",
+        "slug": "influencers"
+      }
+    ],
+    "extraProps": [],
+    "title": "CAMILLE DUTRA",
+    "excerpt": "A nutricionista Camille Dutra, apaixonada por nutrição desde a adolescência, acredita que a alimentação é muito mais do que apenas nutrir o corpo. É um ato de amor-próprio, uma forma de cuidar da saúde e do bem-estar. Com sua abordagem integral, Camille busca promover uma alimentação equilibrada e prazerosa, levando em consideração as preferências e necessidades individuais de cada paciente, especialmente as mulheres.",
+    "date": "2024-09-05",
+    "slug": "Camille-Dutra",
+    "content": "<p><span style=\"font-size: 16pt\">Uma dieta rica e variada, incluindo frutas, legumes, verduras, grãos integrais, carnes magras, peixes, ovos e leguminosas, é a base para uma vida saudável. </span></p><p></p><p><span style=\"font-size: 16pt\">Cada alimento desempenha um papel importante no organismo, fornecendo os nutrientes necessários para o bom funcionamento de todas as funções corporais, incluindo o sistema hormonal feminino.</span></p><p></p><p><strong><span style=\"font-size: 16pt\">Para as mulheres</span></strong><span style=\"font-size: 16pt\">, a nutrição desempenha um papel fundamental em todas as fases da vida, desde a adolescência até a menopausa. </span></p><p></p><p><span style=\"font-size: 16pt\">Uma alimentação adequada pode auxiliar na regulação hormonal, na prevenção de doenças como a osteoporose e na melhora do bem-estar geral.</span></p><p></p><p><span style=\"font-size: 16pt\">Em alguns casos, a suplementação com proteínas, como o whey protein, pode ser recomendada para complementar a dieta e otimizar os resultados, especialmente para quem busca aumentar a massa muscular ou acelerar a recuperação após atividades físicas. </span></p><p></p><p><span style=\"font-size: 16pt\">No entanto, a suplementação deve ser sempre acompanhada por uma alimentação equilibrada e orientada por um profissional de nutrição.\"</span></p>",
+    "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/90a6a900-7824-4458-9541-9c101deee0a5/CAMILLE.jpg"
+  }
+}

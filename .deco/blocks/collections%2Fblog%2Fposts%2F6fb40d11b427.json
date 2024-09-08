@@ -1,0 +1,25 @@
+{
+  "name": "collections/blog/posts/6fb40d11b427",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [
+      {
+        "name": "Clean Whey",
+        "email": "sac@cleanwhey.com.br"
+      }
+    ],
+    "categories": [
+      {
+        "name": "Influencers",
+        "slug": "influencers"
+      }
+    ],
+    "extraProps": [],
+    "date": "2024-09-05",
+    "slug": "Personal-Pe",
+    "content": "<p><span style=\"font-size: 16pt\">Você já imaginou superar os desafios do sobrepeso e se tornar um exemplo de superação? Pedro, o personal trainer por trás do perfil </span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://www.instagram.com/personalpe/\"><span style=\"font-size: 16pt\">@personalpe</span></a><span style=\"font-size: 16pt\">, fez exatamente isso. Com uma história inspiradora que começou na infância, ele sabe o quanto a alimentação e a atividade física podem mudar vidas.</span></p><p></p><p><span style=\"font-size: 16pt\">Hoje, Pedro é referência em transformação física e mental. Sua jornada é pautada por disciplina e paixão pela mudança. Através de suas redes sociais, ele compartilha seu conhecimento e experiência, incentivando seus seguidores a alcançarem seus objetivos.</span></p><p></p><p><span style=\"font-size: 16pt\">E qual é o segredo por trás desse sucesso? Além de um treino intenso e uma dieta equilibrada, Pedro confia na Clean Whey, a marca de suplementos esportivos que ele considera a melhor do mercado. A composição clean label e de alta qualidade dos ingredientes Clean Whey o ajudaram a construir um corpo forte e saudável, e ele não hesita em recomendá-los aos seus alunos e seguidores.</span></p><p></p><p><strong><span style=\"font-size: 16pt\">\"A Clean Whey foi fundamental na minha jornada. Um produto de qualidade faz toda a diferença na hora de alcançar seus objetivos. Recomendo de olhos fechados!\"</span></strong><span style=\"font-size: 16pt\"> - Pedro, </span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://www.instagram.com/personalpe/\"><span style=\"font-size: 16pt\">@personalpe</span></a></p><p></p><p><span style=\"font-size: 16pt\">Se você busca inspiração, conhecimento e produtos de alta qualidade para te ajudar a transformar sua vida, siga Pedro no Instagram e conheça mais sobre sua história e os benefícios da Clean Whey.</span></p>",
+    "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/b4bf734e-8f8a-41b4-9e95-861ff94fe625/PEDRO.jpg",
+    "excerpt": "Pedro: A Transformação de um Campeão",
+    "title": "PERSONAL PE"
+  }
+}

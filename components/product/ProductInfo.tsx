@@ -38,7 +38,7 @@ function ProductInfo({ page, pix }: Props) {
     listPrice,
     seller = "1",
     availability,
-    installments
+    installments,
   } = useOffer(offers);
 
   // const percent = listPrice && price
@@ -70,11 +70,10 @@ function ProductInfo({ page, pix }: Props) {
     },
   });
 
-  const pricePix = formatPix(price ?? 0, pix.porcentagePix, pix.valueMax)
+  const pricePix = formatPix(price ?? 0, pix.porcentagePix, pix.valueMax);
 
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
-
       <span
         class={clx(
           "font-bold text-gray-400 flex items-start justify-between text-2xl capitalize",
@@ -145,7 +144,7 @@ function ProductInfo({ page, pix }: Props) {
           )
           : <OutOfStock productID={productID} />}
       </div>
-    </div >
+    </div>
   );
 }
 

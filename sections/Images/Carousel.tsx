@@ -71,7 +71,7 @@ function BannerItem(
     action,
     extraLink,
     selos,
-    activateContent
+    activateContent,
   } = image;
   const params = { promotion_name: image.alt };
 
@@ -96,17 +96,19 @@ function BannerItem(
         <div
           class={`
             ${image.position == "Left" ? "left-0 sm:left-40 md:left-50" : ""}
-            ${image.position == "Right" ? "right-0 sm:right-40 md:right-50" : ""
-            }
+            ${
+            image.position == "Right" ? "right-0 sm:right-40 md:right-50" : ""
+          }
             absolute h-auto md:h-full w-full top-5 md:top-0
             flex flex-col justify-center items-center
             px-5 sm:px-0
             sm:items-start sm:max-w-xl`}
         >
-          {activateContent && action.title &&(
+          {activateContent && action.title && (
             <span
-              class={`${image.position == "Left" ? "md:text-5xl" : "md:text-7xl"
-                } text-[32px] text-center md:text-left font-normal leading md:leading-[60px] font-lato text-gray-200`}
+              class={`${
+                image.position == "Left" ? "md:text-5xl" : "md:text-7xl"
+              } text-[32px] text-center md:text-left font-normal leading md:leading-[60px] font-lato text-gray-200`}
               dangerouslySetInnerHTML={{ __html: action.title }}
             />
           )}
@@ -135,12 +137,17 @@ function BannerItem(
               </button>
             </div>
           )}
-          
+
           {activateContent && (
             <div class={"selos mt-8"}>
               <div className="flex gap-4">
                 {selos?.map((selo) => (
-                  <img width={32} height={32} src={selo.image} alt={selo.label} />
+                  <img
+                    width={32}
+                    height={32}
+                    src={selo.image}
+                    alt={selo.label}
+                  />
                 ))}
               </div>
             </div>

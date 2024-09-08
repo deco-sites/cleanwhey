@@ -1,0 +1,8 @@
+{
+  "name": "collections/blog/categories/317e74626ae8",
+  "__resolveType": "blog/loaders/Category.ts",
+  "category": {
+    "name": "Influencers",
+    "slug": "influencers"
+  }
+}

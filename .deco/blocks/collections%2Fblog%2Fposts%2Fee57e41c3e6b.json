@@ -1,0 +1,26 @@
+{
+  "name": "collections/blog/posts/ee57e41c3e6b",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [
+      {
+        "name": "Clean Whey",
+        "email": "sac@cleanwhey.com.br"
+      }
+    ],
+    "categories": [
+      {
+        "name": "Influencers",
+        "slug": "influencers"
+      }
+    ],
+    "extraProps": [],
+    "title": "PIMENTA",
+    "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/21ebfabd-a461-407d-893a-0d1fab2493f8/JR-PIMENTA.jpg",
+    "content": "<p><span style=\"font-size: 16pt\">Com mais de 20 anos de experiência no Muay Thai, Júnior Pimenta é uma referência no mundo das artes marciais. </span></p><p></p><p><span style=\"font-size: 16pt\">Idealizador e proprietário da Pimenta Fight Club, ele transformou sua paixão em um estilo de vida e em um negócio de sucesso.</span></p><p></p><p><span style=\"font-size: 16pt\">Após uma imersão na Tailândia, berço do Muay Thai, Júnior trouxe para o Brasil um método de treinamento único e eficaz, que combina a tradição das artes marciais com os princípios do condicionamento físico moderno. </span></p><p></p><p><span style=\"font-size: 16pt\">Sua academia se tornou um verdadeiro celeiro de talentos e um espaço onde pessoas de todas as idades e níveis podem encontrar saúde, bem-estar e superação pessoal.</span></p><p></p><p style=\"text-align: start\"><span style=\"font-size: 16pt\">A conexão entre esporte, nutrição e bem-estar é fundamental para o sucesso de Júnior e de seus alunos. </span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 16pt\">A Clean Whey, com seus produtos de alta qualidade, se alinha perfeitamente com essa filosofia. </span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 16pt\">Ao fornecer os nutrientes essenciais para uma recuperação muscular eficiente e um desempenho otimizado, os suplementos Clean Whey complementam os treinos intensos e ajudam a alcançar resultados ainda mais expressivos.</span></p>",
+    "date": "2024-09-05",
+    "slug": "Júnior-Pimenta-Do-Ringue-para-a-Vida",
+    "seo": {},
+    "excerpt": "Júnior Pimenta: Do Ringue para a Vida"
+  }
+}

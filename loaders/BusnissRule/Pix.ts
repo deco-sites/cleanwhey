@@ -1,17 +1,18 @@
 export interface Props {
-    /**
-     * @description 15% = 0.15
-     */
-    porcentagePix: number;
-    valueMax: number
+  /**
+   * @description 15% = 0.15
+   */
+  porcentagePix: number;
+  valueMax: number;
 }
 
 export interface Pix {
-    porcentagePix: number;
-    valueMax: number
+  porcentagePix: number;
+  valueMax: number;
 }
 
+const loader = ({ porcentagePix, valueMax }: Props): Pix => {
+  return { porcentagePix, valueMax };
+};
 
-const loader = ({ porcentagePix, valueMax }: Props): Pix => { return { porcentagePix, valueMax } }
-
-export default loader
+export default loader;
