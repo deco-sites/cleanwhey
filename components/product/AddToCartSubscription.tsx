@@ -12,6 +12,7 @@ function AddToCartButton(
   { seller, productID, buttonColor }: Props,
 ) {
   const { addItems, addItemAttachment, sendAttachment } = useCart();
+  const { addItems, addItemAttachment, sendAttachment } = useCart();
   const count = useSignal(1);
 
   const onAddItem = () =>
@@ -40,6 +41,7 @@ function AddToCartButton(
         buttonColor={buttonColor}
         onAddItem={onAddItem}
         onAddAttachment={onAddAttachment}
+        updateAttachment={updateAttachment}
       />
     </div>
   );

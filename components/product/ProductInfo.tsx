@@ -10,7 +10,7 @@ import WishlistButton from "../wishlist/WishlistButton.tsx";
 import AddToCartButton from "./AddToCartButton.tsx";
 import OutOfStock from "./OutOfStock.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
-import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
+// import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
 import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 import { formatPix } from "../../sdk/formatPix.tsx";
 
@@ -136,10 +136,12 @@ function ProductInfo({ page, pix }: Props) {
                 disabled={false}
               />
 
-              <AddToCartButtonVTEX
+              {
+                /* <AddToCartButtonVTEX
                 productID={productID}
                 seller={seller}
-              />
+              /> */
+              }
             </>
           )
           : <OutOfStock productID={productID} />}
