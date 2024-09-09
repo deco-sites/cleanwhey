@@ -3,6 +3,7 @@ import { useDevice } from "deco/hooks/useDevice.ts";
 import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
 import Icon from "../../components/ui/Icon.tsx";
+import Image from "apps/website/components/Image.tsx";
 
 interface influencers {
   images: {
@@ -36,13 +37,15 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
                 class={`rounded-lg w-full h-full transition-all duration-300 relative `}
                 href={item.link}
               >
-                <img
-                  class={`rounded-lg w-full duration-300 transition-all group-hover:blur h-full`}
+                <Image
+                  class={`rounded-lg w-full duration-300 transition-all  min-h-[470px] h-full object-fill`} //group-hover:blur
                   src={item.images.normal}
                   loading={"lazy"}
+                  width={300}
+                  height={470}
                 />
 
-                <div class="font-regular text-sm overflow-y-auto leading-4 transition-all text-left text-white py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 items-start justify-start scroll-custom overflow-x-hidden rounded-md">
+                <div class="font-regular text-sm overflow-y-auto leading-4 transition-all text-left text-white py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:hidden flex-col w-full h-full z-10 absolute top-0 left-0 items-start justify-start scroll-custom overflow-x-hidden rounded-md">
                   <h2 class={"font-bold mb-6"}>{item.textLabel}</h2>
                   <span
                     dangerouslySetInnerHTML={{ __html: item.description }}
@@ -50,7 +53,7 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
                   />
                 </div>
               </a>
-              <p class="z-20 w-[90%] group-hover:hidden absolute top-8 bg-[#163E73D9] p-1.5 font-regular rounded-lg text-white  text-center text-lg ">
+              <p class="z-20 w-[90%] group-hover:hidden absolute top-4 bg-[#163E73D9] p-1.5 font-regular rounded-lg text-white  text-center text-lg ">
                 {item.textLabel}
               </p>
             </div>
@@ -109,15 +112,19 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
             ))}
         </Slider>
 
-        <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-                justify-center absolute top-2/4 left-4">
+        <div
+          class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+                justify-center absolute top-2/4 left-4"
+        >
           <Slider.PrevButton class="cursor-pointer" disabled={false}>
             <Icon id="chevron-right" class="rotate-180 text-orange-300" />
           </Slider.PrevButton>
         </div>
 
-        <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-                justify-center absolute top-2/4 right-4">
+        <div
+          class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+                justify-center absolute top-2/4 right-4"
+        >
           <Slider.NextButton class="cursor-pointer" disabled={false}>
             <Icon id="chevron-right" class="text-orange-300" />
           </Slider.NextButton>
@@ -159,9 +166,11 @@ export default function InfluencersGallery({
         </div>
       )}
       <div className={`content`}>
-        {device === "desktop"
-          ? <Desktop items={items} conteudoFlutuante={conteudoFlutuante} />
-          : <Mobile items={items} conteudoFlutuante={conteudoFlutuante} />}
+        {device === "desktop" ? (
+          <Desktop items={items} conteudoFlutuante={conteudoFlutuante} />
+        ) : (
+          <Mobile items={items} conteudoFlutuante={conteudoFlutuante} />
+        )}
       </div>
     </section>
   );

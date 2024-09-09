@@ -173,6 +173,7 @@ function PageResult(props: SectionProps<typeof loader>) {
                   shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
                   pix={pix}
                 />
+                //Essa parte do codigo quebra os filtros Diego 08/09
               );
             }
             return null;
