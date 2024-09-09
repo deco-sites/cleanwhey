@@ -45,11 +45,12 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
                   height={470}
                 />
 
-                <div class="font-regular text-sm overflow-y-auto leading-4 transition-all text-left text-white py-8 px-6 duration-300 z-10 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 items-start justify-start scroll-custom overflow-x-hidden rounded-md">
+                <div class="font-regular text-sm overflow-y-auto leading-4 transition-all text-left text-white py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 items-start justify-start scroll-custom overflow-x-hidden rounded-md">
                   <h2 class={"font-bold mb-6"}>{item.textLabel}</h2>
                   <span
                     dangerouslySetInnerHTML={{ __html: item.description }}
                     class="[&_*]:text-[14x] [&_*]:leading-normal"
+
                   />
                 </div>
               </a>
@@ -98,7 +99,7 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
                   />
 
                   <div class="font-regular text-sm leading-4 transition-all text-left text-white py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 overflow-y-scroll items-start justify-start scroll-custom overflow-x-hidden rounded-md">
-                    <h2 class={"font-bold mb-6"}>{item.textLabel} asdadsa</h2>
+                    <h2 class={"font-bold mb-6"}>{item.textLabel} </h2>
                     <span
                       dangerouslySetInnerHTML={{ __html: item.description }}
                       class="[&_*]:text-[14x] [&_*]:leading-normal"

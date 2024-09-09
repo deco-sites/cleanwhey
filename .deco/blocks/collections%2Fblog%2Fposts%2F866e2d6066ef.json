@@ -1,0 +1,25 @@
+{
+  "name": "collections/blog/posts/866e2d6066ef",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [
+      {
+        "name": "Clean Whey",
+        "email": "sac@cleanwhey.com.br"
+      }
+    ],
+    "categories": [
+      {
+        "name": "Influencers",
+        "slug": "influencers"
+      }
+    ],
+    "extraProps": [],
+    "title": "TIBÍ",
+    "excerpt": "Tibí: Energia e Foco para Conquistar Seus Objetivos",
+    "date": "2024-09-05",
+    "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/ed0ce9dc-ce0e-4263-8c42-a21fa4d9f177/TIBI.jpg",
+    "slug": "Tibi",
+    "content": "<p><span style=\"font-size: 16pt\">O cantor, compositor e multi-instrumentista Tibí é a prova viva de que é possível conciliar uma carreira artística intensa com um estilo de vida saudável e ativo. </span></p><p></p><p><span style=\"font-size: 16pt\">Conhecido por sua voz marcante e suas composições inspiradoras, ele também é um grande entusiasta da prática de exercícios físicos e da alimentação equilibrada.</span></p><p></p><p><span style=\"font-size: 16pt\">Ao superar diversas alergias através da mudança de hábitos alimentares e da inclusão de suplementos de alta qualidade em sua rotina, Tibí encontrou na Clean Whey o parceiro ideal para alcançar seus objetivos. </span></p><p></p><p><span style=\"font-size: 16pt\">Atualmente, ele é embaixador da marca e compartilha com seus fãs a importância de cuidar da saúde e do bem-estar.</span></p><p></p><p><span style=\"font-size: 16pt\">Com uma energia contagiante e uma determinação inabalável, Tibí inspira milhares de pessoas a buscarem seus sonhos e a viverem uma vida mais saudável. </span></p><p></p><p><span style=\"font-size: 16pt\">Se você busca um estilo de vida mais ativo e quer ter mais energia para realizar seus objetivos, inspire-se na história de Tibí e conheça os produtos&nbsp;Clean&nbsp;Whey.\"</span></p>"
+  }
+}

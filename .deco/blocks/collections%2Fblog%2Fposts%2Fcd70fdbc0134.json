@@ -1,0 +1,25 @@
+{
+  "name": "collections/blog/posts/cd70fdbc0134",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [
+      {
+        "name": "Clean Whey",
+        "email": "sac@cleanwhey.com.br"
+      }
+    ],
+    "categories": [
+      {
+        "name": "Influencers",
+        "slug": "influencers"
+      }
+    ],
+    "extraProps": [],
+    "title": "ALEXANDRA KYRILLOS",
+    "excerpt": "AlekyKeto: A Empresária que Venceu a Balança e Encontrou a Felicidade na Cetogênica!",
+    "date": "2024-09-05",
+    "slug": "Alexandra-Kyrillos",
+    "content": "<p><span style=\"font-size: 16pt\">Descubra a história de Ale </span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://www.instagram.com/alekyketo/\"><span style=\"font-size: 16pt\">@alekyKeto</span></a><span style=\"font-size: 16pt\">! ✨ </span></p><p></p><p><span style=\"font-size: 16pt\">Uma empresária que, como muitas de nós, já passou pela frustração da “dieta do sanfona”. Após anos tentando várias dietas sem resultados duradouros, ela encontrou na dieta cetogênica a transformação que buscava. </span></p><p></p><p><span style=\"font-size: 16pt\">Com disciplina e determinação, ela conquistou um corpo mais saudável e uma autoestima elevada. </span></p><p></p><p><span style=\"font-size: 16pt\">No Instagram, ela compartilha seu dia a dia, receitas low carb deliciosas, resultados dos treinos e dicas para quem quer começar a dieta cetogênica. </span></p><p></p><p><span style=\"font-size: 16pt\">Com o apoio do whey protein Hidrolisado da </span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://www.instagram.com/cleanwhey/ \"><span style=\"font-size: 16pt\">@cleanwhey</span></a><span style=\"font-size: 16pt\">, ela garante a dose de proteína necessária para alcançar seus objetivos. Siga-a: </span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://www.instagram.com/alekyketo/\"><span style=\"font-size: 16pt\">@AlekyKeto</span></a><span style=\"font-size: 16pt\"> e inspire-se! </span></p><p></p><p><span style=\"font-size: 16pt\">#cetogenica #mudancadevida #cleanwhey #dietadoioiô&nbsp;#transformação</span></p>",
+    "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/904893fa-38a1-4e64-b2fd-88041bd30003/ALEXANDRA-(3).jpg"
+  }
+}

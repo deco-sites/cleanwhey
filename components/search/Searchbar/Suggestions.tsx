@@ -68,7 +68,7 @@ function Suggestions({
     <div
       class={clx(
         `overflow-y-scroll mt-2`,
-        !hasProducts && !hasTerms && "hidden",
+        !hasProducts && !hasTerms && "hidden"
       )}
     >
       <div class="gap-4 grid grid-cols-1 sm:grid-rows-1 sm:grid-cols-2 p-4">
@@ -111,7 +111,7 @@ function Suggestions({
                   .trim();
 
                 const size = product?.additionalProperty?.find(
-                  (property) => property.name == "TAMANHO",
+                  (property) => property.name == "TAMANHO"
                 );
 
                 const [front, back] = product.image ?? [];
@@ -119,7 +119,7 @@ function Suggestions({
                 const valuePix = formatPix(
                   price || 0,
                   pix.porcentagePix,
-                  pix.valueMax,
+                  pix.valueMax
                 );
                 return (
                   <li>
@@ -139,22 +139,20 @@ function Suggestions({
                             <span class={"text-ellipsis-custom text-sm"}>
                               {product.isVariantOf?.name == title
                                 ? `${title?.toLowerCase()} ${
-                                  size?.value ? "- " + size.value : ""
-                                }`
+                                    size?.value ? "- " + size.value : ""
+                                  }`
                                 : title?.toLowerCase() == variantName
-                                ? `${title?.toLowerCase()} - ${
-                                  product.isVariantOf?.name
+                                ? `${title?.toLowerCase()} - ${product.isVariantOf?.name
                                     ?.toLowerCase()
                                     .replace("tamanho:", "")
                                     .replace(/sabor:[^;]*/g, "")
                                     .replace(";", "")
-                                    .replace("cor:", "")
-                                }`
+                                    .replace("cor:", "")}`
                                 : `${product.isVariantOf?.name?.toLowerCase()} ${
-                                  variantName?.toLowerCase()
-                                    ? `- ${variantName?.toLowerCase()}`
-                                    : ""
-                                } ${size?.value ? "- " + size.value : ""}`}
+                                    variantName?.toLowerCase()
+                                      ? `- ${variantName?.toLowerCase()}`
+                                      : ""
+                                  } ${size?.value ? "- " + size.value : ""}`}
                             </span>
                             <span class="text-lg font-bold">
                               {formatPrice(valuePix) + " "}

@@ -1,8 +1,9 @@
 import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-//import { usePartialSection } from "deco/hooks/usePartialSection.ts";
+// import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 import { ComponentChildren, Fragment } from "preact";
 import { BlogPost } from "apps/blog/types.ts";
+// import { useId } from "../../sdk/useId.ts";
 import Icon from "../../components/ui/Icon.tsx";
 
 export interface CTA {
@@ -56,7 +57,10 @@ export default function BlogPosts({
   const from = perPage * page;
   const to = perPage * (page + 1);
 
-  // // Get the HTMX link for this section
+  // It's boring to generate ids. Let's autogen them
+  // const postList = useId();
+
+  // Get the HTMX link for this section
   // const fetchMoreLink = usePartialSection({
   //   mode: "append",
   //   // Renders this section with the next page
@@ -91,7 +95,7 @@ export default function BlogPosts({
                 <Image
                   width={260}
                   height={157}
-                  class="object-cover w-full"
+                  class="object-top w-full"
                   sizes="(max-width: 640px) 100vw, 30vw"
                   src={post.image || DEFAULT_IMAGE}
                   alt={post.image}
@@ -123,14 +127,14 @@ export default function BlogPosts({
                   <span class="text-gray-300 text-sm font-normal">
                     {post.date
                       ? new Date(post.date)
-                        .toLocaleDateString("pt-BR", {
-                          month: "short", // Retorna o mês abreviado (ex: "mai")
-                          day: "numeric",
-                          year: "2-digit", // Retorna o ano com dois dígitos (ex: "24")
-                        })
-                        .replace(" de ", " ")
-                        .replace(".", "")
-                        .replace(" de ", ", ")
+                          .toLocaleDateString("pt-BR", {
+                            month: "short", // Retorna o mês abreviado (ex: "mai")
+                            day: "numeric",
+                            year: "2-digit", // Retorna o ano com dois dígitos (ex: "24")
+                          })
+                          .replace(" de ", " ")
+                          .replace(".", "")
+                          .replace(" de ", ", ")
                       : ""}
                   </span>
                   <a
@@ -139,10 +143,8 @@ export default function BlogPosts({
                   >
                     <Icon class="text-white" id={"arrow-right-custom"} />
                   </a>
-                  {
-                    /* <span>•</span>
-                  <span>{post.authors[0]?.name}</span> */
-                  }
+                  {/* <span>•</span>
+                  <span>{post.authors[0]?.name}</span> */}
                 </div>
               </div>
             </div>

@@ -11,7 +11,7 @@
     "categories": [
       {
         "name": "Receitas",
-        "slug": "/receitas"
+        "slug": "receitas"
       }
     ],
     "extraProps": [],

@@ -1,0 +1,25 @@
+{
+  "name": "collections/blog/posts/82417f3637f0",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [
+      {
+        "name": "Clean Whey",
+        "email": "sac@cleanwhey.com.br"
+      }
+    ],
+    "categories": [
+      {
+        "name": "Influencers",
+        "slug": "influencers"
+      }
+    ],
+    "extraProps": [],
+    "title": "PAULA PRATTI",
+    "excerpt": "A nutrição como aliada no tratamento do câncer: o olhar da nutricionista Paula Pratti",
+    "date": "2024-09-05",
+    "slug": "Paula-Pratti",
+    "content": "<p><span style=\"font-size: 16pt\">A nutricionista oncológica Paula Pratti dedica sua carreira a otimizar a qualidade de vida de pacientes com câncer através da nutrição. </span></p><p></p><p><span style=\"font-size: 16pt\">Com profundo conhecimento sobre as necessidades nutricionais específicas durante e após o tratamento oncológico, Paula enfatiza a importância de uma alimentação equilibrada e personalizada para cada indivíduo para e redução de sintomas provocados pelo tratamento do câncer, melhora da qualidade de vida e otimizar o sucesso do tratamento ajudando na cura do câncer.</span></p><p></p><p><span style=\"font-size: 16pt\">A proteína, em particular, desempenha um papel crucial na recuperação e manutenção da massa muscular, tão afetada pelos tratamentos oncológicos. </span></p><p></p><p><span style=\"font-size: 16pt\">O whey protein sem sabor, por sua versatilidade, tem se mostrado um aliado valioso na suplementação proteica, permitindo que os pacientes incorporem o suplemento em diversas preparações doces e salgadas, sem alterar o sabor dos alimentos.</span></p><p></p><p><span style=\"font-size: 16pt\">Além da proteína, Paula destaca a relevância da lactoferrina, um componente do sistema imunológico, que auxilia na recuperação da imunidade, na proteção contra infecções e melhora da anemia provocada pelos tratamentos contra o câncer.</span></p><p></p><p><span style=\"font-size: 16pt\">Através de um acompanhamento nutricional individualizado, Paula Pratti busca fortalecer seus pacientes, proporcionando-lhes mais energia e bem-estar durante todo o processo de tratamento.</span></p>",
+    "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/6973e0dd-d9ff-4e2f-b7c5-3f9b602a780b/PAULA-PRATTI.jpg"
+  }
+}
