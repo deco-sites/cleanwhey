@@ -10,7 +10,7 @@ import { useSendEvent } from "../../sdk/useSendEvent.ts";
 import WishlistButton from "../wishlist/WishlistButton.tsx";
 import AddToCartButton from "./AddToCartButton.tsx";
 // import { Ring } from "./ProductVariantSelector.tsx";
-// import { useId } from "../../sdk/useId.ts";
+import { useId } from "../../sdk/useId.ts";
 import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 import { formatPix } from "../../sdk/formatPix.tsx";
 
@@ -48,14 +48,22 @@ function ProductCard({
   // const id = useId();
 
   const { url, image: images, offers, isVariantOf } = product;
-  // const hasVariant = isVariantOf?.hasVariant ?? [];
+
+  //const hasVariant = isVariantOf?.hasVariant ?? [];
+
   const title = isVariantOf?.name ?? product.name;
   const [front, back] = images ?? [];
 
-  const { listPrice, price, seller = "1", availability, installments } =
-    useOffer(offers);
+  const {
+    listPrice,
+    price,
+    seller = "1",
+    availability,
+    installments,
+  } = useOffer(offers);
   const inStock = availability === "https://schema.org/InStock";
-  // const possibilities = useVariantPossibilities(hasVariant, product);
+  //const possibilities = useVariantPossibilities(hasVariant, product);
+
   // const firstSkuVariations = Object.entries(possibilities)[0];
   // const variants = Object.entries(firstSkuVariations[1] ?? {});
   const relativeUrl = relative(url);
@@ -67,40 +75,38 @@ function ProductCard({
 
   const item = mapProductToAnalyticsItem({ product, price, listPrice, index });
 
-  {/* Add click event to dataLayer */}
+  {
+    /* Add click event to dataLayer */
+  }
   const event = useSendEvent({
-    on: "click",
-    event: {
-      name: "select_item" as const,
-      params: {
-        item_list_name: itemListName,
-        items: [item],
-      },
+    params: {
+      item_list_name: itemListName,
+      items: [item],
     },
   });
 
-  const variantName = title?.toLowerCase().replace("cor:", "").replace(
-    "tamanho:",
-    "",
-  )
-    .replace(/sabor:[^;]*/g, "").replace(/;/g, "").trim();
+  const variantName = title
+    ?.toLowerCase()
+    .replace("cor:", "")
+    .replace("tamanho:", "")
+    .replace(/sabor:[^;]*/g, "")
+    .replace(/;/g, "")
+    .trim();
 
-  const off = listPrice && price && listPrice != price &&
-    (listPrice * 100) / price;
+  const off =
+    listPrice && price && listPrice != price && (listPrice * 100) / price;
 
   return (
     <div
       {...event}
       class={clx(
         "card card-compact group bg-white hover:bg-[#F7EDDF] text-sm grid grid-rows-[auto_1fr_auto]",
-        _class,
+        _class
       )}
+      id={id}
     >
       <figure
-        class={clx(
-          "relative bg-base-200",
-          "rounded border border-transparent",
-        )}
+        class={clx("relative bg-base-200", "rounded border border-transparent")}
         style={{ aspectRatio: ASPECT_RATIO }}
       >
         {/* Product Images */}
@@ -111,7 +117,7 @@ function ProductCard({
             "absolute top-0 left-0",
             "grid grid-cols-1 grid-rows-1",
             "w-full",
-            !inStock && "opacity-70",
+            !inStock && "opacity-70"
           )}
         >
           <Image
@@ -123,7 +129,7 @@ function ProductCard({
             class={clx(
               "object-cover",
               "rounded w-full",
-              "col-span-full row-span-full",
+              "col-span-full row-span-full"
             )}
             sizes="(max-width: 640px) 50vw, 20vw"
             preload={preload}
@@ -140,7 +146,7 @@ function ProductCard({
               "object-cover",
               "rounded w-full",
               "col-span-full row-span-full",
-              "transition-opacity opacity-0 lg:group-hover:opacity-100",
+              "transition-opacity opacity-0 lg:group-hover:opacity-100"
             )}
             sizes="(max-width: 640px) 50vw, 20vw"
             loading="lazy"
@@ -151,31 +157,28 @@ function ProductCard({
         {/* Wishlist button */}
         <div class="absolute top-0 left-0 w-full flex items-center justify-between">
           {/* Discounts */}
-          {inStock && off && off != 0
-            ? (
-              <span
-                class={clx(
-                  "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:top-full after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[10px]  after:border-t-red-300 after:absolute",
-                  "opacity-1",
-                  "w-fit",
-                )}
-              >
-                {off - 100 + "% OFF"}
-              </span>
-            )
-            : inStock && pix?.porcentagePix != 0
-            ? (
-              <span
-                class={clx(
-                  "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:top-full after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[10px]  after:border-t-red-300 after:absolute",
-                  "opacity-1",
-                  "w-fit",
-                )}
-              >
-                {pix?.porcentagePix * 100 + "% PIX"}
-              </span>
-            )
-            : null}
+
+          {inStock && off && off != 0 ? (
+            <span
+              class={clx(
+                "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:top-full after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[10px]  after:border-t-red-300 after:absolute",
+                "opacity-1",
+                "w-fit"
+              )}
+            >
+              {off - 100 + "% OFF"}
+            </span>
+          ) : inStock && pix?.porcentagePix != 0 ? (
+            <span
+              class={clx(
+                "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:top-full after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[10px]  after:border-t-red-300 after:absolute",
+                "opacity-1",
+                "w-fit"
+              )}
+            >
+              {pix?.porcentagePix * 100 + "% PIX"}
+            </span>
+          ) : null}
         </div>
 
         <div class="absolute top-0 left-0">
@@ -192,56 +195,53 @@ function ProductCard({
           {productName == title
             ? title?.toLowerCase()
             : title?.toLowerCase() == variantName
-            ? `${title?.toLowerCase()} - ${
-              productName?.toLowerCase()?.replace("tamanho:", "").replace(
-                /sabor:[^;]*/g,
-                "",
-              ).replace(";", "").replace("cor:", "")
-            }`
+            ? `${title?.toLowerCase()} - ${productName
+                ?.toLowerCase()
+                ?.replace("tamanho:", "")
+                .replace(/sabor:[^;]*/g, "")
+                .replace(";", "")
+                .replace("cor:", "")}`
             : `${productName?.toLowerCase()} ${
-              variantName?.toLowerCase()
-                ? `- ${variantName?.toLowerCase()}`
-                : ""
-            }`}
+                variantName?.toLowerCase()
+                  ? `- ${variantName?.toLowerCase()}`
+                  : ""
+              }`}
         </span>
         {!isFeatured && (
           <>
-            {inStock
-              ? (
-                <>
-                  <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
-                    {listPrice != pricePix && (
-                      <span class="line-through text-sm font-normal text-gray-300">
-                        {formatPrice(listPrice, offers?.priceCurrency)}
-                      </span>
-                    )}
-                    <span class="text-xl font-bold flex gap-2 text-gray-400 items-center">
-                      {formatPrice(pricePix)}
-                      <p class="text-sm text-gray-300">no PIX</p>
+            {inStock ? (
+              <>
+                <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
+                  {listPrice != pricePix && (
+                    <span class="line-through text-sm font-normal text-gray-300">
+                      {formatPrice(listPrice, offers?.priceCurrency)}
                     </span>
-
-                    <span class="text-gray-400 text-md font-semibold">
-                      {installments}
-                    </span>
-                  </div>
-                </>
-              )
-              : (
-                <>
-                  <div class="flex-grow" />
-                  <span class=" text-2xl text-center font-bold min-h-[132px] md:min-h-[112px] flex items-center flex-wrap justify-center">
-                    Produto Indisponível
+                  )}
+                  <span class="text-xl font-bold flex gap-2 text-gray-400 items-center">
+                    {formatPrice(pricePix)}
+                    <p class="text-sm text-gray-300">no PIX</p>
                   </span>
-                  <div class="flex-grow" />
-                </>
-              )}
+
+                  <span class="text-gray-400 text-md font-semibold">
+                    {installments}
+                  </span>
+                </div>
+              </>
+            ) : (
+              <>
+                <div class="flex-grow" />
+                <span class=" text-2xl text-center font-bold min-h-[132px] md:min-h-[112px] flex items-center flex-wrap justify-center">
+                  Produto Indisponível
+                </span>
+                <div class="flex-grow" />
+              </>
+            )}
           </>
         )}
       </a>
 
       {/* SKU Selector */}
-      {
-        /* {variants.length > 1 && (
+      {/* {variants.length > 1 && (
         <ul class="mb-4 flex items-center justify-start gap-2 pt-4 pb-1 pl-1 overflow-x-auto">
           {variants.map(([value, link]) => [value, relative(link?.url)] as const)
             .map(([value, link]) => (
@@ -258,8 +258,7 @@ function ProductCard({
               </li>
             ))}
         </ul>
-      )} */
-      }
+      )} */}
       <div class="flex-grow" />
       <div
         class={`${
@@ -279,38 +278,32 @@ function ProductCard({
             </span>
           </div>
         )}
-        {inStock
-          ? (
-            <AddToCartButton
-              product={product}
-              seller={seller}
-              item={item}
-              ctaText="ADICIONAR À SACOLA"
-              class={`${isFeatured ? "px-1.5 md:text-sm" : ""} ${
-                clx(
-                  "btn uppercase",
-                  "btn-outline rounded-lg border-none px-0 no-animation w-full",
-                  "bg-orange-300 text-white h-14 font-semibold  md:text-sm lg:text-xs xl:text-sm text-xs  flex-nowrap",
-                  "hover:bg-orange-300",
-                )
-              }`}
-            />
-          )
-          : (
-            <a
-              href={relativeUrl}
-              class={`${
-                clx(
-                  "btn uppercase shrink",
-                  "btn-outline rounded-lg border-none px-0 no-animation w-full",
-                  "bg-orange-300 text-white h-14 font-semibold  md:text-sm lg:text-xs xl:text-sm text-xs flex-nowrap",
-                  "hover:bg-orange-300",
-                )
-              }`}
-            >
-              AVISE-ME
-            </a>
-          )}
+        {inStock ? (
+          <AddToCartButton
+            product={product}
+            seller={seller}
+            item={item}
+            ctaText="ADICIONAR À SACOLA"
+            class={`${isFeatured ? "px-1.5 md:text-sm" : ""} ${clx(
+              "btn uppercase",
+              "btn-outline rounded-lg border-none px-0 no-animation w-full",
+              "bg-orange-300 text-white h-14 font-semibold  md:text-sm lg:text-xs xl:text-sm text-xs  flex-nowrap",
+              "hover:bg-orange-300"
+            )}`}
+          />
+        ) : (
+          <a
+            href={relativeUrl}
+            class={`${clx(
+              "btn uppercase shrink",
+              "btn-outline rounded-lg border-none px-0 no-animation w-full",
+              "bg-orange-300 text-white h-14 font-semibold  md:text-sm lg:text-xs xl:text-sm text-xs flex-nowrap",
+              "hover:bg-orange-300"
+            )}`}
+          >
+            AVISE-ME
+          </a>
+        )}
       </div>
     </div>
   );

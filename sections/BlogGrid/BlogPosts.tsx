@@ -52,10 +52,7 @@ export default function BlogPosts({
   cta = { text: "Ver todas as postagens" },
   sectionTitle,
   posts = [],
-  pagination: {
-    page = 0,
-    perPage = 6,
-  } = {},
+  pagination: { page = 0, perPage = 6 } = {},
 }: Props) {
   const from = perPage * page;
   const to = perPage * (page + 1);
@@ -129,14 +126,15 @@ export default function BlogPosts({
                 <div class="flex flex-wrap gap-2 items-center justify-between">
                   <span class="text-gray-300 text-sm font-normal">
                     {post.date
-                      ? new Date(post.date).toLocaleDateString("pt-BR", {
-                        month: "short", // Retorna o mês abreviado (ex: "mai")
-                        day: "numeric",
-                        year: "2-digit", // Retorna o ano com dois dígitos (ex: "24")
-                      }).replace(" de ", " ").replace(".", "").replace(
-                        " de ",
-                        ", ",
-                      )
+                      ? new Date(post.date)
+                          .toLocaleDateString("pt-BR", {
+                            month: "short", // Retorna o mês abreviado (ex: "mai")
+                            day: "numeric",
+                            year: "2-digit", // Retorna o ano com dois dígitos (ex: "24")
+                          })
+                          .replace(" de ", " ")
+                          .replace(".", "")
+                          .replace(" de ", ", ")
                       : ""}
                   </span>
                   <a
@@ -145,10 +143,8 @@ export default function BlogPosts({
                   >
                     <Icon class="text-white" id={"arrow-right-custom"} />
                   </a>
-                  {
-                    /* <span>•</span>
-                  <span>{post.authors[0]?.name}</span> */
-                  }
+                  {/* <span>•</span>
+                  <span>{post.authors[0]?.name}</span> */}
                 </div>
               </div>
             </div>

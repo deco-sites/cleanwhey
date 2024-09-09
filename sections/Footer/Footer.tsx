@@ -1,6 +1,6 @@
 import { type ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-// import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
+
 import { useDevice } from "deco/hooks/useDevice.ts";
 
 /** @titleBy title */
@@ -56,13 +56,16 @@ function Footer({
 }: Props) {
   const device = useDevice();
   return (
-    <footer class="sm:px-0 bg-orange-300" // style={{ backgroundColor: "#EFF0F0" }}
+    <footer
+      class="sm:px-0 bg-orange-300" // style={{ backgroundColor: "#EFF0F0" }}
     >
       <div class="flex flex-col gap-5 sm:gap-10 pt-10">
         <ul class="container sm:px-0 px-5 md:gap-0 gap-4 flex sm:flex-row flex-col justify-between">
           <li class="flex gap-4 items-start flex-col">
             <div
-              class={"flex gap-4 items-center mb-6 w-full sm:w-auto space-between"}
+              class={
+                "flex gap-4 items-center mb-6 w-full sm:w-auto space-between"
+              }
             >
               <img class={"max-w-[136px]"} loading="lazy" src={logo} />
 
@@ -92,48 +95,47 @@ function Footer({
 
           {links.map(({ title, href, children }) => (
             <>
-              {device === "desktop"
-                ? (
-                  <li class="flex flex-col gap-4">
-                    <a class="text-white font-semibold" href={href}>{title}</a>
+              {device === "desktop" ? (
+                <li key={index} class="flex flex-col gap-4">
+                  <a class="text-white font-semibold" href={href}>
+                    {title}
+                  </a>
+                  <ul class="flex flex-col gap-2">
+                    {children.map(({ title, href }) => (
+                      <li>
+                        <a class="text-sm text-white" href={href}>
+                          {title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ) : (
+                <div class="p-0 text-white font-semibold text-base collapse collapse-arrow bg-transparent border-0">
+                  <input type="checkbox" class="max-h-10 min-h-10" />
+                  <div class="after:!top-5 flex max-h-10 min-h-10 items-center justify-start collapse-title p-0 text-base font-semibold">
+                    {title}
+                  </div>
+                  <div class="collapse-content p-0">
                     <ul class="flex flex-col gap-2">
                       {children.map(({ title, href }) => (
                         <li>
-                          <a class="text-sm text-white" href={href}>
+                          <a class="text-sm text-white font-normal" href={href}>
                             {title}
                           </a>
                         </li>
                       ))}
                     </ul>
-                  </li>
-                )
-                : (
-                  <div class="p-0 text-white font-semibold text-base collapse collapse-arrow bg-transparent border-0">
-                    <input type="checkbox" class="max-h-10 min-h-10" />
-                    <div class="after:!top-5 flex max-h-10 min-h-10 items-center justify-start collapse-title p-0 text-base font-semibold">
-                      {title}
-                    </div>
-                    <div class="collapse-content p-0">
-                      <ul class="flex flex-col gap-2">
-                        {children.map(({ title, href }) => (
-                          <li>
-                            <a
-                              class="text-sm text-white font-normal"
-                              href={href}
-                            >
-                              {title}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
                   </div>
-                )}
+                </div>
+              )}
             </>
           ))}
 
           <li class={"flex flex-col gap-4"}>
-            <a href="#" class="text-white font-semibold">Formas de pagamento</a>
+            <a href="#" class="text-white font-semibold">
+              Formas de pagamento
+            </a>
             <div class="flex flex-col sm:flex-row gap-12 justify-between items-start sm:items-center">
               <ul class="flex flex-wrap gap-2 md:max-w-64">
                 {paymentMethods.map(({ image, alt }) => (
@@ -165,23 +167,23 @@ function Footer({
                 />
               </li>
             ))}
-            {device === "mobile"
-              ? (
-                <>
-                  {seguranca.map(({ image, label }) => (
-                    <li class="h-8 w-1/5 flex justify-center items-center">
-                      <Image
-                        src={image}
-                        alt={label}
-                        width={42}
-                        height={42}
-                        loading="lazy"
-                      />
-                    </li>
-                  ))}
-                </>
-              )
-              : ("")}
+            {device === "mobile" ? (
+              <>
+                {seguranca.map(({ image, label }) => (
+                  <li class="h-8 w-1/5 flex justify-center items-center">
+                    <Image
+                      src={image}
+                      alt={label}
+                      width={42}
+                      height={42}
+                      loading="lazy"
+                    />
+                  </li>
+                ))}
+              </>
+            ) : (
+              ""
+            )}
           </ul>
 
           <ul class="hidden sm:flex items-center gap-2">

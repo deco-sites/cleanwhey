@@ -56,7 +56,6 @@ function FilterValues({ key, values }: FilterToggle) {
       {values.map((item) => {
         if (key === "price") {
           const range = parseRange(item.value);
-          // console.log(values)
 
           return range && (
             <>

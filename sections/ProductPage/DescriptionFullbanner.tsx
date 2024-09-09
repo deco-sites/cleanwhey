@@ -1,5 +1,4 @@
 import { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
-// import { Picture, Source } from "apps/website/components/Picture.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
 
 interface Props {
