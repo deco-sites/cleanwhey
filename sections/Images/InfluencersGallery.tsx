@@ -50,7 +50,6 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
                   <span
                     dangerouslySetInnerHTML={{ __html: item.description }}
                     class="[&_*]:text-[14x] [&_*]:leading-normal"
-
                   />
                 </div>
               </a>

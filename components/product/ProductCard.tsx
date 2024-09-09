@@ -45,10 +45,12 @@ function ProductCard({
   pix,
   class: _class,
 }: Props) {
-  const id = useId();
+  // const id = useId();
 
   const { url, image: images, offers, isVariantOf } = product;
+
   //const hasVariant = isVariantOf?.hasVariant ?? [];
+
   const title = isVariantOf?.name ?? product.name;
   const [front, back] = images ?? [];
 
@@ -61,6 +63,7 @@ function ProductCard({
   } = useOffer(offers);
   const inStock = availability === "https://schema.org/InStock";
   //const possibilities = useVariantPossibilities(hasVariant, product);
+
   // const firstSkuVariations = Object.entries(possibilities)[0];
   // const variants = Object.entries(firstSkuVariations[1] ?? {});
   const relativeUrl = relative(url);
@@ -154,6 +157,7 @@ function ProductCard({
         {/* Wishlist button */}
         <div class="absolute top-0 left-0 w-full flex items-center justify-between">
           {/* Discounts */}
+
           {inStock && off && off != 0 ? (
             <span
               class={clx(
