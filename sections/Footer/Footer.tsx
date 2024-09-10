@@ -93,7 +93,7 @@ function Footer({
             </div>
           </li>
 
-          {links.map(({ title, href, children }) => (
+          {links.map(({ title, href, children }, index) => (
             <>
               {device === "desktop" ? (
                 <li key={index} class="flex flex-col gap-4">
