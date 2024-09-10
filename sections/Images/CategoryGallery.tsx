@@ -32,8 +32,8 @@ const Desktop = ({ items }: Props) => {
               <img
                 class={`${index == 0 ? "rounded-l-lg" : ""} 
                             ${
-                  index == 3 ? "rounded-r-lg" : ""
-                } w-full duration-300 transition-all group-hover:scale-125 max-h-[386px]`}
+                              index == 3 ? "rounded-r-lg" : ""
+                            } w-full duration-300 transition-all group-hover:scale-125 max-h-[386px]`}
                 src={item.images.normal}
                 loading={"lazy"}
               />
@@ -55,7 +55,7 @@ const Mobile = ({ items }: Props) => {
   const id = useId();
   return (
     <section id={id} class="relative">
-      <Slider className="carousel carousel-center max-w-md space-x-4 p-4 md:pr-4 md:pl-4 pr-0">
+      <Slider className="carousel carousel-center max-w-md space-x-4 p-4 md:pr-4 md:pl-4 ">
         {items &&
           items.map((item, index) => (
             <Slider.Item
@@ -71,39 +71,37 @@ const Mobile = ({ items }: Props) => {
                 <img
                   class={`${index == 0 ? "rounded-l-lg" : ""} 
                                 ${
-                    index == 3 ? "rounded-r-lg" : ""
-                  } w-full duration-300 transition-all group-hover:scale-125 max-h-[440px]`}
+                                  index == 3 ? "rounded-r-lg" : ""
+                                } w-full duration-300 transition-all group-hover:scale-125 max-h-[370px]`}
                   src={item.images.normal}
                   loading={"lazy"}
                 />
 
-                <div class="transition-all duration-300 hidden group-hover:flex w-full h-full bg-white/85 z-10 absolute top-0 left-0 flex items-center justify-center">
+                <div class="transition-all duration-300 hidden group-hover:flex w-full h-full bg-white/85 z-10 absolute top-0 left-0 items-center justify-center">
                   <img src={item.images.onHover} />
                 </div>
               </a>
-              <p class="z-20 w-auto absolute bottom-0 bg-orange-300 p-3 rounded text-white font-bold  text-center text-lg uppercase">
+              <p class="z-20 w-auto absolute bottom-0 bg-orange-300 p-3 rounded-tr text-white font-bold  text-center text-lg uppercase">
                 {item.textLabel}
               </p>
             </Slider.Item>
           ))}
       </Slider>
 
-      <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-            justify-center absolute top-2/4 left-4">
-        <Slider.PrevButton
-          class="cursor-pointer"
-          disabled={false}
-        >
+      <div
+        class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+            justify-center absolute top-2/4 left-4"
+      >
+        <Slider.PrevButton class="cursor-pointer" disabled={false}>
           <Icon id="chevron-right" class="rotate-180 text-orange-300" />
         </Slider.PrevButton>
       </div>
 
-      <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-            justify-center absolute top-2/4 right-4">
-        <Slider.NextButton
-          class="cursor-pointer"
-          disabled={false}
-        >
+      <div
+        class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+            justify-center absolute top-2/4 right-4"
+      >
+        <Slider.NextButton class="cursor-pointer" disabled={false}>
           <Icon id="chevron-right" class="text-orange-300" />
         </Slider.NextButton>
       </div>
@@ -128,9 +126,11 @@ export default function CategoryGallery({ title, items }: Props) {
       <div
         className={`content ${device === "desktop" ? "grid grid-cols-4" : ""}`}
       >
-        {device === "desktop"
-          ? <Desktop items={items} />
-          : <Mobile items={items} />}
+        {device === "desktop" ? (
+          <Desktop items={items} />
+        ) : (
+          <Mobile items={items} />
+        )}
       </div>
     </section>
   );
