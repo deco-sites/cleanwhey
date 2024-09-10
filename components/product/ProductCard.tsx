@@ -45,7 +45,7 @@ function ProductCard({
   pix,
   class: _class,
 }: Props) {
-  // const id = useId();
+   const id = useId();
 
   const { url, image: images, offers, isVariantOf } = product;
 
