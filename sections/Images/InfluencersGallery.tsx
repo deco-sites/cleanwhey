@@ -38,7 +38,7 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
                 href={item.link}
               >
                 <Image
-                  class={`rounded-lg w-full duration-300 transition-all  min-h-[470px] h-full object-fill group-hover:blur`}
+                  class={`rounded-lg w-full duration-300 transition-all  min-h-[470px]  max-h-[470px] h-full object-fill group-hover:blur`}
                   src={item.images.normal}
                   loading={"lazy"}
                   width={300}
@@ -91,12 +91,13 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
                   class={`rounded-lg w-full h-full transition-all duration-300 relative overflow-hidden`}
                   href={item.link}
                 >
-                  <img
-                    class={`rounded-lg w-full duration-300 transition-all group-hover:blur`}
+                  <Image
+                    class={`rounded-lg w-full duration-300 transition-all  min-h-[470px] max-h-[470px] h-full `}
                     src={item.images.normal}
                     loading={"lazy"}
+                    width={300}
+                    height={470}
                   />
-
                   <div class="font-regular text-sm leading-4 transition-all text-left text-white py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 overflow-y-scroll items-start justify-start scroll-custom overflow-x-hidden rounded-md">
                     <h2 class={"font-bold mb-6"}>{item.textLabel} </h2>
                     <span
