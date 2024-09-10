@@ -36,7 +36,7 @@ function CartItem({ item, index, locale, currency }: Props) {
   // deno-lint-ignore no-explicit-any
   let name = (item as any).item_name;
   name = name
-    .replace("Tamanho:", "-")
+    .replace("Tamanho:", "- ")
     .replace(/Sabor:[^;]*/g, "")
     .replace(";", "")
     .replace("Cor:", "");
