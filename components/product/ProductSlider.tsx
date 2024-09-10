@@ -81,7 +81,7 @@ function ProductSlider({ products, itemListName, isFeatured, pix }: Props) {
           </Slider.NextButton>
         </div>
       </div>
-      <Slider.JS rootId={id} />
+      <Slider.JS rootId={id} infinite />
     </>
   );
 }
