@@ -89,7 +89,7 @@ export default function BlogPosts({
             dangerouslySetInnerHTML={{ __html: sectionTitle }}
           />
         )}
-        <div class="gap-8 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3">
+        <div class="gap-8 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 py-5">
           {posts?.slice(from, to).map((post) => (
             <div class="overflow-hidden rounded-lg flex flex-col bg-white-300 p-2.5 max-w-72 mx-auto lg:mx-0">
               <figure class="relative">

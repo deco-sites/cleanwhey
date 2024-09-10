@@ -33,7 +33,7 @@ const Desktop = ({ items }: Props) => {
                 class={`${index == 0 ? "rounded-l-lg" : ""} 
                             ${
                               index == 3 ? "rounded-r-lg" : ""
-                            } w-full duration-300 transition-all group-hover:scale-125 max-h-[386px]`}
+                            } w-full duration-300 transition-all group-hover:scale-125 h-full max-h-[386px]`}
                 src={item.images.normal}
                 loading={"lazy"}
               />
@@ -72,7 +72,7 @@ const Mobile = ({ items }: Props) => {
                   class={`${index == 0 ? "rounded-l-lg" : ""} 
                                 ${
                                   index == 3 ? "rounded-r-lg" : ""
-                                } w-full duration-300 transition-all group-hover:scale-125 max-h-[370px]`}
+                                } w-full duration-300 transition-all group-hover:scale-125 h-full max-h-[370px]`}
                   src={item.images.normal}
                   loading={"lazy"}
                 />
