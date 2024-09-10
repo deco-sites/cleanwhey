@@ -33,10 +33,13 @@ function CartItem({ item, index, locale, currency }: Props) {
   const { image, listPrice, price = Infinity, quantity } = item;
   const isGift = price < 0.01;
 
-  // console.log(item)
   // deno-lint-ignore no-explicit-any
-  const name = (item as any).item_name;
-
+  let name = (item as any).item_name;
+  name = name
+    .replace("Tamanho:", "-")
+    .replace(/Sabor:[^;]*/g, "")
+    .replace(";", "")
+    .replace("Cor:", "");
   return (
     <fieldset
       // deno-lint-ignore no-explicit-any
@@ -59,14 +62,16 @@ function CartItem({ item, index, locale, currency }: Props) {
         <div class="flex justify-between items-center ">
           <legend
             class="text-sm font-normal text-gray-400"
-            style={"    display: block; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis"}
+            style={
+              "    display: block; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis"
+            }
           >
             {name}
           </legend>
           <button
             class={clx(
               isGift && "hidden",
-              "btn btn-ghost btn-square no-animation",
+              "btn btn-ghost btn-square no-animation"
             )}
             hx-on:click={useScript(removeItemHandler)}
           >
