@@ -80,17 +80,19 @@ export const Box = ({
   checked?: boolean;
   class?: string;
 }) => {
+  const upperText = value.toUpperCase();
+
   return (
     <div
       class={`rounded-lg min-w-[60px] py-1 px-4
       ${checked ? "bg-gray-400 text-white" : "bg-gray-100 text-gray-300"}`}
     >
       <span
-        class={`font-bold text-xs text-center uppercase ${
+        class={`font-bold text-xs text-center  ${
           checked ? "text-white" : "text-grat-300"
         }`}
       >
-        {value}
+        {upperText.replace(/G$/, "g")}
       </span>
     </div>
   );
