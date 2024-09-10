@@ -8,6 +8,7 @@ import Icon from "../../components/ui/Icon.tsx";
 
 export interface CTA {
   text?: string;
+  link?: string;
 }
 
 /** @title {{{title}}} */
@@ -42,14 +43,14 @@ const DEFAULT_IMAGE =
 
 function Container({ children }: { children: ComponentChildren }) {
   return (
-    <div class="container lg:mx-auto lg:py-14 mx-0 py-12 text-sm">
+    <div class="container lg:mx-auto  mx-0  text-sm">
       <div class="space-y-8">{children}</div>
     </div>
   );
 }
 
 export default function BlogPosts({
-  cta = { text: "Ver todas as postagens" },
+  cta = { text: "Ver todas as postagens", link: " " },
   sectionTitle,
   posts = [],
   pagination: { page = 0, perPage = 6 } = {},
@@ -90,12 +91,12 @@ export default function BlogPosts({
         )}
         <div class="gap-8 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3">
           {posts?.slice(from, to).map((post) => (
-            <div class="overflow-hidden rounded-lg flex flex-col bg-white-300 p-2.5">
+            <div class="overflow-hidden rounded-lg flex flex-col bg-white-300 p-2.5 max-w-72 mx-auto lg:mx-0">
               <figure class="relative">
                 <Image
-                  width={260}
-                  height={157}
-                  class="object-top w-full"
+                  width={600}
+                  height={720}
+                  class="w-full min-h-[400px] max-h-[400px]"
                   sizes="(max-width: 640px) 100vw, 30vw"
                   src={post.image || DEFAULT_IMAGE}
                   alt={post.image}
@@ -103,6 +104,7 @@ export default function BlogPosts({
                   loading="lazy"
                   id={post.slug}
                 />
+
                 <div class="flex flex-wrap gap-2 absolute -bottom-3 left-0">
                   {post.categories?.map((category) => (
                     <div class="w-[82px] badge text-white badge-lg rounded-lg text-sm border border-orange-300 bg-orange-300">
@@ -111,11 +113,11 @@ export default function BlogPosts({
                   ))}
                 </div>
               </figure>
-              <div class="p-6 space-y-4 flex flex-col flex-1">
+              <div class="p-2 space-y-4 flex flex-col flex-1">
                 {/* <div class="font-semibold">{calculateReadingTime(post.content.split(" ").length)}</div> */}
                 <div class="space-y-2 flex-1">
                   <h3
-                    class="text-base text-gray-400 font-normal"
+                    class="text-base text-gray-400 font-normal mt-2.5"
                     id={`title-${post.slug}`}
                   >
                     {post.title}
@@ -151,7 +153,7 @@ export default function BlogPosts({
           ))}
         </div>
         {/* {to < (posts?.length || 1000) && ( */}
-        <a href={"/blog"} class="flex justify-center w-full">
+        <a href={cta.link} class="flex justify-center w-full pb-6">
           <span class="text-blue-300 font-normal text-sm inline border border-blue-300 rounded-lg py-3 px-4">
             {cta.text}
           </span>
