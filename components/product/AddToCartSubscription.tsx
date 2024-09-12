@@ -24,7 +24,6 @@ function AddToCartButton(
     });
 
   const onAddAttachment = () => {
-
     addItemAttachment({
       index: 0,
       attachment: "vtex.subscription.assinatura",
@@ -32,7 +31,7 @@ function AddToCartButton(
         "assinatura": "mensal",
       },
     });
-  }
+  };
 
   return (
     <div class="flex items-center gap-3">

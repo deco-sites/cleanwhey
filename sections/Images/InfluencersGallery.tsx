@@ -99,7 +99,7 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
                     height={470}
                   />
                   <div class="font-regular text-sm leading-4 transition-all text-left text-white py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 overflow-y-scroll items-start justify-start scroll-custom overflow-x-hidden rounded-md">
-                    <h2 class={"font-bold mb-6"}>{item.textLabel} </h2>
+                    <h2 class={"font-bold mb-6"}>{item.textLabel}</h2>
                     <span
                       dangerouslySetInnerHTML={{ __html: item.description }}
                       class="[&_*]:text-[14x] [&_*]:leading-normal"
@@ -113,19 +113,15 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
             ))}
         </Slider>
 
-        <div
-          class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-                justify-center absolute top-2/4 left-4"
-        >
+        <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+                justify-center absolute top-2/4 left-4">
           <Slider.PrevButton class="cursor-pointer" disabled={false}>
             <Icon id="chevron-right" class="rotate-180 text-orange-300" />
           </Slider.PrevButton>
         </div>
 
-        <div
-          class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-                justify-center absolute top-2/4 right-4"
-        >
+        <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+                justify-center absolute top-2/4 right-4">
           <Slider.NextButton class="cursor-pointer" disabled={false}>
             <Icon id="chevron-right" class="text-orange-300" />
           </Slider.NextButton>
@@ -167,11 +163,9 @@ export default function InfluencersGallery({
         </div>
       )}
       <div className={`content`}>
-        {device === "desktop" ? (
-          <Desktop items={items} conteudoFlutuante={conteudoFlutuante} />
-        ) : (
-          <Mobile items={items} conteudoFlutuante={conteudoFlutuante} />
-        )}
+        {device === "desktop"
+          ? <Desktop items={items} conteudoFlutuante={conteudoFlutuante} />
+          : <Mobile items={items} conteudoFlutuante={conteudoFlutuante} />}
       </div>
     </section>
   );

@@ -103,7 +103,7 @@ function PageResult(props: SectionProps<typeof loader>) {
       <div
         class={clx(
           "pb-2 sm:pb-10",
-          (!prevPageUrl || partial === "hideLess") && "hidden"
+          (!prevPageUrl || partial === "hideLess") && "hidden",
         )}
       >
         <a
@@ -123,7 +123,7 @@ function PageResult(props: SectionProps<typeof loader>) {
           "grid items-center",
           "grid-cols-2 gap-1",
           "sm:grid-cols-3 sm:gap-10",
-          "w-full"
+          "w-full",
         )}
       >
         {products.map((product, i) => (
@@ -142,7 +142,7 @@ function PageResult(props: SectionProps<typeof loader>) {
           const { isVariantOf } = product;
           const hasVariant = isVariantOf?.hasVariant ?? [];
           const isAcessory = product.additionalProperty?.filter(
-            (item) => item.name == "category" && item.value == "Acessórios"
+            (item) => item.name == "category" && item.value == "Acessórios",
           );
 
           {
@@ -173,102 +173,103 @@ function PageResult(props: SectionProps<typeof loader>) {
                   shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
                   pix={pix}
                 />
-                //Essa parte do codigo quebra os filtros Diego 08/09 filtrar variantes tbm 
+                //Essa parte do codigo quebra os filtros Diego 08/09 filtrar variantes tbm
               );
             }
             return null;
-          }
-        );
+          });
         })}
       </div>
 
       <div class={clx("pt-2 sm:pt-10 w-full flex justify-center", "")}>
-        {infinite ? (
-          <div class="flex justify-center [&_section]:contents">
-            <a
-              rel="next"
-              class={clx(
-                "btn btn-ghost",
-                (!nextPageUrl || partial === "hideMore") && "hidden"
-              )}
-              hx-swap="outerHTML show:parent:top"
-              hx-get={partialNext}
-            >
-              <span class="inline [.htmx-request_&]:hidden">Show More</span>
-              <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
-            </a>
-          </div>
-        ) : (
-          <div class="flex justify-center my-4">
-            <div class="join gap-2">
+        {infinite
+          ? (
+            <div class="flex justify-center [&_section]:contents">
               <a
-                aria-label="previous page link"
-                rel="prev"
-                href={pageInfo.previousPage ?? "#"}
-                class="btn btn-ghost join-item"
-              >
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M25.333 16H6.667M16 25.333 6.667 16 16 6.667"
-                    stroke="#E06741"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
-              {links.map((link) => {
-                return (
-                  <a
-                    href={link.href}
-                    class={`btn !rounded-lg ${
-                      pageInfo.currentPage == link.label
-                        ? "btn-primary hover:bg-orange-300 bg-orange-300 border-orange-300 hover:border-orange-300"
-                        : "btn-ghost"
-                    } join-item`}
-                  >
-                    <span>{link.label}</span>
-                  </a>
-                );
-              })}
-              <a
-                aria-label="next page link"
                 rel="next"
-                href={pageInfo.nextPage ?? "#"}
-                class="btn btn-ghost join-item"
+                class={clx(
+                  "btn btn-ghost",
+                  (!nextPageUrl || partial === "hideMore") && "hidden",
+                )}
+                hx-swap="outerHTML show:parent:top"
+                hx-get={partialNext}
               >
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.66663 16H25.3333"
-                    stroke="#E06741"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M16 6.66666L25.3333 16L16 25.3333"
-                    stroke="#E06741"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+                <span class="inline [.htmx-request_&]:hidden">Show More</span>
+                <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
               </a>
             </div>
-          </div>
-        )}
+          )
+          : (
+            <div class="flex justify-center my-4">
+              <div class="join gap-2">
+                <a
+                  aria-label="previous page link"
+                  rel="prev"
+                  href={pageInfo.previousPage ?? "#"}
+                  class="btn btn-ghost join-item"
+                >
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25.333 16H6.667M16 25.333 6.667 16 16 6.667"
+                      stroke="#E06741"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                {links.map((link) => {
+                  return (
+                    <a
+                      href={link.href}
+                      class={`btn !rounded-lg ${
+                        pageInfo.currentPage == link.label
+                          ? "btn-primary hover:bg-orange-300 bg-orange-300 border-orange-300 hover:border-orange-300"
+                          : "btn-ghost"
+                      } join-item`}
+                    >
+                      <span>{link.label}</span>
+                    </a>
+                  );
+                })}
+                <a
+                  aria-label="next page link"
+                  rel="next"
+                  href={pageInfo.nextPage ?? "#"}
+                  class="btn btn-ghost join-item"
+                >
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.66663 16H25.3333"
+                      stroke="#E06741"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16 6.66666L25.3333 16L16 25.3333"
+                      stroke="#E06741"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          )}
       </div>
     </div>
   );
@@ -337,13 +338,11 @@ function Result(props: SectionProps<typeof loader>) {
 
   const results = (
     <span class="text-sm font-normal">
-      Exibindo{" "}
-      {page.pageInfo.records &&
-      page.pageInfo.recordPerPage &&
-      page.pageInfo.recordPerPage > page.pageInfo.records
+      Exibindo {page.pageInfo.records &&
+          page.pageInfo.recordPerPage &&
+          page.pageInfo.recordPerPage > page.pageInfo.records
         ? page.pageInfo.records
-        : page.pageInfo.recordPerPage}{" "}
-      de {page.pageInfo.records} resultados
+        : page.pageInfo.recordPerPage} de {page.pageInfo.records} resultados
     </span>
   );
 
@@ -354,91 +353,89 @@ function Result(props: SectionProps<typeof loader>) {
   return (
     <>
       <div id={container} {...viewItemListEvent} class="w-full">
-        {partial ? (
-          <PageResult {...props} />
-        ) : (
-          <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
-            <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
+        {partial
+          ? <PageResult {...props} />
+          : (
+            <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
+              <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
 
-            {device === "mobile" && (
-              <Drawer
-                id={controls}
-                aside={
-                  <div class="bg-base-100 flex flex-col h-full divide-y overflow-y-hidden">
-                    <div class="flex justify-between items-center">
-                      <h1 class="px-4 py-3">
-                        <span class="font-medium text-2xl">Filtros</span>
-                      </h1>
-                      <label class="btn btn-ghost" for={controls}>
-                        <Icon id="close" />
-                      </label>
+              {device === "mobile" && (
+                <Drawer
+                  id={controls}
+                  aside={
+                    <div class="bg-base-100 flex flex-col h-full divide-y overflow-y-hidden">
+                      <div class="flex justify-between items-center">
+                        <h1 class="px-4 py-3">
+                          <span class="font-medium text-2xl">Filtros</span>
+                        </h1>
+                        <label class="btn btn-ghost" for={controls}>
+                          <Icon id="close" />
+                        </label>
+                      </div>
+                      <div class="flex-grow overflow-auto">
+                        <Filters filters={filters} />
+                      </div>
                     </div>
-                    <div class="flex-grow overflow-auto">
-                      <Filters filters={filters} />
-                    </div>
-                  </div>
-                }
-              >
-                <div class="flex sm:hidden justify-between items-end">
-                  <label
-                    class="btn btn-ghost
+                  }
+                >
+                  <div class="flex sm:hidden justify-between items-end">
+                    <label
+                      class="btn btn-ghost
                     text-orange-300 rounded-lg border border-orange-300"
-                    for={controls}
-                  >
-                    Filtros
-                  </label>
+                      for={controls}
+                    >
+                      Filtros
+                    </label>
 
-                  <div class="flex flex-col">
-                    {results}
-                    {sortBy}
+                    <div class="flex flex-col">
+                      {results}
+                      {sortBy}
+                    </div>
                   </div>
-                </div>
-              </Drawer>
-            )}
+                </Drawer>
+              )}
 
-            <div class="md:gap-8 grid place-items-center grid-cols-1 sm:grid-cols-[250px_1fr]">
-              {device === "desktop" && (
-                <aside
-                  class="
+              <div class="md:gap-8 grid place-items-center grid-cols-1 sm:grid-cols-[250px_1fr]">
+                {device === "desktop" && (
+                  <aside class="
                   place-self-start flex flex-col gap-3
                   border border-gray-100 border-b border-b-orange-300
                   bg-white-300 rounded-t-lg p-4
-                  "
-                >
-                  <span class="text-base font-normal text-gray-300 h-12 flex gap-2 items-center">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M14.667 2H1.333l5.334 6.307v4.36L9.333 14V8.307z"
-                        stroke="#A1A6B7"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    Filtros
-                  </span>
+                  ">
+                    <span class="text-base font-normal text-gray-300 h-12 flex gap-2 items-center">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.667 2H1.333l5.334 6.307v4.36L9.333 14V8.307z"
+                          stroke="#A1A6B7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      Filtros
+                    </span>
 
-                  <Filters filters={filters} />
-                </aside>
-              )}
-
-              <div class="flex flex-col gap-9">
-                {device === "desktop" && (
-                  <div class="flex justify-between items-center">
-                    {results}
-                    <div>{sortBy}</div>
-                  </div>
+                    <Filters filters={filters} />
+                  </aside>
                 )}
-                <PageResult {...props} />
+
+                <div class="flex flex-col gap-9">
+                  {device === "desktop" && (
+                    <div class="flex justify-between items-center">
+                      {results}
+                      <div>{sortBy}</div>
+                    </div>
+                  )}
+                  <PageResult {...props} />
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
       </div>
 
       <script
@@ -447,7 +444,7 @@ function Result(props: SectionProps<typeof loader>) {
           __html: useScript(
             setPageQuerystring,
             `${pageInfo.currentPage}`,
-            container
+            container,
           ),
         }}
       />
