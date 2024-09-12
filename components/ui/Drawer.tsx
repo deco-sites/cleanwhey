@@ -1,4 +1,3 @@
-// import { asset } from "$fresh/runtime.ts";
 import { useScript } from "deco/hooks/useScript.ts";
 import { type ComponentChildren } from "preact";
 import { clx } from "../../sdk/clx.ts";
@@ -50,9 +49,7 @@ function Drawer({
           aria-label={open ? "open drawer" : "closed drawer"}
         />
 
-        <div class="drawer-content">
-          {children}
-        </div>
+        <div class="drawer-content">{children}</div>
 
         <aside
           data-aside
@@ -73,13 +70,15 @@ function Drawer({
   );
 }
 
-function Aside(
-  { title, drawer, children }: {
-    title: string;
-    drawer: string;
-    children: ComponentChildren;
-  },
-) {
+function Aside({
+  title,
+  drawer,
+  children,
+}: {
+  title: string;
+  drawer: string;
+  children: ComponentChildren;
+}) {
   return (
     <div
       data-aside
@@ -117,11 +116,7 @@ function Aside(
               {drawer == "sidemenu-drawer" && (
                 <img src={`/image/logo-drawer.png`} loading={"lazy"} />
               )}
-              {drawer != "sidemenu-drawer" && (
-                <>
-                  {title}
-                </>
-              )}
+              {drawer != "sidemenu-drawer" && <>{title}</>}
             </span>
           </h1>
           <label for={drawer} aria-label="X" class="btn btn-ghost text-white">
@@ -152,7 +147,9 @@ function Aside(
             >
               <Icon id="duvidas" class="h-8 w-8" />
               <p>
-                Dúvidas<br />Frequentes
+                Dúvidas
+                <br />
+                Frequentes
               </p>
             </a>
 

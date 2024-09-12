@@ -51,12 +51,21 @@ function FilterValues({ key, values }: FilterToggle) {
   const avatars = key === "cor";
   const flexDirection = avatars ? "flex-row items-center" : "flex-col";
 
+  const newFilters: FilterToggleValue[] = [];
+  values.forEach((value) => {
+    const filter = newFilters.find((filter) => filter.value === value.value);
+    if (filter) {
+      filter.quantity += value.quantity;
+    } else {
+      newFilters.push(value);
+    }
+  });
+
   return (
     <ul class={clx(`flex flex-wrap gap-2`, flexDirection)}>
-      {values.map((item) => {
+      {newFilters.map((item) => {
         if (key === "price") {
           const range = parseRange(item.value);
-          // console.log(values)
 
           return range && (
             <>

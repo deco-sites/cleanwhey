@@ -10,7 +10,7 @@ import { useSendEvent } from "../../sdk/useSendEvent.ts";
 import WishlistButton from "../wishlist/WishlistButton.tsx";
 import AddToCartButton from "./AddToCartButton.tsx";
 // import { Ring } from "./ProductVariantSelector.tsx";
-// import { useId } from "../../sdk/useId.ts";
+import { useId } from "../../sdk/useId.ts";
 import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 import { formatPix } from "../../sdk/formatPix.tsx";
 
@@ -45,17 +45,25 @@ function ProductCard({
   pix,
   class: _class,
 }: Props) {
-  // const id = useId();
+  const id = useId();
 
   const { url, image: images, offers, isVariantOf } = product;
-  // const hasVariant = isVariantOf?.hasVariant ?? [];
+
+  //const hasVariant = isVariantOf?.hasVariant ?? [];
+
   const title = isVariantOf?.name ?? product.name;
   const [front, back] = images ?? [];
 
-  const { listPrice, price, seller = "1", availability, installments } =
-    useOffer(offers);
+  const {
+    listPrice,
+    price,
+    seller = "1",
+    availability,
+    installments,
+  } = useOffer(offers);
   const inStock = availability === "https://schema.org/InStock";
-  // const possibilities = useVariantPossibilities(hasVariant, product);
+  //const possibilities = useVariantPossibilities(hasVariant, product);
+
   // const firstSkuVariations = Object.entries(possibilities)[0];
   // const variants = Object.entries(firstSkuVariations[1] ?? {});
   const relativeUrl = relative(url);
@@ -67,23 +75,23 @@ function ProductCard({
 
   const item = mapProductToAnalyticsItem({ product, price, listPrice, index });
 
-  {/* Add click event to dataLayer */}
+  {
+    /* Add click event to dataLayer */
+  }
   const event = useSendEvent({
-    on: "click",
-    event: {
-      name: "select_item" as const,
-      params: {
-        item_list_name: itemListName,
-        items: [item],
-      },
+    params: {
+      item_list_name: itemListName,
+      items: [item],
     },
   });
 
-  const variantName = title?.toLowerCase().replace("cor:", "").replace(
-    "tamanho:",
-    "",
-  )
-    .replace(/sabor:[^;]*/g, "").replace(/;/g, "").trim();
+  const variantName = title
+    ?.toLowerCase()
+    .replace("cor:", "")
+    .replace("tamanho:", "")
+    .replace(/sabor:[^;]*/g, "")
+    .replace(/;/g, "")
+    .trim();
 
   const off = listPrice && price && listPrice != price &&
     (listPrice * 100) / price;
@@ -95,12 +103,10 @@ function ProductCard({
         "card card-compact group bg-white hover:bg-[#F7EDDF] text-sm grid grid-rows-[auto_1fr_auto]",
         _class,
       )}
+      id={id}
     >
       <figure
-        class={clx(
-          "relative bg-base-200",
-          "rounded border border-transparent",
-        )}
+        class={clx("relative bg-base-200", "rounded border border-transparent")}
         style={{ aspectRatio: ASPECT_RATIO }}
       >
         {/* Product Images */}
@@ -151,6 +157,7 @@ function ProductCard({
         {/* Wishlist button */}
         <div class="absolute top-0 left-0 w-full flex items-center justify-between">
           {/* Discounts */}
+
           {inStock && off && off != 0
             ? (
               <span
@@ -193,10 +200,12 @@ function ProductCard({
             ? title?.toLowerCase()
             : title?.toLowerCase() == variantName
             ? `${title?.toLowerCase()} - ${
-              productName?.toLowerCase()?.replace("tamanho:", "").replace(
-                /sabor:[^;]*/g,
-                "",
-              ).replace(";", "").replace("cor:", "")
+              productName
+                ?.toLowerCase()
+                ?.replace("tamanho:", "")
+                .replace(/sabor:[^;]*/g, "")
+                .replace(";", "")
+                .replace("cor:", "")
             }`
             : `${productName?.toLowerCase()} ${
               variantName?.toLowerCase()

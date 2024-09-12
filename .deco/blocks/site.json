@@ -38,6 +38,15 @@
   ],
   "routes": [
     {
+      "__resolveType": "vtex/loaders/proxy.ts",
+      "extraPathsToProxy": [],
+      "includeSiteMap": [],
+      "excludePathsFromDecoSiteMap": [],
+      "includeScriptsToHead": {
+        "includes": []
+      }
+    },
+    {
       "__resolveType": "website/loaders/pages.ts"
     },
     {

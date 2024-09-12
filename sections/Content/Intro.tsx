@@ -20,7 +20,7 @@ export default function Intro(
 ) {
   return (
     <section class="bg-base-100">
-      <div class="xl:container xl:mx-auto mx-5 md:mx-10 py-10 md:py-24">
+      <div class="xl:container xl:mx-auto mx-5 md:mx-10 py-10 md:py-16">
         <div
           class={`flex flex-col gap-6 ${ALIGNMENT_TEXT[alignment ?? "Left"]}`}
         >

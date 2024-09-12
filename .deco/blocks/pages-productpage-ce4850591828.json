@@ -780,22 +780,20 @@
               }
             },
             {
-              "__resolveType": "site/sections/ProductPage/DescriptionFullbanner.tsx",
-              "banner": {
-                "desktop": {
-                  "alt": "Fullbanner",
-                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/f70284c0-bd1a-4a63-b673-b9bcba8461ae"
+              "__resolveType": "website/sections/Rendering/Lazy.tsx",
+              "section": {
+                "__resolveType": "site/sections/ProductPage/DescriptionFullbanner.tsx",
+                "banner": {
+                  "desktop": {
+                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/f70284c0-bd1a-4a63-b673-b9bcba8461ae",
+                    "alt": "Coqueteleira"
+                  },
+                  "mobile": {
+                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/da9405f4-17a5-430c-8777-599ca6c80b17",
+                    "alt": "Coqueteleira"
+                  }
                 },
-                "mobile": {
-                  "alt": "Fullbanner",
-                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/da9405f4-17a5-430c-8777-599ca6c80b17",
-                  "width": 380,
-                  "height": 1087
-                }
-              },
-              "content": "<ul><li>Com alça desenvolvida ergonomicamente para transportar sua coqueleteleira para qualquer lugar ; </li><li>Sistema \"click\" de fechamdento que proporciona maior vedação sem vazar </li><li>Misturador em rede cônica, deixando sua bebiba mais homogênea </li><li>Protetor em bico que evita o contato dos dedos com o boca </li><li>Design SLIM que permite encaixe em qualquer console (carro, bike, esteira) </li><li>Fundo arredondado permite que o shake não fique preso no fundo, proporcionando mais higiene</li></ul>",
-              "rightCard": {
-                "content": "<ul><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li></ul>"
+                "content": "<ul><li>Com alça desenvolvida ergonomicamente para transportar sua coqueleteleira para qualquer lugar ;</li><li>Sistema \"click\" de fechamdento que proporciona maior vedação sem vazar</li><li>Misturador em rede cônica, deixando sua bebiba mais homogênea</li><li>Protetor em bico que evita o contato dos dedos com o boca</li><li>Design SLIM que permite encaixe em qualquer console (carro, bike, esteira)</li><li>Fundo arredondado permite que o shake não fique preso no fundo, proporcionando mais higiene</li></ul>"
               }
             }
           ],
@@ -1092,21 +1090,16 @@
             {
               "__resolveType": "site/sections/ProductPage/DescriptionFullbanner.tsx",
               "banner": {
-                "desktop": {
-                  "alt": "Fullbanner",
-                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/eb0b6ba7-925e-4c24-a499-f452e16ba59b"
-                },
                 "mobile": {
-                  "alt": "Fullbanner",
                   "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/0415895d-6b97-4920-ac95-67e19808ea85",
-                  "width": 380,
-                  "height": 1087
+                  "alt": "coqueteleira"
+                },
+                "desktop": {
+                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/eb0b6ba7-925e-4c24-a499-f452e16ba59b",
+                  "alt": "coqueteleira"
                 }
               },
-              "content": "<ul><li>Com alça desenvolvida ergonomicamente para transportar sua coqueleteleira para qualquer lugar ; </li><li>Sistema \"click\" de fechamdento que proporciona maior vedação sem vazar </li><li>Misturador em rede cônica, deixando sua bebiba mais homogênea </li><li>Protetor em bico que evita o contato dos dedos com o boca </li><li>Design SLIM que permite encaixe em qualquer console (carro, bike, esteira) </li><li>Fundo arredondado permite que o shake não fique preso no fundo, proporcionando mais higiene</li></ul>",
-              "rightCard": {
-                "content": "<ul><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li></ul>"
-              }
+              "content": "<ul><li>Com alça desenvolvida ergonomicamente para transportar sua coqueleteleira para qualquer lugar</li><li>Sistema \"click\" de fechamdento que proporciona maior vedação sem vazar</li><li>Misturador em rede cônica, deixando sua bebiba mais homogênea</li><li>Protetor em bico que evita o contato dos dedos com o boca</li><li>Design SLIM que permite encaixe em qualquer console (carro, bike, esteira)</li><li>Fundo arredondado permite que o shake não fique preso no fundo, proporcionando mais higiene</li></ul>"
             }
           ],
           "matcher": "/coqueteleira-clean-whey-pop-mix-premium/p"
@@ -1948,6 +1941,16 @@
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/6e0e058d-34dc-486d-b650-51218d2d4688",
                         "width": 730
                       }
+                    },
+                    "questions": [
+                      {
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 1 sachê em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>",
+                        "question": "Modo de Preparo"
+                      }
+                    ],
+                    "ingredients": {
+                      "content": " Proteína concentrada de soro de leite, e  aromas naturais. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN",
+                      "title": "Ingredientes"
                     }
                   },
                   "rule": {
@@ -1978,7 +1981,17 @@
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/056c3e74-af8f-4e22-9ba9-a7512f551919",
                         "width": 730
                       }
-                    }
+                    },
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\"> Proteína concentrada de soro de leite, e aromas naturais. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN</span></p>"
+                    },
+                    "questions": [
+                      {
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>",
+                        "question": "Modo de Preparo"
+                      }
+                    ]
                   },
                   "rule": {
                     "__resolveType": "website/matchers/queryString.ts",
@@ -2362,6 +2375,10 @@
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/938e4532-3fe5-4222-8968-5ac8b0bb3f80",
                         "width": 730
                       }
+                    },
+                    "ingredients": {
+                      "content": "<p><span data-sheets-root=\"1\">Proteína concentrada de soro de leite, cacau em pó alcalino, aroma idêntico ao natural de chocolate e aroma natural. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN</span></p>",
+                      "title": "Ingredientes"
                     }
                   },
                   "rule": {
@@ -2392,7 +2409,17 @@
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/2f2dbf98-0f34-4e97-afb5-43bea3d266c9",
                         "width": 730
                       }
-                    }
+                    },
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\">Proteína concentrada de soro de leite, cacau em pó alcalino, aroma idêntico ao natural de chocolate e aroma natural. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN</span></p>"
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de Preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 3 colheres de sopa em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>"
+                      }
+                    ]
                   },
                   "rule": {
                     "__resolveType": "website/matchers/queryString.ts",
@@ -2422,7 +2449,17 @@
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/19009385-3a7e-4405-aa43-c4c766303f04",
                         "width": 730
                       }
-                    }
+                    },
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\">Proteína concentrada de soro de leite, cacau em pó alcalino, aroma idêntico ao natural de chocolate e aroma natural. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN</span></p>"
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de Preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.<br></span></p>"
+                      }
+                    ]
                   },
                   "rule": {
                     "__resolveType": "website/matchers/queryString.ts",
@@ -2452,6 +2489,16 @@
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/5c3c5757-22e9-41f9-af29-86b8314c27b7",
                         "width": 730
                       }
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de Preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 3 colheres de sopa em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>"
+                      }
+                    ],
+                    "ingredients": {
+                      "content": "<p><span data-sheets-root=\"1\">Proteína concentrada de soro de leite, cacau em pó alcalino, aroma idêntico ao natural de chocolate e aroma natural. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN</span></p>",
+                      "title": "Ingredientes"
                     }
                   },
                   "rule": {
@@ -2482,6 +2529,16 @@
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/a46c8004-fad8-41ca-8b27-a8148c068cec",
                         "width": 730
                       }
+                    },
+                    "questions": [
+                      {
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.<br></span></p>",
+                        "question": "Modo de Preparo"
+                      }
+                    ],
+                    "ingredients": {
+                      "content": "<p><span data-sheets-root=\"1\">Proteína concentrada de soro de leite, cacau em pó alcalino, aroma idêntico ao natural de chocolate e aroma natural. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN</span></p>",
+                      "title": "Ingredientes"
                     }
                   },
                   "rule": {
@@ -3608,7 +3665,7 @@
                 "content": "<ul><li>&nbsp;Fabricado com a puríssima proteína da Glanbia Nutritionals Inc. (Avonlac 282)&nbsp;</li><li>&nbsp;Filtrado pelo método Cross Flow Microfiltration (CFM)&nbsp;</li><li>&nbsp;100% instantâneo • Dissolução fácil e rápida&nbsp;</li><li>&nbsp;Reduzidos teores de gordura e sódio&nbsp;</li><li>&nbsp;Mais fatores de crescimento (IGF-1) por dose&nbsp;</li><li>&nbsp;Mais imunoglobulinas (ajudam nosso sistema imune)&nbsp;</li><li>&nbsp;Sem adição de açúcares ou adoçantes&nbsp;</li><li>&nbsp;Sem conservantes, corantes ou edulcorantes&nbsp;</li><li>&nbsp;Sem glúten</li></ul>",
                 "rightCard": {
                   "title": "Ingredientes glanbia",
-                  "content": "<ul><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li><li>minim veniam, quis nostrud exercitation ullamco</li></ul>"
+                  "content": "<ul><li><span data-sheets-root=\"1\">Proteína concentrada Avonlac 282</span></li><li><span data-sheets-root=\"1\">Possui certificado antidoping</span></li><li><span data-sheets-root=\"1\">Produto Non-GMO (non-genetically modified), ou seja, livre de transgênicos </span></li><li><span data-sheets-root=\"1\">Livre dos hormônios rbST e rbGH (hormônio do crescimento artificial</span></li></ul>"
                 }
               }
             },
@@ -3653,6 +3710,46 @@
                     "table": {
                       "altText": "Tabela Nutricional",
                       "desktop": {
+                        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/a8400b38-b812-421d-a124-26049445f5dd/table1-(2).png",
+                        "width": 730
+                      },
+                      "mobile": {
+                        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/bdeea8ac-1af6-4c16-b7ef-8d7d0632f0ef/table1-(2).png",
+                        "width": 730
+                      }
+                    },
+                    "questions": [
+                      {
+                        "answer": "<div id=\"formula-bar-name-box-wrapper\" class=\"name-box-enabled formula-bar-with-name-box-wrapper\"><div id=\"formula-bar\" class=\"formula-bar formulabar-disabled\"><div id=\"t-formula-bar-input-container\"><div dir=\"ltr\"><div id=\"t-formula-bar-input\" spellcheck=\"false\"><p data-mce-caret=\"before\" data-mce-bogus=\"all\" style=\"top: 0px;\" data-mce-style=\"top: 0px;\"><br data-mce-bogus=\"1\"></p><div class=\"cell-input disabled-input\" dir=\"ltr\" role=\"combobox\" contenteditable=\"false\" aria-autocomplete=\"list\" data-mce-tabindex=\"0\">Diluir 2 dosadores (scoops) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista<br></div></div></div></div></div></div><div class=\"mce-visual-caret mce-visual-caret-before\" data-mce-bogus=\"all\" style=\"inset: 0px; width: 1px; height: 0px;\" data-mce-style=\"inset: 0px; width: 1px; height: 0px;\"></div>",
+                        "question": "Modo de preparo"
+                      }
+                    ],
+                    "ingredients": {
+                      "content": "<p><span data-sheets-root=\"1\"> Proteína concentrada de soro de leite, aroma idêntico ao natural e aroma natural. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN</span></p>",
+                      "title": "Ingredientes"
+                    }
+                  },
+                  "rule": {
+                    "__resolveType": "website/matchers/queryString.ts",
+                    "conditions": [
+                      {
+                        "case": {
+                          "type": "Equals",
+                          "value": "19"
+                        },
+                        "param": "skuId"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": {
+                    "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
+                    "id": "nutritional-information",
+                    "title": "Tabela Nutricional",
+                    "table": {
+                      "altText": "Tabela Nutricional",
+                      "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/8dd347f7-04ae-4706-9544-2af4e4c65579",
                         "width": 730
                       },
@@ -3660,6 +3757,16 @@
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/cef0be5b-27c6-4e33-838a-c1b6dee9840d",
                         "width": 730
                       }
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>"
+                      }
+                    ],
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\"> Proteína concentrada de soro de leite, aroma idêntico ao natural e aroma natural. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN</span></p>"
                     }
                   },
                   "rule": {
@@ -3683,13 +3790,23 @@
                     "table": {
                       "altText": "Tabela Nutricional",
                       "desktop": {
-                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c1accb52-a03d-4692-8880-8237c0ba06d6",
+                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/8cf75fd2-831a-4837-8cb7-82e89bcff8df",
                         "width": 730
                       },
                       "mobile": {
-                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/a9cf92b3-f5d4-4725-b579-ea3f768fad67",
+                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/b36ef50c-1a21-4d3f-a2ec-5e3a764820d3",
                         "width": 730
                       }
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>"
+                      }
+                    ],
+                    "ingredients": {
+                      "content": "<p><span data-sheets-root=\"1\"> Proteína concentrada de soro de leite, aroma idêntico ao natural e aroma natural. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN</span></p>",
+                      "title": "Ingredientes"
                     }
                   },
                   "rule": {
@@ -3698,7 +3815,7 @@
                       {
                         "case": {
                           "type": "Equals",
-                          "value": "20"
+                          "value": "21"
                         },
                         "param": "skuId"
                       }
@@ -3720,6 +3837,16 @@
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/b36ef50c-1a21-4d3f-a2ec-5e3a764820d3",
                         "width": 730
                       }
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 3 colheres de sopa em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>"
+                      }
+                    ],
+                    "ingredients": {
+                      "content": "<p><span data-sheets-root=\"1\"> Proteína concentrada de soro de leite, aroma idêntico ao natural e aroma natural. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN</span></p>",
+                      "title": "Ingredientes"
                     }
                   },
                   "rule": {
@@ -3728,7 +3855,7 @@
                       {
                         "case": {
                           "type": "Equals",
-                          "value": "21"
+                          "value": "20"
                         },
                         "param": "skuId"
                       }
@@ -4074,96 +4201,6 @@
             {
               "__resolveType": "website/flags/multivariate/section.ts",
               "variants": [
-                {
-                  "value": {
-                    "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
-                    "id": "nutritional-information",
-                    "title": "Tabela Nutricional",
-                    "table": {
-                      "altText": "Tabela Nutricional",
-                      "desktop": {
-                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/dbcda985-3ceb-4c4d-9023-7a2e3951bc6e",
-                        "width": 730
-                      },
-                      "mobile": {
-                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/169ef312-4b74-4b21-9a4c-f6bc5d03f86b",
-                        "width": 730
-                      }
-                    }
-                  },
-                  "rule": {
-                    "__resolveType": "website/matchers/queryString.ts",
-                    "conditions": [
-                      {
-                        "case": {
-                          "type": "Equals",
-                          "value": "49"
-                        },
-                        "param": "skuId"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "value": {
-                    "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
-                    "id": "nutritional-information",
-                    "title": "Tabela Nutricional",
-                    "table": {
-                      "altText": "Tabela Nutricional",
-                      "desktop": {
-                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/e6a407f6-abe1-44b5-90e2-1a1dd3b6abf1",
-                        "width": 730
-                      },
-                      "mobile": {
-                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/6444294f-b508-4007-984f-b3df4da284c8",
-                        "width": 730
-                      }
-                    }
-                  },
-                  "rule": {
-                    "__resolveType": "website/matchers/queryString.ts",
-                    "conditions": [
-                      {
-                        "case": {
-                          "type": "Equals",
-                          "value": "50"
-                        },
-                        "param": "skuId"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "value": {
-                    "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
-                    "id": "nutritional-information",
-                    "title": "Tabela Nutricional",
-                    "table": {
-                      "altText": "Tabela Nutricional",
-                      "desktop": {
-                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/6b5480d2-512a-4df3-83da-1253bf78df50",
-                        "width": 730
-                      },
-                      "mobile": {
-                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/4a00aa4d-6fe5-441d-82f4-0cfb326256ee",
-                        "width": 730
-                      }
-                    }
-                  },
-                  "rule": {
-                    "__resolveType": "website/matchers/queryString.ts",
-                    "conditions": [
-                      {
-                        "case": {
-                          "type": "Equals",
-                          "value": "52"
-                        },
-                        "param": "skuId"
-                      }
-                    ]
-                  }
-                },
                 {
                   "value": {
                     "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
@@ -4533,6 +4570,16 @@
                         "width": 730,
                         "height": 782
                       }
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de Preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>"
+                      }
+                    ],
+                    "ingredients": {
+                      "content": "<p><br data-mce-bogus=\"1\"></p>",
+                      "title": "Ingredientes"
                     }
                   },
                   "rule": {
@@ -4565,7 +4612,17 @@
                         "width": 730,
                         "height": 782
                       }
-                    }
+                    },
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\">Proteína hidrolisada do soro do leite instantânea (WPH), cacau alcalino em pó e aromas idênticos aos naturais. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,3g em 100g).<br>ALÉRGICOS: CONTÉM DERIVADOS DO LEITE E SOJA (LECITINA DE SOJA*).</span></p>"
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de Preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>"
+                      }
+                    ]
                   },
                   "rule": {
                     "__resolveType": "website/matchers/queryString.ts",
@@ -4597,7 +4654,17 @@
                         "width": 730,
                         "height": 782
                       }
-                    }
+                    },
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\">Proteína hidrolisada do soro do leite instantânea (WPH), cacau alcalino em pó e aromas idênticos aos naturais. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,3g em 100g).<br>ALÉRGICOS: CONTÉM DERIVADOS DO LEITE E SOJA (LECITINA DE SOJA*).</span></p>"
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de Preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>"
+                      }
+                    ]
                   },
                   "rule": {
                     "__resolveType": "website/matchers/queryString.ts",
@@ -5409,25 +5476,28 @@
               "title": "<p><strong><span style=\"font-size: 24pt; color: rgb(161, 166, 183);\" data-mce-style=\"font-size: 24pt; color: rgb(161, 166, 183);\">Clean Whey® Tasty Isolate água de coco se diferencia por utilizar uma tecnologia capaz de adoçar sem usar qualquer tipo de adoçante</span></strong></p>"
             },
             {
-              "__resolveType": "site/sections/ProductPage/DescriptionFullbanner.tsx",
-              "banner": {
-                "desktop": {
-                  "alt": "Fullbanner",
-                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/e83ef2f8-5dfd-4cd5-ad5b-30563dec1998"
+              "__resolveType": "website/sections/Rendering/Lazy.tsx",
+              "section": {
+                "__resolveType": "site/sections/ProductPage/DescriptionFullbanner.tsx",
+                "banner": {
+                  "desktop": {
+                    "alt": "Fullbanner",
+                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/e83ef2f8-5dfd-4cd5-ad5b-30563dec1998"
+                  },
+                  "mobile": {
+                    "alt": "Fullbanner",
+                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/72169b0a-1d63-4c1f-9ebc-2598be16e9c2",
+                    "width": 380,
+                    "height": 1087
+                  }
                 },
-                "mobile": {
-                  "alt": "Fullbanner",
-                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/72169b0a-1d63-4c1f-9ebc-2598be16e9c2",
-                  "width": 380,
-                  "height": 1087
+                "title": "Faça a escolha certa você também!",
+                "subtitle": "Confira os diferenciais que te proporcionam uma qualidade superior",
+                "content": "<ul><li><span data-sheets-root=\"1\">100% instantâneo</span></li><li><span data-sheets-root=\"1\">Dissolução fácil e rápida</span></li><li><span data-sheets-root=\"1\">Reduzidos teores de gordura, carboidrato e sódio</span></li><li><span data-sheets-root=\"1\">Baixíssimos teores de lactose: 0,6g a cada 100g de produto</span></li><li><span data-sheets-root=\"1\">Sem adição de açúcares ou adoçantes</span></li><li><span data-sheets-root=\"1\">Sem conservantes, corantes ou edulcorantes</span></li><li><span data-sheets-root=\"1\">Sem glúten</span></li></ul>",
+                "rightCard": {
+                  "title": "Ingredientes glanbia",
+                  "content": "<ul><li>Proteína isolada Provon 292&nbsp;</li><li>&nbsp;Possui certificado antidoping </li><li>Produto Non-GMO (non-genetically modified), ou seja, livre de transgênicos&nbsp;</li><li>&nbsp;Livre dos hormônios rbST e rbGH (hormônio do crescimento artificial)&nbsp;</li><li>&nbsp;Alto valor biológico: 22% de glicomacropeptídeo</li></ul>"
                 }
-              },
-              "title": "Faça a escolha certa você também!",
-              "subtitle": "Confira os diferenciais que te proporcionam uma qualidade superior",
-              "content": "<ul><li>100% instantâneo </li><li>Dissolução fácil e rápida</li><li>Reduzidos teores de gordura, carboidrato e sódio </li><li>Baixíssimos teores de lactose: 0,6g a cada 100g de produto </li><li>Sem adição de açúcares ou adoçantes </li><li>Sem conservantes, corantes ou edulcorantes </li><li>Sem glúten</li></ul>",
-              "rightCard": {
-                "title": "Ingredientes glanbia",
-                "content": "<ul><li>Proteína isolada Provon 292 </li><li>Possui certificado antidoping </li><li>Produto Non-GMO (non-genetically modified), ou seja, livre de transgênicos </li><li>Livre dos hormônios rbST e rbGH (hormônio do crescimento artificial)</li><li>Alto valor biológico: 22% de glicomacropeptídeo</li></ul>"
               }
             },
             {
@@ -5448,7 +5518,17 @@
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/28cf8793-685f-4e3d-b9ea-974ce3a52268",
                         "width": 730
                       }
-                    }
+                    },
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\"> Proteína concentrada de soro de leite, aroma idêntico ao natural e aroma natural. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN</span></p>"
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>"
+                      }
+                    ]
                   },
                   "rule": {
                     "__resolveType": "website/matchers/queryString.ts",
@@ -5487,7 +5567,7 @@
                     "questions": [
                       {
                         "question": "Modo de preparo",
-                        "answer": "<p>Diluir 2 dosadores (scoop) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</p>"
+                        "answer": "<p>Diluir 1 sachê em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</p>"
                       }
                     ]
                   },
@@ -5864,7 +5944,17 @@
                         "width": 730,
                         "height": 782
                       }
-                    }
+                    },
+                    "ingredients": {
+                      "content": "<p><span data-sheets-root=\"1\">Proteína Isolada do Soro do Leite (Provon® 292), cacau alcalino em pó e aromas idênticos aos naturais. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,6g em 100g).<br><br>ALÉRGICOS: CONTÉM DERIVADOS DO LEITE E SOJA (LECITINA DE SOJA*). *Ingrediente utilizado no processo de instantaneização da proteína do soro do leite.</span></p>",
+                      "title": "Ingredientes"
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de Preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 3 colheres de sopa em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</span></p>"
+                      }
+                    ]
                   },
                   "rule": {
                     "__resolveType": "website/matchers/queryString.ts",
@@ -5896,6 +5986,16 @@
                         "width": 730,
                         "height": 782
                       }
+                    },
+                    "questions": [
+                      {
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</span></p>",
+                        "question": "Modo de Preparo"
+                      }
+                    ],
+                    "ingredients": {
+                      "content": "<p><span data-sheets-root=\"1\">Proteína Isolada do Soro do Leite (Provon® 292), cacau alcalino em pó e aromas idênticos aos naturais. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,6g em 100g).<br><br>ALÉRGICOS: CONTÉM DERIVADOS DO LEITE E SOJA (LECITINA DE SOJA*). *Ingrediente utilizado no processo de instantaneização da proteína do soro do leite.</span></p>",
+                      "title": "Ingredientes"
                     }
                   },
                   "rule": {
@@ -5928,6 +6028,16 @@
                         "width": 730,
                         "height": 782
                       }
+                    },
+                    "questions": [
+                      {
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 3 colheres de sopa em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</span></p>",
+                        "question": "Modo de Preparo"
+                      }
+                    ],
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\">Proteína Isolada do Soro do Leite (Provon® 292), cacau alcalino em pó e aromas idênticos aos naturais. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,6g em 100g).<br><br>ALÉRGICOS: CONTÉM DERIVADOS DO LEITE E SOJA (LECITINA DE SOJA*). *Ingrediente utilizado no processo de instantaneização da proteína do soro do leite.</span></p>"
                     }
                   },
                   "rule": {
@@ -5960,7 +6070,17 @@
                         "width": 730,
                         "height": 782
                       }
-                    }
+                    },
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\">Proteína Isolada do Soro do Leite (Provon® 292), cacau alcalino em pó e aromas idênticos aos naturais. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,6g em 100g).<br><br>ALÉRGICOS: CONTÉM DERIVADOS DO LEITE E SOJA (LECITINA DE SOJA*). *Ingrediente utilizado no processo de instantaneização da proteína do soro do leite.</span></p>"
+                    },
+                    "questions": [
+                      {
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</span></p>",
+                        "question": "Modo de Preparo"
+                      }
+                    ]
                   },
                   "rule": {
                     "__resolveType": "website/matchers/queryString.ts",
@@ -7140,6 +7260,16 @@
                         "width": 730,
                         "height": 782
                       }
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de Preparo",
+                        "answer": "Diluir  3  colheres de sopa em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista."
+                      }
+                    ],
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\">Proteína Isolada do Soro do Leite (Provon® 292) e aromas naturais. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,6g em 100g). <br>ALÉRGICOS: CONTÉM DERIVADOS DO LEITE E SOJA (LECITINA DE SOJA*). PODE CONTER DERIVADOS DO OVO. <br>*Ingrediente utilizado no processo de instantaneização da proteína do soro do leite. </span></p>"
                     }
                   },
                   "rule": {
@@ -7172,7 +7302,17 @@
                         "width": 730,
                         "height": 782
                       }
-                    }
+                    },
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "Proteína Isolada do Soro do Leite (Provon® 292) e aromas naturais. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,6g em 100g).ALÉRGICOS: CONTÉM DERIVADOS DO LEITE E SOJA (LECITINA DE SOJA*). PODE CONTER DERIVADOS DO OVO.*Ingrediente utilizado no processo de instantaneização da proteína do soro do leite. "
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de Preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoop) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</span></p>"
+                      }
+                    ]
                   },
                   "rule": {
                     "__resolveType": "website/matchers/queryString.ts",
@@ -7204,6 +7344,16 @@
                         "width": 730,
                         "height": 782
                       }
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de Preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 3 colheres de sopa em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</span></p>"
+                      }
+                    ],
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\">Proteína Isolada do Soro do Leite (Provon® 292) e aromas naturais. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,6g em 100g). <br>ALÉRGICOS: CONTÉM DERIVADOS DO LEITE E SOJA (LECITINA DE SOJA*). PODE CONTER DERIVADOS DO OVO. <br>*Ingrediente utilizado no processo de instantaneização da proteína do soro do leite. </span></p>"
                     }
                   },
                   "rule": {
@@ -7236,6 +7386,16 @@
                         "width": 730,
                         "height": 782
                       }
+                    },
+                    "questions": [
+                      {
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoop) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</span></p>",
+                        "question": "Modo de Preparo"
+                      }
+                    ],
+                    "ingredients": {
+                      "content": "<p><span data-sheets-root=\"1\">Proteína Isolada do Soro do Leite (Provon® 292) e aromas naturais. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,6g em 100g). <br>ALÉRGICOS: CONTÉM DERIVADOS DO LEITE E SOJA (LECITINA DE SOJA*). PODE CONTER DERIVADOS DO OVO. <br>*Ingrediente utilizado no processo de instantaneização da proteína do soro do leite. </span></p>",
+                      "title": "Ingredientes"
                     }
                   },
                   "rule": {
@@ -7958,7 +8118,52 @@
                 {
                   "value": {
                     "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
-                    "id": "nutritional-information",
+                    "table": {
+                      "desktop": {
+                        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/91fee9f8-88a3-4500-97a6-4575542591fd/table1-(3).png",
+                        "width": 73,
+                        "height": 782
+                      },
+                      "mobile": {
+                        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/ee78a9e0-6053-41bd-90d9-69cdedef5ddd/table1-(3).png",
+                        "width": 730,
+                        "height": 782
+                      },
+                      "altText": "Tabela"
+                    },
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "Proteína Hidrolisada do Soro do leite - WPH (Hydrovon 195). NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,3g em 100g) ALÉRGICOS: CONTÉM DERIVADOS DO LEITE DE VACA E DERIVADOS DE SOJA (LECITINA DE SOJA)."
+                    },
+                    "nutritionalPromotionImage": {
+                      "desktop": {},
+                      "mobile": {},
+                      "altText": ""
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de Preparo",
+                        "answer": "Diluir 15g (3 scoops) em 150ml de água ou conforme orientação de médico ou nutricionista."
+                      }
+                    ],
+                    "title": "Tabela Nutricional"
+                  },
+                  "rule": {
+                    "__resolveType": "website/matchers/queryString.ts",
+                    "conditions": [
+                      {
+                        "case": {
+                          "type": "Equals",
+                          "value": "66"
+                        },
+                        "param": "skuId"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": {
+                    "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
                     "title": "Tabela Nutricional",
                     "table": {
                       "altText": "Tabela Nutricional",
@@ -7971,10 +8176,30 @@
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/6bf0d04c-8373-40e8-94a3-1d62466896ec",
                         "width": 730
                       }
-                    }
+                    },
+                    "questions": [
+                      {
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 15g (1 sachê) em 150ml de água ou conforme orientação de médico ou nutricionista. </span></p>",
+                        "question": "Modo de Preparo"
+                      }
+                    ],
+                    "ingredients": {
+                      "content": "<p>Proteína Hidrolisada do Soro do leite - WPH (Hydrovon 195). NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,3g em 100g) ALÉRGICOS: CONTÉM DERIVADOS DO LEITE DE VACA E DERIVADOS DE SOJA (LECITINA DE SOJA).</p>",
+                      "title": "Ingredientes"
+                    },
+                    "id": "nutritional-information"
                   },
                   "rule": {
-                    "__resolveType": "website/matchers/always.ts"
+                    "__resolveType": "website/matchers/queryString.ts",
+                    "conditions": [
+                      {
+                        "case": {
+                          "type": "Equals",
+                          "value": "65"
+                        },
+                        "param": "skuId"
+                      }
+                    ]
                   }
                 }
               ]

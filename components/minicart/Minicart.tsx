@@ -4,8 +4,9 @@ import { MINICART_DRAWER_ID, MINICART_FORM_ID } from "../../constants.ts";
 import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 import { useComponent } from "../../sections/Component.tsx";
-// import Coupon from "./Coupon.tsx";
-// import FreeShippingProgressBar from "./FreeShippingProgressBar.tsx";
+//import Coupon from "./Coupon.tsx";
+//import FreeShippingProgressBar from "./FreeShippingProgressBar.tsx";
+
 import CartItem, { Item } from "./Item.tsx";
 
 export interface Minicart {
@@ -57,10 +58,12 @@ const onLoad = (formID: string) => {
 
       // Disable addToCart button interactivity
       document.querySelectorAll("div[data-cart-item]").forEach((container) => {
-        container?.querySelectorAll("button")
-          .forEach((node) => node.disabled = true);
-        container?.querySelectorAll("input")
-          .forEach((node) => node.disabled = true);
+        container
+          ?.querySelectorAll("button")
+          .forEach((node) => (node.disabled = true));
+        container
+          ?.querySelectorAll("input")
+          .forEach((node) => (node.disabled = true));
       });
     },
   );
@@ -74,30 +77,24 @@ const sendBeginCheckoutEvent = () => {
 };
 
 const onClick = () => {
-  const miniDrawer = document.getElementById("minicart-drawer") as
-    | HTMLInputElement
-    | null;
+  const miniDrawer = document.getElementById(
+    "minicart-drawer",
+  ) as HTMLInputElement | null;
   if (miniDrawer) {
     miniDrawer.checked = false;
   }
 };
 
-export const action = async (
-  _props: unknown,
-  req: Request,
-  ctx: AppContext,
-) =>
+export const action = async (_props: unknown, req: Request, ctx: AppContext) =>
   req.method === "PATCH"
-    ? ({ cart: await ctx.invoke("site/loaders/minicart.ts") }) // error fallback
-    : ({ cart: await ctx.invoke("site/actions/minicart/submit.ts") });
+    ? { cart: await ctx.invoke("site/loaders/minicart.ts") } // error fallback
+    : { cart: await ctx.invoke("site/actions/minicart/submit.ts") };
 
 export function ErrorFallback() {
   return (
     <div class="flex flex-col flex-grow justify-center items-center overflow-hidden w-full gap-2">
       <div class="flex flex-col gap-1 p-6 justify-center items-center">
-        <span class="font-semibold">
-          Error while updating cart
-        </span>
+        <span class="font-semibold">Error while updating cart</span>
         <span class="text-sm text-center">
           Click in the button below to retry or refresh the page
         </span>
@@ -131,7 +128,9 @@ export default function Cart({
       checkoutHref,
     },
   },
-}: { cart: Minicart }) {
+}: {
+  cart: Minicart;
+}) {
   const count = items.length;
 
   return (

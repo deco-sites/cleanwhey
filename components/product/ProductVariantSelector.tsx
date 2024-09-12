@@ -9,18 +9,18 @@ interface Props {
 }
 
 const colors: Record<string, string | undefined> = {
-  "White": "white",
-  "Black": "black",
-  "Gray": "gray",
-  "Blue": "#99CCFF",
-  "Green": "#aad1b5",
-  "Yellow": "#F1E8B0",
-  "DarkBlue": "#4E6E95",
-  "LightBlue": "#bedae4",
-  "DarkGreen": "#446746",
-  "LightGreen": "#aad1b5",
-  "DarkYellow": "#c6b343",
-  "LightYellow": "#F1E8B0",
+  White: "white",
+  Black: "black",
+  Gray: "gray",
+  Blue: "#99CCFF",
+  Green: "#aad1b5",
+  Yellow: "#F1E8B0",
+  DarkBlue: "#4E6E95",
+  LightBlue: "#bedae4",
+  DarkGreen: "#446746",
+  LightGreen: "#aad1b5",
+  DarkYellow: "#c6b343",
+  LightYellow: "#F1E8B0",
 };
 
 // const useStyles = (value: string, checked: boolean) => {
@@ -39,14 +39,17 @@ const colors: Record<string, string | undefined> = {
 //   );
 // };
 
-export const Ring = (
-  { value, checked = false, class: _class, image }: {
-    value: string;
-    checked?: boolean;
-    class?: string;
-    image?: string;
-  },
-) => {
+export const Ring = ({
+  value,
+  checked = false,
+  class: _class,
+  image,
+}: {
+  value: string;
+  checked?: boolean;
+  class?: string;
+  image?: string;
+}) => {
   const color = colors[value];
   // const styles = clx(useStyles(value, checked), _class);
 
@@ -68,24 +71,28 @@ export const Ring = (
   );
 };
 
-export const Box = (
-  { value, checked = false, class: _class }: {
-    value: string;
-    checked?: boolean;
-    class?: string;
-  },
-) => {
+export const Box = ({
+  value,
+  checked = false,
+  class: _class,
+}: {
+  value: string;
+  checked?: boolean;
+  class?: string;
+}) => {
+  const upperText = value.toUpperCase();
+
   return (
     <div
       class={`rounded-lg min-w-[60px] py-1 px-4
       ${checked ? "bg-gray-400 text-white" : "bg-gray-100 text-gray-300"}`}
     >
       <span
-        class={`font-bold text-xs text-center ${
+        class={`font-bold text-xs text-center  ${
           checked ? "text-white" : "text-grat-300"
         }`}
       >
-        {value}
+        {upperText.replace(/G$/, "g")}
       </span>
     </div>
   );
@@ -98,8 +105,8 @@ function VariantSelector({ product }: Props) {
   const tastes = product.isSimilarTo;
   const relativeUrl = relative(url);
   const id = useId();
-  const productTaste = product.additionalProperty?.find((item) =>
-    item.name == "SABOR"
+  const productTaste = product.additionalProperty?.find(
+    (item) => item.name == "SABOR",
   );
 
   return (
@@ -130,7 +137,9 @@ function VariantSelector({ product }: Props) {
         {tastes?.map((item) => {
           const relativeLink = relative(item.url);
           const filteredProperties = item.isVariantOf?.additionalProperty
-            .filter(({ name }) => name === "Nome nos similares");
+            .filter(
+              ({ name }) => name === "Nome nos similares",
+            );
           return (
             <li class="flex flex-col gap-2 min-w-[80px]">
               <label
@@ -150,14 +159,15 @@ function VariantSelector({ product }: Props) {
                     "transition-opacity",
                   )}
                 >
-                  {item.image && item.image?.length > 0 && filteredProperties &&
-                    (
-                      <Ring
-                        value={filteredProperties[0]?.value || "Sabor"}
-                        image={item?.image[0]?.url}
-                        checked={false}
-                      />
-                    )}
+                  {item.image &&
+                    item.image?.length > 0 &&
+                    filteredProperties && (
+                    <Ring
+                      value={filteredProperties[0]?.value || "Sabor"}
+                      image={item?.image[0]?.url}
+                      checked={false}
+                    />
+                  )}
                 </div>
                 {/* Loading spinner */}
                 <div

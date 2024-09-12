@@ -1,9 +1,4 @@
-import type {
-  // ProductGroup,
-  // ProductLeaf,
-  ProductListingPage,
-  // PropertyValue,
-} from "apps/commerce/types.ts";
+import type { ProductListingPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { useScript } from "deco/hooks/useScript.ts";
 import { useSection } from "deco/hooks/useSection.ts";
@@ -213,8 +208,8 @@ function PageResult(props: SectionProps<typeof loader>) {
 
   for (let i = 1; i <= totalPages; i++) {
     links.push({
-      "label": i,
-      "href": `${pageFormated}page=${i}`,
+      label: i,
+      href: `${pageFormated}page=${i}`,
     });
   }
 
@@ -232,9 +227,7 @@ function PageResult(props: SectionProps<typeof loader>) {
           hx-swap="outerHTML show:parent:top"
           hx-get={partialPrev}
         >
-          <span class="inline [.htmx-request_&]:hidden">
-            Show Less
-          </span>
+          <span class="inline [.htmx-request_&]:hidden">Show Less</span>
           <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
         </a>
       </div>
@@ -263,8 +256,8 @@ function PageResult(props: SectionProps<typeof loader>) {
         {products?.map((product, i) => {
           const { isVariantOf } = product;
           const hasVariant = isVariantOf?.hasVariant ?? [];
-          const isAcessory = product.additionalProperty?.filter((item) =>
-            item.name == "category" && item.value == "Acessórios"
+          const isAcessory = product.additionalProperty?.filter(
+            (item) => item.name == "category" && item.value == "Acessórios",
           );
 
           {
@@ -295,6 +288,7 @@ function PageResult(props: SectionProps<typeof loader>) {
                   shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
                   pix={pix}
                 />
+                //Essa parte do codigo quebra os filtros Diego 08/09 filtrar variantes tbm
               );
             }
             return null;
@@ -315,9 +309,7 @@ function PageResult(props: SectionProps<typeof loader>) {
                 hx-swap="outerHTML show:parent:top"
                 hx-get={partialNext}
               >
-                <span class="inline [.htmx-request_&]:hidden">
-                  Show More
-                </span>
+                <span class="inline [.htmx-request_&]:hidden">Show More</span>
                 <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
               </a>
             </div>
@@ -356,9 +348,7 @@ function PageResult(props: SectionProps<typeof loader>) {
                         : "btn-ghost"
                         } join-item`}
                     >
-                      <span>
-                        {link.label}
-                      </span>
+                      <span>{link.label}</span>
                     </a>
                   );
                 })}
@@ -400,9 +390,9 @@ function PageResult(props: SectionProps<typeof loader>) {
 }
 
 const setPageQuerystring = (page: string, id: string) => {
-  const element = document.getElementById(id)?.querySelector(
-    "[data-product-list]",
-  );
+  const element = document
+    .getElementById(id)
+    ?.querySelector("[data-product-list]");
 
   if (!element) {
     return;
@@ -450,7 +440,7 @@ function Result(props: SectionProps<typeof loader>) {
         item_list_id: breadcrumb.itemListElement?.at(-1)?.item,
         items: page.products?.map((product, index) =>
           mapProductToAnalyticsItem({
-            ...(useOffer(product.offers)),
+            ...useOffer(product.offers),
             index: offset + index,
             product,
             breadcrumbList: page.breadcrumb,
@@ -552,9 +542,7 @@ function Result(props: SectionProps<typeof loader>) {
                   {device === "desktop" && (
                     <div class="flex justify-between items-center">
                       {results}
-                      <div>
-                        {sortBy}
-                      </div>
+                      <div>{sortBy}</div>
                     </div>
                   )}
                   <PageResult {...props} />
@@ -578,10 +566,7 @@ function Result(props: SectionProps<typeof loader>) {
   );
 }
 
-function SearchResult({
-  page,
-  ...props
-}: SectionProps<typeof loader>) {
+function SearchResult({ page, ...props }: SectionProps<typeof loader>) {
   if (!page || page.pageInfo.records == 0) {
     return <NotFound {...props} />;
   }

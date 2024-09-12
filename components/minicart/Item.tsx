@@ -3,7 +3,6 @@ import Image from "apps/website/components/Image.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 import { useScript } from "deco/hooks/useScript.ts";
-// import Icon from "../ui/Icon.tsx";
 import QuantitySelector from "../ui/QuantitySelector.tsx";
 
 export type Item = AnalyticsItem & {
@@ -34,10 +33,13 @@ function CartItem({ item, index, locale, currency }: Props) {
   const { image, listPrice, price = Infinity, quantity } = item;
   const isGift = price < 0.01;
 
-  // console.log(item)
   // deno-lint-ignore no-explicit-any
-  const name = (item as any).item_name;
-
+  let name = (item as any).item_name;
+  name = name
+    .replace("Tamanho:", "- ")
+    .replace(/Sabor:[^;]*/g, "")
+    .replace(";", "")
+    .replace("Cor:", "");
   return (
     <fieldset
       // deno-lint-ignore no-explicit-any

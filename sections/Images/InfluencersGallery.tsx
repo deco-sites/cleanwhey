@@ -3,6 +3,7 @@ import { useDevice } from "deco/hooks/useDevice.ts";
 import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
 import Icon from "../../components/ui/Icon.tsx";
+import Image from "apps/website/components/Image.tsx";
 
 interface influencers {
   images: {
@@ -27,32 +28,38 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
     <section>
       <div class="grid grid-cols-4 gap-1.5 relative">
         {items &&
-          items.map((item) => (
-            <div class="relative group flex w-full duration-300 h-full transition-all items-center justify-center">
+          items.map((item, index) => (
+            <div
+              key={index}
+              class="relative group flex w-full duration-300 h-full transition-all items-center justify-center overflow-y-auto "
+            >
               <a
-                class={`rounded-lg w-full h-full transition-all duration-300 relative overflow-hidde`}
+                class={`rounded-lg w-full h-full transition-all duration-300 relative `}
                 href={item.link}
               >
-                <img
-                  class={`rounded-lg w-full duration-300 transition-all group-hover:blur h-full`}
+                <Image
+                  class={`rounded-lg w-full duration-300 transition-all  min-h-[470px]  max-h-[470px] h-full object-fill group-hover:blur`}
                   src={item.images.normal}
                   loading={"lazy"}
+                  width={300}
+                  height={470}
                 />
 
-                <div class="font-regular text-sm leading-4 transition-all text-left text-white z-10 py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 overflow-y-scroll items-start justify-start scroll-custom overflow-x-hidden rounded-md">
+                <div class="font-regular text-sm overflow-y-auto leading-4 transition-all text-left text-white py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 items-start justify-start scroll-custom overflow-x-hidden rounded-md">
                   <h2 class={"font-bold mb-6"}>{item.textLabel}</h2>
                   <span
                     dangerouslySetInnerHTML={{ __html: item.description }}
+                    class="[&_*]:text-[14x] [&_*]:leading-normal"
                   />
                 </div>
               </a>
-              <p class="z-20 w-[90%] group-hover:hidden absolute top-8 bg-[#163E73D9] p-1.5 font-regular rounded-lg text-white  text-center text-lg ">
+              <p class="z-20 w-[90%] group-hover:hidden absolute top-4 bg-[#163E73D9] p-1.5 font-regular rounded-lg text-white  text-center text-lg ">
                 {item.textLabel}
               </p>
             </div>
           ))}
       </div>
-      <div class="relative -mt-12 m-auto z-30 !text-center max-w-lg border rounded-lg p-6 border-gray-200 bg-white">
+      <div class="relative mt-2.5 m-auto z-30 !text-center max-w-lg border rounded-lg p-6 border-gray-200 bg-white">
         <div
           class="text-gray-300 mb-4"
           dangerouslySetInnerHTML={{ __html: conteudoFlutuante.text }}
@@ -84,16 +91,18 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
                   class={`rounded-lg w-full h-full transition-all duration-300 relative overflow-hidden`}
                   href={item.link}
                 >
-                  <img
-                    class={`rounded-lg w-full duration-300 transition-all group-hover:blur`}
+                  <Image
+                    class={`rounded-lg w-full duration-300 transition-all  min-h-[470px] max-h-[470px] h-full `}
                     src={item.images.normal}
                     loading={"lazy"}
+                    width={300}
+                    height={470}
                   />
-
-                  <div class="font-regular text-sm leading-4 transition-all text-left text-white z-10 py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 overflow-y-scroll items-start justify-start scroll-custom overflow-x-hidden rounded-md">
+                  <div class="font-regular text-sm leading-4 transition-all text-left text-white py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 overflow-y-scroll items-start justify-start scroll-custom overflow-x-hidden rounded-md">
                     <h2 class={"font-bold mb-6"}>{item.textLabel}</h2>
                     <span
                       dangerouslySetInnerHTML={{ __html: item.description }}
+                      class="[&_*]:text-[14x] [&_*]:leading-normal"
                     />
                   </div>
                 </a>
@@ -106,20 +115,14 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
 
         <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
                 justify-center absolute top-2/4 left-4">
-          <Slider.PrevButton
-            class="cursor-pointer"
-            disabled={false}
-          >
+          <Slider.PrevButton class="cursor-pointer" disabled={false}>
             <Icon id="chevron-right" class="rotate-180 text-orange-300" />
           </Slider.PrevButton>
         </div>
 
         <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
                 justify-center absolute top-2/4 right-4">
-          <Slider.NextButton
-            class="cursor-pointer"
-            disabled={false}
-          >
+          <Slider.NextButton class="cursor-pointer" disabled={false}>
             <Icon id="chevron-right" class="text-orange-300" />
           </Slider.NextButton>
         </div>
@@ -127,7 +130,7 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
         <Slider.JS rootId={id} />
       </div>
 
-      <div class="relative -mt-12 m-auto z-30 !text-center max-w-[90%] border rounded-lg p-6 border-gray-200 bg-white">
+      <div class="relative mt-2.5 m-auto z-30 !text-center max-w-[90%] border rounded-lg p-6 border-gray-200 bg-white">
         <div
           class="text-gray-300 mb-4"
           dangerouslySetInnerHTML={{ __html: conteudoFlutuante.text }}
@@ -143,9 +146,11 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
   );
 };
 
-export default function InfluencersGallery(
-  { title, items, conteudoFlutuante }: Props,
-) {
+export default function InfluencersGallery({
+  title,
+  items,
+  conteudoFlutuante,
+}: Props) {
   const device = useDevice();
   return (
     <section class="section container mb-12">
