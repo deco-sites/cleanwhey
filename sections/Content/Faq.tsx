@@ -12,6 +12,8 @@ export interface Question {
 export interface Props extends SectionHeaderProps {
   questions?: Question[];
   subtitle?: HTMLWidget;
+  /** @format color */
+  bgColor?: string;
 }
 
 function Question({ question, answer }: Question) {
@@ -32,6 +34,7 @@ function Question({ question, answer }: Question) {
 export default function FAQ({
   title,
   subtitle,
+  bgColor,
   questions = [
     {
       question: "Como faço para acompanhar o meu pedido?",
@@ -46,7 +49,7 @@ export default function FAQ({
   ],
 }: Props) {
   return (
-    <div class={"bg-white-200"}>
+    <div class={`bg-white-200`} style={{backgroundColor: `${bgColor}`}}>
       <Section.Container>
         {/* <Section.Header title={title} cta={cta} /> */}
         <h3 class="text-center font-bold text-gray-300 text-sm">{title}</h3>

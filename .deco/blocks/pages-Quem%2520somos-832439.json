@@ -126,20 +126,16 @@
             "active": true
           },
           {
-            "texto": "Onde encontrar",
-            "link": "/onde-encontrar"
-          },
-          {
-            "texto": "Cód. de defesa do consumidor",
-            "link": "/codigo-consumidor"
-          },
-          {
             "texto": "Politica de privacidade",
             "link": "/politica-de-privacidade"
           },
           {
             "texto": "Termos e condições",
             "link": "/termos-e-condicoes"
+          },
+          {
+            "texto": "FAQ",
+            "link": "/faq"
           }
         ],
         "conteudo": {},

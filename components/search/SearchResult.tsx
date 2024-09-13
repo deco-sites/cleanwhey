@@ -117,8 +117,8 @@ function NotFound(props: SectionProps<typeof loader>) {
       </div>
       <div class="w-full h-full flex flex-col text-gray-300 font-lato gap-8 mb-20 px-4 lg:px-0" >
         <div class="flex flex-col mt-8 container">
-          <span>Home{`>`}
-            <span class="text-orange-300 font-normal">
+          <span class="font-lato text-gray-300">Home{` > `}
+            <span class="text-orange-300">
               Resultados da busca "{term}"
             </span>
           </span>
@@ -463,6 +463,8 @@ function Result(props: SectionProps<typeof loader>) {
   const sortBy = sortOptions.length > 0 && (
     <Sort sortOptions={sortOptions} url={url} />
   );
+  const newUrl = new URL(props.url)
+  const term = newUrl.searchParams.get("q")
 
   return (
     <>
@@ -471,7 +473,19 @@ function Result(props: SectionProps<typeof loader>) {
           ? <PageResult {...props} />
           : (
             <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
-              <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
+              {term && (
+                <>
+                  <span class="font-lato text-gray-300">Home{` > `}
+                    <span class="text-orange-300">
+                      Resultados da busca "{term}"
+                    </span>
+                  </span>
+                  <span class="font-bold text-2xl text-gray-400">Busca por "{term}"</span>
+                </>
+              )}
+              {!term  && (
+                <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
+              )}
 
               {device === "mobile" && (
                 <Drawer
