@@ -24,7 +24,7 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
         class={`flex justify-between items-center w-full border-b border-gray-100`}
         onClick={() => {
           if (hasChildren) open.value = !open.value;
-          console.log(open.value);
+          //console.log(open.value);
         }}
       >
         {hasChildren ? title : (

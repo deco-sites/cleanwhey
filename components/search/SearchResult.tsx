@@ -97,26 +97,8 @@ function PageResult(props: SectionProps<typeof loader>) {
       href: `${pageFormated}page=${i}`,
     });
   }
-
   return (
     <div class="grid grid-flow-row grid-cols-1 place-items-center">
-      <div
-        class={clx(
-          "pb-2 sm:pb-10",
-          (!prevPageUrl || partial === "hideLess") && "hidden"
-        )}
-      >
-        <a
-          rel="prev"
-          class="btn btn-ghost"
-          hx-swap="outerHTML show:parent:top"
-          hx-get={partialPrev}
-        >
-          <span class="inline [.htmx-request_&]:hidden">Show Less</span>
-          <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
-        </a>
-      </div>
-
       <div
         data-product-list
         class={clx(
@@ -173,12 +155,11 @@ function PageResult(props: SectionProps<typeof loader>) {
                   shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
                   pix={pix}
                 />
-                //Essa parte do codigo quebra os filtros Diego 08/09 filtrar variantes tbm 
+                //Essa parte do codigo quebra os filtros Diego 08/09 filtrar variantes tbm
               );
             }
             return null;
-          }
-        );
+          });
         })}
       </div>
 

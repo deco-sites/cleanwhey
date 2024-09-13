@@ -182,6 +182,10 @@
         "__resolveType": "blog/loaders/BlogpostList.ts",
         "count": 4,
         "sortBy": "date_desc"
+      },
+      "cta": {
+        "link": "/blog",
+        "text": "Ver todas as postagens"
       }
     },
     {
