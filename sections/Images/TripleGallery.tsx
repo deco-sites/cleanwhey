@@ -39,11 +39,7 @@ const Desktop = ({ items }: Props) => {
                 loading={"lazy"}
               />
             </a>
-            <div class="text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.50)] 
-                    absolute top-0  left-0 w-full h-full flex flex-col 
-                    items-center justify-center
-                    text-white  text-center
-                    ">
+            <div class="text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.50)] absolute top-0  left-0 w-full h-full flex flex-col items-center justify-center text-center">
               <p class="mb-3 font-regular text-sm text-white">
                 {item.subtitle}
               </p>
@@ -82,17 +78,15 @@ const Mobile = ({ items }: Props) => {
                 class={`w-full h-full relative overflow-hidden`}
                 href={item.link?.url}
               >
-                <img
-                  class={`w-full`}
-                  src={item.image}
-                  loading={"lazy"}
-                />
+                <img class={`w-full`} src={item.image} loading={"lazy"} />
               </a>
-              <div class="text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.50)] 
+              <div
+                class="text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.50)] 
                         absolute top-0  left-0 w-full h-full flex flex-col 
                         items-center justify-center
                         text-center
-                        ">
+                        "
+              >
                 <p class="mb-3 font-regular text-sm text-white">
                   {item.subtitle}
                 </p>
@@ -114,22 +108,20 @@ const Mobile = ({ items }: Props) => {
           ))}
       </Slider>
 
-      <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-            justify-center absolute top-2/4 left-5">
-        <Slider.PrevButton
-          class="cursor-pointer"
-          disabled={false}
-        >
+      <div
+        class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+            justify-center absolute top-2/4 left-5"
+      >
+        <Slider.PrevButton class="cursor-pointer" disabled={false}>
           <Icon id="chevron-right" class="rotate-180 text-orange-300" />
         </Slider.PrevButton>
       </div>
 
-      <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-            justify-center absolute top-2/4 right-5">
-        <Slider.NextButton
-          class="cursor-pointer"
-          disabled={false}
-        >
+      <div
+        class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+            justify-center absolute top-2/4 right-5"
+      >
+        <Slider.NextButton class="cursor-pointer" disabled={false}>
           <Icon id="chevron-right" class="text-orange-300" />
         </Slider.NextButton>
       </div>
@@ -146,9 +138,11 @@ export default function TripleGallery({ items }: Props) {
       <div
         className={`content ${device === "desktop" ? "grid grid-cols-3" : ""}`}
       >
-        {device === "desktop"
-          ? <Desktop items={items} />
-          : <Mobile items={items} />}
+        {device === "desktop" ? (
+          <Desktop items={items} />
+        ) : (
+          <Mobile items={items} />
+        )}
       </div>
     </section>
   );

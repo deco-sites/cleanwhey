@@ -11,9 +11,7 @@ export interface Props {
 }
 
 const useAddToCart = (
-
   { onAddItem, onAddAttachment }: Props,
-
 ) => {
   const [loading, setLoading] = useState(false);
 

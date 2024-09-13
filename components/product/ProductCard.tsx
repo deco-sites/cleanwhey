@@ -45,11 +45,11 @@ function ProductCard({
   pix,
   class: _class,
 }: Props) {
-   const id = useId();
+  const id = useId();
 
   const { url, image: images, offers, isVariantOf } = product;
 
-  //const hasVariant = isVariantOf?.hasVariant ?? [];
+  const hasVariant = isVariantOf?.hasVariant ?? [];
 
   const title = isVariantOf?.name ?? product.name;
   const [front, back] = images ?? [];
@@ -93,6 +93,24 @@ function ProductCard({
     .replace(/;/g, "")
     .trim();
 
+  const nome =
+    productName == title
+      ? title?.toLowerCase().replace("tamanho:", "")
+      : title?.toLowerCase() == variantName
+      ? `${title?.toLowerCase()?.replace("Tamanho:", "")}  - ${productName
+          ?.toLowerCase()
+          ?.replace("tamanho:", "")
+          .replace(/sabor:[^;]*/g, "")
+          .replace(";", "")
+          .replace("cor:", "")}`.replace("Tamanho:", "")
+      : `${productName?.toLowerCase()} ${
+          variantName?.toLowerCase()
+            ? `- ${variantName?.toLowerCase()?.replace("tamanho:", "")}`
+            : ""
+        }`;
+
+  console.log(isVariantOf?.name);
+  console.log(product.name);
   const off =
     listPrice && price && listPrice != price && (listPrice * 100) / price;
 
@@ -192,20 +210,19 @@ function ProductCard({
         <span
           class={`font-bold text-gray-400 text-base md:text-lg text-center capitalize`}
         >
-          {productName == title
-            ? title?.toLowerCase()
-            : title?.toLowerCase() == variantName
-            ? `${title?.toLowerCase()} - ${productName
-                ?.toLowerCase()
-                ?.replace("tamanho:", "")
-                .replace(/sabor:[^;]*/g, "")
+          {isVariantOf?.name != undefined &&
+          isVariantOf?.name.toLowerCase().includes("combo")
+            ? isVariantOf?.name
+            : nome
+                ?.replace(/tamanho:\S*\s/, "")
+                .replace("30g", "")
+                .replace("450g", "")
+                .replace("900g", "")
+                .replace("1800g", "")
+                .replace("5kg", "")
                 .replace(";", "")
-                .replace("cor:", "")}`
-            : `${productName?.toLowerCase()} ${
-                variantName?.toLowerCase()
-                  ? `- ${variantName?.toLowerCase()}`
-                  : ""
-              }`}
+                .replace(/sabor\S*\s/, "")
+                .replace(/^-(.*)$/, "$1")}
         </span>
         {!isFeatured && (
           <>

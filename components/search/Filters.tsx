@@ -51,7 +51,7 @@ function FilterValues({ key, values }: FilterToggle) {
   const avatars = key === "cor";
   const flexDirection = avatars ? "flex-row items-center" : "flex-col";
 
-  const newFilters: FilterToggleValue[] = []
+  const newFilters: FilterToggleValue[] = [];
   values.forEach((value) => {
     let filter = newFilters.find((filter) => filter.value === value.value);
     if (filter) {
@@ -133,20 +133,20 @@ function Filters({ filters }: Props) {
           <>
             {filter.label != "Departamento" &&
               filter.label != "Category 4" && (
-                <div className="collapse rounded-none collapse-arrow border-b border-gray-100">
-                  <input
-                    type="checkbox"
-                    className={"peer"}
-                    name={`my-accordion-${index}`}
-                  />
-                  <div className="collapse-title after:!h-3 after:!w-3 after:text-gray-300 after:peer-checked:text-orange-300 text-gray-300 text-lg font-bold gap-2 !flex items-center p-0 peer-checked:text-orange-300 capitalize">
-                    {filter.label.toLowerCase()}
-                  </div>
-                  <div className="collapse-content">
-                    <FilterValues {...filter} />
-                  </div>
+              <div className="collapse rounded-none collapse-arrow border-b border-gray-100">
+                <input
+                  type="checkbox"
+                  className={"peer"}
+                  name={`my-accordion-${index}`}
+                />
+                <div className="collapse-title after:!h-3 after:!w-3 after:text-gray-300 after:peer-checked:text-orange-300 text-gray-300 text-lg font-bold gap-2 !flex items-center p-0 peer-checked:text-orange-300 capitalize">
+                  {filter.label.toLowerCase()}
                 </div>
-              )}
+                <div className="collapse-content">
+                  <FilterValues {...filter} />
+                </div>
+              </div>
+            )}
           </>
         ))}
     </ul>
