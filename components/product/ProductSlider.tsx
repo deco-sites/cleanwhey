@@ -18,10 +18,7 @@ function ProductSlider({ products, itemListName, isFeatured, pix }: Props) {
 
   return (
     <>
-      <div
-        id={id}
-        class="flex items-center justify-between sm:justify-unset"
-      >
+      <div id={id} class="flex items-center justify-between sm:justify-unset">
         <div>
           <Slider.PrevButton class="disable:bg-transparent flex btn !bg-transparent border-none btn-neutral btn-sm btn-circle no-animation">
             <Icon
@@ -73,7 +70,7 @@ function ProductSlider({ products, itemListName, isFeatured, pix }: Props) {
         </div>
 
         <div>
-          <Slider.NextButton class="disabled:bg-transparent flex btn btn-neutral border-none !bg-transparent btn-sm btn-circle no-animation">
+          <Slider.NextButton class="disabled:bg-transparent flex btn btn-neutral border-none !bg-transparent btn-sm btn-circle no-animation -ml-2">
             <Icon
               id="arrow-right-custom"
               class={`${isFeatured ? "text-white" : "text-orange-300"}`}

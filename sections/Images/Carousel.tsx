@@ -61,18 +61,9 @@ export interface Props {
   interval?: number;
 }
 
-function BannerItem(
-  { image, lcp }: { image: Banner; lcp?: boolean },
-) {
-  const {
-    alt,
-    mobile,
-    desktop,
-    action,
-    extraLink,
-    selos,
-    activateContent,
-  } = image;
+function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
+  const { alt, mobile, desktop, action, extraLink, selos, activateContent } =
+    image;
   const params = { promotion_name: image.alt };
 
   const selectPromotionEvent = useSendEvent({
@@ -160,7 +151,7 @@ function BannerItem(
           fetchPriority={lcp ? "high" : "auto"}
           src={mobile}
           width={380}
-          height={530}
+          height={430}
         />
         <Source
           media="(min-width: 768px)"
@@ -170,7 +161,7 @@ function BannerItem(
           height={490}
         />
         <img
-          class="object-cover w-full h-full"
+          class=" w-full h-full"
           loading={lcp ? "eager" : "lazy"}
           src={desktop}
           alt={alt}

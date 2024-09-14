@@ -10,7 +10,7 @@ const actions: CartSubmitActions<AppContext> = {
       addToCart,
     );
 
-    console.log("customization", customizationData);
+    //console.log("customization", customizationData);
 
     return cartFrom(response, req.url);
   },

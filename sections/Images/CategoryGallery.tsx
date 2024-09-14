@@ -89,14 +89,16 @@ const Mobile = ({ items }: Props) => {
       </Slider>
 
       <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-            justify-center absolute top-2/4 left-4">
+            justify-center absolute top-2/4 left-5">
+
         <Slider.PrevButton class="cursor-pointer" disabled={false}>
           <Icon id="chevron-right" class="rotate-180 text-orange-300" />
         </Slider.PrevButton>
       </div>
 
       <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-            justify-center absolute top-2/4 right-4">
+            justify-center absolute top-2/4 right-5">
+
         <Slider.NextButton class="cursor-pointer" disabled={false}>
           <Icon id="chevron-right" class="text-orange-300" />
         </Slider.NextButton>

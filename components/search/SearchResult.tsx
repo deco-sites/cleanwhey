@@ -212,25 +212,9 @@ function PageResult(props: SectionProps<typeof loader>) {
       href: `${pageFormated}page=${i}`,
     });
   }
-
   return (
     <div class="grid grid-flow-row grid-cols-1 place-items-center">
-      <div
-        class={clx(
-          "pb-2 sm:pb-10",
-          (!prevPageUrl || partial === "hideLess") && "hidden",
-        )}
-      >
-        <a
-          rel="prev"
-          class="btn btn-ghost"
-          hx-swap="outerHTML show:parent:top"
-          hx-get={partialPrev}
-        >
-          <span class="inline [.htmx-request_&]:hidden">Show Less</span>
-          <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
-        </a>
-      </div>
+
 
       <div
         data-product-list
@@ -343,11 +327,11 @@ function PageResult(props: SectionProps<typeof loader>) {
                   return (
                     <a
                       href={link.href}
-                      class={`btn !rounded-lg ${pageInfo.currentPage == link.label
-                        ? "btn-primary hover:bg-orange-300 bg-orange-300 border-orange-300 hover:border-orange-300"
-                        : "btn-ghost"
-                        } join-item`}
-                    >
+                      class={`btn !rounded-lg ${
+                        pageInfo.currentPage == link.label
+                          ? "btn-primary hover:bg-orange-300 bg-orange-300 border-orange-300 hover:border-orange-300"
+                          : "btn-ghost"
+                      } join-item`}>
                       <span>{link.label}</span>
                     </a>
                   );
@@ -453,8 +437,8 @@ function Result(props: SectionProps<typeof loader>) {
   const results = (
     <span class="text-sm font-normal">
       Exibindo {page.pageInfo.records &&
-        page.pageInfo.recordPerPage &&
-        page.pageInfo.recordPerPage > page.pageInfo.records
+          page.pageInfo.recordPerPage &&
+          page.pageInfo.recordPerPage > page.pageInfo.records
         ? page.pageInfo.records
         : page.pageInfo.recordPerPage} de {page.pageInfo.records} resultados
     </span>
@@ -473,6 +457,7 @@ function Result(props: SectionProps<typeof loader>) {
           ? <PageResult {...props} />
           : (
             <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
+
               {term && (
                 <>
                   <span class="font-lato text-gray-300">Home{` > `}

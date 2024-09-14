@@ -32,6 +32,7 @@ function ProductInfo({ page, pix }: Props) {
   const { productID, offers, isVariantOf } = product;
   const description = product.description || isVariantOf?.description;
   const title = isVariantOf?.name ?? product.name;
+  console.log(isVariantOf?.name);
 
   const {
     price = 0,
@@ -77,10 +78,22 @@ function ProductInfo({ page, pix }: Props) {
       <span
         class={clx(
           "font-bold text-gray-400 flex items-start justify-between text-2xl capitalize",
-          "pt-4",
+          "pt-4"
         )}
       >
-        {title?.toLowerCase()}
+        {title
+          ?.toLowerCase()
+          .replace("cor:", "")
+          .replace("tamanho:", "")
+          .replace(/sabor:[^;]*/g, "")
+          .replace(/;/g, "")
+          .replace("sachê 30g", "")
+          .replace("lata 360g", "")
+          .replace("refil 450g", "")
+          .replace("pote 900g", "")
+          .replace("refil 1800g", "")
+          .replace("saco 5kg", "")
+          .trim()}
         <WishlistButton item={item} variant="icon" />
       </span>
 
@@ -125,26 +138,24 @@ function ProductInfo({ page, pix }: Props) {
 
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-        {availability === "https://schema.org/InStock"
-          ? (
-            <>
-              <AddToCartButton
-                item={item}
-                seller={seller}
-                product={product}
-                class="btn btn-primary hover:bg-orange-300 hover:border-orange-300 no-animation bg-orange-300 border-orange-300 rounded-lg h-14"
-                disabled={false}
-              />
+        {availability === "https://schema.org/InStock" ? (
+          <>
+            <AddToCartButton
+              item={item}
+              seller={seller}
+              product={product}
+              class="btn btn-primary hover:bg-orange-300 hover:border-orange-300 no-animation bg-orange-300 border-orange-300 rounded-lg h-14"
+              disabled={false}
+            />
 
-              {
-                /* <AddToCartButtonVTEX
+            {/* <AddToCartButtonVTEX
                 productID={productID}
                 seller={seller}
-              /> */
-              }
-            </>
-          )
-          : <OutOfStock productID={productID} />}
+              /> */}
+          </>
+        ) : (
+          <OutOfStock productID={productID} />
+        )}
       </div>
     </div>
   );
