@@ -40,6 +40,23 @@ function CartItem({ item, index, locale, currency }: Props) {
     .replace(/Sabor:[^;]*/g, "")
     .replace(";", "")
     .replace("Cor:", "");
+
+  function removeDuplicateWordsPreserveOrder(text: string) {
+    const words = text.split(/\s+/);
+    const seen = new Set();
+
+    const uniqueWords = words.filter((word) => {
+      if (seen.has(word)) {
+        return false;
+      }
+      seen.add(word);
+      return true;
+    });
+
+    return uniqueWords.join(" ");
+  }
+  const newName = removeDuplicateWordsPreserveOrder(name);
+
   return (
     <fieldset
       // deno-lint-ignore no-explicit-any
@@ -62,14 +79,16 @@ function CartItem({ item, index, locale, currency }: Props) {
         <div class="flex justify-between items-center ">
           <legend
             class="text-sm font-normal text-gray-400"
-            style={"    display: block; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis"}
+            style={
+              "display: block; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis"
+            }
           >
-            {name}
+            {newName}
           </legend>
           <button
             class={clx(
               isGift && "hidden",
-              "btn btn-ghost btn-square no-animation",
+              "btn btn-ghost btn-square no-animation"
             )}
             hx-on:click={useScript(removeItemHandler)}
           >

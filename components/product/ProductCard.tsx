@@ -109,8 +109,6 @@ function ProductCard({
             : ""
         }`;
 
-  console.log(isVariantOf?.name);
-  console.log(product.name);
   const off =
     listPrice && price && listPrice != price && (listPrice * 100) / price;
 
