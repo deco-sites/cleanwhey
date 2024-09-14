@@ -43,6 +43,29 @@
       "startingPage": 1,
       "pix": {
         "__resolveType": "Payment - Pix"
+      },
+      "notFound": {
+        "shelf": {
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "fuzzy": "automatic",
+              "query": "whey",
+              "count": 8
+            }
+          },
+          "pix": {
+            "__resolveType": "Payment - Pix"
+          },
+          "isFeatured": false,
+          "activePaddingBotton": true,
+          "title": "<p>Alguns produtos <span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">relacionados:</span></p>"
+        },
+        "image": {
+          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/58ca53be-05af-4a0c-a379-c2a6b99704d8/banner.png",
+          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/8411c4b4-c099-4fe5-bc5c-b9f1d9b4171a/banner-(1).png"
+        }
       }
     },
     {

@@ -53,7 +53,7 @@ function FilterValues({ key, values }: FilterToggle) {
 
   const newFilters: FilterToggleValue[] = [];
   values.forEach((value) => {
-    let filter = newFilters.find((filter) => filter.value === value.value);
+    const filter = newFilters.find((filter) => filter.value === value.value);
     if (filter) {
       filter.quantity += value.quantity;
     } else {

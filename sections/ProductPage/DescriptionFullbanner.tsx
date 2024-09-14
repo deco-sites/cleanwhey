@@ -31,7 +31,7 @@ export default function DescriptionFullbanner(props: Props) {
   return (
     <section>
       <div
-        class={`relative w-full pb-8 md:pb-16 md:mb-16 bg-no-repeat bg-center bg-cover`}
+        class={`relative w-full pb-8 md:pb-16 md:mb-16 bg-no-repeat bg-center bg-cover md:min-h-96`}
         style={{
           backgroundImage: `${
             device == "desktop"
@@ -93,6 +93,8 @@ export default function DescriptionFullbanner(props: Props) {
                 )}
               </div>
             )}
+
+            {!rightCard?.title && <div class="p-4 max-w-[384px] w-full"></div>}
           </div>
         </div>
       </div>

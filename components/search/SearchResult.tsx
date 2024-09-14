@@ -15,6 +15,27 @@ import Drawer from "../ui/Drawer.tsx";
 import Sort from "./Sort.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
 import { Pix } from "../../loaders/BusnissRule/Pix.ts";
+import { Picture, Source } from "apps/website/components/Picture.tsx";
+import ProductShelf, { Props as PropsShelf } from "../../sections/Product/ProductShelf.tsx";
+import { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
+// import { Product } from "apps/vtex/utils/types.ts";
+
+interface NotFound {
+  /** @description text to be rendered on top of the image */
+  title?: HTMLWidget;
+  /** @description text to be rendered on top of the image */
+  buttonLabel?: string;
+  link?: string;
+  image: {
+    /** @description Image for big screens */
+    desktop: ImageWidget;
+    /** @description Image for small screens */
+    mobile: ImageWidget;
+    /** @description image alt text */
+    alt?: string;
+  };
+  shelf: PropsShelf;
+}
 
 export interface Layout {
   /**
@@ -36,12 +57,106 @@ export interface Props {
 
   /** @hidden */
   partial?: "hideMore" | "hideLess";
+  notFound: NotFound;
 }
 
-function NotFound() {
+function NotFound(props: SectionProps<typeof loader>) {
+
+  const newUrl = new URL(props.url)
+  const term = newUrl.searchParams.get("q")
+
+  console.log("search", props)
+
+  const { notFound } = props
+  const { image, title, link, buttonLabel } = notFound
+
+
   return (
-    <div class="w-full flex justify-center items-center py-10">
-      <span>Not Found!</span>
+    <div class="flex flex-col mb-20">
+      <div class="grid grid-cols-1 grid-rows-1">
+        <Picture preload class="col-start-1 col-span-1 row-start-1 row-span-1">
+          <Source
+            src={image.mobile}
+            width={380}
+            height={330}
+            media="(max-width: 767px)"
+          />
+          <Source
+            src={image.desktop}
+            width={1366}
+            height={232}
+            media="(min-width: 767px)"
+          />
+          <img class="w-full" src={image.desktop} alt={image.alt ?? title} />
+        </Picture>
+
+        <div class="
+      container flex flex-col gap-8 
+      items-start justify-start pt-8 pl-8 sm:justify-center sm:items-start col-start-1 
+      col-span-1 row-start-1 row-span-1 w-full">
+          <h1>
+            {title && (
+              <span
+                class="text-sm sm:text-base font-normal text-gray-400"
+                dangerouslySetInnerHTML={{ __html: title }}
+              />
+            )}
+          </h1>
+          {link && (
+            <h2>
+              <a
+                href={link}
+                class="text-sm font-normal text-white 
+              p-4 bg-orange-300 rounded-lg uppercase"
+              >
+                {buttonLabel}
+              </a>
+            </h2>
+          )}
+        </div>
+      </div>
+      <div class="w-full h-full flex flex-col text-gray-300 font-lato gap-8 mb-20 px-4 lg:px-0" >
+        <div class="flex flex-col mt-8 container">
+          <span class="font-lato text-gray-300">Home{` > `}
+            <span class="text-orange-300">
+              Resultados da busca "{term}"
+            </span>
+          </span>
+          <span class="font-bold text-2xl text-gray-400">{term}</span>
+        </div>
+        <div class="flex justify-center items-center flex-col lg:flex-row gap-8 lg:gap-0">
+          <div class="flex justify-start items-start w-full lg:w-[300px]">
+            <span class="text-5xl font-bold text-start" >
+              OOPS!
+            </span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-lg font-bold">
+              Não encontramos nenhum resultado para “{term}”
+            </span>
+            <span class="text-base mt-4">
+              O que eu faço?
+            </span>
+            <ul class="text-base mt-8 list-disc pl-[18px]">
+              <li>
+                Verifique os termos digitados.
+              </li>
+              <li>
+
+                Tente utilizar uma única palavra.
+
+              </li>
+              <li>
+                Utilize termos genéricos na busca
+              </li>
+              <li>
+                Procure utilizar sinônimos ao termo desejado
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <ProductShelf {...props.notFound.shelf} />
     </div>
   );
 }
@@ -99,6 +214,8 @@ function PageResult(props: SectionProps<typeof loader>) {
   }
   return (
     <div class="grid grid-flow-row grid-cols-1 place-items-center">
+
+
       <div
         data-product-list
         class={clx(
@@ -214,8 +331,7 @@ function PageResult(props: SectionProps<typeof loader>) {
                         pageInfo.currentPage == link.label
                           ? "btn-primary hover:bg-orange-300 bg-orange-300 border-orange-300 hover:border-orange-300"
                           : "btn-ghost"
-                      } join-item`}
-                    >
+                      } join-item`}>
                       <span>{link.label}</span>
                     </a>
                   );
@@ -331,6 +447,8 @@ function Result(props: SectionProps<typeof loader>) {
   const sortBy = sortOptions.length > 0 && (
     <Sort sortOptions={sortOptions} url={url} />
   );
+  const newUrl = new URL(props.url)
+  const term = newUrl.searchParams.get("q")
 
   return (
     <>
@@ -339,7 +457,20 @@ function Result(props: SectionProps<typeof loader>) {
           ? <PageResult {...props} />
           : (
             <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
-              <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
+
+              {term && (
+                <>
+                  <span class="font-lato text-gray-300">Home{` > `}
+                    <span class="text-orange-300">
+                      Resultados da busca "{term}"
+                    </span>
+                  </span>
+                  <span class="font-bold text-2xl text-gray-400">Busca por "{term}"</span>
+                </>
+              )}
+              {!term  && (
+                <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
+              )}
 
               {device === "mobile" && (
                 <Drawer
@@ -436,13 +567,14 @@ function Result(props: SectionProps<typeof loader>) {
 
 function SearchResult({ page, ...props }: SectionProps<typeof loader>) {
   if (!page || page.pageInfo.records == 0) {
-    return <NotFound />;
+    return <NotFound {...props} />;
   }
 
   return <Result {...props} page={page} />;
 }
 
 export const loader = (props: Props, req: Request) => {
+
   return {
     ...props,
     url: req.url,
