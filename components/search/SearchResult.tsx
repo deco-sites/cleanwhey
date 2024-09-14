@@ -65,11 +65,8 @@ function NotFound(props: SectionProps<typeof loader>) {
   const newUrl = new URL(props.url)
   const term = newUrl.searchParams.get("q")
 
-  console.log("search", props)
-
   const { notFound } = props
   const { image, title, link, buttonLabel } = notFound
-
 
   return (
     <div class="flex flex-col mb-20">
@@ -89,76 +86,134 @@ function NotFound(props: SectionProps<typeof loader>) {
           />
           <img class="w-full" src={image.desktop} alt={image.alt ?? title} />
         </Picture>
+        {term ?
+          <>
+            <div class="
+     container flex flex-col gap-8 
+     items-start justify-start pt-8 pl-8 sm:justify-center sm:items-start col-start-1 
+     col-span-1 row-start-1 row-span-1 w-full">
+              <h1>
+                {title && (
+                  <span
+                    class="text-sm sm:text-base font-normal text-gray-400"
+                    dangerouslySetInnerHTML={{ __html: title }}
+                  />
+                )}
+              </h1>
+              {link && (
+                <h2>
+                  <a
+                    href={link}
+                    class="text-sm font-normal text-white 
+             p-4 bg-orange-300 rounded-lg uppercase"
+                  >
+                    {buttonLabel}
+                  </a>
+                </h2>
+              )}
+            </div>
+            <div class="w-full h-full flex flex-col text-gray-300 font-lato gap-8 mb-20 px-4 lg:px-0" >
+              <div class="flex flex-col mt-8 container">
+                <span class="font-lato text-gray-300">Home{` > `}
+                  <span class="text-orange-300">
+                    Resultados da busca "{term}"
+                  </span>
+                </span>
+                <span class="font-bold text-2xl text-gray-400">{term}</span>
+              </div>
+              <div class="flex justify-center items-center flex-col lg:flex-row gap-8 lg:gap-0">
+                <div class="flex justify-start items-start w-full lg:w-[300px]">
+                  <span class="text-5xl font-bold text-start" >
+                    OOPS!
+                  </span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-lg font-bold">
+                    Não encontramos nenhum resultado para “{term}”
+                  </span>
+                  <span class="text-base mt-4">
+                    O que eu faço?
+                  </span>
+                  <ul class="text-base mt-8 list-disc pl-[18px]">
+                    <li>
+                      Verifique os termos digitados.
+                    </li>
+                    <li>
 
-        <div class="
-      container flex flex-col gap-8 
-      items-start justify-start pt-8 pl-8 sm:justify-center sm:items-start col-start-1 
-      col-span-1 row-start-1 row-span-1 w-full">
-          <h1>
-            {title && (
-              <span
-                class="text-sm sm:text-base font-normal text-gray-400"
-                dangerouslySetInnerHTML={{ __html: title }}
-              />
-            )}
-          </h1>
-          {link && (
-            <h2>
-              <a
-                href={link}
-                class="text-sm font-normal text-white 
-              p-4 bg-orange-300 rounded-lg uppercase"
-              >
-                {buttonLabel}
-              </a>
-            </h2>
-          )}
-        </div>
-      </div>
-      <div class="w-full h-full flex flex-col text-gray-300 font-lato gap-8 mb-20 px-4 lg:px-0" >
-        <div class="flex flex-col mt-8 container">
-          <span class="font-lato text-gray-300">Home{` > `}
-            <span class="text-orange-300">
-              Resultados da busca "{term}"
-            </span>
-          </span>
-          <span class="font-bold text-2xl text-gray-400">{term}</span>
-        </div>
-        <div class="flex justify-center items-center flex-col lg:flex-row gap-8 lg:gap-0">
-          <div class="flex justify-start items-start w-full lg:w-[300px]">
-            <span class="text-5xl font-bold text-start" >
-              OOPS!
-            </span>
-          </div>
-          <div class="flex flex-col">
-            <span class="text-lg font-bold">
-              Não encontramos nenhum resultado para “{term}”
-            </span>
-            <span class="text-base mt-4">
-              O que eu faço?
-            </span>
-            <ul class="text-base mt-8 list-disc pl-[18px]">
-              <li>
-                Verifique os termos digitados.
-              </li>
-              <li>
+                      Tente utilizar uma única palavra.
 
-                Tente utilizar uma única palavra.
+                    </li>
+                    <li>
+                      Utilize termos genéricos na busca
+                    </li>
+                    <li>
+                      Procure utilizar sinônimos ao termo desejado
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </>
+          :
+          <>
+            <div class="
+  container flex flex-col gap-8 
+  items-start justify-start pt-8 pl-8 sm:justify-center sm:items-start col-start-1 
+  col-span-1 row-start-1 row-span-1 w-full">
+              <h1>
+                {title && (
+                  <span
+                    class="text-sm sm:text-base font-normal text-gray-400"
+                    dangerouslySetInnerHTML={{ __html: title }}
+                  />
+                )}
+              </h1>
+              {link && (
+                <h2>
+                  <a
+                    href={link}
+                    class="text-sm font-normal text-white 
+          p-4 bg-orange-300 rounded-lg uppercase"
+                  >
+                    {buttonLabel}
+                  </a>
+                </h2>
+              )}
+            </div>
+            <div class="w-full h-full flex flex-col text-gray-300 font-lato gap-8 mb-20 px-4 lg:px-0 mt-16" >
+              <div class="flex justify-center items-center flex-col lg:flex-row gap-8 lg:gap-0">
+                <div class="flex justify-start items-start w-full lg:w-[300px]">
+                  <span class="text-5xl font-bold text-start" >
+                    OOPS!
+                  </span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-lg font-bold">
+                    Não encontramos nenhum resultado para esta pagina
+                  </span>
+                  <span class="text-base mt-4">
+                    O que eu faço?
+                  </span>
+                  <ul class="text-base mt-8 list-disc pl-[18px]">
+                    <li>
+                      Verifique o caminho da pagina
+                    </li>
+                    <li>
 
-              </li>
-              <li>
-                Utilize termos genéricos na busca
-              </li>
-              <li>
-                Procure utilizar sinônimos ao termo desejado
-              </li>
-            </ul>
-          </div>
-        </div>
+                      Teste buscar o produto pela busca
+
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </>
+        }
       </div>
       <ProductShelf {...props.notFound.shelf} />
-    </div>
+    </div >
   );
+
 }
 
 const useUrlRebased = (overrides: string | undefined, base: string) => {
@@ -327,11 +382,10 @@ function PageResult(props: SectionProps<typeof loader>) {
                   return (
                     <a
                       href={link.href}
-                      class={`btn !rounded-lg ${
-                        pageInfo.currentPage == link.label
-                          ? "btn-primary hover:bg-orange-300 bg-orange-300 border-orange-300 hover:border-orange-300"
-                          : "btn-ghost"
-                      } join-item`}>
+                      class={`btn !rounded-lg ${pageInfo.currentPage == link.label
+                        ? "btn-primary hover:bg-orange-300 bg-orange-300 border-orange-300 hover:border-orange-300"
+                        : "btn-ghost"
+                        } join-item`}>
                       <span>{link.label}</span>
                     </a>
                   );
@@ -437,8 +491,8 @@ function Result(props: SectionProps<typeof loader>) {
   const results = (
     <span class="text-sm font-normal">
       Exibindo {page.pageInfo.records &&
-          page.pageInfo.recordPerPage &&
-          page.pageInfo.recordPerPage > page.pageInfo.records
+        page.pageInfo.recordPerPage &&
+        page.pageInfo.recordPerPage > page.pageInfo.records
         ? page.pageInfo.records
         : page.pageInfo.recordPerPage} de {page.pageInfo.records} resultados
     </span>
@@ -468,7 +522,7 @@ function Result(props: SectionProps<typeof loader>) {
                   <span class="font-bold text-2xl text-gray-400">Busca por "{term}"</span>
                 </>
               )}
-              {!term  && (
+              {!term && (
                 <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
               )}
 
