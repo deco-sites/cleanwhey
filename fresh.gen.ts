@@ -4,6 +4,7 @@
 
 import * as $_app from "./routes/_app.tsx";
 import * as $AddToCartButton_vtex from "./islands/AddToCartButton/vtex.tsx";
+import * as $IframeLogin from "./islands/IframeLogin.tsx";
 import * as $Menu from "./islands/Menu.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
@@ -13,6 +14,7 @@ const manifest = {
   },
   islands: {
     "./islands/AddToCartButton/vtex.tsx": $AddToCartButton_vtex,
+    "./islands/IframeLogin.tsx": $IframeLogin,
     "./islands/Menu.tsx": $Menu,
   },
   baseUrl: import.meta.url,

@@ -1,25 +1,20 @@
-import { useDevice } from "deco/hooks/useDevice.ts";
 import { ImageWidget } from "apps/admin/widgets.ts";
-
+import { useDevice as useDevice } from "@deco/deco/hooks";
 export interface Benefits {
-  image: ImageWidget;
-  title: string;
-  subtitle: string;
+    image: ImageWidget;
+    title: string;
+    subtitle: string;
 }
-
 export interface Props {
-  items: Benefits[];
+    items: Benefits[];
 }
-
 const Desktop = ({ items }: Props) => {
-  return (
-    <section class="container border-b border-gray-100 pb-8">
+    return (<section class="container border-b border-gray-100 pb-8">
       <div class="grid grid-cols-4">
         {items &&
-          items.map((item) => (
-            <div class={"flex flex-col gap-2 justify-center items-center"}>
+            items.map((item) => (<div class={"flex flex-col gap-2 justify-center items-center"}>
               <figure class="w-8 h-8">
-                <img src={item.image} />
+                <img src={item.image}/>
               </figure>
               <div class="text-center">
                 <h2 class="text-lg font-bold text-orange-300">
@@ -29,24 +24,17 @@ const Desktop = ({ items }: Props) => {
                   {item.subtitle}
                 </p>
               </div>
-            </div>
-          ))}
+            </div>))}
       </div>
-    </section>
-  );
+    </section>);
 };
-
 const Mobile = ({ items }: Props) => {
-  return (
-    <div className="container pb-6 border-b border-gray-100">
+    return (<div className="container pb-6 border-b border-gray-100">
       <div className="carousel carousel-center max-w-md space-x-4 p-4">
         {items &&
-          items.map((item) => (
-            <div
-              class={"carousel-item flex flex-col gap-2 justify-center items-center"}
-            >
+            items.map((item) => (<div class={"carousel-item flex flex-col gap-2 justify-center items-center"}>
               <figure class="w-8 h-8">
-                <img src={item.image} />
+                <img src={item.image}/>
               </figure>
               <div class="text-center">
                 <h2 class="text-lg font-bold text-orange-300">
@@ -56,21 +44,15 @@ const Mobile = ({ items }: Props) => {
                   {item.subtitle}
                 </p>
               </div>
-            </div>
-          ))}
+            </div>))}
       </div>
-    </div>
-  );
+    </div>);
 };
-
 export default function Regua(props: Props) {
-  const device = useDevice();
-
-  return (
-    <>
+    const device = useDevice();
+    return (<>
       {device === "desktop"
-        ? <Desktop items={props.items} />
-        : <Mobile items={props.items} />}
-    </>
-  );
+            ? <Desktop items={props.items}/>
+            : <Mobile items={props.items}/>}
+    </>);
 }
