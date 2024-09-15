@@ -130,7 +130,11 @@
           "name": "Mais Vendidos",
           "url": "142?map=productClusterIds&page=1"
         },
-        { "image": [], "name": "Assinaturas", "url": "/assinaturas" },
+        {
+          "image": [],
+          "name": "Assinaturas",
+          "url": "/assinaturas"
+        },
         {
           "image": [],
           "children": [],
@@ -167,12 +171,6 @@
       "image": [],
       "name": "Imunidade",
       "url": "/suplementos/imunidade"
-    },
-    {
-      "children": [],
-      "image": [],
-      "name": "Assinaturas",
-      "url": "/assinaturas"
     },
     {
       "children": [],

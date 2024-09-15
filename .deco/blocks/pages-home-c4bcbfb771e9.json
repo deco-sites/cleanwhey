@@ -80,7 +80,7 @@
           "count": 12,
           "fuzzy": "automatic",
           "query": "clean",
-          "hideUnavailableItems": false
+          "hideUnavailableItems": true
         }
       },
       "isFeatured": true,

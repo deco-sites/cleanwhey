@@ -287,10 +287,13 @@ function ProductCard({
                 {formatPrice(listPrice, offers?.priceCurrency)}
               </span>
             )}
-
+            <span class="line-through text-sm font-normal text-gray-300">
+              {formatPrice(listPrice, offers?.priceCurrency)}
+            </span>
             <span class="text-lg font-bold flex gap-2 items-center text-gray-400">
               {formatPrice(price, offers?.priceCurrency)}
             </span>
+           
           </div>
         )}
         {inStock ? (
