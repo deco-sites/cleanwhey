@@ -11,23 +11,37 @@ export interface Props extends JSX.HTMLAttributes<HTMLButtonElement> {
     item: AnalyticsItem;
     ctaText?: string;
 }
+
+
 const onClick = () => {
-    event?.stopPropagation();
-    const button = event?.currentTarget as HTMLButtonElement | null;
-    const container = button!.closest<HTMLDivElement>("div[data-cart-item]")!;
-    const { item, platformProps } = JSON.parse(decodeURIComponent(container.getAttribute("data-cart-item")!));
-    window.STOREFRONT.CART.addToCart(item, platformProps);
+  event?.stopPropagation();
+  const button = event?.currentTarget as HTMLButtonElement | null;
+  const container = button!.closest<HTMLDivElement>("div[data-cart-item]")!;
+  const { item, platformProps } = JSON.parse(
+    decodeURIComponent(container.getAttribute("data-cart-item")!),
+  );
+  window.STOREFRONT.CART.addToCart(item, platformProps);
+    setTimeout(()=>{
+    const button :HTMLButtonElement | null = window.document.querySelector('[aria-label="open cart"]')    
+    button?.click()
+  }, 500)
 };
 const onChange = () => {
-    const input = event!.currentTarget as HTMLInputElement;
-    const productID = input!
-        .closest("div[data-cart-item]")!
-        .getAttribute("data-item-id")!;
-    const quantity = Number(input.value);
-    if (!input.validity.valid) {
-        return;
-    }
-    window.STOREFRONT.CART.setQuantity(productID, quantity);
+  const input = event!.currentTarget as HTMLInputElement;
+  const productID = input!
+    .closest("div[data-cart-item]")!
+    .getAttribute("data-item-id")!;
+  const quantity = Number(input.value);
+
+  if (!input.validity.valid) {
+    return;
+  }
+
+  window.STOREFRONT.CART.setQuantity(productID, quantity);
+    setTimeout(()=>{
+    const button :HTMLButtonElement | null = window.document.querySelector('[aria-label="open cart"]')    
+    button?.click()
+  }, 500)
 };
 // Copy cart form values into AddToCartButton
 const onLoad = (id: string) => {
