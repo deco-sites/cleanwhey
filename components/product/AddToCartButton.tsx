@@ -13,6 +13,7 @@ export interface Props extends JSX.HTMLAttributes<HTMLButtonElement> {
   ctaText?: string;
 }
 
+
 const onClick = () => {
   event?.stopPropagation();
   const button = event?.currentTarget as HTMLButtonElement | null;
@@ -21,6 +22,10 @@ const onClick = () => {
     decodeURIComponent(container.getAttribute("data-cart-item")!),
   );
   window.STOREFRONT.CART.addToCart(item, platformProps);
+    setTimeout(()=>{
+    const button :HTMLButtonElement | null = window.document.querySelector('[aria-label="open cart"]')    
+    button?.click()
+  }, 500)
 };
 
 const onChange = () => {
@@ -35,6 +40,10 @@ const onChange = () => {
   }
 
   window.STOREFRONT.CART.setQuantity(productID, quantity);
+    setTimeout(()=>{
+    const button :HTMLButtonElement | null = window.document.querySelector('[aria-label="open cart"]')    
+    button?.click()
+  }, 500)
 };
 
 // Copy cart form values into AddToCartButton
