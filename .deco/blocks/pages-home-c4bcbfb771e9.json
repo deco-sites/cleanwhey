@@ -181,12 +181,14 @@
       "posts": {
         "__resolveType": "blog/loaders/BlogpostList.ts",
         "count": 4,
-        "sortBy": "date_desc"
+        "sortBy": "date_desc",
+        "slug": "receitas"
       },
       "cta": {
         "link": "/blog",
         "text": "Ver todas as postagens"
-      }
+      },
+      "button": true
     },
     {
       "__resolveType": "Newsletter Home"

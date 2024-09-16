@@ -213,14 +213,9 @@ function ProductCard({
             ? isVariantOf?.name
             : nome
                 ?.replace(/tamanho:\S*\s/, "")
-                .replace("30g", "")
-                .replace("450g", "")
-                .replace("900g", "")
-                .replace("1800g", "")
-                .replace("5kg", "")
                 .replace(";", "")
-                .replace(/sabor\S*\s/, "")
-                .replace(/^-(.*)$/, "$1")}
+                .replace("30gsabor:sem sabor ", "")
+                .replace("600gsabor:sem sabor - ", "")}
         </span>
         {!isFeatured && (
           <>
@@ -293,7 +288,6 @@ function ProductCard({
             <span class="text-lg font-bold flex gap-2 items-center text-gray-400">
               {formatPrice(price, offers?.priceCurrency)}
             </span>
-           
           </div>
         )}
         {inStock ? (
