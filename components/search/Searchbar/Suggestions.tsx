@@ -10,6 +10,7 @@ import { Pix } from "../../../loaders/BusnissRule/Pix.ts";
 import { formatPix } from "../../../sdk/formatPix.tsx";
 import { useOffer } from "../../../sdk/useOffer.ts";
 import { formatPrice } from "../../../sdk/format.ts";
+import { useScript } from "deco/hooks/useScript.ts";
 
 export interface Props {
   /**
@@ -66,12 +67,19 @@ function Suggestions({
 
   return (
     <div
-      class={clx(
-        `overflow-y-scroll mt-2`,
-        !hasProducts && !hasTerms && "hidden",
-      )}
-    >
-      <div class="gap-4 grid grid-cols-1 sm:grid-rows-1 sm:grid-cols-2 p-4">
+    id={"modal"}
+    class={clx(
+      `overflow-y-scroll mt-2 `,
+      "before:content-['']  before:h-screen before:bg-black before:absolute before:-z-10 before:left-[-100vw] before:right-0 before:w-[200vw] before:opacity-50 before:bg-black-100",
+      !hasProducts && !hasTerms && "hidden",
+    )}    style={{ display: `${!hasProducts && !hasTerms && "none" || "flex"}` }}
+    hx-on:click={useScript(()=>{
+
+        const modal : HTMLDivElement | null = document.querySelector("#modal") || null
+         modal!.style.display = "none"
+    })}
+>
+      <div class="gap-4 grid grid-cols-1 sm:grid-rows-1 sm:grid-cols-2 p-4 w-full bg-white">
         <div class="flex flex-col gap-6">
           <span
             class="font-bold text-18 text-blue-300 border-b border-orange-100 pb-2 w-36"

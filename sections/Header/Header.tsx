@@ -6,9 +6,7 @@ import Bag from "../../components/header/Bag.tsx";
 // import { useUser } from "apps/vtex/hooks/useUser.ts";
 import NavItem from "../../components/header/NavItem.tsx";
 import SignIn from "../../components/header/SignIn.tsx";
-import Searchbar, {
-  type SearchbarProps,
-} from "../../components/search/Searchbar/Form.tsx";
+import Searchbar, { type SearchbarProps, } from "../../components/search/Searchbar/Form.tsx";
 import Drawer from "../../components/ui/Drawer.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 // import Modal from "../../components/ui/Modal.tsx";
@@ -30,11 +28,12 @@ import {
   useDevice as useDevice,
   useSection as useSection,
 } from "@deco/deco/hooks";
+
 export interface Logo {
-  src: ImageWidget;
-  alt: string;
-  width?: number;
-  height?: number;
+    src: ImageWidget;
+    alt: string;
+    width?: number;
+    height?: number;
 }
 export interface Props {
   alerts?: alert[];
@@ -64,16 +63,11 @@ const Desktop = (props: SectionProps<typeof loader>) => {
         <div class="container flex justify-between items-center">
           <div class="place-self-start">
             <a href="/" aria-label="Store logo">
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                width={logo.width || 100}
-                height={logo.height || 23}
-              />
+              <Image src={logo.src} alt={logo.alt} width={logo.width || 100} height={logo.height || 23}/>
             </a>
           </div>
 
-          <Searchbar {...searchbar} />
+          <Searchbar {...searchbar}/>
 
           <div class="flex gap-4">
             <a
@@ -90,7 +84,7 @@ const Desktop = (props: SectionProps<typeof loader>) => {
 
             <WishlistClick />
 
-            <SignIn variant="desktop" />
+            <SignIn variant="desktop"/>
             <Bag />
           </div>
         </div>
@@ -105,45 +99,23 @@ const Desktop = (props: SectionProps<typeof loader>) => {
           </div>
         </div>
       </div>
-    </>
-  );
+    </>);
 };
 const Mobile = ({ logo, searchbar }: Props) => {
-  // const { user } = useUser();
-  return (
-    <>
-      <Drawer
-        id={SIDEMENU_DRAWER_ID}
-        aside={
-          <Drawer.Aside title="Menu" drawer={SIDEMENU_DRAWER_ID}>
-            <div
-              id={SIDEMENU_CONTAINER_ID}
-              class="h-full flex items-center justify-center"
-              style={{ minWidth: "100vw" }}
-            >
-              <span class="loading loading-spinner" />
+    // const { user } = useUser();
+    return (<>
+      <Drawer id={SIDEMENU_DRAWER_ID} aside={<Drawer.Aside title="Menu" drawer={SIDEMENU_DRAWER_ID}>
+            <div id={SIDEMENU_CONTAINER_ID} class="h-full flex items-center justify-center" style={{ minWidth: "100vw" }}>
+              <span class="loading loading-spinner"/>
             </div>
-          </Drawer.Aside>
-        }
-      />
+          </Drawer.Aside>}/>
 
-      <div
-        class="grid place-items-start items-center w-screen px-5 pt-4 pb-3 gap-4"
-        style={{
-          gridTemplateColumns: "auto min-content min-content",
-        }}
-      >
+      <div class="grid place-items-start items-center w-screen px-5 pt-4 pb-3 gap-4" style={{
+            gridTemplateColumns: "auto min-content min-content",
+        }}>
         <div class={"flex-grow inline-flex items-center justify-center gap-3"}>
-          <label
-            for={SIDEMENU_DRAWER_ID}
-            class="btn btn-square btn-sm btn-ghost"
-            aria-label="open menu"
-            hx-target={`#${SIDEMENU_CONTAINER_ID}`}
-            hx-swap="outerHTML"
-            hx-trigger="click once"
-            hx-get={useSection({ props: { variant: "menu" } })}
-          >
-            <Icon id="menu" class="text-white h-8 w-8" />
+          <label for={SIDEMENU_DRAWER_ID} class="btn btn-square btn-sm btn-ghost" aria-label="open menu" hx-target={`#${SIDEMENU_CONTAINER_ID}`} hx-swap="outerHTML" hx-trigger="click once" hx-get={useSection({ props: { variant: "menu" } })}>
+            <Icon id="menu" class="text-white h-8 w-8"/>
           </label>
 
           {logo && (
@@ -158,15 +130,14 @@ const Mobile = ({ logo, searchbar }: Props) => {
           )}
         </div>
 
-        <SignIn variant="mobile" />
+        <SignIn variant="mobile"/>
 
         <Bag />
       </div>
       <div className="container px-5 pb-5">
-        <Searchbar {...searchbar} />
+        <Searchbar {...searchbar}/>
       </div>
-    </>
-  );
+    </>);
 };
 function Header(props: SectionProps<typeof loader>) {
   const device = useDevice();
@@ -191,8 +162,7 @@ function Header(props: SectionProps<typeof loader>) {
         {alerts.length > 0 && <Alert alerts={alerts} />}
         {device === "desktop" ? <Desktop {...props} /> : <Mobile {...props} />}
       </div>
-    </header>
-  );
+    </header>);
 }
 export const loader = (props: Props, req: Request) => {
   return {
