@@ -20,7 +20,9 @@
             "__resolveType": "website/functions/requestToParam.ts",
             "param": "category"
           }
-        }
+        },
+        "cta": {},
+        "button": false
       }
     },
     {

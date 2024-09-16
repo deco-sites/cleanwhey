@@ -24,6 +24,7 @@ export interface Post {
 }
 
 export interface Props {
+  button: boolean;
   cta?: CTA;
   sectionTitle?: HTMLWidget;
   posts?: BlogPost[] | null;
@@ -43,7 +44,7 @@ const DEFAULT_IMAGE =
 
 function Container({ children }: { children: ComponentChildren }) {
   return (
-    <div class="container lg:mx-auto  mx-0  text-sm">
+    <div class="container lg:mx-auto  mx-0 my-5 lg:my-10 text-sm">
       <div class="space-y-8">{children}</div>
     </div>
   );
@@ -51,6 +52,7 @@ function Container({ children }: { children: ComponentChildren }) {
 
 export default function BlogPosts({
   cta = { text: "Ver todas as postagens", link: " " },
+  button = false,
   sectionTitle,
   posts = [],
   pagination: { page = 0, perPage = 6 } = {},
@@ -79,7 +81,6 @@ export default function BlogPosts({
   // }
 
   const ContainerComponent = page === 0 ? Container : Fragment;
-
   return (
     <ContainerComponent>
       <>
@@ -89,6 +90,7 @@ export default function BlogPosts({
             dangerouslySetInnerHTML={{ __html: sectionTitle }}
           />
         )}
+
         <div class="gap-8 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 py-5">
           {posts?.slice(from, to).map((post) => (
             <div class="overflow-hidden rounded-lg flex flex-col bg-white-300 p-2.5 max-w-72 mx-auto lg:mx-0">
@@ -129,14 +131,14 @@ export default function BlogPosts({
                   <span class="text-gray-300 text-sm font-normal">
                     {post.date
                       ? new Date(post.date)
-                        .toLocaleDateString("pt-BR", {
-                          month: "short", // Retorna o mês abreviado (ex: "mai")
-                          day: "numeric",
-                          year: "2-digit", // Retorna o ano com dois dígitos (ex: "24")
-                        })
-                        .replace(" de ", " ")
-                        .replace(".", "")
-                        .replace(" de ", ", ")
+                          .toLocaleDateString("pt-BR", {
+                            month: "short", // Retorna o mês abreviado (ex: "mai")
+                            day: "numeric",
+                            year: "2-digit", // Retorna o ano com dois dígitos (ex: "24")
+                          })
+                          .replace(" de ", " ")
+                          .replace(".", "")
+                          .replace(" de ", ", ")
                       : ""}
                   </span>
                   <a
@@ -145,22 +147,21 @@ export default function BlogPosts({
                   >
                     <Icon class="text-white" id={"arrow-right-custom"} />
                   </a>
-                  {
-                    /* <span>•</span>
-                  <span>{post.authors[0]?.name}</span> */
-                  }
+                  {/* <span>•</span>
+                  <span>{post.authors[0]?.name}</span> */}
                 </div>
               </div>
             </div>
           ))}
         </div>
         {/* {to < (posts?.length || 1000) && ( */}
-        <a href={cta.link} class="flex justify-center w-full pb-6">
-          <span class="text-blue-300 font-normal text-sm inline border border-blue-300 rounded-lg py-3 px-4">
-            {cta.text}
-          </span>
-        </a>
-        {/* )} */}
+        {button ?? (
+          <a href={cta.link} class="flex justify-center w-full pb-6">
+            <span class="text-blue-300 font-normal text-sm inline border border-blue-300 rounded-lg py-3 px-4">
+              {cta.text}
+            </span>
+          </a>
+        )}
       </>
     </ContainerComponent>
   );

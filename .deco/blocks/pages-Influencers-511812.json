@@ -31,7 +31,8 @@
         },
         "pagination": {
           "perPage": 10
-        }
+        },
+        "button": false
       }
     },
     {
