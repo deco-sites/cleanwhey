@@ -215,7 +215,8 @@ function ProductCard({
                 ?.replace(/tamanho:\S*\s/, "")
                 .replace(";", "")
                 .replace("30gsabor:sem sabor ", "")
-                .replace("600gsabor:sem sabor - ", "")}
+                .replace("600gsabor:sem sabor - ", "")
+                .replace("30gsabor:mocaccino", "")}
         </span>
         {!isFeatured && (
           <>

@@ -24,7 +24,7 @@
         "__resolveType": "commerce/loaders/product/productListingPage.ts",
         "data": {
           "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
-          "sort": "price:desc",
+          "sort": "release:desc",
           "fuzzy": "automatic",
           "selectedFacets": [
             {
