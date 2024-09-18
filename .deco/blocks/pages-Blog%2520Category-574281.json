@@ -15,11 +15,11 @@
         "posts": {
           "__resolveType": "blog/loaders/BlogpostList.ts",
           "sortBy": "date_desc",
-          "count": 8,
           "slug": {
             "__resolveType": "website/functions/requestToParam.ts",
             "param": "category"
-          }
+          },
+          "count": 20
         },
         "cta": {},
         "button": false

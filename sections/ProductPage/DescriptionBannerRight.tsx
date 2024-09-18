@@ -44,7 +44,7 @@ export default function DescriptionBannerRight(props: Props) {
                 media="(min-width: 767px)"
               />
               <img
-                class="w-full max-w-[522px]"
+                class="w-full max-w-[522px] cover"
                 src={percentageBanner.desktop}
                 alt={percentageBanner.alt ?? title}
               />
@@ -65,7 +65,7 @@ export default function DescriptionBannerRight(props: Props) {
                 media="(min-width: 767px)"
               />
               <img
-                class="w-full"
+                class="w-full cover"
                 src={rightImage.desktop}
                 alt={rightImage.alt}
               />

@@ -63,17 +63,16 @@ function Suggestions({
   const { products = [], searches = [] } = suggestion ?? {};
   const recentSearches = searches;
   const hasTerms = Boolean(searches.length);
-  
-  const newProducts: Product[] = []
-  
+
+  const newProducts: Product[] = [];
+
   products?.map((item) => {
     if (!item.category?.includes("Clean Whey Medical")) {
-      newProducts.push(item)
+      newProducts.push(item);
     }
-  })
-  
-  const hasProducts = Boolean(newProducts.length);
+  });
 
+  const hasProducts = Boolean(newProducts.length);
 
   return (
     <div
@@ -83,7 +82,7 @@ function Suggestions({
         "before:content-['']  before:h-screen before:bg-black before:absolute before:-z-10 before:left-[-100vw] before:right-0 before:w-[200vw] before:opacity-50 before:bg-black-100",
         !hasProducts && !hasTerms && "hidden",
       )}
-      style={{ display: `${!hasProducts && !hasTerms && "none" || "flex"}` }}
+      style={{ display: `${(!hasProducts && !hasTerms && "none") || "flex"}` }}
       hx-on:click={useScript(() => {
         const modal: HTMLDivElement | null = document.querySelector("#modal") ||
           null;
@@ -155,7 +154,9 @@ function Suggestions({
                             class=" object-cover min-h-20 "
                           />
                           <div class={"flex flex-col justify-between gap-1"}>
-                            <span class={"text-ellipsis-custom text-sm"}>
+                            <span
+                              class={"text-ellipsis-custom text-sm capitalize"}
+                            >
                               {product.isVariantOf?.name == title
                                 ? `${title?.toLowerCase()} ${
                                   size?.value ? "- " + size.value : ""

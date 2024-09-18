@@ -252,7 +252,8 @@ function PageResult(props: SectionProps<typeof loader>) {
             pix={pix}
           />
         ))}
-        {products?.map((product, i) => {
+        {
+          /* {products?.map((product, i) => {
           const { isVariantOf } = product;
           const hasVariant = isVariantOf?.hasVariant ?? [];
           const isAcessory = product.additionalProperty?.filter(
@@ -266,31 +267,32 @@ function PageResult(props: SectionProps<typeof loader>) {
                 productName={product.isVariantOf?.name}
                 preload={i === 0}
                 index={offset + i}
-                class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
+                class="h-full min-w-[160px] max-w-[300px] border border-gray-100
                 shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
                 pix={pix}
               />
             );
           }
-          return hasVariant.map((item, index) => {
-            if (item.sku != product.sku) {
-              return (
-                <ProductCard
-                  key={`product-card-${item.productID}`}
-                  product={item}
-                  productName={product.isVariantOf?.name}
-                  preload={index === 0}
-                  index={offset + index}
-                  class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
-                  shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
-                  pix={pix}
-                />
-                //Essa parte do codigo quebra os filtros Diego 08/09 filtrar variantes tbm
-              );
-            }
-            return null;
-          });
-        })}
+          // return hasVariant.map((item, index) => {
+          //   if (item.sku != product.sku) {
+          //     return (
+          //       <ProductCard
+          //         key={`product-card-${item.productID}`}
+          //         product={item}
+          //         productName={product.isVariantOf?.name}
+          //         preload={index === 0}
+          //         index={offset + index}
+          //         class="h-full min-w-[160px] max-w-[300px] border border-gray-100
+          //         shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
+          //         pix={pix}
+          //       />
+          //       //Essa parte do codigo quebra os filtros Diego 08/09 filtrar variantes tbm
+          //     );
+          //   }
+          //   return null;
+          // });
+        })} */
+        }
       </div>
 
       <div class={clx("pt-2 sm:pt-10 w-full flex justify-center", "")}>
@@ -575,25 +577,25 @@ function SearchResult({ page, ...props }: SectionProps<typeof loader>) {
   return <Result {...props} page={page} />;
 }
 export const loader = (props: Props, req: Request) => {
-
   if (props.page != null) {
-
-    const products: Product[] = []
+    const products: Product[] = [];
 
     props.page?.products.map((item) => {
       if (!item.category?.includes("Clean Whey Medical")) {
-        products.push(item)
+        products.push(item);
       }
-    })
-    const page: ProductListingPage | null = products.length > 0 ? {
-      "@type": "ProductListingPage",
-      breadcrumb: props.page.breadcrumb,
-      filters: props.page.filters,
-      products,
-      pageInfo: props.page.pageInfo,
-      sortOptions: props.page.sortOptions,
-      seo: props.page.seo
-    } : null;
+    });
+    const page: ProductListingPage | null = products.length > 0
+      ? {
+        "@type": "ProductListingPage",
+        breadcrumb: props.page.breadcrumb,
+        filters: props.page.filters,
+        products,
+        pageInfo: props.page.pageInfo,
+        sortOptions: props.page.sortOptions,
+        seo: props.page.seo,
+      }
+      : null;
 
     const newProps: Props = {
       page,
@@ -601,13 +603,13 @@ export const loader = (props: Props, req: Request) => {
       layout: props.layout,
       startingPage: props.startingPage,
       partial: props.partial,
-      notFound: props.notFound
-    }
+      notFound: props.notFound,
+    };
 
     return {
       ...newProps,
-      url: req.url
-    }
+      url: req.url,
+    };
   }
 
   return {

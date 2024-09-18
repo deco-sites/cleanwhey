@@ -23,9 +23,13 @@ const script = (id: string) => {
   };
   addEventListener("keydown", handler);
 };
-function Drawer(
-  { children, aside, open, class: _class = "", id = useId() }: Props,
-) {
+function Drawer({
+  children,
+  aside,
+  open,
+  class: _class = "",
+  id = useId(),
+}: Props) {
   return (
     <>
       <div class={clx("drawer", _class)}>
@@ -58,7 +62,11 @@ function Drawer(
     </>
   );
 }
-function Aside({ title, drawer, children }: {
+function Aside({
+  title,
+  drawer,
+  children,
+}: {
   title: string;
   drawer: string;
   children: ComponentChildren;
@@ -127,7 +135,7 @@ function Aside({ title, drawer, children }: {
           <div class="flex justify-between items-center">
             <a
               class="p-4 h-auto text-white hover:!bg-transparent btn btn-sm font-normal btn-ghost no-animation gap-2 flex items-center"
-              href="#1840087127-0"
+              href="/faq"
             >
               <Icon id="duvidas" class="h-8 w-8" />
               <p>

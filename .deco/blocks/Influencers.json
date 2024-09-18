@@ -3,7 +3,7 @@
   "items": [
     {
       "images": {
-        "normal": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/8c2ba3ff-4e0a-4c8b-8034-9668dc36775d/JR-PIMENTA.jpg"
+        "normal": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/a7164e1d-9733-4b65-875f-0a74150d170c/PIMENTA.png"
       },
       "link": "/blog/junior-pimenta-do-ringue-para-a-vida",
       "textLabel": "Pimenta",
@@ -11,7 +11,7 @@
     },
     {
       "images": {
-        "normal": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/3acde6f2-67e6-4dd1-a69d-e758235cbec0"
+        "normal": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/931067aa-6939-4d40-afd6-115ac981b1e1/JU-MUSSEL.png"
       },
       "link": "/blog/Juliana-Mussel",
       "textLabel": "Juliana Mussel",
@@ -19,7 +19,7 @@
     },
     {
       "images": {
-        "normal": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/0b2cd7b2-f73e-4a23-9ef6-3260bea9a28f/PEDRO.jpg"
+        "normal": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/23e4b185-5832-44c6-962b-15db8badac2a/PEDRO-PERSONAL.png"
       },
       "textLabel": "Personal Pe",
       "description": "<p><strong>Pedro: A Transformação de um Campeão</strong></p></br><p></p><p>Você já imaginou superar os desafios do sobrepeso e se tornar um exemplo de superação? Pedro, o personal trainer por trás do perfil @personalpe, fez exatamente isso. Com uma história inspiradora que começou na infância, ele sabe o quanto a alimentação e a atividade física podem mudar vidas.</p></br><p>Hoje, Pedro é referência em transformação física e mental. Sua jornada é pautada por disciplina e paixão pela mudança. Através de suas redes sociais, ele compartilha seu conhecimento e experiência, incentivando seus seguidores a alcançarem seus objetivos.</p></br><p>E qual é o segredo por trás desse sucesso? Além de um treino intenso e uma dieta equilibrada, Pedro confia na Clean Whey, a marca de suplementos esportivos que ele considera a melhor do mercado. A composição clean label e de alta qualidade dos ingredientes Clean Whey o ajudaram a construir um corpo forte e saudável, e ele não hesita em recomendá-los aos seus alunos e seguidores.</p></br><p><strong>x</strong> - Pedro, @personalpe</p><p>Se você busca inspiração, conhecimento e produtos de alta qualidade para te ajudar a transformar sua vida, siga Pedro no Instagram e conheça mais sobre sua história e os benefícios da Clean Whey.</p>",
@@ -27,11 +27,51 @@
     },
     {
       "images": {
-        "normal": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/4f6b23dd-b1e8-4e38-9b00-3a5daa1815e4/ALEXANDRA-(3).jpg"
+        "normal": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/3be68e93-a307-40a6-816a-621358740f3c/ALEXANDRA.png"
       },
       "link": "/blog/Alexandra-Kyrillos",
       "textLabel": "Alexandra Kyrillos",
-      "description": "<p>AlekyKeto: A Empresária que Venceu a Balança e Encontrou a Felicidade na Cetogênica</p><br><p>Descubra a história de Ale @alekyKeto! ✨ Uma empresária que, como muitas de nós, já passou pela frustração da “dieta do sanfona”. Após anos tentando várias dietas sem resultados duradouros, ela encontrou na dieta cetogênica a transformação que buscava. Com disciplina e determinação, ela conquistou um corpo mais saudável e uma autoestima elevada. No Instagram, ela compartilha seu dia a dia, receitas low carb deliciosas, resultados dos treinos e dicas para quem quer começar a dieta cetogênica. Com o apoio do whey protein Hidrolisado da @cleanwhey, ela garante a dose de proteína necessária para alcançar seus objetivos. Siga-a: https://www.instagram.com/alekyketo/ e inspire-se! #cetogenica #mudancadevida #cleanwhey #dietadoioiô&nbsp;#transformação</p>"
+      "description": "<p><strong>AlekyKeto: A Empresária que Venceu a Balança e Encontrou a Felicidade na Cetogênica</strong></p><p><br></p><p>Descubra a história de Ale @alekyKeto! ✨ Uma empresária que, como muitas de nós, já passou pela frustração da “dieta do sanfona”. Após anos tentando várias dietas sem resultados duradouros, ela encontrou na dieta cetogênica a transformação que buscava. Com disciplina e determinação, ela conquistou um corpo mais saudável e uma autoestima elevada. No Instagram, ela compartilha seu dia a dia, receitas low carb deliciosas, resultados dos treinos e dicas para quem quer começar a dieta cetogênica. Com o apoio do whey protein Hidrolisado da @cleanwhey, ela garante a dose de proteína necessária para alcançar seus objetivos. Siga-a: https://www.instagram.com/alekyketo/ e inspire-se! #cetogenica #mudancadevida #cleanwhey #dietadoioiô&nbsp;#transformação</p>"
+    },
+    {
+      "images": {
+        "normal": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/33a557a9-4bcf-4c81-a8da-2170e9d038d8/TIBI.png"
+      },
+      "link": "/blog/Tibi",
+      "textLabel": "Tibi",
+      "description": "<p><strong><span style=\"font-size: 12pt\">Tibí: Energia e Foco para Conquistar Seus Objetivos</span></strong></p><p><br></p><p><span style=\"font-size: 12pt\">O cantor, compositor e multi-instrumentista Tibí é a prova viva de que é possível conciliar uma carreira artística intensa com um estilo de vida saudável e ativo.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 12pt\">Conhecido por sua voz marcante e suas composições inspiradoras, ele também é um grande entusiasta da prática de exercícios físicos e da alimentação equilibrada.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 12pt\">Ao superar diversas alergias através da mudança de hábitos alimentares e da inclusão de suplementos de alta qualidade em sua rotina, Tibí encontrou na Clean Whey o parceiro ideal para alcançar seus objetivos.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 12pt\">Atualmente, ele é embaixador da marca e compartilha com seus fãs a importância de cuidar da saúde e do bem-estar.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 12pt\">Com uma energia contagiante e uma determinação inabalável, Tibí inspira milhares de pessoas a buscarem seus sonhos e a viverem uma vida mais saudável.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 12pt\">Se você busca um estilo de vida mais ativo e quer ter mais energia para realizar seus objetivos, inspire-se na história de Tibí e conheça os produtos&nbsp;Clean&nbsp;Whey.\"</span></p>"
+    },
+    {
+      "images": {
+        "normal": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/c2eb2b00-8e6f-47a5-8a10-3af3e808d3ba/PAULA-PRATTI.png"
+      },
+      "link": "/blog/Paula-Pratti",
+      "textLabel": "Paula Pratti",
+      "description": "<p><strong><span style=\"color: #ffffff; font-size: 12pt\">A nutrição como aliada no tratamento do câncer: o olhar da nutricionista Paula Pratti</span></strong></p><p></p><p><span style=\"font-size: 12pt\">A nutricionista oncológica Paula Pratti dedica sua carreira a otimizar a qualidade de vida de pacientes com câncer através da nutrição.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 12pt\">Com profundo conhecimento sobre as necessidades nutricionais específicas durante e após o tratamento oncológico, Paula enfatiza a importância de uma alimentação equilibrada e personalizada para cada indivíduo para e redução de sintomas provocados pelo tratamento do câncer, melhora da qualidade de vida e otimizar o sucesso do tratamento ajudando na cura do câncer.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 12pt\">A proteína, em particular, desempenha um papel crucial na recuperação e manutenção da massa muscular, tão afetada pelos tratamentos oncológicos.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 12pt\">O whey protein sem sabor, por sua versatilidade, tem se mostrado um aliado valioso na suplementação proteica, permitindo que os pacientes incorporem o suplemento em diversas preparações doces e salgadas, sem alterar o sabor dos alimentos.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 12pt\">Além da proteína, Paula destaca a relevância da lactoferrina, um componente do sistema imunológico, que auxilia na recuperação da imunidade, na proteção contra infecções e melhora da anemia provocada pelos tratamentos contra o câncer.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 12pt\">Através de um acompanhamento nutricional individualizado, Paula Pratti busca fortalecer seus pacientes, proporcionando-lhes mais energia e bem-estar durante todo o processo de tratamento.</span></p>"
+    },
+    {
+      "images": {
+        "normal": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/b5c72746-7781-4ba1-affd-810df8147d0f/NATH.png"
+      },
+      "link": "/blog/Nathalia-Pinho",
+      "textLabel": "Nathalia Pinho",
+      "description": "<p><span style=\"color: #ffffff; font-size: 12pt\">Nathalia Pinho: Transformando a Alimentação com Clean Whey</span></p><p></p><p></p><p><span style=\"font-size: 12pt\">Conheça Nathália Pinho, uma nutricionista e influenciadora apaixonada por transformar a alimentação em uma experiência deliciosa e saudável.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 12pt\">Com uma abordagem equilibrada, Nathalia integra o melhor da nutrição em todos os aspectos de sua vida, desde as consultas clínicas até os treinos e a criatividade na cozinha.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 12pt\">Um dos segredos por trás das suas receitas surpreendentes é o Clean Whey sem sabor, um aliado versátil que se adapta perfeitamente tanto a pratos doces quanto salgados, sem comprometer o sabor ou a qualidade nutricional.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 12pt\">Essa proteína clean label é a base para diversas criações que encantam o paladar, enquanto promovem uma alimentação equilibrada e nutritiva.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 12pt\">No Instagram, Nathalia compartilha seu dia a dia, receitas inovadoras e dicas valiosas para quem busca saúde e bem-estar.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 12pt\">Se você deseja experimentar receitas que unem sabor e nutrição, siga Nathália e descubra como o Clean Whey pode transformar sua alimentação.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"font-size: 12pt\">#nutricaosaudavel #cleanwhey #receitasfit</span></p>"
+    },
+    {
+      "images": {
+        "normal": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/707321e1-4ddd-4c9c-bd8c-5f8b78928a7e/CAMILLE.png"
+      },
+      "link": "/blog/Camille-Dutra",
+      "textLabel": "Camille Dutra",
+      "description": "<p><strong><span style=\"color: #ffffff; font-size: 12pt\">A nutricionista Camille Dutra, apaixonada por nutrição desde a adolescência, acredita que a alimentação é muito mais do que apenas nutrir o corpo. É um ato de amor-próprio, uma forma de cuidar da saúde e do bem-estar. Com sua abordagem integral, Camille busca promover uma alimentação equilibrada e prazerosa, levando em consideração as preferências e necessidades individuais de cada paciente, especialmente as mulheres.</span></strong></p><p><span style=\"font-size: 12pt\"><br></span></p><p><span style=\"color: #ffffff; font-size: 12pt\">Uma dieta rica e variada, incluindo frutas, legumes, verduras, grãos integrais, carnes magras, peixes, ovos e leguminosas, é a base para uma vida saudável.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"color: #ffffff; font-size: 12pt\">Cada alimento desempenha um papel importante no organismo, fornecendo os nutrientes necessários para o bom funcionamento de todas as funções corporais, incluindo o sistema hormonal feminino.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><strong><span style=\"color: #ffffff; font-size: 12pt\">Para as mulheres</span></strong><span style=\"color: #ffffff; font-size: 12pt\">, a nutrição desempenha um papel fundamental em todas as fases da vida, desde a adolescência até a menopausa.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"color: #ffffff; font-size: 12pt\">Uma alimentação adequada pode auxiliar na regulação hormonal, na prevenção de doenças como a osteoporose e na melhora do bem-estar geral.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"color: #ffffff; font-size: 12pt\">Em alguns casos, a suplementação com proteínas, como o whey protein, pode ser recomendada para complementar a dieta e otimizar os resultados, especialmente para quem busca aumentar a massa muscular ou acelerar a recuperação após atividades físicas.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"color: #ffffff; font-size: 12pt\">No entanto, a suplementação deve ser sempre acompanhada por uma alimentação equilibrada e orientada por um profissional de nutrição.\"</span></p>"
+    },
+    {
+      "images": {
+        "normal": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/c20733bf-9850-4526-9fa0-f4bd85c34a7c/GUILHERME-SANTIAGO.png"
+      },
+      "link": "/blog/Gui-Santiago",
+      "textLabel": "Gui Santiago",
+      "description": "<p><strong><span style=\"color: rgb(255, 255, 255); font-size: 12pt\">Guilherme Santiago: A Corrida Pela Excelência</span></strong></p><p></p><p></p><p><span style=\"color: rgb(255, 255, 255); font-size: 12pt\">Guilherme Santiago é um personal trainer e influenciador especializado em corrida de rua, atuando em Petrópolis.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"color: rgb(255, 255, 255); font-size: 12pt\">Maratonista dedicado, Guilherme alia uma rotina rigorosa de treinos com uma alimentação balanceada e a suplementação da Clean Whey, uma marca de suplementos esportivos clean label que promove saúde e desempenho de alta qualidade.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"color: rgb(255, 255, 255); font-size: 12pt\">Como membro da assessoria de corrida Carneiro Run, ele se destaca por sua paixão e comprometimento em ajudar seus alunos e seguidores a atingirem seus objetivos.</span></p><p style=\"text-align: start\"></p><p style=\"text-align: start\"><span style=\"color: rgb(255, 255, 255); font-size: 12pt\">Em seu perfil no Instagram, </span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://www.instagram.com/gui.santiag0/\"><span style=\"color: rgb(255, 255, 255); font-size: 12pt\">@gui.santiag0</span></a><span style=\"color: rgb(255, 255, 255); font-size: 12pt\">, Guilherme compartilha sua jornada e oferece dicas valiosas de treino, nutrição e suplementação, mostrando que o sucesso na corrida é resultado de esforço, disciplina e as escolhas certas.</span></p>"
     }
   ],
   "title": "<p>Eles já fizeram a escolha correta, só falta <span style=\"color: rgb(224, 103, 65)\">você!</span></p>",

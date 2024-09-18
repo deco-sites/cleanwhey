@@ -96,9 +96,9 @@ export default function BlogPosts({
             <div class="overflow-hidden rounded-lg flex flex-col bg-white-300 p-2.5 max-w-72 mx-auto lg:mx-0">
               <figure class="relative">
                 <Image
-                  width={600}
-                  height={720}
-                  class="w-full min-h-[400px] max-h-[400px]"
+                  width={635}
+                  height={953}
+                  class="w-full min-h-[400px] max-h-[400px] object-cover"
                   sizes="(max-width: 640px) 100vw, 30vw"
                   src={post.image || DEFAULT_IMAGE}
                   alt={post.image}
