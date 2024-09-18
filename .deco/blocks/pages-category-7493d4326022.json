@@ -24,20 +24,11 @@
     {
       "__resolveType": "site/sections/Product/SearchResult.tsx",
       "page": {
-        "__resolveType": "commerce/loaders/product/productListingPage.ts",
-        "data": {
-          "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
-          "sort": "release:desc",
-          "fuzzy": "automatic",
-          "selectedFacets": [],
-          "count": 16
-        },
-        "extensions": [
-          {
-            "__resolveType": "vtex/loaders/product/extensions/listingPage.ts",
-            "variants": true
-          }
-        ]
+        "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
+        "sort": "release:desc",
+        "fuzzy": "automatic",
+        "selectedFacets": [],
+        "count": 24
       },
       "layout": {
         "columns": {

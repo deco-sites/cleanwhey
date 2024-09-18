@@ -13,6 +13,7 @@ import AddToCartButton from "./AddToCartButton.tsx";
 import { useId } from "../../sdk/useId.ts";
 import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 import { formatPix } from "../../sdk/formatPix.tsx";
+import { ConsoleLogRecordExporter } from "deco/deps.ts";
 
 interface Props {
   product: Product;
@@ -92,7 +93,7 @@ function ProductCard({
     .replace(/sabor:[^;]*/g, "")
     .replace(/;/g, "")
     .trim();
-
+  console.log(product);
   const nome =
     productName == title
       ? title?.toLowerCase().replace("tamanho:", "")
@@ -208,7 +209,7 @@ function ProductCard({
         <span
           class={`font-bold text-gray-400 text-base md:text-lg text-center capitalize`}
         >
-          {isVariantOf?.name != undefined &&
+          {/* {isVariantOf?.name != undefined &&
           isVariantOf?.name.toLowerCase().includes("combo")
             ? isVariantOf?.name
             : nome
@@ -216,7 +217,11 @@ function ProductCard({
                 .replace(";", "")
                 .replace("30gsabor:sem sabor ", "")
                 .replace("600gsabor:sem sabor - ", "")
-                .replace("30gsabor:mocaccino", "")}
+                .replace("30gsabor:mocaccino", "")} */}
+          {product.isVariantOf?.name
+            ?.replace("Tamanho:Sachê 30g;Sabor:Mocaccino", "")
+            .replace("Tamanho:Sachê 30g;Sabor:Sem Sabor", "")}{" "}
+          - {product.name?.split(";")[0].replace("Tamanho:", "")}
         </span>
         {!isFeatured && (
           <>

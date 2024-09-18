@@ -254,7 +254,7 @@ function PageResult(props: SectionProps<typeof loader>) {
             pix={pix}
           />
         ))}
-        {products?.map((product, i) => {
+        {/* {products?.map((product, i) => {
           const { isVariantOf } = product;
           const hasVariant = isVariantOf?.hasVariant ?? [];
           const isAcessory = product.additionalProperty?.filter(
@@ -274,25 +274,25 @@ function PageResult(props: SectionProps<typeof loader>) {
               />
             );
           }
-          return hasVariant.map((item, index) => {
-            if (item.sku != product.sku) {
-              return (
-                <ProductCard
-                  key={`product-card-${item.productID}`}
-                  product={item}
-                  productName={product.isVariantOf?.name}
-                  preload={index === 0}
-                  index={offset + index}
-                  class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
-                  shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
-                  pix={pix}
-                />
-                //Essa parte do codigo quebra os filtros Diego 08/09 filtrar variantes tbm
-              );
-            }
-            return null;
-          });
-        })}
+          // return hasVariant.map((item, index) => {
+          //   if (item.sku != product.sku) {
+          //     return (
+          //       <ProductCard
+          //         key={`product-card-${item.productID}`}
+          //         product={item}
+          //         productName={product.isVariantOf?.name}
+          //         preload={index === 0}
+          //         index={offset + index}
+          //         class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
+          //         shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
+          //         pix={pix}
+          //       />
+          //       //Essa parte do codigo quebra os filtros Diego 08/09 filtrar variantes tbm
+          //     );
+          //   }
+          //   return null;
+          // });
+        })} */}
       </div>
 
       <div class={clx("pt-2 sm:pt-10 w-full flex justify-center", "")}>
