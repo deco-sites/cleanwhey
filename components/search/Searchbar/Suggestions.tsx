@@ -1,4 +1,4 @@
-import { Suggestion } from "apps/commerce/types.ts";
+import { Product, Suggestion } from "apps/commerce/types.ts";
 import { Resolved } from "deco/mod.ts";
 import type { AppContext } from "../../../apps/site.ts";
 import { clx } from "../../../sdk/clx.ts";
@@ -62,8 +62,17 @@ function Suggestions({
 }: ComponentProps<typeof loader, typeof action>) {
   const { products = [], searches = [] } = suggestion ?? {};
   const recentSearches = searches;
-  const hasProducts = Boolean(products.length);
   const hasTerms = Boolean(searches.length);
+
+  const newProducts: Product[] = [];
+
+  products?.map((item) => {
+    if (!item.category?.includes("Clean Whey Medical")) {
+      newProducts.push(item);
+    }
+  });
+
+  const hasProducts = Boolean(newProducts.length);
 
   return (
     <div
@@ -71,12 +80,12 @@ function Suggestions({
       class={clx(
         `overflow-y-scroll mt-2 `,
         "before:content-['']  before:h-screen before:bg-black before:absolute before:-z-10 before:left-[-100vw] before:right-0 before:w-[200vw] before:opacity-50 before:bg-black-100",
-        !hasProducts && !hasTerms && "hidden"
+        !hasProducts && !hasTerms && "hidden",
       )}
       style={{ display: `${(!hasProducts && !hasTerms && "none") || "flex"}` }}
       hx-on:click={useScript(() => {
-        const modal: HTMLDivElement | null =
-          document.querySelector("#modal") || null;
+        const modal: HTMLDivElement | null = document.querySelector("#modal") ||
+          null;
         modal!.style.display = "none";
       })}
     >
@@ -87,7 +96,7 @@ function Suggestions({
             role="heading"
             aria-level={3}
           >
-            {products.length > 0 && searches.length === 0
+            {newProducts.length > 0 && searches.length === 0
               ? "Produtos"
               : "Buscas populares"}
           </span>
@@ -107,9 +116,9 @@ function Suggestions({
                   </a>
                 </li>
               ))}
-            {products.length > 0 &&
+            {newProducts.length > 0 &&
               searches.length === 0 &&
-              products.map((product) => {
+              newProducts.map((product) => {
                 const title = product.isVariantOf?.name ?? product.name;
                 const variantName = title
                   ?.toLowerCase()
@@ -120,7 +129,7 @@ function Suggestions({
                   .trim();
 
                 const size = product?.additionalProperty?.find(
-                  (property) => property.name == "TAMANHO"
+                  (property) => property.name == "TAMANHO",
                 );
 
                 const [front, back] = product.image ?? [];
@@ -128,7 +137,7 @@ function Suggestions({
                 const valuePix = formatPix(
                   price || 0,
                   pix.porcentagePix,
-                  pix.valueMax
+                  pix.valueMax,
                 );
                 return (
                   <li>
@@ -150,20 +159,22 @@ function Suggestions({
                             >
                               {product.isVariantOf?.name == title
                                 ? `${title?.toLowerCase()} ${
-                                    size?.value ? "- " + size.value : ""
-                                  }`
+                                  size?.value ? "- " + size.value : ""
+                                }`
                                 : title?.toLowerCase() == variantName
-                                ? `${title?.toLowerCase()} - ${product.isVariantOf?.name
+                                ? `${title?.toLowerCase()} - ${
+                                  product.isVariantOf?.name
                                     ?.toLowerCase()
                                     .replace("tamanho:", "")
                                     .replace(/sabor:[^;]*/g, "")
                                     .replace(";", "")
-                                    .replace("cor:", "")}`
+                                    .replace("cor:", "")
+                                }`
                                 : `${product.isVariantOf?.name?.toLowerCase()} ${
-                                    variantName?.toLowerCase()
-                                      ? `- ${variantName?.toLowerCase()}`
-                                      : ""
-                                  } ${size?.value ? "- " + size.value : ""}`}
+                                  variantName?.toLowerCase()
+                                    ? `- ${variantName?.toLowerCase()}`
+                                    : ""
+                                } ${size?.value ? "- " + size.value : ""}`}
                             </span>
                             <span class="text-lg font-bold">
                               {formatPrice(valuePix) + " "}
