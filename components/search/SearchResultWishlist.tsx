@@ -10,9 +10,9 @@ import { useSendEvent } from "../../sdk/useSendEvent.ts";
 import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 
 import {
+  useDevice as useDevice,
   useScript as useScript,
   useSection as useSection,
-  useDevice as useDevice,
 } from "@deco/deco/hooks";
 import { type SectionProps as SectionProps } from "@deco/deco";
 
@@ -33,10 +33,8 @@ export interface Props {
   partial?: "hideMore" | "hideLess";
 }
 
-
-
 function PageResult(props: SectionProps<typeof loader>) {
-  const {  startingPage = 0, pix } = props;
+  const { startingPage = 0, pix } = props;
   const page = props.page!;
   const { products, pageInfo } = page;
   const perPage = pageInfo?.recordPerPage || products.length;
@@ -51,7 +49,7 @@ function PageResult(props: SectionProps<typeof loader>) {
           "grid items-center",
           "grid-cols-2 gap-1",
           "sm:grid-cols-3 sm:gap-10",
-          "w-full"
+          "w-full",
         )}
       >
         {products.map((product, i) => (
@@ -70,7 +68,7 @@ function PageResult(props: SectionProps<typeof loader>) {
           const { isVariantOf } = product;
           const hasVariant = isVariantOf?.hasVariant ?? [];
           const isAcessory = product.additionalProperty?.filter(
-            (item) => item.name == "category" && item.value == "Acessórios"
+            (item) => item.name == "category" && item.value == "Acessórios",
           );
           {
             isAcessory && (
@@ -164,36 +162,33 @@ function Result(props: SectionProps<typeof loader>) {
   });
   const results = (
     <span class="text-sm font-normal">
-      Exibindo{" "}
-      {page.pageInfo.records &&
-      page.pageInfo.recordPerPage &&
-      page.pageInfo.recordPerPage > page.pageInfo.records
+      Exibindo {page.pageInfo.records &&
+          page.pageInfo.recordPerPage &&
+          page.pageInfo.recordPerPage > page.pageInfo.records
         ? page.pageInfo.records
-        : page.pageInfo.recordPerPage}{" "}
-      de {page.pageInfo.records} resultados
+        : page.pageInfo.recordPerPage} de {page.pageInfo.records} resultados
     </span>
   );
 
   return (
     <>
       <div id={container} {...viewItemListEvent} class="w-full">
-        {partial ? (
-          <PageResult {...props} />
-        ) : (
-          <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
-
-            <div class="md:gap-8 grid place-items-center grid-cols-1 sm:grid-cols-1">
-              <div class="flex flex-col gap-9">
-                {device === "desktop" && (
-                  <div class="flex justify-between items-center">
-                    {results}
-                  </div>
-                )}
-                <PageResult {...props} />
+        {partial
+          ? <PageResult {...props} />
+          : (
+            <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
+              <div class="md:gap-8 grid place-items-center grid-cols-1 sm:grid-cols-1">
+                <div class="flex flex-col gap-9">
+                  {device === "desktop" && (
+                    <div class="flex justify-between items-center">
+                      {results}
+                    </div>
+                  )}
+                  <PageResult {...props} />
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
       </div>
 
       <script
@@ -202,7 +197,7 @@ function Result(props: SectionProps<typeof loader>) {
           __html: useScript(
             setPageQuerystring,
             `${pageInfo.currentPage}`,
-            container
+            container,
           ),
         }}
       />
@@ -212,7 +207,13 @@ function Result(props: SectionProps<typeof loader>) {
 
 function SearchResultWishlist({ page, ...props }: SectionProps<typeof loader>) {
   if (!page || page.pageInfo.records == 0) {
-    return <><p class="text-orange-300 text-2xl text-center">Nenhum produto encontrado na sua Wishlist</p></>;
+    return (
+      <>
+        <p class="text-orange-300 text-2xl text-center">
+          Nenhum produto encontrado na sua Wishlist
+        </p>
+      </>
+    );
   }
   return <Result {...props} page={page} />;
 }

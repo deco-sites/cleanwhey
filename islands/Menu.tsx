@@ -56,7 +56,7 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
           `}
           >
             <li class="w-full relative flex justify-start items-center h-[60px] border-b border-gray-100">
-              <button class="absolute left-0 w-[46px] flex justify-center items-center" onClick={() => open.value = null}>
+              <button class="absolute left-0 w-[46px] flex justify-center items-center">
                 <Icon
                   class={"block text-gray-400"}
                   id="chevron-right"
@@ -83,8 +83,8 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
             </li>
 
             {item.children!.map((node, index) => {
-              const hasSubChildren =
-                Array.isArray(node.children) && node.children.length > 0;
+              const hasSubChildren = Array.isArray(node.children) &&
+                node.children.length > 0;
 
               const subTitle = (
                 <p
@@ -99,12 +99,12 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
                   key={index}
                   class="relative"
                   onClick={() => {
-                    if (hasSubChildren) openSub.value = openSub.value === index ? null : index; // Alterna o submenu correspondente
+                    if (hasSubChildren) {
+                      openSub.value = openSub.value === index ? null : index; // Alterna o submenu correspondente
+                    }
                   }}
                 >
-                  {hasSubChildren ? (
-                    subTitle
-                  ) : (
+                  {hasSubChildren ? subTitle : (
                     <a
                       href={node.url}
                       class="py-[20px] pl-[30px] pr-[12px] flex-grow min-h-[40px] flex items-center justify-start text-gray-300 text-base font-bold"
@@ -133,10 +133,7 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
                         } top-[140px] h-[calc(100%-138px)] transition-all ease-in-out duration-400 flex flex-col fixed w-full bg-[#fff] z-[999999] overflow-y-auto`}
                       >
                         <li class="w-full relative flex justify-start items-center h-[60px] border-b border-gray-100">
-                          <button
-                            class="absolute left-0 w-[46px] flex justify-center items-center"
-                            onClick={() => openSub.value = null}
-                          >
+                          <button class="absolute left-0 w-[46px] flex justify-center items-center">
                             <Icon
                               class={"block text-gray-400"}
                               id="chevron-right"
@@ -145,9 +142,7 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
                               width={24}
                             />
                           </button>
-                          <p
-                            class="w-full h-[60px] py-2 ml-10 flex justify-start items-center text-left"
-                          >
+                          <p class="w-full h-[60px] py-2 ml-10 flex justify-start items-center text-left">
                             <span class="text-gray-300 text-base font-bold">
                               {node.name}
                             </span>
@@ -177,9 +172,6 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
     </li>
   );
 }
-
-
-
 
 function Menu({ navItems }: Props) {
   return (

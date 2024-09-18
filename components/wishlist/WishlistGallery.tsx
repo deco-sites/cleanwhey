@@ -1,4 +1,6 @@
-import SearchResult, { Props as SearchResultProps, } from "../search/SearchResult.tsx";
+import SearchResult, {
+  Props as SearchResultProps,
+} from "../search/SearchResult.tsx";
 import { AppContext, type SectionProps as SectionProps } from "@deco/deco";
 import SearchResultWishlist from "../search/SearchResultWishlist.tsx";
 
@@ -15,7 +17,7 @@ async function loader(props: Props, req: Request, ctx: AppContext<any>) {
     ids: props.page?.products.map((product) => product.productID),
   });
 
-  console.log('produtos', products)
+  console.log("produtos", products);
 
   return {
     ...props,
