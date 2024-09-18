@@ -13,7 +13,6 @@ import AddToCartButton from "./AddToCartButton.tsx";
 import { useId } from "../../sdk/useId.ts";
 import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 import { formatPix } from "../../sdk/formatPix.tsx";
-import { ConsoleLogRecordExporter } from "deco/deps.ts";
 
 interface Props {
   product: Product;
@@ -49,8 +48,6 @@ function ProductCard({
   const id = useId();
 
   const { url, image: images, offers, isVariantOf } = product;
-
-  const hasVariant = isVariantOf?.hasVariant ?? [];
 
   const title = isVariantOf?.name ?? product.name;
   const [front, back] = images ?? [];
@@ -93,7 +90,7 @@ function ProductCard({
     .replace(/sabor:[^;]*/g, "")
     .replace(/;/g, "")
     .trim();
-  console.log(product);
+
   const nome =
     productName == title
       ? title?.toLowerCase().replace("tamanho:", "")
@@ -209,19 +206,22 @@ function ProductCard({
         <span
           class={`font-bold text-gray-400 text-base md:text-lg text-center capitalize`}
         >
-          {/* {isVariantOf?.name != undefined &&
-          isVariantOf?.name.toLowerCase().includes("combo")
-            ? isVariantOf?.name
-            : nome
-                ?.replace(/tamanho:\S*\s/, "")
-                .replace(";", "")
-                .replace("30gsabor:sem sabor ", "")
-                .replace("600gsabor:sem sabor - ", "")
-                .replace("30gsabor:mocaccino", "")} */}
-          {product.isVariantOf?.name
-            ?.replace("Tamanho:Sachê 30g;Sabor:Mocaccino", "")
-            .replace("Tamanho:Sachê 30g;Sabor:Sem Sabor", "")}{" "}
-          - {product.name?.split(";")[0].replace("Tamanho:", "")}
+          {isVariantOf?.name != undefined
+            ? isVariantOf?.name.toLowerCase().includes("combo") ||
+              isVariantOf?.name.toLowerCase().includes("immunoferrin") ||
+              isVariantOf?.name.toLowerCase().includes("caneca")
+              ? isVariantOf?.name
+              : isVariantOf.name == product.name
+              ? isVariantOf.name
+              : isVariantOf?.name
+                  ?.replace("Tamanho:Sachê 30g;Sabor:Sem Sabor", "")
+                  .replace("Tamanho:Sachê 30g;Sabor:Mocaccino", "") +
+                " " +
+                product.name
+                  ?.split(";")[0]
+                  .replace("Tamanho:", "")
+                  .replace("Cor:", "")
+            : nome}
         </span>
         {!isFeatured && (
           <>
@@ -256,25 +256,6 @@ function ProductCard({
         )}
       </a>
 
-      {/* SKU Selector */}
-      {/* {variants.length > 1 && (
-        <ul class="mb-4 flex items-center justify-start gap-2 pt-4 pb-1 pl-1 overflow-x-auto">
-          {variants.map(([value, link]) => [value, relative(link?.url)] as const)
-            .map(([value, link]) => (
-              <li>x
-                <a href={link} class="cursor-pointer">
-                  <input
-                    class="hidden peer"
-                    type="radio"
-                    name={`${id}-${firstSkuVariations[0]}`}
-                    checked={link === relativeUrl}
-                  />
-                  <Ring value={value} checked={link === relativeUrl} />
-                </a>
-              </li>
-            ))}
-        </ul>
-      )} */}
       <div class="flex-grow" />
       <div
         class={`${
