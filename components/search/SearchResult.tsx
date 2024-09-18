@@ -1,4 +1,4 @@
-import type { ProductListingPage } from "apps/commerce/types.ts";
+import type { Product, ProductListingPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductCard from "../../components/product/ProductCard.tsx";
 import Filters from "../../components/search/Filters.tsx";
@@ -22,7 +22,7 @@ import {
   useSection as useSection,
 } from "@deco/deco/hooks";
 import { type SectionProps as SectionProps } from "@deco/deco";
-// import { Product } from "apps/vtex/utils/types.ts";
+
 interface NotFound {
   /** @description text to be rendered on top of the image */
   title?: HTMLWidget;
@@ -575,6 +575,41 @@ function SearchResult({ page, ...props }: SectionProps<typeof loader>) {
   return <Result {...props} page={page} />;
 }
 export const loader = (props: Props, req: Request) => {
+
+  if (props.page != null) {
+
+    const products: Product[] = []
+
+    props.page?.products.map((item) => {
+      if (!item.category?.includes("Clean Whey Medical")) {
+        products.push(item)
+      }
+    })
+    const page: ProductListingPage | null = products.length > 0 ? {
+      "@type": "ProductListingPage",
+      breadcrumb: props.page.breadcrumb,
+      filters: props.page.filters,
+      products,
+      pageInfo: props.page.pageInfo,
+      sortOptions: props.page.sortOptions,
+      seo: props.page.seo
+    } : null;
+
+    const newProps: Props = {
+      page,
+      pix: props.pix,
+      layout: props.layout,
+      startingPage: props.startingPage,
+      partial: props.partial,
+      notFound: props.notFound
+    }
+
+    return {
+      ...newProps,
+      url: req.url
+    }
+  }
+
   return {
     ...props,
     url: req.url,
