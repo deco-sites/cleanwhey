@@ -15,12 +15,14 @@ function AddToCartButton(
   const count = useSignal(1);
 
   const onAddItem = () => {
-    const container = document.querySelector<HTMLDivElement>("div[data-cart-item]")!;
+    const container = document.querySelector<HTMLDivElement>(
+      "div[data-cart-item]",
+    )!;
     const { item, platformProps } = JSON.parse(
       decodeURIComponent(container.getAttribute("data-cart-item")!),
     );
     window.STOREFRONT.CART.addToCart(item, platformProps);
-  }
+  };
 
   const onAddAttachment = () => {
     addItemAttachment({

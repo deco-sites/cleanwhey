@@ -77,7 +77,7 @@ function ProductInfo({ page, pix }: Props) {
       <span
         class={clx(
           "font-bold text-gray-400 flex items-start justify-between text-2xl capitalize",
-          "pt-4"
+          "pt-4",
         )}
       >
         {title
@@ -137,24 +137,26 @@ function ProductInfo({ page, pix }: Props) {
 
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-        {availability === "https://schema.org/InStock" ? (
-          <>
-            <AddToCartButton
-              item={item}
-              seller={seller}
-              product={product}
-              class="btn btn-primary hover:bg-orange-300 hover:border-orange-300 no-animation bg-orange-300 border-orange-300 rounded-lg h-14"
-              disabled={false}
-            />
+        {availability === "https://schema.org/InStock"
+          ? (
+            <>
+              <AddToCartButton
+                item={item}
+                seller={seller}
+                product={product}
+                class="btn btn-primary hover:bg-orange-300 hover:border-orange-300 no-animation bg-orange-300 border-orange-300 rounded-lg h-14"
+                disabled={false}
+              />
 
-            {/* <AddToCartButtonVTEX
+              {
+                /* <AddToCartButtonVTEX
                 productID={productID}
                 seller={seller}
-              /> */}
-          </>
-        ) : (
-          <OutOfStock productID={productID} />
-        )}
+              /> */
+              }
+            </>
+          )
+          : <OutOfStock productID={productID} />}
       </div>
     </div>
   );
