@@ -340,10 +340,11 @@ function PageResult(props: SectionProps<typeof loader>) {
                   return (
                     <a
                       href={link.href}
-                      class={`btn !rounded-lg ${pageInfo.currentPage == link.label
-                        ? "btn-primary hover:bg-orange-300 bg-orange-300 border-orange-300 hover:border-orange-300"
-                        : "btn-ghost"
-                        } join-item`}
+                      class={`btn !rounded-lg ${
+                        pageInfo.currentPage == link.label
+                          ? "btn-primary hover:bg-orange-300 bg-orange-300 border-orange-300 hover:border-orange-300"
+                          : "btn-ghost"
+                      } join-item`}
                     >
                       <span>{link.label}</span>
                     </a>
@@ -440,12 +441,11 @@ function Result(props: SectionProps<typeof loader>) {
   const results = (
     <span class="text-sm font-normal">
       Exibindo {page.pageInfo.records &&
-        page.pageInfo.recordPerPage &&
-        page.pageInfo.recordPerPage > page.pageInfo.records
+          page.pageInfo.recordPerPage &&
+          page.pageInfo.recordPerPage > page.pageInfo.records
         ? page.pageInfo.records
-        : page.pageInfo.recordPerPage
-      } de {page.pageInfo.records} resultados
-    </span >
+        : page.pageInfo.recordPerPage} de {page.pageInfo.records} resultados
+    </span>
   );
   const sortBy = sortOptions.length > 0 && (
     <Sort sortOptions={sortOptions} url={url} />
