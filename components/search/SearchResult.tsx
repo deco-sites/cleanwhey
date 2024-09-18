@@ -574,7 +574,7 @@ function Result(props: SectionProps<typeof loader>) {
 }
 function SearchResult({ page, ...props }: SectionProps<typeof loader>) {
   if (!page || page.pageInfo.records == 0) {
-    return <NotFound {...props} />;
+    return <NotFound {...props} page={page} />;
   }
   return <Result {...props} page={page} />;
 }

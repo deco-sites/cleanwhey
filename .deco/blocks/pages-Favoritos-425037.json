@@ -9,44 +9,40 @@
       }
     },
     {
-      "__resolveType": "site/sections/Product/SearchResult.tsx",
+      "__resolveType": "site/sections/Product/Wishlist.tsx",
       "page": {
         "__resolveType": "vtex/loaders/product/wishlist.ts",
         "count": 12,
         "offset": 1
-      },
-      "pix": {
-        "porcentagePix": 0,
-        "valueMax": 0
       },
       "layout": {
         "pagination": "pagination"
       },
       "startingPage": 1,
       "notFound": {
-        "title": "<p>Wishlist</p>",
-        "buttonLabel": "teste",
-        "link": "link",
-        "image": {
-          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/6b421b78-fa29-424d-9673-b68f9f1615c7/TIBI.png",
-          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/497de9ec-06e1-4a69-a1e4-07d33cd027d8/produto-teste-2.png",
-          "alt": "Alt"
-        },
         "shelf": {
           "products": {
-            "__resolveType": "vtex/loaders/workflow/products.ts",
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
             "props": {
-              "sort": "price:desc"
-            },
-            "page": 1,
-            "pagesize": 1
+              "sort": "price:desc",
+              "collection": "0",
+              "count": 0
+            }
           },
           "activePaddingBotton": true,
           "pix": {
             "porcentagePix": 0,
             "valueMax": 0
           }
+        },
+        "image": {
+          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/497de9ec-06e1-4a69-a1e4-07d33cd027d8/produto-teste-2.png",
+          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/497de9ec-06e1-4a69-a1e4-07d33cd027d8/produto-teste-2.png"
         }
+      },
+      "pix": {
+        "valueMax": 0,
+        "porcentagePix": 0
       }
     },
     {

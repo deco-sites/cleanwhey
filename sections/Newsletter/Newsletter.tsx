@@ -22,6 +22,7 @@ export interface Props {
     /** @hide true */
     status?: "success" | "failed";
 }
+
 export async function action(props: Props, req: Request, ctx: AppContext) {
     const platform = usePlatform();
     const form = await req.formData();
@@ -35,9 +36,11 @@ export async function action(props: Props, req: Request, ctx: AppContext) {
     }
     return { ...props, status: "failed" };
 }
+
 export function loader(props: Props) {
     return { ...props, status: undefined };
 }
+
 function Notice({ title, description, icon }: {
     title?: string;
     description?: string;
@@ -53,23 +56,33 @@ function Notice({ title, description, icon }: {
       </span>
     </div>);
 }
-function Newsletter({ empty = {
-    title: "Get top deals, latest trends, and more.",
-    description: "Receive our news and promotions in advance. Enjoy and get 10% off your first purchase. For more information click here.",
-}, success = {
-    title: "Thank you for subscribing!",
-    description: "You’re now signed up to receive the latest news, trends, and exclusive promotions directly to your inbox. Stay tuned!",
-}, failed = {
-    title: "Oops. Something went wrong!",
-    description: "Something went wrong. Please try again. If the problem persists, please contact us.",
-}, label = "Sign up", placeholder = "Enter your email address", status, icon, }: SectionProps<typeof loader, typeof action>) {
+
+function Newsletter(
+  { 
+    empty = {
+      title: "Newsletter",
+      description: "Fique por dentro de todas as novidades e promoções"}, 
+    success = {
+      title: "Obrigado por se cadastrar",
+      description: ""}, 
+    failed = {
+      title: "Oops!. Algo deu errado!",
+      description: "Alguma coisa deu errado. Se o erro persistir entre em contato com a gente",
+    }, 
+    label = "Sign up", 
+    placeholder = "Enter your email address", 
+    status, 
+    icon, 
+  }: SectionProps<typeof loader, typeof action>) {
     if (status === "success" || status === "failed") {
-        return (<Section.Container class="bg-base-200">
-        <div class="p-14 flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-10">
-          <Icon size={80} class={clx(status === "success" ? "text-success" : "text-error")} id={status === "success" ? "check-circle" : "error"}/>
-          <Notice {...status === "success" ? success : failed}/>
-        </div>
-      </Section.Container>);
+        return (<section class="bg-orange-300">
+        <Section.Container class="border-b border-b-orange-200">
+          <div class="px-4 sm:px-14 py-4 flex flex-col sm:flex-row items-center justify-start sm:justify-center gap-8">
+            <Icon size={80} class={clx(status === "success" ? "text-success" : "text-error")} id={status === "success" ? "check-circle" : "error"}/>
+            <Notice {...status === "success" ? success : failed}/>
+          </div>
+      </Section.Container>
+      </section>);
     }
     return (<section class="bg-orange-300">
       <Section.Container class="border-b border-b-orange-200">
