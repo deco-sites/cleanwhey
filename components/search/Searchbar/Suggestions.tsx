@@ -1,4 +1,4 @@
-import { Suggestion } from "apps/commerce/types.ts";
+import { Product, Suggestion } from "apps/commerce/types.ts";
 import { Resolved } from "deco/mod.ts";
 import type { AppContext } from "../../../apps/site.ts";
 import { clx } from "../../../sdk/clx.ts";
@@ -62,8 +62,18 @@ function Suggestions({
 }: ComponentProps<typeof loader, typeof action>) {
   const { products = [], searches = [] } = suggestion ?? {};
   const recentSearches = searches;
-  const hasProducts = Boolean(products.length);
   const hasTerms = Boolean(searches.length);
+  
+  const newProducts: Product[] = []
+  
+  products?.map((item) => {
+    if (!item.category?.includes("Clean Whey Medical")) {
+      newProducts.push(item)
+    }
+  })
+  
+  const hasProducts = Boolean(newProducts.length);
+
 
   return (
     <div
@@ -87,7 +97,7 @@ function Suggestions({
             role="heading"
             aria-level={3}
           >
-            {products.length > 0 && searches.length === 0
+            {newProducts.length > 0 && searches.length === 0
               ? "Produtos"
               : "Buscas populares"}
           </span>
@@ -107,9 +117,9 @@ function Suggestions({
                   </a>
                 </li>
               ))}
-            {products.length > 0 &&
+            {newProducts.length > 0 &&
               searches.length === 0 &&
-              products.map((product) => {
+              newProducts.map((product) => {
                 const title = product.isVariantOf?.name ?? product.name;
                 const variantName = title
                   ?.toLowerCase()
