@@ -9240,11 +9240,11 @@
                     "table": {
                       "altText": "Tabela Nutricional",
                       "desktop": {
-                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/8cf75fd2-831a-4837-8cb7-82e89bcff8df",
+                        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/60b4a11c-97d3-4612-a379-55d6167dd15f/Tabela---1800g.png",
                         "width": 730
                       },
                       "mobile": {
-                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/b36ef50c-1a21-4d3f-a2ec-5e3a764820d3",
+                        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/cdfb37cd-c7e0-4519-ada8-c96180861f2c/Tabela---1800g.png",
                         "width": 730
                       }
                     },
@@ -22336,8 +22336,8 @@
             {
               "__resolveType": "site/sections/ProductPage/DescriptionBannerRight.tsx",
               "percentageBanner": {
-                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/e728422c-bcae-455e-95ef-ea921499c71c",
-                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/768709e0-f38a-4649-a10c-584aa976b793",
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/555f6bf5-f33c-4c1e-be77-551fc4c9c88e/Group-133.png",
+                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/074202cb-9edd-40df-b36e-6cdf994dc134/Group-133.png",
                 "alt": "Banner Percentage"
               },
               "rightImage": {

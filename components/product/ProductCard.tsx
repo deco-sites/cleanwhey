@@ -221,6 +221,7 @@ function ProductCard({
                   ?.split(";")[0]
                   .replace("Tamanho:", "")
                   .replace("Cor:", "")
+                  .replace(";", "")
             : nome}
         </span>
         {!isFeatured && (

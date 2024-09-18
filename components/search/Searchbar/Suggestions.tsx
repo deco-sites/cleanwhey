@@ -67,18 +67,19 @@ function Suggestions({
 
   return (
     <div
-    id={"modal"}
-    class={clx(
-      `overflow-y-scroll mt-2 `,
-      "before:content-['']  before:h-screen before:bg-black before:absolute before:-z-10 before:left-[-100vw] before:right-0 before:w-[200vw] before:opacity-50 before:bg-black-100",
-      !hasProducts && !hasTerms && "hidden",
-    )}    style={{ display: `${!hasProducts && !hasTerms && "none" || "flex"}` }}
-    hx-on:click={useScript(()=>{
-
-        const modal : HTMLDivElement | null = document.querySelector("#modal") || null
-         modal!.style.display = "none"
-    })}
->
+      id={"modal"}
+      class={clx(
+        `overflow-y-scroll mt-2 `,
+        "before:content-['']  before:h-screen before:bg-black before:absolute before:-z-10 before:left-[-100vw] before:right-0 before:w-[200vw] before:opacity-50 before:bg-black-100",
+        !hasProducts && !hasTerms && "hidden"
+      )}
+      style={{ display: `${(!hasProducts && !hasTerms && "none") || "flex"}` }}
+      hx-on:click={useScript(() => {
+        const modal: HTMLDivElement | null =
+          document.querySelector("#modal") || null;
+        modal!.style.display = "none";
+      })}
+    >
       <div class="gap-4 grid grid-cols-1 sm:grid-rows-1 sm:grid-cols-2 p-4 w-full bg-white">
         <div class="flex flex-col gap-6">
           <span
@@ -119,7 +120,7 @@ function Suggestions({
                   .trim();
 
                 const size = product?.additionalProperty?.find(
-                  (property) => property.name == "TAMANHO",
+                  (property) => property.name == "TAMANHO"
                 );
 
                 const [front, back] = product.image ?? [];
@@ -127,7 +128,7 @@ function Suggestions({
                 const valuePix = formatPix(
                   price || 0,
                   pix.porcentagePix,
-                  pix.valueMax,
+                  pix.valueMax
                 );
                 return (
                   <li>
@@ -144,25 +145,25 @@ function Suggestions({
                             class=" object-cover min-h-20 "
                           />
                           <div class={"flex flex-col justify-between gap-1"}>
-                            <span class={"text-ellipsis-custom text-sm"}>
+                            <span
+                              class={"text-ellipsis-custom text-sm capitalize"}
+                            >
                               {product.isVariantOf?.name == title
                                 ? `${title?.toLowerCase()} ${
-                                  size?.value ? "- " + size.value : ""
-                                }`
+                                    size?.value ? "- " + size.value : ""
+                                  }`
                                 : title?.toLowerCase() == variantName
-                                ? `${title?.toLowerCase()} - ${
-                                  product.isVariantOf?.name
+                                ? `${title?.toLowerCase()} - ${product.isVariantOf?.name
                                     ?.toLowerCase()
                                     .replace("tamanho:", "")
                                     .replace(/sabor:[^;]*/g, "")
                                     .replace(";", "")
-                                    .replace("cor:", "")
-                                }`
+                                    .replace("cor:", "")}`
                                 : `${product.isVariantOf?.name?.toLowerCase()} ${
-                                  variantName?.toLowerCase()
-                                    ? `- ${variantName?.toLowerCase()}`
-                                    : ""
-                                } ${size?.value ? "- " + size.value : ""}`}
+                                    variantName?.toLowerCase()
+                                      ? `- ${variantName?.toLowerCase()}`
+                                      : ""
+                                  } ${size?.value ? "- " + size.value : ""}`}
                             </span>
                             <span class="text-lg font-bold">
                               {formatPrice(valuePix) + " "}
