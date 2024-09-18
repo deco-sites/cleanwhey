@@ -7,7 +7,6 @@ interface Props {
   percentageBanner?: {
     desktop: ImageWidget;
     mobile: ImageWidget;
-
     alt?: string;
   };
   rightImage?: {

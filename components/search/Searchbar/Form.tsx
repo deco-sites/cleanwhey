@@ -86,13 +86,11 @@ export default function Searchbar({
           placeholder={placeholder}
           autocomplete="off"
           hx-target={`#${slot}`}
-          hx-post={
-            loader &&
+          hx-post={loader &&
             useComponent<SuggestionProps>(Suggestions, {
               loader: asResolved(loader),
               pix,
-            })
-          }
+            })}
           hx-trigger={`click, input changed delay:300ms, ${NAME}`}
           hx-indicator={`#${SEARCHBAR_INPUT_FORM_ID}`}
           hx-swap="innerHTML"
@@ -111,14 +109,16 @@ export default function Searchbar({
             class="inline [.htmx-request_&]:hidden max-h-4 max-w-4"
           />
         </button>
-        {/* <label
+        {
+          /* <label
         type="button"
         class="join-item btn btn-ghost btn-square hidden sm:inline-flex no-animation"
         for={SEARCHBAR_POPUP_ID}
         aria-label="Toggle searchbar"
       >
         <Icon id="close" />
-      </label> */}
+      </label> */
+        }
       </form>
 
       {/* Suggestions slot */}
@@ -135,7 +135,7 @@ export default function Searchbar({
             script,
             SEARCHBAR_INPUT_FORM_ID,
             NAME,
-            SEARCHBAR_POPUP_ID
+            SEARCHBAR_POPUP_ID,
           ),
         }}
       />

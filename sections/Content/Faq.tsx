@@ -49,7 +49,7 @@ export default function FAQ({
   ],
 }: Props) {
   return (
-    <div class={`bg-white-200`} style={{backgroundColor: `${bgColor}`}}>
+    <div class={`bg-white-200`} style={{ backgroundColor: `${bgColor}` }}>
       <Section.Container>
         {/* <Section.Header title={title} cta={cta} /> */}
         <h3 class="text-center font-bold text-gray-300 text-sm">{title}</h3>

@@ -3,56 +3,77 @@ import Image from "apps/website/components/Image.tsx";
 import { useDevice as useDevice } from "@deco/deco/hooks";
 /** @titleBy title */
 interface Item {
-    title: string;
-    href: string;
+  title: string;
+  href: string;
 }
 /** @titleBy title */
 interface Link extends Item {
-    children: Item[];
+  children: Item[];
 }
 /** @titleBy label */
 interface Selos {
-    image: ImageWidget;
-    link?: string;
-    label?: string;
+  image: ImageWidget;
+  link?: string;
+  label?: string;
 }
 /** @titleBy label */
 interface Segurancas {
-    image: ImageWidget;
-    link?: string;
-    label?: string;
+  image: ImageWidget;
+  link?: string;
+  label?: string;
 }
 /** @titleBy alt */
 interface Social {
-    alt?: string;
-    href?: string;
-    image: ImageWidget;
+  alt?: string;
+  href?: string;
+  image: ImageWidget;
 }
 interface Props {
-    links?: Link[];
-    social?: Social[];
-    paymentMethods?: Social[];
-    logo?: ImageWidget;
-    trademark?: string;
-    selos?: Selos[];
-    seguranca?: Segurancas[];
+  links?: Link[];
+  social?: Social[];
+  paymentMethods?: Social[];
+  logo?: ImageWidget;
+  trademark?: string;
+  selos?: Selos[];
+  seguranca?: Segurancas[];
 }
-function Footer({ links = [], social = [], paymentMethods = [], selos = [], seguranca = [], logo, trademark, }: Props) {
-    const device = useDevice();
-    return (<footer class="sm:px-0 bg-orange-300" // style={{ backgroundColor: "#EFF0F0" }}
+function Footer(
+  {
+    links = [],
+    social = [],
+    paymentMethods = [],
+    selos = [],
+    seguranca = [],
+    logo,
+    trademark,
+  }: Props,
+) {
+  const device = useDevice();
+  return (
+    <footer class="sm:px-0 bg-orange-300" // style={{ backgroundColor: "#EFF0F0" }}
     >
       <div class="flex flex-col gap-5 sm:gap-10 pt-10">
         <ul class="container sm:px-0 px-5 md:gap-0 gap-4 flex sm:flex-row flex-col justify-between">
           <li class="flex gap-4 items-start flex-col">
-            <div class={"flex gap-4 items-center mb-6 w-full sm:w-auto space-between"}>
-              <img class={"max-w-[136px]"} loading="lazy" src={logo}/>
+            <div
+              class={"flex gap-4 items-center mb-6 w-full sm:w-auto space-between"}
+            >
+              <img class={"max-w-[136px]"} loading="lazy" src={logo} />
 
               <ul class="flex gap-4">
-                {social.map(({ image, href, alt }) => (<li>
+                {social.map(({ image, href, alt }) => (
+                  <li>
                     <a href={href}>
-                      <Image src={image} alt={alt} loading="lazy" width={32} height={32}/>
+                      <Image
+                        src={image}
+                        alt={alt}
+                        loading="lazy"
+                        width={32}
+                        height={32}
+                      />
                     </a>
-                  </li>))}
+                  </li>
+                ))}
               </ul>
             </div>
             <div class="text-white md:max-w-[328px]">
@@ -63,36 +84,49 @@ function Footer({ links = [], social = [], paymentMethods = [], selos = [], segu
             </div>
           </li>
 
-          {links.map(({ title, href, children }, index) => (<>
+          {links.map(({ title, href, children }, index) => (
+            <>
               {device === "desktop"
-                ? (<li key={index} class="flex flex-col gap-4">
+                ? (
+                  <li key={index} class="flex flex-col gap-4">
                     <a class="text-white font-semibold" href={href}>
                       {title}
                     </a>
                     <ul class="flex flex-col gap-2">
-                      {children.map(({ title, href }) => (<li>
+                      {children.map(({ title, href }) => (
+                        <li>
                           <a class="text-sm text-white" href={href}>
                             {title}
                           </a>
-                        </li>))}
+                        </li>
+                      ))}
                     </ul>
-                  </li>)
-                : (<div class="p-0 text-white font-semibold text-base collapse collapse-arrow bg-transparent border-0">
-                    <input type="checkbox" class="max-h-10 min-h-10"/>
+                  </li>
+                )
+                : (
+                  <div class="p-0 text-white font-semibold text-base collapse collapse-arrow bg-transparent border-0">
+                    <input type="checkbox" class="max-h-10 min-h-10" />
                     <div class="after:!top-5 flex max-h-10 min-h-10 items-center justify-start collapse-title p-0 text-base font-semibold">
                       {title}
                     </div>
                     <div class="collapse-content p-0">
                       <ul class="flex flex-col gap-2">
-                        {children.map(({ title, href }) => (<li>
-                            <a class="text-sm text-white font-normal" href={href}>
+                        {children.map(({ title, href }) => (
+                          <li>
+                            <a
+                              class="text-sm text-white font-normal"
+                              href={href}
+                            >
                               {title}
                             </a>
-                          </li>))}
+                          </li>
+                        ))}
                       </ul>
                     </div>
-                  </div>)}
-            </>))}
+                  </div>
+                )}
+            </>
+          ))}
 
           <li class={"flex flex-col gap-4"}>
             <a href="#" class="text-white font-semibold">
@@ -100,9 +134,17 @@ function Footer({ links = [], social = [], paymentMethods = [], selos = [], segu
             </a>
             <div class="flex flex-col sm:flex-row gap-12 justify-between items-start sm:items-center">
               <ul class="flex flex-wrap gap-2 md:max-w-64">
-                {paymentMethods.map(({ image, alt }) => (<li class="h-8 md:w-1/5 w-1/6 border border-base-100 bg-white rounded flex justify-center items-center">
-                    <Image src={image} alt={alt} width={50} height={32} loading="lazy"/>
-                  </li>))}
+                {paymentMethods.map(({ image, alt }) => (
+                  <li class="h-8 md:w-1/5 w-1/6 border border-base-100 bg-white rounded flex justify-center items-center">
+                    <Image
+                      src={image}
+                      alt={alt}
+                      width={50}
+                      height={32}
+                      loading="lazy"
+                    />
+                  </li>
+                ))}
               </ul>
             </div>
           </li>
@@ -110,22 +152,48 @@ function Footer({ links = [], social = [], paymentMethods = [], selos = [], segu
 
         <div class="container  sm:px-0 px-5 flex items-center justify-between ">
           <ul class="flex flex-wrap md:flex-nowrap items-center gap-4 md:gap-2">
-            {selos.map(({ image, label }) => (<li class="h-8 md:w-1/5 w-1/5 flex justify-center items-center">
-                <Image src={image} alt={label} width={77} height={41} loading="lazy"/>
-              </li>))}
+            {selos.map(({ image, label }) => (
+              <li class="h-8 md:w-1/5 w-1/5 flex justify-center items-center">
+                <Image
+                  src={image}
+                  alt={label}
+                  width={77}
+                  height={41}
+                  loading="lazy"
+                />
+              </li>
+            ))}
             {device === "mobile"
-            ? (<>
-                  {seguranca.map(({ image, label }) => (<li class="h-8 w-1/5 flex justify-center items-center">
-                      <Image src={image} alt={label} width={42} height={42} loading="lazy"/>
-                    </li>))}
-                </>)
-            : ("")}
+              ? (
+                <>
+                  {seguranca.map(({ image, label }) => (
+                    <li class="h-8 w-1/5 flex justify-center items-center">
+                      <Image
+                        src={image}
+                        alt={label}
+                        width={42}
+                        height={42}
+                        loading="lazy"
+                      />
+                    </li>
+                  ))}
+                </>
+              )
+              : ("")}
           </ul>
 
           <ul class="hidden sm:flex items-center gap-2">
-            {seguranca.map(({ image, label }) => (<li class="h-8 w-1/3 flex justify-center items-center">
-                <Image src={image} alt={label} width={42} height={42} loading="lazy"/>
-              </li>))}
+            {seguranca.map(({ image, label }) => (
+              <li class="h-8 w-1/3 flex justify-center items-center">
+                <Image
+                  src={image}
+                  alt={label}
+                  width={42}
+                  height={42}
+                  loading="lazy"
+                />
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -137,6 +205,7 @@ function Footer({ links = [], social = [], paymentMethods = [], selos = [], segu
           </div>
         </div>
       </div>
-    </footer>);
+    </footer>
+  );
 }
 export default Footer;

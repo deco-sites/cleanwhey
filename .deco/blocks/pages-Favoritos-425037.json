@@ -9,20 +9,41 @@
       }
     },
     {
-      "__resolveType": "site/sections/Product/SearchResult.tsx",
+      "__resolveType": "site/sections/Product/Wishlist.tsx",
       "page": {
         "__resolveType": "vtex/loaders/product/wishlist.ts",
         "count": 12,
-        "offset": 0
-      },
-      "pix": {
-        "valueMax": 0,
-        "porcentagePix": 0
+        "offset": 1
       },
       "layout": {
         "pagination": "pagination"
       },
-      "startingPage": 1
+      "startingPage": 1,
+      "notFound": {
+        "shelf": {
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "collection": "0",
+              "count": 0
+            }
+          },
+          "activePaddingBotton": true,
+          "pix": {
+            "porcentagePix": 0,
+            "valueMax": 0
+          }
+        },
+        "image": {
+          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/497de9ec-06e1-4a69-a1e4-07d33cd027d8/produto-teste-2.png",
+          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/497de9ec-06e1-4a69-a1e4-07d33cd027d8/produto-teste-2.png"
+        }
+      },
+      "pix": {
+        "valueMax": 0,
+        "porcentagePix": 0
+      }
     },
     {
       "__resolveType": "Footer"
