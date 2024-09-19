@@ -4,8 +4,11 @@
 
 import * as $_app from "./routes/_app.tsx";
 import * as $AddToCartButton_vtex from "./islands/AddToCartButton/vtex.tsx";
+import * as $FilterPriceRange from "./islands/FilterPriceRange.tsx";
+import * as $Filters from "./islands/Filters.tsx";
 import * as $IframeLogin from "./islands/IframeLogin.tsx";
 import * as $Menu from "./islands/Menu.tsx";
+import * as $MultiRangeSlider from "./islands/MultiRangeSlider.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -14,8 +17,11 @@ const manifest = {
   },
   islands: {
     "./islands/AddToCartButton/vtex.tsx": $AddToCartButton_vtex,
+    "./islands/FilterPriceRange.tsx": $FilterPriceRange,
+    "./islands/Filters.tsx": $Filters,
     "./islands/IframeLogin.tsx": $IframeLogin,
     "./islands/Menu.tsx": $Menu,
+    "./islands/MultiRangeSlider.tsx": $MultiRangeSlider,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

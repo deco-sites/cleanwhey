@@ -7,6 +7,9 @@ import type {
 import { parseRange } from "apps/commerce/utils/filters.ts";
 import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
+import MultiRangeSlider from "../../islands/MultiRangeSlider.tsx";
+import { useSignal } from "@preact/signals";
+import { useState } from "preact/hooks";
 
 interface Props {
   filters: ProductListingPage["filters"];
@@ -15,9 +18,7 @@ interface Props {
 const isToggle = (filter: Filter): filter is FilterToggle =>
   filter["@type"] === "FilterToggle";
 
-function ValueItem(
-  { url, selected, label, quantity }: FilterToggleValue,
-) {
+function ValueItem({ url, selected, label, quantity }: FilterToggleValue) {
   return (
     <a href={url} rel="nofollow" class="flex items-center gap-2">
       <div
@@ -29,19 +30,17 @@ function ValueItem(
     </a>
   );
 }
-function ValueItemColor(
-  { url, selected, label }: FilterToggleValue,
-) {
+function ValueItemColor({ url, selected, label }: FilterToggleValue) {
   const COLORS = {
-    "LARANJA": "#E06741",
-    "AZUL": " #2b41c6",
+    LARANJA: "#E06741",
+    AZUL: " #2b41c6",
   };
   return (
     <a href={url} rel="nofollow" class="flex items-center gap-2">
       <div
         aria-checked={selected}
         class=" checkbox w-8 h-8 border p-1 border-gray-200 aria-checked:border-2 bg-white rounded-full aria-checked:border-gray-400 "
-        style={{ background: COLORS[label as keyof typeof COLORS || "#fff"] }}
+        style={{ background: COLORS[(label as keyof typeof COLORS) || "#fff"] }}
       />
     </a>
   );
@@ -62,45 +61,93 @@ function FilterValues({ key, values }: FilterToggle) {
       }
     }
   });
+  if (key === "price") {
+    const valuesArray = Object.entries(values);
 
+    const url = valuesArray[0][1].url;
+
+    const urlPrice = url
+      .split("&")
+      .slice(0, -1)
+      .filter((r) => r.includes("filter.price"))[0]
+      ?.split("=")[1]
+      ?.split("%3A");
+    const urlBrowser = url
+      .split("&")
+      .slice(0, -1)
+      .filter((r) => !r.includes("filter.price"))
+      .join("&");
+
+    const rangeArray: number[] = [];
+
+    valuesArray.map((value) => {
+      const aux = value[1].value.split(":");
+      const auxArr = aux.map((r) => parseInt(r));
+      rangeArray.push(...auxArr);
+    });
+    rangeArray.sort((a, b) => a - b);
+    const minRange = rangeArray[0];
+    const maxRange = rangeArray[rangeArray.length - 1];
+
+    const [currentMaxMin, setCurrentMaxMin] = useState({
+      max: urlPrice ? parseInt(urlPrice[1]) : maxRange,
+      min: urlPrice ? parseInt(urlPrice[0]) : minRange,
+    });
+
+    let timeOutId = 0;
+    let firstTime = 0;
+
+    return (
+      <div class={` h-16 mt-4`}>
+        <MultiRangeSlider
+          min={minRange}
+          max={maxRange}
+          currentMin={currentMaxMin.min}
+          currentMax={currentMaxMin.max}
+          onChange={(query: { min: number; max: number }) => {
+            if (
+              currentMaxMin.max != query.max ||
+              currentMaxMin.min != query.min
+            ) {
+              if (firstTime > 0) {
+                clearTimeout(timeOutId);
+                timeOutId = setTimeout(() => {
+                  setCurrentMaxMin({ max: query.max, min: query.min });
+                  window.location.href =
+                    urlBrowser +
+                    "&filter.price=" +
+                    query.min +
+                    "%3A" +
+                    query.max;
+                }, 500);
+              }
+              firstTime++;
+            }
+          }}
+        />
+      </div>
+    );
+  }
   return (
     <ul class={clx(`flex flex-wrap gap-2`, flexDirection)}>
       {newFilters.map((item) => {
         if (key === "price") {
           const range = parseRange(item.value);
 
-          return range && (
-            <>
-              <ValueItem
-                {...item}
-                label={`${formatPrice(range.from)} - ${formatPrice(range.to)}`}
-              />
-              {
-                /* <div class="grid border-solid border-b border-gray-200 grid-rows-[1fr] transition-[grid-template-rows] duration-600 ease-in-out">
-                <div class="overflow-y-auto overflow-x-hidden max-h-[400px]">
-                  <div class="false h-16 mt-4">
-                    <div class="container-slideri">
-                      <input type="range" min={range.from} max={range.to} value={range.from} class="thumb_ thumb--zindex-3 false" />
-                      <input type="range" min={range.from} max={range.to} value={range.to} class="thumb_ thumb--zindex-4" />
-                      <div class="slider_">
-                        <div class="slider__track"></div>
-                        <div class="slider__range"></div>
-                        <div class="slider__left-value">{range.from}</div>
-                        <div class="slider__right-value">{range.to}</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> */
-              }
-            </>
+          return (
+            range && (
+              <div>
+                <ValueItem
+                  {...item}
+                  label={`${formatPrice(range.from)} - ${formatPrice(
+                    range.to
+                  )}`}
+                />
+              </div>
+            )
           );
         } else if (avatars) {
-          return (
-            <ValueItemColor
-              {...item}
-            />
-          );
+          return <ValueItemColor {...item} />;
         } else {
           return <ValueItem {...item} />;
         }
@@ -129,28 +176,25 @@ function Filters({ filters }: Props) {
 
   return (
     <ul class="flex flex-col gap-6 p-4 sm:p-0">
-      {filtersArray
-        .filter(isToggle)
-        .map((filter, index) => (
-          <>
-            {filter.label != "Departamento" &&
-              filter.label != "Category 4" && (
-              <div className="collapse rounded-none collapse-arrow border-b border-gray-100">
-                <input
-                  type="checkbox"
-                  className={"peer"}
-                  name={`my-accordion-${index}`}
-                />
-                <div className="collapse-title after:!h-3 after:!w-3 after:text-gray-300 after:peer-checked:text-orange-300 text-gray-300 text-lg font-bold gap-2 !flex items-center p-0 peer-checked:text-orange-300 capitalize">
-                  {filter.label.toLowerCase()}
-                </div>
-                <div className="collapse-content">
-                  <FilterValues {...filter} />
-                </div>
+      {filtersArray.filter(isToggle).map((filter, index) => (
+        <>
+          {filter.label != "Departamento" && filter.label != "Category 4" && (
+            <div className="collapse rounded-none collapse-arrow border-b border-gray-100">
+              <input
+                type="checkbox"
+                className={"peer"}
+                name={`my-accordion-${index}`}
+              />
+              <div className="collapse-title after:!h-3 after:!w-3 after:text-gray-300 after:peer-checked:text-orange-300 text-gray-300 text-lg font-bold gap-2 !flex items-center p-0 peer-checked:text-orange-300 capitalize">
+                {filter.label.toLowerCase()}
               </div>
-            )}
-          </>
-        ))}
+              <div className="collapse-content overflow-y-auto overflow-x-hidden">
+                <FilterValues {...filter} />
+              </div>
+            </div>
+          )}
+        </>
+      ))}
     </ul>
   );
 }

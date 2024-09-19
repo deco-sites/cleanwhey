@@ -20,14 +20,6 @@
     },
     {
       "__resolveType": "site/sections/Product/SearchResult.tsx",
-      "page": {
-        "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
-        "count": 24,
-        "sort": "release:desc",
-        "fuzzy": "automatic",
-        "selectedFacets": [],
-        "query": "whey"
-      },
       "layout": {
         "columns": {
           "mobile": 2,
@@ -50,7 +42,7 @@
             "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
             "props": {
               "sort": "price:desc",
-              "collection": "whey",
+              "collection": "143",
               "count": 8
             }
           },
@@ -59,6 +51,14 @@
             "__resolveType": "Payment - Pix"
           }
         }
+      },
+      "page": {
+        "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
+        "sort": "release:desc",
+        "fuzzy": "automatic",
+        "selectedFacets": [],
+        "query": "whey",
+        "count": 24
       }
     },
     {

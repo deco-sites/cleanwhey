@@ -8,6 +8,10 @@ export const SEARCHBAR_DRAWER_ID = "searchbar-drawer";
 export const SEARCHBAR_POPUP_ID = "searchbar-popup";
 export const SEARCHBAR_INPUT_FORM_ID = "searchbar-form";
 
+export const SORT_QUERY_PARAM = "sort";
+export const PAGE_QUERY_PARAM = "page";
+export const SEARCH_QUERY_PARAM = "q";
+
 export const USER_ID = "user-json";
 
 export const WISHLIST_FORM_ID = "wishlist-form";
