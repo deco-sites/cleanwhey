@@ -182,7 +182,7 @@
         "__resolveType": "blog/loaders/BlogpostList.ts",
         "count": 4,
         "sortBy": "date_desc",
-        "slug": "receitas"
+        "slug": "cleanwhey"
       },
       "cta": {
         "link": "/blog",
