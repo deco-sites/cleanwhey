@@ -3,73 +3,218 @@
 @tailwind utilities;
 
 input[type="number"] {
-    -moz-appearance: textfield;
-    /* Firefox */
-    -webkit-appearance: none;
-    /* Chrome, Safari, Edge, Opera */
-    appearance: none;
-    margin-right: -15px;
+  -moz-appearance: textfield;
+  /* Firefox */
+  -webkit-appearance: none;
+  /* Chrome, Safari, Edge, Opera */
+  appearance: none;
+  margin-right: -15px;
 }
 
 .scroll-custom::-webkit-scrollbar {
-    width: 8px;
-    margin-right: 8px;
-    /* width of the entire scrollbar */
+  width: 8px;
+  margin-right: 8px;
+  /* width of the entire scrollbar */
 }
 
 .scroll-custom::-webkit-scrollbar-track {
-    background: #fff;
-    /* color of the tracking area */
+  background: #fff;
+  /* color of the tracking area */
 }
 
 .scroll-custom::-webkit-scrollbar-thumb {
-    background-color: #bbbbbc;
-    /* color of the scroll thumb */
-    border-radius: 20px;
-    /* roundness of the scroll thumb */
+  background-color: #bbbbbc;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
 }
 
 .flag {
-    display: inline-block;
-    background-color: #E30613;
-    /* Cor de fundo da flag */
-    color: white;
-    /* Cor do texto */
-    padding: 6px 8px;
-    /* Espaçamento interno */
-    font-size: 16px;
-    /* Tamanho da fonte */
-    font-weight: bold;
-    /* Peso da fonte */
-    text-align: center;
-    /* Centralizar o texto */
-    border-radius: 10px 10px 0 0;
-    /* Arredondamento do topo */
-    position: relative;
-    width: 60px;
-    /* Largura da flag */
+  display: inline-block;
+  background-color: #e30613;
+  /* Cor de fundo da flag */
+  color: white;
+  /* Cor do texto */
+  padding: 6px 8px;
+  /* Espaçamento interno */
+  font-size: 16px;
+  /* Tamanho da fonte */
+  font-weight: bold;
+  /* Peso da fonte */
+  text-align: center;
+  /* Centralizar o texto */
+  border-radius: 10px 10px 0 0;
+  /* Arredondamento do topo */
+  position: relative;
+  width: 60px;
+  /* Largura da flag */
 }
 
 .flag::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 0;
-    height: 0;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    border-top: 10px solid #E30613;
-    /* Cor da parte triangular */
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 10px solid #e30613;
+  /* Cor da parte triangular */
 }
 
 .text-ellipsis-custom {
-    display: block;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.container-slideri {
+  /* height: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider_ {
+  position: relative;
+  width: 200px;
+}
+
+.slider__track,
+.slider__range,
+.slider__left-value,
+.slider__right-value {
+  position: absolute;
+}
+
+.slider__track,
+.slider__range {
+  border-radius: 3px;
+  height: 5px;
+}
+
+.slider__track {
+  background-color: #e06741;
+  width: 100%;
+  z-index: 1;
+}
+
+.slider__range {
+  background-color: #e06741;
+  z-index: 2;
+}
+
+.slider__left-value,
+.slider__right-value {
+  color: #e06741;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.slider__left-value {
+  left: 6px;
+}
+
+.slider__right-value {
+  right: -4px;
+}
+
+/* Removing the default appearance */
+.thumb_,
+.thumb_::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.thumb_ {
+  pointer-events: none;
+  position: absolute;
+  height: 0;
+  width: 200px;
+  outline: none;
+}
+
+.thumb--zindex-3 {
+  z-index: 3;
+}
+
+.thumb--zindex-4 {
+  z-index: 4;
+}
+
+.thumb--zindex-5 {
+  z-index: 5;
+}
+
+/* For Chrome browsers */
+.thumb_::-webkit-slider-thumb {
+  background-color: #e06741;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px #ced4da;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+/* For Firefox browsers */
+.thumb_::-moz-range-thumb {
+  background-color: #e06741;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px #ced4da;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+@layer base {
+  /* Allow changing font family via CMS */
+  html {
+    font-family: var(--font-family);
+  }
+
+  /** Remove default styles from input[type=number] */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+}
+
+@layer components {
+  /** Prevent scroll when modal is open */
+  .no-scroll {
     overflow: hidden;
-    text-overflow: ellipsis;
+    height: 100vh;
+  }
+}
+
+@layer utilities {
+  /** Remove scrollbar from overflow-auto */
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
 }
