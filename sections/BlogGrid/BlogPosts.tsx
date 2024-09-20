@@ -131,14 +131,14 @@ export default function BlogPosts({
                   <span class="text-gray-300 text-sm font-normal">
                     {post.date
                       ? new Date(post.date)
-                        .toLocaleDateString("pt-BR", {
-                          month: "short", // Retorna o mês abreviado (ex: "mai")
-                          day: "numeric",
-                          year: "2-digit", // Retorna o ano com dois dígitos (ex: "24")
-                        })
-                        .replace(" de ", " ")
-                        .replace(".", "")
-                        .replace(" de ", ", ")
+                          .toLocaleDateString("pt-BR", {
+                            month: "short", // Retorna o mês abreviado (ex: "mai")
+                            day: "numeric",
+                            year: "2-digit", // Retorna o ano com dois dígitos (ex: "24")
+                          })
+                          .replace(" de ", " ")
+                          .replace(".", "")
+                          .replace(" de ", ", ")
                       : ""}
                   </span>
                   <a
@@ -147,17 +147,15 @@ export default function BlogPosts({
                   >
                     <Icon class="text-white" id={"arrow-right-custom"} />
                   </a>
-                  {
-                    /* <span>•</span>
-                  <span>{post.authors[0]?.name}</span> */
-                  }
+                  {/* <span>•</span>
+                  <span>{post.authors[0]?.name}</span> */}
                 </div>
               </div>
             </div>
           ))}
         </div>
         {/* {to < (posts?.length || 1000) && ( */}
-        {button ?? (
+        {button && (
           <a href={cta.link} class="flex justify-center w-full pb-6">
             <span class="text-blue-300 font-normal text-sm inline border border-blue-300 rounded-lg py-3 px-4">
               {cta.text}
