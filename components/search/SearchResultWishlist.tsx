@@ -172,7 +172,7 @@ function Result(props: SectionProps<typeof loader>) {
 
   return (
     <>
-      <div id={container} {...viewItemListEvent} class="w-full">
+      <div id={container} {...viewItemListEvent} class="w-full" style={{minHeight: '50vh'}}>
         {partial
           ? <PageResult {...props} />
           : (
