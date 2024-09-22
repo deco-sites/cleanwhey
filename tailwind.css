@@ -100,7 +100,7 @@ input[type="number"] {
 }
 
 .slider__track {
-  background-color: #e06741;
+  background-color: #e7e5e4;
   width: 100%;
   z-index: 1;
 }

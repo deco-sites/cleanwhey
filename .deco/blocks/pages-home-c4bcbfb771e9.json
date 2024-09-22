@@ -180,12 +180,12 @@
       "__resolveType": "site/sections/BlogGrid/BlogPosts.tsx",
       "posts": {
         "__resolveType": "blog/loaders/BlogpostList.ts",
-        "count": 4,
+        "count": 6,
         "sortBy": "date_desc",
         "slug": "cleanwhey"
       },
       "cta": {
-        "link": "/blog",
+        "link": "/blog/categoria/cleanwhey",
         "text": "Ver todas as postagens"
       },
       "button": true
