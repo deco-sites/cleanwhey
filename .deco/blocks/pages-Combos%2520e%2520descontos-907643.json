@@ -22,11 +22,15 @@
       "__resolveType": "site/sections/Product/SearchResult.tsx",
       "page": {
         "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
-        "sort": "release:desc",
+        "sort": "price:desc",
         "fuzzy": "automatic",
-        "selectedFacets": [],
-        "count": 23,
-        "similars": false
+        "selectedFacets": [
+          {
+            "key": "productClusterIds",
+            "value": "139"
+          }
+        ],
+        "count": 24
       },
       "layout": {
         "columns": {
