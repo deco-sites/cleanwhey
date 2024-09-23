@@ -15,8 +15,8 @@ const MultiRangeSlider = ({
 }) => {
   const [minVal, setMinVal] = useState(currentMin);
   const [maxVal, setMaxVal] = useState(currentMax);
-  const minValRef = useRef<HTMLInputElement>(null);
-  const maxValRef = useRef<HTMLInputElement>(null);
+  const minValRef = useRef<number>(currentMin ?? min);
+  const maxValRef = useRef<number>(currentMax ?? max);
   const range = useRef<HTMLDivElement>(null);
 
   // Convert to percentage
@@ -29,7 +29,7 @@ const MultiRangeSlider = ({
   useEffect(() => {
     if (maxValRef.current) {
       const minPercent = getPercent(minVal);
-      const maxPercent = getPercent(+maxValRef.current.value); // Preceding with '+' converts the value from type string to type number
+      const maxPercent = getPercent(+maxValRef.current); // Preceding with '+' converts the value from type string to type number
 
       if (range.current) {
         range.current.style.left = `${minPercent}%`;
@@ -41,7 +41,7 @@ const MultiRangeSlider = ({
   // Set width of the range to decrease from the right side
   useEffect(() => {
     if (minValRef.current) {
-      const minPercent = getPercent(+minValRef.current.value);
+      const minPercent = getPercent(+minValRef.current);
       const maxPercent = getPercent(maxVal);
 
       if (range.current) {
@@ -62,10 +62,10 @@ const MultiRangeSlider = ({
         min={min}
         max={max}
         value={minVal}
-        ref={minValRef}
         onChange={(event) => {
           const value = Math.min(+event.currentTarget.value, maxVal - 1);
           setMinVal(value);
+          minValRef.current = value;
           event.currentTarget.value = value.toString();
         }}
         class={`thumb_ thumb--zindex-3 ${
@@ -77,10 +77,10 @@ const MultiRangeSlider = ({
         min={min}
         max={max}
         value={maxVal}
-        ref={maxValRef}
         onChange={(event) => {
           const value = Math.max(+event.currentTarget.value, minVal + 1);
           setMaxVal(value);
+          maxValRef.current = value;
           event.currentTarget.value = value.toString();
         }}
         class="thumb_ thumb--zindex-4"
