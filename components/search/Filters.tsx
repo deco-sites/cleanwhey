@@ -98,7 +98,7 @@ function FilterValues({ key, values }: FilterToggle) {
     let firstTime = 0;
 
     return (
-      <div class={` h-16 mt-4`}>
+      <div class={`h-16 mt-4`}>
         <MultiRangeSlider
           min={minRange}
           max={maxRange}
