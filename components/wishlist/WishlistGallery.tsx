@@ -17,8 +17,6 @@ async function loader(props: Props, req: Request, ctx: AppContext<any>) {
     ids: props.page?.products.map((product) => product.productID),
   });
 
-  console.log("produtos", products);
-
   return {
     ...props,
     page: {
