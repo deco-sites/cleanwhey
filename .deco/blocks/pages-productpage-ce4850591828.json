@@ -30,7 +30,8 @@
           "__resolveType": "website/functions/requestToParam.ts",
           "param": "slug"
         },
-        "similars": true
+        "similars": true,
+        "indexingSkus": true
       },
       "pix": {
         "__resolveType": "Payment - Pix"
