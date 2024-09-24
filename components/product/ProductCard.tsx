@@ -107,10 +107,9 @@ function ProductCard({
             : ""
         }`;
 
+
   const off =
     listPrice && price && listPrice != price && (listPrice * 100) / price;
-
-  console.log(product.name);
 
   return (
     <div
@@ -224,14 +223,18 @@ function ProductCard({
                   .replace("Tamanho:", "")
                   .replace("Cor:", "")
                   .replace(";", "")
-            : nome}
+            : productName?.toLowerCase().includes("combo") ||
+              productName?.toLowerCase().includes("immunoferrin") ||
+              productName?.toLowerCase().includes("caneca")
+            ? productName
+            : nome?.replace("tamanho:sachê 30g;sabor:sem sabor", "")}
         </span>
         {!isFeatured && (
           <>
             {inStock ? (
               <>
                 <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
-                  {listPrice != pricePix && (
+                  {listPrice !== pricePix && (
                     <span class="line-through text-sm font-normal text-gray-300">
                       {formatPrice(listPrice, offers?.priceCurrency)}
                     </span>
@@ -259,24 +262,22 @@ function ProductCard({
         )}
       </a>
 
-      <div class="flex-grow" />
-      <div
-        class={`${
-          isFeatured ? "mt-5 flex items-center justify-between gap-4" : ""
-        }`}
-      >
+      <div class="flex-grow my-2.5" />
+      <div class={`flex flex-col gap-2.5`}>
         {isFeatured && (
-          <div class="flex flex-col items-start justify-center gap-1">
-            {listPrice != price && (
-              <span class="line-through text-xs font-normal text-gray-300">
+          <div class="flex flex-col text-center items-center  justify-center gap-1">
+            {listPrice !== pricePix && (
+              <span class="line-through text-sm font-normal text-gray-300">
                 {formatPrice(listPrice, offers?.priceCurrency)}
               </span>
             )}
-            <span class="line-through text-sm font-normal text-gray-300">
-              {formatPrice(listPrice, offers?.priceCurrency)}
+            <span class="text-lg font-bold flex gap-2 text-gray-400 items-center">
+              {formatPrice(pricePix)}
+              <p class="text-xs text-gray-300">no PIX</p>
             </span>
-            <span class="text-lg font-bold flex gap-2 items-center text-gray-400">
-              {formatPrice(price, offers?.priceCurrency)}
+
+            <span class="text-gray-400 text-md font-semibold">
+              {installments}
             </span>
           </div>
         )}
@@ -286,7 +287,7 @@ function ProductCard({
             seller={seller}
             item={item}
             ctaText="ADICIONAR À SACOLA"
-            class={`${isFeatured ? "px-1.5 md:text-sm" : ""} ${clx(
+            class={`${isFeatured ? "px-1.5 md:text-sm mt-2.5" : ""} ${clx(
               "btn uppercase",
               "btn-outline rounded-lg border-none px-0 no-animation w-full",
               "bg-orange-300 text-white h-14 font-semibold  md:text-sm lg:text-xs xl:text-sm text-xs  flex-nowrap",

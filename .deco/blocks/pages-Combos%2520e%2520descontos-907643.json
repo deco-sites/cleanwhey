@@ -24,8 +24,13 @@
         "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
         "sort": "release:desc",
         "fuzzy": "automatic",
-        "selectedFacets": [],
-        "count": 23,
+        "selectedFacets": [
+          {
+            "key": "productClusterIds",
+            "value": "139"
+          }
+        ],
+        "count": 24,
         "similars": false
       },
       "layout": {
