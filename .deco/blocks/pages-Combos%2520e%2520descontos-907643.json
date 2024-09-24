@@ -22,7 +22,7 @@
       "__resolveType": "site/sections/Product/SearchResult.tsx",
       "page": {
         "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
-        "sort": "release:desc",
+        "sort": "price:desc",
         "fuzzy": "automatic",
         "selectedFacets": [
           {
