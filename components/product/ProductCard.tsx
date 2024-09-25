@@ -226,8 +226,7 @@ function ProductCard({
               productName?.toLowerCase().includes("immunoferrin") ||
               productName?.toLowerCase().includes("caneca")
             ? productName
-            : nome?.replace("tamanho:sachê 30g;sabor:sem sabor", "") +
-              "55555555555"}
+            : nome?.replace("tamanho:sachê 30g;sabor:sem sabor", "") }
         </span>
         {!isFeatured && (
           <>
