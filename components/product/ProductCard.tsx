@@ -107,7 +107,6 @@ function ProductCard({
             : ""
         }`;
 
-
   const off =
     listPrice && price && listPrice != price && (listPrice * 100) / price;
 
@@ -227,7 +226,8 @@ function ProductCard({
               productName?.toLowerCase().includes("immunoferrin") ||
               productName?.toLowerCase().includes("caneca")
             ? productName
-            : nome?.replace("tamanho:sachê 30g;sabor:sem sabor", "")}
+            : nome?.replace("tamanho:sachê 30g;sabor:sem sabor", "") +
+              "55555555555"}
         </span>
         {!isFeatured && (
           <>
