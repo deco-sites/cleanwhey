@@ -29,7 +29,7 @@ function ProductInfo({ page, pix }: Props) {
   }
 
   const { breadcrumbList, product } = page;
-  const { productID, offers, isVariantOf } = product;
+  const { productID, offers, isVariantOf, url } = product;
   const description = product.description || isVariantOf?.description;
   const title = isVariantOf?.name ?? product.name;
 
@@ -70,12 +70,18 @@ function ProductInfo({ page, pix }: Props) {
     },
   });
 
-  const pixObj =
-    product.isVariantOf?.hasVariant[0].offers?.offers[0].priceSpecification.filter(
+  const pixObj = product.isVariantOf?.hasVariant
+    .filter((value) => value.url == url)[0]
+    .offers?.offers[0].priceSpecification.filter(
       (value) => value.name?.toLowerCase() == "pix"
     )[0];
 
-    return (
+  console.log(
+    "price " + price,
+    "listPrice " + listPrice,
+    "pix " + pixObj?.price
+  );
+  return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
       <span
         class={clx(
@@ -118,9 +124,16 @@ function ProductInfo({ page, pix }: Props) {
 
       {/* Prices */}
       <div class="flex flex-col pt-4">
-        <span class="line-through text-sm font-normal text-gray-300">
-          {formatPrice(listPrice, offers?.priceCurrency)}
-        </span>
+        <div>
+          <span class="line-through text-sm font-normal text-gray-300">
+            De {formatPrice(listPrice, offers?.priceCurrency)}
+          </span>
+          {price != listPrice && (
+            <span class="pl-2.5 text-sm font-normal text-gray-300">
+              por: {formatPrice(price, offers?.priceCurrency)} ou
+            </span>
+          )}
+        </div>
 
         <span class="text-[32px] font-bold flex gap-2 items-center text-gray-400">
           {formatPrice(pixObj?.price)}

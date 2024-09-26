@@ -35,6 +35,7 @@ export default function GallerySlider(props: Props) {
   const { page } = props;
 
   const { product } = page;
+  const { url } = product;
   const {
     page: {
       product: { offers, isVariantOf, image },
@@ -55,8 +56,9 @@ export default function GallerySlider(props: Props) {
   // const images = groupImages.length > 0 ? groupImages : [];
   const inStock = availability === "https://schema.org/InStock";
 
-  const pixObj =
-    product.isVariantOf?.hasVariant[0].offers?.offers[0].priceSpecification.filter(
+  const pixObj = product.isVariantOf?.hasVariant
+    .filter((value) => value.url == url)[0]
+    .offers?.offers[0].priceSpecification.filter(
       (value) => value.name?.toLowerCase() == "pix"
     )[0];
 
