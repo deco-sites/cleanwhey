@@ -59,6 +59,8 @@ function ProductCard({
     availability,
     installments,
   } = useOffer(offers);
+
+  
   const inStock = availability === "https://schema.org/InStock";
   //const possibilities = useVariantPossibilities(hasVariant, product);
 
@@ -106,10 +108,17 @@ function ProductCard({
             ? `- ${variantName?.toLowerCase()?.replace("tamanho:", "")}`
             : ""
         }`;
-  const pixObj =
-    product.isVariantOf?.hasVariant[0].offers?.offers[0].priceSpecification.filter(
+  const pixObj = product.isVariantOf?.hasVariant
+    .filter((value) => value.url == url)[0]
+    .offers?.offers[0].priceSpecification.filter(
       (value) => value.name?.toLowerCase() == "pix"
     )[0];
+
+  console.log(
+    "price " + price,
+    "listPrice " + listPrice,
+    "pix " + pixObj?.price
+  );
 
   const off =
     pixObj?.price &&
@@ -240,9 +249,12 @@ function ProductCard({
             {inStock ? (
               <>
                 <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
-                  {listPrice !== pricePix && (
-                    <span class="line-through text-sm font-normal text-gray-300">
-                      {formatPrice(listPrice, offers?.priceCurrency)}
+                  <span class="line-through text-sm font-normal text-gray-300">
+                    De {formatPrice(listPrice, offers?.priceCurrency)}
+                  </span>
+                  {price != listPrice && (
+                    <span class="pl-2.5 text-sm font-normal text-gray-300">
+                      por: {formatPrice(price, offers?.priceCurrency)} ou
                     </span>
                   )}
                   <span class="text-xl font-bold flex gap-2 text-gray-400 items-center">

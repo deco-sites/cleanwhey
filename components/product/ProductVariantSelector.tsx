@@ -108,9 +108,7 @@ function VariantSelector({ product }: Props) {
   const productTaste = product.additionalProperty?.find(
     (item) => item.name == "SABOR"
   );
-  const productTamanho = product.additionalProperty?.find(
-    (item) => item.name == "TAMANHO"
-  );
+
   return (
     <>
       {tastes && tastes.length > 0 && (
