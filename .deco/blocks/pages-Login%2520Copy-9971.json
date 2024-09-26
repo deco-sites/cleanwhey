@@ -1,6 +1,6 @@
 {
-  "name": "Meus Pedidos",
-  "path": "/meus-pedidos",
+  "name": "Minha conta",
+  "path": "/minha-conta",
   "sections": [
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
@@ -10,7 +10,7 @@
     },
     {
       "__resolveType": "site/sections/Iframes/IframeLogin.tsx",
-      "src": "/account#/orders"
+      "src": "/account#/profile"
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",

@@ -70,14 +70,17 @@ function ProductInfo({ page, pix }: Props) {
     },
   });
 
-  const pricePix = formatPix(price ?? 0, pix.porcentagePix, pix.valueMax);
+  const pixObj =
+    product.isVariantOf?.hasVariant[0].offers?.offers[0].priceSpecification.filter(
+      (value) => value.name?.toLowerCase() == "pix"
+    )[0];
 
-  return (
+    return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
       <span
         class={clx(
           "font-bold text-gray-400 flex items-start justify-between text-2xl capitalize",
-          "pt-4",
+          "pt-4"
         )}
       >
         {title
@@ -120,7 +123,7 @@ function ProductInfo({ page, pix }: Props) {
         </span>
 
         <span class="text-[32px] font-bold flex gap-2 items-center text-gray-400">
-          {formatPrice(pricePix)}
+          {formatPrice(pixObj?.price)}
           <p class="text-sm text-gray-300">no PIX</p>
         </span>
         <span class="max-w-[265px] text-sm font-normal text-gray-300">
@@ -137,26 +140,24 @@ function ProductInfo({ page, pix }: Props) {
 
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-        {availability === "https://schema.org/InStock"
-          ? (
-            <>
-              <AddToCartButton
-                item={item}
-                seller={seller}
-                product={product}
-                class="btn btn-primary hover:bg-orange-300 hover:border-orange-300 no-animation bg-orange-300 border-orange-300 rounded-lg h-14"
-                disabled={false}
-              />
+        {availability === "https://schema.org/InStock" ? (
+          <>
+            <AddToCartButton
+              item={item}
+              seller={seller}
+              product={product}
+              class="btn btn-primary hover:bg-orange-300 hover:border-orange-300 no-animation bg-orange-300 border-orange-300 rounded-lg h-14"
+              disabled={false}
+            />
 
-              {
-                /* <AddToCartButtonVTEX
+            {/* <AddToCartButtonVTEX
                 productID={productID}
                 seller={seller}
-              /> */
-              }
-            </>
-          )
-          : <OutOfStock productID={productID} />}
+              /> */}
+          </>
+        ) : (
+          <OutOfStock productID={productID} />
+        )}
       </div>
     </div>
   );
