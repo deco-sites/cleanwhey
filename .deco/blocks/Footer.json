@@ -10,7 +10,7 @@
         },
         {
           "title": "Nosso blog",
-          "href": "/blog"
+          "href": "/blog/categoria/cleanwhey"
         },
         {
           "title": "Política de privacidade",
@@ -21,27 +21,27 @@
           "href": "/termos-e-condicoes"
         }
       ],
-      "href": "#"
+      "href": "/quem-somos"
     },
     {
       "title": "Minha conta",
-      "href": "#",
+      "href": "/minha-conta",
       "children": [
         {
           "title": "Login",
-          "href": "#"
+          "href": "https://cleanwhey.deco.site/login-page"
         },
         {
           "title": "Minha conta",
-          "href": "#"
+          "href": "/minha-conta"
         },
         {
           "title": "Meus pedidos",
-          "href": "#"
+          "href": "/meus-pedidos"
         },
         {
           "title": "Rastrear pedido",
-          "href": "#"
+          "href": "/meus-pedidos"
         }
       ]
     }
@@ -49,17 +49,17 @@
   "social": [
     {
       "alt": "facebook",
-      "href": "#",
+      "href": "https://www.facebook.com/cleanwhey/",
       "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/cf967bef-7978-4f79-b4a3-6fdda09c8bdd"
     },
     {
       "alt": "Instagram",
-      "href": "#",
+      "href": "https://www.instagram.com/cleanwhey/",
       "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c353d5a6-b96a-4e1b-9419-fb36a7839522"
     },
     {
       "alt": "Youtube",
-      "href": "#",
+      "href": "https://www.youtube.com/channel/UC0vCLZTq_lGo68qo3p-PESw/videos",
       "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/769d5e14-ea55-4663-8c5e-882254efbe97"
     }
   ],

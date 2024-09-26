@@ -106,9 +106,16 @@ function ProductCard({
             ? `- ${variantName?.toLowerCase()?.replace("tamanho:", "")}`
             : ""
         }`;
+  const pixObj =
+    product.isVariantOf?.hasVariant[0].offers?.offers[0].priceSpecification.filter(
+      (value) => value.name?.toLowerCase() == "pix"
+    )[0];
 
   const off =
-    listPrice && price && listPrice != price && (listPrice * 100) / price;
+    pixObj?.price &&
+    pixObj?.price != price &&
+    price &&
+    (pixObj.price * 100) / price;
 
   return (
     <div
@@ -180,7 +187,7 @@ function ProductCard({
                 "w-fit"
               )}
             >
-              {off - 100 + "% OFF"}
+              {Math.ceil(-(off - 100)) + "% OFF"}
             </span>
           ) : inStock && pix?.porcentagePix != 0 ? (
             <span
@@ -226,7 +233,7 @@ function ProductCard({
               productName?.toLowerCase().includes("immunoferrin") ||
               productName?.toLowerCase().includes("caneca")
             ? productName
-            : nome?.replace("tamanho:sachê 30g;sabor:sem sabor", "") }
+            : nome?.replace("tamanho:sachê 30g;sabor:sem sabor", "")}
         </span>
         {!isFeatured && (
           <>
