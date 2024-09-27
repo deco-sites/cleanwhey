@@ -124,9 +124,6 @@ function ProductCard({
     (pixObj && salePrice && (pixObj.price / salePrice) * 100) ||
     (price && salePrice && (price / salePrice) * 100);
 
-  console.log(pixObj?.price);
-  console.log(salePrice);
-
   return (
     <div
       {...event}
