@@ -39,6 +39,7 @@ function ProductInfo({ page, pix }: Props) {
     seller = "1",
     availability,
     installments,
+    salePrice,
   } = useOffer(offers);
 
   // const percent = listPrice && price
@@ -76,11 +77,9 @@ function ProductInfo({ page, pix }: Props) {
       (value) => value.name?.toLowerCase() == "pix"
     )[0];
 
-  console.log(
-    "price " + price,
-    "listPrice " + listPrice,
-    "pix " + pixObj?.price
-  );
+  const pixporcent =
+    (pixObj && salePrice && (pixObj.price / salePrice) * 100) ||
+    (price && salePrice && (price / salePrice) * 100);
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
       <span
@@ -124,21 +123,29 @@ function ProductInfo({ page, pix }: Props) {
 
       {/* Prices */}
       <div class="flex flex-col pt-4">
-        <div>
-          <span class="line-through text-sm font-normal text-gray-300">
-            De {formatPrice(listPrice, offers?.priceCurrency)}
-          </span>
-          {price != listPrice && (
-            <span class="pl-2.5 text-sm font-normal text-gray-300">
-              por: {formatPrice(price, offers?.priceCurrency)} ou
-            </span>
-          )}
-        </div>
-
-        <span class="text-[32px] font-bold flex gap-2 items-center text-gray-400">
-          {formatPrice(pixObj?.price)}
-          <p class="text-sm text-gray-300">no PIX</p>
+        <span class="text-xl font-bold flex gap-2 text-gray-400 items-center">
+          {formatPrice(pixObj?.price) || formatPrice(price)}
+          <p class="text-sm text-gray-300">
+            via PIX {pixporcent && Math.ceil(-(pixporcent - 100)) + "%"} ou
+          </p>
         </span>
+        {salePrice !== listPrice ? (
+          <div class="flex flex-row">
+            <span class="line-through text-sm font-normal text-gray-300">
+              {formatPrice(listPrice, offers?.priceCurrency)}
+            </span>
+            <span class="pl-2.5 text-sm font-normal text-gray-300">
+              {formatPrice(salePrice, offers?.priceCurrency)}
+            </span>
+          </div>
+        ) : (
+          <>
+            <span class="text-sm font-normal text-gray-300">
+              {formatPrice(listPrice, offers?.priceCurrency)}
+            </span>
+          </>
+        )}
+
         <span class="max-w-[265px] text-sm font-normal text-gray-300">
           {installments}
         </span>

@@ -58,9 +58,9 @@ function ProductCard({
     seller = "1",
     availability,
     installments,
+    salePrice,
   } = useOffer(offers);
 
-  
   const inStock = availability === "https://schema.org/InStock";
   //const possibilities = useVariantPossibilities(hasVariant, product);
 
@@ -114,17 +114,15 @@ function ProductCard({
       (value) => value.name?.toLowerCase() == "pix"
     )[0];
 
-  console.log(
-    "price " + price,
-    "listPrice " + listPrice,
-    "pix " + pixObj?.price
-  );
+  const offsalePrice =
+    salePrice &&
+    salePrice != listPrice &&
+    listPrice &&
+    (salePrice * 100) / listPrice;
 
-  const off =
-    pixObj?.price &&
-    pixObj?.price != price &&
-    price &&
-    (pixObj.price * 100) / price;
+  const pixporcent =
+    (pixObj && salePrice && (pixObj.price / salePrice) * 100) ||
+    (price && salePrice && (price / salePrice) * 100);
 
   return (
     <div
@@ -188,7 +186,7 @@ function ProductCard({
         <div class="absolute top-0 left-0 w-full flex items-center justify-between">
           {/* Discounts */}
 
-          {inStock && off && off != 0 ? (
+          {/* {inStock && off && off != 0 ? (
             <span
               class={clx(
                 "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:top-full after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[10px]  after:border-t-red-300 after:absolute",
@@ -208,7 +206,18 @@ function ProductCard({
             >
               {pix?.porcentagePix * 100 + "% PIX"}
             </span>
-          ) : null}
+          ) : null} */}
+          {inStock && offsalePrice && offsalePrice != 0 && (
+            <span
+              class={clx(
+                "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:top-full after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[11px]  after:border-t-red-300 after:absolute",
+                "opacity-1",
+                "w-fit"
+              )}
+            >
+              {Math.ceil(-(offsalePrice - 100)) + "% OFF"}
+            </span>
+          )}
         </div>
 
         <div class="absolute top-0 left-0">
@@ -249,18 +258,29 @@ function ProductCard({
             {inStock ? (
               <>
                 <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
-                  <span class="line-through text-sm font-normal text-gray-300">
-                    De {formatPrice(listPrice, offers?.priceCurrency)}
-                  </span>
-                  {price != listPrice && (
-                    <span class="pl-2.5 text-sm font-normal text-gray-300">
-                      por: {formatPrice(price, offers?.priceCurrency)} ou
-                    </span>
-                  )}
                   <span class="text-xl font-bold flex gap-2 text-gray-400 items-center">
-                    {formatPrice(pricePix)}
-                    <p class="text-sm text-gray-300">no PIX</p>
+                    {formatPrice(pixObj?.price) || formatPrice(price)}
+                    <p class="text-sm text-gray-300">
+                      via PIX{" "}
+                      {pixporcent && Math.ceil(-(pixporcent - 100)) + "%"} ou
+                    </p>
                   </span>
+                  {salePrice !== listPrice ? (
+                    <div class="flex flex-row">
+                      <span class="line-through text-sm font-normal text-gray-300">
+                        {formatPrice(listPrice, offers?.priceCurrency)}
+                      </span>
+                      <span class="pl-2.5 text-sm font-normal text-gray-300">
+                        {formatPrice(salePrice, offers?.priceCurrency)}
+                      </span>
+                    </div>
+                  ) : (
+                    <>
+                      <span class="text-sm font-normal text-gray-300">
+                        {formatPrice(listPrice, offers?.priceCurrency)}
+                      </span>
+                    </>
+                  )}
 
                   <span class="text-gray-400 text-md font-semibold">
                     {installments}
@@ -284,15 +304,28 @@ function ProductCard({
       <div class={`flex flex-col gap-2.5`}>
         {isFeatured && (
           <div class="flex flex-col text-center items-center  justify-center gap-1">
-            {listPrice !== pricePix && (
-              <span class="line-through text-sm font-normal text-gray-300">
-                {formatPrice(listPrice, offers?.priceCurrency)}
-              </span>
-            )}
-            <span class="text-lg font-bold flex gap-2 text-gray-400 items-center">
-              {formatPrice(pricePix)}
-              <p class="text-xs text-gray-300">no PIX</p>
+            <span class="text-xl font-bold flex gap-2 text-gray-400 items-center">
+              {formatPrice(pixObj?.price) || formatPrice(price)}
+              <p class="text-sm text-gray-300">
+                via PIX {pixporcent && Math.ceil(-(pixporcent - 100)) + "%"} ou
+              </p>
             </span>
+            {salePrice !== listPrice ? (
+              <div class="flex flex-row">
+                <span class="line-through text-sm font-normal text-gray-300">
+                  {formatPrice(listPrice, offers?.priceCurrency)}
+                </span>
+                <span class="pl-2.5 text-sm font-normal text-gray-300">
+                  {formatPrice(salePrice, offers?.priceCurrency)}
+                </span>
+              </div>
+            ) : (
+              <>
+                <span class="text-sm font-normal text-gray-300">
+                  {formatPrice(listPrice, offers?.priceCurrency)}
+                </span>
+              </>
+            )}
 
             <span class="text-gray-400 text-md font-semibold">
               {installments}
