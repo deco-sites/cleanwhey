@@ -76,11 +76,7 @@ function ProductInfo({ page, pix }: Props) {
       (value) => value.name?.toLowerCase() == "pix"
     )[0];
 
-  console.log(
-    "price " + price,
-    "listPrice " + listPrice,
-    "pix " + pixObj?.price
-  );
+  
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
       <span
@@ -125,7 +121,7 @@ function ProductInfo({ page, pix }: Props) {
       {/* Prices */}
       <div class="flex flex-col pt-4">
         <div>
-          <span class="line-through text-sm font-normal text-gray-300">
+        <span class="line-through text-sm font-normal text-gray-300">
             De {formatPrice(listPrice, offers?.priceCurrency)}
           </span>
           {price != listPrice && (

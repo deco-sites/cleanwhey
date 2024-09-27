@@ -43,7 +43,7 @@ export default function GallerySlider(props: Props) {
     pix,
   } = props;
 
-  const { price = 0, listPrice, availability } = useOffer(offers);
+  const { price = 0, listPrice, availability, salePrice } = useOffer(offers);
 
   // const percent = listPrice && price
   //   ? Math.round(((listPrice - price) / listPrice) * 100)
@@ -62,8 +62,11 @@ export default function GallerySlider(props: Props) {
       (value) => value.name?.toLowerCase() == "pix"
     )[0];
 
-  const off =
-    pixObj?.price && pixObj?.price != price && (pixObj.price * 100) / price;
+  const off = listPrice && price != listPrice && (listPrice * 100) / price;
+  // console.log(salePrice, "saleprice");
+  // console.log(listPrice, "listprice");
+  // console.log(price, "price");
+  // console.log(off, "off");
 
   return (
     <>
@@ -74,7 +77,7 @@ export default function GallerySlider(props: Props) {
         {/* Image Slider */}
         <div class="col-start-1 col-span-1 sm:col-start-2">
           <div class="relative h-min flex-grow">
-            {inStock && off && off != 0 ? (
+            {/* {inStock && off && off != 0 ? (
               <span
                 class={clx(
                   "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:top-full after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[11px]  after:border-t-red-300 after:absolute",
@@ -94,8 +97,18 @@ export default function GallerySlider(props: Props) {
               >
                 {pix.porcentagePix * 100 + "% PIX"}
               </span>
-            ) : null}
-
+            ) : null} */}
+            {inStock && off && off != 0 && (
+              <span
+                class={clx(
+                  "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:top-full after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[11px]  after:border-t-red-300 after:absolute",
+                  "opacity-1",
+                  "w-fit"
+                )}
+              >
+                {Math.ceil(-(off - 100)) + "% OFF"}
+              </span>
+            )}
             <Slider class="carousel carousel-center gap-6 w-full">
               {props.page.product.image?.map((img, index) => (
                 <Slider.Item index={index} class="carousel-item w-full">

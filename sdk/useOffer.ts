@@ -6,7 +6,7 @@ import { formatPrice } from "./format.ts";
 
 const bestInstallment = (
   acc: UnitPriceSpecification | null,
-  curr: UnitPriceSpecification,
+  curr: UnitPriceSpecification
 ) => {
   if (curr.priceComponentType !== "https://schema.org/Installment") {
     return acc;
@@ -25,7 +25,8 @@ const bestInstallment = (
   }
 
   if (
-    acc.billingDuration && curr.billingDuration &&
+    acc.billingDuration &&
+    curr.billingDuration &&
     acc.billingDuration < curr.billingDuration
   ) {
     return curr;
@@ -34,29 +35,47 @@ const bestInstallment = (
   return acc;
 };
 
-const installmentToString = (
-  installment: UnitPriceSpecification,
-  sellingPrice: number,
-) => {
-  const { billingDuration, billingIncrement, price } = installment;
+const installmentToString = (installment: UnitPriceSpecification) => {
+  const { billingDuration, billingIncrement } = installment;
 
   if (!billingDuration || !billingIncrement) {
     return "";
   }
 
-  const withTaxes = sellingPrice < price;
-
-  return `${billingDuration}x de ${formatPrice(billingIncrement)} ${
-    withTaxes ? "com juros" : "sem juros"
-  }`;
+  return `${billingDuration}x de ${formatPrice(
+    billingIncrement
+  )} ${"sem juros"}`;
 };
+
+function getMaxBillingDuration(
+  arr: UnitPriceSpecification[]
+): UnitPriceSpecification | null {
+  return arr.reduce<UnitPriceSpecification | null>((max, current) => {
+    if (
+      current.billingDuration !== undefined &&
+      (max === null ||
+        max.billingDuration === undefined ||
+        current.billingDuration > max.billingDuration)
+    ) {
+      return current;
+    }
+    return max;
+  }, null);
+}
 
 export const useOffer = (aggregateOffer?: AggregateOffer) => {
   const offer = aggregateOffer?.offers[0];
-  const listPrice = offer?.priceSpecification.find((spec) =>
-    spec.priceType === "https://schema.org/ListPrice"
+  const listPrice = offer?.priceSpecification.find(
+    (spec) => spec.priceType === "https://schema.org/ListPrice"
   );
-  const installment = offer?.priceSpecification.reduce(bestInstallment, null);
+  const salePrice = offer?.priceSpecification.find(
+    (spec) => spec.priceType === "https://schema.org/SalePrice"
+  );
+  //const installment = offer?.priceSpecification.reduce(bestInstallment, null);
+  const installment =
+    offer?.priceSpecification &&
+    getMaxBillingDuration(offer?.priceSpecification);
+
   const seller = offer?.seller;
   const price = offer?.price;
   const availability = offer?.availability;
@@ -66,8 +85,8 @@ export const useOffer = (aggregateOffer?: AggregateOffer) => {
     listPrice: listPrice?.price,
     availability,
     seller,
-    installments: installment && price
-      ? installmentToString(installment, price)
-      : null,
+    salePrice: salePrice?.price,
+    installments:
+      installment && price ? installmentToString(installment) : null,
   };
 };
