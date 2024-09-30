@@ -23,12 +23,12 @@ export async function action(props: Props, req: Request, ctx: AppContext) {
   const form = await req.formData();
 
   try {
-    const result = (await ctx.invoke("vtex/actions/cart/simulation.ts", {
+    const result = await ctx.invoke("vtex/actions/cart/simulation.ts", {
       items: props.items,
       postalCode: `${form.get("postalCode") ?? ""}`,
       country: "BRA",
-    })) as SimulationOrderForm | null;
-    console.log(result);
+    }) as SimulationOrderForm | null;
+    //console.log(result);
     return { result };
   } catch {
     return { result: null };
@@ -55,7 +55,7 @@ export default function Results({ result }: ComponentProps<typeof action>) {
       <span> Opções de frete para o CEP</span> <span> X</span>
       {result !== null && <span>{result.postalCode}</span> }
       {methods.map((method) => (
-        <li class="flex justify-between items-center border-base-200 not-first-child:border-t text-[#A1A6B7]">
+        <li class="flex justify-between items-center border-base-200 not-first-child:border-t text-[#A1A6B7] border-b">
           <Icon id="truck" size={24} stroke="0.01" />
 
           <span class="text-button w-1/4 text-start">{method.name}:</span>
