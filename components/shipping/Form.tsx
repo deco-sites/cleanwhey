@@ -7,9 +7,10 @@ export interface Props {
   items: SKU[];
 }
 
+const Results = import.meta.resolve("./Results.tsx");
+
 export default function Form({ items }: Props) {
   const slot = useId();
-
   return (
     <>
       <div class="flex flex-row gap-2 items-center justify-between">
@@ -25,7 +26,7 @@ export default function Form({ items }: Props) {
           hx-target={`#${slot}`}
           hx-swap="innerHTML"
           hx-sync="this:replace"
-          hx-post={useComponent(import.meta.resolve("./Results.tsx"), {
+          hx-post={useComponent(Results, {
             items,
           })}
         >
@@ -49,6 +50,7 @@ export default function Form({ items }: Props) {
 
         {/* Results Slot */}
       </div>
+
       <div id={slot} class={"mt-5"} />
     </>
   );

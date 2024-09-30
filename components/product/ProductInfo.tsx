@@ -178,6 +178,7 @@ function ProductInfo({ page, pix }: Props) {
         ) : (
           <OutOfStock productID={productID} />
         )}
+
       </div>
     </div>
   );
