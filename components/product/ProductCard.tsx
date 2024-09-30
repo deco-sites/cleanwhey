@@ -258,7 +258,7 @@ function ProductCard({
             {inStock ? (
               <>
                 <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
-                  <span class="text-xl font-bold flex gap-2 text-gray-400 items-center">
+                  <span class="text-xl font-bold flex lg:flex-row  flex-col  gap-2 text-gray-400 items-center">
                     {formatPrice(pixObj?.price) || formatPrice(price)}
                     <p class="text-sm text-gray-300">
                       via PIX{" "}

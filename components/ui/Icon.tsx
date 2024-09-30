@@ -24,7 +24,8 @@ export type AvailableIcons =
   | "WhatsApp"
   | "error"
   | "searchRecent"
-  | "trash";
+  | "trash"
+  | "truck";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**
@@ -36,15 +37,9 @@ interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   size?: number;
 }
 
-function Icon(
-  { id, size = 24, width, height, ...otherProps }: Props,
-) {
+function Icon({ id, size = 24, width, height, ...otherProps }: Props) {
   return (
-    <svg
-      {...otherProps}
-      width={width ?? size}
-      height={height ?? size}
-    >
+    <svg {...otherProps} width={width ?? size} height={height ?? size}>
       <use href={asset(`/sprites.svg#${id}`)} />
     </svg>
   );
