@@ -97,7 +97,7 @@
             }
           ],
           "name": "Embalagem",
-          "url": "/embalagem"
+          "url": "/todos-os-produtos"
         },
         {
           "image": [],
@@ -158,7 +158,7 @@
       "children": [],
       "image": [],
       "name": "Combos e descontos",
-      "url": "/139?map=productClusterIds"
+      "url": "/combos-e-descontos?page=1"
     },
     {
       "children": [],

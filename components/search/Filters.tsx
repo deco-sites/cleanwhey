@@ -178,21 +178,23 @@ function Filters({ filters }: Props) {
     <ul class="flex flex-col gap-6 p-4 sm:p-0">
       {filtersArray.filter(isToggle).map((filter, index) => (
         <>
-          {filter.label != "Departamento" && filter.label != "Category 4" && (
-            <div className="collapse rounded-none collapse-arrow border-b border-gray-100">
-              <input
-                type="checkbox"
-                className={"peer"}
-                name={`my-accordion-${index}`}
-              />
-              <div className="collapse-title after:!h-3 after:!w-3 after:text-gray-300 after:peer-checked:text-orange-300 text-gray-300 text-lg font-bold gap-2 !flex items-center p-0 peer-checked:text-orange-300 capitalize">
-                {filter.label.toLowerCase()}
+          {filter.label != "Departamento" &&
+            filter.label != "Category 4" &&
+            filter.label.toLowerCase() != "marca" && (
+              <div className="collapse rounded-none collapse-arrow border-b border-gray-100">
+                <input
+                  type="checkbox"
+                  className={"peer"}
+                  name={`my-accordion-${index}`}
+                />
+                <div className="collapse-title after:!h-3 after:!w-3 after:text-gray-300 after:peer-checked:text-orange-300 text-gray-300 text-lg font-bold gap-2 !flex items-center p-0 peer-checked:text-orange-300 capitalize">
+                  {filter.label.toLowerCase()}
+                </div>
+                <div className="collapse-content overflow-y-auto overflow-x-hidden">
+                  <FilterValues {...filter} />
+                </div>
               </div>
-              <div className="collapse-content overflow-y-auto overflow-x-hidden">
-                <FilterValues {...filter} />
-              </div>
-            </div>
-          )}
+            )}
         </>
       ))}
     </ul>

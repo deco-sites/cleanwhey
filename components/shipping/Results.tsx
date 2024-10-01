@@ -72,7 +72,7 @@ export default function Results({ result }: ComponentProps<typeof action>) {
           <span className="text-button text-[#A1A6B7] w-1/4 text-xs">
             {formatShippingEstimate(method.shippingEstimate)}
           </span>
-          <span className=" font-semibold text-right w-1/4 text-xs">
+          <span className=" font-semibold text-right w-1/4 text-xs text-[#464B59]">
             {method.price === 0
               ? "Grátis"
               : formatPrice(method.price / 100, "BRL", "pt-BR")}
