@@ -5451,6 +5451,10 @@ details.collapse summary::-webkit-details-marker {
   --tw-text-opacity: 1;
   color: rgb(37 37 38 / var(--tw-text-opacity));
 }
+.text-\[\#464B59\] {
+  --tw-text-opacity: 1;
+  color: rgb(70 75 89 / var(--tw-text-opacity));
+}
 .text-\[\#667781\] {
   --tw-text-opacity: 1;
   color: rgb(102 119 129 / var(--tw-text-opacity));
