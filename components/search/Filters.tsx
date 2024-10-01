@@ -187,9 +187,15 @@ function Filters({ filters }: Props) {
                   className={"peer"}
                   name={`my-accordion-${index}`}
                 />
-                <div className="collapse-title after:!h-3 after:!w-3 after:text-gray-300 after:peer-checked:text-orange-300 text-gray-300 text-lg font-bold gap-2 !flex items-center p-0 peer-checked:text-orange-300 capitalize">
-                  {filter.label.toLowerCase()}
-                </div>
+                {filter.label.toLowerCase() != "subcategoria" ? (
+                  <div className="collapse-title after:!h-3 after:!w-3 after:text-gray-300 after:peer-checked:text-orange-300 text-gray-300 text-lg font-bold gap-2 !flex items-center p-0 peer-checked:text-orange-300 capitalize">
+                    {filter.label.toLowerCase()}
+                  </div>
+                ) : (
+                  <div className="collapse-title after:!h-3 after:!w-3 after:text-gray-300 after:peer-checked:text-orange-300 text-gray-300 text-lg font-bold gap-2 !flex items-center p-0 peer-checked:text-orange-300 ">
+                    Tipo de Proteína
+                  </div>
+                )}
                 <div className="collapse-content overflow-y-auto overflow-x-hidden">
                   <FilterValues {...filter} />
                 </div>
