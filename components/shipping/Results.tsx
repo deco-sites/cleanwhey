@@ -23,11 +23,11 @@ export async function action(props: Props, req: Request, ctx: AppContext) {
   const form = await req.formData();
 
   try {
-    const result = await ctx.invoke("vtex/actions/cart/simulation.ts", {
+    const result = (await ctx.invoke("vtex/actions/cart/simulation.ts", {
       items: props.items,
       postalCode: `${form.get("postalCode") ?? ""}`,
       country: "BRA",
-    }) as SimulationOrderForm | null;
+    })) as SimulationOrderForm | null;
     //console.log(result);
     return { result };
   } catch {
@@ -51,18 +51,28 @@ export default function Results({ result }: ComponentProps<typeof action>) {
   }
 
   return (
-    <ul class="flex flex-col gap-4 p-4 border border-base-300 rounded">
-      <span> Opções de frete para o CEP</span> <span> X</span>
-      {result !== null && <span>{result.postalCode}</span> }
-      {methods.map((method) => (
-        <li class="flex justify-between items-center border-base-200 not-first-child:border-t text-[#A1A6B7] border-b">
+    <ul className="flex flex-col gap-4 px-4 lg:px-8 py-4 border rounded-lg border-[#AFAFC0]">
+      <div class="text-sm text-[#A1A6B7] flex-col flex">
+        <span>Opções de frete para o CEP</span>
+        {result !== null && (
+          <span class="font-semibold">{result.postalCode}</span>
+        )}
+      </div>
+      {methods.map((method, index) => (
+        <li
+          key={index} // Adicione uma chave única para cada item
+          className={`flex justify-between items-center text-[#A1A6B7] border-[#AFAFC0] pb-4 ${
+            index !== methods.length - 1 ? "border-b" : "border-b-0"
+          }`}
+        >
           <Icon id="truck" size={24} stroke="0.01" />
-
-          <span class="text-button w-1/4 text-start">{method.name}:</span>
-          <span class="text-button text-[#A1A6B7] w-1/4">
+          <span className="text-button w-1/4 text-start text-sm">
+            {method.name}:
+          </span>
+          <span className="text-button text-[#A1A6B7] w-1/4 text-xs">
             {formatShippingEstimate(method.shippingEstimate)}
           </span>
-          <span class="text-base font-semibold text-right w-1/4">
+          <span className=" font-semibold text-right w-1/4 text-xs">
             {method.price === 0
               ? "Grátis"
               : formatPrice(method.price / 100, "BRL", "pt-BR")}
