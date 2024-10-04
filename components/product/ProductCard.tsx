@@ -47,10 +47,13 @@ function ProductCard({
 }: Props) {
   const id = useId();
 
-  const { url, image: images, offers, isVariantOf } = product;
+  const { url, image: images, offers, isVariantOf , name } = product;
 
   const title = isVariantOf?.name ?? product.name;
   const [front, back] = images ?? [];
+
+  // console.log(product);
+  // console.log(productName);
 
   const {
     listPrice,
@@ -85,29 +88,6 @@ function ProductCard({
     },
   });
 
-  const variantName = title
-    ?.toLowerCase()
-    .replace("cor:", "")
-    .replace("tamanho:", "")
-    .replace(/sabor:[^;]*/g, "")
-    .replace(/;/g, "")
-    .trim();
-
-  const nome =
-    productName == title
-      ? title?.toLowerCase().replace("tamanho:", "")
-      : title?.toLowerCase() == variantName
-      ? `${title?.toLowerCase()?.replace("Tamanho:", "")}  - ${productName
-          ?.toLowerCase()
-          ?.replace("tamanho:", "")
-          .replace(/sabor:[^;]*/g, "")
-          .replace(";", "")
-          .replace("cor:", "")}`.replace("Tamanho:", "")
-      : `${productName?.toLowerCase()} ${
-          variantName?.toLowerCase()
-            ? `- ${variantName?.toLowerCase()?.replace("tamanho:", "")}`
-            : ""
-        }`;
   const pixObj = product.isVariantOf?.hasVariant
     .filter((value) => value.url == url)[0]
     .offers?.offers[0].priceSpecification.filter(
@@ -215,7 +195,9 @@ function ProductCard({
                 "w-fit"
               )}
             >
-              {Math.ceil(-(offsalePrice - 100)) + "% OFF"}
+              {-(offsalePrice - 100) % 1 < 0.5
+                ? Math.floor(-(offsalePrice - 100)) + "% OFF"
+                : Math.ceil(-(offsalePrice - 100)) + "% OFF"}
             </span>
           )}
         </div>
@@ -231,27 +213,7 @@ function ProductCard({
         <span
           class={`font-bold text-gray-400 text-base md:text-lg text-center capitalize`}
         >
-          {isVariantOf?.name != undefined
-            ? isVariantOf?.name.toLowerCase().includes("combo") ||
-              isVariantOf?.name.toLowerCase().includes("immunoferrin") ||
-              isVariantOf?.name.toLowerCase().includes("caneca")
-              ? isVariantOf?.name
-              : isVariantOf.name == product.name
-              ? isVariantOf.name
-              : isVariantOf?.name
-                  ?.replace("Tamanho:Sachê 30g;Sabor:Sem Sabor", "")
-                  .replace("Tamanho:Sachê 30g;Sabor:Mocaccino", "") +
-                " " +
-                product.name
-                  ?.split(";")[0]
-                  .replace("Tamanho:", "")
-                  .replace("Cor:", "")
-                  .replace(";", "")
-            : productName?.toLowerCase().includes("combo") ||
-              productName?.toLowerCase().includes("immunoferrin") ||
-              productName?.toLowerCase().includes("caneca")
-            ? productName
-            : nome?.replace("tamanho:sachê 30g;sabor:sem sabor", "")}
+          {title} - {productName}
         </span>
         {!isFeatured && (
           <>
