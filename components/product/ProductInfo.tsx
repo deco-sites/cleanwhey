@@ -29,7 +29,7 @@ function ProductInfo({ page, pix }: Props) {
   }
 
   const { breadcrumbList, product } = page;
-  const { productID, offers, isVariantOf, url } = product;
+  const { productID, offers, isVariantOf, url, name } = product;
   const description = product.description || isVariantOf?.description;
   const title = isVariantOf?.name ?? product.name;
 
@@ -88,19 +88,7 @@ function ProductInfo({ page, pix }: Props) {
           "pt-4"
         )}
       >
-        {title
-          ?.toLowerCase()
-          .replace("cor:", "")
-          .replace("tamanho:", "")
-          .replace(/sabor:[^;]*/g, "")
-          .replace(/;/g, "")
-          .replace("sachê 30g", "")
-          .replace("lata 360g", "")
-          .replace("refil 450g", "")
-          .replace("pote 900g", "")
-          .replace("refil 1800g", "")
-          .replace("saco 5kg", "")
-          .trim()}
+        {title} - {name}
         <WishlistButton item={item} variant="icon" />
       </span>
 
@@ -126,7 +114,11 @@ function ProductInfo({ page, pix }: Props) {
         <span class="text-xl font-bold flex gap-2 text-gray-400 items-center">
           {formatPrice(pixObj?.price) || formatPrice(price)}
           <p class="text-sm text-gray-300">
-            via PIX {pixporcent && Math.ceil(-(pixporcent - 100)) + "%"} ou
+            via PIX{" "}
+            {pixporcent && -(pixporcent - 100) % 1 < 0.5
+              ? Math.floor(-(pixporcent - 100)) + "% OFF"
+              : Math.ceil(-(pixporcent! - 100)) + "% OFF"}
+            ou
           </p>
         </span>
         {salePrice !== listPrice ? (
@@ -178,7 +170,6 @@ function ProductInfo({ page, pix }: Props) {
         ) : (
           <OutOfStock productID={productID} />
         )}
-
       </div>
     </div>
   );

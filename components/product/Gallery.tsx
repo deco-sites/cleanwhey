@@ -63,10 +63,7 @@ export default function GallerySlider(props: Props) {
     )[0];
 
   const off = listPrice && price != listPrice && (listPrice * 100) / price;
-  // console.log(salePrice, "saleprice");
-  // console.log(listPrice, "listprice");
-  // console.log(price, "price");
-  // console.log(off, "off");
+
 
   const offsalePrice =
     salePrice &&
@@ -111,7 +108,9 @@ export default function GallerySlider(props: Props) {
                   "w-fit"
                 )}
               >
-                {Math.ceil(-(offsalePrice - 100)) + "% OFF"}
+                {-(offsalePrice - 100) % 1 < 0.5
+                  ? Math.floor(-(offsalePrice - 100)) + "% OFF"
+                  : Math.ceil(-(offsalePrice - 100)) + "% OFF"}
               </span>
             )}
             <Slider class="carousel carousel-center gap-6 w-full">
