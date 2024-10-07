@@ -6143,10 +6143,6 @@ input[type="number"] {
   content: var(--tw-content);
   border-right-width: 25px;
 }
-.after\:border-t-\[10px\]::after {
-  content: var(--tw-content);
-  border-top-width: 10px;
-}
 .after\:border-t-\[11px\]::after {
   content: var(--tw-content);
   border-top-width: 11px;

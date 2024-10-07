@@ -28,7 +28,6 @@ interface Props {
 
   class?: string;
   isFeatured?: boolean;
-  pix: Pix;
 }
 
 const WIDTH = 287;
@@ -42,18 +41,14 @@ function ProductCard({
   index,
   productName,
   isFeatured,
-  pix,
   class: _class,
 }: Props) {
   const id = useId();
 
-  const { url, image: images, offers, isVariantOf , name } = product;
+  const { url, image: images, offers, isVariantOf } = product;
 
-  const title = isVariantOf?.name ?? product.name;
+  const title = isVariantOf?.name || "";
   const [front, back] = images ?? [];
-
-  // console.log(product);
-  // console.log(productName);
 
   const {
     listPrice,
@@ -73,8 +68,6 @@ function ProductCard({
   // const percent = listPrice && price
   //   ? Math.round(((listPrice - price) / listPrice) * 100)
   //   : 0;
-
-  const pricePix = formatPix(price ?? 0, pix.porcentagePix, pix.valueMax);
 
   const item = mapProductToAnalyticsItem({ product, price, listPrice, index });
 
@@ -166,27 +159,6 @@ function ProductCard({
         <div class="absolute top-0 left-0 w-full flex items-center justify-between">
           {/* Discounts */}
 
-          {/* {inStock && off && off != 0 ? (
-            <span
-              class={clx(
-                "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:top-full after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[10px]  after:border-t-red-300 after:absolute",
-                "opacity-1",
-                "w-fit"
-              )}
-            >
-              {Math.ceil(-(off - 100)) + "% OFF"}
-            </span>
-          ) : inStock && pix?.porcentagePix != 0 ? (
-            <span
-              class={clx(
-                "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:top-full after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[10px]  after:border-t-red-300 after:absolute",
-                "opacity-1",
-                "w-fit"
-              )}
-            >
-              {pix?.porcentagePix * 100 + "% PIX"}
-            </span>
-          ) : null} */}
           {inStock && offsalePrice && offsalePrice != 0 && (
             <span
               class={clx(
@@ -213,7 +185,7 @@ function ProductCard({
         <span
           class={`font-bold text-gray-400 text-base md:text-lg text-center capitalize`}
         >
-          {title} - {productName}
+          {title.replace("Cor:", "")} - {productName?.replace("Cor:", "")}
         </span>
         {!isFeatured && (
           <>
