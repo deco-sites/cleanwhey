@@ -458,10 +458,10 @@ html {
 }
   /* Allow changing font family via CMS */
   html {
-  scroll-behavior: smooth;
+    
     font-family: var(--font-family);
-    min-height: 100vh;
-}
+    
+  }
 
   /** Remove default styles from input[type=number] */
   input[type="number"]::-webkit-inner-spin-button,
@@ -4049,6 +4049,10 @@ details.collapse summary::-webkit-details-marker {
 .h-auto {
   height: auto;
 }
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
 .h-full {
   height: 100%;
 }
@@ -4133,6 +4137,9 @@ details.collapse summary::-webkit-details-marker {
 }
 .min-h-\[470px\] {
   min-height: 470px;
+}
+.min-h-\[calc\(100vh-300px\)\] {
+  min-height: calc(100vh - 300px);
 }
 .min-h-full {
   min-height: 100%;
