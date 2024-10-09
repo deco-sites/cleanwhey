@@ -51,7 +51,7 @@
                 {
                   "image": [],
                   "children": [],
-                  "url": "/suplementos/proteinas/special?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=special&filter.sabor=xr--extended-release-&page=1",
+                  "url": "/suplementos/proteinas/special/s?q=xr&page=1",
                   "name": "XR"
                 }
               ],

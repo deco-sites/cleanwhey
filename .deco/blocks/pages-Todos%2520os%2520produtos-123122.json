@@ -32,12 +32,14 @@
               "value": "clean-whey"
             }
           ],
-          "count": 12
+          "count": 12,
+          "similars": true
         },
         "extensions": [
           {
             "__resolveType": "vtex/loaders/product/extensions/listingPage.ts",
-            "variants": true
+            "variants": true,
+            "similars": true
           }
         ]
       },
@@ -47,7 +49,7 @@
           "desktop": 4
         },
         "variant": "aside",
-        "pagination": "pagination"
+        "pagination": "show-more"
       },
       "startingPage": 1,
       "pix": {

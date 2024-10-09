@@ -458,8 +458,10 @@ html {
 }
   /* Allow changing font family via CMS */
   html {
+  scroll-behavior: smooth;
     font-family: var(--font-family);
-  }
+    min-height: 100vh;
+}
 
   /** Remove default styles from input[type=number] */
   input[type="number"]::-webkit-inner-spin-button,
@@ -3891,9 +3893,6 @@ details.collapse summary::-webkit-details-marker {
 .ml-2 {
   margin-left: 0.5rem;
 }
-.ml-5 {
-  margin-left: 1.25rem;
-}
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -4017,9 +4016,6 @@ details.collapse summary::-webkit-details-marker {
 .h-\[210px\] {
   height: 210px;
 }
-.h-\[34vh\] {
-  height: 34vh;
-}
 .h-\[3px\] {
   height: 3px;
 }
@@ -4046,6 +4042,9 @@ details.collapse summary::-webkit-details-marker {
 }
 .h-\[calc\(100\%-59px-52px\)\] {
   height: calc(100% - 59px - 52px);
+}
+.h-\[calc\(100vh-543px\)\] {
+  height: calc(100vh - 543px);
 }
 .h-auto {
   height: auto;
@@ -6145,10 +6144,6 @@ input[type="number"] {
 .after\:border-r-\[25px\]::after {
   content: var(--tw-content);
   border-right-width: 25px;
-}
-.after\:border-t-\[10px\]::after {
-  content: var(--tw-content);
-  border-top-width: 10px;
 }
 .after\:border-t-\[11px\]::after {
   content: var(--tw-content);

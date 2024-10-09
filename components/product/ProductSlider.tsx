@@ -62,7 +62,6 @@ function ProductSlider({ products, itemListName, isFeatured, pix }: Props) {
                     class={`mx-4 sm:mx-0 p-4 w-full ${
                       isFeatured ? "bg-white" : ""
                     } border border-gray-100 shadow-[0_0_10px_0_rgba(0,0,0,0.1)]`}
-                    pix={pix}
                   />
                 </Slider.Item>
               );

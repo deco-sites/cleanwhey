@@ -116,8 +116,8 @@ function ProductInfo({ page, pix }: Props) {
           <p class="text-sm text-gray-300">
             via PIX{" "}
             {pixporcent && -(pixporcent - 100) % 1 < 0.5
-              ? Math.floor(-(pixporcent - 100)) + "% OFF"
-              : Math.ceil(-(pixporcent! - 100)) + "% OFF"}
+              ? Math.floor(-(pixporcent - 100)) + "% OFF "
+              : Math.ceil(-(pixporcent! - 100)) + "% OFF "}
             ou
           </p>
         </span>

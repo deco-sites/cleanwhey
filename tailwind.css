@@ -183,7 +183,9 @@ input[type="number"] {
 @layer base {
   /* Allow changing font family via CMS */
   html {
+    @apply scroll-smooth;
     font-family: var(--font-family);
+    min-height: 100vh;
   }
 
   /** Remove default styles from input[type=number] */
