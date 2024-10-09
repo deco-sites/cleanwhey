@@ -35,7 +35,7 @@ function WishlistGallery(props: Props) {
 
   if (isEmpty) {
     return (
-      <div class="md:container mx-4 sm:mx-auto flex-col flex-grow h-[34vh]">
+      <div class="md:container mx-4 sm:mx-auto flex  flex-col  flex-grow h-[calc(100vh-543px)] ">
         <div class="mx-10 my-20 flex flex-col gap-4 justify-center items-center">
           <span class="font-medium text-2xl text-center">
             Sua Lista de Desejos está vazia
