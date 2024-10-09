@@ -262,19 +262,17 @@ function PageResult(props: SectionProps<typeof loader>) {
 
       <div class={clx("pt-2 sm:pt-10 w-full flex justify-center", "")}>
         {infinite ? (
-          <div class="flex justify-center [&_section]:contents">
+          <div class="flex justify-center [&_section]:contents ">
             <a
               rel="next"
               class={clx(
-                "btn btn-ghost",
+                "btn btn-ghost bg-orange-300 text-white",
                 (!nextPageUrl || partial === "hideMore") && "hidden"
               )}
               hx-swap="outerHTML show:parent:top"
               hx-get={partialNext}
             >
-              <span class="inline [.htmx-request_&]:hidden hover:bg-orange-300 hover:text-white">
-                Ver mais
-              </span>
+              <span class="inline [.htmx-request_&]:hidden">Ver mais</span>
               <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
             </a>
           </div>
