@@ -49,7 +49,7 @@ function Footer({
   const device = useDevice();
   return (
     <footer
-      class="relative bottom-0 bg-orange-300" // style={{ backgroundColor: "#EFF0F0" }}
+      class="sm:px-0  bg-orange-300" // style={{ backgroundColor: "#EFF0F0" }}
     >
       <div class="flex flex-col gap-5 sm:gap-10 pt-10">
         <ul class="container sm:px-0 px-5 md:gap-0 gap-4 flex sm:flex-row flex-col justify-between">

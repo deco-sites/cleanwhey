@@ -258,7 +258,7 @@ function PageResult(props: SectionProps<typeof loader>) {
                       shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
           />
         ))}
-       </div>
+      </div>
 
       <div class={clx("pt-2 sm:pt-10 w-full flex justify-center", "")}>
         {infinite ? (
@@ -272,7 +272,9 @@ function PageResult(props: SectionProps<typeof loader>) {
               hx-swap="outerHTML show:parent:top"
               hx-get={partialNext}
             >
-              <span class="inline [.htmx-request_&]:hidden">Show More</span>
+              <span class="inline [.htmx-request_&]:hidden hover:bg-orange-300 hover:text-white">
+                Ver mais
+              </span>
               <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
             </a>
           </div>

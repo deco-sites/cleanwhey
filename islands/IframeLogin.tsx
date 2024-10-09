@@ -20,9 +20,9 @@ export default function ProxyIframe({ src }: Props) {
       ></script>
       <iframe
         id="proxy-loader"
-        style="width:100%;border:none;overflow:hidden; min-height:950px; height:1100px"
+        style="width:100%;border:none;overflow:hidden"
         src={src}
-        className={"fixed"}
+        className={"min-h-[calc(100vh-300px)] h-fit "}
         // onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));'
       ></iframe>
     </>
