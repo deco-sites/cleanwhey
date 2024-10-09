@@ -114,18 +114,24 @@ function Suggestions({
               searches.length === 0 &&
               newProducts.map((product) => {
                 const title = product.isVariantOf?.name ?? product.name;
-                const variantName = title
-                  ?.toLowerCase()
-                  .replace("cor:", "")
-                  .replace("tamanho:", "")
-                  .replace(/sabor:[^;]*/g, "")
-                  .replace(/;/g, "")
-                  .trim();
+                const { url } = product;
+
                 const size = product?.additionalProperty?.find(
                   (property) => property.name == "TAMANHO"
                 );
                 const [front, back] = product.image ?? [];
-                const { price, installments } = useOffer(product?.offers);
+                const { price, installments, salePrice } = useOffer(
+                  product?.offers
+                );
+                const pixObj = product.isVariantOf?.hasVariant
+                  .filter((value) => value.url == url)[0]
+                  .offers?.offers[0].priceSpecification.filter(
+                    (value) => value.name?.toLowerCase() == "pix"
+                  )[0];
+
+                const pixporcent =
+                  (pixObj && salePrice && (pixObj.price / salePrice) * 100) ||
+                  (price && salePrice && (price / salePrice) * 100);
                 return (
                   <li>
                     {/* TODO @gimenes: use name and action from searchbar form */}
@@ -144,24 +150,16 @@ function Suggestions({
                             <span
                               class={"text-ellipsis-custom text-sm capitalize"}
                             >
-                              {product.isVariantOf?.name == title
-                                ? `${title?.toLowerCase()} ${
-                                    size?.value ? "- " + size.value : ""
-                                  }`
-                                : title?.toLowerCase() == variantName
-                                ? `${title?.toLowerCase()} - ${product.isVariantOf?.name
-                                    ?.toLowerCase()
-                                    .replace("tamanho:", "")
-                                    .replace(/sabor:[^;]*/g, "")
-                                    .replace(";", "")
-                                    .replace("cor:", "")}`
-                                : `${product.isVariantOf?.name?.toLowerCase()} ${
-                                    variantName?.toLowerCase()
-                                      ? `- ${variantName?.toLowerCase()}`
-                                      : ""
-                                  } ${size?.value ? "- " + size.value : ""}`}
+                              {title} - {product.name}
                             </span>
-
+                            {formatPrice(pixObj?.price) || formatPrice(price)}
+                            <p class="text-sm text-gray-300">
+                              via PIX{" "}
+                              {pixporcent && -(pixporcent - 100) % 1 < 0.5
+                                ? Math.floor(-(pixporcent - 100)) + "% OFF "
+                                : Math.ceil(-(pixporcent! - 100)) + "% OFF "}
+                              ou
+                            </p>
                             <span class="text-xs">{installments}</span>
                           </div>
                         </div>

@@ -196,7 +196,10 @@ function ProductCard({
                     {formatPrice(pixObj?.price) || formatPrice(price)}
                     <p class="text-sm text-gray-300">
                       via PIX{" "}
-                      {pixporcent && Math.ceil(-(pixporcent - 100)) + "%"} ou
+                      {pixporcent && -(pixporcent - 100) % 1 < 0.5
+                        ? Math.floor(-(pixporcent - 100)) + "% OFF "
+                        : Math.ceil(-(pixporcent! - 100)) + "% OFF "}
+                      ou
                     </p>
                   </span>
                   {salePrice !== listPrice ? (
@@ -241,7 +244,11 @@ function ProductCard({
             <span class="text-xl font-bold flex gap-2 text-gray-400 items-center">
               {formatPrice(pixObj?.price) || formatPrice(price)}
               <p class="text-sm text-gray-300">
-                via PIX {pixporcent && Math.ceil(-(pixporcent - 100)) + "%"} ou
+                via PIX{" "}
+                {pixporcent && -(pixporcent - 100) % 1 < 0.5
+                  ? Math.floor(-(pixporcent - 100)) + "% OFF "
+                  : Math.ceil(-(pixporcent! - 100)) + "% OFF "}
+                ou
               </p>
             </span>
             {salePrice !== listPrice ? (

@@ -16,7 +16,7 @@
         "offset": 1
       },
       "layout": {
-        "pagination": "pagination"
+        "pagination": "show-more"
       },
       "startingPage": 1,
       "notFound": {

@@ -44,7 +44,8 @@
           "desktop": 4
         },
         "variant": "aside",
-        "pagination": "pagination"
+        "pagination": "show-more"
+
       },
 <<<<<<< HEAD
       "startingPage": 1,
