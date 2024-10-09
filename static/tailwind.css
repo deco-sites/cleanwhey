@@ -463,11 +463,6 @@ html {
     min-height: 100vh;
 }
 
-  html:has(#notFound) footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
   /** Remove default styles from input[type=number] */
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
@@ -3897,9 +3892,6 @@ details.collapse summary::-webkit-details-marker {
 }
 .ml-2 {
   margin-left: 0.5rem;
-}
-.ml-5 {
-  margin-left: 1.25rem;
 }
 .mr-2 {
   margin-right: 0.5rem;
