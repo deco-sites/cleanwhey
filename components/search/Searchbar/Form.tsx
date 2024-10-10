@@ -102,7 +102,6 @@ export default function Searchbar({
         <button
           type="submit"
           class="btn join-item btn-square no-animation border-0"
-          onClick={() => takeValue()}
           aria-label="Search"
           for={SEARCHBAR_INPUT_FORM_ID}
           tabIndex={-1}

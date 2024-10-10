@@ -20,12 +20,10 @@ export interface Props {
    * @todo: improve this typings ({query: string, count: number}) => Suggestions
    */
   loader: Resolved<Suggestion | null>;
-  term: string;
 }
 export const action = async (props: Props, req: Request, ctx: AppContext) => {
   const {
     loader: { __resolveType, ...loaderProps },
-    term,
   } = props;
   const form = await req.formData();
   const query = `${form.get(NAME ?? "q")}`;
@@ -41,6 +39,7 @@ export const action = async (props: Props, req: Request, ctx: AppContext) => {
   }
   return { suggestion, query };
 };
+
 export const loader = async (props: Props, req: Request, ctx: AppContext) => {
   const {
     loader: { __resolveType, ...loaderProps },
@@ -102,7 +101,6 @@ function Suggestions({
                   <a
                     href={`${ACTION}?${NAME}=${term}`}
                     class="flex gap-1 items-center"
-                    onClick={() => addRecentSearch(term)}
                   >
                     {/* <Icon id="searchRecent" class={"text-[#A1A6B7]"}/> */}
                     {index + 1} -{" "}
