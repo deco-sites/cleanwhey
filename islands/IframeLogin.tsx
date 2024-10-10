@@ -16,7 +16,7 @@ const runOnMount = (customCss: string) => {
     // Adiciona o CSS ao iframe após o carregamento
     const style = document.createElement("style");
     style.textContent = customCss;
-    iFrame.contentDocument?.head.appendChild(style); // Insere o CSS no <head> do iframe
+    iFrame.contentDocument?.head.appendChild(style);
   };
 };
 
