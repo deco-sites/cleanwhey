@@ -1,3 +1,5 @@
+import { IS_BROWSER } from "$fresh/runtime.ts";
+
 export interface SearchEntry {
   term: string;
   date: string;
@@ -5,6 +7,7 @@ export interface SearchEntry {
 
 export function addRecentSearch(term: string): void {
   // Retrieve the recent searches from localStorage
+
   const recentSearches = getRecentSearches().reverse();
 
   // Check if the term already exists in the recent searches
@@ -12,7 +15,6 @@ export function addRecentSearch(term: string): void {
 
   if (!searchExists) {
     // Add the new search entry
-
     const newSearchEntry: SearchEntry = {
       term: term,
       date: new Date().toISOString(),
@@ -22,19 +24,21 @@ export function addRecentSearch(term: string): void {
     if (recentSearches.length >= 5) {
       const firstFive = recentSearches.slice(1, 5);
       firstFive.push(newSearchEntry);
-
-      localStorage.setItem("recentSearches", JSON.stringify(firstFive));
+      if (IS_BROWSER) {
+        localStorage.setItem("recentSearches", JSON.stringify(firstFive));
+      }
     } else {
       recentSearches.push(newSearchEntry);
-
-      localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
+      if (IS_BROWSER) {
+        localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
+      }
     }
   }
 }
 
 export function getRecentSearches(): SearchEntry[] {
   const recentSearches = JSON.parse(
-    localStorage.getItem("recentSearches") || "[]"
+    IS_BROWSER ? localStorage.getItem("recentSearches") || "[]" : "[]",
   );
   return recentSearches.reverse();
 }
