@@ -1,4 +1,5 @@
 import { useEffect } from "preact/hooks";
+import { cssContent } from "../static/signaturesLogin.ts";
 
 interface Props {
   src?: string;
@@ -29,10 +30,14 @@ export default function ProxyIframe({ src }: { src?: string }) {
     <>
       <iframe
         id="proxy-loader"
-        style="width:100%;border:none;overflow:hidden"
+        style={`width:100%;border:none;overflow:hidden` }
         src={src}
         className={"min-h-[calc(100vh-300px)] h-fit "}
-      ></iframe>
+      >
+        <style type="text/css">
+          {cssContent}
+        </style>
+      </iframe>
     </>
   );
 }
