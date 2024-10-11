@@ -21,27 +21,17 @@
     {
       "__resolveType": "site/sections/Product/SearchResult.tsx",
       "page": {
-        "__resolveType": "commerce/loaders/product/productListingPage.ts",
-        "data": {
-          "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
-          "sort": "price:desc",
-          "fuzzy": "automatic",
-          "selectedFacets": [
-            {
-              "key": "brand",
-              "value": "clean-whey"
-            }
-          ],
-          "count": 12,
-          "similars": true
-        },
-        "extensions": [
+        "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
+        "sort": "release:desc",
+        "fuzzy": "automatic",
+        "selectedFacets": [
           {
-            "__resolveType": "vtex/loaders/product/extensions/listingPage.ts",
-            "variants": true,
-            "similars": true
+            "key": "productClusterIds",
+            "value": "144"
           }
-        ]
+        ],
+        "count": 24,
+        "pageOffset": 1
       },
       "layout": {
         "columns": {
@@ -51,9 +41,25 @@
         "variant": "aside",
         "pagination": "show-more"
       },
-      "startingPage": 1,
       "pix": {
         "__resolveType": "Payment - Pix"
+      },
+      "notFound": {
+        "image": {
+          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/0278d7e6-6cdc-4270-b73d-de6cd41ef02a/banner.png",
+          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/8411c4b4-c099-4fe5-bc5c-b9f1d9b4171a/banner-(1).png"
+        },
+        "shelf": {
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "count": 8,
+              "fuzzy": "automatic",
+              "query": "whey"
+            }
+          }
+        }
       }
     },
     {

@@ -10,10 +10,9 @@ import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 interface Props extends SectionHeaderProps {
   products: Product[];
   itemListName?: string;
-  pix: Pix;
 }
 
-function ProductSlider({ products, itemListName, isFeatured, pix }: Props) {
+function ProductSlider({ products, itemListName, isFeatured }: Props) {
   const id = useId();
   return (
     <>

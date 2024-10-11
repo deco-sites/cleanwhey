@@ -31,7 +31,8 @@
           }
         ],
         "count": 24,
-        "similars": false
+        "similars": false,
+        "hideUnavailableItems": false
       },
       "layout": {
         "columns": {
