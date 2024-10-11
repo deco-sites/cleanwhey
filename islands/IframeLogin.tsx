@@ -1,4 +1,3 @@
-import { useEffect } from "preact/hooks";
 
 interface Props {
   src?: string;
@@ -18,10 +17,9 @@ const applyCssToIframe = (cssString: string) => {
 };
 
 export default function ProxyIframe({ src }: { src?: string }) {
-  useEffect(() => {
-    // Passe o caminho do CSS para o iframe
-    applyCssToIframe("../static/signaturesLogin.ts");
-  }, []);
+ 
+  applyCssToIframe("../static/signaturesLogin.ts");
+ 
 
   return (
     <>
