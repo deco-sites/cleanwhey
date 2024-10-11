@@ -1,25 +1,30 @@
+import { useEffect } from "preact/hooks";
+import { cssContent } from "../static/signaturesLogin.ts";
 
 interface Props {
   src?: string;
 }
 
-const applyCssToIframe = (cssString: string) => {
-  const iFrame = document.getElementById("proxy-loader") as HTMLIFrameElement;
-  if (!iFrame || !iFrame.contentDocument) {
-    return console.error("Couldn't find iframe or access its content");
-  }
+const runOnMount = (cssLink: string) => {
+  globalThis.onload = () => {
+    const iFrame = document.getElementById("proxy-loader") as HTMLIFrameElement;
+    if (!iFrame) {
+      return console.error("Couldn't find iframe");
+    }
 
-  // Adiciona o bloco de estilos ao <head> do iframe
-  const style = document.createElement("style");
-  style.type = "text/css";
-  style.appendChild(document.createTextNode(cssString));
-  iFrame.contentDocument.head.appendChild(style);
+    // Adiciona o link para o CSS dentro do iframe após o carregamento
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = cssLink;
+    iFrame.contentDocument?.head.appendChild(link); // Insere o link do CSS no <head> do iframe
+  };
 };
 
-export default function ProxyIframe({ src }: { src?: string }) {
- 
-  applyCssToIframe("../static/signaturesLogin.ts");
- 
+export default function ProxyIframe({ src }: Props) {
+  useEffect(() => {
+    // Passe o caminho do CSS para o iframe
+    runOnMount(cssContent);
+  }, []);
 
   return (
     <>
