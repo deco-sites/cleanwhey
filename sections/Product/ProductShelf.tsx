@@ -10,12 +10,11 @@ import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 
 export interface Props extends SectionHeaderProps {
   products: Product[] | null;
-  pix: Pix;
   activePaddingBotton?: boolean;
 }
 
 export default function ProductShelf(
-  { products, title, isFeatured, icon, pix, activePaddingBotton = false }:
+  { products, title, isFeatured, icon, activePaddingBotton = false }:
     Props,
 ) {
   if (!products || products.length === 0) {
@@ -52,7 +51,6 @@ export default function ProductShelf(
         products={products}
         itemListName={title}
         isFeatured={isFeatured}
-        pix={pix}
       />
     </Section.Container>
   );

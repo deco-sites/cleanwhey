@@ -49,7 +49,6 @@ export interface Layout {
 export interface Props {
   /** @title Integration */
   page: ProductListingPage | null;
-  pix: Pix;
   layout?: Layout;
   /** @description 0 for ?page=0 as your first page */
   startingPage?: 0 | 1;
@@ -208,7 +207,7 @@ const useUrlRebased = (overrides: string | undefined, base: string) => {
   return url;
 };
 function PageResult(props: SectionProps<typeof loader>) {
-  const { layout, startingPage = 0, url, partial, pix } = props;
+  const { layout, startingPage = 0, url, partial } = props;
   const page = props.page!;
   const { products, pageInfo } = page;
   const perPage = pageInfo?.recordPerPage || products.length;
@@ -567,7 +566,6 @@ export const loader = (props: Props, req: Request) => {
 
     const newProps: Props = {
       page,
-      pix: props.pix,
       layout: props.layout,
       startingPage: props.startingPage,
       partial: props.partial,

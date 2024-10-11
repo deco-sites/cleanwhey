@@ -49,7 +49,8 @@
             "props": {
               "sort": "price:desc",
               "query": "whey",
-              "count": 8
+              "count": 8,
+              "fuzzy": "automatic"
             }
           },
           "pix": {
