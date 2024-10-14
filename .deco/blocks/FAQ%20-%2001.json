@@ -1,1 +1,37 @@
-{"title":"FAQ","layout":{"variation":"Side to side","headerAlignment":"left"},"questions":[{"answer":"<p>Assim como as carnes branca e vermelha, o ovo, a soja e a lentilha, o Whey Protein é uma proteína, o mais importante nutriente para quem quer desenvolver massa muscular. A principal diferença está no seu altíssimo valor biológico e na fonte da sua extração: o soro do leite de vaca. A Clean Whey® oferece diversas opções - sem glúten ou lactose - em diferentes tamanhos, sabores e versões: proteína concentrada, isolada ou hidrolisada.</p>","question":"O que é Whey Protein?"},{"answer":"<p>O Whey Protein complementa as necessidades diárias de proteínas que o nosso organismo necessita. Ao fornecer aminoácidos essenciais para o corpo, ele auxilia no aumento e recuperação de massa muscular, proporciona saciedade, ajuda no emagrecimento, estimula perda de gordura corporal, melhora a saúde óssea e fortalece a imunidade, entre outros benefícios. Controla a pressão arterial, controla os níveis de colesterol e ajuda na prevenção do diabetes tipo 2, reduzindo os níveis de açúcar do sangue (glicemia).</p>","question":"Para que serve Whey Protein?"},{"answer":"<p>Não, ressalvados os casos de alergia. Situações especiais como intolerância à lactose, Diabetes Mellitus e problemas renais devem ser avaliados caso a caso, individualmente, por médico ou nutricionista.</p>","question":"Whey Protein tem contra indicações?"},{"answer":"<p>Não, se consumido na quantidade indicada, dentro de uma dieta equilibrada. Whey protein é proteína do soro do leite, portanto, conta como proteína no valor calórico total da sua dieta diária: 1g de proteína contém 4 kcal. Mas, como todo excesso, proteína demais também pode virar gordura. Portanto, é importante ter atenção à distribuição deste macronutriente na sua alimentação.</p>","question":"Whey Protein engorda?"},{"answer":"<p>Sim. Além de não ter contraindicações e ser uma excelente fonte proteica, crianças em fase escolar muitas vezes têm dificuldade em fazer uma refeição equilibrada. No café da manhã, por exemplo, o whey protein tem ótima aceitação, podendo ser usado em vitaminas, shakes, sucos, iogurte e frutas amassadas.</p>","question":"Crianças podem tomar Whey Protein?"},{"answer":"<p>Sim. Para gestantes, quanto mais pura a fonte proteica melhor. Sendo o whey protein de alta qualidade, este aporte de proteínas será super bem-vindo, pois durante a gravidez as demandas energéticas aumentam. É muito importante observar que a presença de adoçantes e outros xenobióticos, como corantes - em qualquer alimento - são contraindicados para este público, o que torna o Clean Whey uma excelente opção.Em caso de dúvidas, converse com seu médico ou nutricionista para saber qual é o Clean Whey ideal para você.</p>","question":"Grávidas ou lactantes podem tomar Whey Protein?"}],"description":"Your Questions Answered","__resolveType":"site/sections/Content/Faq.tsx","contact":{},"subtitle":"<p>Dúvidas <span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">frequentes</span></p>"}
+{
+  "title": "FAQ",
+  "layout": {
+    "variation": "Side to side",
+    "headerAlignment": "left"
+  },
+  "questions": [
+    {
+      "answer": "<p>Assim como as carnes branca e vermelha, o ovo, a soja e a lentilha, o Whey Protein é uma proteína, o mais importante nutriente para quem quer desenvolver massa muscular. A principal diferença está no seu altíssimo valor biológico e na fonte da sua extração: o soro do leite de vaca. A Clean Whey® oferece diversas opções - sem glúten ou lactose - em diferentes tamanhos, sabores e versões: proteína concentrada, isolada ou hidrolisada.</p>",
+      "question": "O que é Whey Protein?"
+    },
+    {
+      "answer": "<p>O Whey Protein complementa as necessidades diárias de proteínas que o nosso organismo necessita. Ao fornecer aminoácidos essenciais para o corpo, ele auxilia no aumento e recuperação de massa muscular, proporciona saciedade, ajuda no emagrecimento, estimula perda de gordura corporal, melhora a saúde óssea e fortalece a imunidade, entre outros benefícios. Controla a pressão arterial, controla os níveis de colesterol e ajuda na prevenção do diabetes tipo 2, reduzindo os níveis de açúcar do sangue (glicemia).</p>",
+      "question": "Para que serve Whey Protein?"
+    },
+    {
+      "answer": "<p>Não, ressalvados os casos de alergia. Situações especiais como intolerância à lactose, Diabetes Mellitus e problemas renais devem ser avaliados caso a caso, individualmente, por médico ou nutricionista.</p>",
+      "question": "Whey Protein tem contra indicações?"
+    },
+    {
+      "answer": "<p>Não, se consumido na quantidade indicada, dentro de uma dieta equilibrada. Whey protein é proteína do soro do leite, portanto, conta como proteína no valor calórico total da sua dieta diária: 1g de proteína contém 4 kcal. Mas, como todo excesso, proteína demais também pode virar gordura. Portanto, é importante ter atenção à distribuição deste macronutriente na sua alimentação.</p>",
+      "question": "Whey Protein engorda?"
+    },
+    {
+      "answer": "<p>Sim. Além de não ter contraindicações e ser uma excelente fonte proteica, crianças em fase escolar muitas vezes têm dificuldade em fazer uma refeição equilibrada. No café da manhã, por exemplo, o whey protein tem ótima aceitação, podendo ser usado em vitaminas, shakes, sucos, iogurte e frutas amassadas.</p>",
+      "question": "Crianças podem tomar Whey Protein?"
+    },
+    {
+      "answer": "<p>Sim. Para gestantes, quanto mais pura a fonte proteica melhor. Sendo o whey protein de alta qualidade, este aporte de proteínas será super bem-vindo, pois durante a gravidez as demandas energéticas aumentam. É muito importante observar que a presença de adoçantes e outros xenobióticos, como corantes - em qualquer alimento - são contraindicados para este público, o que torna o Clean Whey uma excelente opção.Em caso de dúvidas, converse com seu médico ou nutricionista para saber qual é o Clean Whey ideal para você.</p>",
+      "question": "Grávidas ou lactantes podem tomar Whey Protein?"
+    }
+  ],
+  "description": "Your Questions Answered",
+  "__resolveType": "site/sections/Content/Faq.tsx",
+  "contact": {},
+  "subtitle": "<p>Dúvidas <span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">frequentes</span></p>"
+}
