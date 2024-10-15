@@ -25,9 +25,8 @@ const Desktop = ({ items }: Props) => {
       {items &&
         items.map((item) => (
           <div class="relative flex w-full flex-col items-center justify-center">
-            <a
+            <div
               class={`w-full h-full relative overflow-hidden`}
-              href={item.link?.url}
             >
               <img
                 class={`w-full h-full`}
@@ -36,8 +35,8 @@ const Desktop = ({ items }: Props) => {
                 height={428}
                 loading={"lazy"}
               />
-            </a>
-            <div class="text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.50)] absolute top-0  left-0 w-full h-full flex flex-col items-center justify-center text-center">
+            </div>
+            <a class="text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.50)] absolute top-0  left-0 w-full h-full flex flex-col items-center justify-center text-center" href={item.link?.url}>
               <p class="mb-3 font-regular text-sm text-white">
                 {item.subtitle}
               </p>
@@ -54,7 +53,7 @@ const Desktop = ({ items }: Props) => {
                   {item.link?.title}
                 </span>
               )}
-            </div>
+            </a>
           </div>
         ))}
     </>
