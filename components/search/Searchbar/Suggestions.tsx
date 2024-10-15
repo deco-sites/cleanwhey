@@ -58,11 +58,6 @@ function Suggestions({
 }: ComponentProps<typeof loader, typeof action>) {
   const { products = [], searches = [] } = suggestion ?? {};
   const searchHistory = getRecentSearches();
-
-  const searchHistory2 = getRecentSearches();
-  console.log(searchHistory);
-
-  console.log(searchHistory2);
   const hasTerms = Boolean(searches.length);
   const newProducts: Product[] = [];
   products?.map((item) => {
@@ -119,6 +114,9 @@ function Suggestions({
                 const title = product.isVariantOf?.name ?? product.name;
                 const { url } = product;
 
+                const size = product?.additionalProperty?.find(
+                  (property) => property.name == "TAMANHO"
+                );
                 const [front, back] = product.image ?? [];
                 const { price, installments, salePrice } = useOffer(
                   product?.offers

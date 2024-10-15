@@ -38,12 +38,6 @@ export function addRecentSearch(term: string): void {
 
 export function getRecentSearches(): SearchEntry[] {
   const recentSearches = JSON.parse(
-    !IS_BROWSER ? localStorage.getItem("recentSearches") || "[]" : "[]"
-  );
-  return recentSearches.reverse();
-}
-export function getRecentSearches2(): SearchEntry[] {
-  const recentSearches = JSON.parse(
     IS_BROWSER ? localStorage.getItem("recentSearches") || "[]" : "[]"
   );
   return recentSearches.reverse();

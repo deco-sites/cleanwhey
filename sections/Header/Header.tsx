@@ -6,9 +6,8 @@ import Bag from "../../components/header/Bag.tsx";
 // import { useUser } from "apps/vtex/hooks/useUser.ts";
 import NavItem from "../../components/header/NavItem.tsx";
 import SignIn from "../../components/header/SignIn.tsx";
-import Searchbar, {
-  type SearchbarProps,
-} from "../../components/search/Searchbar/Form.tsx";
+import Searchbar from "../../islands/Form.tsx";
+import { type SearchbarProps } from "../../components/search/Searchbar/Form.tsx";
 import Drawer from "../../components/ui/Drawer.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 // import Modal from "../../components/ui/Modal.tsx";
@@ -99,7 +98,9 @@ const Desktop = (props: SectionProps<typeof loader>) => {
         <div class="flex justify-between items-center text-base- bg-orange-400">
           <div className="container">
             <ul class="flex justify-between">
-              {navItems?.slice(0, 8).map((item) => <NavItem item={item} />)}
+              {navItems?.slice(0, 8).map((item) => (
+                <NavItem item={item} />
+              ))}
             </ul>
           </div>
         </div>
@@ -172,8 +173,7 @@ function Header(props: SectionProps<typeof loader>) {
   const {
     alerts = [],
     logo = {
-      src:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
+      src: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
       width: 100,
       height: 16,
       alt: "Logo",
@@ -183,9 +183,8 @@ function Header(props: SectionProps<typeof loader>) {
   return (
     <header
       style={{
-        height: device === "desktop"
-          ? HEADER_HEIGHT_DESKTOP
-          : HEADER_HEIGHT_MOBILE,
+        height:
+          device === "desktop" ? HEADER_HEIGHT_DESKTOP : HEADER_HEIGHT_MOBILE,
       }}
     >
       <div class="fixed w-full z-40 bg-orange-300">
