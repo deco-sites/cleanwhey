@@ -9,7 +9,6 @@ import Icon from "../../ui/Icon.tsx";
 import { Props as SuggestionProps } from "./Suggestions.tsx";
 import { useScript as useScript } from "@deco/deco/hooks";
 import { asResolved as asResolved } from "@deco/deco";
-import { type Resolved } from "@deco/deco";
 export const ACTION = "/s";
 export const NAME = "q";
 export interface SearchbarProps {
