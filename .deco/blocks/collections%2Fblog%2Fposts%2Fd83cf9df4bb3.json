@@ -10,8 +10,12 @@
     ],
     "categories": [
       {
-        "name": "CleanWhey",
-        "slug": "cleanwhey"
+        "name": "Destaque",
+        "slug": "destaque"
+      },
+      {
+        "name": "Receitas",
+        "slug": "receitas"
       }
     ],
     "extraProps": [],

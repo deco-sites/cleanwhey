@@ -10,8 +10,8 @@
     ],
     "categories": [
       {
-        "name": "Receitas",
-        "slug": "/receitas"
+        "name": "Destaque",
+        "slug": "destaque"
       }
     ],
     "extraProps": [],

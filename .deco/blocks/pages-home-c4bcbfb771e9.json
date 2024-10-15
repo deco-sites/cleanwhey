@@ -189,9 +189,9 @@
       "__resolveType": "site/sections/BlogGrid/BlogPosts.tsx",
       "posts": {
         "__resolveType": "blog/loaders/BlogpostList.ts",
-        "count": 6,
+        "count": 4,
         "sortBy": "date_desc",
-        "slug": "cleanwhey"
+        "slug": "destaque"
       },
       "cta": {
         "link": "/blog/categoria/cleanwhey",

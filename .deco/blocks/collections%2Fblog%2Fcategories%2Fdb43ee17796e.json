@@ -1,0 +1,8 @@
+{
+  "name": "collections/blog/categories/db43ee17796e",
+  "__resolveType": "blog/loaders/Category.ts",
+  "category": {
+    "name": "Destaque",
+    "slug": "destaque"
+  }
+}
