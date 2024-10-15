@@ -19,12 +19,12 @@ export function addRecentSearch(term: string): void {
     if (recentSearches.length >= 5) {
       const firstFive = recentSearches.slice(1, 5);
       firstFive.push(newSearchEntry);
-      if (!IS_BROWSER) {
+      if (IS_BROWSER) {
         localStorage.setItem("recentSearches", JSON.stringify(firstFive));
       }
     } else {
       recentSearches.push(newSearchEntry);
-      if (!IS_BROWSER) {
+      if (IS_BROWSER) {
         localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
       }
     }
