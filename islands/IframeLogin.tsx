@@ -37,7 +37,7 @@ export default function ProxyIframe({ src }: Props) {
         style="min-height:500px;width:100%;border:none;overflow:hidden"
         src={src}
         className={"min-h-[calc(100vh-300px)] h-fit "}
-        onload={() => { console.log("AQUI") }}
+        onload={onLoad}
       ></iframe>
     </>
   );
