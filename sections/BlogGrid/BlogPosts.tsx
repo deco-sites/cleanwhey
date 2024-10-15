@@ -109,7 +109,7 @@ export default function BlogPosts({
 
                 <div class="flex flex-wrap gap-2 absolute -bottom-3 left-0">
                   {post.categories?.map((category) => (
-                    <div class="w-[82px] badge text-white badge-lg rounded-lg text-sm border border-orange-300 bg-orange-300">
+                    <div class="px-2 badge text-white badge-lg rounded-lg text-sm border border-orange-300 bg-orange-300">
                       {category.name}
                     </div>
                   ))}

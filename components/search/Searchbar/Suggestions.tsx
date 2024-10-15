@@ -9,10 +9,7 @@ import { useOffer } from "../../../sdk/useOffer.ts";
 import { formatPrice } from "../../../sdk/format.ts";
 import { type Resolved } from "@deco/deco";
 import { useScript } from "@deco/deco/hooks";
-import {
-  getRecentSearches,
-  addRecentSearch,
-} from "../../../sdk/searchHistory.tsx";
+import { getRecentSearches } from "../../../sdk/searchHistory.tsx";
 
 export interface Props {
   /**
@@ -21,6 +18,7 @@ export interface Props {
    */
   loader: Resolved<Suggestion | null>;
 }
+
 export const action = async (props: Props, req: Request, ctx: AppContext) => {
   const {
     loader: { __resolveType, ...loaderProps },
@@ -34,9 +32,9 @@ export const action = async (props: Props, req: Request, ctx: AppContext) => {
   })) as Suggestion | null;
   const valor = form.get("q");
 
-  if (valor) {
-    addRecentSearch(valor as string);
-  }
+  // if (valor) {
+  //   addRecentSearch(valor as string);
+  // }
   return { suggestion, query };
 };
 
@@ -166,7 +164,7 @@ function Suggestions({
           </ul>
         </div>
 
-        <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
+        {/* <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
           <span
             class="font-bold text-18 text-blue-300 border-b border-blue-300 pb-2 w-36"
             role="heading"
@@ -178,7 +176,6 @@ function Suggestions({
             <ul class="flex flex-col gap-6">
               {searchHistory.map(({ term }) => (
                 <li>
-                  {/* TODO @gimenes: use name and action from searchbar form */}
                   <a
                     href={`${ACTION}?${NAME}=${term}`}
                     class="flex gap-4 items-center"
@@ -192,7 +189,7 @@ function Suggestions({
               ))}
             </ul>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );
