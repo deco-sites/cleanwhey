@@ -5,7 +5,6 @@ import Slider from "../ui/Slider.tsx";
 import ProductCard from "./ProductCard.tsx";
 import { useId } from "../../sdk/useId.ts";
 import { Props as SectionHeaderProps } from "../../components/ui/Section.tsx";
-import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 
 interface Props extends SectionHeaderProps {
   products: Product[];

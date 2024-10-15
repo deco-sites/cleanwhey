@@ -6,7 +6,6 @@ import Section, {
 } from "../../components/ui/Section.tsx";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
-import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 
 export interface Props extends SectionHeaderProps {
   products: Product[] | null;
