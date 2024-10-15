@@ -20,6 +20,10 @@ const runOnMount = (cssLink: string) => {
   };
 };
 
+const onLoad = (event) => {
+  console.log({ event })
+}
+
 export default function ProxyIframe({ src }: Props) {
   useEffect(() => {
     // Passe o caminho do CSS para o iframe
@@ -30,9 +34,10 @@ export default function ProxyIframe({ src }: Props) {
     <>
       <iframe
         id="proxy-loader"
-        style="width:100%;border:none;overflow:hidden"
+        style="min-height:500px;width:100%;border:none;overflow:hidden"
         src={src}
         className={"min-h-[calc(100vh-300px)] h-fit "}
+        onload={() => { console.log("AQUI") }}
       ></iframe>
     </>
   );
