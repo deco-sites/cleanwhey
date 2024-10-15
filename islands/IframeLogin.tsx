@@ -21,7 +21,7 @@ const runOnMount = (cssLink: string) => {
 };
 
 const onLoad = (event) => {
-  const url = (document.getElementById("proxy-loader") as HTMLIFrameElement)?.src;
+  const url = (document.getElementById("proxy-loader") as HTMLIFrameElement)?.contentWindow.location.href;
   console.log({ event, url })
 }
 
