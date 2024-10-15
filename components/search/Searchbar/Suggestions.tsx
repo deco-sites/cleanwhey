@@ -114,9 +114,6 @@ function Suggestions({
                 const title = product.isVariantOf?.name ?? product.name;
                 const { url } = product;
 
-                const size = product?.additionalProperty?.find(
-                  (property) => property.name == "TAMANHO"
-                );
                 const [front, back] = product.image ?? [];
                 const { price, installments, salePrice } = useOffer(
                   product?.offers
@@ -168,15 +165,16 @@ function Suggestions({
               })}
           </ul>
         </div>
-        {searchHistory.length > 0 && (
-          <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
-            <span
-              class="font-bold text-18 text-blue-300 border-b border-blue-300 pb-2 w-36"
-              role="heading"
-              aria-level={3}
-            >
-              Buscas Recentes
-            </span>
+
+        <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
+          <span
+            class="font-bold text-18 text-blue-300 border-b border-blue-300 pb-2 w-36"
+            role="heading"
+            aria-level={3}
+          >
+            Buscas Recentes
+          </span>
+          {searchHistory.length > 0 && (
             <ul class="flex flex-col gap-6">
               {searchHistory.map(({ term }) => (
                 <li>
@@ -193,8 +191,8 @@ function Suggestions({
                 </li>
               ))}
             </ul>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
