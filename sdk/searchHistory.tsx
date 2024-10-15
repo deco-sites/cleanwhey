@@ -6,8 +6,6 @@ export interface SearchEntry {
 }
 
 export function addRecentSearch(term: string): void {
-  if (!IS_BROWSER) return; // Verifica se está no navegador
-
   const recentSearches = getRecentSearches().reverse();
 
   const searchExists = recentSearches.some((search) => search.term === term);
@@ -21,17 +19,21 @@ export function addRecentSearch(term: string): void {
     if (recentSearches.length >= 5) {
       const firstFive = recentSearches.slice(1, 5);
       firstFive.push(newSearchEntry);
-      localStorage.setItem("recentSearches", JSON.stringify(firstFive));
+      if (IS_BROWSER) {
+        localStorage.setItem("recentSearches", JSON.stringify(firstFive));
+      }
     } else {
       recentSearches.push(newSearchEntry);
-      localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
+      if (IS_BROWSER) {
+        localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
+      }
     }
   }
 }
 
 export function getRecentSearches(): SearchEntry[] {
-  if (!IS_BROWSER) return []; // Retorna um array vazio no lado do servidor
-
-  const recentSearches = JSON.parse(localStorage.getItem("recentSearches") || "[]");
+  const recentSearches = JSON.parse(
+    IS_BROWSER ? localStorage.getItem("recentSearches") || "[]" : "[]"
+  );
   return recentSearches.reverse();
 }

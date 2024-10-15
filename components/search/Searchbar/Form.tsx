@@ -8,6 +8,8 @@
  * Note that this is the most performatic way to perform a search, since
  * no JavaScript is shipped to the browser!
  */
+import { useEffect } from "preact/hooks";
+
 import { Suggestion } from "apps/commerce/types.ts";
 import {
   SEARCHBAR_INPUT_FORM_ID,
@@ -22,6 +24,7 @@ import { useScript as useScript } from "@deco/deco/hooks";
 import { asResolved as asResolved } from "@deco/deco";
 import { type Resolved } from "@deco/deco";
 import { addRecentSearch } from "../../../sdk/searchHistory.tsx";
+
 // When user clicks on the search button, navigate it to
 export const ACTION = "/s";
 // Querystring param used when navigating the user
@@ -63,11 +66,24 @@ const script = (formId: string, name: string, popupId: string) => {
   });
 };
 const Suggestions = import.meta.resolve("./Suggestions.tsx");
+
 export default function Searchbar({
   placeholder = "What are you looking for?",
   loader,
 }: SearchbarProps) {
   const slot = useId();
+
+  // useEffect(() => {
+  //   // Adiciona o evento "htmx:afterRequest" para recarregar o histórico
+  //   const searchInput = document.getElementById("search-input").value || "";
+
+  //   if (searchInput) {
+  //     document.addEventListener(
+  //       "htmx:afterRequest",
+  //       addRecentSearch(searchInput)
+  //     );
+  //   }
+  // }, []);
 
   return (
     <div
@@ -80,7 +96,7 @@ export default function Searchbar({
         class="join rounded-lg"
       >
         <input
-          id="search"
+          id="search-input"
           autoFocus
           tabIndex={0}
           class="input input-bordered join-item flex-grow outline-none focus:outline-none border-0"

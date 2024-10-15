@@ -32,7 +32,6 @@ function ProductInfo({ page, pix }: Props) {
   const { productID, offers, isVariantOf, url, name } = product;
   const description = product.description || isVariantOf?.description;
   const title = isVariantOf?.name ?? product.name;
-
   const {
     price = 0,
     listPrice,
