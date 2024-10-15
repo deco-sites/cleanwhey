@@ -1,0 +1,19 @@
+{
+  "name": "collections/blog/posts/6b15d76c438e",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [],
+    "categories": [
+      {
+        "name": "Clean Whey",
+        "slug": "cleanwhey"
+      }
+    ],
+    "extraProps": [],
+    "title": "Clean Whey: Um compromisso com o meio ambiente",
+    "excerpt": "O programa Eu Reciclo é uma iniciativa que visa promover a logística reversa de embalagens, conectando empresas e cooperativas de reciclagem para garantir que uma quantidade equivalente de materiais seja reciclada. A ideia é ajudar as empresas a compensarem o impacto ambiental das embalagens que colocam no mercado, contribuindo para a preservação do meio ambiente e a sustentabilidade.",
+    "content": "<p><span style=\"font-size: 11pt\">O programa </span><strong><span style=\"font-size: 11pt\">Eu Reciclo </span></strong><span style=\"font-size: 11pt\">é uma iniciativa que visa promover a logística reversa de embalagens, conectando empresas e cooperativas de reciclagem para garantir que uma quantidade equivalente de materiais seja reciclada. A ideia é ajudar as empresas a compensarem o impacto ambiental das embalagens que colocam no mercado, contribuindo para a preservação do meio ambiente e a sustentabilidade.</span></p><p><span style=\"font-size: 11pt\">A </span><strong><span style=\"font-size: 11pt\">Clean Whey </span></strong><span style=\"font-size: 11pt\">é parceira do Eu Reciclo e adota práticas de responsabilidade ambiental ao cuidar da destinação correta dos potes, tampas, rótulos, caixas e outros materiais de suas embalagens. Com essa parceria, a marca não apenas recicla a quantidade de embalagens que coloca no mercado, mas vai além</span><strong><span style=\"font-size: 11pt\">, reciclando o dobro da quantidade</span></strong><span style=\"font-size: 11pt\">. Isso demonstra o compromisso com a </span><strong><span style=\"font-size: 11pt\">redução do impacto ambiental</span></strong><span style=\"font-size: 11pt\">, promovendo um </span><strong><span style=\"font-size: 11pt\">ciclo sustentável e incentivando o consumo consciente entre seus consumidores</span></strong><span style=\"font-size: 11pt\">.</span></p><p><span style=\"font-size: 11pt\">Além disso, a </span><strong><span style=\"font-size: 11pt\">Clean Whey </span></strong><span style=\"font-size: 11pt\">investe no uso de </span><strong><span style=\"font-size: 11pt\">potes biodegradáveis </span></strong><span style=\"font-size: 11pt\">em seus produtos, uma escolha fundamental para a preservação do meio ambiente. Diferente dos materiais plásticos convencionais, que podem levar séculos para se decompor, os potes biodegradáveis se decompõem mais rapidamente, reduzindo significativamente a poluição e o acúmulo de resíduos. Essa medida, combinada com o compromisso com a reciclagem, contribui para um </span><strong><span style=\"font-size: 11pt\">ciclo mais sustentável</span></strong><span style=\"font-size: 11pt\">, minimizando o impacto ambiental e alinhando-se aos </span><strong><span style=\"font-size: 11pt\">princípios de uma economia circular</span></strong><span style=\"font-size: 11pt\">.</span></p>",
+    "slug": "eu-reciclo",
+    "date": "2024-09-01"
+  }
+}
