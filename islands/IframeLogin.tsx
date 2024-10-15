@@ -21,7 +21,8 @@ const runOnMount = (cssLink: string) => {
 };
 
 const onLoad = (event) => {
-  console.log({ event })
+  const url = (document.getElementById("proxy-loader") as HTMLIFrameElement)?.src;
+  console.log({ event, url })
 }
 
 export default function ProxyIframe({ src }: Props) {
