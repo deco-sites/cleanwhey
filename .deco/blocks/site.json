@@ -20,6 +20,9 @@
       "dangerouslyRunOnMainThread": true,
       "trackingIds": [
         "GTM-MSLV5T9R"
+      ],
+      "googleAnalyticsIds": [
+        "G-JQ91ZR048J"
       ]
     },
     {
