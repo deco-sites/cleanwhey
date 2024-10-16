@@ -9,8 +9,11 @@
       }
     },
     {
-      "__resolveType": "site/sections/Iframes/IframeLogin.tsx",
-      "src": "/account#"
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Iframes/IframeLogin.tsx",
+        "src": "/account#"
+      }
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",

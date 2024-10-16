@@ -55,6 +55,13 @@
         "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/1cb1c52f-8d43-489e-81c6-4e47a392430d/CW_Banner_Mobile_Categoria_Combos.png"
       },
       "matcher": "/combos-e-descontos"
+    },
+    {
+      "image": {
+        "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/b79086c2-f020-4266-8ea3-76ba85dda089/COMBOS-E-PROMOCOES.png",
+        "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/1cb1c52f-8d43-489e-81c6-4e47a392430d/CW_Banner_Mobile_Categoria_Combos.png"
+      },
+      "matcher": "/assinaturas"
     }
   ],
   "__resolveType": "site/sections/Category/CategoryBanner.tsx"

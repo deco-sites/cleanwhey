@@ -8,60 +8,70 @@
       "__resolveType": "Header"
     },
     {
-      "__resolveType": "site/sections/Images/Carousel.tsx",
-      "images": [
+      "__resolveType": "website/flags/multivariate/section.ts",
+      "variants": [
         {
-          "position": "Left",
-          "selos": [],
-          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/595dd94a-d17a-4bd1-8f9b-5d882241b4a0/BANNER-PRINCIPAL-1.png",
-          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/ef9a395f-8312-4940-a182-b4cc40e81550/BANNER-PRINCIPAL-1-(1).png",
-          "alt": "Novo site no ar",
-          "action": {
-            "href": "/todos-os-produtos"
-          }
-        },
-        {
-          "position": "Left",
-          "selos": [],
-          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/e11b3d70-11f1-48a9-b14f-7d22faac5df1/BANNER-PRINCIPAL-2.png",
-          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/cd8b4328-e6c2-4a2a-9e92-96fd6433b76b/BANNER-PRINCIPAL-2-(1).png",
-          "alt": "Best sellers",
-          "action": {
-            "href": "/142?map=productClusterIds&page=1"
-          }
-        },
-        {
-          "position": "Left",
-          "selos": [],
-          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/63618ed4-d976-4fef-b3ec-e7ba04df6b1e/BANNER-PRINCIPAL-3.png",
-          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/9e946cee-8483-4f3f-b41d-c8c504d975b0/IMG_5017mobile380x530.png",
-          "alt": "Regras de frete",
-          "action": {
-            "href": "/todos-os-produtos"
-          }
-        },
-        {
-          "position": "Left",
-          "selos": [],
-          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/babe83bb-a37d-4d37-93c7-89b898ba4abb/BANNER-PRINCIPAL-4.png",
-          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/441d8ccd-6906-4378-bb78-1f236db2eaaf/BANNER-PRINCIPAL-4-(1).png",
-          "alt": "Clean whey tasty, o melhor para suas receitas",
-          "action": {
-            "href": "/suplementos/proteinas/concentrado?page=1"
-          }
-        },
-        {
-          "position": "Left",
-          "selos": [],
-          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/722e0680-0090-409d-83b7-302f2f107a03/BANNER-PRINCIPAL-5.png",
-          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/20d532b6-25da-4ad6-8f8a-321064334d80/BANNER-PRINCIPAL-5-(1).png",
-          "alt": "O único 100% puro do mercado",
-          "action": {
-            "href": "/suplementos/proteinas/hidrolisado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=hidrolisado&filter.tamanho=pote-900g&page=1"
+          "value": {
+            "__resolveType": "site/sections/Images/Carousel.tsx",
+            "images": [
+              {
+                "position": "Left",
+                "selos": [],
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/595dd94a-d17a-4bd1-8f9b-5d882241b4a0/BANNER-PRINCIPAL-1.png",
+                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/ef9a395f-8312-4940-a182-b4cc40e81550/BANNER-PRINCIPAL-1-(1).png",
+                "alt": "Novo site no ar",
+                "action": {
+                  "href": "/todos-os-produtos"
+                }
+              },
+              {
+                "position": "Left",
+                "selos": [],
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/e11b3d70-11f1-48a9-b14f-7d22faac5df1/BANNER-PRINCIPAL-2.png",
+                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/cd8b4328-e6c2-4a2a-9e92-96fd6433b76b/BANNER-PRINCIPAL-2-(1).png",
+                "alt": "Best sellers",
+                "action": {
+                  "href": "/142?map=productClusterIds&page=1"
+                }
+              },
+              {
+                "position": "Left",
+                "selos": [],
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/63618ed4-d976-4fef-b3ec-e7ba04df6b1e/BANNER-PRINCIPAL-3.png",
+                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/9e946cee-8483-4f3f-b41d-c8c504d975b0/IMG_5017mobile380x530.png",
+                "alt": "Regras de frete",
+                "action": {
+                  "href": "/todos-os-produtos"
+                }
+              },
+              {
+                "position": "Left",
+                "selos": [],
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/babe83bb-a37d-4d37-93c7-89b898ba4abb/BANNER-PRINCIPAL-4.png",
+                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/441d8ccd-6906-4378-bb78-1f236db2eaaf/BANNER-PRINCIPAL-4-(1).png",
+                "alt": "Clean whey tasty, o melhor para suas receitas",
+                "action": {
+                  "href": "/suplementos/proteinas/concentrado?page=1"
+                }
+              },
+              {
+                "position": "Left",
+                "selos": [],
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/722e0680-0090-409d-83b7-302f2f107a03/BANNER-PRINCIPAL-5.png",
+                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/20d532b6-25da-4ad6-8f8a-321064334d80/BANNER-PRINCIPAL-5-(1).png",
+                "alt": "O único 100% puro do mercado",
+                "action": {
+                  "href": "/suplementos/proteinas/hidrolisado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=hidrolisado&filter.tamanho=pote-900g&page=1"
+                }
+              }
+            ],
+            "preload": true
+          },
+          "rule": {
+            "__resolveType": "website/matchers/always.ts"
           }
         }
-      ],
-      "preload": true
+      ]
     },
     {
       "__resolveType": "Regua"
@@ -97,9 +107,8 @@
       "products": {
         "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
         "props": {
-          "sort": "",
-          "count": 12,
-          "hideUnavailableItems": true,
+          "sort": "price:desc",
+          "count": 15,
           "collection": "137"
         }
       },
@@ -165,7 +174,7 @@
         }
       ],
       "preload": true,
-      "interval": 0
+      "interval": 5
     },
     {
       "__resolveType": "Influencers"
@@ -180,7 +189,7 @@
       "__resolveType": "site/sections/BlogGrid/BlogPosts.tsx",
       "posts": {
         "__resolveType": "blog/loaders/BlogpostList.ts",
-        "count": 6,
+        "count": 4,
         "sortBy": "date_desc",
         "slug": "cleanwhey"
       },

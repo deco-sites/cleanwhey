@@ -1,3 +1,5 @@
+import { useEffect } from "preact/hooks";
+
 interface Props {
   src?: string;
 }
@@ -8,23 +10,29 @@ const runOnMount = () => {
     if (!iFrame) {
       return console.error("Couldn't find iframe");
     }
-    iFrame.height = `${iFrame.contentWindow?.document.body.scrollHeight}`;
   };
 };
 
+const onLoad = (event) => {
+  const url = (document.getElementById("proxy-loader") as HTMLIFrameElement)?.contentWindow.location.href;
+  console.log({ event, url })
+}
+
 export default function ProxyIframe({ src }: Props) {
+  useEffect(() => {
+    runOnMount();
+  }, []);
+
   return (
     <>
-      <script
-        dangerouslySetInnerHTML={{ __html: `(${runOnMount})();` }}
-      ></script>
       <iframe
         id="proxy-loader"
-        style="width:100%;border:none;overflow:hidden"
+        style="min-height:500px;width:100%;border:none;overflow:hidden"
         src={src}
         className={"min-h-[calc(100vh-300px)] h-fit "}
-        // onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));'
+        onload={onLoad}
       ></iframe>
     </>
   );
 }
+

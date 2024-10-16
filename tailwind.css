@@ -220,3 +220,557 @@ input[type="number"] {
     display: none;
   }
 }
+
+.styles_overlay__CLSq-{
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+  padding: 1.2rem;
+}
+
+.vtex-modal__overlay{
+  
+}
+
+.vtex-modal__overlay.pa0 {
+    padding: 0;
+}
+
+@media screen and (min-width: 40em) {
+    .pa5-ns {
+        padding: 1rem;
+    }
+}
+
+@media screen and (min-width: 40rem) {
+    .vtex-modal__overlay.pa5-ns {
+        padding: 1.25rem;
+    }
+}
+
+.styles_modal__gNwvD {
+    max-width: 800px;
+    position: relative;
+    padding: 1.2rem;
+    background: #ffffff;
+    background-clip: padding-box;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
+    margin: auto;
+}
+
+.flex-column {
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+}
+
+.flex-column, .flex-row {
+    -webkit-box-direction: normal;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+@media screen and (min-width: 40em) {
+    .br2-ns {
+        border-radius: .25rem;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .h-auto-ns {
+        height: auto;
+    }
+}
+
+.vtex-styleguide-9-x-mh100 {
+    max-height: 100%;
+}
+
+.shadow-4 {
+    box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, .2);
+}
+
+.pv5 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.pl7 {
+    padding-left: 2rem;
+}
+
+.pr8 {
+    padding-right: 3rem;
+}
+
+@media screen and (min-width: 40em) {
+    .pv6-ns {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .pl8-ns {
+        padding-left: 3rem;
+    }
+}
+
+.vtex-styleguide-9-x-shadowTransition {
+    transition: box-shadow .3s ease-in-out;
+}
+
+.ph7 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.pb8 {
+    padding-bottom: 3rem;
+}
+
+flex-grow-1 {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+}
+
+.flex-shrink-1 {
+    flex-shrink: 1;
+}
+
+@media screen and (min-width: 40em) {
+    .ph8-ns {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+.vtex-styleguide-9-x-scrollBar::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.vtex-styleguide-9-x-scrollBar::-webkit-scrollbar-thumb {
+    background-color: #e3e4e6;
+    border-radius: 16px;
+}
+
+.vtex-styleguide-9-x-scrollBar::-webkit-scrollbar-button {
+    display: none;
+}
+
+.vtex-styleguide-9-x-scrollBar::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;
+}
+
+.vtex-modal__overlay .vtex-styleguide-9-x-scrollBar {
+    padding-bottom: 24px;
+}
+
+.t-body, .t-heading-6, body {
+    font-family: Lato-Regular, -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.t-body, body {
+    font-size: 1rem;
+}
+
+@media screen and (min-width: 20em) {
+    .t-body-s, .t-heading-6-s, body {
+        font-family: Lato-Regular, -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        letter-spacing: 0;
+    }
+}
+
+@media screen and (min-width: 20em) {
+    .t-body-s, body {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .t-body-ns, .t-heading-6-ns, body {
+        font-family: Lato-Regular, -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        letter-spacing: 0;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .t-body-ns, body {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .t-body-m, body {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 64em) {
+    .t-body-l, .t-heading-6-l, body {
+        font-family: Lato-Regular, -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        letter-spacing: 0;
+    }
+}
+
+@media screen and (min-width: 64em) {
+    .t-body-l, body {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 80em) {
+    .t-body-xl, .t-heading-6-xl, body {
+        font-family: Lato-Regular, -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        letter-spacing: 0;
+    }
+}
+
+@media screen and (min-width: 80em) {
+    .t-body-xl, body {
+        font-size: 1rem;
+    }
+}
+
+.mt8 {
+    margin-top: 3rem;
+}
+
+.mb8 {
+    margin-bottom: 3rem;
+}
+
+.pl4 {
+    padding-left: .75rem;
+}
+
+.c-emphasis, .c-link {
+    color: #e06741;
+}
+
+.mb2 {
+    margin-bottom: .25rem;
+}
+
+.pr4 {
+    padding-right: .75rem;
+}
+
+@media screen and (min-width: 40em) {
+    .mb0-ns, .nb0-ns {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .w-40-ns {
+        width: 40%;
+    }
+}
+
+.c-muted-1 {
+    color: #727273;
+}
+
+.ttu {
+    text-transform: uppercase;
+}
+
+.f7 {
+    font-size: .75rem;
+}
+
+.bl-0 {
+    border-left-width: 0;
+}
+
+.pl3 {
+    padding-left: .5rem;
+}
+
+.pr5 {
+    padding-right: 1rem;
+}
+
+.c-muted-2 {
+    color: #979899;
+}
+
+.fw5 {
+    font-weight: 500;
+}
+
+.mb4 {
+    margin-bottom: .75rem;
+}
+
+.mb3 {
+    margin-bottom: .5rem;
+}
+
+.db {
+    display: block;
+}
+
+.t-small {
+    font-size: .875rem;
+}
+
+.t-mini, .t-small {
+    font-family: Lato-Regular, -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+@media screen and (min-width: 40em) {
+    .flex-row-ns {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .items-center-ns {
+        -webkit-box-align: center;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .justify-between-ns {
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .w-60-ns {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .vtex-my-subscriptions-3-x-quantity {
+        width: 5.6rem;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .dn-m {
+        display: none;
+    }
+}
+
+.ba {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.b--muted-4 {
+    border-color: #e3e4e6;
+}
+
+.br2 {
+    border-radius: .25rem;
+}
+
+.b--solid {
+    border-style: solid;
+}
+
+.ba {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.bw1 {
+    border-width: .125rem;
+}
+
+.mh2 {
+    margin-left: .25rem;
+    margin-right: .25rem;
+}
+
+.h-small {
+    height: 2rem;
+    box-sizing: border-box;
+}
+
+.dn {
+    display: none;
+}
+
+@media screen and (min-width: 40em) {
+    .db-m {
+        display: block;
+    }
+}
+
+.h-regular {
+    height: 2.5rem;
+    box-sizing: border-box;
+}
+
+.styleguide__box, .vtex-dropdown__container {
+    border: 1px solid #afafc0;
+}
+
+.bn {
+    border-style: none;
+    border-width: 0;
+}
+
+.pr3 {
+    padding-right: .5rem;
+}
+
+.pl5 {
+    padding-left: 1rem;
+}
+
+.c-on-base {
+    color: #3f3f40;
+}
+
+.f3 {
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width: 40em) {
+    .pa6-ns {
+        padding: 1.5rem;
+    }
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.o-0 {
+    opacity: 0;
+}
+
+.pl2 {
+    padding-left: .25rem;
+}
+
+.flex-none {
+    -webkit-box-flex: 0;
+    flex: none;
+}
+
+.c-action-primary {
+    color: #e06741;
+}
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pa6 {
+    padding: 1.5rem;
+}
+
+.bg-base {
+    background-color: #fff;
+}
+
+.mr1 {
+    margin-right: .125rem;
+}
+
+.ml1 {
+    margin-left: .125rem;
+}
+
+.vtex-button {
+    transition: all .3s ease;
+}
+
+[type=reset], [type=submit], button, html [type=button] {
+    -webkit-appearance: button;
+}
+
+.v-mid {
+    vertical-align: middle;
+}
+
+.lh-solid {
+    line-height: 1;
+}
+
+.c-on-disabled {
+    color: #979899;
+}
+
+.min-h-small {
+    min-height: 2rem;
+    box-sizing: border-box;
+}
+
+.dib {
+    display: inline-block;
+}
+
+.pa0 {
+    padding: 0;
+}
+
+.b--muted-5 {
+    border-color: #f2f4f5;
+}
+
+.bg-disabled {
+    background-color: #f2f4f5;
+}
+
+.ph3 {
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.c-on-action-secondary {
+    color: #e06741;
+}
+
+.bg-action-secondary {
+    background-color: #eef3f7;
+}
+
+.b--action-secondary {
+    border-color: #eef3f7;
+}
+
+.vtex-my-subscriptions-3-x-paginationWrapper{
+    padding-top: 1.25rem;
+}

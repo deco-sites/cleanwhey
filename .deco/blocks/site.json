@@ -1,13 +1,12 @@
 {
   "seo": {
     "type": "website",
-    "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/1037d464-6c7f-400b-865b-07044f4f1b20/whey-protein.png",
-    "title": "CleanWhey",
+    "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/d745f8ec-4693-4f4f-8b6a-2270d30cb398/Design-sem-nome-(2).png",
     "jsonLDs": [],
     "noIndexing": false,
-    "description": "Build profitable websites with deco.cx",
+    "descriptionTemplate": "%s ",
     "titleTemplate": "%s | Clean Whey",
-    "descriptionTemplate": "%s | deco.cx"
+    "favicon": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/ad3a871f-b685-4852-a964-5edb2b4b5ba9/Design-sem-nome-(1).png"
   },
   "theme": {
     "__resolveType": "Deco"
@@ -19,7 +18,12 @@
     {
       "__resolveType": "website/sections/Analytics/Analytics.tsx",
       "dangerouslyRunOnMainThread": true,
-      "trackingIds": []
+      "trackingIds": [
+        "GTM-MSLV5T9R"
+      ],
+      "googleAnalyticsIds": [
+        "G-JQ91ZR048J"
+      ]
     },
     {
       "__resolveType": "analytics/sections/Analytics/DecoAnalytics.tsx"

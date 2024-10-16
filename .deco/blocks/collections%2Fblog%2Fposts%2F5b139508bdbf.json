@@ -1,0 +1,25 @@
+{
+  "name": "collections/blog/posts/5b139508bdbf",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [
+      {
+        "name": "Clean Whey",
+        "email": "sac@cleanwhey.com.br"
+      }
+    ],
+    "categories": [
+      {
+        "name": " ",
+        "slug": " "
+      }
+    ],
+    "extraProps": [],
+    "date": "2024-10-14",
+    "slug": "/Teste",
+    "content": "<p>Teste</p>",
+    "seo": {
+      "title": "Teste"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "__resolveType": "site/sections/Product/SearchResult.tsx",
+  "page": {
+    "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
+    "sort": "release:desc",
+    "fuzzy": "automatic",
+    "selectedFacets": [],
+    "count": 24
+  },
+  "layout": {
+    "columns": {
+      "mobile": 2,
+      "desktop": 4
+    },
+    "variant": "aside",
+    "pagination": "pagination"
+  },
+  "startingPage": 1,
+  "pix": {
+    "__resolveType": "Payment - Pix"
+  },
+  "notFound": {
+    "shelf": {
+      "products": {
+        "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+        "props": {
+          "sort": "price:desc",
+          "query": "whey",
+          "count": 8
+        }
+      },
+      "pix": {
+        "__resolveType": "Payment - Pix"
+      }
+    },
+    "image": {
+      "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/0278d7e6-6cdc-4270-b73d-de6cd41ef02a/banner.png",
+      "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/eee414a2-2b1d-42b6-89d1-4e8b8da3f6c5/banner-(1).png"
+    }
+  },
+  "partial": "hideMore"
+}
