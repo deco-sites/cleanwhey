@@ -171,23 +171,21 @@ function Result(props: SectionProps<typeof loader>) {
 
   return (
     <>
-      <div
-        id={container}
-        {...viewItemListEvent}
-        class="w-full"
-        style={{ minHeight: "50vh" }}
-      >
-        {partial ? (
-          <PageResult {...props} />
-        ) : (
-          <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
-            <div class="md:gap-8 grid place-items-center grid-cols-1 sm:grid-cols-1">
-              <div class="flex flex-col gap-9">
-                {device === "desktop" && (
-                  <div class="flex justify-between items-center">{results}</div>
-                )}
-                <PageResult {...props} />
-              </div>
+
+      <div id={container} {...viewItemListEvent} class="w-full" style={{minHeight: '50vh'}}>
+        {partial
+          ? <PageResult {...props} />
+          : (
+            <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
+              <div class="md:gap-8 grid place-items-center grid-cols-1 sm:grid-cols-1">
+                <div class="flex flex-col gap-9">
+                  {device === "desktop" && (
+                    <div class="flex justify-between items-center">
+                      {results}
+                    </div>
+                  )}
+                  <PageResult {...props} />
+                </div>
             </div>
           </div>
         )}

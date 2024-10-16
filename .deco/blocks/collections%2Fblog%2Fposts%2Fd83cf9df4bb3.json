@@ -12,6 +12,10 @@
       {
         "name": "Clean Whey",
         "slug": "cleanwhey"
+      },
+      {
+        "name": "Receitas",
+        "slug": "receitas"
       }
     ],
     "extraProps": [],
