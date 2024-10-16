@@ -47,7 +47,7 @@ function Question({ question, answer }: Question) {
     >
       <summary
         class={`collapse-title after:!h-3 after:!w-3 
-        after:text-orange-300 text-2xl text-gray-300 font-bold gap-2 
+        after:text-orange-300  text-2xl text-gray-300 font-bold gap-2 
         !flex items-center`}
       >
         {question}
@@ -113,7 +113,9 @@ export default function NutritionalInformation(props: Props) {
             <div class="mb-6">
               <ul class="w-full">
                 <li class="gap-2 flex flex-col">
-                  {questions?.map((question) => <Question {...question} />)}
+                  {questions?.map((question) => (
+                    <Question {...question} />
+                  ))}
                 </li>
               </ul>
             </div>
@@ -148,7 +150,9 @@ export default function NutritionalInformation(props: Props) {
           <div class="pb-6">
             <ul class="w-full">
               <li class="gap-2 flex flex-col">
-                {questions?.map((question) => <Question {...question} />)}
+                {questions?.map((question) => (
+                  <Question {...question} />
+                ))}
               </li>
             </ul>
           </div>

@@ -17,7 +17,7 @@ function Breadcrumb({ itemListElement = [] }: Props) {
             <li>
               <a
                 class={`
-              ${index === items.length - 1 ? "text-orange-300 font-bold" : ""}
+              ${index === items.length - 1 ? "text-orange-300  font-bold" : ""}
               text-sm text-gray-300
               `}
                 href={relative(item)}

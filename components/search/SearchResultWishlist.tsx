@@ -49,7 +49,7 @@ function PageResult(props: SectionProps<typeof loader>) {
           "grid items-center",
           "grid-cols-2 gap-1",
           "sm:grid-cols-3 sm:gap-10",
-          "w-full",
+          "w-full"
         )}
       >
         {products.map((product, i) => (
@@ -67,7 +67,7 @@ function PageResult(props: SectionProps<typeof loader>) {
           const { isVariantOf } = product;
           const hasVariant = isVariantOf?.hasVariant ?? [];
           const isAcessory = product.additionalProperty?.filter(
-            (item) => item.name == "category" && item.value == "Acessórios",
+            (item) => item.name == "category" && item.value == "Acessórios"
           );
           {
             isAcessory && (
@@ -159,33 +159,33 @@ function Result(props: SectionProps<typeof loader>) {
   });
   const results = (
     <span class="text-sm font-normal">
-      Exibindo {page.pageInfo.records &&
-          page.pageInfo.recordPerPage &&
-          page.pageInfo.recordPerPage > page.pageInfo.records
+      Exibindo{" "}
+      {page.pageInfo.records &&
+      page.pageInfo.recordPerPage &&
+      page.pageInfo.recordPerPage > page.pageInfo.records
         ? page.pageInfo.records
-        : page.pageInfo.recordPerPage} de {page.pageInfo.records} resultados
+        : page.pageInfo.recordPerPage}{" "}
+      de {page.pageInfo.records} resultados
     </span>
   );
 
   return (
     <>
       <div id={container} {...viewItemListEvent} class="w-full">
-        {partial
-          ? <PageResult {...props} />
-          : (
-            <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
-              <div class="md:gap-8 grid place-items-center grid-cols-1 sm:grid-cols-1">
-                <div class="flex flex-col gap-9">
-                  {device === "desktop" && (
-                    <div class="flex justify-between items-center">
-                      {results}
-                    </div>
-                  )}
-                  <PageResult {...props} />
-                </div>
+        {partial ? (
+          <PageResult {...props} />
+        ) : (
+          <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
+            <div class="md:gap-8 grid place-items-center grid-cols-1 sm:grid-cols-1">
+              <div class="flex flex-col gap-9">
+                {device === "desktop" && (
+                  <div class="flex justify-between items-center">{results}</div>
+                )}
+                <PageResult {...props} />
               </div>
             </div>
-          )}
+          </div>
+        )}
       </div>
 
       <script
@@ -194,7 +194,7 @@ function Result(props: SectionProps<typeof loader>) {
           __html: useScript(
             setPageQuerystring,
             `${pageInfo.currentPage}`,
-            container,
+            container
           ),
         }}
       />

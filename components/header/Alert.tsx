@@ -22,7 +22,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
   return (
     <div
       id={id}
-      class="grid grid-rows-[1fr_32px_1fr_64px] grid-cols-[32px_1fr_32px] sm:grid-cols-[112px_1fr_112px] w-screen bg-blue-400 max-h-8"
+      class="grid grid-rows-[1fr_32px_1fr_64px] grid-cols-[32px_1fr_32px] sm:grid-cols-[112px_1fr_112px] w-screen bg-secondary max-h-8"
     >
       <div class="col-span-full row-span-full max-h-8">
         <Slider class="carousel carousel-center w-screen gap-6 text-secondary-content text-sm/4">
@@ -49,19 +49,13 @@ function Alert({ alerts = [], interval = 5 }: Props) {
       </div>
 
       <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
-        <Slider.PrevButton
-          class="cursor-pointer"
-          disabled={false}
-        >
+        <Slider.PrevButton class="cursor-pointer" disabled={false}>
           <Icon id="chevron-right" class="rotate-180 text-white" />
         </Slider.PrevButton>
       </div>
 
       <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
-        <Slider.NextButton
-          class="cursor-pointer"
-          disabled={false}
-        >
+        <Slider.NextButton class="cursor-pointer" disabled={false}>
           <Icon id="chevron-right" class="text-white" />
         </Slider.NextButton>
       </div>

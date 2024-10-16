@@ -49,7 +49,7 @@ export default function FAQ({
   ],
 }: Props) {
   return (
-    <div class={`bg-white-200`} style={{ backgroundColor: `${bgColor}` }}>
+    <div class={`bg-base-200`} style={{ backgroundColor: `${bgColor}` }}>
       <Section.Container>
         {/* <Section.Header title={title} cta={cta} /> */}
         <h3 class="text-center font-bold text-gray-300 text-sm">{title}</h3>
@@ -61,7 +61,9 @@ export default function FAQ({
         )}
         <ul class="w-full px-4 md:px-0">
           <li class="gap-2 flex flex-col">
-            {questions.map((question) => <Question {...question} />)}
+            {questions.map((question) => (
+              <Question {...question} />
+            ))}
           </li>
         </ul>
       </Section.Container>
