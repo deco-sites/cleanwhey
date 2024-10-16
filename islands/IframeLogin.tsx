@@ -1,22 +1,15 @@
 import { useEffect } from "preact/hooks";
-import { cssContent } from "../static/signaturesLogin.ts";
 
 interface Props {
   src?: string;
 }
 
-const runOnMount = (cssLink: string) => {
+const runOnMount = () => {
   globalThis.onload = () => {
     const iFrame = document.getElementById("proxy-loader") as HTMLIFrameElement;
     if (!iFrame) {
       return console.error("Couldn't find iframe");
     }
-
-    // Adiciona o link para o CSS dentro do iframe após o carregamento
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = cssLink;
-    iFrame.contentDocument?.head.appendChild(link); // Insere o link do CSS no <head> do iframe
   };
 };
 
@@ -27,8 +20,7 @@ const onLoad = (event) => {
 
 export default function ProxyIframe({ src }: Props) {
   useEffect(() => {
-    // Passe o caminho do CSS para o iframe
-    runOnMount(cssContent);
+    runOnMount();
   }, []);
 
   return (
