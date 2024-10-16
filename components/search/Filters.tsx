@@ -160,19 +160,23 @@ function Filters({ filters }: Props) {
   const filtersArray: Filter[] = [];
 
   filters.forEach((filter) => {
-    // Verifica se já existe um item no filtersArray com a mesma chave
-    const existingFilter = filtersArray.find((item) => item.key === filter.key);
+  // Verifica se já existe um item no filtersArray com a mesma chave
+  const existingFilter = filtersArray.find((item) => item.key === filter.key);
 
-    if (existingFilter) {
-      // Se o filtro já existe, adiciona os valores do novo filtro ao array de valores existente
-      existingFilter.values = [
-        ...new Set([...existingFilter.values, ...filter.values]),
-      ];
-    } else {
-      // Se o filtro não existe, adiciona ao filtersArray
-      filtersArray.push(filter);
-    }
-  });
+  if (existingFilter) {
+    filter.values.forEach((newValue) => {
+      const existingValue = existingFilter.values.find(
+        (value) => value.value === newValue.value
+      );
+
+      if (!existingValue) {
+        existingFilter.values.push(newValue);
+      }
+    });
+  } else {
+    filtersArray.push(filter);
+  }
+});
 
   return (
     <ul class="flex flex-col gap-6 p-4 sm:p-0">
