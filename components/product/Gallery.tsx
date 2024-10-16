@@ -64,7 +64,6 @@ export default function GallerySlider(props: Props) {
 
   const off = listPrice && price != listPrice && (listPrice * 100) / price;
 
-
   const offsalePrice =
     salePrice &&
     salePrice != listPrice &&

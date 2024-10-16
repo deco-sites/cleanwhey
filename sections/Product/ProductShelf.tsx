@@ -12,10 +12,13 @@ export interface Props extends SectionHeaderProps {
   activePaddingBotton?: boolean;
 }
 
-export default function ProductShelf(
-  { products, title, isFeatured, icon, activePaddingBotton = false }:
-    Props,
-) {
+export default function ProductShelf({
+  products,
+  title,
+  isFeatured,
+  icon,
+  activePaddingBotton = false,
+}: Props) {
   if (!products || products.length === 0) {
     return null;
   }
@@ -30,7 +33,7 @@ export default function ProductShelf(
           mapProductToAnalyticsItem({
             index,
             product,
-            ...(useOffer(product.offers)),
+            ...useOffer(product.offers),
           })
         ),
       },
@@ -41,7 +44,7 @@ export default function ProductShelf(
     <Section.Container
       {...viewItemListEvent}
       class={`${
-        isFeatured ? "bg-blue-300 rounded-lg mt-12 max-w-[95%] !container" : ""
+        isFeatured ? "bg-neutral rounded-lg mt-12 max-w-[95%] !container" : ""
       } ${!activePaddingBotton ? "pb-0" : "pb-5"}`}
     >
       <Section.Header title={title} isFeatured={isFeatured} icon={icon} />
@@ -57,10 +60,7 @@ export default function ProductShelf(
 
 export function LoadingFallback() {
   return (
-    <div
-      style={{ height: "716px" }}
-      class="flex justify-center items-center"
-    >
+    <div style={{ height: "716px" }} class="flex justify-center items-center">
       <span class="loading loading-spinner" />
     </div>
   );

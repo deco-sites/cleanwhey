@@ -105,7 +105,7 @@ function NotFound(props: SectionProps<typeof loader>) {
                   <a
                     href={link}
                     class="text-sm font-normal text-white 
-             p-4 bg-orange-300 rounded-lg uppercase"
+             p-4 bg-primary rounded-lg uppercase"
                   >
                     {buttonLabel}
                   </a>
@@ -162,7 +162,7 @@ function NotFound(props: SectionProps<typeof loader>) {
                   <a
                     href={link}
                     class="text-sm font-normal text-white 
-          p-4 bg-orange-300 rounded-lg uppercase"
+          p-4 bg-primary rounded-lg uppercase"
                   >
                     {buttonLabel}
                   </a>
@@ -265,7 +265,7 @@ function PageResult(props: SectionProps<typeof loader>) {
             <a
               rel="next"
               class={clx(
-                "btn btn-ghost bg-orange-300 text-white",
+                "btn btn-ghost bg-primary text-white",
                 (!nextPageUrl || partial === "hideMore") && "hidden"
               )}
               hx-swap="outerHTML show:parent:top"
@@ -306,7 +306,7 @@ function PageResult(props: SectionProps<typeof loader>) {
                     href={link.href}
                     class={`btn !rounded-lg ${
                       pageInfo.currentPage == link.label
-                        ? "btn-primary hover:bg-orange-300 bg-orange-300 border-orange-300 hover:border-orange-300"
+                        ? "btn-primary hover:bg-primary bg-primary border-orange-300  hover:border-orange-300 "
                         : "btn-ghost"
                     } join-item`}
                   >
@@ -480,13 +480,7 @@ function Result(props: SectionProps<typeof loader>) {
 
             <div class="md:gap-8 grid place-items-center grid-cols-1 sm:grid-cols-[250px_1fr]">
               {device === "desktop" && (
-                <aside
-                  class="
-                  place-self-start flex flex-col gap-3
-                  border border-gray-100 border-b border-b-orange-300
-                  bg-white-300 rounded-t-lg p-4
-                  "
-                >
+                <aside class="place-self-start flex flex-col gap-3 border border-gray-100 border-b border-b-orange-300 bg-white-300 rounded-t-lg p-4">
                   <span class="text-base font-normal text-gray-300 h-12 flex gap-2 items-center">
                     <svg
                       width="16"

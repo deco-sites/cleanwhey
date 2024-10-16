@@ -157,7 +157,7 @@ function ProductInfo({ page, pix }: Props) {
               item={item}
               seller={seller}
               product={product}
-              class="btn btn-primary hover:bg-orange-300 hover:border-orange-300 no-animation bg-orange-300 border-orange-300 rounded-lg h-14"
+              class="btn btn-primary hover:bg-primary hover:border-orange-300  no-animation bg-primary border-orange-300  rounded-lg h-14"
               disabled={false}
             />
 

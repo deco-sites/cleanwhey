@@ -8,7 +8,7 @@ export interface Props {
 
 export default function DescriptionNavigator({ links }: Props) {
   return (
-    <section class="bg-white-200">
+    <section class="bg-base-200">
       <div class="container mb-4">
         <ul
           className={`
@@ -18,16 +18,17 @@ export default function DescriptionNavigator({ links }: Props) {
                 md:items-center overflow-x-auto justify-start 
                 md:justify-center gap-8`}
         >
-          {links && links.map((link) => (
-            <li class="p-3 flex-shrink-0">
-              <a
-                href={link.url}
-                class="text-gray-300 cursor-pointer font-bold text-sm"
-              >
-                {link.title}
-              </a>
-            </li>
-          ))}
+          {links &&
+            links.map((link) => (
+              <li class="p-3 flex-shrink-0">
+                <a
+                  href={link.url}
+                  class="text-gray-300 cursor-pointer font-bold text-sm"
+                >
+                  {link.title}
+                </a>
+              </li>
+            ))}
         </ul>
       </div>
     </section>

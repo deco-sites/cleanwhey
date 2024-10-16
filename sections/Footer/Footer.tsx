@@ -49,7 +49,7 @@ function Footer({
   const device = useDevice();
   return (
     <footer
-      class="sm:px-0  bg-orange-300" // style={{ backgroundColor: "#EFF0F0" }}
+      class="sm:px-0  bg-primary" // style={{ backgroundColor: "#EFF0F0" }}
     >
       <div class="flex flex-col gap-5 sm:gap-10 pt-10">
         <ul class="container sm:px-0 px-5 md:gap-0 gap-4 flex sm:flex-row flex-col justify-between">
@@ -193,7 +193,7 @@ function Footer({
           </ul>
         </div>
 
-        <div class="grid bg-blue-300 py-4 grid-flow-row sm:grid-flow-col gap-8">
+        <div class="grid bg-neutral py-4 grid-flow-row sm:grid-flow-col gap-8">
           <div class="container  sm:px-0 px-5 flex flex-nowrap items-center justify-between sm:justify-center gap-4">
             <span class="text-base font-normal text-white text-center">
               {trademark}

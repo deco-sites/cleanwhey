@@ -49,7 +49,7 @@ function PageResult(props: SectionProps<typeof loader>) {
           "grid items-center",
           "grid-cols-2 gap-1",
           "sm:grid-cols-3 sm:gap-10",
-          "w-full",
+          "w-full"
         )}
       >
         {products.map((product, i) => (
@@ -67,7 +67,7 @@ function PageResult(props: SectionProps<typeof loader>) {
           const { isVariantOf } = product;
           const hasVariant = isVariantOf?.hasVariant ?? [];
           const isAcessory = product.additionalProperty?.filter(
-            (item) => item.name == "category" && item.value == "Acessórios",
+            (item) => item.name == "category" && item.value == "Acessórios"
           );
           {
             isAcessory && (
@@ -159,16 +159,19 @@ function Result(props: SectionProps<typeof loader>) {
   });
   const results = (
     <span class="text-sm font-normal">
-      Exibindo {page.pageInfo.records &&
-          page.pageInfo.recordPerPage &&
-          page.pageInfo.recordPerPage > page.pageInfo.records
+      Exibindo{" "}
+      {page.pageInfo.records &&
+      page.pageInfo.recordPerPage &&
+      page.pageInfo.recordPerPage > page.pageInfo.records
         ? page.pageInfo.records
-        : page.pageInfo.recordPerPage} de {page.pageInfo.records} resultados
+        : page.pageInfo.recordPerPage}{" "}
+      de {page.pageInfo.records} resultados
     </span>
   );
 
   return (
     <>
+
       <div id={container} {...viewItemListEvent} class="w-full" style={{minHeight: '50vh'}}>
         {partial
           ? <PageResult {...props} />
@@ -183,9 +186,9 @@ function Result(props: SectionProps<typeof loader>) {
                   )}
                   <PageResult {...props} />
                 </div>
-              </div>
             </div>
-          )}
+          </div>
+        )}
       </div>
 
       <script
@@ -194,7 +197,7 @@ function Result(props: SectionProps<typeof loader>) {
           __html: useScript(
             setPageQuerystring,
             `${pageInfo.currentPage}`,
-            container,
+            container
           ),
         }}
       />

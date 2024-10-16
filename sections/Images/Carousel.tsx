@@ -111,7 +111,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
             <div className="actions flex flex-col md:flex-row items-center gap-2 mt-4">
               {action.label != undefined && (
                 <button
-                  class="border w-full md:w-auto !border-orange-300 hover:bg-orange-300 !text-white hover:text-white !bg-orange-300 btn btn-primary rounded-lg btn-outline"
+                  class="border w-full md:w-auto !border-orange-300  hover:bg-primary !text-white hover:text-white !bg-primary btn btn-primary rounded-lg btn-outline"
                   aria-label={action.label}
                 >
                   {action.label}

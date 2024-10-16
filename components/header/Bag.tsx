@@ -24,7 +24,7 @@ function Bag() {
       <label class="indicator" for={MINICART_DRAWER_ID} aria-label="open cart">
         <span
           id={id}
-          class="hidden indicator-item badge badge-primary badge-sm font-normal"
+          class="hidden indicator-item badge badge-neutral text-primary-content badge-sm font-normal"
         />
 
         <span class="text-white hover:!bg-transparent btn btn-square btn-sm btn-ghost no-animation">

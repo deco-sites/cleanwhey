@@ -41,7 +41,11 @@ export function loader(props: Props) {
   return { ...props, status: undefined };
 }
 
-function Notice({ title, description, icon }: {
+function Notice({
+  title,
+  description,
+  icon,
+}: {
   title?: string;
   description?: string;
   icon?: ImageWidget;
@@ -59,41 +63,39 @@ function Notice({ title, description, icon }: {
   );
 }
 
-function Newsletter(
-  {
-    empty = {
-      title: "Newsletter",
-      description: "Fique por dentro de todas as novidades e promoções",
-    },
-    success = {
-      title: "Obrigado por se cadastrar",
-      description: "",
-    },
-    failed = {
-      title: "Oops!. Algo deu errado!",
-      description:
-        "Alguma coisa deu errado. Se o erro persistir entre em contato com a gente",
-    },
-    label = "Sign up",
-    placeholder = "Enter your email address",
-    status,
-    icon,
-  }: SectionProps<typeof loader, typeof action>,
-) {
+function Newsletter({
+  empty = {
+    title: "Newsletter",
+    description: "Fique por dentro de todas as novidades e promoções",
+  },
+  success = {
+    title: "Obrigado por se cadastrar",
+    description: "",
+  },
+  failed = {
+    title: "Oops!. Algo deu errado!",
+    description:
+      "Alguma coisa deu errado. Se o erro persistir entre em contato com a gente",
+  },
+  label = "Sign up",
+  placeholder = "Enter your email address",
+  status,
+  icon,
+}: SectionProps<typeof loader, typeof action>) {
   if (status === "success" || status === "failed") {
     return (
-      <section class="bg-orange-300">
+      <section class="bg-primary">
         <Section.Container class="border-b border-b-orange-200">
           <div class="px-4 sm:px-14 py-4 flex flex-col sm:flex-row items-center justify-start sm:justify-center gap-8">
             {/* <Icon size={80} class={clx(status === "success" ? "text-success" : "text-error")} id={status === "success" ? "check-circle" : "error"}/> */}
-            <Notice {...status === "success" ? success : failed} />
+            <Notice {...(status === "success" ? success : failed)} />
           </div>
         </Section.Container>
       </section>
     );
   }
   return (
-    <section class="bg-orange-300">
+    <section class="bg-primary">
       <Section.Container class="border-b border-b-orange-200">
         <div class="px-4 sm:px-14 py-4 flex flex-col sm:flex-row items-center justify-start sm:justify-center gap-8">
           <Notice {...empty} icon={icon} />
@@ -112,12 +114,10 @@ function Newsletter(
             />
 
             <button
-              class="btn btn-primary rounded-lg bg-blue-300 border-blue-300"
+              class="btn btn-primary rounded-lg bg-neutral border-blue-300"
               type="submit"
             >
-              <span class="[.htmx-request_&]:hidden inline">
-                {label}
-              </span>
+              <span class="[.htmx-request_&]:hidden inline">{label}</span>
               <span class="[.htmx-request_&]:inline hidden loading loading-spinner" />
             </button>
           </form>

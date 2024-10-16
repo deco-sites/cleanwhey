@@ -94,7 +94,7 @@ const Desktop = (props: SectionProps<typeof loader>) => {
           </div>
         </div>
 
-        <div class="flex justify-between items-center text-base- bg-orange-400">
+        <div class="flex justify-between items-center text-base bg-accent">
           <div className="container">
             <ul class="flex justify-between">
               {navItems?.slice(0, 8).map((item) => (
@@ -186,7 +186,7 @@ function Header(props: SectionProps<typeof loader>) {
           device === "desktop" ? HEADER_HEIGHT_DESKTOP : HEADER_HEIGHT_MOBILE,
       }}
     >
-      <div class="fixed w-full z-40 bg-orange-300">
+      <div class="fixed w-full z-40 bg-primary">
         {alerts.length > 0 && <Alert alerts={alerts} />}
         {device === "desktop" ? <Desktop {...props} /> : <Mobile {...props} />}
       </div>

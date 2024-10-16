@@ -48,7 +48,7 @@ function Drawer({
           data-aside
           class={clx(
             "drawer-side h-full z-40 overflow-hidden",
-            "[[data-aside]&_section]:contents",
+            "[[data-aside]&_section]:contents"
           )}
         >
           <label for={id} class="drawer-overlay" />
@@ -77,7 +77,7 @@ function Aside({
       class="bg-base-100 grid grid-rows-[auto_1fr] h-full"
       style={{ maxWidth: "100vw" }}
     >
-      <div class={`${drawer == "sidemenu-drawer" ? "bg-orange-300" : ""}`}>
+      <div class={`${drawer == "sidemenu-drawer" ? "bg-primary" : ""}`}>
         <div class="flex justify-between items-center">
           <h1 class="px-4 py-3">
             <span class="font-medium text-xl flex items-center gap-2 text-orange-300">
