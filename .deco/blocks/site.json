@@ -29,14 +29,11 @@
       "__resolveType": "analytics/sections/Analytics/DecoAnalytics.tsx"
     },
     {
-      "__resolveType": "site/sections/Content/Whatsapp.tsx",
-      "link": "https://api.whatsapp.com/send?phone=+5521994223126&text=Ol%C3%A1,%20Clean%20Whey.%20Preciso%20de%20ajuda!"
+      "__resolveType": "site/sections/Session.tsx"
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Session.tsx"
-      }
+      "__resolveType": "site/sections/Content/Whatsapp.tsx",
+      "link": "https://api.whatsapp.com/send?phone=+5521994223126&text=Ol%C3%A1,%20Clean%20Whey.%20Preciso%20de%20ajuda!"
     }
   ],
   "routes": [
