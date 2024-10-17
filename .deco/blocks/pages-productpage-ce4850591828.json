@@ -3760,11 +3760,11 @@
               },
               "rightImage": {
                 "alt": "Banner Right",
-                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/50571cfd-a6c9-460f-8a1c-e805eb9a4f94",
-                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/33a8d6d1-6bb3-47c8-b75e-9d44237baac6"
+                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/f7913454-53b5-4af0-bf10-43777dbd9092/CleanWhey-Banner-Right.png",
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/f7913454-53b5-4af0-bf10-43777dbd9092/CleanWhey-Banner-Right.png"
               },
               "title": "Clean Whey Concentrate Tasty Água De Coco Pote",
-              "description": "<p><span style=\"font-size: 12pt; color: rgb(161, 166, 183);\" data-mce-style=\"font-size: 12pt; color: rgb(161, 166, 183);\">Clean Whey® Concentrate Tasty Vanilla é elaborado com a proteína isolada do soro do leite 100% produzida pela Glanbia Nutritionals Inc. (Avonlac® 282), não contém adição de açúcares, espessantes, corantes, conservantes e aromatizantes artificiais, sendo um produto totalmente clean label.</span></p>",
+              "description": "<p><span style=\"font-size: 12pt; color: rgb(161, 166, 183);\" data-mce-style=\"font-size: 12pt; color: rgb(161, 166, 183);\">Clean Whey® Concentrate Água de Coco é elaborado com a proteína isolada do soro do leite 100% produzida pela Glanbia Nutritionals Inc. (Avonlac® 282), não contém adição de açúcares, espessantes, corantes, conservantes e aromatizantes artificiais, sendo um produto totalmente clean label.</span></p>",
               "id": "visao-geral"
             },
             {
@@ -3888,7 +3888,7 @@
                     "112": "1",
                     "113": "3",
                     "114": "0",
-                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/87bb0f02-eadd-4778-9a87-2efc1c1a3c80"
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/53086820-b618-47cc-8701-0b8905c9a5cd/CleanWhey-Projeto-Destaque-2-(1).png"
                   },
                   "mobile": {
                     "0": "h",
@@ -4006,7 +4006,7 @@
                     "112": "5",
                     "113": "3",
                     "114": "9",
-                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/9aa7e3ed-076b-4d6a-8832-82cf86a7f948"
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/53086820-b618-47cc-8701-0b8905c9a5cd/CleanWhey-Projeto-Destaque-2-(1).png"
                   },
                   "alt": "Clean Whey Concentrate Tasty Água De Coco"
                 },

@@ -7135,11 +7135,6 @@ flex-grow-1 {
     padding-right: 3.5rem;
   }
 
-  .sm\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
   .sm\:py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
@@ -7625,10 +7620,6 @@ flex-grow-1 {
   .lg\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
-  }
-
-  .group:hover .lg\:group-hover\:opacity-100 {
-    opacity: 1;
   }
 }
 
