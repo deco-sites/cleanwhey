@@ -35,7 +35,7 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
             isFeatured
               ? "md:max-w-[90%] max-w-[85%]"
               : "sm:max-w-[95%] max-w-[80%]"
-          } w-full px-0 sm:px-4`}
+          } w-full px-0 `}
         >
           <Slider class="carousel w-full gap-4 pt-4">
             {products?.map((product, index) => {
