@@ -29,13 +29,6 @@
       "__resolveType": "analytics/sections/Analytics/DecoAnalytics.tsx"
     },
     {
-      "__resolveType": "site/sections/Session.tsx",
-      "minicart": null,
-      "wishlist": null,
-      "mode": "lazy",
-      "user": null
-    },
-    {
       "__resolveType": "site/sections/Content/Whatsapp.tsx",
       "link": "https://api.whatsapp.com/send?phone=+5521994223126&text=Ol%C3%A1,%20Clean%20Whey.%20Preciso%20de%20ajuda!"
     }
