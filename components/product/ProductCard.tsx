@@ -107,7 +107,7 @@ function ProductCard({
       id={id}
     >
       <figure
-        class={clx("relative bg-base-200", "rounded border border-transparent")}
+        class={clx("relative bg-white", "rounded border border-transparent")}
         style={{ aspectRatio: ASPECT_RATIO }}
       >
         {/* Product Images */}
@@ -127,30 +127,10 @@ function ProductCard({
             width={WIDTH}
             height={HEIGHT}
             style={{ aspectRatio: ASPECT_RATIO }}
-            class={clx(
-              "object-cover",
-              "rounded w-full",
-              "col-span-full row-span-full"
-            )}
+            class={"object-cover rounded w-full"}
             sizes="(max-width: 640px) 50vw, 20vw"
             preload={preload}
             loading={preload ? "eager" : "lazy"}
-            decoding="async"
-          />
-          <Image
-            src={back?.url ?? front.url!}
-            alt={back?.alternateName ?? front.alternateName}
-            width={WIDTH}
-            height={HEIGHT}
-            style={{ aspectRatio: ASPECT_RATIO }}
-            class={clx(
-              "object-cover",
-              "rounded w-full",
-              "col-span-full row-span-full",
-              "transition-opacity opacity-0 lg:group-hover:opacity-100"
-            )}
-            sizes="(max-width: 640px) 50vw, 20vw"
-            loading="lazy"
             decoding="async"
           />
         </a>
