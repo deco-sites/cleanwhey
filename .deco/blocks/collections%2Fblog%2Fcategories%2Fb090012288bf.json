@@ -1,0 +1,8 @@
+{
+  "name": "collections/blog/categories/b090012288bf",
+  "__resolveType": "blog/loaders/Category.ts",
+  "category": {
+    "name": "Não postado",
+    "slug": "npostado"
+  }
+}

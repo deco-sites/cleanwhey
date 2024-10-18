@@ -33,5 +33,5 @@
   "description": "Your Questions Answered",
   "__resolveType": "site/sections/Content/Faq.tsx",
   "contact": {},
-  "subtitle": "<p>Dúvidas <span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">frequentes</span></p>"
+  "subtitle": "<p><span style=\"background-color: rgb(244, 244, 244);\" data-mce-style=\"background-color: rgb(244, 244, 244);\"><a href=\"../../../faq\" style=\"text-decoration: none; background-color: rgb(244, 244, 244);\" data-mce-href=\"../../../faq\" data-mce-style=\"text-decoration: none; background-color: rgb(244, 244, 244);\" data-mce-selected=\"inline-boundary\"><span style=\"color: rgb(0, 0, 0);\" data-mce-style=\"color: rgb(0, 0, 0);\">Dúvidas </span><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">frequentes﻿</span></a></span></p>"
 }
