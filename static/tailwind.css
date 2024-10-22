@@ -3633,6 +3633,9 @@ details.collapse summary::-webkit-details-marker {
 .left-0 {
   left: 0px;
 }
+.left-1 {
+  left: 0.25rem;
+}
 .left-2 {
   left: 0.5rem;
 }
@@ -3671,6 +3674,9 @@ details.collapse summary::-webkit-details-marker {
 }
 .top-0 {
   top: 0px;
+}
+.top-1 {
+  top: 0.25rem;
 }
 .top-1\/2 {
   top: 50%;
@@ -4737,6 +4743,9 @@ details.collapse summary::-webkit-details-marker {
 }
 .rounded-none {
   border-radius: 0px;
+}
+.rounded-sm {
+  border-radius: 0.125rem;
 }
 .rounded-l {
   border-top-left-radius: 0.25rem;

@@ -136,7 +136,7 @@ function ProductCard({
         </a>
 
         {/* Wishlist button */}
-        <div class="absolute top-0 left-0 w-full flex items-center justify-between">
+        <div class="absolute top-1 left-1 w-full flex items-center justify-between">
           {/* Discounts */}
 
           {inStock && offsalePrice && offsalePrice != 0 && (
