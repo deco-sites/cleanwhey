@@ -2078,7 +2078,17 @@
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/95890ced-f6d5-4144-8d11-bb13686ec9e0",
                         "width": 730
                       }
-                    }
+                    },
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\">Proteína Concentrada do Soro do Leite Instantânea – WPC. NÃO CONTÉM GLÚTEN.CONTÉM LACTOSE. <br>ALÉRGICOS: CONTÉM DERIVADOS DO LEITE DE VACA E DERIVADOS DE SOJA (LECITINA DE SOJA). .</span></p>"
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de Preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 3 colheres de sopa em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.<br></span></p>"
+                      }
+                    ]
                   },
                   "rule": {
                     "__resolveType": "website/matchers/queryString.ts",
@@ -2108,6 +2118,16 @@
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/ee4a47f3-0d19-41da-afd4-ac9bdacc40a3",
                         "width": 730
                       }
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de Preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.<br></span></p>"
+                      }
+                    ],
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\">Proteína Concentrada do Soro do Leite Instantânea – WPC. NÃO CONTÉM GLÚTEN.CONTÉM LACTOSE. <br>ALÉRGICOS: CONTÉM DERIVADOS DO LEITE DE VACA E DERIVADOS DE SOJA (LECITINA DE SOJA). .</span></p>"
                     }
                   },
                   "rule": {
@@ -2138,6 +2158,16 @@
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/9bd7024b-c201-4dc8-b05e-b7dd93a5ca98",
                         "width": 730
                       }
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 3 colheres de sopa em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</span></p>"
+                      }
+                    ],
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\"> Proteína concentrada de soro de leite, aroma idêntico ao natural e aroma natural. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN</span></p>"
                     }
                   },
                   "rule": {
@@ -4540,7 +4570,7 @@
                     "table": {
                       "altText": "Tabela Nutricional",
                       "desktop": {
-                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/0d7d636e-9d26-4763-b52c-eb01fd9d1aa7",
+                        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/2a6ca8d6-e9ad-4390-a81f-18038ddab8c5/Tabela---30g.png",
                         "width": 730
                       },
                       "mobile": {
@@ -4550,7 +4580,7 @@
                     },
                     "questions": [
                       {
-                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 1 sachê em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</span></p>",
                         "question": "Modo de Preparo"
                       }
                     ],
@@ -4558,6 +4588,46 @@
                       "content": "<p><span data-sheets-root=\"1\"> Proteína concentrada de soro de leite, e aromas naturais. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN</span></p>",
                       "title": "Ingredientes"
                     }
+                  },
+                  "rule": {
+                    "__resolveType": "website/matchers/queryString.ts",
+                    "conditions": [
+                      {
+                        "case": {
+                          "type": "Equals",
+                          "value": "78"
+                        },
+                        "param": "skuId"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": {
+                    "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
+                    "id": "nutritional-information",
+                    "title": "Tabela Nutricional",
+                    "table": {
+                      "altText": "Tabela Nutricional",
+                      "desktop": {
+                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/0d7d636e-9d26-4763-b52c-eb01fd9d1aa7",
+                        "width": 730
+                      },
+                      "mobile": {
+                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/056c3e74-af8f-4e22-9ba9-a7512f551919",
+                        "width": 730
+                      }
+                    },
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\"> Proteína concentrada de soro de leite, e aromas naturais. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN</span></p>"
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de Preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>"
+                      }
+                    ]
                   },
                   "rule": {
                     "__resolveType": "website/matchers/queryString.ts",
@@ -5592,6 +5662,369 @@
             }
           ],
           "matcher": "/clean-whey-concentrate-tasty-cacau-belga/p"
+        },
+        {
+          "secoes": [
+            {
+              "__resolveType": "website/sections/Rendering/Lazy.tsx",
+              "section": {
+                "__resolveType": "Navegador Padrão de Descrição do Produto"
+              }
+            },
+            {
+              "__resolveType": "site/sections/ProductPage/DescriptionBannerRight.tsx",
+              "percentageBanner": {
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/04530f70-1225-491f-bf1f-cb9f17aa754f",
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/84c67474-62ae-4f70-a0ae-00ce3f58e39b",
+                "alt": "Banner Percentage"
+              },
+              "rightImage": {
+                "alt": "Banner Right",
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/341561d8-0222-4082-91ad-724ee349e068",
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/341561d8-0222-4082-91ad-724ee349e068"
+              },
+              "title": "Clean Whey Concentrate Tasty Cacau Belga",
+              "description": "<p><span style=\"font-size: 12pt; color: rgb(161, 166, 183);\" data-mce-style=\"font-size: 12pt; color: rgb(161, 166, 183);\">Clean Whey® Concentrate Tasty Cacau Belga é elaborado com a proteína isolada do soro do leite 100% produzida pela Glanbia Nutritionals Inc. (Avonlac® 282), não contém adição de açúcares, espessantes, corantes, conservantes e aromatizantes artificiais, sendo um produto totalmente clean label.</span></p>",
+              "id": "visao-geral"
+            },
+            {
+              "__resolveType": "website/sections/Rendering/Lazy.tsx",
+              "section": {
+                "__resolveType": "site/sections/ProductPage/DescriptionBannerBenefits.tsx",
+                "leftImage": {
+                  "desktop": {
+                    "0": "h",
+                    "1": "t",
+                    "2": "t",
+                    "3": "p",
+                    "4": "s",
+                    "5": ":",
+                    "6": "/",
+                    "7": "/",
+                    "8": "o",
+                    "9": "z",
+                    "10": "k",
+                    "11": "s",
+                    "12": "g",
+                    "13": "d",
+                    "14": "m",
+                    "15": "y",
+                    "16": "r",
+                    "17": "q",
+                    "18": "c",
+                    "19": "x",
+                    "20": "c",
+                    "21": "w",
+                    "22": "h",
+                    "23": "n",
+                    "24": "b",
+                    "25": "e",
+                    "26": "p",
+                    "27": "g",
+                    "28": ".",
+                    "29": "s",
+                    "30": "u",
+                    "31": "p",
+                    "32": "a",
+                    "33": "b",
+                    "34": "a",
+                    "35": "s",
+                    "36": "e",
+                    "37": ".",
+                    "38": "c",
+                    "39": "o",
+                    "40": "/",
+                    "41": "s",
+                    "42": "t",
+                    "43": "o",
+                    "44": "r",
+                    "45": "a",
+                    "46": "g",
+                    "47": "e",
+                    "48": "/",
+                    "49": "v",
+                    "50": "1",
+                    "51": "/",
+                    "52": "o",
+                    "53": "b",
+                    "54": "j",
+                    "55": "e",
+                    "56": "c",
+                    "57": "t",
+                    "58": "/",
+                    "59": "p",
+                    "60": "u",
+                    "61": "b",
+                    "62": "l",
+                    "63": "i",
+                    "64": "c",
+                    "65": "/",
+                    "66": "a",
+                    "67": "s",
+                    "68": "s",
+                    "69": "e",
+                    "70": "t",
+                    "71": "s",
+                    "72": "/",
+                    "73": "1",
+                    "74": "1",
+                    "75": "3",
+                    "76": "7",
+                    "77": "3",
+                    "78": "/",
+                    "79": "d",
+                    "80": "a",
+                    "81": "f",
+                    "82": "8",
+                    "83": "4",
+                    "84": "3",
+                    "85": "e",
+                    "86": "4",
+                    "87": "-",
+                    "88": "7",
+                    "89": "4",
+                    "90": "8",
+                    "91": "0",
+                    "92": "-",
+                    "93": "4",
+                    "94": "7",
+                    "95": "6",
+                    "96": "5",
+                    "97": "-",
+                    "98": "9",
+                    "99": "5",
+                    "100": "f",
+                    "101": "c",
+                    "102": "-",
+                    "103": "d",
+                    "104": "a",
+                    "105": "0",
+                    "106": "d",
+                    "107": "c",
+                    "108": "2",
+                    "109": "2",
+                    "110": "0",
+                    "111": "6",
+                    "112": "1",
+                    "113": "3",
+                    "114": "0",
+                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/30bb76b2-6c99-4014-83eb-3edd875db5a6"
+                  },
+                  "mobile": {
+                    "0": "h",
+                    "1": "t",
+                    "2": "t",
+                    "3": "p",
+                    "4": "s",
+                    "5": ":",
+                    "6": "/",
+                    "7": "/",
+                    "8": "o",
+                    "9": "z",
+                    "10": "k",
+                    "11": "s",
+                    "12": "g",
+                    "13": "d",
+                    "14": "m",
+                    "15": "y",
+                    "16": "r",
+                    "17": "q",
+                    "18": "c",
+                    "19": "x",
+                    "20": "c",
+                    "21": "w",
+                    "22": "h",
+                    "23": "n",
+                    "24": "b",
+                    "25": "e",
+                    "26": "p",
+                    "27": "g",
+                    "28": ".",
+                    "29": "s",
+                    "30": "u",
+                    "31": "p",
+                    "32": "a",
+                    "33": "b",
+                    "34": "a",
+                    "35": "s",
+                    "36": "e",
+                    "37": ".",
+                    "38": "c",
+                    "39": "o",
+                    "40": "/",
+                    "41": "s",
+                    "42": "t",
+                    "43": "o",
+                    "44": "r",
+                    "45": "a",
+                    "46": "g",
+                    "47": "e",
+                    "48": "/",
+                    "49": "v",
+                    "50": "1",
+                    "51": "/",
+                    "52": "o",
+                    "53": "b",
+                    "54": "j",
+                    "55": "e",
+                    "56": "c",
+                    "57": "t",
+                    "58": "/",
+                    "59": "p",
+                    "60": "u",
+                    "61": "b",
+                    "62": "l",
+                    "63": "i",
+                    "64": "c",
+                    "65": "/",
+                    "66": "a",
+                    "67": "s",
+                    "68": "s",
+                    "69": "e",
+                    "70": "t",
+                    "71": "s",
+                    "72": "/",
+                    "73": "1",
+                    "74": "1",
+                    "75": "3",
+                    "76": "7",
+                    "77": "3",
+                    "78": "/",
+                    "79": "3",
+                    "80": "7",
+                    "81": "d",
+                    "82": "f",
+                    "83": "7",
+                    "84": "6",
+                    "85": "8",
+                    "86": "1",
+                    "87": "-",
+                    "88": "8",
+                    "89": "1",
+                    "90": "7",
+                    "91": "5",
+                    "92": "-",
+                    "93": "4",
+                    "94": "c",
+                    "95": "0",
+                    "96": "6",
+                    "97": "-",
+                    "98": "a",
+                    "99": "d",
+                    "100": "1",
+                    "101": "c",
+                    "102": "-",
+                    "103": "1",
+                    "104": "5",
+                    "105": "f",
+                    "106": "6",
+                    "107": "b",
+                    "108": "6",
+                    "109": "0",
+                    "110": "0",
+                    "111": "d",
+                    "112": "5",
+                    "113": "3",
+                    "114": "9",
+                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/92ffe3e5-d654-4694-bfc8-ffbbc2677802"
+                  },
+                  "alt": "Clean Whey Concentrate Tasty Cacau Belga "
+                },
+                "benefits": [
+                  {
+                    "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/71f8a5f1-8164-4e49-8944-3d66d095cea0",
+                    "title": "Proteína limpa, 100% premium.",
+                    "description": "O suplemento mais clean label do mercado"
+                  },
+                  {
+                    "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/71f8a5f1-8164-4e49-8944-3d66d095cea0",
+                    "title": "Tecnologia Glanbia",
+                    "description": "Produzida pelo exclusivo método CFM®"
+                  },
+                  {
+                    "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/71f8a5f1-8164-4e49-8944-3d66d095cea0",
+                    "title": "Matéria Prima Avonlac 282",
+                    "description": "O whey protein concentrado da Glanbia produzido com a mais alta tecnologia, proporcionando maior grau de pureza"
+                  }
+                ],
+                "title": "<p><strong><span style=\"font-size: 24pt; color: rgb(161, 166, 183);\" data-mce-style=\"font-size: 24pt; color: rgb(161, 166, 183);\">Clean Whey® Concentrate Tasty Cacau Belga é elaborado com a proteína isolada do soro do leite 100% produzida pela Glanbia Nutritionals Inc. (Avonlac® 282), não contém adição de açúcares, espessantes, corantes, conservantes e aromatizantes artificiais, sendo um produto totalmente clean label.</span></strong></p>"
+              }
+            },
+            {
+              "__resolveType": "website/sections/Rendering/Lazy.tsx",
+              "section": {
+                "__resolveType": "site/sections/ProductPage/DescriptionFullbanner.tsx",
+                "banner": {
+                  "desktop": {
+                    "alt": "Fullbanner",
+                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/319187e5-bd01-4a0f-b598-25c813aaec52"
+                  },
+                  "mobile": {
+                    "alt": "Fullbanner",
+                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/4db2345f-a80b-4da1-b90e-4d146f0a59ef",
+                    "width": 380,
+                    "height": 1087
+                  }
+                },
+                "title": "Faça a escolha certa você também!",
+                "subtitle": "Confira os diferenciais que te proporcionam uma qualidade superior",
+                "content": "<ul><li>&nbsp;Fabricado com a puríssima proteína da Glanbia Nutritionals Inc. (Avonlac 282)&nbsp;</li><li>&nbsp;Filtrado pelo método Cross Flow Microfiltration (CFM)&nbsp;</li><li>&nbsp;100% instantâneo&nbsp;</li><li>&nbsp;Dissolução fácil e rápida&nbsp;</li><li>&nbsp;Reduzidos teores de gordura e sódio&nbsp;</li><li>&nbsp;Mais fatores de crescimento (IGF-1) por dose&nbsp;</li><li>&nbsp;Mais imunoglobulinas (ajudam nosso sistema imune)&nbsp;</li><li>&nbsp;Sem adição de açúcares ou adoçantes&nbsp;</li><li>&nbsp;Sem conservantes, corantes ou edulcorantes&nbsp;</li><li>&nbsp;Sem glúten</li></ul>",
+                "rightCard": {
+                  "title": "Ingredientes glanbia",
+                  "content": "<ul><li>proteína concentrada Avonlac 282</li><li>Possui certificado antidoping&nbsp;</li><li>Produto Non-GMO (non-genetically modified), ou seja, livre de transgênicos&nbsp;</li><li>Livre dos hormônios rbST e rbGH (hormônio do crescimento artificial</li></ul>"
+                }
+              }
+            },
+            {
+              "__resolveType": "website/flags/multivariate/section.ts",
+              "variants": [
+                {
+                  "value": {
+                    "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
+                    "id": "nutritional-information",
+                    "title": "Tabela Nutricional",
+                    "table": {
+                      "altText": "Tabela Nutricional",
+                      "desktop": {
+                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/5c3c5757-22e9-41f9-af29-86b8314c27b7",
+                        "width": 730
+                      },
+                      "mobile": {
+                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/5c3c5757-22e9-41f9-af29-86b8314c27b7",
+                        "width": 730
+                      }
+                    },
+                    "ingredients": {
+                      "content": "<p><span data-sheets-root=\"1\">Proteína concentrada de soro de leite, cacau em pó alcalino, aroma idêntico ao natural de chocolate e aroma natural. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN</span></p>",
+                      "title": "Ingredientes"
+                    },
+                    "questions": [
+                      {
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 3 colheres de sopa em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>",
+                        "question": "Modo de Preparo"
+                      }
+                    ]
+                  },
+                  "rule": {
+                    "__resolveType": "website/matchers/queryString.ts",
+                    "conditions": [
+                      {
+                        "case": {
+                          "type": "Equals",
+                          "value": "74"
+                        },
+                        "param": "skuId"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "__resolveType": "Galeria Tripla"
+            }
+          ],
+          "matcher": "/combo-whey-protein-concentrado-cacau-belga-1800g---2-unidades/p"
         },
         {
           "secoes": [
@@ -8100,10 +8533,7 @@
                 {
                   "value": {
                     "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
-                    "id": "nutritional-information",
-                    "title": "Tabela Nutricional",
                     "table": {
-                      "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/3544b19c-ffee-43c4-bc71-d328986acd46",
                         "width": 730,
@@ -8113,8 +8543,11 @@
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/66de1c74-056a-4e25-afbf-87fd8c871f5c",
                         "width": 730,
                         "height": 782
-                      }
-                    }
+                      },
+                      "altText": "Tabela Nutricional"
+                    },
+                    "title": "Tabela Nutricional",
+                    "id": "nutritional-information"
                   },
                   "rule": {
                     "__resolveType": "website/matchers/queryString.ts",
@@ -8485,7 +8918,9 @@
                 {
                   "value": {
                     "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
+                    "title": "Tabela Nutricional",
                     "table": {
+                      "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/3544b19c-ffee-43c4-bc71-d328986acd46",
                         "width": 730,
@@ -8495,10 +8930,8 @@
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/66de1c74-056a-4e25-afbf-87fd8c871f5c",
                         "width": 730,
                         "height": 782
-                      },
-                      "altText": "Tabela Nutricional"
+                      }
                     },
-                    "title": "Tabela Nutricional",
                     "id": "nutritional-information"
                   },
                   "rule": {
@@ -9720,7 +10153,7 @@
                     "questions": [
                       {
                         "question": "Modo de preparo",
-                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>"
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 3 colheres de sopa em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</span></p>"
                       }
                     ],
                     "ingredients": {
@@ -12338,7 +12771,7 @@
                     "questions": [
                       {
                         "question": "Modo de preparo",
-                        "answer": "<p>Proteína Hidrolisada do Soro do Leite Instantânea - WPH. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,3g em 100g). ALÉRGICOS: CONTÉM DERIVADOS DO LEITE DE VACA E DERIVADOS DE SOJA (LECITINA DE SOJA).</p>"
+                        "answer": "<p>Diluir 2 dosadores (scoops) em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</p>"
                       }
                     ],
                     "ingredients": {
@@ -13891,6 +14324,16 @@
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/6a8b3175-a804-4078-b4c3-26da95fdb4e7",
                         "width": 730
                       }
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 3 colheres de sopa em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</span></p>"
+                      }
+                    ],
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\">Proteína Isolada do Soro do leite - WPI (Provon® 292). NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,6g em 100g) ALÉRGICOS: CONTÉM DERIVADOS DO LEITE DE VACA E DERIVADOS DE SOJA (LECITINA DE SOJA).</span></p>"
                     }
                   },
                   "rule": {
@@ -13920,6 +14363,16 @@
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/7d097a93-411c-4c4b-919d-da56a40cadb3",
                         "width": 730
+                      },
+                      "questions": [
+                        {
+                          "question": "Modo de preparo",
+                          "answer": "<p><span data-sheets-root=\"1\">Diluir 3 colheres de sopa em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</span></p>"
+                        }
+                      ],
+                      "ingredients": {
+                        "title": "Ingredientes",
+                        "content": "<p><span data-sheets-root=\"1\">Proteína Isolada do Soro do leite - WPI (Provon® 292). NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,6g em 100g) ALÉRGICOS: CONTÉM DERIVADOS DO LEITE DE VACA E DERIVADOS DE SOJA (LECITINA DE SOJA).</span></p>"
                       }
                     }
                   },
@@ -22969,6 +23422,7 @@
                 {
                   "value": {
                     "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
+                    "id": "nutritional-information",
                     "title": "Tabela Nutricional",
                     "table": {
                       "altText": "Tabela Nutricional",
@@ -22991,8 +23445,7 @@
                         "question": "Modo de Preparo",
                         "answer": "<p><span data-sheets-root=\"1\">Diluir 15g (1 sachê) em 150ml de água ou conforme orientação de médico ou nutricionista. </span></p>"
                       }
-                    ],
-                    "id": "nutritional-information"
+                    ]
                   },
                   "rule": {
                     "__resolveType": "website/matchers/queryString.ts",
@@ -23414,7 +23867,11 @@
               "percentageBanner": {
                 "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/555f6bf5-f33c-4c1e-be77-551fc4c9c88e/Group-133.png",
                 "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/074202cb-9edd-40df-b36e-6cdf994dc134/Group-133.png",
-                "alt": "Banner Percentage"
+                "alt": "Banner Percentage",
+                "heigth": 124,
+                "width": 264,
+                "Mobilewidth": 264,
+                "Mobileheigth": 124
               },
               "rightImage": {
                 "alt": "Banner Right",
@@ -23745,7 +24202,7 @@
               "__resolveType": "Galeria Tripla"
             }
           ],
-          "matcher": "/immunoferrin-60-capsulas/p"
+          "matcher": "/immunoferrin/p"
         },
         {
           "secoes": [

@@ -6,12 +6,20 @@ interface Props {
   description?: HTMLWidget;
   percentageBanner?: {
     desktop: ImageWidget;
+    width?: number;
+    heigth?: number;
     mobile: ImageWidget;
+    Mobilewidth?: number;
+    Mobileheigth?: number;
     alt?: string;
   };
   rightImage?: {
     desktop: ImageWidget;
+    width?: number;
+    heigth?: number;
     mobile: ImageWidget;
+    Mobilewidth?: number;
+    Mobileheigth?: number;
     alt: string;
   };
 }
@@ -33,18 +41,18 @@ export default function DescriptionBannerRight(props: Props) {
             <Picture>
               <Source
                 src={percentageBanner.mobile}
-                width={348}
-                height={92}
+                width={percentageBanner.Mobilewidth || 348}
+                height={percentageBanner.Mobileheigth || 92}
                 media="(max-width: 767px)"
               />
               <Source
                 src={percentageBanner.desktop}
-                width={522}
-                height={139}
+                width={percentageBanner.width || 522}
+                height={percentageBanner.heigth || 129}
                 media="(min-width: 767px)"
               />
               <img
-                class="w-full max-w-[522px] cover"
+                class="w-full "
                 src={percentageBanner.desktop}
                 alt={percentageBanner.alt ?? title}
               />
@@ -54,14 +62,14 @@ export default function DescriptionBannerRight(props: Props) {
             <Picture>
               <Source
                 src={rightImage.mobile}
-                width={348}
-                height={238}
+                width={rightImage.Mobilewidth || 348}
+                height={rightImage.Mobileheigth || 238}
                 media="(max-width: 767px)"
               />
               <Source
                 src={rightImage.desktop}
-                width={624}
-                height={428}
+                width={rightImage.width || 624}
+                height={rightImage.heigth || 428}
                 media="(min-width: 767px)"
               />
               <img
@@ -77,14 +85,14 @@ export default function DescriptionBannerRight(props: Props) {
             <Picture>
               <Source
                 src={rightImage.mobile}
-                width={348}
-                height={238}
+                width={rightImage.Mobilewidth || 348}
+                height={rightImage.Mobileheigth || 238}
                 media="(max-width: 767px)"
               />
               <Source
                 src={rightImage.desktop}
-                width={624}
-                height={428}
+                width={rightImage.width || 624}
+                height={rightImage.heigth || 428}
                 media="(min-width: 767px)"
               />
               <img
@@ -98,14 +106,14 @@ export default function DescriptionBannerRight(props: Props) {
             <Picture>
               <Source
                 src={percentageBanner.mobile}
-                width={348}
-                height={92}
+                width={percentageBanner.Mobilewidth || 348}
+                height={percentageBanner.Mobileheigth || 92}
                 media="(max-width: 767px)"
               />
               <Source
                 src={percentageBanner.desktop}
-                width={522}
-                height={139}
+                width={percentageBanner.width || 522}
+                height={percentageBanner.heigth || 139}
                 media="(min-width: 767px)"
               />
               <img
