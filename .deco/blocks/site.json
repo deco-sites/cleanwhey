@@ -13,23 +13,18 @@
   },
   "global": [
     {
-      "__resolveType": "htmx/sections/htmx.tsx"
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "website/sections/Analytics/Analytics.tsx",
-        "dangerouslyRunOnMainThread": true,
-        "trackingIds": [
-          "GTM-MSLV5T9R"
-        ],
-        "googleAnalyticsIds": [
-          "G-JQ91ZR048J"
-        ]
-      }
+      "__resolveType": "website/sections/Analytics/Analytics.tsx",
+      "dangerouslyRunOnMainThread": true,
+      "trackingIds": [
+        "GTM-MSLV5T9R"
+      ],
+      "googleAnalyticsIds": []
     },
     {
       "__resolveType": "analytics/sections/Analytics/DecoAnalytics.tsx"
+    },
+    {
+      "__resolveType": "htmx/sections/htmx.tsx"
     },
     {
       "__resolveType": "site/sections/Session.tsx"
