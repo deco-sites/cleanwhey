@@ -11,15 +11,15 @@ import AddToCartButton from "./AddToCartButton.tsx";
 import OutOfStock from "./OutOfStock.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 //import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
-import { Pix } from "../../loaders/BusnissRule/Pix.ts";
-import { formatPix } from "../../sdk/formatPix.tsx";
+
+import type { Product } from "apps/commerce/types.ts";
 
 interface Props {
   page: ProductDetailsPage | null;
-  pix: Pix;
+  products: Product[] | null;
 }
 
-function ProductInfo({ page, pix }: Props) {
+function ProductInfo({ page, products }: Props) {
   const id = useId();
 
   // console.log(page?.product);
@@ -105,7 +105,7 @@ function ProductInfo({ page, pix }: Props) {
 
       {/* Sku Selector */}
       <div class="mt-4">
-        <ProductSelector product={product} />
+        <ProductSelector product={product} similares={products} />
       </div>
 
       {/* Prices */}
@@ -138,7 +138,7 @@ function ProductInfo({ page, pix }: Props) {
         )}
 
         <span class="max-w-[265px] text-sm font-normal text-gray-300">
-          {installments}
+          {installments} 
         </span>
       </div>
 

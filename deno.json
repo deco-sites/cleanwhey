@@ -31,14 +31,14 @@
     "preact-render-to-string": "npm:preact-render-to-string@6.4.2",
     "simple-git": "npm:simple-git@^3.25.0",
     "std/": "https://deno.land/std@0.190.0/",
-    "deco/": "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.104.2/",
-    "apps/": "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.59.17/",
+    "deco/": "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.106.2/",
+    "apps/": "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.62.16/",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
     "daisyui": "npm:daisyui@4.6.0",
     "https://esm.sh/*preact-render-to-string@6.3.1": "npm:preact-render-to-string@6.4.2",
-    "@deco/deco": "jsr:@deco/deco@1.104.2",
-    "@deco/dev": "jsr:@deco/dev@1.104.0"
+    "@deco/deco": "jsr:@deco/deco@1.106.2",
+    "@deco/dev": "jsr:@deco/dev@1.106.2"
   },
   "tasks": {
     "start": "deno run -A --unstable-http --env https://deco.cx/run -- deno task dev",
@@ -55,7 +55,7 @@
     "build": "deno run -A dev.ts build",
     "preview": "deno run -A main.ts",
     "generate-icons": "deno run -A --unstable static/generate-icons.ts",
-    "dev": "deno run -A --env --unstable --unstable-hmr dev.ts",
+    "dev": "deno run -A --env --unstable-kv --unstable-hmr dev.ts",
     "reload": "deno cache -r https://deco.cx/run"
   },
   "githooks": {

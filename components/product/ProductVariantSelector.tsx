@@ -6,6 +6,7 @@ import { useVariantPossibilities } from "../../sdk/useVariantPossiblities.ts";
 
 interface Props {
   product: Product;
+  similares: Product[] | null;
 }
 
 const colors: Record<string, string | undefined> = {
@@ -23,22 +24,6 @@ const colors: Record<string, string | undefined> = {
   LightYellow: "#F1E8B0",
 };
 
-// const useStyles = (value: string, checked: boolean) => {
-//   if (colors[value]) {
-//     return clx(
-//       "h-12 w-12 block",
-//       "rounded-full",
-//       "ring-2 ring-offset-2",
-//       checked ? "ring-primary border-orange-300" : "ring-transparent border-gray-200",
-//     );
-//   }
-
-//   return clx(
-//     "btn btn-ghost rounded-full h-12 w-12 p-0 overflow-hidden",
-//     checked && "btn-outline ",
-//   );
-// };
-
 export const Ring = ({
   value,
   checked = false,
@@ -51,7 +36,6 @@ export const Ring = ({
   image?: string;
 }) => {
   const color = colors[value];
-  // const styles = clx(useStyles(value, checked), _class);
 
   return (
     <div
@@ -60,13 +44,13 @@ export const Ring = ({
     >
       <span
         style={{ backgroundColor: color }}
-        class={`btn hover:border-orange-300 btn-ghost hover:bg-transparent bg-transparent rounded-full h-12 w-12 p-0 overflow-hidden
+        class={`btn hover:border-orange-300 btn-ghost capitalize  hover:bg-transparent bg-transparent rounded-full h-12 w-12 p-0 overflow-hidden
       ${checked ? "ring-primary border-orange-300" : "border-gray-200"}
       `}
       >
         {image && <img width={40} height={40} loading={"lazy"} src={image} />}
       </span>
-      {color ? null : value}
+      {color ? null : value.toLocaleLowerCase()}
     </div>
   );
 };
@@ -98,7 +82,7 @@ export const Box = ({
   );
 };
 
-function VariantSelector({ product }: Props) {
+function VariantSelector({ product, similares }: Props) {
   const { url, isVariantOf } = product;
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const possibilities = useVariantPossibilities(hasVariant, product);
@@ -109,7 +93,25 @@ function VariantSelector({ product }: Props) {
   const productTaste = product.additionalProperty?.find(
     (item) => item.name == "SABOR"
   );
+  const todosOsProdutos = [] as Product[];
+  if (similares) {
+    similares.forEach((produto) => {
+      if (produto.isVariantOf && produto.isVariantOf.hasVariant) {
+        // Adicionando os produtos de hasVariant ao array todosOsProdutos
+        todosOsProdutos.push(...produto.isVariantOf.hasVariant);
+      }
+    });
+  }
+  const mt = todosOsProdutos.filter((i) => i.name == product.name);
 
+  product.isSimilarTo?.map((i) => console.log(i.alternateName, i.name));
+  console.log("VTEX Integration - Legacy Search is similar to");
+  product.isVariantOf?.hasVariant.map((i) =>
+    console.log(i.alternateName, i.name)
+  );
+  console.log("VTEX Integration - Legacy Search is variant of");
+  similares?.map((i) => console.log(i.alternateName, i.name));
+  console.log("VTEX Integration - Related Products");
   return (
     <>
       <span class="text-sm text-gray-300 font-normal mb-2 uppercase">
@@ -132,66 +134,52 @@ function VariantSelector({ product }: Props) {
           )}
         </li>
 
-        {tastes
-          ?.filter((taste) => {
-            const size = product.additionalProperty?.find(
-              ({ name }) => name == "TAMANHO"
-            );
-            const tasteSize = taste.additionalProperty?.find(
-              ({ name }) => name == "TAMANHO"
-            );
-
-            return tasteSize?.value == size?.value;
-          })
-          .map((item) => {
-            const relativeLink = relative(item.url);
-            const filteredProperties =
-              item.isVariantOf?.additionalProperty.filter(
-                ({ name }) => name === "Nome nos similares"
-              );
-            return (
-              <li class="flex flex-col gap-2 min-w-[80px]">
-                <label
-                  class="cursor-pointer grid grid-cols-1 grid-rows-1 place-items-center"
-                  hx-get={relativeLink}
+        {mt.map((item) => {
+          const relativeLink = relative(item.url);
+          const name = item.additionalProperty?.filter(
+            (a) => a.name == "SABOR"
+          );
+          return (
+            <li class="flex flex-col gap-2 min-w-[80px]">
+              <label
+                class="cursor-pointer grid grid-cols-1 grid-rows-1 place-items-center"
+                hx-get={relativeLink}
+              >
+                {/* Checkbox for radio button on the frontend */}
+                <input
+                  class="hidden peer"
+                  type="radio"
+                  name={`${id}-${item.name}`}
+                  checked={false}
+                />
+                <div
+                  class={clx(
+                    "col-start-1 row-start-1 col-span-1 row-span-1",
+                    "transition-opacity"
+                  )}
                 >
-                  {/* Checkbox for radio button on the frontend */}
-                  <input
-                    class="hidden peer"
-                    type="radio"
-                    name={`${id}-${item.name}`}
-                    checked={false}
-                  />
-                  <div
-                    class={clx(
-                      "col-start-1 row-start-1 col-span-1 row-span-1",
-                      "transition-opacity"
-                    )}
-                  >
-                    {item.image &&
-                      item.image?.length > 0 &&
-                      filteredProperties && (
-                        <Ring
-                          value={filteredProperties[0]?.value || "Sabor"}
-                          image={item?.image[0]?.url}
-                          checked={false}
-                        />
-                      )}
-                  </div>
-                  {/* Loading spinner */}
-                  <div
-                    class={clx(
-                      "col-start-1 row-start-1 col-span-1 row-span-1",
-                      "opacity-0 [.htmx-request_&]:opacity-100 transition-opacity",
-                      "flex justify-center items-center"
-                    )}
-                  >
-                    <span class="loading loading-sm loading-spinner" />
-                  </div>
-                </label>
-              </li>
-            );
-          })}
+                  {item.image && item.image?.length > 0 && name && (
+                    <Ring
+                      value={name[0].value || "Sabor"}
+                      image={item?.image[0]?.url}
+                      checked={false}
+                    />
+                  )}
+                </div>
+                {/* Loading spinner */}
+                <div
+                  class={clx(
+                    "col-start-1 row-start-1 col-span-1 row-span-1",
+                    "opacity-0 [.htmx-request_&]:opacity-100 transition-opacity",
+                    "flex justify-center items-center"
+                  )}
+                >
+                  <span class="loading loading-sm loading-spinner" />
+                </div>
+              </label>
+            </li>
+          );
+        })}
       </ul>
       <ul
         class="flex flex-col gap-2"
