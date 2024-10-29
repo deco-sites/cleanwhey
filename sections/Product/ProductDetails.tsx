@@ -1,20 +1,21 @@
 import { ProductDetailsPage } from "apps/commerce/types.ts";
+import type { Product } from "apps/commerce/types.ts";
 import ImageGallerySlider from "../../components/product/Gallery.tsx";
 import ProductInfo from "../../components/product/ProductInfo.tsx";
 import Breadcrumb from "../../components/ui/Breadcrumb.tsx";
 import { clx } from "../../sdk/clx.ts";
-import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 
 export interface Props {
   /** @title Integration */
   page: ProductDetailsPage | null;
-  pix: Pix;
+  products: Product[] | null;
 }
 
-export default function ProductDetails({ page, pix }: Props) {
+export default function ProductDetails({ page, products }: Props) {
   /**
    * Rendered when a not found is returned by any of the loaders run on this page
    */
+
   if (!page) {
     return (
       <div class="w-full flex justify-center items-center py-28">
@@ -36,14 +37,14 @@ export default function ProductDetails({ page, pix }: Props) {
         class={clx(
           "container grid",
           "grid-cols-1 gap-2 py-0",
-          "sm:grid-cols-5 sm:gap-6",
+          "sm:grid-cols-5 sm:gap-6"
         )}
       >
         <div class="sm:col-span-3 md:pr-12">
-          <ImageGallerySlider page={page} pix={pix} />
+          <ImageGallerySlider page={page} />
         </div>
         <div class="sm:col-span-2 md:pl-12 md:border-l md:border-gray-100">
-          <ProductInfo page={page} pix={pix} />
+          <ProductInfo page={page} products={products} />
         </div>
       </div>
     </div>

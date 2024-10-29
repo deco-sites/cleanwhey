@@ -1,0 +1,18 @@
+{
+  "__resolveType": "commerce/loaders/product/products.ts",
+  "data": {
+    "__resolveType": "vtex/loaders/legacy/relatedProductsLoader.ts",
+    "crossSelling": "similars",
+    "slug": {
+      "__resolveType": "website/functions/requestToParam.ts",
+      "param": "slug"
+    }
+  },
+  "extensions": [
+    {
+      "__resolveType": "vtex/loaders/product/extensions/list.ts",
+      "similars": true,
+      "variants": true
+    }
+  ]
+}

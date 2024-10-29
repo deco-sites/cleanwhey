@@ -12,7 +12,6 @@ import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 export interface Props {
   /** @title Integration */
   page: ProductDetailsPage | null;
-  pix: Pix;
 }
 
 const WIDTH = 650;
@@ -40,7 +39,6 @@ export default function GallerySlider(props: Props) {
     page: {
       product: { offers, isVariantOf, image },
     },
-    pix,
   } = props;
 
   const { price = 0, listPrice, availability, salePrice } = useOffer(offers);

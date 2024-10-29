@@ -26,15 +26,23 @@
       "__resolveType": "site/sections/Product/ProductDetails.tsx",
       "page": {
         "__resolveType": "vtex/loaders/legacy/productDetailsPage.ts",
+        "similars": true,
+        "indexingSkus": true,
         "slug": {
           "__resolveType": "website/functions/requestToParam.ts",
           "param": "slug"
-        },
-        "similars": true,
-        "indexingSkus": true
+        }
       },
       "pix": {
         "__resolveType": "Payment - Pix"
+      },
+      "products": {
+        "__resolveType": "vtex/loaders/legacy/relatedProductsLoader.ts",
+        "crossSelling": "similars",
+        "slug": {
+          "__resolveType": "website/functions/requestToParam.ts",
+          "param": "slug"
+        }
       }
     },
     {
