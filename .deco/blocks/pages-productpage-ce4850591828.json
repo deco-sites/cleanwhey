@@ -13666,6 +13666,47 @@
                   "rule": {
                     "__resolveType": "website/matchers/always.ts"
                   }
+                },
+                {
+                  "value": {
+                    "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
+                    "title": "Tabela Nutricional",
+                    "table": {
+                      "altText": "Tabela Nutricional",
+                      "desktop": {
+                        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/42baa3b7-f7e8-45b3-b7fd-9cf899d68f28/30-porcoes.png",
+                        "width": 730,
+                        "height": 782
+                      },
+                      "mobile": {
+                        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/7390026e-0d2d-489c-b790-e2f230854b96/30-porcoes.png",
+                        "width": 730
+                      }
+                    },
+                    "id": "nutritional-information",
+                    "questions": [
+                      {
+                        "question": "Modo de preparo",
+                        "answer": "<p>Diluir 2 dosadores (scoops) em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</p>"
+                      }
+                    ],
+                    "ingredients": {
+                      "content": "<ul><li>Proteína Hidrolisada do Soro do Leite Instantânea - WPH. </li><li>NÃO CONTÉM GLÚTEN. </li><li>CONTÉM LACTOSE (0,3g em 100g). </li><li>ALÉRGICOS: CONTÉM DERIVADOS DO LEITE DE VACA E DERIVADOS DE SOJA (LECITINA DE SOJA).</li></ul>",
+                      "title": "Ingrediente"
+                    }
+                  },
+                  "rule": {
+                    "__resolveType": "website/matchers/queryString.ts",
+                    "conditions": [
+                      {
+                        "case": {
+                          "type": "Equals",
+                          "value": "51"
+                        },
+                        "param": "skuId"
+                      }
+                    ]
+                  }
                 }
               ]
             },
