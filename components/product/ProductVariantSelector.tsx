@@ -104,14 +104,6 @@ function VariantSelector({ product, similares }: Props) {
   }
   const mt = todosOsProdutos.filter((i) => i.name == product.name);
 
-  product.isSimilarTo?.map((i) => console.log(i.alternateName, i.name));
-  console.log("VTEX Integration - Legacy Search is similar to");
-  product.isVariantOf?.hasVariant.map((i) =>
-    console.log(i.alternateName, i.name)
-  );
-  console.log("VTEX Integration - Legacy Search is variant of");
-  similares?.map((i) => console.log(i.alternateName, i.name));
-  console.log("VTEX Integration - Related Products");
   return (
     <>
       <span class="text-sm text-gray-300 font-normal mb-2 uppercase">
