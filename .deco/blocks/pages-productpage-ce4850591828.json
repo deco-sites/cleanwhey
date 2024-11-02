@@ -2321,21 +2321,16 @@
             {
               "__resolveType": "website/sections/Rendering/Lazy.tsx",
               "section": {
-                "__resolveType": "site/sections/ProductPage/DescriptionFullbanner.tsx",
-                "banner": {
-                  "desktop": {
-                    "alt": "creatina",
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/a8159d38-c7fc-4ad5-93b7-c4c469b5b1fd/CW_Banner_Creatina_v3.png",
-                    "width": 1366,
-                    "height": 424
-                  },
-                  "mobile": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/79312cc7-f894-4ec8-8cb7-f164c2c2fbfb/CW_Key_Visual_Creatina_v3.png",
-                    "alt": "creatinamobile",
-                    "width": 380,
-                    "height": 1087
+                "__resolveType": "site/sections/Images/Carousel.tsx",
+                "images": [
+                  {
+                    "position": "Left",
+                    "selos": [],
+                    "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/b73899aa-cf91-49db-9aa3-9923dfcce826/CW_Banner_Creatina_v3.png",
+                    "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/61478707-d62b-4f0f-a1e4-6eb770c275ee/CW_Key_Visual_Creatina_v3.png",
+                    "alt": "creatina"
                   }
-                }
+                ]
               }
             },
             {
@@ -2634,6 +2629,7 @@
               "__resolveType": "website/sections/Rendering/Lazy.tsx",
               "section": {
                 "__resolveType": "site/sections/ProductPage/DescriptionFullbanner.tsx",
+                "title": "Confira os diferenciais que te proporcionam uma qualidade superior",
                 "banner": {
                   "desktop": {
                     "alt": "creatina",
@@ -2648,7 +2644,6 @@
                     "height": 1087
                   }
                 },
-                "title": "Confira os diferenciais que te proporcionam uma qualidade superior",
                 "rightCard": {
                   "title": "Ingredientes - Creatina Creapure",
                   "content": "<p><br></p><p>• Possui certificado antidoping da Cologne List </p><p>• Certificação Kosher (para judeus) </p><p>• Certificação Halal (para muçulmanos) </p><p>• Produto Vegano</p>"
@@ -26440,12 +26435,13 @@
       "title": "<p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">Compre</span> <span style=\"color: rgb(161, 166, 183);\" data-mce-style=\"color: rgb(161, 166, 183);\">também:</span></p>",
       "products": {
         "__resolveType": "vtex/loaders/legacy/relatedProductsLoader.ts",
-        "crossSelling": "similars",
+        "crossSelling": "whosawalsosaw",
         "count": 8,
         "slug": {
           "__resolveType": "website/functions/requestToParam.ts",
           "param": "slug"
-        }
+        },
+        "hideUnavailableItems": true
       },
       "isFeatured": false,
       "pix": {

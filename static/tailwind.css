@@ -5513,6 +5513,10 @@ details.collapse summary::-webkit-details-marker {
   --tw-text-opacity: 1;
   color: var(--fallback-pc,oklch(var(--pc)/var(--tw-text-opacity)));
 }
+.text-red-300 {
+  --tw-text-opacity: 1;
+  color: rgb(207 36 36 / var(--tw-text-opacity));
+}
 .text-secondary {
   --tw-text-opacity: 1;
   color: var(--fallback-s,oklch(var(--s)/var(--tw-text-opacity)));

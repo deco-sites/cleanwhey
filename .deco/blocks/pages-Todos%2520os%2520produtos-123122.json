@@ -22,7 +22,7 @@
       "__resolveType": "site/sections/Product/SearchResult.tsx",
       "page": {
         "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
-        "sort": "release:desc",
+        "sort": "orders:desc",
         "fuzzy": "automatic",
         "selectedFacets": [
           {
@@ -31,7 +31,10 @@
           }
         ],
         "count": 24,
-        "pageOffset": 1
+        "pageOffset": 1,
+        "hideUnavailableItems": false,
+        "priceFacets": true,
+        "similars": true
       },
       "layout": {
         "columns": {
@@ -60,7 +63,8 @@
             }
           }
         }
-      }
+      },
+      "startingPage": 0
     },
     {
       "__resolveType": "site/sections/Category/CategoryCards.tsx",

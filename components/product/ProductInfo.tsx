@@ -110,36 +110,43 @@ function ProductInfo({ page, products }: Props) {
 
       {/* Prices */}
       <div class="flex flex-col pt-4">
-        <span class="text-xl font-bold flex gap-2 text-gray-400 items-center">
-          {formatPrice(pixObj?.price) || formatPrice(price)}
-          <p class="text-sm text-gray-300">
-            via PIX{" "}
-            {pixporcent && -(pixporcent - 100) % 1 < 0.5
-              ? Math.floor(-(pixporcent - 100)) + "% OFF "
-              : Math.ceil(-(pixporcent! - 100)) + "% OFF "}
-            ou
-          </p>
-        </span>
-        {salePrice !== listPrice ? (
-          <div class="flex flex-row">
-            <span class="line-through text-sm font-normal text-gray-300">
-              {formatPrice(listPrice, offers?.priceCurrency)}
-            </span>
-            <span class="pl-2.5 text-sm font-normal text-gray-300">
-              {formatPrice(salePrice, offers?.priceCurrency)}
-            </span>
-          </div>
+        {availability !== "https://schema.org/InStock" ? (
+          <span className="text-red-300 font-bold text-xl">
+            Fora de estoque
+          </span>
         ) : (
           <>
-            <span class="text-sm font-normal text-gray-300">
-              {formatPrice(listPrice, offers?.priceCurrency)}
+            <span className="text-xl font-bold flex gap-2 text-gray-400 items-center">
+              {formatPrice(pixObj?.price) || formatPrice(price)}
+              <p className="text-sm text-gray-300">
+                via PIX{" "}
+                {pixporcent && -(pixporcent - 100) % 1 < 0.5
+                  ? Math.floor(-(pixporcent - 100)) + "% OFF "
+                  : Math.ceil(-(pixporcent! - 100)) + "% OFF "}
+                ou
+              </p>
+            </span>
+
+            {salePrice !== listPrice ? (
+              <div className="flex flex-row">
+                <span className="line-through text-sm font-normal text-gray-300">
+                  {formatPrice(listPrice, offers?.priceCurrency)}
+                </span>
+                <span className="pl-2.5 text-sm font-normal text-gray-300">
+                  {formatPrice(salePrice, offers?.priceCurrency)}
+                </span>
+              </div>
+            ) : (
+              <span className="text-sm font-normal text-gray-300">
+                {formatPrice(listPrice, offers?.priceCurrency)}
+              </span>
+            )}
+
+            <span className="max-w-[265px] text-sm font-normal text-gray-300">
+              {installments}
             </span>
           </>
         )}
-
-        <span class="max-w-[265px] text-sm font-normal text-gray-300">
-          {installments} 
-        </span>
       </div>
 
       {/* Shipping Simulation */}
