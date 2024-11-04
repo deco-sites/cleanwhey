@@ -97,9 +97,7 @@ const Desktop = (props: SectionProps<typeof loader>) => {
         <div class="flex justify-between items-center text-base bg-accent">
           <div className="container">
             <ul class="flex justify-between">
-              {navItems?.slice(0, 8).map((item) => (
-                <NavItem item={item} />
-              ))}
+              {navItems?.slice(0, 8).map((item) => <NavItem item={item} />)}
             </ul>
           </div>
         </div>
@@ -172,7 +170,8 @@ function Header(props: SectionProps<typeof loader>) {
   const {
     alerts = [],
     logo = {
-      src: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
+      src:
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
       width: 100,
       height: 16,
       alt: "Logo",
@@ -182,8 +181,9 @@ function Header(props: SectionProps<typeof loader>) {
   return (
     <header
       style={{
-        height:
-          device === "desktop" ? HEADER_HEIGHT_DESKTOP : HEADER_HEIGHT_MOBILE,
+        height: device === "desktop"
+          ? HEADER_HEIGHT_DESKTOP
+          : HEADER_HEIGHT_MOBILE,
       }}
     >
       <div class="fixed w-full z-40 bg-primary">

@@ -57,13 +57,12 @@ export default function GallerySlider(props: Props) {
   const pixObj = product.isVariantOf?.hasVariant
     .filter((value) => value.url == url)[0]
     .offers?.offers[0].priceSpecification.filter(
-      (value) => value.name?.toLowerCase() == "pix"
+      (value) => value.name?.toLowerCase() == "pix",
     )[0];
 
   const off = listPrice && price != listPrice && (listPrice * 100) / price;
 
-  const offsalePrice =
-    salePrice &&
+  const offsalePrice = salePrice &&
     salePrice != listPrice &&
     listPrice &&
     (salePrice * 100) / listPrice;
@@ -76,7 +75,8 @@ export default function GallerySlider(props: Props) {
         {/* Image Slider */}
         <div class="col-start-1 col-span-1 sm:col-start-2">
           <div class="relative h-min flex-grow">
-            {/* {inStock && off && off != 0 ? (
+            {
+              /* {inStock && off && off != 0 ? (
               <span
                 class={clx(
                   "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:top-full after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[11px]  after:border-t-red-300 after:absolute",
@@ -96,13 +96,14 @@ export default function GallerySlider(props: Props) {
               >
                 {pix.porcentagePix * 100 + "% PIX"}
               </span>
-            ) : null} */}
+            ) : null} */
+            }
             {inStock && offsalePrice && off != 0 && (
               <span
                 class={clx(
                   "absolute top-0 right-0 flex items-center justify-center leading-4 text-center bg-red-300 rounded-t-lg text-white h-[44px] w-[52px] max-w-[52px] text-base uppercase font-bold after:content-[''] after:top-full after:border-l-[25px] after:border-r-[25px] after:border-l-transparent after:border-r-transparent after:border-t-[11px]  after:border-t-red-300 after:absolute",
                   "opacity-1",
-                  "w-fit"
+                  "w-fit",
                 )}
               >
                 {-(offsalePrice - 100) % 1 < 0.5
@@ -144,11 +145,13 @@ export default function GallerySlider(props: Props) {
               </Slider.NextButton>
             )}
 
-            {/* <div class="absolute top-2 right-2 bg-base-100 rounded-full">
+            {
+              /* <div class="absolute top-2 right-2 bg-base-100 rounded-full">
               <label class="btn btn-ghost hidden sm:inline-flex" for={zoomId}>
                 <Icon id="pan_zoom" />
               </label>
-            </div> */}
+            </div> */
+            }
           </div>
         </div>
 
@@ -158,7 +161,7 @@ export default function GallerySlider(props: Props) {
             class={clx(
               "carousel carousel-center",
               "sm:carousel-vertical",
-              "gap-2"
+              "gap-2",
             )}
             style={{ maxHeight: "600px" }}
           >

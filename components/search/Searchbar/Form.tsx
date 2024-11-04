@@ -104,12 +104,10 @@ export default function Searchbar({
           placeholder={placeholder}
           autocomplete="off"
           hx-target={`#${slot}`}
-          hx-post={
-            loader &&
+          hx-post={loader &&
             useComponent<SuggestionProps>(Suggestions, {
               loader: asResolved(loader),
-            })
-          }
+            })}
           hx-trigger={`click, input changed delay:300ms, ${NAME}`}
           hx-indicator={`#${SEARCHBAR_INPUT_FORM_ID}`}
           hx-swap="innerHTML"
@@ -144,7 +142,7 @@ export default function Searchbar({
             script,
             SEARCHBAR_INPUT_FORM_ID,
             NAME,
-            SEARCHBAR_POPUP_ID
+            SEARCHBAR_POPUP_ID,
           ),
         }}
       />

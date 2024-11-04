@@ -24,7 +24,7 @@ const labels: Record<string, string> = {
 function Sort({ sortOptions, url }: Props) {
   const current = getUrl(
     url,
-    new URL(url).searchParams.get(SORT_QUERY_PARAM) ?? ""
+    new URL(url).searchParams.get(SORT_QUERY_PARAM) ?? "",
   );
   const options = sortOptions?.map(({ value, label }) => ({
     value: getUrl(url, value),

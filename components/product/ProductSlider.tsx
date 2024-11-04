@@ -46,10 +46,10 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
                   className={`carousel-item w-full 
                 first:pl-0 first:sm:pl-2 last:pr-0 last:sm:pr-2
                 ${
-                  isFeatured
-                    ? "md:w-[calc(33.33%-16px)]"
-                    : "md:w-[calc(25%-16px)]"
-                }
+                    isFeatured
+                      ? "md:w-[calc(33.33%-16px)]"
+                      : "md:w-[calc(25%-16px)]"
+                  }
               `}
                 >
                   <ProductCard

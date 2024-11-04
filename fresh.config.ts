@@ -5,6 +5,6 @@ import manifest from "./manifest.gen.ts";
 export default defineConfig({
   plugins: plugins({
     manifest,
-            htmx: true,
+    htmx: true,
   }),
 });

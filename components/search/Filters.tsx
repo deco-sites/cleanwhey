@@ -113,8 +113,7 @@ function FilterValues({ key, values }: FilterToggle) {
                 clearTimeout(timeOutId);
                 timeOutId = setTimeout(() => {
                   setCurrentMaxMin({ max: query.max, min: query.min });
-                  window.location.href =
-                    urlBrowser +
+                  window.location.href = urlBrowser +
                     "&filter.price=" +
                     query.min +
                     "%3A" +
@@ -139,9 +138,11 @@ function FilterValues({ key, values }: FilterToggle) {
               <div>
                 <ValueItem
                   {...item}
-                  label={`${formatPrice(range.from)} - ${formatPrice(
-                    range.to
-                  )}`}
+                  label={`${formatPrice(range.from)} - ${
+                    formatPrice(
+                      range.to,
+                    )
+                  }`}
                 />
               </div>
             )
@@ -160,23 +161,23 @@ function Filters({ filters }: Props) {
   const filtersArray: Filter[] = [];
 
   filters.forEach((filter) => {
-  // Verifica se já existe um item no filtersArray com a mesma chave
-  const existingFilter = filtersArray.find((item) => item.key === filter.key);
+    // Verifica se já existe um item no filtersArray com a mesma chave
+    const existingFilter = filtersArray.find((item) => item.key === filter.key);
 
-  if (existingFilter) {
-    filter.values.forEach((newValue) => {
-      const existingValue = existingFilter.values.find(
-        (value) => value.value === newValue.value
-      );
+    if (existingFilter) {
+      filter.values.forEach((newValue) => {
+        const existingValue = existingFilter.values.find(
+          (value) => value.value === newValue.value,
+        );
 
-      if (!existingValue) {
-        existingFilter.values.push(newValue);
-      }
-    });
-  } else {
-    filtersArray.push(filter);
-  }
-});
+        if (!existingValue) {
+          existingFilter.values.push(newValue);
+        }
+      });
+    } else {
+      filtersArray.push(filter);
+    }
+  });
 
   return (
     <ul class="flex flex-col gap-6 p-4 sm:p-0">
@@ -185,26 +186,28 @@ function Filters({ filters }: Props) {
           {filter.label != "Departamento" &&
             filter.label != "Category 4" &&
             filter.label.toLowerCase() != "marca" && (
-              <div className="collapse rounded-none collapse-arrow border-b border-gray-100">
-                <input
-                  type="checkbox"
-                  className={"peer"}
-                  name={`my-accordion-${index}`}
-                />
-                {filter.label.toLowerCase() != "subcategoria" ? (
+            <div className="collapse rounded-none collapse-arrow border-b border-gray-100">
+              <input
+                type="checkbox"
+                className={"peer"}
+                name={`my-accordion-${index}`}
+              />
+              {filter.label.toLowerCase() != "subcategoria"
+                ? (
                   <div className="collapse-title after:!h-3 after:!w-3 after:text-gray-300 after:peer-checked:text-orange-300 text-gray-300 text-lg font-bold gap-2 !flex items-center p-0 peer-checked:text-orange-300 capitalize">
                     {filter.label.toLowerCase()}
                   </div>
-                ) : (
+                )
+                : (
                   <div className="collapse-title after:!h-3 after:!w-3 after:text-gray-300 after:peer-checked:text-orange-300 text-gray-300 text-lg font-bold gap-2 !flex items-center p-0 peer-checked:text-orange-300 ">
                     Tipo de Proteína
                   </div>
                 )}
-                <div className="collapse-content overflow-y-auto overflow-x-hidden">
-                  <FilterValues {...filter} />
-                </div>
+              <div className="collapse-content overflow-y-auto overflow-x-hidden">
+                <FilterValues {...filter} />
               </div>
-            )}
+            </div>
+          )}
         </>
       ))}
     </ul>

@@ -1,7 +1,7 @@
 import { FilterRangeValue, FilterToggleValue } from "apps/commerce/types.ts";
 
 export function extractPriceRangeFromFilters(
-  prices?: FilterToggleValue[] | FilterRangeValue
+  prices?: FilterToggleValue[] | FilterRangeValue,
 ): { low: number; high: number } {
   if (!prices || (prices as FilterToggleValue[]).length === 0) {
     return {

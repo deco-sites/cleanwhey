@@ -14,9 +14,10 @@ const runOnMount = () => {
 };
 
 const onLoad = (event) => {
-  const url = (document.getElementById("proxy-loader") as HTMLIFrameElement)?.contentWindow.location.href;
-  console.log({ event, url })
-}
+  const url = (document.getElementById("proxy-loader") as HTMLIFrameElement)
+    ?.contentWindow.location.href;
+  console.log({ event, url });
+};
 
 export default function ProxyIframe({ src }: Props) {
   useEffect(() => {
@@ -31,8 +32,8 @@ export default function ProxyIframe({ src }: Props) {
         src={src}
         className={"min-h-[calc(100vh-300px)] h-fit "}
         onload={onLoad}
-      ></iframe>
+      >
+      </iframe>
     </>
   );
 }
-

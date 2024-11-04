@@ -62,12 +62,10 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
         <img class="w-full" src={image.desktop} alt={image.alt ?? title} />
       </Picture>
 
-      <div
-        class="
+      <div class="
       container flex flex-col gap-8 
       items-start justify-start pt-8 pl-8 sm:justify-center sm:items-start col-start-1 
-      col-span-1 row-start-1 row-span-1 w-full"
-      >
+      col-span-1 row-start-1 row-span-1 w-full">
         <h1>
           {title && (
             <span
