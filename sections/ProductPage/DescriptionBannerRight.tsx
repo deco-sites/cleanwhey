@@ -42,13 +42,11 @@ export default function DescriptionBannerRight(props: Props) {
               <Source
                 src={percentageBanner.mobile}
                 width={percentageBanner.Mobilewidth || 348}
-                height={percentageBanner.Mobileheigth || 92}
                 media="(max-width: 767px)"
               />
               <Source
                 src={percentageBanner.desktop}
                 width={percentageBanner.width || 522}
-                height={percentageBanner.heigth || 129}
                 media="(min-width: 767px)"
               />
               <img

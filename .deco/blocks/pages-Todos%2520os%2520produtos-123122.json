@@ -26,15 +26,13 @@
         "fuzzy": "automatic",
         "selectedFacets": [
           {
-            "key": "productClusterIds",
-            "value": "144"
+            "key": "brand",
+            "value": "Clean Whey"
           }
         ],
         "count": 24,
         "pageOffset": 1,
-        "hideUnavailableItems": false,
-        "priceFacets": true,
-        "similars": true
+        "hideUnavailableItems": false
       },
       "layout": {
         "columns": {
