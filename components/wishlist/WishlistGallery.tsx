@@ -30,8 +30,8 @@ async function loader(props: Props, req: Request, ctx: AppContext<any>) {
 export { loader };
 
 function WishlistGallery(props: Props) {
-  const isEmpty =
-    !props.page || !props.page.products || props.page.products.length === 0;
+  const isEmpty = !props.page || !props.page.products ||
+    props.page.products.length === 0;
 
   if (isEmpty) {
     return (

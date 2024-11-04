@@ -50,7 +50,7 @@ export const Ring = ({
       >
         {image && <img width={40} height={40} loading={"lazy"} src={image} />}
       </span>
-      {color ? null : value.toLocaleLowerCase()}
+      {color ? null : value}
     </div>
   );
 };
@@ -86,23 +86,33 @@ function VariantSelector({ product, similares }: Props) {
   const { url, isVariantOf } = product;
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const possibilities = useVariantPossibilities(hasVariant, product);
-  const tastes = product.isSimilarTo;
 
   const relativeUrl = relative(url);
   const id = useId();
   const productTaste = product.additionalProperty?.find(
-    (item) => item.name == "SABOR"
+    (item) => item.name?.toLocaleUpperCase() == "SABOR",
   );
+
   const todosOsProdutos = [] as Product[];
   if (similares) {
     similares.forEach((produto) => {
       if (produto.isVariantOf && produto.isVariantOf.hasVariant) {
-        // Adicionando os produtos de hasVariant ao array todosOsProdutos
         todosOsProdutos.push(...produto.isVariantOf.hasVariant);
       }
     });
   }
+
   const mt = todosOsProdutos.filter((i) => i.name == product.name);
+  const sabores = [
+    "morango",
+    "chocolate",
+    "limao-siciliano",
+    "sem-sabor",
+    "agua-de-coco",
+    "vanilla",
+    "cacau-belga",
+    "maracuja",
+  ];
 
   return (
     <>
@@ -119,7 +129,11 @@ function VariantSelector({ product, similares }: Props) {
         <li class="flex flex-col gap-2 min-w-[80px]">
           {product.image && product.image?.length > 0 && (
             <Ring
-              value={productTaste?.value?.toLowerCase() || "Sabor"}
+              value={productTaste?.value?.toLowerCase() ||
+                product.isVariantOf?.additionalProperty.find(
+                  (item) => item.name?.toLocaleLowerCase() == "sabor",
+                )?.value ||
+                " "}
               image={product?.image[0]?.url}
               checked={true}
             />
@@ -128,9 +142,23 @@ function VariantSelector({ product, similares }: Props) {
 
         {mt.map((item) => {
           const relativeLink = relative(item.url);
-          const name = item.additionalProperty?.filter(
-            (a) => a.name == "SABOR"
-          );
+          let name = item.additionalProperty?.filter((a) =>
+            a.name == "SABOR"
+          ) || "";
+          if (
+            product.isVariantOf?.name?.toLocaleLowerCase().includes("combo") ||
+            product.isVariantOf?.name
+              ?.toLocaleLowerCase()
+              .includes("hydrolysate") ||
+            product.isVariantOf?.name?.toLocaleLowerCase().includes("xr")
+          ) {
+            for (const sabor of sabores) {
+              if (item.url?.includes(sabor)) {
+                name = sabor.replace(/-/g, " ");
+              }
+            }
+          }
+
           return (
             <li class="flex flex-col gap-2 min-w-[80px]">
               <label
@@ -147,12 +175,14 @@ function VariantSelector({ product, similares }: Props) {
                 <div
                   class={clx(
                     "col-start-1 row-start-1 col-span-1 row-span-1",
-                    "transition-opacity"
+                    "transition-opacity",
                   )}
                 >
                   {item.image && item.image?.length > 0 && name && (
                     <Ring
-                      value={name[0].value || "Sabor"}
+                      value={typeof name === "string"
+                        ? name.toLocaleLowerCase()
+                        : name[0].value?.toLocaleLowerCase()}
                       image={item?.image[0]?.url}
                       checked={false}
                     />
@@ -163,7 +193,7 @@ function VariantSelector({ product, similares }: Props) {
                   class={clx(
                     "col-start-1 row-start-1 col-span-1 row-span-1",
                     "opacity-0 [.htmx-request_&]:opacity-100 transition-opacity",
-                    "flex justify-center items-center"
+                    "flex justify-center items-center",
                   )}
                 >
                   <span class="loading loading-sm loading-spinner" />
@@ -210,7 +240,7 @@ function VariantSelector({ product, similares }: Props) {
                           <div
                             class={clx(
                               "col-start-1 row-start-1 col-span-1 row-span-1",
-                              "transition-opacity"
+                              "transition-opacity",
                             )}
                           >
                             <Box
@@ -224,7 +254,7 @@ function VariantSelector({ product, similares }: Props) {
                             class={clx(
                               "col-start-1 row-start-1 col-span-1 row-span-1",
                               "opacity-0 [.htmx-request_&]:opacity-100 transition-opacity",
-                              "flex justify-center items-center"
+                              "flex justify-center items-center",
                             )}
                           >
                             <span class="loading loading-sm loading-spinner" />

@@ -1164,6 +1164,339 @@
             {
               "__resolveType": "website/sections/Rendering/Lazy.tsx",
               "section": {
+                "__resolveType": "Navegador Padrão de Descrição do Produto"
+              }
+            },
+            {
+              "__resolveType": "website/sections/Rendering/Lazy.tsx",
+              "section": {
+                "__resolveType": "Primeira Seção Descrição"
+              }
+            },
+            {
+              "__resolveType": "website/sections/Rendering/Lazy.tsx",
+              "section": {
+                "__resolveType": "site/sections/ProductPage/DescriptionBannerBenefits.tsx",
+                "leftImage": {
+                  "desktop": {
+                    "0": "h",
+                    "1": "t",
+                    "2": "t",
+                    "3": "p",
+                    "4": "s",
+                    "5": ":",
+                    "6": "/",
+                    "7": "/",
+                    "8": "o",
+                    "9": "z",
+                    "10": "k",
+                    "11": "s",
+                    "12": "g",
+                    "13": "d",
+                    "14": "m",
+                    "15": "y",
+                    "16": "r",
+                    "17": "q",
+                    "18": "c",
+                    "19": "x",
+                    "20": "c",
+                    "21": "w",
+                    "22": "h",
+                    "23": "n",
+                    "24": "b",
+                    "25": "e",
+                    "26": "p",
+                    "27": "g",
+                    "28": ".",
+                    "29": "s",
+                    "30": "u",
+                    "31": "p",
+                    "32": "a",
+                    "33": "b",
+                    "34": "a",
+                    "35": "s",
+                    "36": "e",
+                    "37": ".",
+                    "38": "c",
+                    "39": "o",
+                    "40": "/",
+                    "41": "s",
+                    "42": "t",
+                    "43": "o",
+                    "44": "r",
+                    "45": "a",
+                    "46": "g",
+                    "47": "e",
+                    "48": "/",
+                    "49": "v",
+                    "50": "1",
+                    "51": "/",
+                    "52": "o",
+                    "53": "b",
+                    "54": "j",
+                    "55": "e",
+                    "56": "c",
+                    "57": "t",
+                    "58": "/",
+                    "59": "p",
+                    "60": "u",
+                    "61": "b",
+                    "62": "l",
+                    "63": "i",
+                    "64": "c",
+                    "65": "/",
+                    "66": "a",
+                    "67": "s",
+                    "68": "s",
+                    "69": "e",
+                    "70": "t",
+                    "71": "s",
+                    "72": "/",
+                    "73": "1",
+                    "74": "1",
+                    "75": "3",
+                    "76": "7",
+                    "77": "3",
+                    "78": "/",
+                    "79": "d",
+                    "80": "a",
+                    "81": "f",
+                    "82": "8",
+                    "83": "4",
+                    "84": "3",
+                    "85": "e",
+                    "86": "4",
+                    "87": "-",
+                    "88": "7",
+                    "89": "4",
+                    "90": "8",
+                    "91": "0",
+                    "92": "-",
+                    "93": "4",
+                    "94": "7",
+                    "95": "6",
+                    "96": "5",
+                    "97": "-",
+                    "98": "9",
+                    "99": "5",
+                    "100": "f",
+                    "101": "c",
+                    "102": "-",
+                    "103": "d",
+                    "104": "a",
+                    "105": "0",
+                    "106": "d",
+                    "107": "c",
+                    "108": "2",
+                    "109": "2",
+                    "110": "0",
+                    "111": "6",
+                    "112": "1",
+                    "113": "3",
+                    "114": "0",
+                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/daf843e4-7480-4765-95fc-da0dc2206130"
+                  },
+                  "mobile": {
+                    "0": "h",
+                    "1": "t",
+                    "2": "t",
+                    "3": "p",
+                    "4": "s",
+                    "5": ":",
+                    "6": "/",
+                    "7": "/",
+                    "8": "o",
+                    "9": "z",
+                    "10": "k",
+                    "11": "s",
+                    "12": "g",
+                    "13": "d",
+                    "14": "m",
+                    "15": "y",
+                    "16": "r",
+                    "17": "q",
+                    "18": "c",
+                    "19": "x",
+                    "20": "c",
+                    "21": "w",
+                    "22": "h",
+                    "23": "n",
+                    "24": "b",
+                    "25": "e",
+                    "26": "p",
+                    "27": "g",
+                    "28": ".",
+                    "29": "s",
+                    "30": "u",
+                    "31": "p",
+                    "32": "a",
+                    "33": "b",
+                    "34": "a",
+                    "35": "s",
+                    "36": "e",
+                    "37": ".",
+                    "38": "c",
+                    "39": "o",
+                    "40": "/",
+                    "41": "s",
+                    "42": "t",
+                    "43": "o",
+                    "44": "r",
+                    "45": "a",
+                    "46": "g",
+                    "47": "e",
+                    "48": "/",
+                    "49": "v",
+                    "50": "1",
+                    "51": "/",
+                    "52": "o",
+                    "53": "b",
+                    "54": "j",
+                    "55": "e",
+                    "56": "c",
+                    "57": "t",
+                    "58": "/",
+                    "59": "p",
+                    "60": "u",
+                    "61": "b",
+                    "62": "l",
+                    "63": "i",
+                    "64": "c",
+                    "65": "/",
+                    "66": "a",
+                    "67": "s",
+                    "68": "s",
+                    "69": "e",
+                    "70": "t",
+                    "71": "s",
+                    "72": "/",
+                    "73": "1",
+                    "74": "1",
+                    "75": "3",
+                    "76": "7",
+                    "77": "3",
+                    "78": "/",
+                    "79": "3",
+                    "80": "7",
+                    "81": "d",
+                    "82": "f",
+                    "83": "7",
+                    "84": "6",
+                    "85": "8",
+                    "86": "1",
+                    "87": "-",
+                    "88": "8",
+                    "89": "1",
+                    "90": "7",
+                    "91": "5",
+                    "92": "-",
+                    "93": "4",
+                    "94": "c",
+                    "95": "0",
+                    "96": "6",
+                    "97": "-",
+                    "98": "a",
+                    "99": "d",
+                    "100": "1",
+                    "101": "c",
+                    "102": "-",
+                    "103": "1",
+                    "104": "5",
+                    "105": "f",
+                    "106": "6",
+                    "107": "b",
+                    "108": "6",
+                    "109": "0",
+                    "110": "0",
+                    "111": "d",
+                    "112": "5",
+                    "113": "3",
+                    "114": "9",
+                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/37df7681-8175-4c06-ad1c-15f6b600d539"
+                  },
+                  "alt": "Mocaccino Whey Proteico"
+                },
+                "benefits": [
+                  {
+                    "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/71f8a5f1-8164-4e49-8944-3d66d095cea0",
+                    "title": "Proteína limpa, 100% premium.",
+                    "description": "A única proteína do mercado que não desnatura em altas temperaturas "
+                  },
+                  {
+                    "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/71f8a5f1-8164-4e49-8944-3d66d095cea0",
+                    "title": "Tecnologia Glanbia",
+                    "description": "Produzida com tecnologia de hidrólise específica Glanbia"
+                  },
+                  {
+                    "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/71f8a5f1-8164-4e49-8944-3d66d095cea0",
+                    "title": "Matéria prima Protherma",
+                    "description": "O único whey protein termoestável do mercado"
+                  }
+                ],
+                "title": "<p><strong><span style=\"font-size: 24pt; color: rgb(161, 166, 183);\" data-mce-style=\"font-size: 24pt; color: rgb(161, 166, 183);\">A bebida <span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">perfeita</span> para aquecer seu inverno!</span></strong></p>"
+              }
+            },
+            {
+              "__resolveType": "site/sections/ProductPage/DescriptionFullbanner.tsx",
+              "banner": {
+                "desktop": {
+                  "alt": "Fullbanner",
+                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/9a51774a-ef39-45e0-9fe8-110f4608b3b3"
+                },
+                "mobile": {
+                  "alt": "Fullbanner",
+                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/240baaa0-18f5-4e61-b168-d1141955d981",
+                  "width": 380,
+                  "height": 1087
+                }
+              },
+              "title": "Faça a escolha certa você também!",
+              "subtitle": "Confira os diferenciais que te proporcionam uma qualidade superior",
+              "content": "<ul><li>100% Glanbia Nutritionals </li><li>Utiliza somente WPH como fonte proteica </li><li>Fórmula utiliza somente ingredientes naturais</li><li>Baixo em carboidratos </li><li>pode ser usado na água quente ou fria, café, leite ,etc</li></ul>",
+              "rightCard": {
+                "title": "Ingredientes glanbia",
+                "content": "<ul><li>Proteína Hidrolisada Protherma </li><li>Produto Non-GMO (non-genetically modified), ou seja, livre de transgênicos </li><li>Livre dos hormônios rbST e rbGH (hormônio do crescimento artificial)</li></ul>"
+              }
+            },
+            {
+              "__resolveType": "website/sections/Rendering/Lazy.tsx",
+              "section": {
+                "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
+                "table": {
+                  "altText": "Tabela nutricional",
+                  "desktop": {
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/a6986e1b-52de-4188-9fc8-a11110968d7e/Tabela---360g.png",
+                    "width": 730
+                  },
+                  "mobile": {
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/e3736dff-6ede-4d6e-9bb3-b240cad80d79/Tabela---30g-(2).png",
+                    "width": 730
+                  }
+                },
+                "ingredients": {
+                  "title": "Ingredientes",
+                  "content": "Proteína hidrolisada do Soro do Leite termoestável (WPH), aroma idêntico ao natural de capuccino, coffee arabica, aromas idênticos aos naturais de baunilha e chocolate, adoçante natural stévia e canela em pó. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA (LECITINA DE SOJA) *ingrediente utilizado no processo de instantaneização da proteína do soro do leite. Contém açúcares próprios dos ingredientes."
+                },
+                "questions": [
+                  {
+                    "question": "Modo de preparo ",
+                    "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</span></p>"
+                  }
+                ],
+                "title": "Tabela nutricional"
+              }
+            },
+            {
+              "__resolveType": "Galeria Tripla"
+            }
+          ],
+          "matcher": "/combo-whey-protein-mocaccino-3-unidades/p"
+        },
+        {
+          "secoes": [
+            {
+              "__resolveType": "website/sections/Rendering/Lazy.tsx",
+              "section": {
                 "__resolveType": "site/sections/ProductPage/DescriptionNavigator.tsx",
                 "links": [
                   {
@@ -1810,6 +2143,7 @@
               "__resolveType": "website/sections/Rendering/Lazy.tsx",
               "section": {
                 "__resolveType": "site/sections/ProductPage/DescriptionBannerBenefits.tsx",
+                "title": "<p><strong><span style=\"font-size: 24pt; color: rgb(161, 166, 183);\" data-mce-style=\"font-size: 24pt; color: rgb(161, 166, 183);\">A proteína mais pura do mercado!</span></strong></p>",
                 "leftImage": {
                   "desktop": {
                     "0": "h",
@@ -2065,14 +2399,14 @@
                     "title": "Matéria Prima Avonlac 282",
                     "description": "O whey protein concentrado da Glanbia produzido com a mais alta tecnologia, proporcionando maior grau de pureza"
                   }
-                ],
-                "title": "<p><strong><span style=\"font-size: 24pt; color: rgb(161, 166, 183);\" data-mce-style=\"font-size: 24pt; color: rgb(161, 166, 183);\">A proteína mais pura do mercado!</span></strong></p>"
+                ]
               }
             },
             {
               "__resolveType": "website/sections/Rendering/Lazy.tsx",
               "section": {
                 "__resolveType": "site/sections/ProductPage/DescriptionFullbanner.tsx",
+                "title": "Faça a escolha certa você também!",
                 "banner": {
                   "desktop": {
                     "alt": "Fullbanner",
@@ -2085,7 +2419,6 @@
                     "height": 1087
                   }
                 },
-                "title": "Faça a escolha certa você também!",
                 "subtitle": "Confira os diferenciais que te proporcionam uma qualidade superior",
                 "content": "<ul><li>&nbsp;Fabricado com a puríssima proteína da Glanbia Nutritionals Inc. (Avonlac 282)&nbsp;</li><li>&nbsp;Filtrado pelo método Cross Flow Microfiltration (CFM)&nbsp;</li><li>&nbsp;100% instantâneo&nbsp;</li><li>&nbsp;Dissolução fácil e rápida&nbsp;</li><li>&nbsp;Reduzidos teores de gordura e sódio&nbsp;</li><li>&nbsp;Mais fatores de crescimento (IGF-1) por dose&nbsp;</li><li>&nbsp;Mais imunoglobulinas (ajudam nosso sistema imune)&nbsp;</li><li>&nbsp;Sem adição de açúcares ou adoçantes&nbsp;</li><li>&nbsp;Sem conservantes, corantes ou edulcorantes&nbsp;</li><li>&nbsp;Sem glúten&nbsp;</li><li>&nbsp;Sabor neutro</li></ul>",
                 "rightCard": {
@@ -4712,9 +5045,9 @@
                 "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/50571cfd-a6c9-460f-8a1c-e805eb9a4f94",
                 "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/33a8d6d1-6bb3-47c8-b75e-9d44237baac6"
               },
-              "title": "Clean Whey Concentrate Tasty Água De Coco Pote",
               "description": "<p><span style=\"font-size: 12pt; color: rgb(161, 166, 183);\" data-mce-style=\"font-size: 12pt; color: rgb(161, 166, 183);\">Clean Whey® Concentrate Tasty Vanilla é elaborado com a proteína isolada do soro do leite 100% produzida pela Glanbia Nutritionals Inc. (Avonlac® 282), não contém adição de açúcares, espessantes, corantes, conservantes e aromatizantes artificiais, sendo um produto totalmente clean label.</span></p>",
-              "id": "visao-geral"
+              "id": "visao-geral",
+              "title": "Clean Whey Concentrate Tasty Água De Coco Pote"
             },
             {
               "__resolveType": "website/sections/Rendering/Lazy.tsx",
@@ -5183,12 +5516,12 @@
               },
               "rightImage": {
                 "alt": "Banner Right",
-                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/50571cfd-a6c9-460f-8a1c-e805eb9a4f94",
-                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/33a8d6d1-6bb3-47c8-b75e-9d44237baac6"
+                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/447273c0-c60e-4128-be1a-e70cf0a53694/imagem-destaque-(2).png",
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/185d2105-3090-4aa9-97c9-b4f3e61cb814/imagem-destaque-(2).png"
               },
+              "title": "Clean Whey Concentrate Tasty Água De Coco Pote",
               "description": "<p><span style=\"font-size: 12pt; color: rgb(161, 166, 183);\" data-mce-style=\"font-size: 12pt; color: rgb(161, 166, 183);\">Clean Whey® Concentrate Tasty Vanilla é elaborado com a proteína isolada do soro do leite 100% produzida pela Glanbia Nutritionals Inc. (Avonlac® 282), não contém adição de açúcares, espessantes, corantes, conservantes e aromatizantes artificiais, sendo um produto totalmente clean label.</span></p>",
-              "id": "visao-geral",
-              "title": "Clean Whey Concentrate Tasty Água De Coco Pote"
+              "id": "visao-geral"
             },
             {
               "__resolveType": "website/sections/Rendering/Lazy.tsx",
@@ -7771,10 +8104,7 @@
                 {
                   "value": {
                     "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
-                    "id": "nutritional-information",
-                    "title": "Tabela Nutricional",
                     "table": {
-                      "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/aacd07d3-f3a6-4b92-a361-02611d69b51f",
                         "width": 730
@@ -7782,8 +8112,11 @@
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/938e4532-3fe5-4222-8968-5ac8b0bb3f80",
                         "width": 730
-                      }
+                      },
+                      "altText": "Tabela Nutricional"
                     },
+                    "title": "Tabela Nutricional",
+                    "id": "nutritional-information",
                     "ingredients": {
                       "content": "<p><span data-sheets-root=\"1\">Proteína concentrada de soro de leite, cacau em pó alcalino, aroma idêntico ao natural de chocolate e aroma natural. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN</span></p>",
                       "title": "Ingredientes"
@@ -8319,7 +8652,9 @@
                 {
                   "value": {
                     "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
+                    "title": "Tabela Nutricional",
                     "table": {
+                      "altText": "Tabela Nutricional",
                       "desktop": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/aacd07d3-f3a6-4b92-a361-02611d69b51f",
                         "width": 730
@@ -8327,10 +8662,8 @@
                       "mobile": {
                         "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/938e4532-3fe5-4222-8968-5ac8b0bb3f80",
                         "width": 730
-                      },
-                      "altText": "Tabela Nutricional"
+                      }
                     },
-                    "title": "Tabela Nutricional",
                     "id": "nutritional-information",
                     "ingredients": {
                       "content": "<p><span data-sheets-root=\"1\">Proteína concentrada de soro de leite, cacau em pó alcalino, aroma idêntico ao natural de chocolate e aroma natural. CONTÉM LACTOSE. ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E DE SOJA. NÃO CONTÉM GLÚTEN</span></p>",
@@ -13124,7 +13457,6 @@
                 {
                   "value": {
                     "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
-                    "id": "nutritional-information",
                     "title": "Tabela Nutricional",
                     "table": {
                       "altText": "Tabela Nutricional",
@@ -13137,10 +13469,11 @@
                         "width": 730
                       }
                     },
+                    "id": "nutritional-information",
                     "questions": [
                       {
-                        "answer": "<div id=\"formula-bar-name-box-wrapper\" class=\"name-box-enabled formula-bar-with-name-box-wrapper\"><div id=\"formula-bar\" class=\"formula-bar formulabar-disabled\"><div id=\"t-formula-bar-input-container\"><div dir=\"ltr\"><div id=\"t-formula-bar-input\" spellcheck=\"false\"><p data-mce-caret=\"before\" data-mce-bogus=\"all\" style=\"top: 0px;\" data-mce-style=\"top: 0px;\"><br data-mce-bogus=\"1\"></p><div class=\"cell-input disabled-input\" dir=\"ltr\" role=\"combobox\" contenteditable=\"false\" aria-autocomplete=\"list\" data-mce-tabindex=\"0\">Diluir 2 dosadores (scoops) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista<br></div></div></div></div></div></div><div class=\"mce-visual-caret mce-visual-caret-before\" data-mce-bogus=\"all\" style=\"inset: 0px; width: 1px; height: 0px;\" data-mce-style=\"inset: 0px; width: 1px; height: 0px;\"></div>",
-                        "question": "Modo de preparo"
+                        "question": "Modo de preparo",
+                        "answer": "<div id=\"formula-bar-name-box-wrapper\" class=\"name-box-enabled formula-bar-with-name-box-wrapper\"><div id=\"formula-bar\" class=\"formula-bar formulabar-disabled\"><div id=\"t-formula-bar-input-container\"><div dir=\"ltr\"><div id=\"t-formula-bar-input\" spellcheck=\"false\"><p data-mce-caret=\"before\" data-mce-bogus=\"all\" style=\"top: 0px;\" data-mce-style=\"top: 0px;\"><br data-mce-bogus=\"1\"></p><div class=\"cell-input disabled-input\" dir=\"ltr\" role=\"combobox\" contenteditable=\"false\" aria-autocomplete=\"list\" data-mce-tabindex=\"0\">Diluir 2 dosadores (scoops) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista<br></div></div></div></div></div></div><div class=\"mce-visual-caret mce-visual-caret-before\" data-mce-bogus=\"all\" style=\"inset: 0px; width: 1px; height: 0px;\" data-mce-style=\"inset: 0px; width: 1px; height: 0px;\"></div>"
                       }
                     ],
                     "ingredients": {
@@ -23427,6 +23760,7 @@
                 {
                   "value": {
                     "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
+                    "id": "nutritional-information",
                     "title": "Tabela Nutricional",
                     "table": {
                       "altText": "Tabela Nutricional",
@@ -23449,8 +23783,7 @@
                         "question": "Modo de preparo",
                         "answer": "<p>Diluir 2 dosadores (scoop) em 150ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</p>"
                       }
-                    ],
-                    "id": "nutritional-information"
+                    ]
                   },
                   "rule": {
                     "__resolveType": "website/matchers/always.ts"
@@ -24531,16 +24864,16 @@
             {
               "__resolveType": "site/sections/ProductPage/DescriptionBannerRight.tsx",
               "percentageBanner": {
-                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/41f1f863-e430-4bed-afb3-a2047402908a",
-                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/f1131ce5-8aaa-4179-abe1-0f15cc775933",
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/6b256a19-b90d-442b-81e0-0178fc5296fc/Group-131.png",
+                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/ded38211-e780-4c73-82df-d2ac8eae30f7/Group-131.png",
                 "alt": "Banner Percentage"
               },
               "rightImage": {
                 "alt": "Banner Right",
-                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/5e71a1be-5229-4f56-ab0f-2cf2ba6d2f48",
-                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/b39421ca-6e7a-4904-8f1d-6e97d4bb45cb"
+                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/a555b051-77eb-452a-99be-68f994732074/imagem-destaque.png",
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/3769549b-1a03-47ad-a748-23d7d70c0703/imagem-destaque.png"
               },
-              "title": " Clean Whey XR Special Chocolate",
+              "title": "Clean Whey Xr Special Sem Sabor",
               "description": "<p><span style=\"font-size: 12pt; color: rgb(161, 166, 183);\" data-mce-style=\"font-size: 12pt; color: rgb(161, 166, 183);\">Clean Whey XR® - Extended Release foi desenvolvido com a tecnologia inovadora de polimerização, que possibilita uma digestão e absorção 47% mais lenta que um concentrado comum.</span></p>",
               "id": "visao-geral"
             },
@@ -24663,7 +24996,7 @@
                   "112": "1",
                   "113": "3",
                   "114": "0",
-                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/13e08079-bf29-4041-91c7-723f36e7bd82"
+                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/585f65b3-bee2-4075-90a0-4f64f32d6d20/imagem-destaque-2.png"
                 },
                 "mobile": {
                   "0": "h",
@@ -24781,7 +25114,7 @@
                   "112": "5",
                   "113": "3",
                   "114": "9",
-                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/6e8a1941-4bc3-4874-b9af-212e040b6dc5"
+                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/5fa07404-8431-4e4b-9fe8-338d9122b372/imagem-destaque-2.png"
                 },
                 "alt": "Clean Whey XR Special sabor chocolate"
               },
@@ -24810,11 +25143,11 @@
                 "__resolveType": "site/sections/ProductPage/DescriptionFullbanner.tsx",
                 "banner": {
                   "desktop": {
-                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/3f604ac1-2a05-4fe3-a2e2-9cd8ffefa027",
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/92fb53f3-08a0-4f1d-aa7c-f9bfe2ac0ca4/content-section.png",
                     "alt": "Fullbanner"
                   },
                   "mobile": {
-                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/528eef20-f529-49ea-9537-cb2e9d73ec0a",
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/72885996-d592-43d9-9730-79038b0b6c1e/content-section-(1).png",
                     "alt": "Fullbanner",
                     "width": 380,
                     "height": 1087
@@ -24840,18 +25173,18 @@
                     "table": {
                       "altText": "Tabela Nutricional",
                       "desktop": {
-                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/8e53d901-53ee-441f-bd67-7009a27bbaaf",
+                        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/3d321290-f936-4044-8bb9-6c3b8fdd06c9/table1-(6).png",
                         "width": 730,
                         "height": 782
                       },
                       "mobile": {
-                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/bbc9510f-723a-456b-b69a-5fbacf6efdbc",
+                        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/1aa7d1d9-5f83-4580-b329-37072714e40d/table1-(6).png",
                         "width": 730
                       }
                     },
                     "ingredients": {
                       "title": "ingredientes",
-                      "content": "<p>Proteína Concentrada do Soro do Leite (WPC) polimerizada e instantânea, cacau alcalino em pó e aromas idênticos aos naturais. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE, ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E SOJA.</p>"
+                      "content": "<p>Proteína Concentrada do Soro do Leite (WPC) polimerizada e instantânea. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE, ALÉRGICOS: CONTÉM DERIVADOS DE LEITE E SOJA.</p>"
                     },
                     "questions": [
                       {
@@ -24870,7 +25203,7 @@
               "__resolveType": "Galeria Tripla"
             }
           ],
-          "matcher": "/combo-whey-protein-xr-900g---3-unidades/p"
+          "matcher": "/combo-whey-protein-xr-3-unidades/p"
         },
         {
           "secoes": [

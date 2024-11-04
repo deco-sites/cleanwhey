@@ -60,18 +60,14 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
         </Slider>
         {items && items.length > 4 && (
           <>
-            <div
-              class="rounded-full border-gray-200 border bg-white w-8 h-8 z-10 flex items-center 
-                justify-center absolute top-2/4 left-4"
-            >
+            <div class="rounded-full border-gray-200 border bg-white w-8 h-8 z-10 flex items-center 
+                justify-center absolute top-2/4 left-4">
               <Slider.PrevButton class="cursor-pointer" disabled={false}>
                 <Icon id="chevron-right" class="rotate-180 text-orange-300" />
               </Slider.PrevButton>
             </div>
-            <div
-              class="rounded-full border-gray-200 border bg-white w-8 h-8 z-10 flex items-center 
-                justify-center absolute top-2/4 right-4"
-            >
+            <div class="rounded-full border-gray-200 border bg-white w-8 h-8 z-10 flex items-center 
+                justify-center absolute top-2/4 right-4">
               <Slider.NextButton class="cursor-pointer" disabled={false}>
                 <Icon id="chevron-right" class="text-orange-300" />
               </Slider.NextButton>
@@ -134,19 +130,15 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
             ))}
         </Slider>
 
-        <div
-          class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-                justify-center absolute top-2/4 left-4"
-        >
+        <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+                justify-center absolute top-2/4 left-4">
           <Slider.PrevButton class="cursor-pointer" disabled={false}>
             <Icon id="chevron-right" class="rotate-180 text-orange-300" />
           </Slider.PrevButton>
         </div>
 
-        <div
-          class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-                justify-center absolute top-2/4 right-4"
-        >
+        <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+                justify-center absolute top-2/4 right-4">
           <Slider.NextButton class="cursor-pointer" disabled={false}>
             <Icon id="chevron-right" class="text-orange-300" />
           </Slider.NextButton>
@@ -187,11 +179,9 @@ export default function InfluencersGallery({
         </div>
       )}
       <div className={`content`}>
-        {device === "desktop" ? (
-          <Desktop items={items} conteudoFlutuante={conteudoFlutuante} />
-        ) : (
-          <Mobile items={items} conteudoFlutuante={conteudoFlutuante} />
-        )}
+        {device === "desktop"
+          ? <Desktop items={items} conteudoFlutuante={conteudoFlutuante} />
+          : <Mobile items={items} conteudoFlutuante={conteudoFlutuante} />}
       </div>
     </section>
   );

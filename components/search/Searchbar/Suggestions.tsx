@@ -70,12 +70,12 @@ function Suggestions({
       class={clx(
         `overflow-y-scroll mt-2 `,
         "before:content-['']  before:h-screen before:bg-black before:absolute before:-z-10 before:left-[-100vw] before:right-0 before:w-[200vw] before:opacity-50 before:bg-black-100",
-        !hasProducts && !hasTerms && "hidden"
+        !hasProducts && !hasTerms && "hidden",
       )}
       style={{ display: `${(!hasProducts && !hasTerms && "none") || "flex"}` }}
       hx-on:click={useScript(() => {
-        const modal: HTMLDivElement | null =
-          document.querySelector("#modal") || null;
+        const modal: HTMLDivElement | null = document.querySelector("#modal") ||
+          null;
         modal!.style.display = "none";
       })}
     >
@@ -114,12 +114,12 @@ function Suggestions({
 
                 const [front, back] = product.image ?? [];
                 const { price, installments, salePrice } = useOffer(
-                  product?.offers
+                  product?.offers,
                 );
                 const pixObj = product.isVariantOf?.hasVariant
                   .filter((value) => value.url == url)[0]
                   .offers?.offers[0].priceSpecification.filter(
-                    (value) => value.name?.toLowerCase() == "pix"
+                    (value) => value.name?.toLowerCase() == "pix",
                   )[0];
 
                 const pixporcent =
@@ -164,7 +164,8 @@ function Suggestions({
           </ul>
         </div>
 
-        {/* <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
+        {
+          /* <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
           <span
             class="font-bold text-18 text-blue-300 border-b border-blue-300 pb-2 w-36"
             role="heading"
@@ -189,7 +190,8 @@ function Suggestions({
               ))}
             </ul>
           )}
-        </div> */}
+        </div> */
+        }
       </div>
     </div>
   );

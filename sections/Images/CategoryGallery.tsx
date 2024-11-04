@@ -30,8 +30,8 @@ const Desktop = ({ items }: Props) => {
               <img
                 class={`${index == 0 ? "rounded-l-lg" : ""} 
                             ${
-                              index == 3 ? "rounded-r-lg" : ""
-                            } w-full duration-300 transition-all group-hover:scale-125 h-full max-h-[386px]`}
+                  index == 3 ? "rounded-r-lg" : ""
+                } w-full duration-300 transition-all group-hover:scale-125 h-full max-h-[386px]`}
                 src={item.images.normal}
                 loading={"lazy"}
               />
@@ -68,8 +68,8 @@ const Mobile = ({ items }: Props) => {
                 <img
                   class={`${index == 0 ? "rounded-l-lg" : ""} 
                                 ${
-                                  index == 3 ? "rounded-r-lg" : ""
-                                } w-full duration-300 transition-all group-hover:scale-125 h-full max-h-[370px]`}
+                    index == 3 ? "rounded-r-lg" : ""
+                  } w-full duration-300 transition-all group-hover:scale-125 h-full max-h-[370px]`}
                   src={item.images.normal}
                   loading={"lazy"}
                 />
@@ -85,19 +85,15 @@ const Mobile = ({ items }: Props) => {
           ))}
       </Slider>
 
-      <div
-        class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-            justify-center absolute top-2/4 left-5"
-      >
+      <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+            justify-center absolute top-2/4 left-5">
         <Slider.PrevButton class="cursor-pointer" disabled={false}>
           <Icon id="chevron-right" class="rotate-180 text-orange-300" />
         </Slider.PrevButton>
       </div>
 
-      <div
-        class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-            justify-center absolute top-2/4 right-5"
-      >
+      <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+            justify-center absolute top-2/4 right-5">
         <Slider.NextButton class="cursor-pointer" disabled={false}>
           <Icon id="chevron-right" class="text-orange-300" />
         </Slider.NextButton>
@@ -122,11 +118,9 @@ export default function CategoryGallery({ title, items }: Props) {
       <div
         className={`content ${device === "desktop" ? "grid grid-cols-4" : ""}`}
       >
-        {device === "desktop" ? (
-          <Desktop items={items} />
-        ) : (
-          <Mobile items={items} />
-        )}
+        {device === "desktop"
+          ? <Desktop items={items} />
+          : <Mobile items={items} />}
       </div>
     </section>
   );

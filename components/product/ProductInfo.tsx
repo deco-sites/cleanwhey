@@ -73,7 +73,7 @@ function ProductInfo({ page, products }: Props) {
   const pixObj = product.isVariantOf?.hasVariant
     .filter((value) => value.url == url)[0]
     .offers?.offers[0].priceSpecification.filter(
-      (value) => value.name?.toLowerCase() == "pix"
+      (value) => value.name?.toLowerCase() == "pix",
     )[0];
 
   const pixporcent =
@@ -84,7 +84,7 @@ function ProductInfo({ page, products }: Props) {
       <span
         class={clx(
           "font-bold text-gray-400 flex items-start justify-between text-2xl capitalize",
-          "pt-4"
+          "pt-4",
         )}
       >
         {title} - {name}
@@ -104,49 +104,54 @@ function ProductInfo({ page, products }: Props) {
       </div>
 
       {/* Sku Selector */}
-      <div class="mt-4">
-        <ProductSelector product={product} similares={products} />
-      </div>
+      {!title?.includes && (
+        <div class="mt-4">
+          <ProductSelector product={product} similares={products} />
+        </div>
+      )}
 
       {/* Prices */}
       <div class="flex flex-col pt-4">
-        {availability !== "https://schema.org/InStock" ? (
-          <span className="text-red-300 font-bold text-xl">
-            Fora de estoque
-          </span>
-        ) : (
-          <>
-            <span className="text-xl font-bold flex gap-2 text-gray-400 items-center">
-              {formatPrice(pixObj?.price) || formatPrice(price)}
-              <p className="text-sm text-gray-300">
-                via PIX{" "}
-                {pixporcent && -(pixporcent - 100) % 1 < 0.5
-                  ? Math.floor(-(pixporcent - 100)) + "% OFF "
-                  : Math.ceil(-(pixporcent! - 100)) + "% OFF "}
-                ou
-              </p>
+        {availability !== "https://schema.org/InStock"
+          ? (
+            <span className="text-red-300 font-bold text-xl">
+              Fora de estoque
             </span>
-
-            {salePrice !== listPrice ? (
-              <div className="flex flex-row">
-                <span className="line-through text-sm font-normal text-gray-300">
-                  {formatPrice(listPrice, offers?.priceCurrency)}
-                </span>
-                <span className="pl-2.5 text-sm font-normal text-gray-300">
-                  {formatPrice(salePrice, offers?.priceCurrency)}
-                </span>
-              </div>
-            ) : (
-              <span className="text-sm font-normal text-gray-300">
-                {formatPrice(listPrice, offers?.priceCurrency)}
+          )
+          : (
+            <>
+              <span className="text-xl font-bold flex gap-2 text-gray-400 items-center">
+                {formatPrice(pixObj?.price) || formatPrice(price)}
+                <p className="text-sm text-gray-300">
+                  via PIX {pixporcent && -(pixporcent - 100) % 1 < 0.5
+                    ? Math.floor(-(pixporcent - 100)) + "% OFF "
+                    : Math.ceil(-(pixporcent! - 100)) + "% OFF "}
+                  ou
+                </p>
               </span>
-            )}
 
-            <span className="max-w-[265px] text-sm font-normal text-gray-300">
-              {installments}
-            </span>
-          </>
-        )}
+              {salePrice !== listPrice
+                ? (
+                  <div className="flex flex-row">
+                    <span className="line-through text-sm font-normal text-gray-300">
+                      {formatPrice(listPrice, offers?.priceCurrency)}
+                    </span>
+                    <span className="pl-2.5 text-sm font-normal text-gray-300">
+                      {formatPrice(salePrice, offers?.priceCurrency)}
+                    </span>
+                  </div>
+                )
+                : (
+                  <span className="text-sm font-normal text-gray-300">
+                    {formatPrice(listPrice, offers?.priceCurrency)}
+                  </span>
+                )}
+
+              <span className="max-w-[265px] text-sm font-normal text-gray-300">
+                {installments}
+              </span>
+            </>
+          )}
       </div>
 
       {/* Shipping Simulation */}
@@ -158,24 +163,26 @@ function ProductInfo({ page, products }: Props) {
 
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-        {availability === "https://schema.org/InStock" ? (
-          <>
-            <AddToCartButton
-              item={item}
-              seller={seller}
-              product={product}
-              class="btn btn-primary hover:bg-primary hover:border-orange-300  no-animation bg-primary border-orange-300  rounded-lg h-14"
-              disabled={false}
-            />
+        {availability === "https://schema.org/InStock"
+          ? (
+            <>
+              <AddToCartButton
+                item={item}
+                seller={seller}
+                product={product}
+                class="btn btn-primary hover:bg-primary hover:border-orange-300  no-animation bg-primary border-orange-300  rounded-lg h-14"
+                disabled={false}
+              />
 
-            {/* <AddToCartButtonVTEX
+              {
+                /* <AddToCartButtonVTEX
                 productID={productID}
                 seller={seller}
-              /> */}
-          </>
-        ) : (
-          <OutOfStock productID={productID} />
-        )}
+              /> */
+              }
+            </>
+          )
+          : <OutOfStock productID={productID} />}
       </div>
     </div>
   );

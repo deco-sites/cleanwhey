@@ -36,11 +36,10 @@ export async function action(props: Props, req: Request, ctx: AppContext) {
 }
 
 export default function Results({ result }: ComponentProps<typeof action>) {
-  const methods =
-    result?.logisticsInfo?.reduce(
-      (initial, { slas }) => [...initial, ...slas],
-      [] as Sla[]
-    ) ?? [];
+  const methods = result?.logisticsInfo?.reduce(
+    (initial, { slas }) => [...initial, ...slas],
+    [] as Sla[],
+  ) ?? [];
 
   if (!methods.length) {
     return (

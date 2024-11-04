@@ -37,7 +37,7 @@ export default function ProductDetails({ page, products }: Props) {
         class={clx(
           "container grid",
           "grid-cols-1 gap-2 py-0",
-          "sm:grid-cols-5 sm:gap-6"
+          "sm:grid-cols-5 sm:gap-6",
         )}
       >
         <div class="sm:col-span-3 md:pr-12">

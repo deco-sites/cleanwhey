@@ -36,7 +36,10 @@ const Desktop = ({ items }: Props) => {
                 loading={"lazy"}
               />
             </div>
-            <a class="text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.50)] absolute top-0  left-0 w-full h-full flex flex-col items-center justify-center text-center" href={item.link?.url}>
+            <a
+              class="text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.50)] absolute top-0  left-0 w-full h-full flex flex-col items-center justify-center text-center"
+              href={item.link?.url}
+            >
               <p class="mb-3 font-regular text-sm text-white">
                 {item.subtitle}
               </p>
