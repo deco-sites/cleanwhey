@@ -1,3 +1,19 @@
 {
-  "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts"
+  "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
+  "sort": "price:desc",
+  "fuzzy": "automatic",
+  "selectedFacets": [
+    {
+      "key": "brand",
+      "value": "Clean Whey"
+    },
+    {
+      "key": "tamanho",
+      "value": "sache-30g"
+    }
+  ],
+  "count": 10,
+  "similars": true,
+  "priceFacets": true,
+  "hideUnavailableItems": true
 }
