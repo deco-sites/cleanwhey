@@ -8,20 +8,19 @@ export interface Titles {
 
 function Banner({ subTitle, title, BgColor }: Titles) {
   return (
-    <div
-      class="container flex flex-col px-6 py-5 mt-5"
-      style={{ background: BgColor }}
-    >
-      {title && (
-        <h1>
-          <span dangerouslySetInnerHTML={{ __html: title }} />
-        </h1>
-      )}
-      {subTitle && (
-        <h2>
-          <span dangerouslySetInnerHTML={{ __html: subTitle }} />
-        </h2>
-      )}
+    <div style={{ background: BgColor }}>
+      <div class="container flex flex-col px-6 py-5">
+        {title && (
+          <h1>
+            <span dangerouslySetInnerHTML={{ __html: title }} />
+          </h1>
+        )}
+        {subTitle && (
+          <h2>
+            <span dangerouslySetInnerHTML={{ __html: subTitle }} />
+          </h2>
+        )}
+      </div>
     </div>
   );
 }
