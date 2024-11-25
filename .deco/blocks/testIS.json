@@ -1,5 +1,6 @@
 {
   "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
-  "slug": "clean-whey-isolate-tasty-cacau-belga/p?skuId=38",
-  "similars": true
+  "slug": "clean-whey-concentrate-classic-sem-sabor/p?skuId=10",
+  "similars": true,
+  "indexingSkus": true
 }

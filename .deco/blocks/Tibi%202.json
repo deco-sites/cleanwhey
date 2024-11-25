@@ -1,0 +1,18 @@
+{
+  "__resolveType": "site/sections/UI/textwithimage.tsx",
+  "image": {
+    "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/0c5cd556-0a93-4de6-aada-6aeec4ae93d6/TIBI-7.png",
+    "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/ed9f9424-f78b-4d0b-8601-d4cd9ae1f751/TIBI-7.png",
+    "widthDesktop": 540,
+    "heigthhDesktop": 601,
+    "heigthMobile": 405,
+    "widthMobile": 270,
+    "alt": "Tibi Foto"
+  },
+  "texto": "<p><span style=\"font-size: 14pt\">O cantor, compositor e multi-instrumentista Tibí é a prova viva de que é possível conciliar uma carreira artística intensa com um estilo de vida saudável e ativo.<br>Conhecido por sua voz marcante e suas composições inspiradoras, ele também é um grande entusiasta da prática de exercícios físicos e da alimentação equilibrada.<br>Ao superar diversas alergias através da mudança de hábitos alimentares e da inclusão de suplementos de alta qualidade em sua rotina, Tibí encontrou na Clean Whey o parceiro ideal para alcançar seus objetivos.<br>Atualmente, ele é embaixador da marca e compartilha com seus fãs a importância de cuidar da saúde e do bem-estar.<br>Com uma energia contagiante e uma determinação inabalável, Tibí inspira milhares de pessoas a buscarem seus sonhos e a viverem uma vida mais saudável.<br>Se você busca um estilo de vida mais ativo e quer ter mais energia para realizar seus objetivos, inspire-se na história de Tibí e conheça os produtos&nbsp;Clean&nbsp;Whey.\"</span></p>",
+  "description": "<p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p>",
+  "label": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "placement": "left",
+  "borderRadius": "full",
+  "margem": false
+}

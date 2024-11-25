@@ -15,7 +15,7 @@ function Content(props: SectionProps<ReturnType<typeof loader>>) {
   }
   const { secoes } = content;
   return (
-    <div class="grid grid-cols-1 grid-rows-1 bg-white-300">
+    <div class="grid grid-cols-1 grid-rows-1 bg-white-300  mx-2.5 lg:mx-0">
       {secoes.map((secao) => (
         <div class="bg-white-300">
           <secao.Component {...secao.props} />

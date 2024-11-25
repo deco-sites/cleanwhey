@@ -6,10 +6,10 @@ export interface Titles {
   subTitle?: RichText;
 }
 
-function Banner({ subTitle, title, BgColor }: Titles) {
+function Titles({ subTitle, title, BgColor }: Titles) {
   return (
     <div style={{ background: BgColor }}>
-      <div class="container flex flex-col px-6 py-5">
+      <div class="container flex flex-col px-6 py-5 ">
         {title && (
           <h1>
             <span dangerouslySetInnerHTML={{ __html: title }} />
@@ -24,4 +24,4 @@ function Banner({ subTitle, title, BgColor }: Titles) {
     </div>
   );
 }
-export default Banner;
+export default Titles;
