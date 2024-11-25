@@ -1,0 +1,106 @@
+{
+  "name": "Sachês",
+  "path": "/saches",
+  "sections": [
+    {
+      "__resolveType": "commerce/sections/Seo/SeoPLP.tsx",
+      "jsonLD": {
+        "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
+        "sort": "price:desc",
+        "fuzzy": "automatic",
+        "selectedFacets": [],
+        "count": 12,
+        "query": "sache"
+      }
+    },
+    {
+      "__resolveType": "Header"
+    },
+    {
+      "__resolveType": "Category Banner - 01"
+    },
+    {
+      "__resolveType": "site/sections/Product/SearchResult.tsx",
+      "page": {
+        "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
+        "sort": "orders:desc",
+        "fuzzy": "automatic",
+        "selectedFacets": [
+          {
+            "key": "brand",
+            "value": "Clean Whey"
+          }
+        ],
+        "count": 24,
+        "pageOffset": 1,
+        "hideUnavailableItems": false,
+        "query": "sache"
+      },
+      "layout": {
+        "columns": {
+          "mobile": 2,
+          "desktop": 4
+        },
+        "variant": "aside",
+        "pagination": "show-more"
+      },
+      "pix": {
+        "__resolveType": "Payment - Pix"
+      },
+      "notFound": {
+        "image": {
+          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/0278d7e6-6cdc-4270-b73d-de6cd41ef02a/banner.png",
+          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/8411c4b4-c099-4fe5-bc5c-b9f1d9b4171a/banner-(1).png"
+        },
+        "shelf": {
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "count": 8,
+              "fuzzy": "automatic",
+              "query": "144"
+            }
+          }
+        }
+      },
+      "startingPage": 0
+    },
+    {
+      "__resolveType": "site/sections/Category/CategoryCards.tsx",
+      "sections": [
+        {
+          "cards": [
+            {
+              "description": "<p><span>Proteínas são essenciais para a reparação e crescimento dos músculos, auxiliando no ganho de massa muscular.</span></p>",
+              "subtitle": "Construção Muscular"
+            },
+            {
+              "description": "<p><span>A ingestão adequada de proteínas ajuda na recuperação muscular após exercícios intensos, reduzindo a fadiga e o tempo de recuperação.</span></p>",
+              "subtitle": "Recuperação Rápida"
+            },
+            {
+              "description": "<p><span>Proteínas aumentam a sensação de saciedade, ajudando no controle do apetite e na manutenção de um peso saudável.</span></p>",
+              "subtitle": "Controle de Peso"
+            }
+          ],
+          "title": "<p><span>Por que incluir </span><span style=\"color: #e06741\">proteínas </span><span>na sua dieta?</span></p>",
+          "matcher": "/*"
+        }
+      ]
+    },
+    {
+      "__resolveType": "website/sections/Rendering/SingleDeferred.tsx",
+      "section": {
+        "__resolveType": "Newsletter Home"
+      }
+    },
+    {
+      "__resolveType": "Footer"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
