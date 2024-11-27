@@ -24,7 +24,7 @@ function BannerPost(props: BannerPost) {
   const { image } = props;
 
   return (
-    <div class="grid grid-cols-1 grid-rows-1">
+    <div class="grid grid-cols-1 grid-rows-1 container">
       <Picture preload class="col-start-1 col-span-1 row-start-1 row-span-1">
         <Source
           src={image.mobile}

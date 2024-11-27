@@ -1,0 +1,224 @@
+{
+  "name": "Blog Post New",
+  "path": "/blog2/:slug",
+  "sections": [
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Header"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/BlogGrid/PageBlog.tsx",
+        "post": {
+          "authors": [],
+          "categories": [],
+          "seo": {},
+          "extraProps": [],
+          "sections": []
+        },
+        "matcher": "Categoria",
+        "contents": [
+          {
+            "secoes": [
+              {
+                "__resolveType": "website/sections/Rendering/Lazy.tsx",
+                "section": {
+                  "__resolveType": "site/sections/UI/title.tsx",
+                  "title": "<p><span style=\"color: rgb(255, 255, 255); font-size: 25pt\">Tibi</span></p>",
+                  "subTitle": "<p><span style=\"color: rgb(255, 255, 255); font-size: 16pt\">Tibí: Energia e Foco para Conquistar Seus Objetivos</span></p>",
+                  "BgColor": "#102A4C"
+                }
+              },
+              {
+                "__resolveType": "website/sections/Rendering/Lazy.tsx",
+                "section": {
+                  "__resolveType": "site/sections/UI/textwithimage.tsx",
+                  "image": {
+                    "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/0c5cd556-0a93-4de6-aada-6aeec4ae93d6/TIBI-7.png",
+                    "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/ed9f9424-f78b-4d0b-8601-d4cd9ae1f751/TIBI-7.png",
+                    "heigthMobile": 405,
+                    "widthMobile": 270,
+                    "alt": "Tibi Foto",
+                    "widthDesktop": 540,
+                    "heigthhDesktop": 601,
+                    "heightDesktop": 810,
+                    "heightMobile": 810
+                  },
+                  "texto": "<p><span style=\"color: #525252; font-size: 16pt\">O cantor, compositor e multi-instrumentista Tibí é a prova viva de que é possível conciliar uma carreira artística intensa com um estilo de vida saudável e ativo.<br>Conhecido por sua voz marcante e suas composições inspiradoras, ele também é um grande entusiasta da prática de exercícios físicos e da alimentação equilibrada.<br>Ao superar diversas alergias através da mudança de hábitos alimentares e da inclusão de suplementos de alta qualidade em sua rotina, Tibí encontrou na Clean Whey o parceiro ideal para alcançar seus objetivos.<br>Atualmente, ele é embaixador da marca e compartilha com seus fãs a importância de cuidar da saúde e do bem-estar.<br>Com uma energia contagiante e uma determinação inabalável, Tibí inspira milhares de pessoas a buscarem seus sonhos e a viverem uma vida mais saudável.<br>Se você busca um estilo de vida mais ativo e quer ter mais energia para realizar seus objetivos, inspire-se na história de Tibí e conheça os produtos&nbsp;Clean&nbsp;Whey.\"</span></p>",
+                  "description": "<p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p>",
+                  "label": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                  "placement": "right",
+                  "borderRadius": "md",
+                  "margem": false,
+                  "marginYDesktop": 10,
+                  "marginYMobile": 10,
+                  "sizeOption": "half",
+                  "widthComponente": "1/2"
+                }
+              },
+              {
+                "__resolveType": "website/sections/Rendering/Lazy.tsx",
+                "section": {
+                  "__resolveType": "site/sections/UI/textwithimage.tsx",
+                  "image": {
+                    "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/0c5cd556-0a93-4de6-aada-6aeec4ae93d6/TIBI-7.png",
+                    "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/ed9f9424-f78b-4d0b-8601-d4cd9ae1f751/TIBI-7.png",
+                    "widthDesktop": 540,
+                    "heigthhDesktop": 601,
+                    "heigthMobile": 405,
+                    "widthMobile": 270,
+                    "alt": "Tibi Foto",
+                    "heightDesktop": 810,
+                    "heightMobile": 810
+                  },
+                  "texto": "<p><span style=\"font-size: 14pt\">O cantor, compositor e multi-instrumentista Tibí é a prova viva de que é possível conciliar uma carreira artística intensa com um estilo de vida saudável e ativo.<br>Conhecido por sua voz marcante e suas composições inspiradoras, ele também é um grande entusiasta da prática de exercícios físicos e da alimentação equilibrada.<br>Ao superar diversas alergias através da mudança de hábitos alimentares e da inclusão de suplementos de alta qualidade em sua rotina, Tibí encontrou na Clean Whey o parceiro ideal para alcançar seus objetivos.<br>Atualmente, ele é embaixador da marca e compartilha com seus fãs a importância de cuidar da saúde e do bem-estar.<br>Com uma energia contagiante e uma determinação inabalável, Tibí inspira milhares de pessoas a buscarem seus sonhos e a viverem uma vida mais saudável.<br>Se você busca um estilo de vida mais ativo e quer ter mais energia para realizar seus objetivos, inspire-se na história de Tibí e conheça os produtos&nbsp;Clean&nbsp;Whey.\"</span></p>",
+                  "description": "<p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p>",
+                  "label": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                  "placement": "left",
+                  "borderRadius": "full",
+                  "margem": false,
+                  "sizeOption": "half",
+                  "widthComponente": "1/2"
+                }
+              },
+              {
+                "__resolveType": "website/sections/Rendering/Lazy.tsx",
+                "section": {
+                  "__resolveType": "site/sections/UI/title.tsx",
+                  "title": "<p style=\"text-align: center\"><span style=\"color: rgb(255, 255, 255); font-size: 16pt\">MEU FAVORITO</span></p>",
+                  "subTitle": "<p></p>",
+                  "BgColor": "#102A4C"
+                }
+              },
+              {
+                "__resolveType": "website/sections/Rendering/Lazy.tsx",
+                "section": {
+                  "__resolveType": "site/sections/UI/textwithimage.tsx",
+                  "image": {
+                    "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/0c5cd556-0a93-4de6-aada-6aeec4ae93d6/TIBI-7.png",
+                    "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/ed9f9424-f78b-4d0b-8601-d4cd9ae1f751/TIBI-7.png",
+                    "widthDesktop": 540,
+                    "heigthhDesktop": 601,
+                    "heigthMobile": 405,
+                    "widthMobile": 270,
+                    "alt": "Tibi Foto",
+                    "heightDesktop": 810,
+                    "heightMobile": 810
+                  },
+                  "texto": "<p style=\"text-align: justify\"><strong><span style=\"font-size: 14pt\">O cantor, compositor e multi-instrumentista Tibí é a prova viva de que é possível conciliar uma carreira artística intensa com um estilo de vida saudável e ativo.</span></strong><em><span style=\"font-size: 14pt\"><br>Conhecido por sua voz marcante e suas composições inspiradoras, ele também é um grande entusiasta da prática de exercícios físicos e da alimentação equilibrada.</span></em><span style=\"font-size: 14pt\"><br>Ao superar diversas alergias através da </span><u><span style=\"font-size: 14pt\">mudança </span></u><span style=\"font-size: 14pt\">de hábitos alimentares e da inclusão de suplementos de alta qualidade em sua rotina, Tibí encontrou na Clean Whey o parceiro ideal para alcançar seus objetivos.<br>Atualmente, ele é embaixador da marca e compartilha com seus fãs a importância de cuidar da saúde e do bem-estar.<br>Com uma energia contagiante e uma determinação inabalável, Tibí inspira milhares de pessoas a buscarem seus sonhos e a viverem uma vida mais saudável.<br>Se você busca um estilo de vida mais ativo e quer ter mais energia para realizar seus objetivos, inspire-se na história de Tibí e conheça os produtos&nbsp;Clean&nbsp;Whey.\"</span></p>",
+                  "description": "<p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p><p><strong>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</strong></p>",
+                  "label": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                  "placement": "right",
+                  "borderRadius": "none",
+                  "margem": true,
+                  "widthComponente": "1/2"
+                }
+              }
+            ],
+            "matcher": "/blog2/Tibi"
+          },
+          {
+            "secoes": [
+              {
+                "__resolveType": "website/sections/Rendering/Lazy.tsx",
+                "section": {
+                  "__resolveType": "site/sections/UI/title.tsx",
+                  "subTitle": "<p><strong><span style=\"color: #ffffff; font-size: 16pt\">Júnior Pimenta: Do Ringue para a Vida</span></strong></p>",
+                  "title": "<p><strong><span style=\"color: #ffffff; font-size: 18pt\">Pimenta</span></strong></p>",
+                  "BgColor": "#102A4C"
+                }
+              },
+              {
+                "__resolveType": "website/sections/Rendering/Lazy.tsx",
+                "section": {
+                  "__resolveType": "site/sections/Category/BannerPost.tsx",
+                  "image": {
+                    "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/daff43e9-37fa-424b-9ca1-e73cb6e0df3a/pimenta-pg-dele.jpeg",
+                    "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/daff43e9-37fa-424b-9ca1-e73cb6e0df3a/pimenta-pg-dele.jpeg",
+                    "widthDesktop": 1429,
+                    "heightDesktop": 500,
+                    "widthMobile": 1429,
+                    "heightMobile": 500
+                  },
+                  "title": "<p>TesteTestes</p>"
+                }
+              },
+              {
+                "__resolveType": "website/sections/Rendering/Lazy.tsx",
+                "section": {
+                  "__resolveType": "site/sections/UI/textwithimage.tsx",
+                  "image": {
+                    "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/2a3eac92-f5e5-4faf-a5b7-01b03affc9c5/fotos-clean-whey-67.jpg",
+                    "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/5c487567-8329-4541-b138-58d1eb250ee3/fotos-clean-whey-67.jpg",
+                    "heightDesktop": 500,
+                    "widthMobile": 600,
+                    "heightMobile": 400,
+                    "widthDesktop": 1000
+                  },
+                  "placement": "left",
+                  "texto": "<p><span style=\"font-size: 14pt\">Com mais de 20 anos de experiência no Muay Thai, Júnior Pimenta é uma referência no mundo das artes marciais. Idealizador e proprietário da Pimenta Fight Club, ele transformou sua paixão em um estilo de vida e em um negócio de sucesso.<br>Após uma imersão na Tailândia, berço do Muay Thai, Júnior trouxe para o Brasil um método de treinamento único e eficaz, que combina a tradição das artes marciais com os princípios do condicionamento físico moderno. Sua academia se tornou um verdadeiro celeiro de talentos e um espaço onde pessoas de todas as idades e níveis podem encontrar saúde, bem-estar e superação pessoal.</span></p>",
+                  "margem": true,
+                  "widthComponente": "3/5"
+                }
+              },
+              {
+                "__resolveType": "website/sections/Rendering/Lazy.tsx",
+                "section": {
+                  "__resolveType": "site/sections/UI/textwithimage.tsx",
+                  "image": {
+                    "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/00616e36-ad89-49c3-83e1-764755dc9f52/fotos-clean-whey-77.jpg",
+                    "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/6b106f36-66f3-42ca-bff7-06d17b9f8dae/fotos-clean-whey-77.jpg",
+                    "widthDesktop": 266,
+                    "heightDesktop": 200,
+                    "widthMobile": 266,
+                    "heightMobile": 300
+                  },
+                  "placement": "right",
+                  "texto": "<p><span style=\"font-size: 14pt\">A conexão entre esporte, nutrição e bem-estar é fundamental para o sucesso de Júnior e de seus alunos. A Clean Whey, com seus produtos de alta qualidade, se alinha perfeitamente com essa filosofia. Ao fornecer os nutrientes essenciais para uma recuperação muscular eficiente e um desempenho otimizado, os suplementos Clean Whey complementam os treinos intensos e ajudam a alcançar resultados ainda mais&nbsp;expressivos.</span></p>",
+                  "borderRadius": "none",
+                  "margem": false,
+                  "sizeOption": "full",
+                  "widthComponente": "1/2"
+                }
+              },
+              {
+                "__resolveType": "website/sections/Rendering/Lazy.tsx",
+                "section": {
+                  "__resolveType": "site/sections/UI/title.tsx",
+                  "title": "<p><span style=\"color: #ffffff; font-size: 16pt\">Meu sabor favorito</span></p>",
+                  "BgColor": "#102A4C"
+                }
+              },
+              {
+                "__resolveType": "website/sections/Rendering/Lazy.tsx",
+                "section": {
+                  "__resolveType": "site/sections/Institucional/VideoPost.tsx",
+                  "video": "https://youtu.be/zUyNNrVVMLs",
+                  "videoThumbnail": "https://youtu.be/zUyNNrVVMLs",
+                  "alt": "adasasdas",
+                  "widthComponente": "7/12",
+                  "texto": "<p><span style=\"font-size: 14pt\">Hoje é dia de aprender a receita do nosso \"Brownie Fit Proteico\", com o Chef Thiago Ribeiro.</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">Ingredientes</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- 2 colheres de sopa de farinha de coco</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- 2 colheres de sopa de manteiga ghee</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- 2 colheres de sopa de Xylitol ou Eritritol</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- 2 ovos inteiros</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- 1/2 xicara de Whey Cacau Belga Clean Whey</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- 100g de chocolate 70% derretido</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- 50g de castanhas picadas Modo de Preparo</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- Derreta a manteiga e misture com os ovos até obter uma espuma.</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">Derreta o chocolate incorporando à mistura de ovos e manteiga.</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- Adicione os demais ingredientes até formar uma massa homogênea e lisa.</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- Leve para assar em forno pré-aquecido a 180ºC em forma com papel manteiga por 15 a 20 minutos.</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- Espere esfriar para cortar.</span></p>",
+                  "placement": "right"
+                }
+              }
+            ],
+            "matcher": "/blog2/junior-pimenta-do-ringue-para-a-vida"
+          }
+        ]
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Footer"
+      }
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
