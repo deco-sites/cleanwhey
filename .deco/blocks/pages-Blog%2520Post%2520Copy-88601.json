@@ -161,7 +161,8 @@
                   "placement": "left",
                   "texto": "<p><span style=\"font-size: 14pt\">Com mais de 20 anos de experiência no Muay Thai, Júnior Pimenta é uma referência no mundo das artes marciais. Idealizador e proprietário da Pimenta Fight Club, ele transformou sua paixão em um estilo de vida e em um negócio de sucesso.<br>Após uma imersão na Tailândia, berço do Muay Thai, Júnior trouxe para o Brasil um método de treinamento único e eficaz, que combina a tradição das artes marciais com os princípios do condicionamento físico moderno. Sua academia se tornou um verdadeiro celeiro de talentos e um espaço onde pessoas de todas as idades e níveis podem encontrar saúde, bem-estar e superação pessoal.</span></p>",
                   "margem": true,
-                  "widthComponente": "3/5"
+                  "widthComponente": "3/5",
+                  "textoMobile": "<p><span style=\"font-size: 11pt\">Com mais de 20 anos de experiência no Muay Thai, Júnior Pimenta é uma referência no mundo das artes marciais. Idealizador e proprietário da Pimenta Fight Club, ele transformou sua paixão em um estilo de vida e em um negócio de sucesso.<br>Após uma imersão na Tailândia, berço do Muay Thai, Júnior trouxe para o Brasil um método de treinamento único e eficaz, que combina a tradição das artes marciais com os princípios do condicionamento físico moderno. Sua academia se tornou um verdadeiro celeiro de talentos e um espaço onde pessoas de todas as idades e níveis podem encontrar saúde, bem-estar e superação pessoal.</span></p>"
                 }
               },
               {
@@ -181,7 +182,8 @@
                   "borderRadius": "none",
                   "margem": false,
                   "sizeOption": "full",
-                  "widthComponente": "1/2"
+                  "widthComponente": "1/2",
+                  "textoMobile": "<p><span style=\"font-size: 12pt\">A conexão entre esporte, nutrição e bem-estar é fundamental para o sucesso de Júnior e de seus alunos. A Clean Whey, com seus produtos de alta qualidade, se alinha perfeitamente com essa filosofia. Ao fornecer os nutrientes essenciais para uma recuperação muscular eficiente e um desempenho otimizado, os suplementos Clean Whey complementam os treinos intensos e ajudam a alcançar resultados ainda mais&nbsp;expressivos.</span></p>"
                 }
               },
               {
@@ -201,13 +203,28 @@
                   "alt": "adasasdas",
                   "widthComponente": "7/12",
                   "texto": "<p><span style=\"font-size: 14pt\">Hoje é dia de aprender a receita do nosso \"Brownie Fit Proteico\", com o Chef Thiago Ribeiro.</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">Ingredientes</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- 2 colheres de sopa de farinha de coco</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- 2 colheres de sopa de manteiga ghee</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- 2 colheres de sopa de Xylitol ou Eritritol</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- 2 ovos inteiros</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- 1/2 xicara de Whey Cacau Belga Clean Whey</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- 100g de chocolate 70% derretido</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- 50g de castanhas picadas Modo de Preparo</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- Derreta a manteiga e misture com os ovos até obter uma espuma.</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">Derreta o chocolate incorporando à mistura de ovos e manteiga.</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- Adicione os demais ingredientes até formar uma massa homogênea e lisa.</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- Leve para assar em forno pré-aquecido a 180ºC em forma com papel manteiga por 15 a 20 minutos.</span></p><p style=\"text-align: start\"><span style=\"font-size: 14pt\">- Espere esfriar para cortar.</span></p>",
-                  "placement": "right"
+                  "placement": "right",
+                  "textoMobile": "<p><span style=\"font-size: 11pt\">Hoje é dia de aprender a receita do nosso \"Brownie Fit Proteico\", com o Chef Thiago Ribeiro.</span></p><p style=\"text-align: start\"><span style=\"font-size: 11pt\">Ingredientes</span></p><p style=\"text-align: start\"><span style=\"font-size: 11pt\">- 2 colheres de sopa de farinha de coco</span></p><p style=\"text-align: start\"><span style=\"font-size: 11pt\">- 2 colheres de sopa de manteiga ghee</span></p><p style=\"text-align: start\"><span style=\"font-size: 11pt\">- 2 colheres de sopa de Xylitol ou Eritritol</span></p><p style=\"text-align: start\"><span style=\"font-size: 11pt\">- 2 ovos inteiros</span></p><p style=\"text-align: start\"><span style=\"font-size: 11pt\">- 1/2 xicara de Whey Cacau Belga Clean Whey</span></p><p style=\"text-align: start\"><span style=\"font-size: 11pt\">- 100g de chocolate 70% derretido</span></p><p style=\"text-align: start\"><span style=\"font-size: 11pt\">- 50g de castanhas picadas Modo de Preparo</span></p><p style=\"text-align: start\"><span style=\"font-size: 11pt\">- Derreta a manteiga e misture com os ovos até obter uma espuma.</span></p><p style=\"text-align: start\"><span style=\"font-size: 11pt\">Derreta o chocolate incorporando à mistura de ovos e manteiga.</span></p><p style=\"text-align: start\"><span style=\"font-size: 11pt\">- Adicione os demais ingredientes até formar uma massa homogênea e lisa.</span></p><p style=\"text-align: start\"><span style=\"font-size: 11pt\">- Leve para assar em forno pré-aquecido a 180ºC em forma com papel manteiga por 15 a 20 minutos.</span></p><p style=\"text-align: start\"><span style=\"font-size: 11pt\">- Espere esfriar para cortar.</span></p>"
                 }
               }
             ],
-            "matcher": "/blog2/junior-pimenta-do-ringue-para-a-vida"
+            "matcher": "/blog2/junior-pimenta-do-ringue-para-a-vida",
+            "posts": {
+              "__resolveType": "blog/loaders/BlogpostList.ts",
+              "sortBy": "date_desc",
+              "count": 8,
+              "slug": {
+                "__resolveType": "website/functions/requestToParam.ts",
+                "param": "slug"
+              }
+            }
           }
-        ]
+        ],
+        "posts": {
+          "__resolveType": "blog/loaders/BlogpostList.ts",
+          "sortBy": "date_desc",
+          "count": 8
+        }
       }
     },
     {

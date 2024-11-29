@@ -116,7 +116,6 @@ export default function BlogPosts({
                 </div>
               </figure>
               <div class="p-2 space-y-4 flex flex-col flex-1">
-                {/* <div class="font-semibold">{calculateReadingTime(post.content.split(" ").length)}</div> */}
                 <div class="space-y-2 flex-1">
                   <h3
                     class="text-base text-gray-400 font-normal mt-2.5"
@@ -124,21 +123,20 @@ export default function BlogPosts({
                   >
                     {post.title}
                   </h3>
-                  {/* {post.excerpt?.length > 5 && <p class="text-base">{post.excerpt}</p>} */}
                 </div>
 
                 <div class="flex flex-wrap gap-2 items-center justify-between">
                   <span class="text-gray-300 text-sm font-normal">
                     {post.date
                       ? new Date(post.date)
-                        .toLocaleDateString("pt-BR", {
-                          month: "short", // Retorna o mês abreviado (ex: "mai")
-                          day: "numeric",
-                          year: "2-digit", // Retorna o ano com dois dígitos (ex: "24")
-                        })
-                        .replace(" de ", " ")
-                        .replace(".", "")
-                        .replace(" de ", ", ")
+                          .toLocaleDateString("pt-BR", {
+                            month: "short",
+                            day: "numeric",
+                            year: "2-digit",
+                          })
+                          .replace(" de ", " ")
+                          .replace(".", "")
+                          .replace(" de ", ", ")
                       : ""}
                   </span>
                   <a
@@ -147,10 +145,8 @@ export default function BlogPosts({
                   >
                     <Icon class="text-white" id={"arrow-right-custom"} />
                   </a>
-                  {
-                    /* <span>•</span>
-                  <span>{post.authors[0]?.name}</span> */
-                  }
+                  {/* <span>•</span>
+                  <span>{post.authors[0]?.name}</span> */}
                 </div>
               </div>
             </div>
