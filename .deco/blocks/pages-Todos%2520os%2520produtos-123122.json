@@ -62,7 +62,7 @@
           }
         }
       },
-      "startingPage": 0
+      "startingPage": 1
     },
     {
       "__resolveType": "site/sections/Category/CategoryCards.tsx",
