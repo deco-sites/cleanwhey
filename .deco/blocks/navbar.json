@@ -68,6 +68,19 @@
             {
               "image": [],
               "children": [],
+              "name": "Creatina",
+              "url": "/creatina"
+            }
+          ],
+          "name": "Performance",
+          "url": "/141?map=productClusterIds"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
               "name": "Pote",
               "url": "/todos-os-produtos?sort=price%3Adesc&filter.tamanho=pote-1020g&filter.tamanho=pote-600g&filter.tamanho=pote-900g&page=1"
             },
@@ -126,20 +139,14 @@
         },
         {
           "image": [],
-          "children": [],
           "name": "Mais Vendidos",
-          "url": "142?map=productClusterIds&page=1"
+          "url": "142?map=productClusterIds&page=1",
+          "children": []
         },
         {
           "image": [],
-          "name": "Assinaturas",
-          "url": "/assinaturas"
-        },
-        {
-          "image": [],
-          "children": [],
-          "url": "/141?map=productClusterIds",
-          "name": "Performance"
+          "url": "/assinaturas",
+          "name": "Assinaturas"
         }
       ],
       "image": [
