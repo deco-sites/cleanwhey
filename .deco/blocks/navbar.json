@@ -83,30 +83,31 @@
               "children": [],
               "name": "Pote",
               "url": "/todos-os-produtos?sort=price%3Adesc&filter.tamanho=pote-1020g&filter.tamanho=pote-600g&filter.tamanho=pote-900g&page=1"
+
             },
             {
               "image": [],
               "children": [],
               "name": "Saco",
-              "url": "/todos-os-produtos?sort=price%3Adesc&filter.tamanho=saco-5kg&page=1"
+              "url": "/sacos"
             },
             {
               "image": [],
               "children": [],
               "name": "Refil",
-              "url": "/todos-os-produtos?sort=price%3Adesc&filter.tamanho=refil-1800g&filter.tamanho=refil-450g&page=1"
+              "url": "/refil"
             },
             {
               "image": [],
               "children": [],
               "name": "Lata",
-              "url": "/todos-os-produtos?sort=price%3Adesc&filter.tamanho=lata-300g&filter.tamanho=lata-360g&page=1"
+              "url": "/latas"
             },
             {
               "image": [],
               "children": [],
               "name": "Sachê",
-              "url": "/todos-os-produtos?sort=price%3Adesc&filter.tamanho=sache-15g&filter.tamanho=sachet-30g&filter.tamanho=sache-30g&page=1"
+              "url": "/saches"
             }
           ],
           "name": "Embalagem",
