@@ -14410,11 +14410,11 @@
               },
               "rightImage": {
                 "alt": "Banner Right",
-                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/39a64b70-dcb0-4f9c-a073-3847ff3c0e69",
-                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/f00fce12-8376-4fce-b66f-e575d8f81c6d"
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/a4b5955c-f5e9-4064-a79c-202e226d2f65",
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/d2a5c2ca-2e42-4fc4-99e1-71784bc6e5f7"
               },
-              "title": "Clean Whey Classic Hydrolysate",
-              "description": "<p><span style=\"font-size: 12pt; color: rgb(161, 166, 183);\" data-mce-style=\"font-size: 12pt; color: rgb(161, 166, 183);\">Clean Whey® Hydrolysate é o único whey protein hidrolisado neutro 100% Glanbia Nutritionals Inc (Hydrovon® 195). Em um exclusivo processo, enzimas específicas proporcionam uma hidrólise seletiva para quebrar a proteína em moléculas menores. Possuí apenas um ingrediente na sua composição e a versatilidade do sabor neutro</span></p>",
+              "title": "Clean Whey Hydrolysate Tasty Cacau Belga",
+              "description": "<p><span style=\"font-size: 12pt; color: rgb(161, 166, 183);\" data-mce-style=\"font-size: 12pt; color: rgb(161, 166, 183);\">Clean Whey® Hydrolysate Tasty Cacau Belga é elaborado com a proteína hidrolisada do soro do leite 100% produzida pela Glanbia Nutritionals Inc. (HYdrovon 195), não contém adição de açúcares, espessantes, corantes, conservantes e aromatizantes artificiais, sendo um produto totalmente clean label.</span></p>",
               "id": "visao-geral"
             },
             {
@@ -14536,7 +14536,7 @@
                   "112": "1",
                   "113": "3",
                   "114": "0",
-                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/6923a45c-3734-4527-8c6c-cb4e6f3f982e"
+                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/ae69326f-6653-49b9-86af-54df9bf5a513"
                 },
                 "mobile": {
                   "0": "h",
@@ -14654,9 +14654,9 @@
                   "112": "5",
                   "113": "3",
                   "114": "9",
-                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/0979356d-9e03-4e92-ba2b-af834d20a3a8"
+                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/625119ab-d77b-4604-a641-03f1dafcc23b"
                 },
-                "alt": "Mocaccino Whey Proteico"
+                "alt": "Clean Whey Hydrolysate Tasty Cacau Belga"
               },
               "benefits": [
                 {
@@ -14667,7 +14667,7 @@
                 {
                   "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/71f8a5f1-8164-4e49-8944-3d66d095cea0",
                   "title": "Tecnologia Glanbia",
-                  "description": "Produzida pelo exclusivo método CFM®"
+                  "description": "Produzida pelo exclusivo método CFM"
                 },
                 {
                   "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/71f8a5f1-8164-4e49-8944-3d66d095cea0",
@@ -14678,25 +14678,28 @@
               "title": "<p><strong><span style=\"font-size: 24pt; color: rgb(161, 166, 183);\" data-mce-style=\"font-size: 24pt; color: rgb(161, 166, 183);\">A bebida <span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">perfeita</span> para aquecer seu inverno!</span></strong></p>"
             },
             {
-              "__resolveType": "site/sections/ProductPage/DescriptionFullbanner.tsx",
-              "banner": {
-                "desktop": {
-                  "alt": "Fullbanner",
-                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/31c71962-106c-48dd-b3a8-30ce0ad0d71b"
+              "__resolveType": "website/sections/Rendering/Lazy.tsx",
+              "section": {
+                "__resolveType": "site/sections/ProductPage/DescriptionFullbanner.tsx",
+                "banner": {
+                  "desktop": {
+                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c4b152f3-a9d8-4438-80d2-eb6871e1dcf6",
+                    "alt": "Fullbanner"
+                  },
+                  "mobile": {
+                    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/bc3788d3-e867-46eb-a707-d6a261687844",
+                    "alt": "Fullbanner",
+                    "width": 380,
+                    "height": 1087
+                  }
                 },
-                "mobile": {
-                  "alt": "Fullbanner",
-                  "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/a558d323-2053-4419-b3d4-910d1ea1a3d3",
-                  "width": 380,
-                  "height": 1087
-                }
-              },
-              "title": "Faça a escolha certa você também!",
-              "subtitle": "Confira os diferenciais que te proporcionam uma qualidade superior",
-              "content": "<ul><li>Fabricado com a puríssima proteína da Glanbia Nutritionals Inc. (Hydrovon® 195) </li><li>Fabricado pelo método Cross Flow Microfiltration (CFM)</li><li>Altíssima concentração proteica de 91% </li><li>Maiores quantidades de BCAA (valina, leucina e isoleucina) </li><li>100% monoingrediente </li><li>100% instantâneo </li><li>Dissolução fácil e rápida </li><li>Rápida digestão e absorção o que potencializa a recuperação mucular </li><li>Reduzidos teores de gordura e sódio </li><li>0% de carboidrato</li><li>Alto valor biológico: 22,5% de glicomacropeptídeos </li><li>Baixíssimos teores de lactose: 0,3g a cada 100g de produto </li><li>Sem adição de açúcares ou adoçantes </li><li>Sem conservantes, corantes ou edulcorantes</li></ul>",
-              "rightCard": {
-                "title": "Ingredientes glanbia",
-                "content": "<ul><li>Certificação antidoping </li><li>Certificação Kosher (para judeus) </li><li>Certificação Halal (para muçulmanos) </li><li>Non-GMO (livre de transgênicos) </li><li>Livre dos hormônios rbST e rbGH (hormônio do crescimento artificial) </li><li>Indicado também para uso em pacientes internados com síndrome disabsortiva, pacientes oncológicos e pós-cirúgico;</li></ul>"
+                "content": "<ul><li>Fabricado com a puríssima proteína da Glanbia Nutritionals Inc. (Hydrovon® 195) </li><li>Fabricado pelo método Cross Flow Microfiltration (CFM) </li><li>Maiores quantidades de BCAA (valina, leucina e isoleucina) </li><li>100% monoingrediente </li><li>100% instantâneo </li><li>Dissolução fácil e rápida </li><li>Rápida digestão e absorção o que potencializa a recuperação mucular </li><li>Reduzidos teores de gordura e sódio </li><li>0% de carboidrato&nbsp;</li><li>Alto valor biológico: 22,5% de glicomacropeptídeos </li><li>Baixíssimos teores de lactose: 0,3g a cada 100g de produto </li><li>Sem adição de açúcares ou adoçantes </li><li>Sem conservantes, corantes ou edulcorantes</li></ul>",
+                "title": "Faça a escolha certa você também!",
+                "rightCard": {
+                  "title": "Ingredientes glanbia",
+                  "content": "<ul><li>Certificação antidoping </li><li>Non-GMO (livre de transgênicos) </li><li>Livre dos hormônios rbST e rbGH (hormônio do crescimento artificial) </li><li>Indicado também para uso em pacientes internados com síndrome disabsortiva, pacientes oncológicos e pós-cirúgico</li></ul>"
+                },
+                "subtitle": "Confira os diferenciais que te proporcionam uma qualidade superior"
               }
             },
             {
@@ -14709,25 +14712,151 @@
                     "table": {
                       "altText": "Tabela Nutricional",
                       "desktop": {
-                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/6dd3bf15-e51c-4954-b495-1af430e7b3cb",
+                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/3230a73d-ad85-4eec-9638-f139250eb8e7",
                         "width": 730,
                         "height": 782
                       },
                       "mobile": {
-                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/10c8ce5f-1f34-40d5-ad6b-d6d3497ee529",
-                        "width": 730
+                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/be68d7b3-7580-4bf9-9460-65ff1bf4ed33",
+                        "width": 730,
+                        "height": 782
                       }
                     },
                     "id": "nutritional-information",
                     "questions": [
                       {
-                        "question": "Modo de preparo",
-                        "answer": "<p>Diluir 2 dosadores (scoops) em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista.</p>"
+                        "question": "Modo de Preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>"
                       }
                     ],
                     "ingredients": {
-                      "content": "<ul><li>Proteína Hidrolisada do Soro do Leite Instantânea - WPH. </li><li>NÃO CONTÉM GLÚTEN. </li><li>CONTÉM LACTOSE (0,3g em 100g). </li><li>ALÉRGICOS: CONTÉM DERIVADOS DO LEITE DE VACA E DERIVADOS DE SOJA (LECITINA DE SOJA).</li></ul>",
-                      "title": "Ingrediente"
+                      "content": "<p><br data-mce-bogus=\"1\"></p>",
+                      "title": "Ingredientes"
+                    }
+                  },
+                  "rule": {
+                    "__resolveType": "website/matchers/queryString.ts",
+                    "conditions": [
+                      {
+                        "case": {
+                          "type": "Equals",
+                          "value": "53"
+                        },
+                        "param": "skuId"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": {
+                    "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
+                    "id": "nutritional-information",
+                    "title": "Tabela Nutricional",
+                    "table": {
+                      "altText": "Tabela Nutricional",
+                      "desktop": {
+                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/0cb0b156-a582-44f1-875c-353f6f3503cf",
+                        "width": 730,
+                        "height": 782
+                      },
+                      "mobile": {
+                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/73034dd7-242a-454b-84cf-366a18dba5c7",
+                        "width": 730,
+                        "height": 782
+                      }
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de Preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>"
+                      }
+                    ],
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\">Proteína hidrolisada do soro do leite instantânea (WPH), cacau alcalino em pó e aromas idênticos aos naturais. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,3g em 100g).<br>ALÉRGICOS: CONTÉM DERIVADOS DO LEITE E SOJA (LECITINA DE SOJA*).</span></p>"
+                    }
+                  },
+                  "rule": {
+                    "__resolveType": "website/matchers/queryString.ts",
+                    "conditions": [
+                      {
+                        "case": {
+                          "type": "Equals",
+                          "value": "54"
+                        },
+                        "param": "skuId"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": {
+                    "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
+                    "id": "nutritional-information",
+                    "title": "Tabela Nutricional",
+                    "table": {
+                      "altText": "Tabela Nutricional",
+                      "desktop": {
+                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/ee31fba8-2bc9-49ab-907a-082a7bc7fd46",
+                        "width": 730,
+                        "height": 782
+                      },
+                      "mobile": {
+                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/ad10784f-5f96-4edc-b5d0-7949d30c2acc",
+                        "width": 730,
+                        "height": 782
+                      }
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de Preparo",
+                        "answer": "<p><span data-sheets-root=\"1\">Diluir 2 dosadores (scoops) em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</span></p>"
+                      }
+                    ],
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p><span data-sheets-root=\"1\">Proteína hidrolisada do soro do leite instantânea (WPH), cacau alcalino em pó e aromas idênticos aos naturais. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,3g em 100g).<br>ALÉRGICOS: CONTÉM DERIVADOS DO LEITE E SOJA (LECITINA DE SOJA*).</span></p>"
+                    }
+                  },
+                  "rule": {
+                    "__resolveType": "website/matchers/queryString.ts",
+                    "conditions": [
+                      {
+                        "case": {
+                          "type": "Equals",
+                          "value": "55"
+                        },
+                        "param": "skuId"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": {
+                    "__resolveType": "site/sections/ProductPage/NutritionalInformation.tsx",
+                    "id": "nutritional-information",
+                    "title": "Tabela Nutricional",
+                    "table": {
+                      "altText": "Tabela Nutricional",
+                      "desktop": {
+                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/4cc057ba-bba0-47d2-a57e-cdcef3ea7232",
+                        "width": 730,
+                        "height": 782
+                      },
+                      "mobile": {
+                        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/58bb4f3c-c039-4534-9a69-114564249547",
+                        "width": 730
+                      }
+                    },
+                    "questions": [
+                      {
+                        "question": "Modo de preparo",
+                        "answer": "<p>Diluir 2 dosadores (scoops) em 200ml de água, 2 vezes ao dia ou conforme indicação do médico ou nutricionista</p>"
+                      }
+                    ],
+                    "ingredients": {
+                      "title": "Ingredientes",
+                      "content": "<p>Proteína hidrolisada do soro do leite instantânea (WPH), cacau alcalino em pó e aromas idênticos aos naturais. NÃO CONTÉM GLÚTEN. CONTÉM LACTOSE (0,3g em 100g). ALÉRGICOS: CONTÉM DERIVADOS DO LEITE E SOJA (LECITINA DE SOJA*).*Ingrediente utilizado no processo de instantaneização da proteína do soro do leite.</p>"
                     }
                   },
                   "rule": {
