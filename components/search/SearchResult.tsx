@@ -84,108 +84,110 @@ function NotFound(props: SectionProps<typeof loader>) {
             <img class="w-full" src={image.desktop} alt={image.alt ?? title} />
           </Picture>
         )}
-        {term
-          ? (
-            <>
-              <div class="
+        {term ? (
+          <>
+            <div
+              class="
      container flex flex-col gap-8 
      items-start justify-start pt-8 pl-8 sm:justify-center sm:items-start col-start-1 
-     col-span-1 row-start-1 row-span-1 w-full">
-                <h1>
-                  {title && (
-                    <span
-                      class="text-sm sm:text-base font-normal text-gray-400"
-                      dangerouslySetInnerHTML={{ __html: title }}
-                    />
-                  )}
-                </h1>
-                {link && (
-                  <h2>
-                    <a
-                      href={link}
-                      class="text-sm font-normal text-white 
-             p-4 bg-primary rounded-lg uppercase"
-                    >
-                      {buttonLabel}
-                    </a>
-                  </h2>
+     col-span-1 row-start-1 row-span-1 w-full"
+            >
+              <h1>
+                {title && (
+                  <span
+                    class="text-sm sm:text-base font-normal text-gray-400"
+                    dangerouslySetInnerHTML={{ __html: title }}
+                  />
                 )}
-              </div>
-              <div class="w-full h-full flex flex-col text-gray-300 font-lato gap-8 mb-20 px-4 lg:px-0">
-                <div class="flex flex-col mt-8 container">
-                  <span class="font-lato text-gray-300">
-                    Home{` > `}
-                    <span class="text-orange-300">
-                      Resultados da busca "{term}"
-                    </span>
+              </h1>
+              {link && (
+                <h2>
+                  <a
+                    href={link}
+                    class="text-sm font-normal text-white 
+             p-4 bg-primary rounded-lg uppercase"
+                  >
+                    {buttonLabel}
+                  </a>
+                </h2>
+              )}
+            </div>
+            <div class="w-full h-full flex flex-col text-gray-300 font-lato gap-8 mb-20 px-4 lg:px-0">
+              <div class="flex flex-col mt-8 container">
+                <span class="font-lato text-gray-300">
+                  Home{` > `}
+                  <span class="text-orange-300">
+                    Resultados da busca "{term}"
                   </span>
-                  <span class="font-bold text-2xl text-gray-400">{term}</span>
+                </span>
+                <span class="font-bold text-2xl text-gray-400">{term}</span>
+              </div>
+              <div class="flex justify-center items-center flex-col lg:flex-row gap-8 lg:gap-0">
+                <div class="flex justify-start items-start w-full lg:w-[300px]">
+                  <span class="text-5xl font-bold text-start">OOPS!</span>
                 </div>
-                <div class="flex justify-center items-center flex-col lg:flex-row gap-8 lg:gap-0">
-                  <div class="flex justify-start items-start w-full lg:w-[300px]">
-                    <span class="text-5xl font-bold text-start">OOPS!</span>
-                  </div>
-                  <div class="flex flex-col">
-                    <span class="text-lg font-bold">
-                      Não encontramos nenhum resultado para “{term}”
-                    </span>
-                    <span class="text-base mt-4">O que eu faço?</span>
-                    <ul class="text-base mt-8 list-disc pl-[18px]">
-                      <li>Verifique os termos digitados.</li>
-                      <li>Tente utilizar uma única palavra.</li>
-                      <li>Utilize termos genéricos na busca</li>
-                      <li>Procure utilizar sinônimos ao termo desejado</li>
-                    </ul>
-                  </div>
+                <div class="flex flex-col">
+                  <span class="text-lg font-bold">
+                    Não encontramos nenhum resultado para “{term}”
+                  </span>
+                  <span class="text-base mt-4">O que eu faço?</span>
+                  <ul class="text-base mt-8 list-disc pl-[18px]">
+                    <li>Verifique os termos digitados.</li>
+                    <li>Tente utilizar uma única palavra.</li>
+                    <li>Utilize termos genéricos na busca</li>
+                    <li>Procure utilizar sinônimos ao termo desejado</li>
+                  </ul>
                 </div>
               </div>
-            </>
-          )
-          : (
-            <>
-              <div class="
+            </div>
+          </>
+        ) : (
+          <>
+            <div
+              class="
   container flex flex-col gap-8 
   items-start justify-start pt-8 pl-8 sm:justify-center sm:items-start col-start-1 
-  col-span-1 row-start-1 row-span-1 w-full">
-                <h1>
-                  {title && (
-                    <span
-                      class="text-sm sm:text-base font-normal text-gray-400"
-                      dangerouslySetInnerHTML={{ __html: title }}
-                    />
-                  )}
-                </h1>
-                {link && (
-                  <h2>
-                    <a
-                      href={link}
-                      class="text-sm font-normal text-white 
-          p-4 bg-primary rounded-lg uppercase"
-                    >
-                      {buttonLabel}
-                    </a>
-                  </h2>
+  col-span-1 row-start-1 row-span-1 w-full"
+            >
+              <h1>
+                {title && (
+                  <span
+                    class="text-sm sm:text-base font-normal text-gray-400"
+                    dangerouslySetInnerHTML={{ __html: title }}
+                  />
                 )}
-              </div>
-              <div class="w-full h-full flex flex-col text-gray-300 font-lato gap-8 mb-20 px-4 lg:px-0 mt-16">
-                <div class="flex justify-center items-center flex-col lg:flex-row gap-8 lg:gap-0">
-                  <div class="flex justify-start items-start w-full lg:w-[300px]">
-                    <span class="text-5xl font-bold text-start">OOPS!</span>
-                  </div>
-                  <div class="flex flex-col">
-                    <span class="text-lg font-bold">
-                      Não encontramos nenhum resultado para esta pagina
-                    </span>
-                    <span class="text-base mt-4">O que eu faço?</span>
-                    <ul class="text-base mt-8 list-disc pl-[18px]">
-                      <li>Verifique o caminho da pagina</li>
-                      <li>Teste buscar o produto pela busca</li>
-                    </ul>
-                  </div>
+              </h1>
+              {link && (
+                <h2>
+                  <a
+                    href={link}
+                    class="text-sm font-normal text-white 
+          p-4 bg-primary rounded-lg uppercase"
+                  >
+                    {buttonLabel}
+                  </a>
+                </h2>
+              )}
+            </div>
+            <div class="w-full h-full flex flex-col text-gray-300 font-lato gap-8 mb-20 px-4 lg:px-0 mt-16">
+              <div class="flex justify-center items-center flex-col lg:flex-row gap-8 lg:gap-0">
+                <div class="flex justify-start items-start w-full lg:w-[300px]">
+                  <span class="text-5xl font-bold text-start">OOPS!</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-lg font-bold">
+                    Não encontramos nenhum resultado para esta pagina
+                  </span>
+                  <span class="text-base mt-4">O que eu faço?</span>
+                  <ul class="text-base mt-8 list-disc pl-[18px]">
+                    <li>Verifique o caminho da pagina</li>
+                    <li>Teste buscar o produto pela busca</li>
+                  </ul>
                 </div>
               </div>
-            </>
-          )}
+            </div>
+          </>
+        )}
       </div>
       <ProductShelf {...props.notFound.shelf} />
     </div>
@@ -241,7 +243,7 @@ function PageResult(props: SectionProps<typeof loader>) {
           "grid items-center",
           "grid-cols-2 gap-1",
           "sm:grid-cols-3 sm:gap-10",
-          "w-full",
+          "w-full"
         )}
       >
         {products.map((product, i) => (
@@ -258,94 +260,92 @@ function PageResult(props: SectionProps<typeof loader>) {
       </div>
 
       <div class={clx("pt-2 sm:pt-10 w-full flex justify-center", "")}>
-        {infinite
-          ? (
-            <div class="flex justify-center [&_section]:contents ">
+        {infinite ? (
+          <div class="flex justify-center [&_section]:contents ">
+            <a
+              rel="next"
+              class={clx(
+                "btn btn-ghost bg-primary text-white",
+                (!nextPageUrl || partial === "hideMore") && "hidden"
+              )}
+              hx-swap="outerHTML show:parent:top"
+              hx-get={partialNext}
+            >
+              <span class="inline [.htmx-request_&]:hidden">Ver mais</span>
+              <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
+            </a>
+          </div>
+        ) : (
+          <div class="flex justify-center my-4">
+            <div class="join gap-2">
               <a
-                rel="next"
-                class={clx(
-                  "btn btn-ghost bg-primary text-white",
-                  (!nextPageUrl || partial === "hideMore") && "hidden",
-                )}
-                hx-swap="outerHTML show:parent:top"
-                hx-get={partialNext}
+                aria-label="previous page link"
+                rel="prev"
+                href={pageInfo.previousPage ?? "#"}
+                class="btn btn-ghost join-item"
               >
-                <span class="inline [.htmx-request_&]:hidden">Ver mais</span>
-                <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M25.333 16H6.667M16 25.333 6.667 16 16 6.667"
+                    stroke="#E06741"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              {links.map((link) => {
+                return (
+                  <a
+                    href={link.href}
+                    class={`btn !rounded-lg ${
+                      pageInfo.currentPage == link.label
+                        ? "btn-primary hover:bg-primary bg-primary border-orange-300  hover:border-orange-300 "
+                        : "btn-ghost"
+                    } join-item`}
+                  >
+                    <span>{link.label}</span>
+                  </a>
+                );
+              })}
+              <a
+                aria-label="next page link"
+                rel="next"
+                href={pageInfo.nextPage ?? "#"}
+                class="btn btn-ghost join-item"
+              >
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.66663 16H25.3333"
+                    stroke="#E06741"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M16 6.66666L25.3333 16L16 25.3333"
+                    stroke="#E06741"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
               </a>
             </div>
-          )
-          : (
-            <div class="flex justify-center my-4">
-              <div class="join gap-2">
-                <a
-                  aria-label="previous page link"
-                  rel="prev"
-                  href={pageInfo.previousPage ?? "#"}
-                  class="btn btn-ghost join-item"
-                >
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M25.333 16H6.667M16 25.333 6.667 16 16 6.667"
-                      stroke="#E06741"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </a>
-                {links.map((link) => {
-                  return (
-                    <a
-                      href={link.href}
-                      class={`btn !rounded-lg ${
-                        pageInfo.currentPage == link.label
-                          ? "btn-primary hover:bg-primary bg-primary border-orange-300  hover:border-orange-300 "
-                          : "btn-ghost"
-                      } join-item`}
-                    >
-                      <span>{link.label}</span>
-                    </a>
-                  );
-                })}
-                <a
-                  aria-label="next page link"
-                  rel="next"
-                  href={pageInfo.nextPage ?? "#"}
-                  class="btn btn-ghost join-item"
-                >
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M6.66663 16H25.3333"
-                      stroke="#E06741"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M16 6.66666L25.3333 16L16 25.3333"
-                      stroke="#E06741"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          )}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -404,11 +404,13 @@ function Result(props: SectionProps<typeof loader>) {
   });
   const results = (
     <span class="text-sm font-normal">
-      Exibindo {page.pageInfo.records &&
-          page.pageInfo.recordPerPage &&
-          page.pageInfo.recordPerPage > page.pageInfo.records
+      Exibindo{" "}
+      {page.pageInfo.records &&
+      page.pageInfo.recordPerPage &&
+      page.pageInfo.recordPerPage > page.pageInfo.records
         ? page.pageInfo.records
-        : page.pageInfo.recordPerPage} de {page.pageInfo.records} resultados
+        : page.pageInfo.recordPerPage}{" "}
+      de {page.pageInfo.records} resultados
     </span>
   );
   const sortBy = sortOptions.length > 0 && (
@@ -419,100 +421,100 @@ function Result(props: SectionProps<typeof loader>) {
   return (
     <>
       <div id={container} {...viewItemListEvent} class="w-full">
-        {partial
-          ? <PageResult {...props} />
-          : (
-            <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
-              {term && (
-                <>
-                  <span class="font-lato text-gray-300">
-                    Home{` > `}
-                    <span class="text-orange-300">
-                      Resultados da busca "{term}"
-                    </span>
+        {partial ? (
+          <PageResult {...props} />
+        ) : (
+          <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
+            {term && (
+              <>
+                <span class="font-lato text-gray-300">
+                  Home{` > `}
+                  <span class="text-orange-300">
+                    Resultados da busca "{term}"
                   </span>
-                  <span class="font-bold text-2xl text-gray-400">
-                    Busca por "{term}"
-                  </span>
-                </>
-              )}
-              {!term && (
-                <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
-              )}
+                </span>
+                <span class="font-bold text-2xl text-gray-400">
+                  Busca por "{term}"
+                </span>
+              </>
+            )}
+            {!term && (
+              <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
+            )}
 
-              {device === "mobile" && (
-                <Drawer
-                  id={controls}
-                  aside={
-                    <div class="bg-base-100 flex flex-col h-full divide-y overflow-y-hidden">
-                      <div class="flex justify-between items-center">
-                        <h1 class="px-4 py-3">
-                          <span class="font-medium text-2xl">Filtros</span>
-                        </h1>
-                        <label class="btn btn-ghost" for={controls}>
-                          <Icon id="close" />
-                        </label>
-                      </div>
-                      <div class="flex-grow overflow-auto">
-                        <Filters filters={filters} />
-                      </div>
+            {device === "mobile" && (
+              <Drawer
+                id={controls}
+                aside={
+                  <div class="bg-base-100 flex flex-col h-full divide-y overflow-y-hidden">
+                    <div class="flex justify-between items-center">
+                      <h1 class="px-4 py-3">
+                        <span class="font-medium text-2xl">Filtros</span>
+                      </h1>
+                      <label class="btn btn-ghost" for={controls}>
+                        <Icon id="close" />
+                      </label>
                     </div>
-                  }
-                >
-                  <div class="flex sm:hidden justify-between items-end">
-                    <label
-                      class="btn btn-ghost
-                    text-orange-300 rounded-lg border border-orange-300"
-                      for={controls}
-                    >
-                      Filtros
-                    </label>
-
-                    <div class="flex flex-col">
-                      {results}
-                      {sortBy}
+                    <div class="flex-grow overflow-auto">
+                      <Filters filters={filters} />
                     </div>
                   </div>
-                </Drawer>
+                }
+              >
+                <div class="flex sm:hidden justify-between items-end">
+                  <label
+                    class="btn btn-ghost
+                    text-orange-300 rounded-lg border border-orange-300"
+                    for={controls}
+                  >
+                    Filtros
+                  </label>
+
+                  <div class="flex flex-col">
+                    {results}
+                    {sortBy}
+                  </div>
+                </div>
+              </Drawer>
+            )}
+
+            <div class="md:gap-8 grid place-items-center grid-cols-1 sm:grid-cols-[250px_1fr]">
+              {device === "desktop" && (
+                <aside class="place-self-start flex flex-col gap-3 border border-gray-100 border-b w-full border-b-orange-300 bg-white-300 rounded-t-lg p-4">
+                  <span class="text-base font-normal text-gray-300 h-12 flex gap-2 items-center">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14.667 2H1.333l5.334 6.307v4.36L9.333 14V8.307z"
+                        stroke="#A1A6B7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Filtros
+                  </span>
+
+                  <Filters filters={filters} />
+                </aside>
               )}
 
-              <div class="md:gap-8 grid place-items-center grid-cols-1 sm:grid-cols-[250px_1fr]">
+              <div class="flex flex-col gap-9">
                 {device === "desktop" && (
-                  <aside class="place-self-start flex flex-col gap-3 border border-gray-100 border-b border-b-orange-300 bg-white-300 rounded-t-lg p-4">
-                    <span class="text-base font-normal text-gray-300 h-12 flex gap-2 items-center">
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M14.667 2H1.333l5.334 6.307v4.36L9.333 14V8.307z"
-                          stroke="#A1A6B7"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                      Filtros
-                    </span>
-
-                    <Filters filters={filters} />
-                  </aside>
+                  <div class="flex justify-between items-center">
+                    {results}
+                    <div>{sortBy}</div>
+                  </div>
                 )}
-
-                <div class="flex flex-col gap-9">
-                  {device === "desktop" && (
-                    <div class="flex justify-between items-center">
-                      {results}
-                      <div>{sortBy}</div>
-                    </div>
-                  )}
-                  <PageResult {...props} />
-                </div>
+                <PageResult {...props} />
               </div>
             </div>
-          )}
+          </div>
+        )}
       </div>
 
       <script
@@ -521,7 +523,7 @@ function Result(props: SectionProps<typeof loader>) {
           __html: useScript(
             setPageQuerystring,
             `${pageInfo.currentPage}`,
-            container,
+            container
           ),
         }}
       />
@@ -543,17 +545,18 @@ export const loader = (props: Props, req: Request) => {
         products.push(item);
       }
     });
-    const page: ProductListingPage | null = products.length > 0
-      ? {
-        "@type": "ProductListingPage",
-        breadcrumb: props.page.breadcrumb,
-        filters: props.page.filters,
-        products,
-        pageInfo: props.page.pageInfo,
-        sortOptions: props.page.sortOptions,
-        seo: props.page.seo,
-      }
-      : null;
+    const page: ProductListingPage | null =
+      products.length > 0
+        ? {
+            "@type": "ProductListingPage",
+            breadcrumb: props.page.breadcrumb,
+            filters: props.page.filters,
+            products,
+            pageInfo: props.page.pageInfo,
+            sortOptions: props.page.sortOptions,
+            seo: props.page.seo,
+          }
+        : null;
 
     const newProps: Props = {
       page,
