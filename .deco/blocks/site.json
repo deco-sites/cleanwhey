@@ -5,8 +5,10 @@
     "jsonLDs": [],
     "noIndexing": false,
     "descriptionTemplate": "%s ",
-    "titleTemplate": "%s | Clean Whey",
-    "favicon": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/ad3a871f-b685-4852-a964-5edb2b4b5ba9/Design-sem-nome-(1).png"
+    "titleTemplate": "%s ",
+    "favicon": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/ad3a871f-b685-4852-a964-5edb2b4b5ba9/Design-sem-nome-(1).png",
+    "title": "Clean Whey",
+    "description": "Suplementação para o seu treino e sua saúde."
   },
   "theme": {
     "__resolveType": "Deco"
@@ -63,6 +65,9 @@
   "abTesting": {
     "replaces": [],
     "includeScriptsToHead": {
+      "includes": []
+    },
+    "includeScriptsToBody": {
       "includes": []
     }
   },
