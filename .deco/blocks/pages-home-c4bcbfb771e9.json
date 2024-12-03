@@ -4,7 +4,9 @@
     {
       "__resolveType": "website/sections/Seo/SeoV2.tsx",
       "title": "Clean Whey",
-      "titleTemplate": " "
+      "titleTemplate": "%s",
+      "description": "Suplementação para o seu treino e sua saúde.",
+      "descriptionTemplate": "%s "
     },
     {
       "__resolveType": "Header"
