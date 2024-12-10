@@ -50,19 +50,19 @@ import * as $$$$$$31 from "./sections/Links/LinkTree.tsx";
 import * as $$$$$$32 from "./sections/Miscellaneous/CampaignTimer.tsx";
 import * as $$$$$$33 from "./sections/Miscellaneous/CookieConsent.tsx";
 import * as $$$$$$34 from "./sections/Newsletter/Newsletter.tsx";
-import * as $$$$$$42 from "./sections/Product/ProductDetails.tsx";
-import * as $$$$$$43 from "./sections/Product/ProductShelf.tsx";
-import * as $$$$$$44 from "./sections/Product/ProductShelfTabbed.tsx";
-import * as $$$$$$45 from "./sections/Product/SearchResult.tsx";
-import * as $$$$$$46 from "./sections/Product/ShelfWithImage.tsx";
-import * as $$$$$$47 from "./sections/Product/Wishlist.tsx";
-import * as $$$$$$35 from "./sections/ProductPage/DescriptionBannerBenefits.tsx";
-import * as $$$$$$36 from "./sections/ProductPage/DescriptionBannerRight.tsx";
-import * as $$$$$$37 from "./sections/ProductPage/DescriptionContent.tsx";
-import * as $$$$$$38 from "./sections/ProductPage/DescriptionFullbanner.tsx";
-import * as $$$$$$39 from "./sections/ProductPage/DescriptionMoreInfos.tsx";
-import * as $$$$$$40 from "./sections/ProductPage/DescriptionNavigator.tsx";
-import * as $$$$$$41 from "./sections/ProductPage/NutritionalInformation.tsx";
+import * as $$$$$$35 from "./sections/Product/ProductDetails.tsx";
+import * as $$$$$$36 from "./sections/Product/ProductShelf.tsx";
+import * as $$$$$$37 from "./sections/Product/ProductShelfTabbed.tsx";
+import * as $$$$$$38 from "./sections/Product/SearchResult.tsx";
+import * as $$$$$$39 from "./sections/Product/ShelfWithImage.tsx";
+import * as $$$$$$40 from "./sections/Product/Wishlist.tsx";
+import * as $$$$$$41 from "./sections/ProductPage/DescriptionBannerBenefits.tsx";
+import * as $$$$$$42 from "./sections/ProductPage/DescriptionBannerRight.tsx";
+import * as $$$$$$43 from "./sections/ProductPage/DescriptionContent.tsx";
+import * as $$$$$$44 from "./sections/ProductPage/DescriptionFullbanner.tsx";
+import * as $$$$$$45 from "./sections/ProductPage/DescriptionMoreInfos.tsx";
+import * as $$$$$$46 from "./sections/ProductPage/DescriptionNavigator.tsx";
+import * as $$$$$$47 from "./sections/ProductPage/NutritionalInformation.tsx";
 import * as $$$$$$48 from "./sections/Session.tsx";
 import * as $$$$$$49 from "./sections/Social/InstagramPosts.tsx";
 import * as $$$$$$50 from "./sections/Social/WhatsApp.tsx";
@@ -115,19 +115,19 @@ const manifest = {
     "site/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$32,
     "site/sections/Miscellaneous/CookieConsent.tsx": $$$$$$33,
     "site/sections/Newsletter/Newsletter.tsx": $$$$$$34,
-    "site/sections/Product/ProductDetails.tsx": $$$$$$42,
-    "site/sections/Product/ProductShelf.tsx": $$$$$$43,
-    "site/sections/Product/ProductShelfTabbed.tsx": $$$$$$44,
-    "site/sections/Product/SearchResult.tsx": $$$$$$45,
-    "site/sections/Product/ShelfWithImage.tsx": $$$$$$46,
-    "site/sections/Product/Wishlist.tsx": $$$$$$47,
-    "site/sections/ProductPage/DescriptionBannerBenefits.tsx": $$$$$$35,
-    "site/sections/ProductPage/DescriptionBannerRight.tsx": $$$$$$36,
-    "site/sections/ProductPage/DescriptionContent.tsx": $$$$$$37,
-    "site/sections/ProductPage/DescriptionFullbanner.tsx": $$$$$$38,
-    "site/sections/ProductPage/DescriptionMoreInfos.tsx": $$$$$$39,
-    "site/sections/ProductPage/DescriptionNavigator.tsx": $$$$$$40,
-    "site/sections/ProductPage/NutritionalInformation.tsx": $$$$$$41,
+    "site/sections/Product/ProductDetails.tsx": $$$$$$35,
+    "site/sections/Product/ProductShelf.tsx": $$$$$$36,
+    "site/sections/Product/ProductShelfTabbed.tsx": $$$$$$37,
+    "site/sections/Product/SearchResult.tsx": $$$$$$38,
+    "site/sections/Product/ShelfWithImage.tsx": $$$$$$39,
+    "site/sections/Product/Wishlist.tsx": $$$$$$40,
+    "site/sections/ProductPage/DescriptionBannerBenefits.tsx": $$$$$$41,
+    "site/sections/ProductPage/DescriptionBannerRight.tsx": $$$$$$42,
+    "site/sections/ProductPage/DescriptionContent.tsx": $$$$$$43,
+    "site/sections/ProductPage/DescriptionFullbanner.tsx": $$$$$$44,
+    "site/sections/ProductPage/DescriptionMoreInfos.tsx": $$$$$$45,
+    "site/sections/ProductPage/DescriptionNavigator.tsx": $$$$$$46,
+    "site/sections/ProductPage/NutritionalInformation.tsx": $$$$$$47,
     "site/sections/Session.tsx": $$$$$$48,
     "site/sections/Social/InstagramPosts.tsx": $$$$$$49,
     "site/sections/Social/WhatsApp.tsx": $$$$$$50,
