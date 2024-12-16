@@ -23,11 +23,19 @@
       "alertImage": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/a57e8b69-e992-41d7-9e01-88391b9ea0bd"
     },
     {
-      "alertText": "Frete Grátis SP e MG: acima de R$ 349",
+      "alertText": "Frete Grátis Sudeste: acima de R$ 199",
       "alertImage": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/d11292c4-5959-45ce-81e4-061ea8dcaf3f"
     },
     {
-      "alertText": "Frete Grátis SP e MG: acima de R$ 399",
+      "alertText": "Frete Grátis o Sul: acima de R$ 299",
+      "alertImage": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/1972c342-7d1a-49f5-957b-449638e51395"
+    },
+    {
+      "alertText": "Frete Grátis Centro-Oeste e Nordeste: acima de R$ 399",
+      "alertImage": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/1972c342-7d1a-49f5-957b-449638e51395"
+    },
+    {
+      "alertText": "Frete Grátis Norte: acima de R$ 499",
       "alertImage": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/1972c342-7d1a-49f5-957b-449638e51395"
     }
   ],
