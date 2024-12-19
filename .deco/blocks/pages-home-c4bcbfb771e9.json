@@ -12,6 +12,9 @@
       "__resolveType": "Header"
     },
     {
+      "__resolveType": "Regua"
+    },
+    {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
         "__resolveType": "site/sections/Images/Carousel.tsx",
@@ -75,12 +78,20 @@
             "action": {
               "href": "/suplementos/proteinas/hidrolisado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=hidrolisado&filter.tamanho=pote-900g&page=1"
             }
+          },
+          {
+            "position": "Left",
+            "selos": [],
+            "desktop": "https://data.decoassets.com/cleanwhey/83622ab8-f5be-4857-af39-752ebc6a70c9/CW_Banner_Garrafas_Termicas.png",
+            "mobile": "https://data.decoassets.com/cleanwhey/57126b44-de1c-4ee0-ab72-94f484a6188f/CW_Banner_Garrafas_Termicas_Mobile.png",
+            "action": {},
+            "extraLink": {
+              "href": "https://shop.cleanwhey.com.br/s?q=t%C3%A9rmico&page=1"
+            },
+            "alt": "Térmico"
           }
         ]
       }
-    },
-    {
-      "__resolveType": "Regua"
     },
     {
       "__resolveType": "Navegue por Categorias"
