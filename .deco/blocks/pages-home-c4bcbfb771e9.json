@@ -22,16 +22,6 @@
           {
             "position": "Left",
             "selos": [],
-            "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/595dd94a-d17a-4bd1-8f9b-5d882241b4a0/BANNER-PRINCIPAL-1.png",
-            "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/ef9a395f-8312-4940-a182-b4cc40e81550/BANNER-PRINCIPAL-1-(1).png",
-            "alt": "Novo site no ar",
-            "action": {
-              "href": "/todos-os-produtos"
-            }
-          },
-          {
-            "position": "Left",
-            "selos": [],
             "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/e11b3d70-11f1-48a9-b14f-7d22faac5df1/BANNER-PRINCIPAL-2.png",
             "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/cd8b4328-e6c2-4a2a-9e92-96fd6433b76b/BANNER-PRINCIPAL-2-(1).png",
             "alt": "Best sellers",
@@ -47,6 +37,27 @@
             "alt": "Creatina",
             "extraLink": {
               "href": "https://www.cleanwhey.com.br/creatina?page=1"
+            }
+          },
+          {
+            "position": "Left",
+            "selos": [],
+            "desktop": "https://data.decoassets.com/cleanwhey/83622ab8-f5be-4857-af39-752ebc6a70c9/CW_Banner_Garrafas_Termicas.png",
+            "mobile": "https://data.decoassets.com/cleanwhey/57126b44-de1c-4ee0-ab72-94f484a6188f/CW_Banner_Garrafas_Termicas_Mobile.png",
+            "alt": "Térmico",
+            "extraLink": {
+              "href": "https://shop.cleanwhey.com.br/s?q=t%C3%A9rmico&page=1"
+            },
+            "action": {}
+          },
+          {
+            "position": "Left",
+            "selos": [],
+            "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/595dd94a-d17a-4bd1-8f9b-5d882241b4a0/BANNER-PRINCIPAL-1.png",
+            "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/ef9a395f-8312-4940-a182-b4cc40e81550/BANNER-PRINCIPAL-1-(1).png",
+            "alt": "Novo site no ar",
+            "action": {
+              "href": "/todos-os-produtos"
             }
           },
           {
@@ -74,21 +85,10 @@
             "selos": [],
             "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/722e0680-0090-409d-83b7-302f2f107a03/BANNER-PRINCIPAL-5.png",
             "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/20d532b6-25da-4ad6-8f8a-321064334d80/BANNER-PRINCIPAL-5-(1).png",
-            "alt": "O único 100% puro do mercado",
             "action": {
               "href": "/suplementos/proteinas/hidrolisado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=hidrolisado&filter.tamanho=pote-900g&page=1"
-            }
-          },
-          {
-            "position": "Left",
-            "selos": [],
-            "desktop": "https://data.decoassets.com/cleanwhey/83622ab8-f5be-4857-af39-752ebc6a70c9/CW_Banner_Garrafas_Termicas.png",
-            "mobile": "https://data.decoassets.com/cleanwhey/57126b44-de1c-4ee0-ab72-94f484a6188f/CW_Banner_Garrafas_Termicas_Mobile.png",
-            "action": {},
-            "extraLink": {
-              "href": "https://shop.cleanwhey.com.br/s?q=t%C3%A9rmico&page=1"
             },
-            "alt": "Térmico"
+            "alt": "O único 100% puro do mercado"
           }
         ]
       }
