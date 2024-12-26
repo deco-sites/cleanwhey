@@ -90,7 +90,7 @@ function VariantSelector({ product, similares }: Props) {
   const relativeUrl = relative(url);
   const id = useId();
   const productTaste = product.additionalProperty?.find(
-    (item) => item.name?.toLocaleLowerCase() == "sabores"
+    (item) => item.name?.toLocaleLowerCase() == "sabores",
   );
 
   const todosOsProdutos = [] as Product[];
@@ -113,7 +113,6 @@ function VariantSelector({ product, similares }: Props) {
     "cacau-belga",
     "maracuja",
   ];
-  console.log(product.isVariantOf?.additionalProperty);
   return (
     <>
       <span class="text-sm text-gray-300 font-normal mb-2 uppercase">
@@ -129,13 +128,11 @@ function VariantSelector({ product, similares }: Props) {
         <li class="flex flex-col gap-2 min-w-[80px]">
           {product.image && product.image?.length > 0 && (
             <Ring
-              value={
-                productTaste?.value?.toLowerCase() ||
+              value={productTaste?.value?.toLowerCase() ||
                 product.isVariantOf?.additionalProperty.find(
-                  (item) => item.name?.toLocaleLowerCase() == "sabores"
+                  (item) => item.name?.toLocaleLowerCase() == "sabores",
                 )?.value ||
-                " "
-              }
+                " "}
               image={product?.image[0]?.url}
               checked={true}
             />
@@ -144,10 +141,9 @@ function VariantSelector({ product, similares }: Props) {
 
         {mt.map((item) => {
           const relativeLink = relative(item.url);
-          let name =
-            item.additionalProperty?.find(
-              (a) => a.name?.toLocaleLowerCase() == "sabores"
-            )?.value || "";
+          let name = item.additionalProperty?.find(
+            (a) => a.name?.toLocaleLowerCase() == "sabores",
+          )?.value || "";
           if (
             product.isVariantOf?.name?.toLocaleLowerCase().includes("combo") ||
             product.isVariantOf?.name
@@ -178,16 +174,14 @@ function VariantSelector({ product, similares }: Props) {
                 <div
                   class={clx(
                     "col-start-1 row-start-1 col-span-1 row-span-1",
-                    "transition-opacity"
+                    "transition-opacity",
                   )}
                 >
                   {item.image && item.image?.length > 0 && name && (
                     <Ring
-                      value={
-                        typeof name === "string"
-                          ? name.toLocaleLowerCase()
-                          : "sabor"
-                      }
+                      value={typeof name === "string"
+                        ? name.toLocaleLowerCase()
+                        : "sabor"}
                       image={item?.image[0]?.url}
                       checked={false}
                     />
@@ -198,7 +192,7 @@ function VariantSelector({ product, similares }: Props) {
                   class={clx(
                     "col-start-1 row-start-1 col-span-1 row-span-1",
                     "opacity-0 [.htmx-request_&]:opacity-100 transition-opacity",
-                    "flex justify-center items-center"
+                    "flex justify-center items-center",
                   )}
                 >
                   <span class="loading loading-sm loading-spinner" />
@@ -245,7 +239,7 @@ function VariantSelector({ product, similares }: Props) {
                           <div
                             class={clx(
                               "col-start-1 row-start-1 col-span-1 row-span-1",
-                              "transition-opacity"
+                              "transition-opacity",
                             )}
                           >
                             <Box
@@ -259,7 +253,7 @@ function VariantSelector({ product, similares }: Props) {
                             class={clx(
                               "col-start-1 row-start-1 col-span-1 row-span-1",
                               "opacity-0 [.htmx-request_&]:opacity-100 transition-opacity",
-                              "flex justify-center items-center"
+                              "flex justify-center items-center",
                             )}
                           >
                             <span class="loading loading-sm loading-spinner" />

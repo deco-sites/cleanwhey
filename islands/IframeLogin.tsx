@@ -16,7 +16,6 @@ const runOnMount = () => {
 const onLoad = (event) => {
   const url = (document.getElementById("proxy-loader") as HTMLIFrameElement)
     ?.contentWindow.location.href;
-  console.log({ event, url });
 };
 
 export default function ProxyIframe({ src }: Props) {

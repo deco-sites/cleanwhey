@@ -3,19 +3,21 @@ import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useScript as useScript } from "@deco/deco/hooks";
 const onClick = (delta: number) => {
-  // doidera!
   event!.stopPropagation();
   const button = event!.currentTarget as HTMLButtonElement;
-  const input = button.parentElement
-    ?.querySelector<HTMLInputElement>('input[type="number"]')!;
+  const input = button.parentElement?.querySelector<HTMLInputElement>(
+    'input[type="number"]',
+  )!;
   const min = Number(input.min) || -Infinity;
   const max = Number(input.max) || Infinity;
   input.value = `${Math.min(Math.max(input.valueAsNumber + delta, min), max)}`;
-  input.dispatchEvent(new Event("change", { bubbles: true }));
+  input.dispatchEvent(new Event("change", { bubbles: false }));
 };
-function QuantitySelector(
-  { id = useId(), disabled, ...props }: JSX.IntrinsicElements["input"],
-) {
+function QuantitySelector({
+  id = useId(),
+  disabled,
+  ...props
+}: JSX.IntrinsicElements["input"]) {
   return (
     <div class="h-7 join border border-gray-200 min-w-[120px] w-auto justify-between rounded-lg">
       <button

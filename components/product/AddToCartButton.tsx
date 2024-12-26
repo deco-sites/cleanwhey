@@ -64,12 +64,12 @@ const onLoad = (id: string) => {
     input.value = quantity.toString();
     checkbox.checked = quantity > 0;
     // enable interactivity
-    container?.querySelectorAll<HTMLButtonElement>("button").forEach((node) =>
-      node.disabled = false
-    );
-    container?.querySelectorAll<HTMLButtonElement>("input").forEach((node) =>
-      node.disabled = false
-    );
+    container
+      ?.querySelectorAll<HTMLButtonElement>("button")
+      .forEach((node) => (node.disabled = false));
+    container
+      ?.querySelectorAll<HTMLButtonElement>("input")
+      .forEach((node) => (node.disabled = false));
   });
 };
 const useAddToCart = ({ product, seller }: Props) => {
@@ -123,11 +123,10 @@ function AddToCartButton(props: Props) {
   const { product, item, class: _class } = props;
   const platformProps = useAddToCart(props);
   const id = useId();
-  // console.log("addToCartButton:", product);
   return (
     <div
       id={id}
-      class="flex"
+      class="flex flex-col "
       data-item-id={product.productID}
       data-cart-item={encodeURIComponent(
         JSON.stringify({ item, platformProps }),
@@ -167,14 +166,6 @@ function AddToCartButton(props: Props) {
       </button>
 
       {/* Quantity Input */}
-      <div class="flex-grow hidden">
-        <QuantitySelector
-          disabled
-          min={1}
-          max={100}
-          hx-on:change={useScript(onChange)}
-        />
-      </div>
 
       <script
         type="module"

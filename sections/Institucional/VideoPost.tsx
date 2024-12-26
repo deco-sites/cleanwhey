@@ -141,14 +141,18 @@ export default function BannerInstitucional({
             </div>
           </div>
           <div
-            className={`lg:hidden flex   items-start  min-h-full ${WIDTH_TEXT[widthComponente]}`}
+            className={`lg:hidden flex   items-start  min-h-full ${
+              WIDTH_TEXT[widthComponente]
+            }`}
           >
             {textoMobile && (
               <span dangerouslySetInnerHTML={{ __html: textoMobile }} />
             )}
           </div>
           <div
-            className={`hidden lg:flex    items-start  min-h-full ${WIDTH_TEXT[widthComponente]}`}
+            className={`hidden lg:flex    items-start  min-h-full ${
+              WIDTH_TEXT[widthComponente]
+            }`}
           >
             {texto && <span dangerouslySetInnerHTML={{ __html: texto }} />}
           </div>

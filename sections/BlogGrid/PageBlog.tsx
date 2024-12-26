@@ -66,14 +66,14 @@ function Content(props: SectionProps<ReturnType<typeof loader>>) {
                     <span class="text-gray-300 text-sm font-normal">
                       {post.date
                         ? new Date(post.date)
-                            .toLocaleDateString("pt-BR", {
-                              month: "short",
-                              day: "numeric",
-                              year: "2-digit",
-                            })
-                            .replace(" de ", " ")
-                            .replace(".", "")
-                            .replace(" de ", ", ")
+                          .toLocaleDateString("pt-BR", {
+                            month: "short",
+                            day: "numeric",
+                            year: "2-digit",
+                          })
+                          .replace(" de ", " ")
+                          .replace(".", "")
+                          .replace(" de ", ", ")
                         : ""}
                     </span>
                     <a
