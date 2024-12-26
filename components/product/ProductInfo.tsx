@@ -7,7 +7,7 @@ import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
 import ShippingSimulationForm from "../shipping/Form.tsx";
 import WishlistButton from "../wishlist/WishlistButton.tsx";
-import AddToCartButton from "./AddToCartButton.tsx";
+import AddToCartButton from "./AddToCartButtonpdp.tsx";
 import OutOfStock from "./OutOfStock.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 //import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
@@ -37,7 +37,6 @@ function ProductInfo({ page, products }: Props) {
     listPrice,
     seller = "1",
     availability,
-    installments,
     salePrice,
   } = useOffer(offers);
 
@@ -73,7 +72,7 @@ function ProductInfo({ page, products }: Props) {
   const pixObj = product.isVariantOf?.hasVariant
     .filter((value) => value.url == url)[0]
     .offers?.offers[0].priceSpecification.filter(
-      (value) => value.name?.toLowerCase() == "pix"
+      (value) => value.name?.toLowerCase() == "pix",
     )[0];
 
   const pixporcent =
@@ -84,7 +83,7 @@ function ProductInfo({ page, products }: Props) {
       <span
         class={clx(
           "font-bold text-gray-400 flex items-start justify-between text-2xl capitalize",
-          "pt-4"
+          "pt-4",
         )}
       >
         {title} - {name}
@@ -102,82 +101,26 @@ function ProductInfo({ page, products }: Props) {
           )}
         </span>
       </div>
-
-      {/* Sku Selector */}
-      {!title?.toLocaleLowerCase().includes("coqueteleira") && (
-        <div class="mt-4">
-          <ProductSelector product={product} similares={products} />
-        </div>
-      )}
-
-      {/* Prices */}
-      <div class="flex flex-col pt-4">
-        {availability !== "https://schema.org/InStock" ? (
-          <span className="text-red-300 font-bold text-xl">
-            Fora de estoque
-          </span>
-        ) : (
-          <>
-            <span className="text-xl font-bold flex gap-2 text-gray-400 items-center">
-              {formatPrice(pixObj?.price) || formatPrice(price)}
-              <p className="text-sm text-gray-300">
-                via PIX{" "}
-                {pixporcent && -(pixporcent - 100) % 1 < 0.5
-                  ? Math.floor(-(pixporcent - 100)) + "% OFF "
-                  : Math.ceil(-(pixporcent! - 100)) + "% OFF "}
-                ou
-              </p>
-            </span>
-
-            {salePrice !== listPrice ? (
-              <div className="flex flex-row">
-                <span className="line-through text-sm font-normal text-gray-300">
-                  {formatPrice(listPrice, offers?.priceCurrency)}
-                </span>
-                <span className="pl-2.5 text-sm font-normal text-gray-300">
-                  {formatPrice(salePrice, offers?.priceCurrency)}
-                </span>
-              </div>
-            ) : (
-              <span className="text-sm font-normal text-gray-300">
-                {formatPrice(listPrice, offers?.priceCurrency)}
-              </span>
-            )}
-
-            <span className="max-w-[265px] text-sm font-normal text-gray-300">
-              {installments}
-            </span>
-          </>
-        )}
-      </div>
-
-      {/* Shipping Simulation */}
-      <div class="mt-4">
-        <ShippingSimulationForm
-          items={[{ id: Number(product.sku), quantity: 1, seller: seller }]}
-        />
-      </div>
-
-      {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-        {availability === "https://schema.org/InStock" ? (
-          <>
-            <AddToCartButton
-              item={item}
-              seller={seller}
-              product={product}
-              class="btn btn-primary hover:bg-primary hover:border-orange-300  no-animation bg-primary border-orange-300  rounded-lg h-14"
-              disabled={false}
-            />
-
-            {/* <AddToCartButtonVTEX
-                productID={productID}
+        {availability === "https://schema.org/InStock"
+          ? (
+            <>
+              <AddToCartButton
+                products={products}
+                item={item}
                 seller={seller}
-              /> */}
-          </>
-        ) : (
-          <OutOfStock productID={productID} />
-        )}
+                product={product}
+                class="btn btn-primary hover:bg-primary hover:border-orange-300  no-animation bg-primary border-orange-300  rounded-lg h-14"
+              />
+              {
+                /* <AddToCartButtonVTEX
+                      productID={productID}
+                      seller={seller}
+                    /> */
+              }
+            </>
+          )
+          : <OutOfStock productID={productID} />}
       </div>
     </div>
   );

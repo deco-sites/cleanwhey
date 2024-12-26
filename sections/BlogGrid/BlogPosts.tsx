@@ -129,14 +129,14 @@ export default function BlogPosts({
                   <span class="text-gray-300 text-sm font-normal">
                     {post.date
                       ? new Date(post.date)
-                          .toLocaleDateString("pt-BR", {
-                            month: "short",
-                            day: "numeric",
-                            year: "2-digit",
-                          })
-                          .replace(" de ", " ")
-                          .replace(".", "")
-                          .replace(" de ", ", ")
+                        .toLocaleDateString("pt-BR", {
+                          month: "short",
+                          day: "numeric",
+                          year: "2-digit",
+                        })
+                        .replace(" de ", " ")
+                        .replace(".", "")
+                        .replace(" de ", ", ")
                       : ""}
                   </span>
                   <a
@@ -145,8 +145,10 @@ export default function BlogPosts({
                   >
                     <Icon class="text-white" id={"arrow-right-custom"} />
                   </a>
-                  {/* <span>•</span>
-                  <span>{post.authors[0]?.name}</span> */}
+                  {
+                    /* <span>•</span>
+                  <span>{post.authors[0]?.name}</span> */
+                  }
                 </div>
               </div>
             </div>
