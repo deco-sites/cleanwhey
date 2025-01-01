@@ -19,16 +19,6 @@
           {
             "position": "Left",
             "selos": [],
-            "desktop": "https://data.decoassets.com/cleanwhey/cc2abf63-5bd0-4f9b-82f6-ec8cbca2504a/CW_Banner_Natal.png",
-            "mobile": "https://data.decoassets.com/cleanwhey/5d16f43e-28e5-4ede-b1cd-70ff94c3eb12/CW_Banner_Natal_Mobile.png",
-            "alt": "Natalcw",
-            "extraLink": {
-              "href": "https://www.cleanwhey.com.br/combos-e-descontos?page=1"
-            }
-          },
-          {
-            "position": "Left",
-            "selos": [],
             "desktop": "https://data.decoassets.com/cleanwhey/83622ab8-f5be-4857-af39-752ebc6a70c9/CW_Banner_Garrafas_Termicas.png",
             "mobile": "https://data.decoassets.com/cleanwhey/57126b44-de1c-4ee0-ab72-94f484a6188f/CW_Banner_Garrafas_Termicas_Mobile.png",
             "alt": "Térmico",
