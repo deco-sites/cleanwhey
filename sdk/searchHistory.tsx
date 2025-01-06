@@ -1,12 +1,37 @@
-import { IS_BROWSER } from "$fresh/runtime.ts";
-
 export interface SearchEntry {
   term: string;
   date: string;
 }
 
+function getCookie(name: string): string | null {
+  if (typeof document === "undefined") return null; 
+  const cookies = document.cookie.split("; ");
+  for (const cookie of cookies) {
+    const [key, value] = cookie.split("=");
+    if (key === name) {
+      return decodeURIComponent(value);
+    }
+  }
+  return null;
+}
+
+
+function setCookie(name: string, value: string, days: number = 7): void {
+  if (typeof document === "undefined") return; 
+  const expires = new Date(
+    Date.now() + days * 24 * 60 * 60 * 1000
+  ).toUTCString();
+  document.cookie = `${name}=${encodeURIComponent(value)}
+   expires=${expires}; path=/`;
+}
+
 export function addRecentSearch(term: string): void {
-  const recentSearches = getRecentSearches().reverse();
+  console.log("addRecentSearch called with term:", term);
+
+  const recentSearchesJSON = getCookie("recentSearches");
+  const recentSearches: SearchEntry[] = recentSearchesJSON
+    ? JSON.parse(recentSearchesJSON)
+    : [];
 
   const searchExists = recentSearches.some((search) => search.term === term);
 
@@ -17,23 +42,28 @@ export function addRecentSearch(term: string): void {
     };
 
     if (recentSearches.length >= 5) {
-      const firstFive = recentSearches.slice(1, 5);
-      firstFive.push(newSearchEntry);
-      if (IS_BROWSER) {
-        localStorage.setItem("recentSearches", JSON.stringify(firstFive));
-      }
-    } else {
-      recentSearches.push(newSearchEntry);
-      if (IS_BROWSER) {
-        localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
-      }
+      recentSearches.pop();
     }
+
+    recentSearches.unshift(newSearchEntry);
+
+    setCookie("recentSearches", JSON.stringify(recentSearches), 7);
+    console.log("Saved to cookies:", recentSearches);
   }
 }
 
 export function getRecentSearches(): SearchEntry[] {
-  const recentSearches = JSON.parse(
-    IS_BROWSER ? localStorage.getItem("recentSearches") || "[]" : "[]",
-  );
-  return recentSearches.reverse();
+
+  const recentSearchesJSON = getCookie("recentSearches");
+  if (recentSearchesJSON) {
+    try {
+      const recentSearches: SearchEntry[] = JSON.parse(recentSearchesJSON);
+      console.log("Fetched recentSearches from cookies:", recentSearches);
+      return recentSearches.slice().reverse();
+    } catch (error) {
+      console.error("Error parsing recentSearches cookie:", error);
+      return [];
+    }
+  }
+  return [];
 }
