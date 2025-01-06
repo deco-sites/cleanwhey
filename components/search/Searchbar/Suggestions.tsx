@@ -9,7 +9,10 @@ import { useOffer } from "../../../sdk/useOffer.ts";
 import { formatPrice } from "../../../sdk/format.ts";
 import { type Resolved } from "@deco/deco";
 import { useScript } from "@deco/deco/hooks";
-import { getRecentSearches } from "../../../sdk/searchHistory.tsx";
+import {
+  getRecentSearches,
+  addRecentSearch,
+} from "../../../sdk/searchHistory.tsx";
 
 export interface Props {
   /**
@@ -25,16 +28,18 @@ export const action = async (props: Props, req: Request, ctx: AppContext) => {
   } = props;
   const form = await req.formData();
   const query = `${form.get(NAME ?? "q")}`;
+
   // @ts-expect-error This is a dynamic resolved loader
   const suggestion = (await ctx.invoke(__resolveType, {
     ...loaderProps,
     query,
   })) as Suggestion | null;
-  const valor = form.get("q");
 
-  // if (valor) {
-  //   addRecentSearch(valor as string);
-  // }
+  const valor = form.get("q");
+  if (valor) {
+    addRecentSearch(valor as string); // Salva a busca recente
+  }
+
   return { suggestion, query };
 };
 
@@ -43,6 +48,7 @@ export const loader = async (props: Props, req: Request, ctx: AppContext) => {
     loader: { __resolveType, ...loaderProps },
   } = props;
   const query = new URL(req.url).searchParams.get(NAME ?? "q");
+
   // @ts-expect-error This is a dynamic resolved loader
   const suggestion = (await ctx.invoke(__resolveType, {
     ...loaderProps,
@@ -51,31 +57,41 @@ export const loader = async (props: Props, req: Request, ctx: AppContext) => {
 
   return { suggestion, query };
 };
+
 function Suggestions({
   suggestion,
 }: ComponentProps<typeof loader, typeof action>) {
   const { products = [], searches = [] } = suggestion ?? {};
   const searchHistory = getRecentSearches();
+  console.log(searchHistory);
   const hasTerms = Boolean(searches.length);
   const newProducts: Product[] = [];
+
   products?.map((item) => {
     if (!item.category?.includes("Clean Whey Medical")) {
       newProducts.push(item);
     }
   });
+
   const hasProducts = Boolean(newProducts.length);
+  const hasRecentSearches = Boolean(searchHistory);
+
   return (
     <div
       id={"modal"}
       class={clx(
         `overflow-y-scroll mt-2 `,
         "before:content-['']  before:h-screen before:bg-black before:absolute before:-z-10 before:left-[-100vw] before:right-0 before:w-[200vw] before:opacity-50 before:bg-black-100",
-        !hasProducts && !hasTerms && "hidden",
+        !hasProducts && !hasTerms && !hasRecentSearches && "hidden"
       )}
-      style={{ display: `${(!hasProducts && !hasTerms && "none") || "flex"}` }}
+      style={{
+        display: `${
+          (!hasProducts && !hasTerms && !hasRecentSearches && "none") || "flex"
+        }`,
+      }}
       hx-on:click={useScript(() => {
-        const modal: HTMLDivElement | null = document.querySelector("#modal") ||
-          null;
+        const modal: HTMLDivElement | null =
+          document.querySelector("#modal") || null;
         modal!.style.display = "none";
       })}
     >
@@ -94,40 +110,39 @@ function Suggestions({
           <ul class="flex flex-col gap-6">
             {searches.length > 0 &&
               searches.map(({ term }, index) => (
-                <li>
-                  {/* TODO @gimenes: use name and action from searchbar form */}
+                <li key={index}>
                   <a
                     href={`${ACTION}?${NAME}=${term}`}
                     class="flex gap-1 items-center"
                   >
-                    {/* <Icon id="searchRecent" class={"text-[#A1A6B7]"}/> */}
                     {index + 1} -{" "}
                     <span dangerouslySetInnerHTML={{ __html: term }} />
                   </a>
                 </li>
               ))}
+
             {newProducts.length > 0 &&
               searches.length === 0 &&
-              newProducts.map((product) => {
+              newProducts.map((product, index) => {
                 const title = product.isVariantOf?.name ?? product.name;
                 const { url } = product;
 
                 const [front, back] = product.image ?? [];
                 const { price, installments, salePrice } = useOffer(
-                  product?.offers,
+                  product?.offers
                 );
                 const pixObj = product.isVariantOf?.hasVariant
                   .filter((value) => value.url == url)[0]
                   .offers?.offers[0].priceSpecification.filter(
-                    (value) => value.name?.toLowerCase() == "pix",
+                    (value) => value.name?.toLowerCase() == "pix"
                   )[0];
 
                 const pixporcent =
                   (pixObj && salePrice && (pixObj.price / salePrice) * 100) ||
                   (price && salePrice && (price / salePrice) * 100);
+
                 return (
-                  <li>
-                    {/* TODO @gimenes: use name and action from searchbar form */}
+                  <li key={index}>
                     <a href={`${product.url}`} class="flex gap-1 items-center">
                       <div class="flex flex-row w-full">
                         <div class="flex flex-row w-full gap-2">
@@ -139,10 +154,8 @@ function Suggestions({
                             alt={back?.alternateName ?? front.alternateName}
                             class=" object-cover min-h-20 "
                           />
-                          <div class={"flex flex-col justify-between gap-1"}>
-                            <span
-                              class={"text-ellipsis-custom text-sm capitalize"}
-                            >
+                          <div class="flex flex-col justify-between gap-1">
+                            <span class="text-ellipsis-custom text-sm capitalize">
                               {title} - {product.name}
                             </span>
                             {formatPrice(pixObj?.price) || formatPrice(price)}
@@ -150,7 +163,8 @@ function Suggestions({
                               via PIX{" "}
                               {pixporcent && -(pixporcent - 100) % 1 < 0.5
                                 ? Math.floor(-(pixporcent - 100)) + "% OFF "
-                                : Math.ceil(-(pixporcent! - 100)) + "% OFF "}
+                                : Math.ceil(-(pixporcent! - 100)) +
+                                  "% OFF "}{" "}
                               ou
                             </p>
                             <span class="text-xs">{installments}</span>
@@ -164,19 +178,18 @@ function Suggestions({
           </ul>
         </div>
 
-        {
-          /* <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
-          <span
-            class="font-bold text-18 text-blue-300 border-b border-blue-300 pb-2 w-36"
-            role="heading"
-            aria-level={3}
-          >
-            Buscas Recentes
-          </span>
-          {searchHistory.length > 0 && (
+        {hasRecentSearches && (
+          <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
+            <span
+              class="font-bold text-18 text-blue-300 border-b border-blue-300 pb-2 w-36"
+              role="heading"
+              aria-level={3}
+            >
+              Buscas Recentes
+            </span>
             <ul class="flex flex-col gap-6">
-              {searchHistory.map(({ term }) => (
-                <li>
+              {searchHistory.map(({ term }, index) => (
+                <li key={index}>
                   <a
                     href={`${ACTION}?${NAME}=${term}`}
                     class="flex gap-4 items-center"
@@ -189,11 +202,11 @@ function Suggestions({
                 </li>
               ))}
             </ul>
-          )}
-        </div> */
-        }
+          </div>
+        )}
       </div>
     </div>
   );
 }
+
 export default Suggestions;
