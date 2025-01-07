@@ -56,26 +56,6 @@
             "action": {
               "href": "/todos-os-produtos"
             }
-          },
-          {
-            "position": "Left",
-            "selos": [],
-            "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/babe83bb-a37d-4d37-93c7-89b898ba4abb/BANNER-PRINCIPAL-4.png",
-            "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/441d8ccd-6906-4378-bb78-1f236db2eaaf/BANNER-PRINCIPAL-4-(1).png",
-            "alt": "Clean whey tasty, o melhor para suas receitas",
-            "action": {
-              "href": "/suplementos/proteinas/concentrado?page=1"
-            }
-          },
-          {
-            "position": "Left",
-            "selos": [],
-            "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/722e0680-0090-409d-83b7-302f2f107a03/BANNER-PRINCIPAL-5.png",
-            "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/20d532b6-25da-4ad6-8f8a-321064334d80/BANNER-PRINCIPAL-5-(1).png",
-            "alt": "O único 100% puro do mercado",
-            "action": {
-              "href": "/suplementos/proteinas/hidrolisado?sort=price%3Adesc&filter.category-1=suplementos&filter.category-2=proteinas&filter.category-3=hidrolisado&filter.tamanho=pote-900g&page=1"
-            }
           }
         ]
       }
