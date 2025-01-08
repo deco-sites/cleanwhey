@@ -21,7 +21,10 @@
             "selos": [],
             "desktop": "https://data.decoassets.com/cleanwhey/ac8ba652-4d34-4540-9b31-5b6e0dad0805/WhatsApp-Image-2025-01-08-at-13.06.33(1).jpeg",
             "mobile": "https://data.decoassets.com/cleanwhey/74e897f1-c791-4cf1-ba1b-405d4b074756/WhatsApp-Image-2025-01-08-at-13.06.33.jpeg",
-            "alt": "25off"
+            "alt": "25off",
+            "extraLink": {
+              "href": "/todos-os-produtos?page=1"
+            }
           },
           {
             "position": "Left",
