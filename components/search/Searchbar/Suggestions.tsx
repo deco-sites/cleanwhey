@@ -63,7 +63,6 @@ function Suggestions({
 }: ComponentProps<typeof loader, typeof action>) {
   const { products = [], searches = [] } = suggestion ?? {};
   const searchHistory = getRecentSearches();
-  console.log(searchHistory);
   const hasTerms = Boolean(searches.length);
   const newProducts: Product[] = [];
 

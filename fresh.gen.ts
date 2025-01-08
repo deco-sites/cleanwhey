@@ -10,7 +10,7 @@ import * as $Form from "./islands/Form.tsx";
 import * as $IframeLogin from "./islands/IframeLogin.tsx";
 import * as $Menu from "./islands/Menu.tsx";
 import * as $MultiRangeSlider from "./islands/MultiRangeSlider.tsx";
-import { type Manifest } from "$fresh/server.ts";
+import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {

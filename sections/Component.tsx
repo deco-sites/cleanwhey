@@ -13,13 +13,16 @@ export type ComponentProps<LoaderFunc, ActionFunc = LoaderFunc> = SectionProps<
   ActionFunc
 >;
 const ROOT = toFileUrl(Deno.cwd()).href;
-export class ErrorBoundary extends Component<{
-  fallback?: ComponentType<{
-    error: Error;
-  }>;
-}, {
-  error: Error | null;
-}> {
+export class ErrorBoundary extends Component<
+  {
+    fallback?: ComponentType<{
+      error: Error;
+    }>;
+  },
+  {
+    error: Error | null;
+  }
+> {
   state = { error: null };
   static getDerivedStateFromError(error: Error) {
     return { error };
@@ -38,7 +41,7 @@ export function useComponent<T = Record<string, unknown>>(
   props?: T,
   otherProps: {
     href?: string;
-  } = {},
+  } = {}
 ) {
   return useSection({
     ...otherProps,
@@ -53,11 +56,14 @@ const identity = <T,>(x: T) => x;
 export const loader = async (
   { component, props }: Props,
   req: Request,
-  ctx: AppContext,
+  ctx: AppContext
 ) => {
-  const { default: Component, loader, action, ErrorFallback } = await import(
-    `${ROOT}${component}`
-  );
+  const {
+    default: Component,
+    loader,
+    action,
+    ErrorFallback,
+  } = await import(`${ROOT}${component}`);
   try {
     const p = await (loader || action || identity)(props, req, ctx);
     return {
@@ -76,11 +82,14 @@ export const loader = async (
 export const action = async (
   { component, props }: Props,
   req: Request,
-  ctx: AppContext,
+  ctx: AppContext
 ) => {
-  const { default: Component, action, loader, ErrorFallback } = await import(
-    `${ROOT}${component}`
-  );
+  const {
+    default: Component,
+    action,
+    loader,
+    ErrorFallback,
+  } = await import(`${ROOT}${component}`);
   try {
     const p = await (action || loader || identity)(props, req, ctx);
     return {
@@ -96,8 +105,6 @@ export const action = async (
     };
   }
 };
-export default function Section({ Component }: {
-  Component: any;
-}) {
+export default function Section({ Component }: { Component: any }) {
   return <Component />;
 }

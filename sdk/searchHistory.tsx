@@ -1,37 +1,15 @@
+import { IS_BROWSER } from "$fresh/runtime.ts";
+
 export interface SearchEntry {
   term: string;
   date: string;
 }
 
-function getCookie(name: string): string | null {
-  if (typeof document === "undefined") return null; 
-  const cookies = document.cookie.split("; ");
-  for (const cookie of cookies) {
-    const [key, value] = cookie.split("=");
-    if (key === name) {
-      return decodeURIComponent(value);
-    }
-  }
-  return null;
-}
-
-
-function setCookie(name: string, value: string, days: number = 7): void {
-  if (typeof document === "undefined") return; 
-  const expires = new Date(
-    Date.now() + days * 24 * 60 * 60 * 1000
-  ).toUTCString();
-  document.cookie = `${name}=${encodeURIComponent(value)}
-   expires=${expires}; path=/`;
-}
-
 export function addRecentSearch(term: string): void {
   console.log("addRecentSearch called with term:", term);
 
-  const recentSearchesJSON = getCookie("recentSearches");
-  const recentSearches: SearchEntry[] = recentSearchesJSON
-    ? JSON.parse(recentSearchesJSON)
-    : [];
+  const recentSearches = getRecentSearches();
+  console.log("Current recentSearches:", recentSearches);
 
   const searchExists = recentSearches.some((search) => search.term === term);
 
@@ -47,21 +25,29 @@ export function addRecentSearch(term: string): void {
 
     recentSearches.unshift(newSearchEntry);
 
-    setCookie("recentSearches", JSON.stringify(recentSearches), 7);
-    console.log("Saved to cookies:", recentSearches);
+    try {
+      if (IS_BROWSER && typeof localStorage !== "undefined") {
+        console.log("Saving to localStorage:", recentSearches);
+        localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
+      } else {
+        console.warn("localStorage is not available");
+      }
+    } catch (error) {
+      console.error("Error saving to localStorage:", error);
+    }
   }
 }
 
 export function getRecentSearches(): SearchEntry[] {
-
-  const recentSearchesJSON = getCookie("recentSearches");
-  if (recentSearchesJSON) {
+  if (IS_BROWSER && typeof localStorage !== "undefined") {
     try {
-      const recentSearches: SearchEntry[] = JSON.parse(recentSearchesJSON);
-      console.log("Fetched recentSearches from cookies:", recentSearches);
+      const recentSearches = JSON.parse(
+        localStorage.getItem("recentSearches") || "[]"
+      );
+      console.log("Fetched recentSearches from localStorage:", recentSearches);
       return recentSearches.slice().reverse();
     } catch (error) {
-      console.error("Error parsing recentSearches cookie:", error);
+      console.error("Error reading from localStorage:", error);
       return [];
     }
   }
