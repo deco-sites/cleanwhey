@@ -50,6 +50,11 @@ function ProductInfo({ page, products }: Props) {
     numberOfItems: breadcrumbList.numberOfItems - 1,
   };
 
+  const validade =
+    product.additionalProperty?.some(
+      (property) => property.value === "VÁLIDADE PRÓXIMA"
+    ) || false;
+
   const item = mapProductToAnalyticsItem({
     product,
     breadcrumbList: breadcrumb,
@@ -72,7 +77,7 @@ function ProductInfo({ page, products }: Props) {
   const pixObj = product.isVariantOf?.hasVariant
     .filter((value) => value.url == url)[0]
     .offers?.offers[0].priceSpecification.filter(
-      (value) => value.name?.toLowerCase() == "pix",
+      (value) => value.name?.toLowerCase() == "pix"
     )[0];
 
   const pixporcent =
@@ -83,7 +88,7 @@ function ProductInfo({ page, products }: Props) {
       <span
         class={clx(
           "font-bold text-gray-400 flex items-start justify-between text-2xl capitalize",
-          "pt-4",
+          "pt-4"
         )}
       >
         {title} - {name}
@@ -101,26 +106,37 @@ function ProductInfo({ page, products }: Props) {
           )}
         </span>
       </div>
-      <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-        {availability === "https://schema.org/InStock"
-          ? (
-            <>
-              <AddToCartButton
-                products={products}
-                item={item}
-                seller={seller}
-                product={product}
-                class="btn btn-primary hover:bg-primary hover:border-orange-300  no-animation bg-primary border-orange-300  rounded-lg h-14"
-              />
-              {
-                /* <AddToCartButtonVTEX
+      {validade && (
+        <div class="w-full flex justify-start self-start mt-5">
+          <span
+            class={clx(
+              "p-1 flex items-center justify-center leading-4 text-center bg-red-300 rounded text-white text-sm uppercase font-bold",
+              "opacity-1",
+              "w-fit"
+            )}
+          >
+            Validade próxima.
+          </span>
+        </div>
+      )}
+      <div class="mt-4 sm:mt-5 flex flex-col gap-2">
+        {availability === "https://schema.org/InStock" ? (
+          <>
+            <AddToCartButton
+              products={products}
+              item={item}
+              seller={seller}
+              product={product}
+              class="btn btn-primary hover:bg-primary hover:border-orange-300  no-animation bg-primary border-orange-300  rounded-lg h-14"
+            />
+            {/* <AddToCartButtonVTEX
                       productID={productID}
                       seller={seller}
-                    /> */
-              }
-            </>
-          )
-          : <OutOfStock productID={productID} />}
+                    /> */}
+          </>
+        ) : (
+          <OutOfStock productID={productID} />
+        )}
       </div>
     </div>
   );

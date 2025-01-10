@@ -47,9 +47,12 @@ function ProductCard({
 
   const { url, image: images, offers, isVariantOf } = product;
 
+  const validade =
+    product.additionalProperty?.some(
+      (property) => property.value === "VÁLIDADE PRÓXIMA"
+    ) || false;
   const title = isVariantOf?.name || "";
   const [front, back] = images ?? [];
-
   const {
     listPrice,
     price,
@@ -138,7 +141,6 @@ function ProductCard({
         {/* Wishlist button */}
         <div class="absolute top-1 left-1 w-full flex items-center justify-between">
           {/* Discounts */}
-
           {inStock && offsalePrice && offsalePrice != 0 && (
             <span
               class={clx(
@@ -216,7 +218,19 @@ function ProductCard({
           </>
         )}
       </a>
-
+      {validade && (
+        <div class="w-full flex justify-center self-center">
+          <span
+            class={clx(
+              "p-1 flex items-center justify-center leading-4 text-center bg-red-300 rounded text-white text-sm uppercase font-bold",
+              "opacity-1",
+              "w-fit"
+            )}
+          >
+            Validade próxima.
+          </span>
+        </div>
+      )}
       <div class="flex-grow my-2.5" />
       <div class={`flex flex-col gap-2.5`}>
         {isFeatured && (
