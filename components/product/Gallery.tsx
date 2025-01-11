@@ -8,15 +8,24 @@ import { useId } from "../../sdk/useId.ts";
 // import page from "deco/blocks/page.tsx";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { Pix } from "../../loaders/BusnissRule/Pix.ts";
+import { useDevice } from "@deco/deco/hooks";
 
 export interface Props {
   /** @title Integration */
   page: ProductDetailsPage | null;
 }
 
-const WIDTH = 650;
-const HEIGHT = 650;
-const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
+const WIDTH = {
+  "mobile": 335,
+  "tablet": 450,
+  "desktop": 650,
+};
+const HEIGHT = {
+  "mobile": 335,
+  "tablet": 450,
+  "desktop": 650,
+};
+const ASPECT_RATIO = `${WIDTH["mobile"]} / ${HEIGHT["mobile"]}`;
 
 /**
  * @title Product Image Slider
@@ -28,6 +37,7 @@ export default function GallerySlider(props: Props) {
   const id = useId();
   const zoomId = `${id}-zoom`;
 
+  const device = useDevice()
   if (!props.page) {
     throw new Error("Missing Product Details Page Info");
   }
@@ -97,11 +107,12 @@ export default function GallerySlider(props: Props) {
                     style={{ aspectRatio: ASPECT_RATIO }}
                     src={img.url!}
                     alt={img.alternateName}
-                    width={WIDTH}
-                    height={HEIGHT}
+                    width={WIDTH[device]}
+                    height={HEIGHT[device]}
                     // Preload LCP image for better web vitals
                     preload={index === 0}
                     loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "low"}
                   />
                 </Slider.Item>
               ))}
@@ -152,6 +163,7 @@ export default function GallerySlider(props: Props) {
                     height={72}
                     src={img.url!}
                     alt={img.alternateName}
+                    loading={"lazy"}
                   />
                 </Slider.Dot>
               </li>
@@ -166,7 +178,7 @@ export default function GallerySlider(props: Props) {
           id={zoomId}
           images={groupImages}
           width={700}
-          height={Math.trunc((700 * HEIGHT) / WIDTH)}
+          height={Math.trunc((700 * HEIGHT[device]) / WIDTH[device])}
         />
       )}
     </>

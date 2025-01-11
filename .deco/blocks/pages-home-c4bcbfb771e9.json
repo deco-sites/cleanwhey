@@ -12,127 +12,137 @@
       "__resolveType": "Header"
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Images/Carousel.tsx",
-        "images": [
-          {
-            "position": "Left",
-            "selos": [],
-            "desktop": "https://data.decoassets.com/cleanwhey/ac8ba652-4d34-4540-9b31-5b6e0dad0805/WhatsApp-Image-2025-01-08-at-13.06.33(1).jpeg",
-            "mobile": "https://data.decoassets.com/cleanwhey/74e897f1-c791-4cf1-ba1b-405d4b074756/WhatsApp-Image-2025-01-08-at-13.06.33.jpeg",
-            "alt": "25off",
-            "extraLink": {
-              "href": "/todos-os-produtos?page=1"
-            }
-          },
-          {
-            "position": "Left",
-            "selos": [],
-            "desktop": "https://data.decoassets.com/cleanwhey/83622ab8-f5be-4857-af39-752ebc6a70c9/CW_Banner_Garrafas_Termicas.png",
-            "mobile": "https://data.decoassets.com/cleanwhey/57126b44-de1c-4ee0-ab72-94f484a6188f/CW_Banner_Garrafas_Termicas_Mobile.png",
-            "alt": "Térmico",
-            "extraLink": {
-              "href": "https://shop.cleanwhey.com.br/s?q=t%C3%A9rmico&page=1"
-            },
-            "action": {}
-          },
-          {
-            "position": "Left",
-            "selos": [],
-            "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/e1dcda50-1c3f-47df-8d80-baa95e3cca23/CW_Banner_Creatina_Cupom_NS.webp",
-            "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/d11b88d5-92a2-412c-a570-db061a41c0b4/CW_Banner_Creatina_Cupom_Mobile_NS.webp",
-            "alt": "Creatina",
-            "extraLink": {
-              "href": "https://www.cleanwhey.com.br/creatina?page=1"
-            }
-          },
-          {
-            "position": "Left",
-            "selos": [],
-            "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/595dd94a-d17a-4bd1-8f9b-5d882241b4a0/BANNER-PRINCIPAL-1.png",
-            "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/ef9a395f-8312-4940-a182-b4cc40e81550/BANNER-PRINCIPAL-1-(1).png",
-            "alt": "Novo site no ar",
-            "action": {
-              "href": "/todos-os-produtos"
-            }
-          },
-          {
-            "position": "Left",
-            "selos": [],
-            "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/63618ed4-d976-4fef-b3ec-e7ba04df6b1e/BANNER-PRINCIPAL-3.png",
-            "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/9e946cee-8483-4f3f-b41d-c8c504d975b0/IMG_5017mobile380x530.png",
-            "alt": "Regras de frete",
-            "action": {
-              "href": "/todos-os-produtos"
-            }
+      "__resolveType": "site/sections/Images/Carousel.tsx",
+      "images": [
+        {
+          "position": "Left",
+          "selos": [],
+          "desktop": "https://data.decoassets.com/cleanwhey/ac8ba652-4d34-4540-9b31-5b6e0dad0805/WhatsApp-Image-2025-01-08-at-13.06.33(1).jpeg",
+          "mobile": "https://data.decoassets.com/cleanwhey/74e897f1-c791-4cf1-ba1b-405d4b074756/WhatsApp-Image-2025-01-08-at-13.06.33.jpeg",
+          "alt": "25off",
+          "extraLink": {
+            "href": "/todos-os-produtos?page=1"
           }
-        ]
-      }
+        },
+        {
+          "position": "Left",
+          "selos": [],
+          "desktop": "https://data.decoassets.com/cleanwhey/83622ab8-f5be-4857-af39-752ebc6a70c9/CW_Banner_Garrafas_Termicas.png",
+          "mobile": "https://data.decoassets.com/cleanwhey/57126b44-de1c-4ee0-ab72-94f484a6188f/CW_Banner_Garrafas_Termicas_Mobile.png",
+          "alt": "Térmico",
+          "extraLink": {
+            "href": "https://shop.cleanwhey.com.br/s?q=t%C3%A9rmico&page=1"
+          },
+          "action": {}
+        },
+        {
+          "position": "Left",
+          "selos": [],
+          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/e1dcda50-1c3f-47df-8d80-baa95e3cca23/CW_Banner_Creatina_Cupom_NS.webp",
+          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/d11b88d5-92a2-412c-a570-db061a41c0b4/CW_Banner_Creatina_Cupom_Mobile_NS.webp",
+          "alt": "Creatina",
+          "extraLink": {
+            "href": "https://www.cleanwhey.com.br/creatina?page=1"
+          }
+        },
+        {
+          "position": "Left",
+          "selos": [],
+          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/595dd94a-d17a-4bd1-8f9b-5d882241b4a0/BANNER-PRINCIPAL-1.png",
+          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/ef9a395f-8312-4940-a182-b4cc40e81550/BANNER-PRINCIPAL-1-(1).png",
+          "alt": "Novo site no ar",
+          "action": {
+            "href": "/todos-os-produtos"
+          }
+        },
+        {
+          "position": "Left",
+          "selos": [],
+          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/63618ed4-d976-4fef-b3ec-e7ba04df6b1e/BANNER-PRINCIPAL-3.png",
+          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/9e946cee-8483-4f3f-b41d-c8c504d975b0/IMG_5017mobile380x530.png",
+          "alt": "Regras de frete",
+          "action": {
+            "href": "/todos-os-produtos"
+          }
+        }
+      ],
+      "preload": true
     },
     {
       "__resolveType": "Regua"
     },
     {
-      "__resolveType": "Navegue por Categorias"
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Navegue por Categorias"
+      }
     },
     {
-      "__resolveType": "site/sections/Product/ProductShelf.tsx",
-      "title": "<p>Produtos em alta</p>",
-      "cta": "/mono",
-      "products": {
-        "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
-        "props": {
-          "sort": "orders:desc",
-          "count": 12,
-          "fuzzy": "automatic",
-          "query": "clean",
-          "hideUnavailableItems": false
-        }
-      },
-      "isFeatured": true,
-      "pix": {
-        "__resolveType": "Payment - Pix"
-      },
-      "activePaddingBotton": true,
-      "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/90f54c54-8cc8-4fc7-98b9-2dd9b0cc71eb"
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Product/ProductShelf.tsx",
+        "title": "<p>Produtos em alta</p>",
+        "cta": "/mono",
+        "products": {
+          "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+          "props": {
+            "sort": "orders:desc",
+            "count": 12,
+            "fuzzy": "automatic",
+            "query": "clean",
+            "hideUnavailableItems": false
+          }
+        },
+        "isFeatured": true,
+        "pix": {
+          "__resolveType": "Payment - Pix"
+        },
+        "activePaddingBotton": true,
+        "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/90f54c54-8cc8-4fc7-98b9-2dd9b0cc71eb"
+      }
     },
     {
-      "__resolveType": "site/sections/Product/ProductShelf.tsx",
-      "title": "<p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">Ofertas <span style=\"color: rgb(161, 166, 183);\" data-mce-style=\"color: rgb(161, 166, 183);\">imperdíveis!</span></span></p>",
-      "cta": "/mono",
-      "products": {
-        "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
-        "props": {
-          "sort": "price:desc",
-          "count": 15,
-          "collection": "137"
-        }
-      },
-      "isFeatured": false,
-      "pix": {
-        "__resolveType": "Payment - Pix"
-      },
-      "activePaddingBotton": false
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Product/ProductShelf.tsx",
+        "title": "<p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">Ofertas <span style=\"color: rgb(161, 166, 183);\" data-mce-style=\"color: rgb(161, 166, 183);\">imperdíveis!</span></span></p>",
+        "cta": "/mono",
+        "products": {
+          "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+          "props": {
+            "sort": "price:desc",
+            "count": 15,
+            "collection": "137"
+          }
+        },
+        "isFeatured": false,
+        "pix": {
+          "__resolveType": "Payment - Pix"
+        },
+        "activePaddingBotton": false
+      }
     },
     {
-      "__resolveType": "site/sections/Product/ProductShelf.tsx",
-      "title": "<p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">Lançamentos</span></p>",
-      "cta": "/mono",
-      "products": {
-        "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
-        "props": {
-          "sort": "",
-          "count": 12,
-          "collection": "137",
-          "hideUnavailableItems": true
-        }
-      },
-      "isFeatured": false,
-      "pix": {
-        "__resolveType": "Payment - Pix"
-      },
-      "activePaddingBotton": true
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Product/ProductShelf.tsx",
+        "title": "<p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">Lançamentos</span></p>",
+        "cta": "/mono",
+        "products": {
+          "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+          "props": {
+            "sort": "",
+            "count": 12,
+            "collection": "137",
+            "hideUnavailableItems": true
+          }
+        },
+        "isFeatured": false,
+        "pix": {
+          "__resolveType": "Payment - Pix"
+        },
+        "activePaddingBotton": true
+      }
     },
     {
       "__resolveType": "site/sections/Images/Carousel.tsx",
@@ -170,7 +180,7 @@
           "activateContent": true
         }
       ],
-      "preload": true,
+      "preload": false,
       "interval": 5
     },
     {
