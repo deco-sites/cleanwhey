@@ -31,7 +31,7 @@ const Desktop = ({ items }: Props) => {
               <Image
                 class={`${index == 0 ? "rounded-l-lg" : ""} 
                             ${index == 3 ? "rounded-r-lg" : ""
-                  } w-full duration-300 transition-all group-hover:scale-125 h-full max-h-[386px]`}
+                  } w-full duration-300 transition-all group-hover:scale-125 h-full max-h-[386px] object-cover`}
                 src={item.images.normal}
                 loading={"lazy"}
                 width={304}
@@ -68,7 +68,7 @@ const Mobile = ({ items }: Props) => {
               <a
                 class={`${index == 0 ? "rounded-l-lg" : ""} 
                                 ${index == 3 ? "rounded-r-lg" : ""} 
-                                w-full h-full transition-all duration-300 relative overflow-hidden`}
+                                w-full h-full transition-all duration-300 relative overflow-hidden object-cover`}
                 href={item.link}
               >
                 <Image
