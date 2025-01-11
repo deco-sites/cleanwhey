@@ -5,6 +5,7 @@ import Slider from "../../components/ui/Slider.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
+import Image from "apps/website/components/Image.tsx";
 
 /**
  * @titleBy alt
@@ -87,9 +88,8 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
         <div
           class={`
             ${image.position == "Left" ? "left-0 sm:left-40 md:left-50" : ""}
-            ${
-            image.position == "Right" ? "right-0 sm:right-40 md:right-50" : ""
-          }
+            ${image.position == "Right" ? "right-0 sm:right-40 md:right-50" : ""
+            }
             absolute h-auto md:h-full w-full top-5 md:top-0
             flex flex-col justify-center items-center
             px-5 sm:px-0
@@ -97,9 +97,8 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
         >
           {activateContent && action.title && (
             <span
-              class={`${
-                image.position == "Left" ? "md:text-5xl" : "md:text-7xl"
-              } text-[32px] text-center md:text-left font-normal leading md:leading-[60px] font-lato text-gray-200`}
+              class={`${image.position == "Left" ? "md:text-5xl" : "md:text-7xl"
+                } text-[32px] text-center md:text-left font-normal leading md:leading-[60px] font-lato text-gray-200`}
               dangerouslySetInnerHTML={{ __html: action.title }}
             />
           )}
@@ -133,11 +132,12 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
             <div class={"selos mt-8"}>
               <div className="flex gap-4">
                 {selos?.map((selo) => (
-                  <img
+                  <Image
                     width={32}
                     height={32}
-                    src={selo.image}
+                    src={selo.image || ""}
                     alt={selo.label}
+                    loading={"lazy"}
                   />
                 ))}
               </div>

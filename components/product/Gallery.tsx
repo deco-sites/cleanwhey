@@ -102,6 +102,7 @@ export default function GallerySlider(props: Props) {
                     // Preload LCP image for better web vitals
                     preload={index === 0}
                     loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "low"}
                   />
                 </Slider.Item>
               ))}
@@ -152,6 +153,7 @@ export default function GallerySlider(props: Props) {
                     height={72}
                     src={img.url!}
                     alt={img.alternateName}
+                    loading={"lazy"}
                   />
                 </Slider.Dot>
               </li>

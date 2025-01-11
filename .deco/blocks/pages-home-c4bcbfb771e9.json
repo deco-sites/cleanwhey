@@ -72,7 +72,10 @@
       "__resolveType": "Regua"
     },
     {
-      "__resolveType": "Navegue por Categorias"
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Navegue por Categorias"
+      }
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
