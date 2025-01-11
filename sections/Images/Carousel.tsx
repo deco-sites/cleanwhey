@@ -168,6 +168,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
         preload={lcp}
         loading={lcp ? "eager" : "lazy"}
         style={{ aspectRatio: ASPECT_RATIO }}
+        class="w-full"
         {...viewPromotionEvent} />
     </a >
   );
