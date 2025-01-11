@@ -3,6 +3,7 @@ import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
 import Icon from "../../components/ui/Icon.tsx";
 import { useDevice as useDevice } from "@deco/deco/hooks";
+import Image from "apps/website/components/Image.tsx";
 interface categories {
   images: {
     normal: ImageWidget;
@@ -27,17 +28,22 @@ const Desktop = ({ items }: Props) => {
                             w-full h-full transition-all duration-300 relative overflow-hidden max-h-[386px]`}
               href={item.link}
             >
-              <img
+              <Image
                 class={`${index == 0 ? "rounded-l-lg" : ""} 
-                            ${
-                  index == 3 ? "rounded-r-lg" : ""
-                } w-full duration-300 transition-all group-hover:scale-125 h-full max-h-[386px]`}
+                            ${index == 3 ? "rounded-r-lg" : ""
+                  } w-full duration-300 transition-all group-hover:scale-125 h-full max-h-[386px]`}
                 src={item.images.normal}
                 loading={"lazy"}
+                width={304}
+                height={386}
               />
 
-              <div class="transition-all duration-300 hidden group-hover:flex w-full h-full bg-white/85 z-10 absolute top-0 left-0 flex items-center justify-center">
-                <img src={item.images.onHover} />
+              <div class="transition-all duration-300 hidden group-hover:flex w-full h-full bg-white/85 z-10 absolute top-0 left-0 items-center justify-center">
+                <Image
+                  loading={"lazy"}
+                  width={72}
+                  height={72}
+                  src={item.images.onHover} />
               </div>
             </a>
             <p class="z-20 w-auto absolute bottom-0 bg-primary p-3 rounded text-white font-bold  text-center text-lg uppercase">
@@ -65,17 +71,22 @@ const Mobile = ({ items }: Props) => {
                                 w-full h-full transition-all duration-300 relative overflow-hidden`}
                 href={item.link}
               >
-                <img
+                <Image
                   class={`${index == 0 ? "rounded-l-lg" : ""} 
-                                ${
-                    index == 3 ? "rounded-r-lg" : ""
-                  } w-full duration-300 transition-all group-hover:scale-125 h-full max-h-[370px]`}
+                                ${index == 3 ? "rounded-r-lg" : ""
+                    } w-full duration-300 transition-all group-hover:scale-125 h-full max-h-[370px]`}
                   src={item.images.normal}
                   loading={"lazy"}
+                  width={292}
+                  height={370}
                 />
 
                 <div class="transition-all duration-300 hidden group-hover:flex w-full h-full bg-white/85 z-10 absolute top-0 left-0 items-center justify-center">
-                  <img src={item.images.onHover} />
+                  <Image
+                    loading="lazy"
+                    width={72}
+                    height={72}
+                    src={item.images.onHover} />
                 </div>
               </a>
               <p class="z-20 w-auto absolute bottom-0 bg-primary p-3 rounded-tr text-white font-bold  text-center text-lg uppercase">
