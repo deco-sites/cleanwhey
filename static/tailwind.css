@@ -5542,6 +5542,10 @@ details.collapse summary::-webkit-details-marker {
   --tw-text-opacity: 1;
   color: rgb(102 119 129 / var(--tw-text-opacity));
 }
+.text-\[\#808184\] {
+  --tw-text-opacity: 1;
+  color: rgb(128 129 132 / var(--tw-text-opacity));
+}
 .text-\[\#A1A6B7\] {
   --tw-text-opacity: 1;
   color: rgb(161 166 183 / var(--tw-text-opacity));
@@ -7058,8 +7062,8 @@ flex-grow-1 {
     margin-right: auto;
   }
 
-  .sm\:mt-10 {
-    margin-top: 2.5rem;
+  .sm\:mt-5 {
+    margin-top: 1.25rem;
   }
 
   .sm\:block {
