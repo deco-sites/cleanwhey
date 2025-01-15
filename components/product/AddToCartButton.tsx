@@ -53,15 +53,12 @@ const onLoad = (id: string) => {
     const checkbox = container?.querySelector<HTMLInputElement>(
       'input[type="checkbox"]',
     );
-    const input = container?.querySelector<HTMLInputElement>(
-      'input[type="number"]',
-    );
+
     const itemID = container?.getAttribute("data-item-id")!;
     const quantity = sdk.getQuantity(itemID) || 0;
-    if (!input || !checkbox) {
+    if (!checkbox) {
       return;
     }
-    input.value = quantity.toString();
     checkbox.checked = quantity > 0;
     // enable interactivity
     container
@@ -136,9 +133,12 @@ function AddToCartButton(props: Props) {
 
       <button
         disabled
-        class={clx("flex-grow", _class?.toString())}
+        class={clx("flex-grow group disabled:bg-primary disabled:opacity-80", _class?.toString())}
         hx-on:click={useScript(onClick)}
       >
+        <span className="group-disabled:flex hidden loading loading-spinner loading-md"></span>
+        <div class={"group-disabled:hidden flex justify-center items-center gap-2"  }>
+
         {props.ctaText ?? "COMPRAR AGORA"}
         <svg
           class="w-4 h-4 md:w-8 md:h-8 lg:w-5 lg:h-5 xl:w-8 xl:h-8"
@@ -147,22 +147,23 @@ function AddToCartButton(props: Props) {
           viewBox="0 0 32 32"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-        >
+          >
           <path
             d="M8 2.667 4 8v18.667a2.667 2.667 0 0 0 2.667 2.666h18.666A2.667 2.667 0 0 0 28 26.667V8l-4-5.333zM4 8h24"
             stroke="#fff"
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-          />
+            />
           <path
             d="M21.333 13.333a5.333 5.333 0 1 1-10.666 0"
             stroke="#fff"
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-          />
+            />
         </svg>
+      </div>
       </button>
 
       {/* Quantity Input */}

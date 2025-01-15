@@ -268,31 +268,30 @@ function ProductCard({
           </div>
         )}
         {inStock ? (
-          // <AddToCartButton
-          //   product={product}
-          //   seller={seller}
-          //   item={item}
-          //   ctaText="ADICIONAR À SACOLA"
-          //   class={`${isFeatured ? "px-1.5 md:text-sm mt-2.5" : ""} ${
-          //     clx(
-          //       "btn uppercase",
-          //       "btn-outline rounded-lg border-none px-0 no-animation w-full",
-          //       "bg-primary text-white h-14 font-semibold  md:text-sm lg:text-xs xl:text-sm text-xs  flex-nowrap",
-          //       "hover:bg-primary",
-          //     )
-          //   }`}
-          // />
-          <a
-            href={relativeUrl}
-            class={`${clx(
+          <AddToCartButton
+            product={product}
+            seller={seller}
+            item={item}
+            ctaText="ADICIONAR À SACOLA"
+            class={`${isFeatured ? "px-1.5 md:text-sm mt-2.5" : ""} ${clx(
               "btn uppercase",
               "btn-outline rounded-lg border-none px-0 no-animation w-full",
               "bg-primary text-white h-14 font-semibold  md:text-sm lg:text-xs xl:text-sm text-xs  flex-nowrap",
-              "hover:bg-primary"
-            )}`}
-          >
-            Ver mais
-          </a>
+              "hover:bg-primary",
+            )
+              }`}
+          />
+          // <a
+          //   href={relativeUrl}
+          //   class={`${clx(
+          //     "btn uppercase",
+          //     "btn-outline rounded-lg border-none px-0 no-animation w-full",
+          //     "bg-primary text-white h-14 font-semibold  md:text-sm lg:text-xs xl:text-sm text-xs  flex-nowrap",
+          //     "hover:bg-primary"
+          //   )}`}
+          // >
+          //   Ver mais
+          // </a>
         ) : (
           <a
             href={relativeUrl}
@@ -307,7 +306,7 @@ function ProductCard({
           </a>
         )}
       </div>
-    </div>
+    </div >
   );
 }
 
