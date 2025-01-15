@@ -88,8 +88,8 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
           class={`
             ${image.position == "Left" ? "left-0 sm:left-40 md:left-50" : ""}
             ${
-            image.position == "Right" ? "right-0 sm:right-40 md:right-50" : ""
-          }
+              image.position == "Right" ? "right-0 sm:right-40 md:right-50" : ""
+            }
             absolute h-auto md:h-full w-full top-5 md:top-0
             flex flex-col justify-center items-center
             px-5 sm:px-0
@@ -99,16 +99,14 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
             <span
               class={`${
                 image.position == "Left" ? "md:text-5xl" : "md:text-7xl"
-              } text-[32px] text-center md:text-left font-normal leading md:leading-[60px] font-lato text-gray-200`}
+              } text-[32px] text-center md:text-left font-normal leading md:leading-[60px] font-lato text-[#808184]`}
               dangerouslySetInnerHTML={{ __html: action.title }}
             />
           )}
 
-          {
-            /* <span class="font-normal text-base text-base-100 pt-4 pb-12">
+          {/* <span class="font-normal text-base text-base-100 pt-4 pb-12">
             {action.subTitle}
-          </span> */
-          }
+          </span> */}
           {activateContent && (
             <div className="actions flex flex-col md:flex-row items-center gap-2 mt-4">
               {action.label != undefined && (
@@ -182,7 +180,7 @@ function Carousel({ images = [], preload, interval }: Props) {
         "grid-rows-[1fr_32px_1fr_64px]",
         "grid-cols-[32px_1fr_32px]",
         "sm:grid-cols-[112px_1fr_112px] sm:min-h-min",
-        "w-screen max-w-full md:mb-8 mb-6",
+        "w-screen max-w-full md:mb-8 mb-6"
       )}
     >
       <div class="col-span-full row-span-full">
@@ -215,8 +213,7 @@ function Carousel({ images = [], preload, interval }: Props) {
         </div>
       )}
 
-      {
-        /* <ul
+      {/* <ul
         class={clx(
           "col-span-full row-start-4 z-10",
           "carousel justify-center gap-3",
@@ -234,8 +231,7 @@ function Carousel({ images = [], preload, interval }: Props) {
             </Slider.Dot>
           </li>
         ))}
-      </ul> */
-      }
+      </ul> */}
 
       <Slider.JS rootId={id} interval={interval && interval * 1e3} infinite />
     </div>

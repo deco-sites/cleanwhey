@@ -19,10 +19,8 @@ const Desktop = ({ items }: Props) => {
                 <img src={item.image} />
               </figure>
               <div class="text-center">
-                <h2 class="text-lg font-bold text-orange-300">
-                  {item.title}
-                </h2>
-                <p class="text-base font-regular text-gray-200">
+                <h2 class="text-lg font-bold text-orange-300">{item.title}</h2>
+                <p class="text-base font-regular text-[#808184]">
                   {item.subtitle}
                 </p>
               </div>
@@ -39,15 +37,15 @@ const Mobile = ({ items }: Props) => {
         {items &&
           items.map((item) => (
             <div
-              class={"carousel-item flex flex-col gap-2 justify-center items-center"}
+              class={
+                "carousel-item flex flex-col gap-2 justify-center items-center"
+              }
             >
               <figure class="w-8 h-8">
                 <img src={item.image} />
               </figure>
               <div class="text-center">
-                <h2 class="text-lg font-bold text-orange-300">
-                  {item.title}
-                </h2>
+                <h2 class="text-lg font-bold text-orange-300">{item.title}</h2>
                 <p class="text-base font-regular text-gray-200">
                   {item.subtitle}
                 </p>
@@ -62,9 +60,11 @@ export default function Regua(props: Props) {
   const device = useDevice();
   return (
     <>
-      {device === "desktop"
-        ? <Desktop items={props.items} />
-        : <Mobile items={props.items} />}
+      {device === "desktop" ? (
+        <Desktop items={props.items} />
+      ) : (
+        <Mobile items={props.items} />
+      )}
     </>
   );
 }
