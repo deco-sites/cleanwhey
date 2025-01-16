@@ -39,8 +39,9 @@ function QuantitySelector({
       >
         <input
           id={id}
+          style={{marginRight: 0}}
           class={clx(
-            "input text-center h-auto p-0 [appearance:textfield]",
+            "input text-center h-auto p-0 [appearance:textfield] rounded-none",
             "invalid:input-error",
           )}
           disabled={disabled}
