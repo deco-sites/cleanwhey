@@ -35,7 +35,41 @@ export default defineApp(async (_req, ctx) => {
       {/* Rest of Preact tree */}
       <div class="font-lato">
         <ctx.Component />
-      </div>
+      </div>      {/* <!-- Google tag (gtag.js) -->  */}
+
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(initGTAG, 7000);
+          });
+          document.addEventListener('scroll', initGTAGOnEvent);
+          document.addEventListener('mousemove', initGTAGOnEvent);
+          document.addEventListener('touchstart', initGTAGOnEvent);
+          
+          function initGTAGOnEvent(e) {
+              initGTAG();
+              e.currentTarget.removeEventListener(e.type, initGTAGOnEvent);
+          }
+          
+          function initGTAG() {
+              if (window.gtagDidInit) {
+                  return;
+              }
+              window.gtagDidInit = true;
+
+              const s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = 'https://www.googletagmanager.com/gtag/js?id=GTM-MSLV5T9R';
+              document.head.appendChild(s);
+
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'GTM-MSLV5T9R');
+          }`,
+        }}
+      />
 
       <script
         type="module"
