@@ -18,15 +18,23 @@ export interface Props extends JSX.HTMLAttributes<HTMLButtonElement> {
   ctaText?: string;
 }
 
-const onClick = () => {
+const onClick = (productID: string) => {
   event?.stopPropagation();
   const button = event?.currentTarget as HTMLButtonElement | null;
   const container = button!.closest<HTMLDivElement>("div[data-cart-item]")!;
   const { item, platformProps } = JSON.parse(
     decodeURIComponent(container.getAttribute("data-cart-item")!),
   );
-  window.STOREFRONT.CART.addToCart(item, platformProps);
-  setTimeout(() => {
+
+const input : HTMLInputElement | null = document.querySelector(`input[id="${productID}"]`)
+const quantity = Number(input?.value) || 1
+  console.log("newItem", item)
+
+  window.STOREFRONT.CART.addToCart(item as any, platformProps);
+  setTimeout(()=>{
+    window.STOREFRONT.CART.setQuantity(productID, quantity)
+  },1000)
+  setTimeout(() => { 
     const button: HTMLButtonElement | null = window.document.querySelector(
       '[aria-label="open cart"]',
     );
@@ -64,6 +72,7 @@ const onLoad = (id: string) => {
     );
     const itemID = container?.getAttribute("data-item-id")!;
     const quantity = sdk.getQuantity(itemID) || 0;
+    console.log("carregou pdp", id, sdk)
     if (!input || !checkbox) {
       return;
     }
@@ -212,8 +221,9 @@ function AddToCartButton(props: Props) {
             <QuantitySelector
               disabled
               min={1}
+              value={1}
               max={100}
-              hx-on:change={useScript(onChange)}
+              id={productID}
             />
           </div>
         </div>
@@ -229,7 +239,7 @@ function AddToCartButton(props: Props) {
         <button
           disabled
           class={clx("flex-grow", _class?.toString())}
-          hx-on:click={useScript(onClick)}
+          hx-on:click={useScript(onClick, productID)}
         >
           {props.ctaText ?? "COMPRAR AGORA"}
           <svg
