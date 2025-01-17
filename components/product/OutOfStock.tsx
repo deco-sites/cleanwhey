@@ -1,38 +1,23 @@
 import type { Product } from "apps/commerce/types.ts";
-import { AppContext } from "../../apps/site.ts";
 import { useComponent } from "../../sections/Component.tsx";
+const SendForm = import.meta.resolve("./SendForm.tsx");
 
 export interface Props {
   productID: Product["productID"];
 }
 
-export const action = async (props: Props, req: Request, ctx: AppContext) => {
-  const form = await req.formData();
-
-  const name = `${form.get("name") ?? ""}`;
-  const email = `${form.get("email") ?? ""}`;
-
-  // deno-lint-ignore no-explicit-any
-  await (ctx as any).invoke("vtex/actions/notifyme.ts", {
-    skuId: props.productID,
-    name,
-    email,
-  });
-
-  return props;
-};
-
 export default function Notify({ productID }: Props) {
+
   return (
     <form
       class="form-control justify-start gap-2"
       hx-sync="this:replace"
       hx-indicator="this"
-      hx-swap="none"
-      hx-post={useComponent<Props>(import.meta.url, { productID })}
+      hx-swap="innerHTML"
+      hx-post={useComponent<Props>(SendForm, { productID })}
     >
-      <span class="text-base">Este produto está indisponivel no momento</span>
-      <span class="text-sm">Avise-me quando estiver disponivel</span>
+      <span class="text-base">Este produto está indisponível no momento</span>
+      <span class="text-sm">Avise-me quando estiver disponível</span>
 
       <input placeholder="Nome" class="input input-bordered" name="name" />
       <input placeholder="Email" class="input input-bordered" name="email" />
