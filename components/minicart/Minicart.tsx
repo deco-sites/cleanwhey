@@ -25,6 +25,7 @@ export interface Minicart {
   };
 }
 const onLoad = (formID: string) => {
+  console.log("carregou")
   const form = document.getElementById(formID) as HTMLFormElement;
   window.STOREFRONT.CART.dispatch(form);
   // view_cart event

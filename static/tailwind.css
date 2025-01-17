@@ -2576,6 +2576,9 @@ details.collapse summary::-webkit-details-marker {
 .loading-sm {
   width: 1.25rem;
 }
+.loading-md {
+  width: 1.5rem;
+}
 :where(.menu li:empty) {
   --tw-bg-opacity: 1;
   background-color: var(--fallback-bc,oklch(var(--bc)/var(--tw-bg-opacity)));
@@ -6935,12 +6938,21 @@ flex-grow-1 {
   background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
 }
 
+.disabled\:bg-primary:disabled {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-p,oklch(var(--p)/var(--tw-bg-opacity)));
+}
+
 .disabled\:bg-transparent:disabled {
   background-color: transparent;
 }
 
 .disabled\:opacity-100:disabled {
   opacity: 1;
+}
+
+.disabled\:opacity-80:disabled {
+  opacity: 0.8;
 }
 
 .group[open] .group-open\:border-b-\[4px\] {
@@ -6994,6 +7006,14 @@ flex-grow-1 {
 
 .group:hover .group-hover\:opacity-100 {
   opacity: 1;
+}
+
+.group:disabled .group-disabled\:flex {
+  display: flex;
+}
+
+.group:disabled .group-disabled\:hidden {
+  display: none;
 }
 
 .group:disabled .group-disabled\:border-orange-300 {

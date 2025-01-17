@@ -15,14 +15,6 @@
   },
   "global": [
     {
-      "__resolveType": "website/sections/Analytics/Analytics.tsx",
-      "dangerouslyRunOnMainThread": true,
-      "trackingIds": [
-        "GTM-MSLV5T9R"
-      ],
-      "googleAnalyticsIds": []
-    },
-    {
       "__resolveType": "analytics/sections/Analytics/DecoAnalytics.tsx"
     },
     {

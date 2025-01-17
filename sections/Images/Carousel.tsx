@@ -5,6 +5,8 @@ import Slider from "../../components/ui/Slider.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
+import Image from "apps/website/components/Image.tsx";
+import { useDevice } from "@deco/deco/hooks";
 
 /**
  * @titleBy alt
@@ -61,6 +63,17 @@ export interface Props {
   interval?: number;
 }
 
+const WIDTH = {
+  "mobile": 375,
+  "tablet": 375,
+  "desktop": 1520,
+};
+const HEIGHT = {
+  "mobile": 523,
+  "tablet": 523,
+  "desktop": 545,
+};
+
 function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   const { alt, mobile, desktop, action, extraLink, selos, activateContent } =
     image;
@@ -76,6 +89,9 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
     event: { name: "view_promotion", params },
   });
 
+  const device = useDevice()
+  const ASPECT_RATIO = `${WIDTH[device]} / ${HEIGHT[device]}`;
+
   return (
     <a
       {...selectPromotionEvent}
@@ -87,9 +103,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
         <div
           class={`
             ${image.position == "Left" ? "left-0 sm:left-40 md:left-50" : ""}
-            ${
-              image.position == "Right" ? "right-0 sm:right-40 md:right-50" : ""
-            }
+            ${image.position == "Right" ? "right-0 sm:right-40 md:right-50" : ""}
             absolute h-auto md:h-full w-full top-5 md:top-0
             flex flex-col justify-center items-center
             px-5 sm:px-0
@@ -131,11 +145,12 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
             <div class={"selos mt-8"}>
               <div className="flex gap-4">
                 {selos?.map((selo) => (
-                  <img
+                  <Image
                     width={32}
                     height={32}
-                    src={selo.image}
+                    src={selo.image || ""}
                     alt={selo.label}
+                    loading={"lazy"}
                   />
                 ))}
               </div>
@@ -143,29 +158,17 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
           )}
         </div>
       )}
-      <Picture preload={lcp} {...viewPromotionEvent}>
-        <Source
-          media="(max-width: 767px)"
-          fetchPriority={lcp ? "high" : "auto"}
-          src={mobile}
-          width={380}
-          height={530}
-        />
-        <Source
-          media="(min-width: 768px)"
-          fetchPriority={lcp ? "high" : "auto"}
-          src={desktop}
-          width={1366}
-          height={490}
-        />
-        <img
-          class=" w-full h-full"
-          loading={lcp ? "eager" : "lazy"}
-          src={desktop}
-          alt={alt}
-        />
-      </Picture>
-    </a>
+      <Image
+        src={device === "mobile" ? mobile : desktop}
+        width={WIDTH[device]}
+        height={HEIGHT[device]}
+        fetchPriority={lcp ? "high" : "auto"}
+        preload={lcp}
+        loading={lcp ? "eager" : "lazy"}
+        style={{ aspectRatio: ASPECT_RATIO }}
+        class="w-full"
+        {...viewPromotionEvent} />
+    </a >
   );
 }
 

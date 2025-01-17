@@ -3,6 +3,7 @@ import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
 import Icon from "../../components/ui/Icon.tsx";
 import { useDevice as useDevice } from "@deco/deco/hooks";
+import Image from "apps/website/components/Image.tsx";
 interface categories {
   image: ImageWidget;
   link?: {
@@ -44,9 +45,8 @@ const Desktop = ({ items }: Props) => {
                 {item.subtitle}
               </p>
               <h2
-                class={`max-w-[275px] ${
-                  item.flag ? "mb-6" : "mb-12"
-                } font-bold text-xl md:text-2xl text-white`}
+                class={`max-w-[275px] ${item.flag ? "mb-6" : "mb-12"
+                  } font-bold text-xl md:text-2xl text-white`}
               >
                 {item.title}
               </h2>
@@ -77,7 +77,11 @@ const Mobile = ({ items }: Props) => {
                 class={`w-full h-full relative overflow-hidden`}
                 href={item.link?.url}
               >
-                <img class={`w-full`} src={item.image} loading={"lazy"} />
+                <Image
+                  width={305}
+                  height={286}
+                  alt={item.title}
+                  class={`w-full`} src={item.image} loading={"lazy"} />
               </a>
               <div class="text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.50)] 
                         absolute top-0  left-0 w-full h-full flex flex-col 
@@ -88,13 +92,17 @@ const Mobile = ({ items }: Props) => {
                   {item.subtitle}
                 </p>
                 <h2
-                  class={`max-w-[275px] ${
-                    item.flag ? "mb-6" : "mb-12"
-                  } font-bold text-xl md:text-2xl text-white`}
+                  class={`max-w-[275px] ${item.flag ? "mb-6" : "mb-12"
+                    } font-bold text-xl md:text-2xl text-white`}
                 >
                   {item.title}
                 </h2>
-                {item.flag && <img class="max-w-[150px]" src={item.flag} />}
+                {item.flag &&
+                  <Image
+                    width={132}
+                    class="max-w-[150px] object-contain w-full"
+                    src={item.flag}
+                    alt={item.title} />}
                 {!item.flag && (
                   <span class="text-white text-sm font-regular">
                     {item.link?.title}

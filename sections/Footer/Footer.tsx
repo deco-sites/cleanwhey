@@ -56,8 +56,7 @@ function Footer({
             <div
               class={"flex gap-4 items-center mb-6 w-full sm:w-auto space-between"}
             >
-              <img class={"max-w-[136px]"} loading="lazy" src={logo} />
-
+              {logo && <Image class={"max-w-[136px]"} width={134} height={68} loading="lazy" src={logo} />}
               <ul class="flex gap-4">
                 {social.map(({ image, href, alt }) => (
                   <li>

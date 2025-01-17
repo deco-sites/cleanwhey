@@ -1,5 +1,6 @@
 import { ImageWidget } from "apps/admin/widgets.ts";
 import { useDevice as useDevice } from "@deco/deco/hooks";
+import Image from "apps/website/components/Image.tsx";
 export interface Benefits {
   image: ImageWidget;
   title: string;
@@ -15,9 +16,14 @@ const Desktop = ({ items }: Props) => {
         {items &&
           items.map((item) => (
             <div class={"flex flex-col gap-2 justify-center items-center"}>
-              <figure class="w-8 h-8">
-                <img src={item.image} />
-              </figure>
+              <Image
+                width={32}
+                height={32}
+                loading="lazy"
+                src={item.image}
+                alt={item.title}
+                class="w-8 h-8"
+              />
               <div class="text-center">
                 <h2 class="text-lg font-bold text-orange-300">{item.title}</h2>
                 <p class="text-base font-regular text-[#808184]">

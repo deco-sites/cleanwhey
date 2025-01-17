@@ -3,6 +3,7 @@ import { clx } from "../../sdk/clx.ts";
 import { relative } from "../../sdk/url.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useVariantPossibilities } from "../../sdk/useVariantPossiblities.ts";
+import Image from "apps/website/components/Image.tsx";
 
 interface Props {
   product: Product;
@@ -48,7 +49,7 @@ export const Ring = ({
       ${checked ? "ring-primary border-orange-300" : "border-gray-200"}
       `}
       >
-        {image && <img width={40} height={40} loading={"lazy"} src={image} />}
+        {image && <Image width={40} height={40} loading={"lazy"} src={image} />}
       </span>
       {color ? null : value}
     </div>
@@ -72,9 +73,8 @@ export const Box = ({
       ${checked ? "bg-gray-400 text-white" : "bg-gray-100 text-gray-300"}`}
     >
       <span
-        class={`font-bold text-xs text-center  ${
-          checked ? "text-white" : "text-grat-300"
-        }`}
+        class={`font-bold text-xs text-center  ${checked ? "text-white" : "text-grat-300"
+          }`}
       >
         {upperText.replace(/G$/, "g")}
       </span>
