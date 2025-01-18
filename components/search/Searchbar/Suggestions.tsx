@@ -9,10 +9,6 @@ import { useOffer } from "../../../sdk/useOffer.ts";
 import { formatPrice } from "../../../sdk/format.ts";
 import { type Resolved } from "@deco/deco";
 import { useScript } from "@deco/deco/hooks";
-import {
-  getRecentSearches,
-  addRecentSearch,
-} from "../../../sdk/searchHistory.tsx";
 
 export interface Props {
   /**
@@ -20,6 +16,72 @@ export interface Props {
    * @todo: improve this typings ({query: string, count: number}) => Suggestions
    */
   loader: Resolved<Suggestion | null>;
+}
+export interface SearchEntry {
+  term: string;
+  date: string;
+}
+
+function teste() {
+
+  
+ function addRecentSearch(term: string): void {
+  
+    const recentSearches = getRecentSearches();
+  
+    const searchExists = recentSearches.some((search) => search.term === term);
+  
+    if (!searchExists) {
+      const newSearchEntry: SearchEntry = {
+        term: term,
+        date: new Date().toISOString(),
+      };
+  
+      if (recentSearches.length >= 5) {
+        recentSearches.pop();
+      }
+  
+      recentSearches.unshift(newSearchEntry);
+  
+      try {
+          localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
+
+      } catch (error) {
+        console.error("Error saving to localStorage:", error);
+      }
+    }
+  }
+  
+ function getRecentSearches(): SearchEntry[] {
+      try {
+        const recentSearches = JSON.parse(
+          localStorage.getItem("recentSearches") || "[]"
+        );
+        return recentSearches.slice();
+      } catch (error) {
+        console.error("Error reading from localStorage:", error);
+        return [];
+      }
+  }
+
+  const url = document.location
+
+  const search = url.search.replace("?q=","").replaceAll("+"," ")
+  const verify = search.includes("&")? search.split("&")[0] : search
+  
+  addRecentSearch(verify)
+  const array = getRecentSearches()
+
+  const ul = document.querySelector("#recents")
+
+  array.map((term)=>{
+    const li = document.createElement("li")
+    const a = document.createElement("a")
+    a.innerHTML = term.term
+    a.href=`/s?q=${term.term}`
+    li.appendChild(a)
+    ul?.appendChild(li)
+  })
 }
 
 export const action = async (props: Props, req: Request, ctx: AppContext) => {
@@ -34,11 +96,6 @@ export const action = async (props: Props, req: Request, ctx: AppContext) => {
     ...loaderProps,
     query,
   })) as Suggestion | null;
-
-  const valor = form.get("q");
-  if (valor) {
-    addRecentSearch(valor as string); // Salva a busca recente
-  }
 
   return { suggestion, query };
 };
@@ -62,7 +119,6 @@ function Suggestions({
   suggestion,
 }: ComponentProps<typeof loader, typeof action>) {
   const { products = [], searches = [] } = suggestion ?? {};
-  const searchHistory = getRecentSearches();
   const hasTerms = Boolean(searches.length);
   const newProducts: Product[] = [];
 
@@ -73,7 +129,7 @@ function Suggestions({
   });
 
   const hasProducts = Boolean(newProducts.length);
-  const hasRecentSearches = Boolean(searchHistory);
+  const hasRecentSearches = true;
 
   return (
     <div
@@ -177,7 +233,6 @@ function Suggestions({
           </ul>
         </div>
 
-        {hasRecentSearches && (
           <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
             <span
               class="font-bold text-18 text-blue-300 border-b border-blue-300 pb-2 w-36"
@@ -186,24 +241,17 @@ function Suggestions({
             >
               Buscas Recentes
             </span>
-            <ul class="flex flex-col gap-6">
-              {searchHistory.map(({ term }, index) => (
-                <li key={index}>
-                  <a
-                    href={`${ACTION}?${NAME}=${term}`}
-                    class="flex gap-4 items-center"
-                  >
-                    <span>
-                      <Icon id="search" />
-                    </span>
-                    <span dangerouslySetInnerHTML={{ __html: term }} />
-                  </a>
-                </li>
-              ))}
+            <ul class="flex flex-col gap-6" 
+            id="recents">
+
             </ul>
           </div>
-        )}
+
       </div>
+      <script
+            type="module"
+            dangerouslySetInnerHTML={{ __html: useScript(teste) }}
+          />
     </div>
   );
 }
