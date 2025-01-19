@@ -1,17 +1,17 @@
 // import { AddToCartParams } from "apps/commerce/types.ts";
 import { useState } from "preact/hooks";
 import Button from "../ui/Button.tsx";
+import Icon from "../ui/Icon.tsx";
 
 export interface Props {
   /** @description: sku name */
   onAddItem: () => Promise<void>;
-  onAddAttachment: () => Promise<void>;
   /** @format color */
   buttonColor?: string;
 }
 
 const useAddToCart = (
-  { onAddItem, onAddAttachment }: Props,
+  { onAddItem }: Props,
 ) => {
   const [loading, setLoading] = useState(false);
 
@@ -23,7 +23,6 @@ const useAddToCart = (
       setLoading(true);
 
       await onAddItem();
-      await onAddAttachment();
     } finally {
       setLoading(false);
     }
@@ -42,9 +41,10 @@ export default function AddToCartButton(props: Props) {
         backgroundColor: props.buttonColor ? props.buttonColor : "",
         borderColor: props.buttonColor ? props.buttonColor : "",
       }}
-      class="w-full md:w-auto btn no-animation rounded-[5px] bg-[#F0D02C] font-medium text-xs flex justify-center items-center text-center uppercase outline-none transition-all hover:bg-black hover:text-white hover:border-black border text-black border-solid border-[#F0D02C] h-[55px]"
+      class="w-full btn no-animation rounded-[5px] bg-transparent font-medium text-sm flex justify-center items-center text-center outline-none transition-all hover:text-white hover:border-black border border-solid border-[#193861] h-[55px] text-[#193861] hover:bg-[#193861]"
     >
-      Adicionar à Sacola
+      Assine e economize até R$ 99,99
+      <Icon id={"arrow-subscribe"} />
     </Button>
   );
 }
