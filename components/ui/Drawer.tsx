@@ -3,6 +3,7 @@ import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
 import Icon from "./Icon.tsx";
 import { useScript as useScript } from "@deco/deco/hooks";
+import SignIn from "../header/SignIn.tsx";
 export interface Props {
   open?: boolean;
   class?: string;
@@ -48,7 +49,7 @@ function Drawer({
           data-aside
           class={clx(
             "drawer-side h-full z-40 overflow-hidden",
-            "[[data-aside]&_section]:contents",
+            "[[data-aside]&_section]:contents"
           )}
         >
           <label for={id} class="drawer-overlay" />
@@ -144,13 +145,16 @@ function Aside({
                 Frequentes
               </p>
             </a>
+            <div class="flex flex-row justify-center self-center items-center snap-center">
+              <SignIn variant="mobile" />
 
-            <a
-              class="p-4 h-auto hoverflex flex-col h-full overflow-y-auto:!bg-transparent text-white btn btn-sm font-normal btn-ghost no-animation"
-              href="/wishlist"
-            >
-              <Icon id="wishlist_button" class="h-8 w-8" />
-            </a>
+              <a
+                class="p-4 hoverflex flex-col h-full overflow-y-auto:!bg-transparent text-white btn btn-sm font-normal btn-ghost no-animation"
+                href="/wishlist"
+              >
+                <Icon id="wishlist_button" class="h-8 w-8" />
+              </a>
+            </div>
           </div>
         )}
       </div>
