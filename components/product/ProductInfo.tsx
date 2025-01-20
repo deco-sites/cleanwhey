@@ -10,7 +10,7 @@ import WishlistButton from "../wishlist/WishlistButton.tsx";
 import AddToCartButton from "./AddToCartButtonpdp.tsx";
 import OutOfStock from "./OutOfStock.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
-//import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
+import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
 
 import type { Product } from "apps/commerce/types.ts";
 
@@ -29,7 +29,7 @@ function ProductInfo({ page, products }: Props) {
   }
 
   const { breadcrumbList, product } = page;
-  const { productID, offers, isVariantOf, url, name } = product;
+  const { productID, offers, isVariantOf, url, name, additionalProperty } = product;
   const description = product.description || isVariantOf?.description;
   const title = isVariantOf?.name ?? product.name;
   const {
@@ -83,6 +83,15 @@ function ProductInfo({ page, products }: Props) {
   const pixporcent =
     (pixObj && salePrice && (pixObj.price / salePrice) * 100) ||
     (price && salePrice && (price / salePrice) * 100);
+
+
+  const hasSubscription = additionalProperty?.find((property) => property.name === "vtex.subscription.assinatura");
+
+  const domainValues = hasSubscription?.value ? JSON.parse(hasSubscription?.value)[0] : {};
+  const arrayValuesSubscription = domainValues.DomainValues
+    ? domainValues.DomainValues.split(",").map((value: string) => value.trim())
+    : [];
+
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
       <span
@@ -127,12 +136,13 @@ function ProductInfo({ page, products }: Props) {
               item={item}
               seller={seller}
               product={product}
+              variantsSubscription={arrayValuesSubscription}
               class="btn btn-primary hover:bg-primary hover:border-orange-300  no-animation bg-primary border-orange-300  rounded-lg h-14"
             />
-            {/* <AddToCartButtonVTEX
-                      productID={productID}
-                      seller={seller}
-                    /> */}
+            <AddToCartButtonVTEX
+              productID={productID}
+              seller={seller}
+            />
           </>
         ) : (
           <OutOfStock productID={productID} />

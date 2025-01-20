@@ -268,6 +268,14 @@ export default function Cart({
           __html: useScript(onLoad, MINICART_FORM_ID),
         }}
       />
+              <button
+        hx-patch={useComponent(import.meta.url)}
+        hx-swap="outerHTML"
+        hx-target="closest div"
+        class="hidden"
+        id="refresh-minicart"
+        >
+        </button>
     </>
   );
 }
