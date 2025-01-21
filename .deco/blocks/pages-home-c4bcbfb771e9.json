@@ -22,6 +22,9 @@
           "alt": "25off",
           "extraLink": {
             "href": "/todos-os-produtos?page=1"
+          },
+          "action": {
+            "href": "/todos-os-produtos"
           }
         },
         {
@@ -31,9 +34,11 @@
           "mobile": "https://data.decoassets.com/cleanwhey/57126b44-de1c-4ee0-ab72-94f484a6188f/CW_Banner_Garrafas_Termicas_Mobile.png",
           "alt": "Térmico",
           "extraLink": {
-            "href": "https://shop.cleanwhey.com.br/s?q=t%C3%A9rmico&page=1"
+            "href": "/s?q=termica&page=1"
           },
-          "action": {}
+          "action": {
+            "href": "/s?q=termica&page=1"
+          }
         },
         {
           "position": "Left",
@@ -42,7 +47,10 @@
           "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/d11b88d5-92a2-412c-a570-db061a41c0b4/CW_Banner_Creatina_Cupom_Mobile_NS.webp",
           "alt": "Creatina",
           "extraLink": {
-            "href": "https://www.cleanwhey.com.br/creatina?page=1"
+            "href": "/creatina?page=1"
+          },
+          "action": {
+            "href": "/creatina?page=1"
           }
         },
         {
@@ -62,7 +70,10 @@
           "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/9e946cee-8483-4f3f-b41d-c8c504d975b0/IMG_5017mobile380x530.png",
           "alt": "Regras de frete",
           "action": {
-            "href": "/todos-os-produtos"
+            "href": "#"
+          },
+          "extraLink": {
+            "href": "#"
           }
         }
       ],
