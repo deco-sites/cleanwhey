@@ -46,7 +46,7 @@ const Desktop = ({ items }: Props) => {
                   src={item.images.onHover} />
               </div>
             </a>
-            <p class="z-20 w-auto absolute bottom-0 bg-primary p-3 rounded text-white font-bold  text-center text-lg uppercase">
+            <p class="z-20 w-auto absolute bottom-0 bg-primary p-3 rounded text-white font-bold  text-center lg:text-sm xl:text-lg uppercase">
               {item.textLabel}
             </p>
           </div>
@@ -121,7 +121,7 @@ const Mobile = ({ items }: Props) => {
 export default function CategoryGallery({ title, items }: Props) {
   const device = useDevice();
   return (
-    <section class="section container mt-5 md:mt-12">
+    <section class="section container mt-5 md:mt-12 px-2 xl:px-0">
       {title && (
         <div class={"title"}>
           <h2

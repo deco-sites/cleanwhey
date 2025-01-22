@@ -23,19 +23,17 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
           <Slider.PrevButton class="disable:bg-transparent flex btn !bg-transparent border-none btn-neutral btn-sm btn-circle no-animation">
             <Icon
               id="arrow-right-custom"
-              class={`${
-                isFeatured ? "text-white" : "text-orange-300"
-              } rotate-180`}
+              class={`${isFeatured ? "text-white" : "text-orange-300"
+                } rotate-180`}
             />
           </Slider.PrevButton>
         </div>
 
         <div
-          class={`${
-            isFeatured
+          class={`${isFeatured
               ? "md:max-w-[90%] max-w-[85%]"
               : "sm:max-w-[95%] max-w-[80%]"
-          } w-full px-0 `}
+            } w-full px-0 `}
         >
           <Slider class="carousel w-full gap-4 pt-4">
             {products?.map((product, index) => {
@@ -45,11 +43,10 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
                   index={index}
                   className={`carousel-item w-full 
                 first:pl-0 first:sm:pl-2 last:pr-0 last:sm:pr-2
-                ${
-                    isFeatured
+                ${isFeatured
                       ? "md:w-[calc(33.33%-16px)]"
-                      : "md:w-[calc(25%-16px)]"
-                  }
+                      : "md:w-[calc(33%-16px)] xl:w-[calc(25%-16px)]"
+                    }
               `}
                 >
                   <ProductCard
@@ -57,9 +54,8 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
                     productName={product.name}
                     isFeatured={isFeatured}
                     itemListName={itemListName}
-                    class={`mx-4 sm:mx-0 p-4 w-full ${
-                      isFeatured ? "bg-white" : ""
-                    } border border-gray-100 shadow-[0_0_10px_0_rgba(0,0,0,0.1)]`}
+                    class={`mx-4 sm:mx-0 p-4 w-full ${isFeatured ? "bg-white" : ""
+                      } border border-gray-100 shadow-[0_0_10px_0_rgba(0,0,0,0.1)]`}
                   />
                 </Slider.Item>
               );

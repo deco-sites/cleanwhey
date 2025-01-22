@@ -64,7 +64,7 @@ export default function NutritionalInformation(props: Props) {
     props;
   const device = useDevice();
   return (
-    <section class="bg-white-300 pb-8 md:pb-8" id={"informacao-nutricional"}>
+    <section class="bg-white-300 pb-8 md:pb-8 md:px-2 xl:px-0 py-12 xl:py-0" id={"informacao-nutricional"}>
       <div className="container px-4 md:px-0">
         <h2 class={"font-bold mb-6 text-gray-400 text-[32px] md:text-5xl"}>
           {title}

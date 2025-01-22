@@ -40,7 +40,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
                 style={{ maxHeight: "16px", height: "16px" }}
               />
               <span
-                class="px-2 py-2 text-center text-white"
+                class="px-2 text-center text-white"
                 dangerouslySetInnerHTML={{ __html: alert.alertText }}
               />
             </Slider.Item>
