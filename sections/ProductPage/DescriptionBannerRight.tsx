@@ -34,7 +34,7 @@ export default function DescriptionBannerRight(props: Props) {
           {description && (
             <div
               class="max-w-lg text-gray-300 text-base font-normal mb-16"
-              dangerouslySetInnerHTML={{ __html: description }}
+              dangerouslySetInnerHTML={{ __html: description.replaceAll(/font-size:[^;"]+;?|color:\s*rgb\([^)]+\);?/g, '') }}
             />
           )}
           {device === "desktop" && percentageBanner && (
