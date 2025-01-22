@@ -27,10 +27,11 @@ interface Props {
 }
 export default function DescriptionBannerBenefits(props: Props) {
   const { leftImage, title, benefits } = props;
+
   return (
     <section class="bg-white-300 pb-8 md:pb-16">
       <div className="container px-4 md:px-0 flex flex-col md:flex-row items-center justify-between md:gap-5 md:px-2 xl:px-0">
-        <div class={"banner w-auto"}>
+        <div class={"banner w-full md:w-2/4"}>
           {leftImage && (
             <Picture>
               <Source
@@ -57,7 +58,7 @@ export default function DescriptionBannerBenefits(props: Props) {
         <div class={"md:w-[65%] w-full max-w-[668px] py-12 xl:py-0"}>
           {title && (
             <h2
-              class="mb-4 md:text-start text-center text-2xl md:text-3xl"
+              class="mb-4 md:text-start text-center text-2xl md:text-3xl text-[#a1a6b7] font-regular"
               dangerouslySetInnerHTML={{ __html: title.replaceAll(/font-size:[^;"]+;?/g, '') }}
             />
           )}
