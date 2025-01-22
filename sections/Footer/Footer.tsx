@@ -50,8 +50,8 @@ function Footer({
   return (
     <footer class="sm:px-0  bg-primary" // style={{ backgroundColor: "#EFF0F0" }}
     >
-      <div class="flex flex-col gap-5 sm:gap-10 pt-10">
-        <ul class="container sm:px-0 px-5 md:gap-0 gap-4 flex sm:flex-row flex-col justify-between">
+      <div class="flex flex-col gap-5 sm:gap-10 pt-10 ">
+        <ul class="container px-5 md:gap-0 gap-4 flex sm:flex-row flex-col justify-between px-2 xl:px-0">
           <li class="flex gap-4 items-start flex-col">
             <div
               class={"flex gap-4 items-center mb-6 w-full sm:w-auto space-between"}
@@ -147,7 +147,7 @@ function Footer({
           </li>
         </ul>
 
-        <div class="container  sm:px-0 px-5 flex items-center justify-between ">
+        <div class="container px-5 flex items-center justify-between px-2 xl:px-0">
           <ul class="flex flex-wrap md:flex-nowrap items-center gap-4 md:gap-2">
             {selos.map(({ image, label }) => (
               <li class="h-8 md:w-1/5 w-1/5 flex justify-center items-center">

@@ -30,7 +30,7 @@ export default function ProductDetails({ page, products }: Props) {
   }
 
   return (
-    <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
+    <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0 md:px-2 xl:px-0">
       <Breadcrumb itemListElement={page.breadcrumbList.itemListElement} />
 
       <div
@@ -43,7 +43,7 @@ export default function ProductDetails({ page, products }: Props) {
         <div class="sm:col-span-3 md:pr-12">
           <ImageGallerySlider page={page} />
         </div>
-        <div class="sm:col-span-2 md:pl-12 md:border-l md:border-gray-100">
+        <div class="sm:col-span-2 md:pl-6 xl:pl-12 md:border-l md:border-gray-100">
           <ProductInfo page={page} products={products} />
         </div>
       </div>

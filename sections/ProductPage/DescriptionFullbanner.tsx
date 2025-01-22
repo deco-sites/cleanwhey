@@ -29,13 +29,12 @@ export default function DescriptionFullbanner(props: Props) {
   return (
     <section>
       <div
-        class={`relative w-full pb-8 md:pb-16 md:mb-16 bg-no-repeat bg-center bg-cover md:min-h-96`}
+        class={`relative w-full pb-8 md:pb-16 md:mb-16 bg-no-repeat bg-center bg-cover md:min-h-96 md:px-2 xl:px-0`}
         style={{
-          backgroundImage: `${
-            device == "desktop"
+          backgroundImage: `${device == "desktop"
               ? `url(${banner?.desktop?.src}`
               : `url(${banner?.mobile?.src}`
-          })`,
+            })`,
         }}
       >
         {

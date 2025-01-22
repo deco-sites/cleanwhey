@@ -60,7 +60,7 @@ export default function FAQ({
           />
         )}
         <ul class="w-full px-4 md:px-0">
-          <li class="gap-2 flex flex-col">
+          <li class="gap-2 flex flex-col px-2 xl:px-0">
             {questions.map((question) => <Question {...question} />)}
           </li>
         </ul>
