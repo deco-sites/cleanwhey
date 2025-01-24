@@ -239,7 +239,7 @@ function Suggestions({
               role="heading"
               aria-level={3}
             >
-              Buscas Recentes
+              Buscas recentes
             </span>
             <ul class="flex flex-col gap-6" 
             id="recents">
