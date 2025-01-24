@@ -71,7 +71,7 @@ const onLoad = (id: string) => {
       'input[type="number"]',
     );
     const itemID = container?.getAttribute("data-item-id")!;
-    const quantity = sdk.getQuantity(itemID) || 0;
+    const quantity = sdk.getQuantity(itemID) || 1;
     console.log("carregou pdp", id, sdk)
     if (!input || !checkbox) {
       return;
