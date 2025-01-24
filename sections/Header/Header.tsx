@@ -6,7 +6,7 @@ import Bag from "../../components/header/Bag.tsx";
 // import { useUser } from "apps/vtex/hooks/useUser.ts";
 import NavItem from "../../components/header/NavItem.tsx";
 import SignIn from "../../components/header/SignIn.tsx";
-import Searchbar, { type SearchbarProps } from "../../islands/Form.tsx";
+import Searchbar, { type SearchbarProps } from "../../components/search/Searchbar/Form.tsx";
 import Drawer from "../../components/ui/Drawer.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 // import Modal from "../../components/ui/Modal.tsx";
@@ -60,7 +60,7 @@ const Desktop = (props: SectionProps<typeof loader>) => {
   return (
     <>
       <div class="flex flex-col gap-4 pt-5">
-        <div class="container flex justify-between items-center">
+        <div class="container flex justify-between items-center px-2 xl:px-0 gap-4">
           <div class="place-self-start">
             <a href="/" aria-label="Store logo">
               <Image
@@ -68,6 +68,7 @@ const Desktop = (props: SectionProps<typeof loader>) => {
                 alt={logo.alt}
                 width={logo.width || 100}
                 height={logo.height || 23}
+                class="min-w-[130px] h-auto"
               />
             </a>
           </div>
@@ -94,7 +95,7 @@ const Desktop = (props: SectionProps<typeof loader>) => {
           </div>
         </div>
 
-        <div class="flex justify-between items-center text-base bg-accent">
+        <div class="flex justify-between items-center text-base bg-accent px-2 xl:px-0">
           <div className="container">
             <ul class="flex justify-between">
               {navItems?.slice(0, 8).map((item) => <NavItem item={item} />)}

@@ -25,7 +25,8 @@ export type AvailableIcons =
   | "error"
   | "searchRecent"
   | "trash"
-  | "truck";
+  | "truck"
+  | "arrow-subscribe";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**

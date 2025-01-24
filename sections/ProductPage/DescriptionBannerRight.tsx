@@ -28,13 +28,13 @@ export default function DescriptionBannerRight(props: Props) {
   const device = useDevice();
   return (
     <section class="bg-white-300 pb-8 md:pb-16" id={"visaogeral"}>
-      <div class="container px-4 md:px-0 flex items-start md:flex-row flex-col justify-between">
+      <div class="container px-4 xl:px-0 flex items-start md:flex-row flex-col justify-between md:gap-5 py-12 xl:py-0">
         <div class="max-w-[522px] content flex flex-col items-center justify-start w-full">
           <h2 class={"text-gray-400 font-bold text-5xl mb-6"}>{title}</h2>
           {description && (
             <div
               class="max-w-lg text-gray-300 text-base font-normal mb-16"
-              dangerouslySetInnerHTML={{ __html: description }}
+              dangerouslySetInnerHTML={{ __html: description.replaceAll(/font-size:[^;"]+;?|color:\s*rgb\([^)]+\);?/g, '') }}
             />
           )}
           {device === "desktop" && percentageBanner && (

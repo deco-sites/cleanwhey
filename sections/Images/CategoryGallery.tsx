@@ -46,7 +46,7 @@ const Desktop = ({ items }: Props) => {
                   src={item.images.onHover} />
               </div>
             </a>
-            <p class="z-20 w-auto absolute bottom-0 bg-primary p-3 rounded text-white font-bold  text-center text-lg uppercase">
+            <p class="z-20 w-auto absolute bottom-0 bg-primary p-3 rounded text-white font-bold  text-center lg:text-sm xl:text-lg uppercase">
               {item.textLabel}
             </p>
           </div>
@@ -96,15 +96,19 @@ const Mobile = ({ items }: Props) => {
           ))}
       </Slider>
 
-      <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-            justify-center absolute top-2/4 left-5">
+      <div
+        class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+            justify-center absolute top-2/4 left-5"
+      >
         <Slider.PrevButton class="cursor-pointer" disabled={false}>
           <Icon id="chevron-right" class="rotate-180 text-orange-300" />
         </Slider.PrevButton>
       </div>
 
-      <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-            justify-center absolute top-2/4 right-5">
+      <div
+        class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+            justify-center absolute top-2/4 right-5"
+      >
         <Slider.NextButton class="cursor-pointer" disabled={false}>
           <Icon id="chevron-right" class="text-orange-300" />
         </Slider.NextButton>
@@ -117,11 +121,11 @@ const Mobile = ({ items }: Props) => {
 export default function CategoryGallery({ title, items }: Props) {
   const device = useDevice();
   return (
-    <section class="section container mt-5 md:mt-12">
+    <section class="section container mt-5 md:mt-12 px-2 xl:px-0">
       {title && (
         <div class={"title"}>
           <h2
-            class={"text-2xl  font-bold text-gray-200 text-center mb-4"}
+            class={"text-2xl  font-bold text-[#808184] text-center mb-4"}
             dangerouslySetInnerHTML={{ __html: title }}
           />
         </div>
@@ -129,9 +133,11 @@ export default function CategoryGallery({ title, items }: Props) {
       <div
         className={`content ${device === "desktop" ? "grid grid-cols-4" : ""}`}
       >
-        {device === "desktop"
-          ? <Desktop items={items} />
-          : <Mobile items={items} />}
+        {device === "desktop" ? (
+          <Desktop items={items} />
+        ) : (
+          <Mobile items={items} />
+        )}
       </div>
     </section>
   );

@@ -11,7 +11,7 @@ export interface Props {
 }
 const Desktop = ({ items }: Props) => {
   return (
-    <section class="container border-b border-gray-100 pb-8">
+    <section class="container border-b border-gray-100 pb-8 px-2 xl:px-0">  
       <div class="grid grid-cols-4">
         {items &&
           items.map((item) => (
@@ -25,10 +25,8 @@ const Desktop = ({ items }: Props) => {
                 class="w-8 h-8"
               />
               <div class="text-center">
-                <h2 class="text-lg font-bold text-orange-300">
-                  {item.title}
-                </h2>
-                <p class="text-base font-regular text-gray-200">
+                <h2 class="text-lg font-bold text-orange-300">{item.title}</h2>
+                <p class="text-base font-regular text-[#808184]">
                   {item.subtitle}
                 </p>
               </div>
@@ -45,15 +43,15 @@ const Mobile = ({ items }: Props) => {
         {items &&
           items.map((item) => (
             <div
-              class={"carousel-item flex flex-col gap-2 justify-center items-center"}
+              class={
+                "carousel-item flex flex-col gap-2 justify-center items-center"
+              }
             >
               <figure class="w-8 h-8">
                 <img src={item.image} />
               </figure>
               <div class="text-center">
-                <h2 class="text-lg font-bold text-orange-300">
-                  {item.title}
-                </h2>
+                <h2 class="text-lg font-bold text-orange-300">{item.title}</h2>
                 <p class="text-base font-regular text-gray-200">
                   {item.subtitle}
                 </p>
@@ -68,9 +66,11 @@ export default function Regua(props: Props) {
   const device = useDevice();
   return (
     <>
-      {device === "desktop"
-        ? <Desktop items={props.items} />
-        : <Mobile items={props.items} />}
+      {device === "desktop" ? (
+        <Desktop items={props.items} />
+      ) : (
+        <Mobile items={props.items} />
+      )}
     </>
   );
 }

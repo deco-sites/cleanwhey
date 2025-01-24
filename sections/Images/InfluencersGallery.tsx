@@ -31,14 +31,14 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
             items.map((item, index) => (
               <Slider.Item
                 index={index}
-                class="carousel-item relative group !ml-0 flex w-1/4 duration-300 h-full transition-all items-center justify-center"
+                class="carousel-item relative group !ml-0 flex lg:w-1/3 xl:w-1/4 duration-300 h-full transition-all items-center justify-center first:pl-4 last:pr-4"
               >
                 <a
                   class={`rounded-lg w-full h-full transition-all duration-300 relative overflow-hidden`}
                   href={item.link}
                 >
                   <Image
-                    class={`rounded-lg w-full duration-300 transition-all  min-h-[470px] max-h-[470px] h-full `}
+                    class={`rounded-lg w-full duration-300 transition-all  min-h-[470px] max-h-[470px] h-full object-cover`}
                     src={item.images.normal}
                     loading={"lazy"}
                     width={635}
@@ -47,7 +47,7 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
                   <div class="font-regular text-sm leading-4 transition-all text-left text-white py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 overflow-y-scroll items-start justify-start scroll-custom overflow-x-hidden rounded-md">
                     <h2 class={"font-bold mb-6"}>{item.textLabel}</h2>
                     <span
-                      dangerouslySetInnerHTML={{ __html: item.description }}
+                      dangerouslySetInnerHTML={{ __html: item.description.replaceAll(/font-size:[^;"]+;?/g, '') }}
                       class="[&_*]:text-[14x] [&_*]:leading-normal"
                     />
                   </div>
@@ -60,14 +60,18 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
         </Slider>
         {items && items.length > 4 && (
           <>
-            <div class="rounded-full border-gray-200 border bg-white w-8 h-8 z-10 flex items-center 
-                justify-center absolute top-2/4 left-4">
+            <div
+              class="rounded-full border-gray-200 border bg-white w-8 h-8 z-10 flex items-center 
+                justify-center absolute top-2/4 left-4"
+            >
               <Slider.PrevButton class="cursor-pointer" disabled={false}>
                 <Icon id="chevron-right" class="rotate-180 text-orange-300" />
               </Slider.PrevButton>
             </div>
-            <div class="rounded-full border-gray-200 border bg-white w-8 h-8 z-10 flex items-center 
-                justify-center absolute top-2/4 right-4">
+            <div
+              class="rounded-full border-gray-200 border bg-white w-8 h-8 z-10 flex items-center 
+                justify-center absolute top-2/4 right-4"
+            >
               <Slider.NextButton class="cursor-pointer" disabled={false}>
                 <Icon id="chevron-right" class="text-orange-300" />
               </Slider.NextButton>
@@ -118,7 +122,7 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
                   <div class="font-regular text-sm leading-4 transition-all text-left text-white py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 overflow-y-scroll items-start justify-start scroll-custom overflow-x-hidden rounded-md">
                     <h2 class={"font-bold mb-6"}>{item.textLabel}</h2>
                     <span
-                      dangerouslySetInnerHTML={{ __html: item.description }}
+                      dangerouslySetInnerHTML={{ __html: item.description.replaceAll(/font-size:[^;"]+;?/g, '') }}
                       class="[&_*]:text-[14x] [&_*]:leading-normal"
                     />
                   </div>
@@ -130,15 +134,19 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
             ))}
         </Slider>
 
-        <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-                justify-center absolute top-2/4 left-4">
+        <div
+          class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+                justify-center absolute top-2/4 left-4"
+        >
           <Slider.PrevButton class="cursor-pointer" disabled={false}>
             <Icon id="chevron-right" class="rotate-180 text-orange-300" />
           </Slider.PrevButton>
         </div>
 
-        <div class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-                justify-center absolute top-2/4 right-4">
+        <div
+          class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+                justify-center absolute top-2/4 right-4"
+        >
           <Slider.NextButton class="cursor-pointer" disabled={false}>
             <Icon id="chevron-right" class="text-orange-300" />
           </Slider.NextButton>
@@ -173,15 +181,17 @@ export default function InfluencersGallery({
       {title && (
         <div class={"title"}>
           <h2
-            class={"text-2xl font-bold text-gray-200 text-center mb-4 px-4"}
+            class={"text-2xl font-bold text-[#808184] text-center mb-4 px-4"}
             dangerouslySetInnerHTML={{ __html: title }}
           />
         </div>
       )}
       <div className={`content`}>
-        {device === "desktop"
-          ? <Desktop items={items} conteudoFlutuante={conteudoFlutuante} />
-          : <Mobile items={items} conteudoFlutuante={conteudoFlutuante} />}
+        {device === "desktop" ? (
+          <Desktop items={items} conteudoFlutuante={conteudoFlutuante} />
+        ) : (
+          <Mobile items={items} conteudoFlutuante={conteudoFlutuante} />
+        )}
       </div>
     </section>
   );
