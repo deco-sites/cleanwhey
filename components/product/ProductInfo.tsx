@@ -44,6 +44,7 @@ function ProductInfo({ page, products }: Props) {
   //   ? Math.round(((listPrice - price) / listPrice) * 100)
   //   : 0;
 
+
   const breadcrumb = {
     ...breadcrumbList,
     itemListElement: breadcrumbList?.itemListElement.slice(0, -1),

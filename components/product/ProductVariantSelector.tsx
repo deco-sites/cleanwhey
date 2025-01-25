@@ -83,14 +83,14 @@ export const Box = ({
 };
 
 function VariantSelector({ product, similares }: Props) {
-  const { url, isVariantOf } = product;
+  const { url, isVariantOf, name } = product;
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const possibilities = useVariantPossibilities(hasVariant, product);
 
   const relativeUrl = relative(url);
   const id = useId();
   const productTaste = product.additionalProperty?.find(
-    (item) => item.name?.toLocaleLowerCase() == "sabores",
+    (item) => item.name?.toLocaleLowerCase() == "sabores" || item.name == "COR",
   );
 
   const todosOsProdutos = [] as Product[];
@@ -102,7 +102,9 @@ function VariantSelector({ product, similares }: Props) {
     });
   }
 
-  const mt = todosOsProdutos.filter((i) => i.name == product.name);
+  const title = isVariantOf?.name ?? product.name;
+  const filter = todosOsProdutos.filter((i) => i.name == product.name);
+  const mt = title?.toLocaleLowerCase().includes("coqueteleira") ? todosOsProdutos : filter
   const sabores = [
     "morango",
     "chocolate",
@@ -113,14 +115,16 @@ function VariantSelector({ product, similares }: Props) {
     "cacau-belga",
     "maracuja",
   ];
+  
   return (
     <>
-      {product.image && product.image?.length > 1 &&
+      {product.image &&
         <>
-          <span class="text-sm text-gray-300 font-normal mb-2 uppercase mt-4">
-            SABORES
-          </span>
-          <ul
+          {mt.length > 1 &&
+            <span class="text-sm text-gray-300 font-normal mb-2 uppercase mt-4">
+              {title?.toLocaleLowerCase().includes("coqueteleira") ? "CORES" : "SABORES"}
+            </span>}
+          {mt.length > 1 && <ul
             class="flex flex-row flex-wrap gap-2 mb-4"
             hx-target="body"
             hx-swap="outerHTML"
@@ -141,7 +145,7 @@ function VariantSelector({ product, similares }: Props) {
               )}
             </li>
 
-            {mt.map((item) => {
+            {!title?.toLocaleLowerCase().includes("coqueteleira") && mt.map((item) => {
               const relativeLink = relative(item.url);
               let name = item.additionalProperty?.find(
                 (a) => a.name?.toLocaleLowerCase() == "sabores",
@@ -203,10 +207,62 @@ function VariantSelector({ product, similares }: Props) {
                 </li>
               );
             })}
-          </ul>
+
+            {title?.toLocaleLowerCase().includes("coqueteleira") &&
+              mt.map((item, index) => {
+
+                if (name === item.name) {
+                  return null
+                }
+
+                const relativeLink = relative(item.url);
+                return (
+                  <li class="flex flex-col gap-2 min-w-[80px]">
+                    <label
+                      class="cursor-pointer grid grid-cols-1 grid-rows-1 place-items-center"
+                      hx-get={relativeLink}
+                    >
+                      {/* Checkbox for radio button on the frontend */}
+                      <input
+                        class="hidden peer"
+                        type="radio"
+                        name={`${id}-${item.name}`}
+                        checked={false}
+                      />
+                      <div
+                        class={clx(
+                          "col-start-1 row-start-1 col-span-1 row-span-1",
+                          "transition-opacity",
+                        )}
+                      >
+                        {item.image && item.image?.length > 0 && (
+                          <Ring
+                            value={item.name?.replace("Cor:", "")}
+                            image={item?.image[0]?.url}
+                            checked={false}
+                          />
+                        )}
+                      </div>
+                      {/* Loading spinner */}
+                      <div
+                        class={clx(
+                          "col-start-1 row-start-1 col-span-1 row-span-1",
+                          "opacity-0 [.htmx-request_&]:opacity-100 transition-opacity",
+                          "flex justify-center items-center",
+                        )}
+                      >
+                        <span class="loading loading-sm loading-spinner" />
+                      </div>
+                    </label>
+                  </li>
+                )
+              }
+              )
+            }
+          </ul>}
         </>
       }
-      {<ul
+      {Object.keys(possibilities).length > 1 && <ul
         class="flex flex-col gap-2"
         hx-target="body"
         hx-swap="outerHTML"

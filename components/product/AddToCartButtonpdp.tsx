@@ -160,11 +160,9 @@ function AddToCartButton(props: Props) {
   return (
     <>
       {/* Sku Selector */}
-      {!title?.toLocaleLowerCase().includes("coqueteleira") &&  (
         <div class="">
           <ProductSelector product={product} similares={products} />
         </div>
-      )}
       <div
         id={id}
         class="flex flex-col "
