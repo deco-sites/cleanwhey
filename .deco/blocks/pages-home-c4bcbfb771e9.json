@@ -17,8 +17,8 @@
         {
           "position": "Left",
           "selos": [],
-          "desktop": "https://data.decoassets.com/cleanwhey/ac8ba652-4d34-4540-9b31-5b6e0dad0805/WhatsApp-Image-2025-01-08-at-13.06.33(1).jpeg",
-          "mobile": "https://data.decoassets.com/cleanwhey/74e897f1-c791-4cf1-ba1b-405d4b074756/WhatsApp-Image-2025-01-08-at-13.06.33.jpeg",
+          "desktop": "https://data.decoassets.com/cleanwhey/735f3954-aa02-44a7-89c4-828b08ba501b/CW_Banner_Mes_Esportista.png",
+          "mobile": "https://data.decoassets.com/cleanwhey/7fd2de27-0788-4a22-8e03-a9503beb585c/CW_Banner_Transformacao_Mobile_v5.png",
           "alt": "25off",
           "extraLink": {
             "href": "/todos-os-produtos?page=1"
@@ -43,19 +43,6 @@
         {
           "position": "Left",
           "selos": [],
-          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/e1dcda50-1c3f-47df-8d80-baa95e3cca23/CW_Banner_Creatina_Cupom_NS.webp",
-          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/d11b88d5-92a2-412c-a570-db061a41c0b4/CW_Banner_Creatina_Cupom_Mobile_NS.webp",
-          "alt": "Creatina",
-          "extraLink": {
-            "href": "/creatina?page=1"
-          },
-          "action": {
-            "href": "/creatina?page=1"
-          }
-        },
-        {
-          "position": "Left",
-          "selos": [],
           "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/595dd94a-d17a-4bd1-8f9b-5d882241b4a0/BANNER-PRINCIPAL-1.png",
           "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/ef9a395f-8312-4940-a182-b4cc40e81550/BANNER-PRINCIPAL-1-(1).png",
           "alt": "Novo site no ar",
@@ -66,8 +53,8 @@
         {
           "position": "Left",
           "selos": [],
-          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwheyhomolog/63618ed4-d976-4fef-b3ec-e7ba04df6b1e/BANNER-PRINCIPAL-3.png",
-          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/cleanwhey/9e946cee-8483-4f3f-b41d-c8c504d975b0/IMG_5017mobile380x530.png",
+          "desktop": "https://data.decoassets.com/cleanwhey/b631240d-2293-4f4f-863a-b6a2293d92b8/CW_Banner_Frete_Gratis_02.png",
+          "mobile": "https://data.decoassets.com/cleanwhey/19451be9-667f-48b2-acdd-f1b9baaccb3a/CW_Banner_Mobile_Frete_Gratis_02.png",
           "alt": "Regras de frete",
           "action": {
             "href": "#"
