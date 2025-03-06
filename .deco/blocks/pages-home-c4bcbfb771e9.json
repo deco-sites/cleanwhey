@@ -30,25 +30,12 @@
         {
           "position": "Left",
           "selos": [],
-          "desktop": "https://data.decoassets.com/cleanwhey/83622ab8-f5be-4857-af39-752ebc6a70c9/CW_Banner_Garrafas_Termicas.png",
-          "mobile": "https://data.decoassets.com/cleanwhey/57126b44-de1c-4ee0-ab72-94f484a6188f/CW_Banner_Garrafas_Termicas_Mobile.png",
-          "alt": "Térmico",
-          "extraLink": {
-            "href": "/s?q=termica&page=1"
+          "desktop": "https://data.decoassets.com/cleanwhey/0f1b41c4-f468-4cb5-9830-22a199cbf5fb/CW_Banner_Creatina_Cupom_NS_v2.png",
+          "mobile": "https://data.decoassets.com/cleanwhey/41e9d90b-0a2b-4ed4-a3ac-e0bca9392306/CW_Banner_Creatina_Cupom_Mobile_NS-2_v2.png",
+          "action": {
+            "href": "https://shop.cleanwhey.com.br/creatina?page=1"
           },
-          "action": {
-            "href": "/acessorios/garrafa?page=1"
-          }
-        },
-        {
-          "position": "Left",
-          "selos": [],
-          "desktop": "https://data.decoassets.com/cleanwhey/d6de4175-2b00-4b88-bd69-10595be7360f/CW_Banner_Novo_Site_v3.png",
-          "mobile": "https://data.decoassets.com/cleanwhey/e019d648-94be-48f6-9e21-3946b3e91424/CW_Banner_Novo_Site_Mobile_v3.png",
-          "alt": "Novo site no ar",
-          "action": {
-            "href": "/todos-os-produtos"
-          }
+          "alt": "Creatina"
         },
         {
           "position": "Left",
