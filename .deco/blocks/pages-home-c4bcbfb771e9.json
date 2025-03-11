@@ -30,25 +30,12 @@
         {
           "position": "Left",
           "selos": [],
-          "desktop": "https://data.decoassets.com/cleanwhey/0a3455a2-49be-47b5-a109-33a04e944d11/CW_Banner_ECOBAG_NS-v2.png",
-          "mobile": "https://data.decoassets.com/cleanwhey/816de2ca-d04c-437e-9361-c6a9e07b259e/CW_Banner_ECOBAG_Mobile_NS-v2.png",
-          "action": {
-            "href": "/todos-os-produtos"
-          },
-          "alt": "ECOBAG",
-          "extraLink": {
-            "href": "/todos-os-produtos?page=1"
-          }
-        },
-        {
-          "position": "Left",
-          "selos": [],
           "desktop": "https://data.decoassets.com/cleanwhey/0f1b41c4-f468-4cb5-9830-22a199cbf5fb/CW_Banner_Creatina_Cupom_NS_v2.png",
           "mobile": "https://data.decoassets.com/cleanwhey/41e9d90b-0a2b-4ed4-a3ac-e0bca9392306/CW_Banner_Creatina_Cupom_Mobile_NS-2_v2.png",
-          "alt": "Creatina",
           "action": {
             "href": "https://shop.cleanwhey.com.br/creatina?page=1"
-          }
+          },
+          "alt": "Creatina"
         },
         {
           "position": "Left",
