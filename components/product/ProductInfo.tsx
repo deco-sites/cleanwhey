@@ -143,6 +143,7 @@ function ProductInfo({ page, products }: Props) {
             <AddToCartButtonVTEX
               productID={productID}
               seller={seller}
+              valuePrice={listPrice ?? price}
             />
           </>
         ) : (
