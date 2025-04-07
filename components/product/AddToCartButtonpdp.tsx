@@ -31,9 +31,7 @@ const quantity = Number(input?.value) || 1
   console.log("newItem", item)
 
   window.STOREFRONT.CART.addToCart(item as any, platformProps);
-  setTimeout(()=>{
-    window.STOREFRONT.CART.setQuantity(productID, quantity)
-  },1000)
+
   setTimeout(() => { 
     const button: HTMLButtonElement | null = window.document.querySelector(
       '[aria-label="open cart"]',

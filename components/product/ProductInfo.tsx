@@ -4,13 +4,13 @@ import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
-import { useSendEvent } from "../../sdk/useSendEvent.ts";
 import ShippingSimulationForm from "../shipping/Form.tsx";
 import WishlistButton from "../wishlist/WishlistButton.tsx";
 import AddToCartButton from "./AddToCartButtonpdp.tsx";
 import OutOfStock from "./OutOfStock.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
+import { SendEventOnView } from "../Analytics.tsx";
 
 import type { Product } from "apps/commerce/types.ts";
 
@@ -63,18 +63,6 @@ function ProductInfo({ page, products }: Props) {
     listPrice,
   });
 
-  const viewItemEvent = useSendEvent({
-    on: "view",
-    event: {
-      name: "view_item",
-      params: {
-        item_list_id: "product",
-        item_list_name: "Product",
-        items: [item],
-      },
-    },
-  });
-
   const pixObj = product.isVariantOf?.hasVariant
     .filter((value) => value.url == url)[0]
     .offers?.offers[0].priceSpecification.filter(
@@ -94,7 +82,7 @@ function ProductInfo({ page, products }: Props) {
     : [];
 
   return (
-    <div {...viewItemEvent} class="flex flex-col" id={id}>
+    <div class="flex flex-col" id={id}>
       <span
         class={clx(
           "font-bold text-gray-400 flex items-start justify-between text-2xl capitalize",
@@ -149,6 +137,17 @@ function ProductInfo({ page, products }: Props) {
           <OutOfStock productID={productID} />
         )}
       </div>
+      <SendEventOnView
+        id={id}
+        event={{
+          name: "view_item",
+          params: {
+            item_list_id: "product",
+            item_list_name: "Product",
+            items: [item],
+          },
+        }}
+      />
     </div>
   );
 }

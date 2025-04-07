@@ -14,19 +14,6 @@ export interface Props {
   locale: string;
   currency: string;
 }
-const onChange = () => {
-  const input = event!.currentTarget as HTMLInputElement;
-  const productID = input!
-    .closest("fieldset")!
-    .getAttribute("data-item-id")!;
-  const quantity = Number(input.value);
-
-  if (!input.validity.valid) {
-    return;
-  }
-
-  window.STOREFRONT.CART.setQuantity(productID, quantity);
-};
 
 const QUANTITY_MAX_VALUE = 100;
 const removeItemHandler = () => {
@@ -133,7 +120,7 @@ function CartItem({ item, index, locale, currency }: Props) {
               max={QUANTITY_MAX_VALUE}
               value={quantity}
               name={`item::${index}`}
-              hx-on:change={useScript(onChange)}
+              onMinicart
             />
           </div>
         </div>

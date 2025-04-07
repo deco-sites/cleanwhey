@@ -2,7 +2,10 @@ import { type JSX } from "preact";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useScript as useScript } from "@deco/deco/hooks";
-const onClick = (delta: number) => {
+
+type OnMinicart = boolean;
+
+const onClick = (delta: number, onMinicart: OnMinicart) => {
   event!.stopPropagation();
   const button = event!.currentTarget as HTMLButtonElement;
   const input = button.parentElement?.querySelector<HTMLInputElement>(
@@ -12,19 +15,38 @@ const onClick = (delta: number) => {
   const max = Number(input.max) || Infinity;
   input.value = `${Math.min(Math.max(input.valueAsNumber + delta, min), max)}`;
   input.dispatchEvent(new Event("change", { bubbles: false }));
+
+  if (!onMinicart) return;
+
+  const productID = input!
+    .closest("fieldset")!
+    .getAttribute("data-item-id")!;
+  const quantity = Number(input.value);
+
+  if (!input.validity.valid) {
+    return;
+  }
+
+  window.STOREFRONT.CART.setQuantity(productID, quantity);
 };
+
+type QuantitySelectorProps = JSX.IntrinsicElements["input"] & {
+  onMinicart?: OnMinicart;
+};
+
 function QuantitySelector({
   id = useId(),
   disabled,
+  onMinicart = false,
   ...props
-}: JSX.IntrinsicElements["input"]) {
+}: QuantitySelectorProps) {
   return (
     <div class="h-7 join border border-gray-200 min-w-[120px] w-auto justify-between rounded-lg">
       <button
         type="button"
         class="btn h-auto min-h-full hover:bg-transparent  bg-gray-100 justify-center items-center"
         style={"border-radius: 8px 0px 0px 8px;"}
-        hx-on:click={useScript(onClick, -1)}
+        hx-on:click={useScript(onClick, -1, onMinicart)}
         disabled={disabled}
       >
         <span>-</span>
@@ -54,7 +76,7 @@ function QuantitySelector({
         type="button"
         class="btn h-auto min-h-full hover:bg-transparent bg-gray-100 justify-center items-center"
         style={"border-radius: 0px 8px 8px 0px;"}
-        hx-on:click={useScript(onClick, 1)}
+        hx-on:click={useScript(onClick, 1, onMinicart)}
         disabled={disabled}
       >
         <span>+</span>
