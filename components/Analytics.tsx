@@ -1,11 +1,7 @@
-import type { AnalyticsEvent, IEvent } from "apps/commerce/types.ts";
+import type { AnalyticsEvent } from "apps/commerce/types.ts";
 import { scriptAsDataURI } from "apps/utils/dataURI.ts";
 
-interface CustomEvent extends IEvent {
-  name: "sizeSelector";
-}
-
-type EventOnClick = AnalyticsEvent | CustomEvent;
+type EventOnClick = AnalyticsEvent;
 /**
  * This function is usefull for sending events on click. Works with both Server and Islands components
  */
