@@ -2,6 +2,14 @@ import { MINICART_DRAWER_ID } from "../../constants.ts";
 import { useId } from "../../sdk/useId.ts";
 import Icon from "../ui/Icon.tsx";
 import { useScript as useScript } from "@deco/deco/hooks";
+
+function onViewCartEvent() {
+  window.DECO.events.dispatch({
+    name: 'view_cart',
+    params: window.STOREFRONT.CART.getCart(),
+  })
+}
+
 const onLoad = (id: string) =>
   window.STOREFRONT.CART.subscribe((sdk) => {
     const counter = document.getElementById(id);
@@ -21,7 +29,12 @@ function Bag() {
   const id = useId();
   return (
     <>
-      <label class="indicator" for={MINICART_DRAWER_ID} aria-label="open cart">
+      <label
+        class="indicator"
+        for={MINICART_DRAWER_ID}
+        aria-label="open cart"
+        hx-on:click={useScript(onViewCartEvent)}
+      >
         <span
           id={id}
           class="hidden indicator-item badge badge-neutral text-primary-content badge-sm font-normal"
