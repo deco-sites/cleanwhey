@@ -194,7 +194,7 @@ function Suggestions({
 
                 return (
                   <li key={index}>
-                    <a href={`${product.url}`} class="flex gap-1 items-center">
+                    <a href={`${product.url}`} class="flex gap-1 items-center h-fit">
                       <div class="flex flex-row w-full">
                         <div class="flex flex-row w-full gap-2">
                           <Image
