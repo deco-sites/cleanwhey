@@ -117,7 +117,7 @@ function ProductInfo({ page, products }: Props) {
           </span>
         </div>
       )}
-      <div class="mt-4 sm:mt-5 flex flex-col gap-2">
+      <div class="mt-4 desktop:mt-5 flex flex-col gap-2">
         {availability === "https://schema.org/InStock" ? (
           <>
             <AddToCartButton

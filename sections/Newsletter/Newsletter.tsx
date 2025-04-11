@@ -51,12 +51,12 @@ function Notice({
   icon?: ImageWidget;
 }) {
   return (
-    <div class="flex flex-col gap-3 justify-start items-start sm:items-start">
+    <div class="flex flex-col gap-3 justify-start items-start mobile:items-start">
       <span class="text-2xl gap-2 font-bold text-white text-start flex items-center">
         <img src={icon} loading={"lazy"} />
         {title}
       </span>
-      <span class="text-white text-sm sm:text-base font-normal text-start">
+      <span class="text-white text-sm mobile:text-base font-normal text-start">
         {description}
       </span>
     </div>
@@ -86,7 +86,7 @@ function Newsletter({
     return (
       <section class="bg-primary">
         <Section.Container class="border-b border-b-orange-200">
-          <div class="px-4 sm:px-14 py-4 flex flex-col sm:flex-row items-center justify-start sm:justify-center gap-8">
+          <div class="px-4 mobile:px-14 py-4 flex flex-col mobile:flex-row items-center justify-start mobile:justify-center gap-8">
             {/* <Icon size={80} class={clx(status === "success" ? "text-success" : "text-error")} id={status === "success" ? "check-circle" : "error"}/> */}
             <Notice {...(status === "success" ? success : failed)} />
           </div>
@@ -97,14 +97,14 @@ function Newsletter({
   return (
     <section class="bg-primary">
       <Section.Container class="border-b border-b-orange-200">
-        <div class="px-4 sm:px-14 py-4 flex flex-col sm:flex-row items-center justify-start sm:justify-center gap-8">
+        <div class="px-4 mobile:px-14 py-4 flex flex-col mobile:flex-row items-center justify-start mobile:justify-center gap-8">
           <Notice {...empty} icon={icon} />
 
           <form
             hx-target="closest section"
             hx-swap="outerHTML"
             hx-post={useComponent(import.meta.url)}
-            class="flex flex-col sm:flex-row gap-4 w-full max-w-96"
+            class="flex flex-col mobile:flex-row gap-4 w-full max-w-96"
           >
             <input
               name="email"

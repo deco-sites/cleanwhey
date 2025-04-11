@@ -11,7 +11,7 @@ export interface Props {
 }
 const Desktop = ({ items }: Props) => {
   return (
-    <section class="container border-b border-gray-100 pb-8 px-2 xl:px-0">  
+    <section class="container border-b border-gray-100 pb-8 px-2 desktop-sm:px-0">  
       <div class="grid grid-cols-4">
         {items &&
           items.map((item) => (

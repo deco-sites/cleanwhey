@@ -50,7 +50,7 @@ export default function Results({ result }: ComponentProps<typeof action>) {
   }
 
   return (
-    <ul className="flex flex-col gap-4 px-4 lg:px-8 py-4 border rounded-lg border-[#AFAFC0]">
+    <ul className="flex flex-col gap-4 px-4 desktop:px-8 py-4 border rounded-lg border-[#AFAFC0]">
       <div class="text-sm text-[#A1A6B7] flex-col flex">
         <span>Opções de frete para o CEP</span>
         {result !== null && (

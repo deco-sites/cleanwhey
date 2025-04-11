@@ -46,7 +46,7 @@ const Desktop = ({ items }: Props) => {
               </p>
               <h2
                 class={`max-w-[275px] ${item.flag ? "mb-6" : "mb-12"
-                  } font-bold text-xl md:text-2xl text-white`}
+                  } font-bold text-xl phone:text-2xl text-white`}
               >
                 {item.title}
               </h2>
@@ -66,7 +66,7 @@ const Mobile = ({ items }: Props) => {
   const id = useId();
   return (
     <section id={id} class="relative">
-      <Slider className="carousel carousel-center max-w-md space-x-4 p-4 md:pr-4 md:pl-4 pr-0">
+      <Slider className="carousel carousel-center max-w-md space-x-4 p-4 phone:pr-4 phone:pl-4 pr-0">
         {items &&
           items.map((item, index) => (
             <Slider.Item
@@ -93,7 +93,7 @@ const Mobile = ({ items }: Props) => {
                 </p>
                 <h2
                   class={`max-w-[275px] ${item.flag ? "mb-6" : "mb-12"
-                    } font-bold text-xl md:text-2xl text-white`}
+                    } font-bold text-xl phone:text-2xl text-white`}
                 >
                   {item.title}
                 </h2>

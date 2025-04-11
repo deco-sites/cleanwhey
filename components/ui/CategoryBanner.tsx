@@ -64,12 +64,12 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
 
       <div class="
       container flex flex-col gap-8 
-      items-start justify-start pt-8 pl-8 sm:justify-center sm:items-start col-start-1 
+      items-start justify-start pt-8 pl-8 mobile:justify-center mobile:items-start col-start-1 
       col-span-1 row-start-1 row-span-1 w-full">
         <h1>
           {title && (
             <span
-              class="text-sm sm:text-base font-normal text-gray-400"
+              class="text-sm mobile:text-base font-normal text-gray-400"
               dangerouslySetInnerHTML={{ __html: title }}
             />
           )}

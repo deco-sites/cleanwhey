@@ -80,10 +80,10 @@ export default function GallerySlider(props: Props) {
     <>
       <div
         id={id}
-        class="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-[min-content_1fr] gap-5"
+        class="grid grid-flow-row desktop:grid-flow-col grid-cols-1 desktop:grid-cols-[min-content_1fr] gap-5"
       >
         {/* Image Slider */}
-        <div class="col-start-1 col-span-1 sm:col-start-2">
+        <div class="col-start-1 col-span-1 desktop:col-start-2">
           <div class="relative h-min flex-grow">
             {inStock && offsalePrice && off != 0 && (
               <span
@@ -135,7 +135,7 @@ export default function GallerySlider(props: Props) {
 
             {
               /* <div class="absolute top-2 right-2 bg-base-100 rounded-full">
-              <label class="btn btn-ghost hidden sm:inline-flex" for={zoomId}>
+              <label class="btn btn-ghost hidden mobile:inline-flex" for={zoomId}>
                 <Icon id="pan_zoom" />
               </label>
             </div> */
@@ -148,7 +148,7 @@ export default function GallerySlider(props: Props) {
           <ul
             class={clx(
               "carousel carousel-center",
-              "sm:carousel-vertical",
+              "desktop:carousel-vertical",
               "gap-2",
             )}
             style={{ maxHeight: "600px" }}

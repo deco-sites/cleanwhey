@@ -8,8 +8,10 @@ export default {
     container: {
       center: true,
       screens: {
-        lg: "1216px",
-        xl: "1216px",
+        md: "100%",
+        lg: "100%",
+        xl: "100%",
+        "2xl": "100%"
       },
     },
     extend: {
@@ -73,6 +75,14 @@ export default {
       // BLACK COLORS
       "black-100": "#13181D",
       "black-200": "#EC8583",
+    },
+    screens: {
+      phone: { max: "768px" },
+      mobile: { max: "1025px" },
+      desktop: { min: "1026px" },
+      "desktop-lg": { min: "1340px" },
+      "desktop-sm": { min: "1026px", max: "1300px" },
+      "mobile-lg": { min: "768px", max: "1025px" },
     },
   },
 };

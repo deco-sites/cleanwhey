@@ -46,7 +46,7 @@ const Desktop = ({ items }: Props) => {
                   src={item.images.onHover} />
               </div>
             </a>
-            <p class="z-20 w-auto absolute bottom-0 bg-primary p-3 rounded text-white font-bold  text-center lg:text-sm xl:text-lg uppercase">
+            <p class="z-20 w-auto absolute bottom-0 bg-primary p-3 rounded text-white font-bold  text-center desktop:text-sm desktop-sm:text-lg uppercase">
               {item.textLabel}
             </p>
           </div>
@@ -58,7 +58,7 @@ const Mobile = ({ items }: Props) => {
   const id = useId();
   return (
     <section id={id} class="relative">
-      <Slider className="carousel carousel-center max-w-md space-x-4 p-4 md:pr-4 md:pl-4 ">
+      <Slider className="carousel carousel-center max-w-md space-x-4 p-4 phone:pr-4 phone:pl-4 ">
         {items &&
           items.map((item, index) => (
             <Slider.Item
@@ -121,7 +121,7 @@ const Mobile = ({ items }: Props) => {
 export default function CategoryGallery({ title, items }: Props) {
   const device = useDevice();
   return (
-    <section class="section container mt-5 md:mt-12 px-2 xl:px-0">
+    <section class="section container mt-5 phone:mt-12 px-2 desktop-sm:px-0">
       {title && (
         <div class={"title"}>
           <h2

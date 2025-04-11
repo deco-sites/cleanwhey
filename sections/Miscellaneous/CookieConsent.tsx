@@ -60,17 +60,17 @@ function CookieConsent(
       <div
         id={id}
         class={clx(
-          "transform-gpu translate-y-[200%] transition fixed bottom-0 w-screen z-50 sm:flex",
-          "sm:bottom-2 sm:justify-cente",
+          "transform-gpu translate-y-[200%] transition fixed bottom-0 w-screen z-50 mobile:flex",
+          "mobile:bottom-2 mobile:justify-cente",
         )}
       >
         <div
           class={clx(
             "p-4 mx-4 my-2 flex flex-col gap-4 shadow bg-base-100 rounded border border-base-200",
-            "sm:flex-row sm:items-end",
+            "mobile:flex-row mobile:items-end",
           )}
         >
-          <div class={clx("flex-auto flex flex-col gap-4", "sm:gap-2")}>
+          <div class={clx("flex-auto flex flex-col gap-4", "mobile:gap-2")}>
             <h3 class="text-xl">{title}</h3>
             {text && (
               <div

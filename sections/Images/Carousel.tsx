@@ -102,18 +102,18 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
       {action && (
         <div
           class={`
-            ${image.position == "Left" ? "left-0 sm:left-40 md:left-50" : ""}
-            ${image.position == "Right" ? "right-0 sm:right-40 md:right-50" : ""}
-            absolute h-auto md:h-full w-full top-5 md:top-0
+            ${image.position == "Left" ? "left-0 mobile:left-40 phone:left-50" : ""}
+            ${image.position == "Right" ? "right-0 mobile:right-40 phone:right-50" : ""}
+            absolute h-auto phone:h-full w-full top-5 phone:top-0
             flex flex-col justify-center items-center
-            px-5 sm:px-0
-            sm:items-start sm:max-w-xl`}
+            px-5 mobile:px-0
+            mobile:items-start mobile:max-w-xl`}
         >
           {activateContent && action.title && (
             <span
               class={`${
-                image.position == "Left" ? "md:text-5xl" : "md:text-7xl"
-              } text-[32px] text-center md:text-left font-normal leading md:leading-[60px] font-lato text-[#808184]`}
+                image.position == "Left" ? "phone:text-5xl" : "phone:text-7xl"
+              } text-[32px] text-center phone:text-left font-normal leading phone:leading-[60px] font-lato text-[#808184]`}
               dangerouslySetInnerHTML={{ __html: action.title }}
             />
           )}
@@ -122,10 +122,10 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
             {action.subTitle}
           </span> */}
           {activateContent && (
-            <div className="actions flex flex-col md:flex-row items-center gap-2 mt-4">
+            <div className="actions flex flex-col desktop:flex-row items-center gap-2 mt-4">
               {action.label != undefined && (
                 <button
-                  class="border w-full md:w-auto !border-orange-300  hover:bg-primary !text-white hover:text-white !bg-primary btn btn-primary rounded-lg btn-outline"
+                  class="border w-full phone:w-auto !border-orange-300  hover:bg-primary !text-white hover:text-white !bg-primary btn btn-primary rounded-lg btn-outline"
                   aria-label={action.label}
                 >
                   {action.label}
@@ -182,8 +182,8 @@ function Carousel({ images = [], preload, interval }: Props) {
         "grid",
         "grid-rows-[1fr_32px_1fr_64px]",
         "grid-cols-[32px_1fr_32px]",
-        "sm:grid-cols-[112px_1fr_112px] sm:min-h-min",
-        "w-screen max-w-full md:mb-8 mb-6"
+        "mobile:grid-cols-[112px_1fr_112px] mobile:min-h-min",
+        "w-screen max-w-full phone:mb-8 mb-6"
       )}
     >
       <div class="col-span-full row-span-full">

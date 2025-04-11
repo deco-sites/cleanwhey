@@ -64,14 +64,14 @@ export default function NutritionalInformation(props: Props) {
     props;
   const device = useDevice();
   return (
-    <section class="bg-white-300 pb-8 md:pb-8 md:px-2 xl:px-0 py-12 xl:py-0" id={"informacao-nutricional"}>
-      <div className="container px-4 md:px-0">
-        <h2 class={"font-bold mb-6 text-gray-400 text-[32px] md:text-5xl"}>
+    <section class="bg-white-300 pb-8 desktop:pb-8 desktop:px-2 desktop-sm:px-0 py-12 desktop-sm:py-0" id={"informacao-nutricional"}>
+      <div className="container px-4 desktop:px-0">
+        <h2 class={"font-bold mb-6 text-gray-400 text-[32px] desktop:text-5xl"}>
           {title}
         </h2>
       </div>
-      <div className="container flex flex-col md:flex-row px-4 md:px-0">
-        <div class="tabela mb-6 w-full rounded-lg md:px-8 md:bg-white md:max-w-[730px] md:mr-6 ">
+      <div className="container flex flex-col desktop:flex-row px-4 desktop:px-0">
+        <div class="tabela mb-6 w-full rounded-lg desktop:px-8 desktop:bg-white desktop:max-w-[730px] desktop:mr-6 ">
           {table && (
             <Picture>
               <Source
@@ -95,7 +95,7 @@ export default function NutritionalInformation(props: Props) {
             </Picture>
           )}
         </div>
-        <div class="double-content flex flex-col w-full md:max-w-[462px]">
+        <div class="double-content flex flex-col w-full desktop:max-w-[462px]">
           {ingredients && (
             <div className="ingredientes mb-6 bg-white rounded-lg p-4">
               <h3 class="mb-4 text-gray-400 text-base font-bold">
@@ -144,7 +144,7 @@ export default function NutritionalInformation(props: Props) {
         </div>
       </div>
       {device === "desktop" && (
-        <div className="container px-4 md:px-0" id={"modo-de-preparo"}>
+        <div className="container px-4 desktop:px-0" id={"modo-de-preparo"}>
           <div class="pb-6">
             <ul class="w-full">
               <li class="gap-2 flex flex-col">

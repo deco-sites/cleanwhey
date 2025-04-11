@@ -165,7 +165,7 @@ function ProductCard({
         class="pt-5 text-center flex flex-col justify-between"
       >
         <span
-          class={`font-bold text-gray-400 text-base md:text-lg text-center capitalize`}
+          class={`font-bold text-gray-400 text-base phone:text-lg text-center capitalize`}
         >
           {title.replace("Cor:", "")} - {productName?.replace("Cor:", "")}
         </span>
@@ -174,7 +174,7 @@ function ProductCard({
             {inStock ? (
               <>
                 <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
-                  <span class="text-xl font-bold flex lg:flex-row  flex-col  gap-2 text-gray-400 items-center">
+                  <span class="text-xl font-bold flex desktop:flex-row  flex-col  gap-2 text-gray-400 items-center">
                     {formatPrice(pixObj?.price) || formatPrice(price)}
                     <p class="text-sm text-gray-300">
                       via PIX{" "}
@@ -209,7 +209,7 @@ function ProductCard({
             ) : (
               <>
                 <div class="flex-grow" />
-                <span class=" text-2xl text-center font-bold min-h-[132px] md:min-h-[112px] flex items-center flex-wrap justify-center">
+                <span class=" text-2xl text-center font-bold min-h-[132px] phone:min-h-[112px] flex items-center flex-wrap justify-center">
                   Produto Indisponível
                 </span>
                 <div class="flex-grow" />
@@ -273,10 +273,10 @@ function ProductCard({
             seller={seller}
             item={item}
             ctaText="ADICIONAR À SACOLA"
-            class={`${isFeatured ? "px-1.5 md:text-sm mt-2.5" : ""} ${clx(
+            class={`${isFeatured ? "px-1.5 phone:text-sm mt-2.5" : ""} ${clx(
               "btn uppercase",
               "btn-outline rounded-lg border-none px-0 no-animation w-full",
-              "bg-primary text-white h-14 font-semibold  md:text-sm lg:text-xs xl:text-sm text-xs  flex-nowrap",
+              "bg-primary text-white h-14 font-semibold  phone:text-sm desktop:text-xs desktop-sm:text-sm text-xs  flex-nowrap",
               "hover:bg-primary",
             )
               }`}
@@ -286,7 +286,7 @@ function ProductCard({
           //   class={`${clx(
           //     "btn uppercase",
           //     "btn-outline rounded-lg border-none px-0 no-animation w-full",
-          //     "bg-primary text-white h-14 font-semibold  md:text-sm lg:text-xs xl:text-sm text-xs  flex-nowrap",
+          //     "bg-primary text-white h-14 font-semibold  phone:text-sm desktop:text-xs desktop-sm:text-sm text-xs  flex-nowrap",
           //     "hover:bg-primary"
           //   )}`}
           // >
@@ -298,7 +298,7 @@ function ProductCard({
             class={`${clx(
               "btn uppercase shrink",
               "btn-outline rounded-lg border-none px-0 no-animation w-full",
-              "bg-primary text-white h-14 font-semibold  md:text-sm lg:text-xs xl:text-sm text-xs flex-nowrap",
+              "bg-primary text-white h-14 font-semibold  phone:text-sm desktop:text-xs desktop-sm:text-sm text-xs flex-nowrap",
               "hover:bg-primary"
             )}`}
           >

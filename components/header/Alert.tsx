@@ -22,7 +22,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
   return (
     <div
       id={id}
-      class="grid grid-rows-[1fr_32px_1fr_64px] grid-cols-[32px_1fr_32px] sm:grid-cols-[112px_1fr_112px] w-screen bg-secondary max-h-8"
+      class="grid grid-rows-[1fr_32px_1fr_64px] grid-cols-[32px_1fr_32px] desktop:grid-cols-[112px_1fr_112px] w-screen bg-secondary max-h-8"
     >
       <div class="col-span-full row-span-full max-h-8">
         <Slider class="carousel carousel-center w-screen gap-6 text-secondary-content text-sm/4">

@@ -26,12 +26,12 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
   return (
     <section>
       <div id={id} class="relative">
-        <Slider className="carousel gap-1.5 md:pr-4 md:pl-4">
+        <Slider className="carousel gap-1.5 phone:pr-4 phone:pl-4">
           {items &&
             items.map((item, index) => (
               <Slider.Item
                 index={index}
-                class="carousel-item relative group !ml-0 flex lg:w-1/3 xl:w-1/4 duration-300 h-full transition-all items-center justify-center first:pl-4 last:pr-4"
+                class="carousel-item relative group !ml-0 flex desktop:w-1/3 desktop-sm:w-1/4 duration-300 h-full transition-all items-center justify-center first:pl-4 last:pr-4"
               >
                 <a
                   class={`rounded-lg w-full h-full transition-all duration-300 relative overflow-hidden`}
@@ -101,7 +101,7 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
   return (
     <section>
       <div id={id} class="relative">
-        <Slider className="carousel carousel-center max-w-md space-x-4 p-4 gap-1.5 md:pr-4 md:pl-4 pr-0">
+        <Slider className="carousel carousel-center max-w-md space-x-4 p-4 gap-1.5 phone:pr-4 phone:pl-4 pr-0">
           {items &&
             items.map((item, index) => (
               <Slider.Item

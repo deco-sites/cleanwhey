@@ -15,8 +15,8 @@ export default function DescriptionNavigator({ links }: Props) {
                 [&::-webkit-scrollbar]:[width:3px]
                 [&::-webkit-scrollbar-thumb]:[background-color: #ff0000]
                 flex items-start 
-                md:items-center overflow-x-auto justify-start 
-                md:justify-center gap-8`}
+                phone:items-center overflow-x-auto justify-start 
+                phone:justify-center desktop:gap-8`}
         >
           {links &&
             links.map((link) => (

@@ -44,7 +44,7 @@ const DEFAULT_IMAGE =
 
 function Container({ children }: { children: ComponentChildren }) {
   return (
-    <div class="container lg:mx-auto  mx-0 my-5 lg:my-10 text-sm">
+    <div class="container desktop:mx-auto  mx-0 my-5 desktop:my-10 text-sm">
       <div class="space-y-8">{children}</div>
     </div>
   );
@@ -91,9 +91,9 @@ export default function BlogPosts({
           />
         )}
 
-        <div class="gap-8 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 py-5">
+        <div class="gap-8 grid grid-cols-1 desktop:grid-cols-4 phone:grid-cols-3 py-5">
           {posts?.slice(from, to).map((post) => (
-            <div class="overflow-hidden rounded-lg flex flex-col bg-white-300 p-2.5 max-w-72 mx-auto lg:mx-0">
+            <div class="overflow-hidden rounded-lg flex flex-col bg-white-300 p-2.5 max-w-72 mx-auto desktop:mx-0">
               <figure class="relative">
                 <Image
                   width={635}

@@ -21,7 +21,7 @@ export interface Props {
 function Banner({ title, description, images, cta }: Props) {
   return (
     <Section.Container>
-      <div class="relative bg-base-200 mx-5 sm:mx-0">
+      <div class="relative bg-base-200 mx-5 mobile:mx-0">
         <Picture>
           <Source
             media="(max-width: 640px)"
@@ -41,9 +41,9 @@ function Banner({ title, description, images, cta }: Props) {
         <div
           class={clx(
             "absolute left-0 top-0",
-            "p-5 sm:p-10",
+            "p-5 mobile:p-10",
             "flex flex-col gap-4",
-            "h-full max-w-full sm:max-w-[33%]",
+            "h-full max-w-full mobile:max-w-[33%]",
           )}
         >
           {title && <span class="font-bold text-7xl">{title}</span>}

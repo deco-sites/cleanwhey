@@ -33,7 +33,7 @@ function Logos({
     <Section.Container>
       <Section.Header title={title} cta={cta} />
 
-      <ul class="flex flex-wrap items-center justify-center gap-2 sm:gap-4 px-5 sm:px-0">
+      <ul class="flex flex-wrap items-center justify-center gap-2 mobile:gap-4 px-5 mobile:px-0">
         {images.map((item) => (
           <li>
             <Image

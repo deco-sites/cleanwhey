@@ -17,7 +17,7 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
     <>
       <div
         id={id}
-        class="flex items-center justify-between sm:justify-unset mb-4"
+        class="flex items-center justify-between desktop:justify-unset mb-4"
       >
         <div>
           <Slider.PrevButton class="disable:bg-transparent flex btn !bg-transparent border-none btn-neutral btn-sm btn-circle no-animation">
@@ -31,8 +31,8 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
 
         <div
           class={`${isFeatured
-              ? "md:max-w-[90%] max-w-[85%]"
-              : "sm:max-w-[95%] max-w-[80%]"
+              ? "phone:max-w-[90%] max-w-[85%]"
+              : "desktop:max-w-[95%] max-w-[80%]"
             } w-full px-0 `}
         >
           <Slider class="carousel w-full gap-4 pt-4">
@@ -42,10 +42,10 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
                   key={index}
                   index={index}
                   className={`carousel-item w-full 
-                first:pl-0 first:sm:pl-2 last:pr-0 last:sm:pr-2
+                first:pl-0 first:desktop:pl-2 last:pr-0 last:desktop:pr-2
                 ${isFeatured
-                      ? "md:w-[calc(33.33%-16px)]"
-                      : "md:w-[calc(33%-16px)] xl:w-[calc(25%-16px)]"
+                      ? "phone:w-[calc(33.33%-16px)]"
+                      : "phone:w-[calc(33%-16px)] desktop-sm:w-[calc(25%-16px)]"
                     }
               `}
                 >
@@ -54,7 +54,7 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
                     productName={product.name}
                     isFeatured={isFeatured}
                     itemListName={itemListName}
-                    class={`mx-4 sm:mx-0 p-4 w-full ${isFeatured ? "bg-white" : ""
+                    class={`mx-4 desktop:mx-0 p-4 w-full ${isFeatured ? "bg-white" : ""
                       } border border-gray-100 shadow-[0_0_10px_0_rgba(0,0,0,0.1)]`}
                   />
                 </Slider.Item>

@@ -15,11 +15,11 @@ function Header({ title, isFeatured, icon }: Props) {
     return null;
   }
   return (
-    <div class={`flex justify-center items-center gap-2 px-5 sm:px-0`}>
+    <div class={`flex justify-center items-center gap-2 px-5 mobile:px-0`}>
       <span
         class={`${
           isFeatured ? "font-normal !text-white" : "font-semibold text-gray-300"
-        } text-2xl text-center sm:text-2xl pt-3`}
+        } text-2xl text-center mobile:text-2xl pt-3`}
         dangerouslySetInnerHTML={{ __html: title }}
       />
       <img loading={"lazy"} src={icon} />
@@ -45,7 +45,7 @@ function Tabbed({ tabs, current = 0, children }: {
   const id = useId();
   return (
     <>
-      <div class="flex px-5 sm:px-0 gap-3">
+      <div class="flex px-5 mobile:px-0 gap-3">
         <div role="tablist" class="tabs gap-3">
           {tabs.map((tab, index) => (
             <button
@@ -82,7 +82,7 @@ function Container({ class: _class, ...props }: JSX.IntrinsicElements["div"]) {
     <div
       {...props}
       class={clx(
-        "container flex flex-col gap-4 w-full py-5 sm:pt-10",
+        "container flex flex-col gap-4 w-full py-5 mobile:pt-10",
         _class?.toString(),
       )}
     />

@@ -141,7 +141,7 @@ function AddToCartButton(props: Props) {
 
         {props.ctaText ?? "COMPRAR AGORA"}
         <svg
-          class="w-4 h-4 md:w-8 md:h-8 lg:w-5 lg:h-5 xl:w-8 xl:h-8"
+          class="w-4 h-4 phone:w-8 phone:h-8 desktop:w-5 desktop:h-5 desktop-sm:w-8 desktop-sm:h-8"
           width="32"
           height="32"
           viewBox="0 0 32 32"

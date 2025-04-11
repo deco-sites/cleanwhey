@@ -44,14 +44,14 @@ function CategoryGrid({ title, cta, items }: Props) {
           </div>
         )
         : (
-          <Slider class="carousel carousel-center sm:carousel-end gap-5 w-full">
+          <Slider class="carousel carousel-center mobile:carousel-end gap-5 w-full">
             {items.map((i, index) => (
               <Slider.Item
                 index={index}
                 class={clx(
                   "carousel-item",
-                  "first:pl-5 first:sm:pl-0",
-                  "last:pr-5 last:sm:pr-0",
+                  "first:pl-5 first:mobile:pl-0",
+                  "last:pr-5 last:mobile:pr-0",
                 )}
               >
                 <Card {...i} />
