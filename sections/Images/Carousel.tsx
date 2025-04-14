@@ -102,9 +102,9 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
       {action && (
         <div
           class={`
-            ${image.position == "Left" ? "left-0 mobile:left-40 phone:left-50" : ""}
-            ${image.position == "Right" ? "right-0 mobile:right-40 phone:right-50" : ""}
-            absolute h-auto phone:h-full w-full top-5 phone:top-0
+            ${image.position == "Left" ? "left-0 desktop:left-40 mobile:left-50" : ""}
+            ${image.position == "Right" ? "right-0 desktop:right-40 mobile:right-50" : ""}
+            absolute h-auto mobile:h-full w-full top-5 mobile:top-0
             flex flex-col justify-center items-center
             px-5 mobile:px-0
             mobile:items-start mobile:max-w-xl`}
@@ -196,7 +196,7 @@ function Carousel({ images = [], preload, interval }: Props) {
         </Slider>
       </div>
       {images.length > 1 && (
-        <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
+        <div class="flex items-center justify-center z-10 col-start-1 row-start-2 left-10 relative">
           <Slider.PrevButton
             class="btn btn-neutral btn-outline btn-circle no-animation btn-sm"
             disabled={false}
@@ -206,7 +206,7 @@ function Carousel({ images = [], preload, interval }: Props) {
         </div>
       )}
       {images.length > 1 && (
-        <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
+        <div class="flex items-center justify-center z-10 col-start-3 row-start-2 right-10 relative">
           <Slider.NextButton
             class="btn btn-neutral btn-outline btn-circle no-animation btn-sm"
             disabled={false}

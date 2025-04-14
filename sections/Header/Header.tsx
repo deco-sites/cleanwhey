@@ -60,7 +60,7 @@ const Desktop = (props: SectionProps<typeof loader>) => {
   return (
     <>
       <div class="flex flex-col gap-4 pt-5">
-        <div class="container flex justify-between items-center px-2 desktop-sm:px-0 gap-4">
+        <div class="container flex justify-between items-center px-2 desktop-sm:px-0 gap-4 max-w-[1216px] mx-auto">
           <div class="place-self-start">
             <a href="/" aria-label="Store logo">
               <Image
@@ -96,7 +96,7 @@ const Desktop = (props: SectionProps<typeof loader>) => {
         </div>
 
         <div class="flex justify-between items-center text-base bg-accent px-2 desktop-sm:px-0">
-          <div className="container">
+          <div className="container max-w-[1216px] mx-auto">
             <ul class="flex justify-between">
               {navItems?.slice(0, 8).map((item) => <NavItem item={item} />)}
             </ul>

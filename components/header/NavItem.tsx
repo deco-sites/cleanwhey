@@ -34,7 +34,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
             marginTop: HEADER_HEIGHT_DESKTOP,
           }}
         >
-          <div className="container flex items-center justify-between">
+          <div className="container flex items-center justify-between max-w-[1216px]">
             <ul class="flex relative flex-col items-start justify-center gap-2 min-w-[200px] border-r-gray-200 border-r pr-5">
               <li>
                 <h2 class=" text-lg text-orange-300 font-bold">{name}</h2>
