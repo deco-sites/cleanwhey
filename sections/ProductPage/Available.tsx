@@ -9,7 +9,10 @@ function Available(props: AvailableProps) {
   const { numberOfReviews, storeId } = props;
 
   return (
-    <TrustvoxStoreReviewsCarousel enableStaging numberOfReviewsInStoreCarousel={numberOfReviews} storeId={storeId} />
+    <div>
+      <h2 className={"font-bold mb-6 text-gray-400 text-[32px] md:text-5xl text-center"}>Nossas Avaliações</h2>
+      <TrustvoxStoreReviewsCarousel enableStaging numberOfReviewsInStoreCarousel={numberOfReviews} storeId={storeId} />
+    </div>
   )
 }
 
