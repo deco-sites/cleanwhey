@@ -17,7 +17,7 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
     <>
       <div
         id={id}
-        class="flex items-center justify-between desktop:justify-unset mb-4"
+        class="flex items-center justify-between desktop:justify-unset mb-4 max-w-[1216px] mx-auto"
       >
         <div>
           <Slider.PrevButton class="disable:bg-transparent flex btn !bg-transparent border-none btn-neutral btn-sm btn-circle no-animation">
@@ -42,10 +42,10 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
                   key={index}
                   index={index}
                   className={`carousel-item w-full 
-                first:pl-0 first:desktop:pl-2 last:pr-0 last:desktop:pr-2
+                first:pl-0 first:mobile:pl-2 last:pr-0 last:mobile:pr-2
                 ${isFeatured
-                      ? "phone:w-[calc(33.33%-16px)]"
-                      : "phone:w-[calc(33%-16px)] desktop-sm:w-[calc(25%-16px)]"
+                      ? "desktop:w-[calc(33.33%-16px)]"
+                      : "desktop:w-[calc(33%-16px)] desktop-lg:w-[calc(25%-16px)]"
                     }
               `}
                 >

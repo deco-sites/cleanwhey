@@ -121,7 +121,7 @@ const Mobile = ({ items }: Props) => {
 export default function CategoryGallery({ title, items }: Props) {
   const device = useDevice();
   return (
-    <section class="section container mt-5 phone:mt-12 px-2 desktop-sm:px-0">
+    <section class="section container mt-5 phone:mt-12 px-2 desktop-sm:px-0 max-w-[1216px] mx-auto">
       {title && (
         <div class={"title"}>
           <h2

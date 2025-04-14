@@ -4473,9 +4473,6 @@ details.collapse summary::-webkit-details-marker {
 .max-w-\[90\%\] {
   max-width: 90%;
 }
-.max-w-\[95\%\] {
-  max-width: 95%;
-}
 .max-w-full {
   max-width: 100%;
 }
@@ -7109,14 +7106,6 @@ flex-grow-1 {
     width: 2rem;
   }
 
-  .phone\:w-\[calc\(33\%-16px\)\] {
-    width: calc(33% - 16px);
-  }
-
-  .phone\:w-\[calc\(33\.33\%-16px\)\] {
-    width: calc(33.33% - 16px);
-  }
-
   .phone\:w-auto {
     width: auto;
   }
@@ -7438,8 +7427,16 @@ flex-grow-1 {
     padding-left: 0px;
   }
 
+  .first\:mobile\:pl-2:first-child {
+    padding-left: 0.5rem;
+  }
+
   .last\:mobile\:pr-0:last-child {
     padding-right: 0px;
+  }
+
+  .last\:mobile\:pr-2:last-child {
+    padding-right: 0.5rem;
   }
 }
 
@@ -7622,6 +7619,14 @@ flex-grow-1 {
 
   .desktop\:w-\[65\%\] {
     width: 65%;
+  }
+
+  .desktop\:w-\[calc\(33\%-16px\)\] {
+    width: calc(33% - 16px);
+  }
+
+  .desktop\:w-\[calc\(33\.33\%-16px\)\] {
+    width: calc(33.33% - 16px);
   }
 
   .desktop\:w-full {
@@ -7823,13 +7828,12 @@ flex-grow-1 {
     font-size: 0.75rem;
     line-height: 1rem;
   }
+}
 
-  .first\:desktop\:pl-2:first-child {
-    padding-left: 0.5rem;
-  }
+@media (min-width: 1340px) {
 
-  .last\:desktop\:pr-2:last-child {
-    padding-right: 0.5rem;
+  .desktop-lg\:w-\[calc\(25\%-16px\)\] {
+    width: calc(25% - 16px);
   }
 }
 
@@ -7850,10 +7854,6 @@ flex-grow-1 {
 
   .desktop-sm\:w-8 {
     width: 2rem;
-  }
-
-  .desktop-sm\:w-\[calc\(25\%-16px\)\] {
-    width: calc(25% - 16px);
   }
 
   .desktop-sm\:px-0 {

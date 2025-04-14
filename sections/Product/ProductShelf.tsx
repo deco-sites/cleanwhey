@@ -44,7 +44,7 @@ export default function ProductShelf({
     <Section.Container
       {...viewItemListEvent}
       class={`${
-        isFeatured ? "bg-neutral rounded-lg mt-12 max-w-[95%] !container" : ""
+        isFeatured ? "bg-neutral rounded-lg mt-12 max-w-[1216px] mx-auto !container" : ""
       } ${!activePaddingBotton ? "pb-0" : "pb-5"}`}
     >
       <Section.Header title={title} isFeatured={isFeatured} icon={icon} />

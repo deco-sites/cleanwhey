@@ -12,7 +12,7 @@ export interface Props {
 const Desktop = ({ items }: Props) => {
   return (
     <section class="container border-b border-gray-100 pb-8 px-2 desktop-sm:px-0">  
-      <div class="grid grid-cols-4">
+      <div class="grid grid-cols-4 max-w-[1216px] mx-auto">
         {items &&
           items.map((item) => (
             <div class={"flex flex-col gap-2 justify-center items-center"}>
