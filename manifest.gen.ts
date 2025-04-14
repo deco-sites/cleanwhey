@@ -7,8 +7,9 @@ import * as $$$$$$$$$1 from "./actions/wishlist/submit.ts";
 import * as $$$$$$$$$$$0 from "./apps/deco/analytics.ts";
 import * as $$$$$$$$$$$1 from "./apps/deco/blog.ts";
 import * as $$$$$$$$$$$2 from "./apps/deco/htmx.ts";
-import * as $$$$$$$$$$$3 from "./apps/deco/vtex.ts";
-import * as $$$$$$$$$$$4 from "./apps/site.ts";
+import * as $$$$$$$$$$$3 from "./apps/deco/ra-trustvox.ts";
+import * as $$$$$$$$$$$4 from "./apps/deco/vtex.ts";
+import * as $$$$$$$$$$$5 from "./apps/site.ts";
 import * as $$$1 from "./loaders/availableIcons.ts";
 import * as $$$0 from "./loaders/BusnissRule/Pix.ts";
 import * as $$$2 from "./loaders/icons.ts";
@@ -57,19 +58,20 @@ import * as $$$$$$38 from "./sections/Product/ProductShelfTabbed.tsx";
 import * as $$$$$$39 from "./sections/Product/SearchResult.tsx";
 import * as $$$$$$40 from "./sections/Product/ShelfWithImage.tsx";
 import * as $$$$$$41 from "./sections/Product/Wishlist.tsx";
-import * as $$$$$$42 from "./sections/ProductPage/DescriptionBannerBenefits.tsx";
-import * as $$$$$$43 from "./sections/ProductPage/DescriptionBannerRight.tsx";
-import * as $$$$$$44 from "./sections/ProductPage/DescriptionContent.tsx";
-import * as $$$$$$45 from "./sections/ProductPage/DescriptionFullbanner.tsx";
-import * as $$$$$$46 from "./sections/ProductPage/DescriptionMoreInfos.tsx";
-import * as $$$$$$47 from "./sections/ProductPage/DescriptionNavigator.tsx";
-import * as $$$$$$48 from "./sections/ProductPage/NutritionalInformation.tsx";
-import * as $$$$$$49 from "./sections/Session.tsx";
-import * as $$$$$$50 from "./sections/Social/InstagramPosts.tsx";
-import * as $$$$$$51 from "./sections/Social/WhatsApp.tsx";
-import * as $$$$$$52 from "./sections/Theme/Theme.tsx";
-import * as $$$$$$53 from "./sections/UI/textwithimage.tsx";
-import * as $$$$$$54 from "./sections/UI/title.tsx";
+import * as $$$$$$42 from "./sections/ProductPage/Available.tsx";
+import * as $$$$$$43 from "./sections/ProductPage/DescriptionBannerBenefits.tsx";
+import * as $$$$$$44 from "./sections/ProductPage/DescriptionBannerRight.tsx";
+import * as $$$$$$45 from "./sections/ProductPage/DescriptionContent.tsx";
+import * as $$$$$$46 from "./sections/ProductPage/DescriptionFullbanner.tsx";
+import * as $$$$$$47 from "./sections/ProductPage/DescriptionMoreInfos.tsx";
+import * as $$$$$$48 from "./sections/ProductPage/DescriptionNavigator.tsx";
+import * as $$$$$$49 from "./sections/ProductPage/NutritionalInformation.tsx";
+import * as $$$$$$50 from "./sections/Session.tsx";
+import * as $$$$$$51 from "./sections/Social/InstagramPosts.tsx";
+import * as $$$$$$52 from "./sections/Social/WhatsApp.tsx";
+import * as $$$$$$53 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$54 from "./sections/UI/textwithimage.tsx";
+import * as $$$$$$55 from "./sections/UI/title.tsx";
 
 const manifest = {
   "loaders": {
@@ -123,19 +125,20 @@ const manifest = {
     "site/sections/Product/SearchResult.tsx": $$$$$$39,
     "site/sections/Product/ShelfWithImage.tsx": $$$$$$40,
     "site/sections/Product/Wishlist.tsx": $$$$$$41,
-    "site/sections/ProductPage/DescriptionBannerBenefits.tsx": $$$$$$42,
-    "site/sections/ProductPage/DescriptionBannerRight.tsx": $$$$$$43,
-    "site/sections/ProductPage/DescriptionContent.tsx": $$$$$$44,
-    "site/sections/ProductPage/DescriptionFullbanner.tsx": $$$$$$45,
-    "site/sections/ProductPage/DescriptionMoreInfos.tsx": $$$$$$46,
-    "site/sections/ProductPage/DescriptionNavigator.tsx": $$$$$$47,
-    "site/sections/ProductPage/NutritionalInformation.tsx": $$$$$$48,
-    "site/sections/Session.tsx": $$$$$$49,
-    "site/sections/Social/InstagramPosts.tsx": $$$$$$50,
-    "site/sections/Social/WhatsApp.tsx": $$$$$$51,
-    "site/sections/Theme/Theme.tsx": $$$$$$52,
-    "site/sections/UI/textwithimage.tsx": $$$$$$53,
-    "site/sections/UI/title.tsx": $$$$$$54,
+    "site/sections/ProductPage/Available.tsx": $$$$$$42,
+    "site/sections/ProductPage/DescriptionBannerBenefits.tsx": $$$$$$43,
+    "site/sections/ProductPage/DescriptionBannerRight.tsx": $$$$$$44,
+    "site/sections/ProductPage/DescriptionContent.tsx": $$$$$$45,
+    "site/sections/ProductPage/DescriptionFullbanner.tsx": $$$$$$46,
+    "site/sections/ProductPage/DescriptionMoreInfos.tsx": $$$$$$47,
+    "site/sections/ProductPage/DescriptionNavigator.tsx": $$$$$$48,
+    "site/sections/ProductPage/NutritionalInformation.tsx": $$$$$$49,
+    "site/sections/Session.tsx": $$$$$$50,
+    "site/sections/Social/InstagramPosts.tsx": $$$$$$51,
+    "site/sections/Social/WhatsApp.tsx": $$$$$$52,
+    "site/sections/Theme/Theme.tsx": $$$$$$53,
+    "site/sections/UI/textwithimage.tsx": $$$$$$54,
+    "site/sections/UI/title.tsx": $$$$$$55,
   },
   "actions": {
     "site/actions/minicart/submit.ts": $$$$$$$$$0,
@@ -145,8 +148,9 @@ const manifest = {
     "site/apps/deco/analytics.ts": $$$$$$$$$$$0,
     "site/apps/deco/blog.ts": $$$$$$$$$$$1,
     "site/apps/deco/htmx.ts": $$$$$$$$$$$2,
-    "site/apps/deco/vtex.ts": $$$$$$$$$$$3,
-    "site/apps/site.ts": $$$$$$$$$$$4,
+    "site/apps/deco/ra-trustvox.ts": $$$$$$$$$$$3,
+    "site/apps/deco/vtex.ts": $$$$$$$$$$$4,
+    "site/apps/site.ts": $$$$$$$$$$$5,
   },
   "name": "site",
   "baseUrl": import.meta.url,
