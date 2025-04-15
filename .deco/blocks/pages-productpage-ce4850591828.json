@@ -43,15 +43,8 @@
           "__resolveType": "website/functions/requestToParam.ts",
           "param": "slug"
         }
-      }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/ProductPage/Available.tsx",
-        "storeId": "121364",
-        "numberOfReviews": 2
-      }
+      },
+      "raStoreId": "121364"
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
