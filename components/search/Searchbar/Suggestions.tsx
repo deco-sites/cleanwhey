@@ -252,7 +252,7 @@ function Suggestions({
                 <a
                   key={index}
                   href={`${product.url}`}
-                  class="card card-compact group bg-white hover:bg-[#F7EDDF] text-sm grid grid-rows-[auto_1fr_auto] h-full min-w-[160px] max-w-[300px] border border-gray-100 shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
+                  class="card card-compact group bg-white hover:bg-[#F7EDDF] text-sm grid grid-rows-[auto_1fr_auto] h-fit min-w-[160px] max-w-[300px] border border-gray-100 shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
                 >
                   <Image
                     width={80}
