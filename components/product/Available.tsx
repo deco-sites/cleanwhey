@@ -1,6 +1,5 @@
 import TrustvoxProductReviews from "apps/ra-trustvox/sections/TrustvoxProductReviews.tsx";
 import { ProductDetailsPage } from "apps/commerce/types.ts";
-import TrustvoxRateConfig from "apps/ra-trustvox/sections/TrustvoxRateConfig.tsx";
 
 export interface AvailableProps {
   storeId: string;
@@ -20,7 +19,7 @@ function Available(props: AvailableProps) {
         Nossas Avaliações
       </h2>
       <TrustvoxProductReviews
-        enableStaging={true}
+        enableStaging={false}
         page={page}
         storeId={storeId}
       />
