@@ -4,14 +4,16 @@ import ImageGallerySlider from "../../components/product/Gallery.tsx";
 import ProductInfo from "../../components/product/ProductInfo.tsx";
 import Breadcrumb from "../../components/ui/Breadcrumb.tsx";
 import { clx } from "../../sdk/clx.ts";
+import Available from "../../components/product/Available.tsx";
 
 export interface Props {
   /** @title Integration */
   page: ProductDetailsPage | null;
   products: Product[] | null;
+  raStoreId: string;
 }
 
-export default function ProductDetails({ page, products }: Props) {
+export default function ProductDetails({ page, products, raStoreId }: Props) {
   /**
    * Rendered when a not found is returned by any of the loaders run on this page
    */
@@ -30,24 +32,27 @@ export default function ProductDetails({ page, products }: Props) {
   }
 
   return (
-    <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0 md:px-2 xl:px-0">
-      <Breadcrumb itemListElement={page.breadcrumbList.itemListElement} />
+    <>
+      <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0 md:px-2 xl:px-0">
+        <Breadcrumb itemListElement={page.breadcrumbList.itemListElement} />
 
-      <div
-        class={clx(
-          "container grid",
-          "grid-cols-1 gap-2 py-0",
-          "sm:grid-cols-5 sm:gap-6",
-        )}
-      >
-        <div class="sm:col-span-3 md:pr-12">
-          <ImageGallerySlider page={page} />
-        </div>
-        <div class="sm:col-span-2 md:pl-6 xl:pl-12 md:border-l md:border-gray-100">
-          <ProductInfo page={page} products={products} />
+        <div
+          class={clx(
+            "container grid",
+            "grid-cols-1 gap-2 py-0",
+            "sm:grid-cols-5 sm:gap-6"
+          )}
+        >
+          <div class="sm:col-span-3 md:pr-12">
+            <ImageGallerySlider page={page} />
+          </div>
+          <div class="sm:col-span-2 md:pl-6 xl:pl-12 md:border-l md:border-gray-100">
+            <ProductInfo page={page} products={products} />
+          </div>
         </div>
       </div>
-    </div>
+      <Available page={page} storeId={raStoreId} />
+    </>
   );
 }
 

@@ -43,7 +43,8 @@
           "__resolveType": "website/functions/requestToParam.ts",
           "param": "slug"
         }
-      }
+      },
+      "raStoreId": "121364"
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
