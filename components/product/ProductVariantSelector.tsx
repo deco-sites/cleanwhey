@@ -209,7 +209,7 @@ function VariantSelector({ product, similares }: Props) {
             })}
 
             {title?.toLocaleLowerCase().includes("coqueteleira") &&
-              mt.map((item, index) => {
+              mt.map((item) => {
 
                 if (name === item.name) {
                   return null
@@ -237,7 +237,7 @@ function VariantSelector({ product, similares }: Props) {
                       >
                         {item.image && item.image?.length > 0 && (
                           <Ring
-                            value={item.name?.replace("Cor:", "")}
+                            value={item.name?.replace("Cor:", "")!}
                             image={item?.image[0]?.url}
                             checked={false}
                           />

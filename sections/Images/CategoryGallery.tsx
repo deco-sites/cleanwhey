@@ -58,12 +58,12 @@ const Mobile = ({ items }: Props) => {
   const id = useId();
   return (
     <section id={id} class="relative">
-      <Slider className="carousel carousel-center max-w-md space-x-4 p-4 phone:pr-4 phone:pl-4 ">
+      <Slider className="carousel carousel-center max-w-full space-x-4 p-4 phone:pr-4 phone:pl-4 ">
         {items &&
           items.map((item, index) => (
             <Slider.Item
               index={index}
-              class="carousel-item relative group !ml-0 flex w-[85%] duration-300 h-full transition-all items-center justify-center"
+              class="carousel-item relative group !ml-0 flex max-w-[370px] duration-300 h-full transition-all items-center justify-center"
             >
               <a
                 class={`${index == 0 ? "rounded-l-lg" : ""} 
@@ -74,7 +74,7 @@ const Mobile = ({ items }: Props) => {
                 <Image
                   class={`${index == 0 ? "rounded-l-lg" : ""} 
                                 ${index == 3 ? "rounded-r-lg" : ""
-                    } w-full duration-300 transition-all group-hover:scale-125 h-full max-h-[370px]`}
+                    } w-full duration-300 transition-all group-hover:scale-125 h-full`}
                   src={item.images.normal}
                   loading={"lazy"}
                   width={292}
@@ -98,7 +98,7 @@ const Mobile = ({ items }: Props) => {
 
       <div
         class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-            justify-center absolute top-2/4 left-5"
+            justify-center absolute top-2/4 left-5 z-10"
       >
         <Slider.PrevButton class="cursor-pointer" disabled={false}>
           <Icon id="chevron-right" class="rotate-180 text-orange-300" />
@@ -107,7 +107,7 @@ const Mobile = ({ items }: Props) => {
 
       <div
         class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-            justify-center absolute top-2/4 right-5"
+            justify-center absolute top-2/4 right-5 z-10"
       >
         <Slider.NextButton class="cursor-pointer" disabled={false}>
           <Icon id="chevron-right" class="text-orange-300" />

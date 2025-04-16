@@ -11,12 +11,7 @@ export default function DescriptionNavigator({ links }: Props) {
     <section class="bg-base-200">
       <div class="container mb-4">
         <ul
-          className={`
-                [&::-webkit-scrollbar]:[width:3px]
-                [&::-webkit-scrollbar-thumb]:[background-color: #ff0000]
-                flex items-start 
-                phone:items-center overflow-x-auto justify-start 
-                phone:justify-center desktop:gap-8`}
+          className={`[&::-webkit-scrollbar]:[width:3px] [&::-webkit-scrollbar-thumb]:[background-color: #ff0000] flex items-start phone:items-center overflow-x-auto justify-center desktop:gap-8`}
         >
           {links &&
             links.map((link) => (

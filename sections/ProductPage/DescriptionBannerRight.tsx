@@ -29,7 +29,7 @@ export default function DescriptionBannerRight(props: Props) {
   return (
     <section class="bg-white-300 pb-8 desktop:pb-16" id={"visaogeral"}>
       <div class="container px-4 desktop-sm:px-0 flex items-start desktop:flex-row flex-col justify-between desktop:gap-5 py-12 desktop-sm:py-0">
-        <div class="max-w-[522px] content flex flex-col items-center justify-start w-full">
+        <div class="mx-auto desktop:max-w-[522px] content flex flex-col items-center justify-start w-full">
           <h2 class={"text-gray-400 font-bold text-5xl mb-6"}>{title}</h2>
           {description && (
             <div
@@ -78,7 +78,7 @@ export default function DescriptionBannerRight(props: Props) {
             </Picture>
           )}
         </div>
-        <div class={"banner w-full max-w-[624px]"}>
+        <div class={"mx-auto banner w-full desktop:max-w-[624px]"}>
           {device === "desktop" && rightImage && (
             <Picture>
               <Source
@@ -115,7 +115,7 @@ export default function DescriptionBannerRight(props: Props) {
                 media="(min-width: 767px)"
               />
               <img
-                class="w-full max-w-[522px]"
+                class="w-full desktop:max-w-[522px] mx-auto"
                 src={percentageBanner.desktop}
                 alt={percentageBanner.alt ?? title}
               />

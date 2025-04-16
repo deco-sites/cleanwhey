@@ -10,7 +10,6 @@ import { useSendEvent } from "../../sdk/useSendEvent.ts";
 import Breadcrumb from "../ui/Breadcrumb.tsx";
 import Drawer from "../ui/Drawer.tsx";
 import Sort from "./Sort.tsx";
-import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 import ProductShelf, {
   Props as PropsShelf,
@@ -212,27 +211,13 @@ function PageResult(props: SectionProps<typeof loader>) {
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
   const nextPageUrl = useUrlRebased(pageInfo.nextPage, url);
-  const prevPageUrl = useUrlRebased(pageInfo.previousPage, url);
-  const partialPrev = useSection({
-    href: prevPageUrl,
-    props: { partial: "hideMore" },
-  });
   const partialNext = useSection({
     href: nextPageUrl,
     props: { partial: "hideLess" },
   });
   const infinite = layout?.pagination !== "pagination";
-  const pageFormated = pageInfo.nextPage
-    ? pageInfo.nextPage.split("page=")[0]
-    : "?";
-  const links = [];
-  const totalPages = Math.ceil(pageInfo.records / pageInfo.recordPerPage);
-  for (let i = 1; i <= totalPages; i++) {
-    links.push({
-      label: i,
-      href: `${pageFormated}page=${i}`,
-    });
-  }
+  const links = [] as any;
+
   return (
     <div class="grid grid-flow-row grid-cols-1 place-items-center">
       <div
@@ -300,7 +285,7 @@ function PageResult(props: SectionProps<typeof loader>) {
                     />
                   </svg>
                 </a>
-                {links.map((link) => {
+                {links.map((link: any) => {
                   return (
                     <a
                       href={link.href}

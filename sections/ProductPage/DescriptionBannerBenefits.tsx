@@ -47,7 +47,7 @@ export default function DescriptionBannerBenefits(props: Props) {
                 media="(min-width: 767px)"
               />
               <img
-                class="w-full max-w-[576px]"
+                class="w-full desktop:max-w-[576px] mx-auto"
                 src={leftImage.desktop.src}
                 alt={leftImage.alt}
               />

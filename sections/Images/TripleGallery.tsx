@@ -66,12 +66,12 @@ const Mobile = ({ items }: Props) => {
   const id = useId();
   return (
     <section id={id} class="relative">
-      <Slider className="carousel carousel-center max-w-md space-x-4 p-4 phone:pr-4 phone:pl-4 pr-0">
+      <Slider className="carousel carousel-center space-x-4 p-4 phone:pr-4 phone:pl-4 pr-0">
         {items &&
           items.map((item, index) => (
             <Slider.Item
               index={index}
-              class="carousel-item relative group !ml-0 flex w-[85%] duration-300 h-full transition-all items-center justify-center"
+              class="carousel-item relative group !ml-0 flex w-full max-w-[370px] duration-300 h-full transition-all items-center justify-center"
             >
               <a
                 class={`w-full h-full relative overflow-hidden`}

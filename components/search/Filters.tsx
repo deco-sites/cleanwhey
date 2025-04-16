@@ -8,7 +8,6 @@ import { parseRange } from "apps/commerce/utils/filters.ts";
 import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 import MultiRangeSlider from "../../islands/MultiRangeSlider.tsx";
-import { useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";
 
 interface Props {

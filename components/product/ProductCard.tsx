@@ -6,13 +6,9 @@ import { formatPrice } from "../../sdk/format.ts";
 import { relative } from "../../sdk/url.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
-// import { useVariantPossibilities } from "../../sdk/useVariantPossiblities.ts";
 import WishlistButton from "../wishlist/WishlistButton.tsx";
 import AddToCartButton from "./AddToCartButton.tsx";
-// import { Ring } from "./ProductVariantSelector.tsx";
 import { useId } from "../../sdk/useId.ts";
-import { Pix } from "../../loaders/BusnissRule/Pix.ts";
-import { formatPix } from "../../sdk/formatPix.tsx";
 
 interface Props {
   product: Product;
@@ -52,7 +48,7 @@ function ProductCard({
       (property) => property.value === "VÁLIDADE PRÓXIMA"
     ) || false;
   const title = isVariantOf?.name || "";
-  const [front, back] = images ?? [];
+  const [front,] = images ?? [];
   const {
     listPrice,
     price,
@@ -63,14 +59,7 @@ function ProductCard({
   } = useOffer(offers);
 
   const inStock = availability === "https://schema.org/InStock";
-  //const possibilities = useVariantPossibilities(hasVariant, product);
-
-  // const firstSkuVariations = Object.entries(possibilities)[0];
-  // const variants = Object.entries(firstSkuVariations[1] ?? {});
   const relativeUrl = relative(url);
-  // const percent = listPrice && price
-  //   ? Math.round(((listPrice - price) / listPrice) * 100)
-  //   : 0;
 
   const item = mapProductToAnalyticsItem({ product, price, listPrice, index });
 
@@ -176,7 +165,7 @@ function ProductCard({
                 <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
                   <span class="text-xl font-bold flex desktop:flex-row  flex-col  gap-2 text-gray-400 items-center">
                     {formatPrice(pixObj?.price) || formatPrice(price)}
-                    <p class="text-sm text-gray-300">
+                    <p class="text-xs text-gray-300">
                       via PIX{" "}
                       {pixporcent && -(pixporcent - 100) % 1 < 0.5
                         ? Math.floor(-(pixporcent - 100)) + "% OFF "
@@ -281,17 +270,6 @@ function ProductCard({
             )
               }`}
           />
-          // <a
-          //   href={relativeUrl}
-          //   class={`${clx(
-          //     "btn uppercase",
-          //     "btn-outline rounded-lg border-none px-0 no-animation w-full",
-          //     "bg-primary text-white h-14 font-semibold  phone:text-sm desktop:text-xs desktop-sm:text-sm text-xs  flex-nowrap",
-          //     "hover:bg-primary"
-          //   )}`}
-          // >
-          //   Ver mais
-          // </a>
         ) : (
           <a
             href={relativeUrl}

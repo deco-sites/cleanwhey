@@ -86,7 +86,7 @@ function Newsletter({
     return (
       <section class="bg-primary">
         <Section.Container class="border-b border-b-orange-200">
-          <div class="px-4 mobile:px-14 py-4 flex flex-col mobile:flex-row items-center justify-start mobile:justify-center gap-8">
+          <div class="px-4 desktop:px-14 py-4 flex flex-col desktop:flex-row items-center justify-start desktop:justify-center gap-8">
             {/* <Icon size={80} class={clx(status === "success" ? "text-success" : "text-error")} id={status === "success" ? "check-circle" : "error"}/> */}
             <Notice {...(status === "success" ? success : failed)} />
           </div>
@@ -97,14 +97,14 @@ function Newsletter({
   return (
     <section class="bg-primary">
       <Section.Container class="border-b border-b-orange-200">
-        <div class="px-4 mobile:px-14 py-4 flex flex-col mobile:flex-row items-center justify-start mobile:justify-center gap-8">
+        <div class="px-4 desktop:px-14 py-4 flex flex-col desktop:flex-row items-center justify-start desktop:justify-center gap-8">
           <Notice {...empty} icon={icon} />
 
           <form
             hx-target="closest section"
             hx-swap="outerHTML"
             hx-post={useComponent(import.meta.url)}
-            class="flex flex-col mobile:flex-row gap-4 w-full max-w-96"
+            class="flex flex-col desktop:flex-row gap-4 w-full max-w-96"
           >
             <input
               name="email"

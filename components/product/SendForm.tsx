@@ -1,8 +1,6 @@
 import { Product } from "apps/commerce/types.ts";
 import { ComponentProps } from "../../sections/Component.tsx";
 import { AppContext } from "../../apps/site.ts";
-import Icon from "../ui/Icon.tsx";
-
 
 export interface Props {
   productID: Product["productID"];
@@ -13,7 +11,7 @@ export const action = async (props: Props, req: Request, ctx: AppContext) => {
   const name = `${form.get("name") ?? ""}`;
   const email = `${form.get("email") ?? ""}`;
 
-  const res = await (ctx as any).invoke("vtex/actions/notifyme.ts", {
+  await (ctx as any).invoke("vtex/actions/notifyme.ts", {
     skuId: props.productID,
     name,
     email,

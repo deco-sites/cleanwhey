@@ -51,7 +51,7 @@ export default function Form({ items }: Props) {
         {/* Results Slot */}
       </div>
 
-      <div id={slot} class={"mt-5"} />
+      <div id={slot} class={"mt-4"} />
     </>
   );
 }

@@ -75,7 +75,7 @@ const HEIGHT = {
 };
 
 function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
-  const { alt, mobile, desktop, action, extraLink, selos, activateContent } =
+  const { mobile, desktop, action, extraLink, selos, activateContent } =
     image;
   const params = { promotion_name: image.alt };
 
@@ -102,25 +102,20 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
       {action && (
         <div
           class={`
-            ${image.position == "Left" ? "left-0 desktop:left-40 mobile:left-50" : ""}
-            ${image.position == "Right" ? "right-0 desktop:right-40 mobile:right-50" : ""}
-            absolute h-auto mobile:h-full w-full top-5 mobile:top-0
-            flex flex-col justify-center items-center
-            px-5 mobile:px-0
-            mobile:items-start mobile:max-w-xl`}
+            ${image.position == "Left" ? "desktop:left-40 mobile:left-50" : ""}
+            ${image.position == "Right" ? "desktop:right-40 mobile:right-50" : ""}
+            absolute h-auto desktop:h-full w-full top-5 mobile:top-24
+            flex flex-col justify-center items-start
+            px-5 mobile:px-0 left-1/2 -translate-x-1/2
+            mobile:items-center mobile:max-w-[320px]`}
         >
           {activateContent && action.title && (
             <span
-              class={`${
-                image.position == "Left" ? "phone:text-5xl" : "phone:text-7xl"
-              } text-[32px] text-center phone:text-left font-normal leading phone:leading-[60px] font-lato text-[#808184]`}
+              class={`text-[32px] text-center desktop:text-left font-normal leading desktop:leading-[10px] font-lato text-[#808184]`}
               dangerouslySetInnerHTML={{ __html: action.title }}
             />
           )}
 
-          {/* <span class="font-normal text-base text-base-100 pt-4 pb-12">
-            {action.subTitle}
-          </span> */}
           {activateContent && (
             <div className="actions flex flex-col desktop:flex-row items-center gap-2 mt-4">
               {action.label != undefined && (
@@ -180,7 +175,7 @@ function Carousel({ images = [], preload, interval }: Props) {
       id={id}
       class={clx(
         "grid",
-        "grid-rows-[1fr_32px_1fr_64px]",
+        "grid-rows-[auto_32px_auto_auto]",
         "grid-cols-[32px_1fr_32px]",
         "mobile:grid-cols-[112px_1fr_112px] mobile:min-h-min",
         "w-screen max-w-full phone:mb-8 mb-6"

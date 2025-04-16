@@ -77,7 +77,8 @@ export default {
       "black-200": "#EC8583",
     },
     screens: {
-      phone: { max: "768px" },
+      phone: { max: "500px" },
+      "mobile-sm": { max: "768px" },
       mobile: { max: "1025px" },
       desktop: { min: "1026px" },
       "desktop-lg": { min: "1340px" },

@@ -12,7 +12,6 @@ import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 import {
   useDevice as useDevice,
   useScript as useScript,
-  useSection as useSection,
 } from "@deco/deco/hooks";
 import { type SectionProps as SectionProps } from "@deco/deco";
 
@@ -34,7 +33,7 @@ export interface Props {
 }
 
 function PageResult(props: SectionProps<typeof loader>) {
-  const { startingPage = 0, pix } = props;
+  const { startingPage = 0 } = props;
   const page = props.page!;
   const { products, pageInfo } = page;
   const perPage = pageInfo?.recordPerPage || products.length;
@@ -130,7 +129,6 @@ const setPageQuerystring = (page: string, id: string) => {
 
 function Result(props: SectionProps<typeof loader>) {
   const container = useId();
-  const controls = useId();
   const device = useDevice();
   const { startingPage = 0, partial } = props;
   const page = props.page!;

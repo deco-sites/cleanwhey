@@ -38,7 +38,7 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
                   href={item.link}
                 >
                   <Image
-                    class={`rounded-lg w-full duration-300 transition-all  min-h-[470px] max-h-[470px] h-full object-cover`}
+                    class={`rounded-lg w-full duration-300 transition-all h-full object-cover`}
                     src={item.images.normal}
                     loading={"lazy"}
                     width={635}
@@ -101,12 +101,12 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
   return (
     <section>
       <div id={id} class="relative">
-        <Slider className="carousel carousel-center max-w-md space-x-4 p-4 gap-1.5 phone:pr-4 phone:pl-4 pr-0">
+        <Slider className="carousel carousel-center max-w-full space-x-4 p-4 gap-1.5 phone:pr-4 phone:pl-4 pr-0">
           {items &&
             items.map((item, index) => (
               <Slider.Item
                 index={index}
-                class="carousel-item relative group !ml-0 flex w-[85%] duration-300 h-full transition-all items-center justify-center"
+                class="carousel-item relative group !ml-0 flex w-[370px] duration-300 h-full transition-all items-center justify-center"
               >
                 <a
                   class={`rounded-lg w-full h-full transition-all duration-300 relative overflow-hidden`}

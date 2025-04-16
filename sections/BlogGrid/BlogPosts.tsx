@@ -5,6 +5,8 @@ import { ComponentChildren, Fragment } from "preact";
 import { BlogPost } from "apps/blog/types.ts";
 // import { useId } from "../../sdk/useId.ts";
 import Icon from "../../components/ui/Icon.tsx";
+import Slider from "../../components/ui/Slider.tsx";
+import { useId } from "../../sdk/useId.ts";
 
 export interface CTA {
   text?: string;
@@ -81,88 +83,111 @@ export default function BlogPosts({
   // }
 
   const ContainerComponent = page === 0 ? Container : Fragment;
+
+  const id = useId();
   return (
-    <ContainerComponent>
-      <>
-        {sectionTitle && (
-          <h2
-            class="text-center font-bold text-2xl text-gray-300"
-            dangerouslySetInnerHTML={{ __html: sectionTitle }}
-          />
-        )}
+    <div id={id} class={"relative"}>
+      <ContainerComponent>
+        <>
+          {sectionTitle && (
+            <h2
+              class="text-center font-bold text-2xl text-gray-300"
+              dangerouslySetInnerHTML={{ __html: sectionTitle }}
+            />
+          )}
 
-        <div class="gap-8 grid grid-cols-1 desktop:grid-cols-4 phone:grid-cols-3 py-5">
-          {posts?.slice(from, to).map((post) => (
-            <div class="overflow-hidden rounded-lg flex flex-col bg-white-300 p-2.5 max-w-72 mx-auto desktop:mx-0">
-              <figure class="relative">
-                <Image
-                  width={635}
-                  height={953}
-                  class="w-full min-h-[400px] max-h-[400px] object-cover"
-                  sizes="(max-width: 640px) 100vw, 30vw"
-                  src={post.image || DEFAULT_IMAGE}
-                  alt={post.image}
-                  decoding="async"
-                  loading="lazy"
-                  id={post.slug}
-                />
+          <Slider className="carousel carousel-center max-w-full space-x-4 p-4 phone:pr-4 phone:pl-4 relative">
+            <div class="gap-4 flex py-5 px-4">
+              {posts?.slice(from, to).map((post, index) => (
+                <Slider.Item index={index} class="carousel-item overflow-hidden rounded-lg flex flex-col bg-white-300 max-w-[270px] p-2.5 w-full desktop:mx-0">
+                  <figure class="relative">
+                    <Image
+                      width={635}
+                      height={953}
+                      class="w-full object-cover"
+                      sizes="(max-width: 640px) 100vw, 30vw"
+                      src={post.image || DEFAULT_IMAGE}
+                      alt={post.image}
+                      decoding="async"
+                      loading="lazy"
+                      id={post.slug}
+                    />
 
-                <div class="flex flex-wrap gap-2 absolute -bottom-3 left-0">
-                  {post.categories?.map((category) => (
-                    <div class="px-2 badge text-white badge-lg rounded-lg text-sm border border-orange-300  bg-primary">
-                      {category.name}
+                    <div class="flex flex-wrap gap-2 absolute -bottom-3 left-0">
+                      {post.categories?.map((category) => (
+                        <div class="px-2 badge text-white badge-lg rounded-lg text-sm border border-orange-300  bg-primary">
+                          {category.name}
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </figure>
-              <div class="p-2 space-y-4 flex flex-col flex-1">
-                <div class="space-y-2 flex-1">
-                  <h3
-                    class="text-base text-gray-400 font-normal mt-2.5"
-                    id={`title-${post.slug}`}
-                  >
-                    {post.title}
-                  </h3>
-                </div>
+                  </figure>
+                  <div class="p-2 space-y-4 flex flex-col flex-1">
+                    <div class="space-y-2 flex-1">
+                      <h3
+                        class="text-base text-gray-400 font-normal mt-2.5"
+                        id={`title-${post.slug}`}
+                      >
+                        {post.title}
+                      </h3>
+                    </div>
 
-                <div class="flex flex-wrap gap-2 items-center justify-between">
-                  <span class="text-gray-300 text-sm font-normal">
-                    {post.date
-                      ? new Date(post.date)
-                        .toLocaleDateString("pt-BR", {
-                          month: "short",
-                          day: "numeric",
-                          year: "2-digit",
-                        })
-                        .replace(" de ", " ")
-                        .replace(".", "")
-                        .replace(" de ", ", ")
-                      : ""}
-                  </span>
-                  <a
-                    class="bg-primary rounded-lg p-2.5"
-                    href={`/blog/${post.slug}`}
-                  >
-                    <Icon class="text-white" id={"arrow-right-custom"} />
-                  </a>
-                  {
-                    /* <span>•</span>
-                  <span>{post.authors[0]?.name}</span> */
-                  }
-                </div>
-              </div>
+                    <div class="flex flex-wrap gap-2 items-center justify-between">
+                      <span class="text-gray-300 text-sm font-normal">
+                        {post.date
+                          ? new Date(post.date)
+                            .toLocaleDateString("pt-BR", {
+                              month: "short",
+                              day: "numeric",
+                              year: "2-digit",
+                            })
+                            .replace(" de ", " ")
+                            .replace(".", "")
+                            .replace(" de ", ", ")
+                          : ""}
+                      </span>
+                      <a
+                        class="bg-primary rounded-lg p-2.5"
+                        href={`/blog/${post.slug}`}
+                      >
+                        <Icon class="text-white" id={"arrow-right-custom"} />
+                      </a>
+                    </div>
+                  </div>
+                </Slider.Item>
+              ))}
             </div>
-          ))}
-        </div>
-        {/* {to < (posts?.length || 1000) && ( */}
-        {button && (
-          <a href={cta.link} class="flex justify-center w-full pb-6">
-            <span class="text-blue-300 font-normal text-sm inline border border-blue-300 rounded-lg py-3 px-4">
-              {cta.text}
-            </span>
-          </a>
-        )}
-      </>
-    </ContainerComponent>
+          </Slider>
+
+          <div
+            class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+            justify-center absolute top-1/3 left-5 z-10"
+          >
+            <Slider.PrevButton class="cursor-pointer" disabled={false}>
+              <Icon id="chevron-right" class="rotate-180 text-orange-300" />
+            </Slider.PrevButton>
+          </div>
+
+          <div
+            class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
+            justify-center absolute top-1/3 right-5 z-10"
+          >
+            <Slider.NextButton class="cursor-pointer" disabled={false}>
+              <Icon id="chevron-right" class="text-orange-300" />
+            </Slider.NextButton>
+          </div>
+
+          <Slider.JS rootId={id} />
+
+          {/* {to < (posts?.length || 1000) && ( */}
+          {button && (
+            <a href={cta.link} class="flex justify-center w-full pb-6">
+              <span class="text-blue-300 font-normal text-sm inline border border-blue-300 rounded-lg py-3 px-4">
+                {cta.text}
+              </span>
+            </a>
+          )}
+        </>
+      </ContainerComponent>
+    </div>
   );
 }

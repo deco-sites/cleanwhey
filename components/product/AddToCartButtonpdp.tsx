@@ -225,7 +225,7 @@ function AddToCartButton(props: Props) {
           </div>
         </div>
         {/* Shipping Simulation */}
-        <div class="mt-4">
+        <div class="my-4">
           <ShippingSimulationForm
             items={[{ id: Number(product.sku), quantity: 1, seller: seller }]}
           />
