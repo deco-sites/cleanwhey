@@ -1,190 +1,387 @@
 {
   "name": "Home",
-  "sections": [
-    {
-      "__resolveType": "website/sections/Seo/SeoV2.tsx",
-      "title": "Clean Whey",
-      "titleTemplate": "%s",
-      "description": "Suplementação para o seu treino e sua saúde.",
-      "descriptionTemplate": "%s "
-    },
-    {
-      "__resolveType": "Header"
-    },
-    {
-      "__resolveType": "site/sections/Images/Carousel.tsx",
-      "images": [
-        {
-          "position": "Left",
-          "selos": [],
-          "desktop": "https://assets.decocache.com/cleanwhey/b4b2afd6-4223-4e80-a372-e8a25f2ba0d9/CW_Banner_Performance_Web.png",
-          "mobile": "https://assets.decocache.com/cleanwhey/7a4e1c59-865c-467c-b178-3dac6a8f4301/CW_Banner_Performance_Mobile.png",
-          "alt": "25 off - consumidor",
-          "extraLink": {
-            "href": "/todos-os-produtos?page=1"
+  "sections": {
+    "__resolveType": "website/flags/multivariate.ts",
+    "variants": [
+      {
+        "value": [
+          {
+            "__resolveType": "website/sections/Seo/SeoV2.tsx",
+            "title": "Clean Whey",
+            "titleTemplate": "%s",
+            "description": "Suplementação para o seu treino e sua saúde.",
+            "descriptionTemplate": "%s "
           },
-          "action": {
-            "href": "/todos-os-produtos"
-          }
-        },
-        {
-          "position": "Left",
-          "selos": [],
-          "desktop": "https://data.decoassets.com/cleanwhey/0f1b41c4-f468-4cb5-9830-22a199cbf5fb/CW_Banner_Creatina_Cupom_NS_v2.png",
-          "mobile": "https://data.decoassets.com/cleanwhey/41e9d90b-0a2b-4ed4-a3ac-e0bca9392306/CW_Banner_Creatina_Cupom_Mobile_NS-2_v2.png",
-          "action": {
-            "href": "https://shop.cleanwhey.com.br/creatina?page=1"
+          {
+            "__resolveType": "Header"
           },
-          "alt": "Creatina"
-        }
-      ],
-      "preload": true
-    },
-    {
-      "__resolveType": "Regua"
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "Navegue por Categorias"
-      }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Product/ProductShelf.tsx",
-        "title": "<p>Produtos em alta</p>",
-        "cta": "/mono",
-        "products": {
-          "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
-          "props": {
-            "sort": "orders:desc",
-            "count": 12,
-            "fuzzy": "automatic",
-            "query": "clean",
-            "hideUnavailableItems": false
-          }
-        },
-        "isFeatured": true,
-        "pix": {
-          "__resolveType": "Payment - Pix"
-        },
-        "activePaddingBotton": true,
-        "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/90f54c54-8cc8-4fc7-98b9-2dd9b0cc71eb"
-      }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Product/ProductShelf.tsx",
-        "title": "<p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">Ofertas <span style=\"color: rgb(161, 166, 183);\" data-mce-style=\"color: rgb(161, 166, 183);\">imperdíveis!</span></span></p>",
-        "cta": "/mono",
-        "products": {
-          "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
-          "props": {
-            "sort": "price:desc",
-            "count": 15,
-            "collection": "137"
-          }
-        },
-        "isFeatured": false,
-        "pix": {
-          "__resolveType": "Payment - Pix"
-        },
-        "activePaddingBotton": false
-      }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Product/ProductShelf.tsx",
-        "title": "<p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">Lançamentos</span></p>",
-        "cta": "/mono",
-        "products": {
-          "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
-          "props": {
-            "sort": "",
-            "count": 12,
-            "collection": "137",
-            "hideUnavailableItems": true
-          }
-        },
-        "isFeatured": false,
-        "pix": {
-          "__resolveType": "Payment - Pix"
-        },
-        "activePaddingBotton": true
-      }
-    },
-    {
-      "__resolveType": "site/sections/Images/Carousel.tsx",
-      "images": [
-        {
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c8b8da35-2e07-4d62-ae63-16bfd37a6358",
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/a58b29bf-e1da-44c6-a923-229fa42d22f1",
-          "alt": "Whey",
-          "action": {
-            "href": "/faq",
-            "title": "<p><strong><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">Compare e faça <br>a escolha,</span></strong> <span style=\"color: rgb(25, 56, 97);\" data-mce-style=\"color: rgb(25, 56, 97);\"><strong>correta!</strong></span></p>"
+          {
+            "__resolveType": "site/sections/Images/Carousel.tsx",
+            "images": [
+              {
+                "position": "Left",
+                "selos": [],
+                "desktop": "https://data.decoassets.com/cleanwhey/0f1b41c4-f468-4cb5-9830-22a199cbf5fb/CW_Banner_Creatina_Cupom_NS_v2.png",
+                "mobile": "https://data.decoassets.com/cleanwhey/41e9d90b-0a2b-4ed4-a3ac-e0bca9392306/CW_Banner_Creatina_Cupom_Mobile_NS-2_v2.png",
+                "alt": "Creatina",
+                "action": {
+                  "href": "https://shop.cleanwhey.com.br/creatina?page=1"
+                }
+              },
+              {
+                "position": "Left",
+                "selos": [],
+                "desktop": "https://assets.decocache.com/cleanwhey/b4b2afd6-4223-4e80-a372-e8a25f2ba0d9/CW_Banner_Performance_Web.png",
+                "mobile": "https://assets.decocache.com/cleanwhey/7a4e1c59-865c-467c-b178-3dac6a8f4301/CW_Banner_Performance_Mobile.png",
+                "action": {
+                  "href": "/todos-os-produtos"
+                },
+                "alt": "25 off - consumidor",
+                "extraLink": {
+                  "href": "/todos-os-produtos?page=1"
+                }
+              }
+            ],
+            "preload": true
           },
-          "extraLink": {
-            "href": "#",
-            "label": "Descubra o melhor whey para você!"
+          {
+            "__resolveType": "Regua"
           },
-          "selos": [
-            {
-              "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/ea6dc08b-bf1e-4946-812e-06331d85d2c1"
-            },
-            {
-              "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c8ec98b7-c6eb-4bd5-9fe4-4cd2f3086057"
-            },
-            {
-              "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/755369b8-41c7-4848-9a48-19c801b18b2a"
-            },
-            {
-              "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c73b9343-e56b-4ffd-b7f9-39120dc8ca01"
-            },
-            {
-              "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/e74cf76e-c729-4585-9bdd-1be0b9bf70de"
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "Navegue por Categorias"
             }
-          ],
-          "position": "Left",
-          "activateContent": true
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "title": "<p>Produtos em alta</p>",
+              "cta": "/mono",
+              "products": {
+                "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+                "props": {
+                  "sort": "orders:desc",
+                  "count": 12,
+                  "fuzzy": "automatic",
+                  "query": "clean",
+                  "hideUnavailableItems": false
+                }
+              },
+              "isFeatured": true,
+              "pix": {
+                "__resolveType": "Payment - Pix"
+              },
+              "activePaddingBotton": true,
+              "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/90f54c54-8cc8-4fc7-98b9-2dd9b0cc71eb"
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "title": "<p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">Ofertas <span style=\"color: rgb(161, 166, 183);\" data-mce-style=\"color: rgb(161, 166, 183);\">imperdíveis!</span></span></p>",
+              "cta": "/mono",
+              "products": {
+                "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+                "props": {
+                  "sort": "price:desc",
+                  "count": 15,
+                  "collection": "137"
+                }
+              },
+              "isFeatured": false,
+              "pix": {
+                "__resolveType": "Payment - Pix"
+              },
+              "activePaddingBotton": false
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "title": "<p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">Lançamentos</span></p>",
+              "cta": "/mono",
+              "products": {
+                "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+                "props": {
+                  "sort": "",
+                  "count": 12,
+                  "collection": "137",
+                  "hideUnavailableItems": true
+                }
+              },
+              "isFeatured": false,
+              "pix": {
+                "__resolveType": "Payment - Pix"
+              },
+              "activePaddingBotton": true
+            }
+          },
+          {
+            "__resolveType": "site/sections/Images/Carousel.tsx",
+            "images": [
+              {
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c8b8da35-2e07-4d62-ae63-16bfd37a6358",
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/a58b29bf-e1da-44c6-a923-229fa42d22f1",
+                "alt": "Whey",
+                "action": {
+                  "href": "/faq",
+                  "title": "<p><strong><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">Compare e faça <br>a escolha,</span></strong> <span style=\"color: rgb(25, 56, 97);\" data-mce-style=\"color: rgb(25, 56, 97);\"><strong>correta!</strong></span></p>"
+                },
+                "extraLink": {
+                  "href": "#",
+                  "label": "Descubra o melhor whey para você!"
+                },
+                "selos": [
+                  {
+                    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/ea6dc08b-bf1e-4946-812e-06331d85d2c1"
+                  },
+                  {
+                    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c8ec98b7-c6eb-4bd5-9fe4-4cd2f3086057"
+                  },
+                  {
+                    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/755369b8-41c7-4848-9a48-19c801b18b2a"
+                  },
+                  {
+                    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c73b9343-e56b-4ffd-b7f9-39120dc8ca01"
+                  },
+                  {
+                    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/e74cf76e-c729-4585-9bdd-1be0b9bf70de"
+                  }
+                ],
+                "position": "Left",
+                "activateContent": true
+              }
+            ],
+            "preload": false,
+            "interval": 5
+          },
+          {
+            "__resolveType": "Influencers"
+          },
+          {
+            "__resolveType": "Galeria Tripla"
+          },
+          {
+            "__resolveType": "FAQ - 01"
+          },
+          {
+            "__resolveType": "site/sections/BlogGrid/BlogPosts.tsx",
+            "posts": {
+              "__resolveType": "blog/loaders/BlogpostList.ts",
+              "count": 4,
+              "sortBy": "date_desc",
+              "slug": "cleanwhey"
+            },
+            "cta": {
+              "link": "/blog/categoria/cleanwhey",
+              "text": "Ver todas as postagens"
+            },
+            "button": true
+          },
+          {
+            "__resolveType": "Newsletter Home"
+          },
+          {
+            "__resolveType": "Footer"
+          }
+        ]
+      },
+      {
+        "value": [
+          {
+            "__resolveType": "website/sections/Seo/SeoV2.tsx",
+            "title": "Clean Whey",
+            "titleTemplate": "%s",
+            "description": "Suplementação para o seu treino e sua saúde.",
+            "descriptionTemplate": "%s "
+          },
+          {
+            "__resolveType": "Header"
+          },
+          {
+            "__resolveType": "site/sections/Images/Carousel.tsx",
+            "images": [
+              {
+                "position": "Left",
+                "selos": [],
+                "desktop": "https://assets.decocache.com/cleanwhey/b4b2afd6-4223-4e80-a372-e8a25f2ba0d9/CW_Banner_Performance_Web.png",
+                "mobile": "https://assets.decocache.com/cleanwhey/7a4e1c59-865c-467c-b178-3dac6a8f4301/CW_Banner_Performance_Mobile.png",
+                "alt": "25 off - consumidor",
+                "extraLink": {
+                  "href": "/todos-os-produtos?page=1"
+                },
+                "action": {
+                  "href": "/todos-os-produtos"
+                }
+              },
+              {
+                "position": "Left",
+                "selos": [],
+                "desktop": "https://data.decoassets.com/cleanwhey/0f1b41c4-f468-4cb5-9830-22a199cbf5fb/CW_Banner_Creatina_Cupom_NS_v2.png",
+                "mobile": "https://data.decoassets.com/cleanwhey/41e9d90b-0a2b-4ed4-a3ac-e0bca9392306/CW_Banner_Creatina_Cupom_Mobile_NS-2_v2.png",
+                "action": {
+                  "href": "https://shop.cleanwhey.com.br/creatina?page=1"
+                },
+                "alt": "Creatina"
+              }
+            ],
+            "preload": true
+          },
+          {
+            "__resolveType": "Regua"
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "Navegue por Categorias"
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "title": "<p>Produtos em alta</p>",
+              "cta": "/mono",
+              "products": {
+                "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+                "props": {
+                  "ids": [
+                    "13",
+                    "18",
+                    "62"
+                  ]
+                }
+              },
+              "isFeatured": true,
+              "pix": {
+                "__resolveType": "Payment - Pix"
+              },
+              "activePaddingBotton": true,
+              "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/90f54c54-8cc8-4fc7-98b9-2dd9b0cc71eb"
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "title": "<p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">Ofertas <span style=\"color: rgb(161, 166, 183);\" data-mce-style=\"color: rgb(161, 166, 183);\">imperdíveis!</span></span></p>",
+              "cta": "/mono",
+              "products": {
+                "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+                "props": {
+                  "sort": "price:desc",
+                  "count": 15,
+                  "collection": "137"
+                }
+              },
+              "isFeatured": false,
+              "pix": {
+                "__resolveType": "Payment - Pix"
+              },
+              "activePaddingBotton": false
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "title": "<p><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">Lançamentos</span></p>",
+              "cta": "/mono",
+              "products": {
+                "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+                "props": {
+                  "sort": "",
+                  "count": 12,
+                  "collection": "137",
+                  "hideUnavailableItems": true
+                }
+              },
+              "isFeatured": false,
+              "pix": {
+                "__resolveType": "Payment - Pix"
+              },
+              "activePaddingBotton": true
+            }
+          },
+          {
+            "__resolveType": "site/sections/Images/Carousel.tsx",
+            "images": [
+              {
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c8b8da35-2e07-4d62-ae63-16bfd37a6358",
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/a58b29bf-e1da-44c6-a923-229fa42d22f1",
+                "alt": "Whey",
+                "action": {
+                  "href": "/faq",
+                  "title": "<p><strong><span style=\"color: rgb(224, 103, 65);\" data-mce-style=\"color: rgb(224, 103, 65);\">Compare e faça <br>a escolha,</span></strong> <span style=\"color: rgb(25, 56, 97);\" data-mce-style=\"color: rgb(25, 56, 97);\"><strong>correta!</strong></span></p>"
+                },
+                "extraLink": {
+                  "href": "#",
+                  "label": "Descubra o melhor whey para você!"
+                },
+                "selos": [
+                  {
+                    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/ea6dc08b-bf1e-4946-812e-06331d85d2c1"
+                  },
+                  {
+                    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c8ec98b7-c6eb-4bd5-9fe4-4cd2f3086057"
+                  },
+                  {
+                    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/755369b8-41c7-4848-9a48-19c801b18b2a"
+                  },
+                  {
+                    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/c73b9343-e56b-4ffd-b7f9-39120dc8ca01"
+                  },
+                  {
+                    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11373/e74cf76e-c729-4585-9bdd-1be0b9bf70de"
+                  }
+                ],
+                "position": "Left",
+                "activateContent": true
+              }
+            ],
+            "preload": false,
+            "interval": 5
+          },
+          {
+            "__resolveType": "Influencers"
+          },
+          {
+            "__resolveType": "Galeria Tripla"
+          },
+          {
+            "__resolveType": "FAQ - 01"
+          },
+          {
+            "__resolveType": "site/sections/BlogGrid/BlogPosts.tsx",
+            "posts": {
+              "__resolveType": "blog/loaders/BlogpostList.ts",
+              "count": 4,
+              "sortBy": "date_desc",
+              "slug": "cleanwhey"
+            },
+            "cta": {
+              "link": "/blog/categoria/cleanwhey",
+              "text": "Ver todas as postagens"
+            },
+            "button": true
+          },
+          {
+            "__resolveType": "Newsletter Home"
+          },
+          {
+            "__resolveType": "Footer"
+          }
+        ],
+        "rule": {
+          "__resolveType": "website/matchers/always.ts"
         }
-      ],
-      "preload": false,
-      "interval": 5
-    },
-    {
-      "__resolveType": "Influencers"
-    },
-    {
-      "__resolveType": "Galeria Tripla"
-    },
-    {
-      "__resolveType": "FAQ - 01"
-    },
-    {
-      "__resolveType": "site/sections/BlogGrid/BlogPosts.tsx",
-      "posts": {
-        "__resolveType": "blog/loaders/BlogpostList.ts",
-        "count": 4,
-        "sortBy": "date_desc",
-        "slug": "cleanwhey"
-      },
-      "cta": {
-        "link": "/blog/categoria/cleanwhey",
-        "text": "Ver todas as postagens"
-      },
-      "button": true
-    },
-    {
-      "__resolveType": "Newsletter Home"
-    },
-    {
-      "__resolveType": "Footer"
-    }
-  ],
+      }
+    ]
+  },
   "__resolveType": "website/pages/Page.tsx",
   "path": "/"
 }
