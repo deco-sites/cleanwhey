@@ -133,7 +133,7 @@ function AddToCartButton(props: Props) {
 
       <button
         disabled
-        class={clx("flex-grow group disabled:bg-primary disabled:opacity-80", _class?.toString())}
+        class={clx("flex-grow group disabled:background-primary disabled:opacity-80", _class?.toString())}
         hx-on:click={useScript(onClick)}
       >
         <span className="group-disabled:flex hidden loading loading-spinner loading-md"></span>
@@ -141,7 +141,7 @@ function AddToCartButton(props: Props) {
 
         {props.ctaText ?? "COMPRAR AGORA"}
         <svg
-          class="w-4 h-4 phone:w-8 phone:h-8 desktop:w-5 desktop:h-5 desktop-sm:w-8 desktop-sm:h-8"
+          class="w-4 h-4 desktop:w-8 desktop:h-8"
           width="32"
           height="32"
           viewBox="0 0 32 32"

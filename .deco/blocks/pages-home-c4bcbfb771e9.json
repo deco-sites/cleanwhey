@@ -15,7 +15,6 @@
       "__resolveType": "site/sections/Images/Carousel.tsx",
       "images": [
         {
-          "position": "Left",
           "selos": [],
           "desktop": "https://assets.decocache.com/cleanwhey/b4b2afd6-4223-4e80-a372-e8a25f2ba0d9/CW_Banner_Performance_Web.png",
           "mobile": "https://assets.decocache.com/cleanwhey/7a4e1c59-865c-467c-b178-3dac6a8f4301/CW_Banner_Performance_Mobile.png",
@@ -25,7 +24,8 @@
           },
           "action": {
             "href": "/todos-os-produtos"
-          }
+          },
+          "position": "Left"
         },
         {
           "position": "Left",

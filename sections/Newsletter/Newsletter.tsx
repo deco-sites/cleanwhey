@@ -84,10 +84,9 @@ function Newsletter({
 }: SectionProps<typeof loader, typeof action>) {
   if (status === "success" || status === "failed") {
     return (
-      <section class="bg-primary">
-        <Section.Container class="border-b border-b-orange-200">
+      <section class="background-primary">
+        <Section.Container class="border-b border-b-orange-200 py-5 pt-10">
           <div class="px-4 desktop:px-14 py-4 flex flex-col desktop:flex-row items-center justify-start desktop:justify-center gap-8">
-            {/* <Icon size={80} class={clx(status === "success" ? "text-success" : "text-error")} id={status === "success" ? "check-circle" : "error"}/> */}
             <Notice {...(status === "success" ? success : failed)} />
           </div>
         </Section.Container>
@@ -95,8 +94,8 @@ function Newsletter({
     );
   }
   return (
-    <section class="bg-primary">
-      <Section.Container class="border-b border-b-orange-200">
+    <section class="background-primary">
+      <Section.Container class="border-b border-b-orange-200 py-5 pt-10">
         <div class="px-4 desktop:px-14 py-4 flex flex-col desktop:flex-row items-center justify-start desktop:justify-center gap-8">
           <Notice {...empty} icon={icon} />
 
@@ -114,7 +113,7 @@ function Newsletter({
             />
 
             <button
-              class="btn btn-primary rounded-lg bg-neutral border-blue-300"
+              class="btn btn-primary rounded-lg background-neutral border-blue-300"
               type="submit"
             >
               <span class="[.htmx-request_&]:hidden inline">{label}</span>

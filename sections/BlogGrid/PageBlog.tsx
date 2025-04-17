@@ -56,7 +56,7 @@ function Content(props: SectionProps<ReturnType<typeof loader>>) {
                   {post.categories.map((cat, index) => (
                     <div
                       key={index}
-                      class="bg-primary w-fit text-xs rounded-lg px-2.5 "
+                      class="background-primary w-fit text-xs rounded-lg px-2.5 "
                     >
                       {cat.name}
                     </div>
@@ -77,7 +77,7 @@ function Content(props: SectionProps<ReturnType<typeof loader>>) {
                         : ""}
                     </span>
                     <a
-                      class="bg-primary rounded-lg p-0.5 mr-1"
+                      class="background-primary rounded-lg p-0.5 mr-1"
                       href={`/blog/${post.slug}`}
                     >
                       <Icon class="text-white" id={"arrow-right-custom"} />

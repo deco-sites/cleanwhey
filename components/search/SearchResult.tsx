@@ -103,7 +103,7 @@ function NotFound(props: SectionProps<typeof loader>) {
                     <a
                       href={link}
                       class="text-sm font-normal text-white 
-             p-4 bg-primary rounded-lg uppercase"
+             p-4 background-primary rounded-lg uppercase"
                     >
                       {buttonLabel}
                     </a>
@@ -159,7 +159,7 @@ function NotFound(props: SectionProps<typeof loader>) {
                     <a
                       href={link}
                       class="text-sm font-normal text-white 
-          p-4 bg-primary rounded-lg uppercase"
+          p-4 background-primary rounded-lg uppercase"
                     >
                       {buttonLabel}
                     </a>
@@ -219,13 +219,13 @@ function PageResult(props: SectionProps<typeof loader>) {
   const links = [] as any;
 
   return (
-    <div class="grid grid-flow-row grid-cols-1 place-items-center">
+    <div class="grid grid-flow-row grid-cols-1 place-items-center w-full mx-auto">
       <div
         data-product-list
         class={clx(
-          "grid items-center",
-          "grid-cols-2 gap-1",
-          "desktop:grid-cols-3 mobile:gap-10",
+          "flex items-center mobile:items-stretch mobile:justify-center",
+          "phone:grid phone:grid-cols-2 flex-wrap gap-4 phone:gap-1",
+          "desktop:grid-cols-3 desktop:grid desktop:gap-10",
           "w-full",
         )}
       >
@@ -236,20 +236,19 @@ function PageResult(props: SectionProps<typeof loader>) {
             productName={product.name}
             preload={i === 0}
             index={offset + i}
-            class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
-                      shadow-[0_0_10px_0_rgba(0,0,0,0.1)] phone:p-4 p-1"
+            class="min-w-[160px] max-w-[300px] border border-gray-100 shadow-[0_0_10px_0_rgba(0,0,0,0.1)] desktop:p-4 p-1"
           />
         ))}
       </div>
 
-      <div class={clx("pt-2 mobile:pt-10 w-full flex justify-center", "")}>
+      <div class={clx("pt-2 desktop:pt-10 w-full flex justify-center", "")}>
         {infinite
           ? (
             <div class="flex justify-center [&_section]:contents ">
               <a
                 rel="next"
                 class={clx(
-                  "btn btn-ghost bg-primary text-white",
+                  "btn btn-ghost background-primary text-white",
                   (!nextPageUrl || partial === "hideMore") && "hidden",
                 )}
                 hx-swap="outerHTML show:parent:top"
@@ -290,7 +289,7 @@ function PageResult(props: SectionProps<typeof loader>) {
                     <a
                       href={link.href}
                       class={`btn !rounded-lg ${pageInfo.currentPage == link.label
-                        ? "btn-primary hover:bg-primary bg-primary border-orange-300  hover:border-orange-300 "
+                        ? "btn-primary hover:background-primary background-primary border-orange-300  hover:border-orange-300 "
                         : "btn-ghost"
                         } join-item`}
                     >
@@ -406,7 +405,7 @@ function Result(props: SectionProps<typeof loader>) {
         {partial
           ? <PageResult {...props} />
           : (
-            <div class="container flex flex-col gap-4 mobile:gap-5 w-full py-4 mobile:py-5 px-2">
+            <div class="container flex flex-col gap-4 desktop:gap-5 w-full py-4 desktop:py-5 px-2 desktop:max-w-[1216px] max-w-full mx-auto">
               {term && (
                 <>
                   <span class="font-lato text-gray-300">
@@ -426,6 +425,7 @@ function Result(props: SectionProps<typeof loader>) {
 
               {device === "mobile" && (
                 <Drawer
+                  class="mobile:max-w-[616px] max-w-full mx-auto"
                   id={controls}
                   aside={
                     <div class="bg-base-100 flex flex-col h-full divide-y overflow-y-hidden">
@@ -443,7 +443,7 @@ function Result(props: SectionProps<typeof loader>) {
                     </div>
                   }
                 >
-                  <div class="flex mobile:hidden justify-between items-end">
+                  <div class="flex desktop:hidden justify-between items-end">
                     <label
                       class="btn btn-ghost
                     text-orange-300 rounded-lg border border-orange-300"
@@ -460,7 +460,7 @@ function Result(props: SectionProps<typeof loader>) {
                 </Drawer>
               )}
 
-              <div class="phone:gap-8 grid place-items-center grid-cols-1 mobile:grid-cols-[250px_1fr] phone:px-2 desktop-sm:px-0">
+              <div class="desktop:gap-8 grid place-items-center grid-cols-1 desktop:grid-cols-[250px_1fr] px-0">
                 {device === "desktop" && (
                   <aside class="place-self-start flex flex-col gap-3 border border-gray-100 border-b w-full border-b-orange-300 bg-white-300 rounded-t-lg p-4">
                     <span class="text-base font-normal text-gray-300 h-12 flex gap-2 items-center">
@@ -518,6 +518,7 @@ function SearchResult({ page, ...props }: SectionProps<typeof loader>) {
   }
   return <Result {...props} page={page} />;
 }
+
 export const loader = (props: Props, req: Request) => {
   if (props.page != null) {
     const products: Product[] = [];

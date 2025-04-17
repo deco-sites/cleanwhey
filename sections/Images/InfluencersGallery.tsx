@@ -88,7 +88,7 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
         />
         <a
           href={conteudoFlutuante.link}
-          class="bg-primary block text-center w-full rounded-lg py-2 px-4 text-white text-base font-normal"
+          class="background-primary block text-center w-full rounded-lg py-2 px-4 text-white text-base font-normal"
         >
           {conteudoFlutuante.label ? conteudoFlutuante.label : "Saiba mais"}
         </a>
@@ -162,7 +162,7 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
         />
         <a
           href={conteudoFlutuante.link}
-          class="bg-primary block text-center w-full rounded-lg py-2 px-4 text-white text-base font-normal"
+          class="background-primary block text-center w-full rounded-lg py-2 px-4 text-white text-base font-normal"
         >
           {conteudoFlutuante.label ? conteudoFlutuante.label : "Saiba mais"}
         </a>

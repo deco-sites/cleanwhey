@@ -154,7 +154,7 @@ function ProductCard({
         class="pt-5 text-center flex flex-col justify-between"
       >
         <span
-          class={`font-bold text-gray-400 text-base phone:text-lg text-center capitalize`}
+          class={`font-bold text-gray-400 text-base mobile:text-base text-center capitalize`}
         >
           {title.replace("Cor:", "")} - {productName?.replace("Cor:", "")}
         </span>
@@ -262,13 +262,12 @@ function ProductCard({
             seller={seller}
             item={item}
             ctaText="ADICIONAR À SACOLA"
-            class={`${isFeatured ? "px-1.5 phone:text-sm mt-2.5" : ""} ${clx(
+            class={clx(
               "btn uppercase",
               "btn-outline rounded-lg border-none px-0 no-animation w-full",
-              "bg-primary text-white h-14 font-semibold  phone:text-sm desktop:text-xs desktop-sm:text-sm text-xs  flex-nowrap",
-              "hover:bg-primary",
-            )
-              }`}
+              "background-primary text-white h-14 font-semibold mobile:text-xs flex-nowrap",
+              "hover:background-primary",
+            )}
           />
         ) : (
           <a
@@ -276,8 +275,8 @@ function ProductCard({
             class={`${clx(
               "btn uppercase shrink",
               "btn-outline rounded-lg border-none px-0 no-animation w-full",
-              "bg-primary text-white h-14 font-semibold  phone:text-sm desktop:text-xs desktop-sm:text-sm text-xs flex-nowrap",
-              "hover:bg-primary"
+              "background-primary text-white h-14 font-semibold mobile:text-sm flex-nowrap",
+              "hover:background-primary"
             )}`}
           >
             AVISE-ME

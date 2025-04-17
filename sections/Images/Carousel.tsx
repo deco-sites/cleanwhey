@@ -6,7 +6,6 @@ import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
 import Image from "apps/website/components/Image.tsx";
-import { useDevice } from "@deco/deco/hooks";
 
 /**
  * @titleBy alt
@@ -63,19 +62,8 @@ export interface Props {
   interval?: number;
 }
 
-const WIDTH = {
-  "mobile": 375,
-  "tablet": 375,
-  "desktop": 1520,
-};
-const HEIGHT = {
-  "mobile": 523,
-  "tablet": 523,
-  "desktop": 545,
-};
-
 function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
-  const { mobile, desktop, action, extraLink, selos, activateContent } =
+  const { alt, mobile, desktop, action, extraLink, selos, activateContent } =
     image;
   const params = { promotion_name: image.alt };
 
@@ -88,9 +76,6 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
     on: "view",
     event: { name: "view_promotion", params },
   });
-
-  const device = useDevice()
-  const ASPECT_RATIO = `${WIDTH[device]} / ${HEIGHT[device]}`;
 
   return (
     <a
@@ -120,7 +105,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
             <div className="actions flex flex-col desktop:flex-row items-center gap-2 mt-4">
               {action.label != undefined && (
                 <button
-                  class="border w-full phone:w-auto !border-orange-300  hover:bg-primary !text-white hover:text-white !bg-primary btn btn-primary rounded-lg btn-outline"
+                  class="border w-full phone:w-auto !border-orange-300  hover:background-primary !text-white hover:text-white !background-primary btn btn-primary rounded-lg btn-outline"
                   aria-label={action.label}
                 >
                   {action.label}
@@ -153,16 +138,26 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
           )}
         </div>
       )}
-      <Image
-        src={device === "mobile" ? mobile : desktop}
-        width={WIDTH[device]}
-        height={HEIGHT[device]}
-        fetchPriority={lcp ? "high" : "auto"}
-        preload={lcp}
-        loading={lcp ? "eager" : "lazy"}
-        style={{ aspectRatio: ASPECT_RATIO }}
-        class="w-full"
-        {...viewPromotionEvent} />
+      <Picture preload={lcp} {...viewPromotionEvent} class="w-full h-full block">
+        <Source
+          media="(max-width: 767px)"
+          fetchPriority={lcp ? "high" : "auto"}
+          src={mobile}
+          width={412}
+        />
+        <Source
+          media="(min-width: 768px)"
+          fetchPriority={lcp ? "high" : "auto"}
+          src={desktop}
+          width={1440}
+        />
+        <img
+          class="h-full mx-auto"
+          loading={lcp ? "eager" : "lazy"}
+          src={desktop}
+          alt={alt}
+        />
+      </Picture>
     </a >
   );
 }
@@ -174,11 +169,8 @@ function Carousel({ images = [], preload, interval }: Props) {
     <div
       id={id}
       class={clx(
-        "grid",
-        "grid-rows-[auto_32px_auto_auto]",
-        "grid-cols-[32px_1fr_32px]",
-        "mobile:grid-cols-[112px_1fr_112px] mobile:min-h-min",
-        "w-screen max-w-full phone:mb-8 mb-6"
+        "mobile:min-h-min",
+        "w-screen max-w-full phone:mb-8 mb-6 relative"
       )}
     >
       <div class="col-span-full row-span-full">
@@ -190,8 +182,9 @@ function Carousel({ images = [], preload, interval }: Props) {
           ))}
         </Slider>
       </div>
+      
       {images.length > 1 && (
-        <div class="flex items-center justify-center z-10 col-start-1 row-start-2 left-10 relative">
+        <div class="flex items-center justify-center absolute top-1/2 transform -translate-y-1/2 left-5">
           <Slider.PrevButton
             class="btn btn-neutral btn-outline btn-circle no-animation btn-sm"
             disabled={false}
@@ -200,8 +193,9 @@ function Carousel({ images = [], preload, interval }: Props) {
           </Slider.PrevButton>
         </div>
       )}
+
       {images.length > 1 && (
-        <div class="flex items-center justify-center z-10 col-start-3 row-start-2 right-10 relative">
+        <div class="flex items-center justify-center absolute top-1/2 transform -translate-y-1/2 right-5">
           <Slider.NextButton
             class="btn btn-neutral btn-outline btn-circle no-animation btn-sm"
             disabled={false}

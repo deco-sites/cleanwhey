@@ -53,7 +53,7 @@ function Tabbed({ tabs, current = 0, children }: {
               class={clx(
                 "tab tab-lg rounded-full",
                 index === current
-                  ? "tab-active bg-primary bg-opacity-15"
+                  ? "tab-active background-primary bg-opacity-15"
                   : "bg-base-200",
                 "gap-2",
               )}

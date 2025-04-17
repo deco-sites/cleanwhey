@@ -79,7 +79,7 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
             <a
               href={link}
               class="text-sm font-normal text-white 
-              p-4 bg-primary rounded-lg uppercase"
+              p-4 background-primary rounded-lg uppercase"
             >
               {buttonLabel}
             </a>

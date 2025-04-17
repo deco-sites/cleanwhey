@@ -73,7 +73,7 @@ export default function Searchbar({
 
   return (
     <div
-      class="w-full max-w-full grid relative"
+      class="w-full max-w-full desktop:max-w-[675px] grid relative"
       style={{ gridTemplateRows: "min-content auto" }}
     >
       <form

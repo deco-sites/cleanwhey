@@ -115,7 +115,7 @@ export default function BlogPosts({
 
                     <div class="flex flex-wrap gap-2 absolute -bottom-3 left-0">
                       {post.categories?.map((category) => (
-                        <div class="px-2 badge text-white badge-lg rounded-lg text-sm border border-orange-300  bg-primary">
+                        <div class="px-2 badge text-white badge-lg rounded-lg text-sm border border-orange-300  background-primary">
                           {category.name}
                         </div>
                       ))}
@@ -146,7 +146,7 @@ export default function BlogPosts({
                           : ""}
                       </span>
                       <a
-                        class="bg-primary rounded-lg p-2.5"
+                        class="background-primary rounded-lg p-2.5"
                         href={`/blog/${post.slug}`}
                       >
                         <Icon class="text-white" id={"arrow-right-custom"} />

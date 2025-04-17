@@ -41,7 +41,7 @@ export default function Form({ items }: Props) {
           />
           <button
             type="submit"
-            class="btn no-animation text-white rounded-lg bg-neutral"
+            class="btn no-animation text-white rounded-lg background-neutral"
           >
             <span class="[.htmx-request_&]:hidden inline">OK</span>
             <span class="[.htmx-request_&]:inline hidden loading loading-spinner loading-xs" />

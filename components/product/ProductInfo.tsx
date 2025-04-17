@@ -106,7 +106,7 @@ function ProductInfo({ page, products }: Props) {
               seller={seller}
               product={product}
               variantsSubscription={arrayValuesSubscription}
-              class="btn btn-primary hover:bg-primary hover:border-orange-300  no-animation bg-primary border-orange-300  rounded-lg h-14"
+              class="btn btn-primary hover:background-primary hover:border-orange-300  no-animation background-primary border-orange-300  rounded-lg h-14"
             />
             <AddToCartButtonVTEX
               productID={productID}

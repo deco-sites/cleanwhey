@@ -46,7 +46,7 @@ const Desktop = ({ items }: Props) => {
                   src={item.images.onHover} />
               </div>
             </a>
-            <p class="z-20 w-auto absolute bottom-0 bg-primary p-3 rounded text-white font-bold  text-center desktop:text-sm desktop-sm:text-lg uppercase">
+            <p class="z-20 w-auto absolute bottom-0 background-primary p-3 rounded text-white font-bold  text-center desktop:text-sm desktop-sm:text-lg uppercase">
               {item.textLabel}
             </p>
           </div>
@@ -89,7 +89,7 @@ const Mobile = ({ items }: Props) => {
                     src={item.images.onHover} />
                 </div>
               </a>
-              <p class="z-20 w-auto absolute bottom-0 bg-primary p-3 rounded-tr text-white font-bold  text-center text-lg uppercase">
+              <p class="z-20 w-auto absolute bottom-0 background-primary p-3 rounded-tr text-white font-bold text-center uppercase text-base">
                 {item.textLabel}
               </p>
             </Slider.Item>

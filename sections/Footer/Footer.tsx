@@ -48,10 +48,10 @@ function Footer({
 }: Props) {
   const device = useDevice();
   return (
-    <footer class="mobile:px-0  bg-primary" // style={{ backgroundColor: "#EFF0F0" }}
+    <footer class="mobile:px-0 background-primary" // style={{ backgroundColor: "#EFF0F0" }}
     >
-      <div class="flex flex-col gap-5 mobile:gap-10 pt-10 ">
-        <ul class="container px-5 desktop:gap-0 gap-4 flex mobile:flex-col flex-col justify-between px-2 desktop-sm:px-0">
+      <div class="flex flex-col gap-5 mobile:gap-10 pt-10">
+        <ul class="container px-5 desktop:gap-0 gap-4 flex desktop:flex-row flex-col justify-between py-2  desktop-sm:px-0 mx-auto desktop:max-w-[1216px] max-w-full">
           <li class="flex gap-4 items-start flex-col">
             <div
               class={"flex gap-4 items-center mb-6 w-full mobile:w-auto space-between"}
@@ -147,7 +147,7 @@ function Footer({
           </li>
         </ul>
 
-        <div class="container px-5 flex items-center justify-between px-2 desktop-sm:px-0">
+        <div class="container px-5 flex items-center justify-between py-2 desktop-sm:px-0 mx-auto desktop:max-w-[1216px] max-w-full">
           <ul class="flex flex-wrap desktop:flex-nowrap items-center gap-4 desktop:gap-2">
             {selos.map(({ image, label }) => (
               <li class="h-8 desktop:w-1/5 w-1/5 flex justify-center items-center">
@@ -196,8 +196,8 @@ function Footer({
           </ul>
         </div>
 
-        <div class="grid bg-neutral py-4 grid-flow-row mobile:grid-flow-col gap-8">
-          <div class="container  mobile:px-0 px-5 flex flex-nowrap items-center justify-between mobile:justify-center gap-4">
+        <div class="grid background-neutral py-4 grid-flow-row mobile:grid-flow-col gap-8">
+          <div class="container mobile:px-0 px-5 flex flex-nowrap items-center justify-between desktop:justify-center gap-4">
             <span class="text-base font-normal text-white text-center">
               {trademark}
             </span>

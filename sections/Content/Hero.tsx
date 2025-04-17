@@ -75,8 +75,8 @@ export default function HeroFlats({
                   target={item?.href.includes("http") ? "_blank" : "_self"}
                   class={`group relative overflow-hidden rounded-full hover:bg-gradient-to-r px-6 py-2 desktop:px-8 desktop:py-3 transition-all duration-300 ease-out ${
                     item.variant === "Reverse"
-                      ? "bg-secondary text-white"
-                      : "bg-accent text-black"
+                      ? "background-secondary text-white"
+                      : "background-accent text-black"
                   }`}
                 >
                   <span class="ease absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-1000 group-hover:-translate-x-40">

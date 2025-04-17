@@ -179,7 +179,7 @@ function Filters({ filters }: Props) {
   });
 
   return (
-    <ul class="flex flex-col gap-6 p-4 mobile:p-0">
+    <ul class="flex flex-col gap-6 p-4 desktop:p-0">
       {filtersArray.filter(isToggle).map((filter, index) => (
         <>
           {filter.label != "Departamento" &&

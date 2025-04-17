@@ -78,7 +78,7 @@ function Aside({
       class="bg-base-100 grid grid-rows-[auto_1fr] h-full"
       style={{ maxWidth: "100vw" }}
     >
-      <div class={`${drawer == "sidemenu-drawer" ? "bg-primary" : ""}`}>
+      <div class={`${drawer == "sidemenu-drawer" ? "background-primary" : ""}`}>
         <div class="flex justify-between items-center">
           <h1 class="px-4 py-3">
             <span class="font-medium text-xl flex items-center gap-2 text-orange-300">
