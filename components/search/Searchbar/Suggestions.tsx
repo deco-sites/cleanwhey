@@ -286,8 +286,7 @@ function Suggestions({
             })}
         </div>
             </ul>
-        {
-          /* <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
+          {/* <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
           <span
             class="font-bold text-18 text-blue-300 border-b border-blue-300 pb-2 w-36"
             role="heading"
@@ -298,9 +297,8 @@ function Suggestions({
           <ul class="flex flex-col gap-6"
           id="recents">
 
-          </ul>
-        </div> */
-        }
+          </ul> */}
+        </div>
       </div>
       <script
         type="module"
