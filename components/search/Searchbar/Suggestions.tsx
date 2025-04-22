@@ -235,10 +235,9 @@ function Suggestions({
             >
               Buscas recentes
             </span>
-            <ul class="flex flex-col gap-6" 
-            id="recents">
-        <div class="flex overflow-x-auto gap-[5px] pb-5">
-          {products.length > 0 &&
+            <ul class="flex flex-col gap-6" id="recents">
+          <div class="flex overflow-x-auto gap-[5px] pb-5">
+          {products?.length > 0 &&
             products.map((product, index) => {
               const title = product.isVariantOf?.name ?? product.name;
               const { url } = product;
@@ -286,7 +285,7 @@ function Suggestions({
               );
             })}
         </div>
-
+            </ul>
         {
           /* <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
           <span
