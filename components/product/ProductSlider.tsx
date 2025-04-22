@@ -35,7 +35,7 @@ function ProductSlider({ products, itemListName, isFeatured }: Props) {
                 <Slider.Item
                   key={index}
                   index={index}
-                  className={`carousel-item first:pl-0 first:mobile:pl-2 last:pr-0 last:mobile:pr-2 w-full phone:max-w-full mobile:max-w-[calc(33%-16px)] mobile-sm:!max-w-[calc(65%-16px)] desktop:max-w-[calc(33%-16px)] desktop-lg:max-w-[calc(25%-16px)]`}
+                  className={`carousel-item first:pl-0 first:mobile:pl-2 last:pr-0 last:mobile:pr-2 w-full phone:max-w-full mobile:max-w-[calc(33%-16px)] mobile-sm:!max-w-[calc(65%-16px)] desktop:max-w-[calc(33%-16px)]`}
                 > 
                   <ProductCard
                     product={product}

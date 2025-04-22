@@ -24,14 +24,14 @@ export interface Props {
 const Desktop = ({ items, conteudoFlutuante }: Props) => {
   const id = useId();
   return (
-    <section>
+    <div class="max-w-[1216px] mx-auto">
       <div id={id} class="relative">
         <Slider className="carousel gap-1.5 phone:pr-4 phone:pl-4">
           {items &&
             items.map((item, index) => (
               <Slider.Item
                 index={index}
-                class="carousel-item relative group !ml-0 flex desktop:w-1/3 desktop-sm:w-1/4 duration-300 h-full transition-all items-center justify-center first:pl-4 last:pr-4"
+                class="carousel-item relative group !ml-0 flex desktop:w-1/4 duration-300 h-full transition-all items-center justify-center first:pl-4 last:pr-4"
               >
                 <a
                   class={`rounded-lg w-full h-full transition-all duration-300 relative overflow-hidden`}
@@ -47,7 +47,12 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
                   <div class="font-regular text-sm leading-4 transition-all text-left text-white py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 overflow-y-scroll items-start justify-start scroll-custom overflow-x-hidden rounded-md">
                     <h2 class={"font-bold mb-6"}>{item.textLabel}</h2>
                     <span
-                      dangerouslySetInnerHTML={{ __html: item.description.replaceAll(/font-size:[^;"]+;?/g, '') }}
+                      dangerouslySetInnerHTML={{
+                        __html: item.description.replaceAll(
+                          /font-size:[^;"]+;?/g,
+                          ""
+                        ),
+                      }}
                       class="[&_*]:text-[14x] [&_*]:leading-normal"
                     />
                   </div>
@@ -93,7 +98,7 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
           {conteudoFlutuante.label ? conteudoFlutuante.label : "Saiba mais"}
         </a>
       </div>
-    </section>
+    </div>
   );
 };
 const Mobile = ({ items, conteudoFlutuante }: Props) => {
@@ -122,7 +127,12 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
                   <div class="font-regular text-sm leading-4 transition-all text-left text-white py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 overflow-y-scroll items-start justify-start scroll-custom overflow-x-hidden rounded-md">
                     <h2 class={"font-bold mb-6"}>{item.textLabel}</h2>
                     <span
-                      dangerouslySetInnerHTML={{ __html: item.description.replaceAll(/font-size:[^;"]+;?/g, '') }}
+                      dangerouslySetInnerHTML={{
+                        __html: item.description.replaceAll(
+                          /font-size:[^;"]+;?/g,
+                          ""
+                        ),
+                      }}
                       class="[&_*]:text-[14x] [&_*]:leading-normal"
                     />
                   </div>

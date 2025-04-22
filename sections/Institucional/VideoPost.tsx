@@ -120,14 +120,14 @@ export default function BannerInstitucional({
   return (
     <>
       <div
-        className={`flex flex-col w-full mt-2.5 desktop:mt-5 desktop-sm:container self-center align-center justify-center`}
+        className={`flex flex-col w-full mt-2.5 desktop:mt-5 container self-center align-center justify-center`}
       >
         <div
           className={`flex w-full gap-5 items-start ${PLACEMENT[placement]}
          `}
         >
           <div className={`w-full ${WIDTH_IMAGE[widthComponente]} `}>
-            <div class="mx-2.5 desktop:container desktop:mx-auto flex items-center justify-center mt-5 pb-8">
+            <div class="mx-2.5 container desktop:mx-auto flex items-center justify-center mt-5 pb-8">
               {video && (
                 <video
                   class="h-full w-full cursor-pointer "

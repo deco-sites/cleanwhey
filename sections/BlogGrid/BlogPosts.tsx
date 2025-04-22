@@ -1,9 +1,7 @@
 import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-// import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 import { ComponentChildren, Fragment } from "preact";
 import { BlogPost } from "apps/blog/types.ts";
-// import { useId } from "../../sdk/useId.ts";
 import Icon from "../../components/ui/Icon.tsx";
 import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
@@ -62,26 +60,6 @@ export default function BlogPosts({
   const from = perPage * page;
   const to = perPage * (page + 1);
 
-  // It's boring to generate ids. Let's autogen them
-  // const postList = useId();
-
-  // Get the HTMX link for this section
-  // const fetchMoreLink = usePartialSection({
-  //   mode: "append",
-  //   // Renders this section with the next page
-  //   props: {
-  //     pagination: { perPage, page: page + 1 },
-  //   },
-  // })["f-partial"];
-
-  // function calculateReadingTime(words: number): string {
-  //   const wordsPerMinute = 250;
-  //   const estimatedTimeMinutes = words / wordsPerMinute;
-
-  //   const roundedReadingTime = Math.round(estimatedTimeMinutes);
-  //   return `${roundedReadingTime} min`;
-  // }
-
   const ContainerComponent = page === 0 ? Container : Fragment;
 
   const id = useId();
@@ -96,7 +74,7 @@ export default function BlogPosts({
             />
           )}
 
-          <Slider className="carousel carousel-center max-w-full space-x-4 p-4 phone:pr-4 phone:pl-4 relative">
+          <Slider className="carousel carousel-center max-w-full w-full desktop:justify-center space-x-4 p-4 phone:pr-4 phone:pl-4 relative">
             <div class="gap-4 flex py-5 px-4">
               {posts?.slice(from, to).map((post, index) => (
                 <Slider.Item index={index} class="carousel-item overflow-hidden rounded-lg flex flex-col bg-white-300 max-w-[270px] p-2.5 w-full desktop:mx-0">
@@ -157,24 +135,6 @@ export default function BlogPosts({
               ))}
             </div>
           </Slider>
-
-          <div
-            class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-            justify-center absolute top-1/3 left-5 z-10"
-          >
-            <Slider.PrevButton class="cursor-pointer" disabled={false}>
-              <Icon id="chevron-right" class="rotate-180 text-orange-300" />
-            </Slider.PrevButton>
-          </div>
-
-          <div
-            class="rounded-full border-gray-200 border bg-white w-8 h-8 flex items-center 
-            justify-center absolute top-1/3 right-5 z-10"
-          >
-            <Slider.NextButton class="cursor-pointer" disabled={false}>
-              <Icon id="chevron-right" class="text-orange-300" />
-            </Slider.NextButton>
-          </div>
 
           <Slider.JS rootId={id} />
 

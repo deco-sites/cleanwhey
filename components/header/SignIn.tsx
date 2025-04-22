@@ -26,7 +26,7 @@ function SignIn({ variant }: {
     <div id={id}>
       <a
         class={clx(
-          "btn btn-sm hover:!bg-transparent font-normal btn-ghost no-animation text-white p-0",
+          "btn btn-sm flex hover:!bg-transparent font-normal btn-ghost no-animation text-white p-0",
           variant === "mobile" && "btn-square",
         )}
         href="/login-page"

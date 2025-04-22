@@ -152,7 +152,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
           width={1440}
         />
         <img
-          class="h-full mx-auto"
+          class="h-full mx-auto w-full"
           loading={lcp ? "eager" : "lazy"}
           src={desktop}
           alt={alt}
