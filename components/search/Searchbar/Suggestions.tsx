@@ -23,65 +23,61 @@ export interface SearchEntry {
 }
 
 function teste() {
-
-  
- function addRecentSearch(term: string): void {
-  
+  function addRecentSearch(term: string): void {
     const recentSearches = getRecentSearches();
-  
+
     const searchExists = recentSearches.some((search) => search.term === term);
-  
+
     if (!searchExists) {
       const newSearchEntry: SearchEntry = {
         term: term,
         date: new Date().toISOString(),
       };
-  
+
       if (recentSearches.length >= 5) {
         recentSearches.pop();
       }
-  
-      recentSearches.unshift(newSearchEntry);
-  
-      try {
-          localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
 
+      recentSearches.unshift(newSearchEntry);
+
+      try {
+        localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
       } catch (error) {
         console.error("Error saving to localStorage:", error);
       }
     }
   }
-  
- function getRecentSearches(): SearchEntry[] {
-      try {
-        const recentSearches = JSON.parse(
-          localStorage.getItem("recentSearches") || "[]"
-        );
-        return recentSearches.slice();
-      } catch (error) {
-        console.error("Error reading from localStorage:", error);
-        return [];
-      }
+
+  function getRecentSearches(): SearchEntry[] {
+    try {
+      const recentSearches = JSON.parse(
+        localStorage.getItem("recentSearches") || "[]",
+      );
+      return recentSearches.slice();
+    } catch (error) {
+      console.error("Error reading from localStorage:", error);
+      return [];
+    }
   }
 
-  const url = document.location
+  const url = document.location;
 
-  const search = url.search.replace("?q=","").replaceAll("+"," ")
-  const verify = search.includes("&")? search.split("&")[0] : search
-  
-  addRecentSearch(verify)
-  const array = getRecentSearches()
+  const search = url.search.replace("?q=", "").replaceAll("+", " ");
+  const verify = search.includes("&") ? search.split("&")[0] : search;
 
-  const ul = document.querySelector("#recents")
+  addRecentSearch(verify);
+  const array = getRecentSearches();
 
-  array.map((term)=>{
-    const li = document.createElement("li")
-    const a = document.createElement("a")
-    a.innerHTML = term.term
-    a.href=`/s?q=${term.term}`
-    li.appendChild(a)
-    ul?.appendChild(li)
-  })
+  const ul = document.querySelector("#recents");
+
+  array.map((term) => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.innerHTML = term.term;
+    a.href = `/s?q=${term.term}`;
+    li.appendChild(a);
+    ul?.appendChild(li);
+  });
 }
 
 export const action = async (props: Props, req: Request, ctx: AppContext) => {
@@ -137,7 +133,7 @@ function Suggestions({
       class={clx(
         `overflow-y-scroll mt-2 `,
         "before:content-['']  before:h-screen before:bg-black before:absolute before:-z-10 before:left-[-100vw] before:right-0 before:w-[200vw] before:opacity-50 before:bg-black-100",
-        !hasProducts && !hasTerms && !hasRecentSearches && "hidden"
+        !hasProducts && !hasTerms && !hasRecentSearches && "hidden",
       )}
       style={{
         display: `${
@@ -145,8 +141,8 @@ function Suggestions({
         }`,
       }}
       hx-on:click={useScript(() => {
-        const modal: HTMLDivElement | null =
-          document.querySelector("#modal") || null;
+        const modal: HTMLDivElement | null = document.querySelector("#modal") ||
+          null;
         modal!.style.display = "none";
       })}
     >
@@ -184,12 +180,12 @@ function Suggestions({
 
                 const [front, back] = product.image ?? [];
                 const { price, installments, salePrice } = useOffer(
-                  product?.offers
+                  product?.offers,
                 );
                 const pixObj = product.isVariantOf?.hasVariant
                   .filter((value) => value.url == url)[0]
                   .offers?.offers[0].priceSpecification.filter(
-                    (value) => value.name?.toLowerCase() == "pix"
+                    (value) => value.name?.toLowerCase() == "pix",
                   )[0];
 
                 const pixporcent =
@@ -198,7 +194,7 @@ function Suggestions({
 
                 return (
                   <li key={index}>
-                    <a href={`${product.url}`} class="flex gap-1 items-center">
+                    <a href={`${product.url}`} class="flex gap-1 items-center h-fit">
                       <div class="flex flex-row w-full">
                         <div class="flex flex-row w-full gap-2">
                           <Image
@@ -219,8 +215,7 @@ function Suggestions({
                               {pixporcent && -(pixporcent - 100) % 1 < 0.5
                                 ? Math.floor(-(pixporcent - 100)) + "% OFF "
                                 : Math.ceil(-(pixporcent! - 100)) +
-                                  "% OFF "}{" "}
-                              ou
+                                  "% OFF "} ou
                             </p>
                             <span class="text-xs">{installments}</span>
                           </div>
@@ -232,7 +227,6 @@ function Suggestions({
               })}
           </ul>
         </div>
-
           <div class="flex flex-col pt-6 phone:pt-0 gap-6 overflow-x-hidden">
             <span
               class="font-bold text-18 text-blue-300 border-b border-blue-300 pb-2 w-36"
@@ -243,15 +237,76 @@ function Suggestions({
             </span>
             <ul class="flex flex-col gap-6" 
             id="recents">
+        <div class="flex overflow-x-auto gap-[5px] pb-5">
+          {products.length > 0 &&
+            products.map((product, index) => {
+              const title = product.isVariantOf?.name ?? product.name;
+              const { url } = product;
 
-            </ul>
-          </div>
+              const [front, back] = product.image ?? [];
+              const { price, installments, salePrice } = useOffer(
+                product?.offers,
+              );
+              const pixObj = product.isVariantOf?.hasVariant
+                .filter((value) => value.url == url)[0]
+                .offers?.offers[0].priceSpecification.filter(
+                  (value) => value.name?.toLowerCase() == "pix",
+                )[0];
 
+              const pixporcent =
+                (pixObj && salePrice && (pixObj.price / salePrice) * 100) ||
+                (price && salePrice && (price / salePrice) * 100);
+
+              return (
+                <a
+                  key={index}
+                  href={`${product.url}`}
+                  class="card card-compact group bg-white hover:bg-[#F7EDDF] text-sm grid grid-rows-[auto_1fr_auto] h-fit min-w-[160px] max-w-[300px] border border-gray-100 shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
+                >
+                  <Image
+                    width={80}
+                    height={80}
+                    loading="lazy"
+                    src={back?.url ?? front.url!}
+                    alt={back?.alternateName ?? front.alternateName}
+                    class=" object-cover min-h-20 "
+                  />
+                  <span class="text-ellipsis-custom text-sm capitalize">
+                    {title} - {product.name}
+                  </span>
+                  {formatPrice(pixObj?.price) || formatPrice(price)}
+                  <p class="text-sm text-gray-300">
+                    via PIX {pixporcent && -(pixporcent - 100) % 1 < 0.5
+                      ? Math.floor(-(pixporcent - 100)) + "% OFF "
+                      : Math.ceil(-(pixporcent! - 100)) +
+                        "% OFF "} ou
+                  </p>
+                  <span class="text-xs">{installments}</span>
+                </a>
+              );
+            })}
+        </div>
+
+        {
+          /* <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
+          <span
+            class="font-bold text-18 text-blue-300 border-b border-blue-300 pb-2 w-36"
+            role="heading"
+            aria-level={3}
+          >
+            Buscas recentes
+          </span>
+          <ul class="flex flex-col gap-6"
+          id="recents">
+
+          </ul>
+        </div> */
+        }
       </div>
       <script
-            type="module"
-            dangerouslySetInnerHTML={{ __html: useScript(teste) }}
-          />
+        type="module"
+        dangerouslySetInnerHTML={{ __html: useScript(teste) }}
+      />
     </div>
   );
 }
