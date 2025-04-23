@@ -24,6 +24,10 @@ export interface Banner {
    */
   activateContent?: boolean;
 
+  width: number;
+
+  height: number;
+
   action?: {
     /** @description when user clicks on the image, go to this link */
     href?: string;
@@ -63,7 +67,7 @@ export interface Props {
 }
 
 function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
-  const { alt, mobile, desktop, action, extraLink, selos, activateContent } =
+  const { alt, mobile, desktop, action, extraLink, selos, activateContent, width, height } =
     image;
   const params = { promotion_name: image.alt };
 
@@ -151,11 +155,13 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
           src={desktop}
           width={1440}
         />
-        <img
+        <Image
           class="h-full mx-auto w-full"
           loading={lcp ? "eager" : "lazy"}
           src={desktop}
           alt={alt}
+          width={width}
+          height={height}
         />
       </Picture>
     </a >

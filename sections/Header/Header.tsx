@@ -69,6 +69,8 @@ const Desktop = (props: SectionProps<typeof loader>) => {
                 width={logo.width || 100}
                 height={logo.height || 23}
                 class="min-w-[130px] h-auto"
+                preload
+                loading={"eager"}
               />
             </a>
           </div>
@@ -169,16 +171,8 @@ const Mobile = ({ logo, searchbar }: Props) => {
 function Header(props: SectionProps<typeof loader>) {
   const device = useDevice();
   const {
-    alerts = [],
-    logo = {
-      src:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
-      width: 100,
-      height: 16,
-      alt: "Logo",
-    },
+    alerts = []
   } = props;
-  // const user = useUser();
   return (
     <header
       style={{
