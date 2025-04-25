@@ -3861,10 +3861,6 @@ details.collapse summary::-webkit-details-marker {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.my-2\.5 {
-  margin-top: 0.625rem;
-  margin-bottom: 0.625rem;
-}
 .my-20 {
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -4141,9 +4137,6 @@ details.collapse summary::-webkit-details-marker {
 .max-h-\[386px\] {
   max-height: 386px;
 }
-.max-h-\[470px\] {
-  max-height: 470px;
-}
 .max-h-\[55px\] {
   max-height: 55px;
 }
@@ -4176,9 +4169,6 @@ details.collapse summary::-webkit-details-marker {
 }
 .min-h-\[42px\] {
   min-height: 42px;
-}
-.min-h-\[470px\] {
-  min-height: 470px;
 }
 .min-h-\[calc\(100vh-300px\)\] {
   min-height: calc(100vh - 300px);
@@ -7214,6 +7204,10 @@ flex-grow-1 {
 
   .mobile\:flex-row {
     flex-direction: row;
+  }
+
+  .mobile\:flex-col {
+    flex-direction: column;
   }
 
   .mobile\:items-start {

@@ -118,7 +118,7 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
                   href={item.link}
                 >
                   <Image
-                    class={`rounded-lg w-full duration-300 transition-all  min-h-[470px] max-h-[470px] h-full `}
+                    class={`rounded-lg w-full duration-300 transition-all h-full`}
                     src={item.images.normal}
                     loading={"lazy"}
                     width={635}

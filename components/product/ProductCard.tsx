@@ -151,7 +151,7 @@ function ProductCard({
       </figure>
       <a
         href={relativeUrl}
-        class="pt-5 text-center flex flex-col justify-between"
+        class="text-center flex flex-col justify-center"
       >
         <span
           class={`font-bold text-gray-400 text-base mobile:text-base text-center capitalize`}
@@ -220,11 +220,10 @@ function ProductCard({
           </span>
         </div>
       )}
-      <div class="flex-grow my-2.5" />
       <div class={`flex flex-col gap-2.5`}>
         {isFeatured && (
           <div class="flex flex-col text-center items-center  justify-center gap-1">
-            <span class="text-xl font-bold flex gap-2 text-gray-400 items-center">
+            <span class="text-xl font-bold flex gap-2 text-gray-400 items-center mobile:flex-col">
               {formatPrice(pixObj?.price) || formatPrice(price)}
               <p class="text-sm text-gray-300">
                 via PIX{" "}
