@@ -48,13 +48,13 @@ function Footer({
 }: Props) {
   const device = useDevice();
   return (
-    <footer class="sm:px-0  bg-primary" // style={{ backgroundColor: "#EFF0F0" }}
+    <footer class="mobile:px-0 background-primary" // style={{ backgroundColor: "#EFF0F0" }}
     >
-      <div class="flex flex-col gap-5 sm:gap-10 pt-10 ">
-        <ul class="container px-5 md:gap-0 gap-4 flex sm:flex-row flex-col justify-between px-2 xl:px-0">
+      <div class="flex flex-col gap-5 mobile:gap-10 pt-10">
+        <ul class="container px-5 desktop:gap-0 gap-4 flex desktop:flex-row flex-col justify-between py-2  desktop-sm:px-0 mx-auto desktop:max-w-[1216px] max-w-full">
           <li class="flex gap-4 items-start flex-col">
             <div
-              class={"flex gap-4 items-center mb-6 w-full sm:w-auto space-between"}
+              class={"flex gap-4 items-center mb-6 w-full mobile:w-auto space-between"}
             >
               {logo && <Image class={"max-w-[136px]"} width={134} height={68} loading="lazy" src={logo} />}
               <ul class="flex gap-4">
@@ -73,7 +73,7 @@ function Footer({
                 ))}
               </ul>
             </div>
-            <div class="text-white md:max-w-[328px]">
+            <div class="text-white desktop:max-w-[328px]">
               <p>
                 R. Eng. Haroldo Cavalcanti, 360 | Sal 305 Recreio dos
                 Bandeirantes, Rio de Janeiro - RJ
@@ -129,10 +129,10 @@ function Footer({
             <a href="#" class="text-white font-semibold">
               Formas de pagamento
             </a>
-            <div class="flex flex-col sm:flex-row gap-12 justify-between items-start sm:items-center">
-              <ul class="flex flex-wrap gap-2 md:max-w-64">
+            <div class="flex flex-col mobile:flex-row gap-12 justify-between items-start mobile:items-center">
+              <ul class="flex flex-wrap gap-2 desktop:max-w-64">
                 {paymentMethods.map(({ image, alt }) => (
-                  <li class="h-8 md:w-1/5 w-1/6 border border-base-100 bg-white rounded flex justify-center items-center">
+                  <li class="h-8 desktop:w-1/5 w-1/6 border border-base-100 bg-white rounded flex justify-center items-center">
                     <Image
                       src={image}
                       alt={alt}
@@ -147,10 +147,10 @@ function Footer({
           </li>
         </ul>
 
-        <div class="container px-5 flex items-center justify-between px-2 xl:px-0">
-          <ul class="flex flex-wrap md:flex-nowrap items-center gap-4 md:gap-2">
+        <div class="container px-5 flex items-center justify-between py-2 desktop-sm:px-0 mx-auto desktop:max-w-[1216px] max-w-full">
+          <ul class="flex flex-wrap desktop:flex-nowrap items-center gap-4 desktop:gap-2">
             {selos.map(({ image, label }) => (
-              <li class="h-8 md:w-1/5 w-1/5 flex justify-center items-center">
+              <li class="h-8 desktop:w-1/5 w-1/5 flex justify-center items-center">
                 <Image
                   src={image}
                   alt={label}
@@ -181,7 +181,7 @@ function Footer({
               )}
           </ul>
 
-          <ul class="hidden sm:flex items-center gap-2">
+          <ul class="hidden mobile:flex items-center gap-2">
             {seguranca.map(({ image, label }) => (
               <li class="h-8 w-1/3 flex justify-center items-center">
                 <Image
@@ -196,8 +196,8 @@ function Footer({
           </ul>
         </div>
 
-        <div class="grid bg-neutral py-4 grid-flow-row sm:grid-flow-col gap-8">
-          <div class="container  sm:px-0 px-5 flex flex-nowrap items-center justify-between sm:justify-center gap-4">
+        <div class="grid background-neutral py-4 grid-flow-row mobile:grid-flow-col gap-8">
+          <div class="container mobile:px-0 px-5 flex flex-nowrap items-center justify-between desktop:justify-center gap-4">
             <span class="text-base font-normal text-white text-center">
               {trademark}
             </span>

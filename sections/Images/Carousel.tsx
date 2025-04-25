@@ -6,7 +6,6 @@ import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
 import Image from "apps/website/components/Image.tsx";
-import { useDevice } from "@deco/deco/hooks";
 
 /**
  * @titleBy alt
@@ -24,6 +23,10 @@ export interface Banner {
    * @description Ativar customização HTML no Banner, mesmo desativado, inserir o link no campo de action
    */
   activateContent?: boolean;
+
+  width: number;
+
+  height: number;
 
   action?: {
     /** @description when user clicks on the image, go to this link */
@@ -63,19 +66,8 @@ export interface Props {
   interval?: number;
 }
 
-const WIDTH = {
-  "mobile": 375,
-  "tablet": 375,
-  "desktop": 1520,
-};
-const HEIGHT = {
-  "mobile": 523,
-  "tablet": 523,
-  "desktop": 545,
-};
-
 function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
-  const { alt, mobile, desktop, action, extraLink, selos, activateContent } =
+  const { alt, mobile, desktop, action, extraLink, selos, activateContent, width, height } =
     image;
   const params = { promotion_name: image.alt };
 
@@ -89,9 +81,6 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
     event: { name: "view_promotion", params },
   });
 
-  const device = useDevice()
-  const ASPECT_RATIO = `${WIDTH[device]} / ${HEIGHT[device]}`;
-
   return (
     <a
       {...selectPromotionEvent}
@@ -102,30 +91,25 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
       {action && (
         <div
           class={`
-            ${image.position == "Left" ? "left-0 sm:left-40 md:left-50" : ""}
-            ${image.position == "Right" ? "right-0 sm:right-40 md:right-50" : ""}
-            absolute h-auto md:h-full w-full top-5 md:top-0
-            flex flex-col justify-center items-center
-            px-5 sm:px-0
-            sm:items-start sm:max-w-xl`}
+            ${image.position == "Left" ? "desktop:left-40 mobile:left-50" : ""}
+            ${image.position == "Right" ? "desktop:right-40 mobile:right-50" : ""}
+            absolute h-auto desktop:h-full w-full top-5 mobile:top-24
+            flex flex-col justify-center items-start
+            px-5 mobile:px-0 left-1/2 -translate-x-1/2
+            mobile:items-center mobile:max-w-[320px]`}
         >
           {activateContent && action.title && (
             <span
-              class={`${
-                image.position == "Left" ? "md:text-5xl" : "md:text-7xl"
-              } text-[32px] text-center md:text-left font-normal leading md:leading-[60px] font-lato text-[#808184]`}
+              class={`text-[32px] text-center desktop:text-left font-normal leading desktop:leading-[10px] font-lato text-[#808184]`}
               dangerouslySetInnerHTML={{ __html: action.title }}
             />
           )}
 
-          {/* <span class="font-normal text-base text-base-100 pt-4 pb-12">
-            {action.subTitle}
-          </span> */}
           {activateContent && (
-            <div className="actions flex flex-col md:flex-row items-center gap-2 mt-4">
+            <div className="actions flex flex-col desktop:flex-row items-center gap-2 mt-4">
               {action.label != undefined && (
                 <button
-                  class="border w-full md:w-auto !border-orange-300  hover:bg-primary !text-white hover:text-white !bg-primary btn btn-primary rounded-lg btn-outline"
+                  class="border w-full phone:w-auto !border-orange-300  hover:background-primary !text-white hover:text-white !background-primary btn btn-primary rounded-lg btn-outline"
                   aria-label={action.label}
                 >
                   {action.label}
@@ -158,16 +142,28 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
           )}
         </div>
       )}
-      <Image
-        src={device === "mobile" ? mobile : desktop}
-        width={WIDTH[device]}
-        height={HEIGHT[device]}
-        fetchPriority={lcp ? "high" : "auto"}
-        preload={lcp}
-        loading={lcp ? "eager" : "lazy"}
-        style={{ aspectRatio: ASPECT_RATIO }}
-        class="w-full"
-        {...viewPromotionEvent} />
+      <Picture preload={lcp} {...viewPromotionEvent} class="w-full h-full block">
+        <Source
+          media="(max-width: 767px)"
+          fetchPriority={lcp ? "high" : "auto"}
+          src={mobile}
+          width={412}
+        />
+        <Source
+          media="(min-width: 768px)"
+          fetchPriority={lcp ? "high" : "auto"}
+          src={desktop}
+          width={1440}
+        />
+        <Image
+          class="h-full mx-auto w-full"
+          loading={lcp ? "eager" : "lazy"}
+          src={desktop}
+          alt={alt}
+          width={width}
+          height={height}
+        />
+      </Picture>
     </a >
   );
 }
@@ -179,11 +175,8 @@ function Carousel({ images = [], preload, interval }: Props) {
     <div
       id={id}
       class={clx(
-        "grid",
-        "grid-rows-[1fr_32px_1fr_64px]",
-        "grid-cols-[32px_1fr_32px]",
-        "sm:grid-cols-[112px_1fr_112px] sm:min-h-min",
-        "w-screen max-w-full md:mb-8 mb-6"
+        "mobile:min-h-min",
+        "w-screen max-w-full phone:mb-8 mb-6 relative"
       )}
     >
       <div class="col-span-full row-span-full">
@@ -195,8 +188,9 @@ function Carousel({ images = [], preload, interval }: Props) {
           ))}
         </Slider>
       </div>
+      
       {images.length > 1 && (
-        <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
+        <div class="flex items-center justify-center absolute top-1/2 transform -translate-y-1/2 left-5">
           <Slider.PrevButton
             class="btn btn-neutral btn-outline btn-circle no-animation btn-sm"
             disabled={false}
@@ -205,8 +199,9 @@ function Carousel({ images = [], preload, interval }: Props) {
           </Slider.PrevButton>
         </div>
       )}
+
       {images.length > 1 && (
-        <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
+        <div class="flex items-center justify-center absolute top-1/2 transform -translate-y-1/2 right-5">
           <Slider.NextButton
             class="btn btn-neutral btn-outline btn-circle no-animation btn-sm"
             disabled={false}

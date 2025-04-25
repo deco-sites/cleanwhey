@@ -77,7 +77,7 @@ export default function ShoppableBanner(props: Props) {
 
   return (
     <div class="container">
-      <div class="card lg:card-side rounded grid grid-cols-1 lg:grid-cols-2">
+      <div class="card desktop:card-side rounded grid grid-cols-1 desktop:grid-cols-2">
         <figure class="relative">
           <Picture>
             <Source
@@ -105,7 +105,7 @@ export default function ShoppableBanner(props: Props) {
             <>
               <a
                 href={link}
-                class="absolute w-min btn btn-accent rounded-full hover:rounded text-accent no-animation md:scale-[30%] hover:text-accent-content hover:scale-125 sm:hidden"
+                class="absolute w-min btn btn-accent rounded-full hover:rounded text-accent no-animation phone:scale-[30%] hover:text-accent-content hover:scale-125 mobile:hidden"
                 style={{
                   left: `${mobile.x}%`,
                   top: `${mobile.y}%`,
@@ -115,7 +115,7 @@ export default function ShoppableBanner(props: Props) {
               </a>
               <a
                 href={link}
-                class="absolute w-min btn btn-accent rounded-full hover:rounded text-accent no-animation md:scale-[30%] hover:text-accent-content hover:scale-125 hidden sm:inline-flex"
+                class="absolute w-min btn btn-accent rounded-full hover:rounded text-accent no-animation phone:scale-[30%] hover:text-accent-content hover:scale-125 hidden mobile:inline-flex"
                 style={{
                   left: `${desktop?.x ?? mobile.x}%`,
                   top: `${desktop?.y ?? mobile.y}%`,
@@ -126,7 +126,7 @@ export default function ShoppableBanner(props: Props) {
             </>
           ))}
         </figure>
-        <div class="flex flex-col justify-center gap-6 py-20 px-8 bg-neutral-content">
+        <div class="flex flex-col justify-center gap-6 py-20 px-8 background-neutral-content">
           <h2 class={`card-title flex ${title?.layout?.position}`}>
             {title?.content}
           </h2>

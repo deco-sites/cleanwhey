@@ -1,14 +1,11 @@
 import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { clx } from "../../sdk/clx.ts";
-import { formatPrice } from "../../sdk/format.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
-import ShippingSimulationForm from "../shipping/Form.tsx";
 import WishlistButton from "../wishlist/WishlistButton.tsx";
 import AddToCartButton from "./AddToCartButtonpdp.tsx";
 import OutOfStock from "./OutOfStock.tsx";
-import ProductSelector from "./ProductVariantSelector.tsx";
 import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
 import { SendEventOnView } from "../Analytics.tsx";
 
@@ -29,7 +26,7 @@ function ProductInfo({ page, products }: Props) {
   }
 
   const { breadcrumbList, product } = page;
-  const { productID, offers, isVariantOf, url, name, additionalProperty } = product;
+  const { productID, offers, isVariantOf, name, additionalProperty } = product;
   const description = product.description || isVariantOf?.description;
   const title = isVariantOf?.name ?? product.name;
   const {
@@ -37,13 +34,7 @@ function ProductInfo({ page, products }: Props) {
     listPrice,
     seller = "1",
     availability,
-    salePrice,
   } = useOffer(offers);
-
-  // const percent = listPrice && price
-  //   ? Math.round(((listPrice - price) / listPrice) * 100)
-  //   : 0;
-
 
   const breadcrumb = {
     ...breadcrumbList,
@@ -62,17 +53,6 @@ function ProductInfo({ page, products }: Props) {
     price,
     listPrice,
   });
-
-  const pixObj = product.isVariantOf?.hasVariant
-    .filter((value) => value.url == url)[0]
-    .offers?.offers[0].priceSpecification.filter(
-      (value) => value.name?.toLowerCase() == "pix"
-    )[0];
-
-  const pixporcent =
-    (pixObj && salePrice && (pixObj.price / salePrice) * 100) ||
-    (price && salePrice && (price / salePrice) * 100);
-
 
   const hasSubscription = additionalProperty?.find((property) => property.name === "vtex.subscription.assinatura");
 
@@ -117,7 +97,7 @@ function ProductInfo({ page, products }: Props) {
           </span>
         </div>
       )}
-      <div class="mt-4 sm:mt-5 flex flex-col gap-2">
+      <div class="mt-4 desktop:mt-5 flex flex-col gap-2">
         {availability === "https://schema.org/InStock" ? (
           <>
             <AddToCartButton
@@ -126,7 +106,7 @@ function ProductInfo({ page, products }: Props) {
               seller={seller}
               product={product}
               variantsSubscription={arrayValuesSubscription}
-              class="btn btn-primary hover:bg-primary hover:border-orange-300  no-animation bg-primary border-orange-300  rounded-lg h-14"
+              class="btn btn-primary hover:background-primary hover:border-orange-300  no-animation background-primary border-orange-300  rounded-lg h-14"
             />
             <AddToCartButtonVTEX
               productID={productID}

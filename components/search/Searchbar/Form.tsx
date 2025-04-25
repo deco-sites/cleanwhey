@@ -8,7 +8,6 @@
  * Note that this is the most performatic way to perform a search, since
  * no JavaScript is shipped to the browser!
  */
-import { useEffect } from "preact/hooks";
 
 import { Suggestion } from "apps/commerce/types.ts";
 import {
@@ -23,7 +22,6 @@ import { Pix } from "../../../loaders/BusnissRule/Pix.ts";
 import { useScript as useScript } from "@deco/deco/hooks";
 import { asResolved as asResolved } from "@deco/deco";
 import { type Resolved } from "@deco/deco";
-import { addRecentSearch } from "../../../sdk/searchHistory.tsx";
 
 // When user clicks on the search button, navigate it to
 export const ACTION = "/s";
@@ -73,21 +71,9 @@ export default function Searchbar({
 }: SearchbarProps) {
   const slot = useId();
 
-  // useEffect(() => {
-  //   // Adiciona o evento "htmx:afterRequest" para recarregar o histórico
-  //   const searchInput = document.getElementById("search-input").value || "";
-
-  //   if (searchInput) {
-  //     document.addEventListener(
-  //       "htmx:afterRequest",
-  //       addRecentSearch(searchInput)
-  //     );
-  //   }
-  // }, []);
-
   return (
     <div
-      class="w-full max-w-[675px] grid relative"
+      class="w-full max-w-full desktop:max-w-[675px] grid relative"
       style={{ gridTemplateRows: "min-content auto" }}
     >
       <form
@@ -99,7 +85,7 @@ export default function Searchbar({
           id="search-input"
           autoFocus
           tabIndex={0}
-          class="input input-bordered join-item flex-grow outline-none focus:outline-none border-0"
+          class="input input-bordered join-item flex-grow !outline-none !focus:outline-none border-0"
           name={NAME}
           placeholder={placeholder}
           autocomplete="off"

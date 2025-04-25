@@ -234,7 +234,7 @@ export default function Cart({
 
                 <div class="p-4">
                   <a
-                    class="btn w-full hover:bg-primary hover:border-bg-300 no-animation bg-primary rounded-lg"
+                    class="btn w-full hover:background-primary hover:border-bg-300 no-animation background-primary rounded-lg"
                     href={checkoutHref}
                     hx-on:click={useScript(sendBeginCheckoutEvent)}
                   >

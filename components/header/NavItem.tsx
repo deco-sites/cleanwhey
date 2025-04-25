@@ -34,7 +34,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
             marginTop: HEADER_HEIGHT_DESKTOP,
           }}
         >
-          <div className="container flex items-center justify-between">
+          <div className="container flex items-center justify-between max-w-[1216px]">
             <ul class="flex relative flex-col items-start justify-center gap-2 min-w-[200px] border-r-gray-200 border-r pr-5">
               <li>
                 <h2 class=" text-lg text-orange-300 font-bold">{name}</h2>
@@ -50,7 +50,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
                       <Icon id="arrow-right-custom" class="text-orange-300" />
                     )}
                   </a>
-                  {node.children?.length > 0 && (
+                  {node.children?.length! > 0 && (
                     <ul class=" border-r-gray-200 border-r after:absolute after:right-[90%] after:h-full after:bg-transparent after:w-1/2 min-w-[200px] px-5 h-full group-hover/lastmenu:flex hidden flex-col gap-1 pt-4 absolute top-0 left-full">
                       {node.children?.map((leaf) => (
                         <li class="p-0 group/finalmenu w-full">

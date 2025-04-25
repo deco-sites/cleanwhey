@@ -20,8 +20,8 @@ function Content(props: SectionProps<ReturnType<typeof loader>>) {
   const { secoes } = content;
 
   return (
-    <div class="flex flex-row   bg-white   px-1.5 lg:mx-auto container ">
-      <div class={`flex flex-col  ${posts && " w-full lg:w-4/5"}`}>
+    <div class="flex flex-row   bg-white   px-1.5 desktop:mx-auto container ">
+      <div class={`flex flex-col  ${posts && " w-full desktop:w-4/5"}`}>
         {secoes.map((secao) => (
           <div class={`bg-white-300 flex flex-col px-2.5 `}>
             <secao.Component {...secao.props} />
@@ -29,7 +29,7 @@ function Content(props: SectionProps<ReturnType<typeof loader>>) {
         ))}
       </div>
       {posts && (
-        <div class="hidden w-1/5 bg-white-400 rounded lg:flex flex-col justify-start ml-2.5 mt-2.5 gap-2.5 p-2.5 ">
+        <div class="hidden w-1/5 bg-white-400 rounded desktop:flex flex-col justify-start ml-2.5 mt-2.5 gap-2.5 p-2.5 ">
           <h2 class={`font-semibold`}>Confira outras postagens</h2>
           {posts.map((post, i) => {
             if (!post || !post.title || post.categories.length === 0) {
@@ -56,7 +56,7 @@ function Content(props: SectionProps<ReturnType<typeof loader>>) {
                   {post.categories.map((cat, index) => (
                     <div
                       key={index}
-                      class="bg-primary w-fit text-xs rounded-lg px-2.5 "
+                      class="background-primary w-fit text-xs rounded-lg px-2.5 "
                     >
                       {cat.name}
                     </div>
@@ -77,7 +77,7 @@ function Content(props: SectionProps<ReturnType<typeof loader>>) {
                         : ""}
                     </span>
                     <a
-                      class="bg-primary rounded-lg p-0.5 mr-1"
+                      class="background-primary rounded-lg p-0.5 mr-1"
                       href={`/blog/${post.slug}`}
                     >
                       <Icon class="text-white" id={"arrow-right-custom"} />

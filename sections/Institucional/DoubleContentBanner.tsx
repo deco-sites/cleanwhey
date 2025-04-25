@@ -9,9 +9,9 @@ export default function DoubleContentBanner(
 ) {
   return (
     <>
-      <div class="flex md:flex-row flex-col items-start gap-8 mb-8">
+      <div class="flex desktop:flex-row flex-col items-start gap-8 mb-8">
         <div
-          class={"w-full md:min-w-[488px] max-w-[488px]"}
+          class={"w-full desktop:min-w-[488px] max-w-[488px]"}
           dangerouslySetInnerHTML={{ __html: leftContent }}
         />
         <div class="w-full">

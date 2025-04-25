@@ -21,27 +21,27 @@ function Section(props: SectionProps<ReturnType<typeof loader>>) {
   }
   const { title, cards } = section;
   return (
-    <section class={"section container md:px-0 px-4"}>
+    <section class={"section container phone:px-0 px-4 desktop:max-w-[1216px] max-w-full"}>
       {title && (
         <div class="title">
           <h2
-            class="text-2xl font-bold text-[#808184] md:text-left text-center mb-4 pb-2 md:px-0 px-4"
+            class="text-2xl font-bold text-[#808184] desktop:text-left text-center mb-4 pb-2 phone:px-0 px-4"
             dangerouslySetInnerHTML={{ __html: title }}
           />
         </div>
       )}
-      <div class="grid md:grid-cols-3 mb-4 grid-cols-1 gap-2 md:px-0 px-4">
+      <div class="grid desktop:grid-cols-3 mb-4 grid-cols-1 gap-2 phone:px-0 px-4">
         {cards &&
-          cards.length > 0 &&
+          cards.length > 0 && 
           cards.map((card) => (
             <div class="border border-gray-100 bg-white-300 rounded p-4">
-              <h3 class="text-base font-bold md:text-left text-center text-orange-300">
+              <h3 class="text-base font-bold desktop:text-left text-center text-orange-300">
                 {card.subtitle}
               </h3>
               {card.description && (
                 <span
                   dangerouslySetInnerHTML={{ __html: card.description }}
-                  class="text-gray-300 text-base md:text-left text-center"
+                  class="text-gray-300 text-base desktop:text-left text-center"
                 />
               )}
             </div>

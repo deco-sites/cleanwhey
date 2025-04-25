@@ -11,8 +11,8 @@ export interface Props {
 }
 const Desktop = ({ items }: Props) => {
   return (
-    <section class="container border-b border-gray-100 pb-8 px-2 xl:px-0">  
-      <div class="grid grid-cols-4">
+    <section class="container border-b border-gray-100 pb-8 px-2 desktop-sm:px-0">  
+      <div class="grid grid-cols-4 max-w-[1216px] mx-auto">
         {items &&
           items.map((item) => (
             <div class={"flex flex-col gap-2 justify-center items-center"}>
@@ -38,8 +38,8 @@ const Desktop = ({ items }: Props) => {
 };
 const Mobile = ({ items }: Props) => {
   return (
-    <div className="container pb-6 border-b border-gray-100">
-      <div className="carousel carousel-center max-w-md space-x-4 p-4">
+    <div className="container pb-6 border-b border-gray-100 flex">
+      <div className="carousel carousel-center w-full max-w-6xl justify-between space-x-4 p-4 mx-auto">
         {items &&
           items.map((item) => (
             <div

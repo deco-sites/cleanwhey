@@ -12,7 +12,6 @@ import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 import {
   useDevice as useDevice,
   useScript as useScript,
-  useSection as useSection,
 } from "@deco/deco/hooks";
 import { type SectionProps as SectionProps } from "@deco/deco";
 
@@ -34,7 +33,7 @@ export interface Props {
 }
 
 function PageResult(props: SectionProps<typeof loader>) {
-  const { startingPage = 0, pix } = props;
+  const { startingPage = 0 } = props;
   const page = props.page!;
   const { products, pageInfo } = page;
   const perPage = pageInfo?.recordPerPage || products.length;
@@ -48,7 +47,7 @@ function PageResult(props: SectionProps<typeof loader>) {
         class={clx(
           "grid items-center",
           "grid-cols-2 gap-1",
-          "sm:grid-cols-3 sm:gap-10",
+          "mobile:grid-cols-3 mobile:gap-10",
           "w-full",
         )}
       >
@@ -60,7 +59,7 @@ function PageResult(props: SectionProps<typeof loader>) {
             preload={i === 0}
             index={offset + i}
             class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
-                      shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
+                      shadow-[0_0_10px_0_rgba(0,0,0,0.1)] phone:p-4 p-1"
           />
         ))}
         {products?.map((product, i) => {
@@ -78,7 +77,7 @@ function PageResult(props: SectionProps<typeof loader>) {
                 preload={i === 0}
                 index={offset + i}
                 class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
-                shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
+                shadow-[0_0_10px_0_rgba(0,0,0,0.1)] phone:p-4 p-1"
               />
             );
           }
@@ -92,7 +91,7 @@ function PageResult(props: SectionProps<typeof loader>) {
                   preload={index === 0}
                   index={offset + index}
                   class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
-                  shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
+                  shadow-[0_0_10px_0_rgba(0,0,0,0.1)] phone:p-4 p-1"
                 />
                 //Essa parte do codigo quebra os filtros Diego 08/09 filtrar variantes tbm
               );
@@ -130,7 +129,6 @@ const setPageQuerystring = (page: string, id: string) => {
 
 function Result(props: SectionProps<typeof loader>) {
   const container = useId();
-  const controls = useId();
   const device = useDevice();
   const { startingPage = 0, partial } = props;
   const page = props.page!;
@@ -178,8 +176,8 @@ function Result(props: SectionProps<typeof loader>) {
         {partial
           ? <PageResult {...props} />
           : (
-            <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
-              <div class="md:gap-8 grid place-items-center grid-cols-1 sm:grid-cols-1">
+            <div class="container flex flex-col gap-4 mobile:gap-5 w-full py-4 mobile:py-5 px-5 mobile:px-0">
+              <div class="phone:gap-8 grid place-items-center grid-cols-1 mobile:grid-cols-1">
                 <div class="flex flex-col gap-9">
                   {device === "desktop" && (
                     <div class="flex justify-between items-center">

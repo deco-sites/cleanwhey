@@ -83,13 +83,13 @@ function CampaignTimer({
     { id, label, time },
   ) => (
     <div class="flex flex-col items-center">
-      <span class="countdown font-normal text-xl lg:text-2xl">
+      <span class="countdown font-normal text-xl desktop:text-2xl">
         <span
-          class="md:text-8xl text-6xl font-normal text-base-content tracking-[-3px]"
+          class="phone:text-8xl text-6xl font-normal text-base-content tracking-[-3px]"
           id={`${id}::${time}`}
         />
       </span>
-      <span class="md:text-2xl text-base-content font-normal">
+      <span class="phone:text-2xl text-base-content font-normal">
         {label || ""}
       </span>
     </div>
@@ -97,16 +97,16 @@ function CampaignTimer({
   return (
     <>
       <div>
-        <div class="container mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-center lg:gap-16 py-16 sm:px-10 gap-4">
+        <div class="container mx-auto flex flex-col desktop:flex-row desktop:items-center desktop:justify-center desktop:gap-16 py-16 mobile:px-10 gap-4">
           <div
             id={`${id}::expired`}
-            class="hidden text-sm text-center lg:text-xl lg:text-left lg:max-w-lg"
+            class="hidden text-sm text-center desktop:text-xl desktop:text-left desktop:max-w-lg"
             dangerouslySetInnerHTML={{ __html: text || "Expired!" }}
           >
           </div>
-          <div class="flex flex-wrap gap-8 lg:gap-16 items-center justify-center lg:justify-normal">
+          <div class="flex flex-wrap gap-8 desktop:gap-16 items-center justify-center desktop:justify-normal">
             <div id={`${id}::counter`}>
-              <div class="grid grid-flow-col md:gap-20 sm:gap-10 gap-5 text-center auto-cols-max items-center">
+              <div class="grid grid-flow-col phone:gap-20 mobile:gap-10 gap-5 text-center auto-cols-max items-center">
                 <TimeComponent id={id} label={labels?.days} time="days" />
                 <TimeComponent id={id} label={labels?.hours} time="hours" />
                 <TimeComponent id={id} label={labels?.minutes} time="minutes" />

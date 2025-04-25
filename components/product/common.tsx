@@ -1,4 +1,3 @@
-// import { AddToCartParams } from "apps/commerce/types.ts";
 import { useState } from "preact/hooks";
 import Button from "../ui/Button.tsx";
 import Icon from "../ui/Icon.tsx";

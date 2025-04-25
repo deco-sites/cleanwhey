@@ -28,7 +28,6 @@ export async function action(props: Props, req: Request, ctx: AppContext) {
       postalCode: `${form.get("postalCode") ?? ""}`,
       country: "BRA",
     })) as SimulationOrderForm | null;
-    //console.log(result);
     return { result };
   } catch {
     return { result: null };
@@ -50,7 +49,7 @@ export default function Results({ result }: ComponentProps<typeof action>) {
   }
 
   return (
-    <ul className="flex flex-col gap-4 px-4 lg:px-8 py-4 border rounded-lg border-[#AFAFC0]">
+    <ul className="flex flex-col gap-4 px-4 desktop:px-8 py-4 border rounded-lg border-[#AFAFC0]">
       <div class="text-sm text-[#A1A6B7] flex-col flex">
         <span>Opções de frete para o CEP</span>
         {result !== null && (
@@ -59,7 +58,7 @@ export default function Results({ result }: ComponentProps<typeof action>) {
       </div>
       {methods.map((method, index) => (
         <li
-          key={index} // Adicione uma chave única para cada item
+          key={index}
           className={`flex justify-between items-center text-[#A1A6B7] border-[#AFAFC0] pb-4 ${
             index !== methods.length - 1 ? "border-b" : "border-b-0"
           }`}

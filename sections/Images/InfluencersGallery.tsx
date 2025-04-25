@@ -24,21 +24,21 @@ export interface Props {
 const Desktop = ({ items, conteudoFlutuante }: Props) => {
   const id = useId();
   return (
-    <section>
+    <div class="max-w-[1216px] mx-auto">
       <div id={id} class="relative">
-        <Slider className="carousel gap-1.5 md:pr-4 md:pl-4">
+        <Slider className="carousel gap-1.5 phone:pr-4 phone:pl-4">
           {items &&
             items.map((item, index) => (
               <Slider.Item
                 index={index}
-                class="carousel-item relative group !ml-0 flex lg:w-1/3 xl:w-1/4 duration-300 h-full transition-all items-center justify-center first:pl-4 last:pr-4"
+                class="carousel-item relative group !ml-0 flex desktop:w-1/4 duration-300 h-full transition-all items-center justify-center first:pl-4 last:pr-4"
               >
                 <a
                   class={`rounded-lg w-full h-full transition-all duration-300 relative overflow-hidden`}
                   href={item.link}
                 >
                   <Image
-                    class={`rounded-lg w-full duration-300 transition-all  min-h-[470px] max-h-[470px] h-full object-cover`}
+                    class={`rounded-lg w-full duration-300 transition-all h-full object-cover`}
                     src={item.images.normal}
                     loading={"lazy"}
                     width={635}
@@ -47,7 +47,12 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
                   <div class="font-regular text-sm leading-4 transition-all text-left text-white py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 overflow-y-scroll items-start justify-start scroll-custom overflow-x-hidden rounded-md">
                     <h2 class={"font-bold mb-6"}>{item.textLabel}</h2>
                     <span
-                      dangerouslySetInnerHTML={{ __html: item.description.replaceAll(/font-size:[^;"]+;?/g, '') }}
+                      dangerouslySetInnerHTML={{
+                        __html: item.description.replaceAll(
+                          /font-size:[^;"]+;?/g,
+                          ""
+                        ),
+                      }}
                       class="[&_*]:text-[14x] [&_*]:leading-normal"
                     />
                   </div>
@@ -88,12 +93,12 @@ const Desktop = ({ items, conteudoFlutuante }: Props) => {
         />
         <a
           href={conteudoFlutuante.link}
-          class="bg-primary block text-center w-full rounded-lg py-2 px-4 text-white text-base font-normal"
+          class="background-primary block text-center w-full rounded-lg py-2 px-4 text-white text-base font-normal"
         >
           {conteudoFlutuante.label ? conteudoFlutuante.label : "Saiba mais"}
         </a>
       </div>
-    </section>
+    </div>
   );
 };
 const Mobile = ({ items, conteudoFlutuante }: Props) => {
@@ -101,19 +106,19 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
   return (
     <section>
       <div id={id} class="relative">
-        <Slider className="carousel carousel-center max-w-md space-x-4 p-4 gap-1.5 md:pr-4 md:pl-4 pr-0">
+        <Slider className="carousel carousel-center max-w-full space-x-4 p-4 gap-1.5 phone:pr-4 phone:pl-4 pr-0">
           {items &&
             items.map((item, index) => (
               <Slider.Item
                 index={index}
-                class="carousel-item relative group !ml-0 flex w-[85%] duration-300 h-full transition-all items-center justify-center"
+                class="carousel-item relative group !ml-0 flex w-[370px] duration-300 h-full transition-all items-center justify-center"
               >
                 <a
                   class={`rounded-lg w-full h-full transition-all duration-300 relative overflow-hidden`}
                   href={item.link}
                 >
                   <Image
-                    class={`rounded-lg w-full duration-300 transition-all  min-h-[470px] max-h-[470px] h-full `}
+                    class={`rounded-lg w-full duration-300 transition-all h-full`}
                     src={item.images.normal}
                     loading={"lazy"}
                     width={635}
@@ -122,7 +127,12 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
                   <div class="font-regular text-sm leading-4 transition-all text-left text-white py-8 px-6 duration-300 hidden bg-[#385A88CC] group-hover:flex flex-col w-full h-full z-10 absolute top-0 left-0 overflow-y-scroll items-start justify-start scroll-custom overflow-x-hidden rounded-md">
                     <h2 class={"font-bold mb-6"}>{item.textLabel}</h2>
                     <span
-                      dangerouslySetInnerHTML={{ __html: item.description.replaceAll(/font-size:[^;"]+;?/g, '') }}
+                      dangerouslySetInnerHTML={{
+                        __html: item.description.replaceAll(
+                          /font-size:[^;"]+;?/g,
+                          ""
+                        ),
+                      }}
                       class="[&_*]:text-[14x] [&_*]:leading-normal"
                     />
                   </div>
@@ -162,7 +172,7 @@ const Mobile = ({ items, conteudoFlutuante }: Props) => {
         />
         <a
           href={conteudoFlutuante.link}
-          class="bg-primary block text-center w-full rounded-lg py-2 px-4 text-white text-base font-normal"
+          class="background-primary block text-center w-full rounded-lg py-2 px-4 text-white text-base font-normal"
         >
           {conteudoFlutuante.label ? conteudoFlutuante.label : "Saiba mais"}
         </a>

@@ -99,14 +99,14 @@ export default function InstagramPosts({
     <Section.Container>
       <Section.Header title={title} />
 
-      <Slider class="carousel carousel-center sm:carousel-end gap-5 sm:gap-10 w-full">
+      <Slider class="carousel carousel-center mobile:carousel-end gap-5 mobile:gap-10 w-full">
         {posts.map((item, index) => (
           <Slider.Item
             index={index}
             class={clx(
               "carousel-item",
-              "first:pl-5 first:sm:pl-0",
-              "last:pr-5 last:sm:pr-0",
+              "first:pl-5 first:mobile:pl-0",
+              "last:pr-5 last:mobile:pr-0",
             )}
           >
             <a href={item.permalink} target="_blank">

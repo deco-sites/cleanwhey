@@ -8,7 +8,6 @@ import { parseRange } from "apps/commerce/utils/filters.ts";
 import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 import MultiRangeSlider from "../../islands/MultiRangeSlider.tsx";
-import { useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";
 
 interface Props {
@@ -180,7 +179,7 @@ function Filters({ filters }: Props) {
   });
 
   return (
-    <ul class="flex flex-col gap-6 p-4 sm:p-0">
+    <ul class="flex flex-col gap-6 p-4 desktop:p-0">
       {filtersArray.filter(isToggle).map((filter, index) => (
         <>
           {filter.label != "Departamento" &&

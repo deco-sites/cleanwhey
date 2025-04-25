@@ -32,7 +32,7 @@ function Sort({ sortOptions, url }: Props) {
   }));
   return (
     <div class={"flex items-center gap-4 text-gray-300"}>
-      <label for="sort" class="hidden sm:block w-full text-sm text-gray-300">
+      <label for="sort" class="hidden desktop:block w-full text-sm text-gray-300">
         Ordenar por
       </label>
       <select

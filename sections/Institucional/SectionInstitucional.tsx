@@ -10,10 +10,10 @@ export interface Props {
 }
 export default function SectionInstitucional({ conteudos, menus }: Props) {
   return (
-    <div class="container px-4 md:px-0 pt-8 pb-28">
-      <div class="flex gap-8 md:flex-row flex-col">
+    <div class="container px-4 desktop:px-0 pt-8 pb-28 desktop:max-w-[1216px] mx-auto">
+      <div class="flex gap-8 desktop:flex-row flex-col">
         <div
-          class={"w-full md:max-w-[280px] max-w-full rounded h-full bg-white-300 p-6 border border-gray-100"}
+          class={"w-full desktop:max-w-[280px] max-w-full rounded h-full bg-white-300 p-6 border border-gray-100"}
         >
           <ul>
             {menus.map((menu) => (

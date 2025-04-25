@@ -51,12 +51,12 @@ function Notice({
   icon?: ImageWidget;
 }) {
   return (
-    <div class="flex flex-col gap-3 justify-start items-start sm:items-start">
+    <div class="flex flex-col gap-3 justify-start items-start mobile:items-start">
       <span class="text-2xl gap-2 font-bold text-white text-start flex items-center">
         <img src={icon} loading={"lazy"} />
         {title}
       </span>
-      <span class="text-white text-sm sm:text-base font-normal text-start">
+      <span class="text-white text-sm mobile:text-base font-normal text-start">
         {description}
       </span>
     </div>
@@ -84,10 +84,9 @@ function Newsletter({
 }: SectionProps<typeof loader, typeof action>) {
   if (status === "success" || status === "failed") {
     return (
-      <section class="bg-primary">
-        <Section.Container class="border-b border-b-orange-200">
-          <div class="px-4 sm:px-14 py-4 flex flex-col sm:flex-row items-center justify-start sm:justify-center gap-8">
-            {/* <Icon size={80} class={clx(status === "success" ? "text-success" : "text-error")} id={status === "success" ? "check-circle" : "error"}/> */}
+      <section class="background-primary">
+        <Section.Container class="border-b border-b-orange-200 py-5 pt-10">
+          <div class="px-4 desktop:px-14 py-4 flex flex-col desktop:flex-row items-center justify-start desktop:justify-center gap-8">
             <Notice {...(status === "success" ? success : failed)} />
           </div>
         </Section.Container>
@@ -95,16 +94,16 @@ function Newsletter({
     );
   }
   return (
-    <section class="bg-primary">
-      <Section.Container class="border-b border-b-orange-200">
-        <div class="px-4 sm:px-14 py-4 flex flex-col sm:flex-row items-center justify-start sm:justify-center gap-8">
+    <section class="background-primary">
+      <Section.Container class="border-b border-b-orange-200 py-5 pt-10">
+        <div class="px-4 desktop:px-14 py-4 flex flex-col desktop:flex-row items-center justify-start desktop:justify-center gap-8">
           <Notice {...empty} icon={icon} />
 
           <form
             hx-target="closest section"
             hx-swap="outerHTML"
             hx-post={useComponent(import.meta.url)}
-            class="flex flex-col sm:flex-row gap-4 w-full max-w-96"
+            class="flex flex-col desktop:flex-row gap-4 w-full max-w-96"
           >
             <input
               name="email"
@@ -114,7 +113,7 @@ function Newsletter({
             />
 
             <button
-              class="btn btn-primary rounded-lg bg-neutral border-blue-300"
+              class="btn btn-primary rounded-lg background-neutral border-blue-300"
               type="submit"
             >
               <span class="[.htmx-request_&]:hidden inline">{label}</span>

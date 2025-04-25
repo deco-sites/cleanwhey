@@ -406,9 +406,9 @@ export function Preview(props: Props) {
 
 const ButtonSizesPreview = () => {
   const buttonSizes = {
-    lg: "Large",
-    md: "Normal",
-    sm: "Small",
+    desktop: "Large",
+    phone: "Normal",
+    mobile: "Small",
     xs: "Tiny",
   };
 
@@ -447,7 +447,7 @@ const ButtonColorsPreview = () => {
   const renderButtonRow = (type: string) => (
     <div class="flex flex-row gap-2">
       {buttonColorsClasses.map((color) => (
-        <button class={`btn btn-xs md:btn-sm capitalize ${color} ${type}`}>
+        <button class={`btn btn-xs phone:btn-sm capitalize ${color} ${type}`}>
           {color ? color.split("-")[1] : "Button"}
         </button>
       ))}
@@ -467,7 +467,7 @@ const ButtonStylesPreview = () => {
   return (
     <div class="bg-base-100 overflow-x-auto rounded-lg flex flex-row p-2 gap-2">
       {buttonStylesClasses.map((style) => (
-        <button class={`btn btn-xs md:btn-sm capitalize ${style}`}>
+        <button class={`btn btn-xs phone:btn-sm capitalize ${style}`}>
           {style ? style.split("-")[1] : "Button"}
         </button>
       ))}
@@ -484,7 +484,7 @@ const TextColorsPreview = () => {
   ];
 
   return (
-    <div class="bg-base-100 overflow-x-auto rounded-lg flex flex-row p-2 gap-2 text-sm md:text-base">
+    <div class="bg-base-100 overflow-x-auto rounded-lg flex flex-row p-2 gap-2 text-sm phone:text-base">
       {textColorsClasses.map((color) => (
         <div class={`${color} capitalize`}>
           {color ? color.split("-")[1] : "Content"}
@@ -578,7 +578,7 @@ const PreviewContainer = (
             <div
               id={codeBlockId}
               class={clx(
-                "mt-4 mb-2 text-xs md:text-sm",
+                "mt-4 mb-2 text-xs phone:text-sm",
                 mode === "dark" ? "bg-slate-800" : "bg-slate-100",
               )}
             >

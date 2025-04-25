@@ -6,13 +6,9 @@ import { formatPrice } from "../../sdk/format.ts";
 import { relative } from "../../sdk/url.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
-// import { useVariantPossibilities } from "../../sdk/useVariantPossiblities.ts";
 import WishlistButton from "../wishlist/WishlistButton.tsx";
 import AddToCartButton from "./AddToCartButton.tsx";
-// import { Ring } from "./ProductVariantSelector.tsx";
 import { useId } from "../../sdk/useId.ts";
-import { Pix } from "../../loaders/BusnissRule/Pix.ts";
-import { formatPix } from "../../sdk/formatPix.tsx";
 
 interface Props {
   product: Product;
@@ -52,7 +48,7 @@ function ProductCard({
       (property) => property.value === "VÁLIDADE PRÓXIMA"
     ) || false;
   const title = isVariantOf?.name || "";
-  const [front, back] = images ?? [];
+  const [front,] = images ?? [];
   const {
     listPrice,
     price,
@@ -63,14 +59,7 @@ function ProductCard({
   } = useOffer(offers);
 
   const inStock = availability === "https://schema.org/InStock";
-  //const possibilities = useVariantPossibilities(hasVariant, product);
-
-  // const firstSkuVariations = Object.entries(possibilities)[0];
-  // const variants = Object.entries(firstSkuVariations[1] ?? {});
   const relativeUrl = relative(url);
-  // const percent = listPrice && price
-  //   ? Math.round(((listPrice - price) / listPrice) * 100)
-  //   : 0;
 
   const item = mapProductToAnalyticsItem({ product, price, listPrice, index });
 
@@ -162,10 +151,10 @@ function ProductCard({
       </figure>
       <a
         href={relativeUrl}
-        class="pt-5 text-center flex flex-col justify-between"
+        class="text-center flex flex-col justify-center"
       >
         <span
-          class={`font-bold text-gray-400 text-base md:text-lg text-center capitalize`}
+          class={`font-bold text-gray-400 text-base mobile:text-base text-center capitalize`}
         >
           {title.replace("Cor:", "")} - {productName?.replace("Cor:", "")}
         </span>
@@ -174,9 +163,9 @@ function ProductCard({
             {inStock ? (
               <>
                 <div class="mb-6 flex flex-col items-center justify-center gap-1 pt-4">
-                  <span class="text-xl font-bold flex lg:flex-row  flex-col  gap-2 text-gray-400 items-center">
+                  <span class="text-xl font-bold flex desktop:flex-row  flex-col  gap-2 text-gray-400 items-center">
                     {formatPrice(pixObj?.price) || formatPrice(price)}
-                    <p class="text-sm text-gray-300">
+                    <p class="text-xs text-gray-300">
                       via PIX{" "}
                       {pixporcent && -(pixporcent - 100) % 1 < 0.5
                         ? Math.floor(-(pixporcent - 100)) + "% OFF "
@@ -209,7 +198,7 @@ function ProductCard({
             ) : (
               <>
                 <div class="flex-grow" />
-                <span class=" text-2xl text-center font-bold min-h-[132px] md:min-h-[112px] flex items-center flex-wrap justify-center">
+                <span class=" text-2xl text-center font-bold min-h-[132px] phone:min-h-[112px] flex items-center flex-wrap justify-center">
                   Produto Indisponível
                 </span>
                 <div class="flex-grow" />
@@ -231,11 +220,10 @@ function ProductCard({
           </span>
         </div>
       )}
-      <div class="flex-grow my-2.5" />
       <div class={`flex flex-col gap-2.5`}>
         {isFeatured && (
           <div class="flex flex-col text-center items-center  justify-center gap-1">
-            <span class="text-xl font-bold flex gap-2 text-gray-400 items-center">
+            <span class="text-xl font-bold flex gap-2 text-gray-400 items-center mobile:flex-col">
               {formatPrice(pixObj?.price) || formatPrice(price)}
               <p class="text-sm text-gray-300">
                 via PIX{" "}
@@ -273,33 +261,21 @@ function ProductCard({
             seller={seller}
             item={item}
             ctaText="ADICIONAR À SACOLA"
-            class={`${isFeatured ? "px-1.5 md:text-sm mt-2.5" : ""} ${clx(
+            class={clx(
               "btn uppercase",
               "btn-outline rounded-lg border-none px-0 no-animation w-full",
-              "bg-primary text-white h-14 font-semibold  md:text-sm lg:text-xs xl:text-sm text-xs  flex-nowrap",
-              "hover:bg-primary",
-            )
-              }`}
+              "background-primary text-white h-14 font-semibold mobile:text-xs flex-nowrap",
+              "hover:background-primary",
+            )}
           />
-          // <a
-          //   href={relativeUrl}
-          //   class={`${clx(
-          //     "btn uppercase",
-          //     "btn-outline rounded-lg border-none px-0 no-animation w-full",
-          //     "bg-primary text-white h-14 font-semibold  md:text-sm lg:text-xs xl:text-sm text-xs  flex-nowrap",
-          //     "hover:bg-primary"
-          //   )}`}
-          // >
-          //   Ver mais
-          // </a>
         ) : (
           <a
             href={relativeUrl}
             class={`${clx(
               "btn uppercase shrink",
               "btn-outline rounded-lg border-none px-0 no-animation w-full",
-              "bg-primary text-white h-14 font-semibold  md:text-sm lg:text-xs xl:text-sm text-xs flex-nowrap",
-              "hover:bg-primary"
+              "background-primary text-white h-14 font-semibold mobile:text-sm flex-nowrap",
+              "hover:background-primary"
             )}`}
           >
             AVISE-ME

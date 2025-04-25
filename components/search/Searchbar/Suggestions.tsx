@@ -146,7 +146,7 @@ function Suggestions({
         modal!.style.display = "none";
       })}
     >
-      <div class="gap-4 grid grid-cols-1 sm:grid-rows-1 sm:grid-cols-2 p-4 w-full bg-white">
+      <div class="gap-4 grid grid-cols-1 mobile:grid-rows-1 mobile:grid-cols-2 p-4 w-full bg-white">
         <div class="flex flex-col gap-6">
           <span
             class="font-bold text-18 text-blue-300 border-b border-orange-100 pb-2 w-36"
@@ -227,9 +227,17 @@ function Suggestions({
               })}
           </ul>
         </div>
-
-        <div class="flex overflow-x-auto gap-[5px] pb-5">
-          {products.length > 0 &&
+          <div class="flex flex-col pt-6 phone:pt-0 gap-6 overflow-x-hidden">
+            <span
+              class="font-bold text-18 text-blue-300 border-b border-blue-300 pb-2 w-36"
+              role="heading"
+              aria-level={3}
+            >
+              Buscas recentes
+            </span>
+            <ul class="flex flex-col gap-6" id="recents">
+          <div class="flex overflow-x-auto gap-[5px] pb-5">
+          {products?.length > 0 &&
             products.map((product, index) => {
               const title = product.isVariantOf?.name ?? product.name;
               const { url } = product;
@@ -277,9 +285,8 @@ function Suggestions({
               );
             })}
         </div>
-
-        {
-          /* <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
+            </ul>
+          {/* <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
           <span
             class="font-bold text-18 text-blue-300 border-b border-blue-300 pb-2 w-36"
             role="heading"
@@ -290,9 +297,8 @@ function Suggestions({
           <ul class="flex flex-col gap-6"
           id="recents">
 
-          </ul>
-        </div> */
-        }
+          </ul> */}
+        </div>
       </div>
       <script
         type="module"

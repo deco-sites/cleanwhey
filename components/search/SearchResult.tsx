@@ -10,7 +10,6 @@ import { useSendEvent } from "../../sdk/useSendEvent.ts";
 import Breadcrumb from "../ui/Breadcrumb.tsx";
 import Drawer from "../ui/Drawer.tsx";
 import Sort from "./Sort.tsx";
-import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 import ProductShelf, {
   Props as PropsShelf,
@@ -89,12 +88,12 @@ function NotFound(props: SectionProps<typeof loader>) {
             <>
               <div class="
      container flex flex-col gap-8 
-     items-start justify-start pt-8 pl-8 sm:justify-center sm:items-start col-start-1 
+     items-start justify-start pt-8 pl-8 mobile:justify-center mobile:items-start col-start-1 
      col-span-1 row-start-1 row-span-1 w-full">
                 <h1>
                   {title && (
                     <span
-                      class="text-sm sm:text-base font-normal text-gray-400"
+                      class="text-sm mobile:text-base font-normal text-gray-400"
                       dangerouslySetInnerHTML={{ __html: title }}
                     />
                   )}
@@ -104,14 +103,14 @@ function NotFound(props: SectionProps<typeof loader>) {
                     <a
                       href={link}
                       class="text-sm font-normal text-white 
-             p-4 bg-primary rounded-lg uppercase"
+             p-4 background-primary rounded-lg uppercase"
                     >
                       {buttonLabel}
                     </a>
                   </h2>
                 )}
               </div>
-              <div class="w-full h-full flex flex-col text-gray-300 font-lato gap-8 mb-20 px-4 lg:px-0">
+              <div class="w-full h-full flex flex-col text-gray-300 font-lato gap-8 mb-20 px-4 desktop:px-0">
                 <div class="flex flex-col mt-8 container">
                   <span class="font-lato text-gray-300">
                     Home{` > `}
@@ -121,8 +120,8 @@ function NotFound(props: SectionProps<typeof loader>) {
                   </span>
                   <span class="font-bold text-2xl text-gray-400">{term}</span>
                 </div>
-                <div class="flex justify-center items-center flex-col lg:flex-row gap-8 lg:gap-0">
-                  <div class="flex justify-start items-start w-full lg:w-[300px]">
+                <div class="flex justify-center items-center flex-col desktop:flex-row gap-8 desktop:gap-0">
+                  <div class="flex justify-start items-start w-full desktop:w-[300px]">
                     <span class="text-5xl font-bold text-start">OOPS!</span>
                   </div>
                   <div class="flex flex-col">
@@ -145,12 +144,12 @@ function NotFound(props: SectionProps<typeof loader>) {
             <>
               <div class="
   container flex flex-col gap-8 
-  items-start justify-start pt-8 pl-8 sm:justify-center sm:items-start col-start-1 
+  items-start justify-start pt-8 pl-8 mobile:justify-center mobile:items-start col-start-1 
   col-span-1 row-start-1 row-span-1 w-full">
                 <h1>
                   {title && (
                     <span
-                      class="text-sm sm:text-base font-normal text-gray-400"
+                      class="text-sm mobile:text-base font-normal text-gray-400"
                       dangerouslySetInnerHTML={{ __html: title }}
                     />
                   )}
@@ -160,16 +159,16 @@ function NotFound(props: SectionProps<typeof loader>) {
                     <a
                       href={link}
                       class="text-sm font-normal text-white 
-          p-4 bg-primary rounded-lg uppercase"
+          p-4 background-primary rounded-lg uppercase"
                     >
                       {buttonLabel}
                     </a>
                   </h2>
                 )}
               </div>
-              <div class="w-full h-full flex flex-col text-gray-300 font-lato gap-8 mb-20 px-4 lg:px-0 mt-16">
-                <div class="flex justify-center items-center flex-col lg:flex-row gap-8 lg:gap-0">
-                  <div class="flex justify-start items-start w-full lg:w-[300px]">
+              <div class="w-full h-full flex flex-col text-gray-300 font-lato gap-8 mb-20 px-4 desktop:px-0 mt-16">
+                <div class="flex justify-center items-center flex-col desktop:flex-row gap-8 desktop:gap-0">
+                  <div class="flex justify-start items-start w-full desktop:w-[300px]">
                     <span class="text-5xl font-bold text-start">OOPS!</span>
                   </div>
                   <div class="flex flex-col">
@@ -212,35 +211,21 @@ function PageResult(props: SectionProps<typeof loader>) {
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
   const nextPageUrl = useUrlRebased(pageInfo.nextPage, url);
-  const prevPageUrl = useUrlRebased(pageInfo.previousPage, url);
-  const partialPrev = useSection({
-    href: prevPageUrl,
-    props: { partial: "hideMore" },
-  });
   const partialNext = useSection({
     href: nextPageUrl,
     props: { partial: "hideLess" },
   });
   const infinite = layout?.pagination !== "pagination";
-  const pageFormated = pageInfo.nextPage
-    ? pageInfo.nextPage.split("page=")[0]
-    : "?";
-  const links = [];
-  const totalPages = Math.ceil(pageInfo.records / pageInfo.recordPerPage);
-  for (let i = 1; i <= totalPages; i++) {
-    links.push({
-      label: i,
-      href: `${pageFormated}page=${i}`,
-    });
-  }
+  const links = [] as any;
+
   return (
-    <div class="grid grid-flow-row grid-cols-1 place-items-center">
+    <div class="grid grid-flow-row grid-cols-1 place-items-center w-full mx-auto">
       <div
         data-product-list
         class={clx(
-          "grid items-center",
-          "grid-cols-2 gap-1",
-          "lg:grid-cols-3 sm:gap-10",
+          "flex items-center mobile:items-stretch mobile:justify-center",
+          "phone:grid phone:grid-cols-2 flex-wrap gap-4 phone:gap-1",
+          "desktop:grid-cols-3 desktop:grid desktop:gap-10",
           "w-full",
         )}
       >
@@ -251,20 +236,19 @@ function PageResult(props: SectionProps<typeof loader>) {
             productName={product.name}
             preload={i === 0}
             index={offset + i}
-            class="h-full min-w-[160px] max-w-[300px] border border-gray-100 
-                      shadow-[0_0_10px_0_rgba(0,0,0,0.1)] md:p-4 p-1"
+            class="min-w-[160px] max-w-[300px] border border-gray-100 shadow-[0_0_10px_0_rgba(0,0,0,0.1)] desktop:p-4 p-1"
           />
         ))}
       </div>
 
-      <div class={clx("pt-2 sm:pt-10 w-full flex justify-center", "")}>
+      <div class={clx("pt-2 desktop:pt-10 w-full flex justify-center", "")}>
         {infinite
           ? (
             <div class="flex justify-center [&_section]:contents ">
               <a
                 rel="next"
                 class={clx(
-                  "btn btn-ghost bg-primary text-white",
+                  "btn btn-ghost background-primary text-white",
                   (!nextPageUrl || partial === "hideMore") && "hidden",
                 )}
                 hx-swap="outerHTML show:parent:top"
@@ -300,12 +284,12 @@ function PageResult(props: SectionProps<typeof loader>) {
                     />
                   </svg>
                 </a>
-                {links.map((link) => {
+                {links.map((link: any) => {
                   return (
                     <a
                       href={link.href}
                       class={`btn !rounded-lg ${pageInfo.currentPage == link.label
-                        ? "btn-primary hover:bg-primary bg-primary border-orange-300  hover:border-orange-300 "
+                        ? "btn-primary hover:background-primary background-primary border-orange-300  hover:border-orange-300 "
                         : "btn-ghost"
                         } join-item`}
                     >
@@ -421,7 +405,7 @@ function Result(props: SectionProps<typeof loader>) {
         {partial
           ? <PageResult {...props} />
           : (
-            <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-2">
+            <div class="container flex flex-col gap-4 desktop:gap-5 w-full py-4 desktop:py-5 px-2 desktop:max-w-[1216px] max-w-full mx-auto">
               {term && (
                 <>
                   <span class="font-lato text-gray-300">
@@ -441,6 +425,7 @@ function Result(props: SectionProps<typeof loader>) {
 
               {device === "mobile" && (
                 <Drawer
+                  class="mobile:max-w-[616px] max-w-full mx-auto"
                   id={controls}
                   aside={
                     <div class="bg-base-100 flex flex-col h-full divide-y overflow-y-hidden">
@@ -458,7 +443,7 @@ function Result(props: SectionProps<typeof loader>) {
                     </div>
                   }
                 >
-                  <div class="flex sm:hidden justify-between items-end">
+                  <div class="flex desktop:hidden justify-between items-end">
                     <label
                       class="btn btn-ghost
                     text-orange-300 rounded-lg border border-orange-300"
@@ -475,7 +460,7 @@ function Result(props: SectionProps<typeof loader>) {
                 </Drawer>
               )}
 
-              <div class="md:gap-8 grid place-items-center grid-cols-1 sm:grid-cols-[250px_1fr] md:px-2 xl:px-0">
+              <div class="desktop:gap-8 grid place-items-center grid-cols-1 desktop:grid-cols-[250px_1fr] px-0">
                 {device === "desktop" && (
                   <aside class="place-self-start flex flex-col gap-3 border border-gray-100 border-b w-full border-b-orange-300 bg-white-300 rounded-t-lg p-4">
                     <span class="text-base font-normal text-gray-300 h-12 flex gap-2 items-center">
@@ -533,6 +518,7 @@ function SearchResult({ page, ...props }: SectionProps<typeof loader>) {
   }
   return <Result {...props} page={page} />;
 }
+
 export const loader = (props: Props, req: Request) => {
   if (props.page != null) {
     const products: Product[] = [];

@@ -59,8 +59,8 @@ export default function FAQ({
             dangerouslySetInnerHTML={{ __html: subtitle }}
           />
         )}
-        <ul class="w-full px-4 md:px-0">
-          <li class="gap-2 flex flex-col px-2 xl:px-0">
+        <ul class="w-full px-4 phone:px-0">
+          <li class="gap-2 flex flex-col px-2 desktop-sm:px-0">
             {questions.map((question) => <Question {...question} />)}
           </li>
         </ul>

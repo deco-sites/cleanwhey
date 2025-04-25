@@ -60,7 +60,7 @@ const Desktop = (props: SectionProps<typeof loader>) => {
   return (
     <>
       <div class="flex flex-col gap-4 pt-5">
-        <div class="container flex justify-between items-center px-2 xl:px-0 gap-4">
+        <div class="container flex justify-between items-center px-2 desktop:px-0 gap-4 max-w-[1216px] mx-auto">
           <div class="place-self-start">
             <a href="/" aria-label="Store logo">
               <Image
@@ -69,6 +69,8 @@ const Desktop = (props: SectionProps<typeof loader>) => {
                 width={logo.width || 100}
                 height={logo.height || 23}
                 class="min-w-[130px] h-auto"
+                preload
+                loading={"eager"}
               />
             </a>
           </div>
@@ -95,8 +97,8 @@ const Desktop = (props: SectionProps<typeof loader>) => {
           </div>
         </div>
 
-        <div class="flex justify-between items-center text-base bg-accent px-2 xl:px-0">
-          <div className="container">
+        <div class="flex justify-between items-center text-base background-accent px-2 desktop-sm:px-0">
+          <div className="container max-w-[1216px] mx-auto">
             <ul class="flex justify-between">
               {navItems?.slice(0, 8).map((item) => <NavItem item={item} />)}
             </ul>
@@ -169,16 +171,8 @@ const Mobile = ({ logo, searchbar }: Props) => {
 function Header(props: SectionProps<typeof loader>) {
   const device = useDevice();
   const {
-    alerts = [],
-    logo = {
-      src:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
-      width: 100,
-      height: 16,
-      alt: "Logo",
-    },
+    alerts = []
   } = props;
-  // const user = useUser();
   return (
     <header
       style={{
@@ -187,7 +181,7 @@ function Header(props: SectionProps<typeof loader>) {
           : HEADER_HEIGHT_MOBILE,
       }}
     >
-      <div class="fixed w-full z-40 bg-primary">
+      <div class="fixed w-full z-40 background-primary">
         {alerts.length > 0 && <Alert alerts={alerts} />}
         {device === "desktop" ? <Desktop {...props} /> : <Mobile {...props} />}
       </div>

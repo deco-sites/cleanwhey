@@ -97,7 +97,7 @@ export default function Gallery({
     <Section.Container>
       <Section.Header title={title} cta={cta} />
 
-      <ul class="grid gap-2 sm:gap-4 grid-cols-1 sm:grid-cols-2 px-5 sm:px-0">
+      <ul class="grid gap-2 mobile:gap-4 grid-cols-1 mobile:grid-cols-2 px-5 mobile:px-0">
         {banners.map((item) => (
           <li>
             <Banner {...item} />

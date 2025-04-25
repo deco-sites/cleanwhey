@@ -774,3 +774,19 @@ flex-grow-1 {
 .vtex-my-subscriptions-3-x-paginationWrapper{
     padding-top: 1.25rem;
 }
+
+.background-primary {
+    background: #de6640;
+}
+
+.background-secondary {
+    background: #0f294b;
+}
+
+.background-neutral {
+    background: #193860;
+}
+
+.background-accent {
+    background: #d1512b;
+}

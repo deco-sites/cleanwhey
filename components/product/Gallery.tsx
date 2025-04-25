@@ -5,9 +5,7 @@ import Icon from "../ui/Icon.tsx";
 import Slider from "../ui/Slider.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
-// import page from "deco/blocks/page.tsx";
 import { useOffer } from "../../sdk/useOffer.ts";
-import { Pix } from "../../loaders/BusnissRule/Pix.ts";
 import { useDevice } from "@deco/deco/hooks";
 
 export interface Props {
@@ -41,10 +39,7 @@ export default function GallerySlider(props: Props) {
   if (!props.page) {
     throw new Error("Missing Product Details Page Info");
   }
-  const { page } = props;
 
-  const { product } = page;
-  const { url } = product;
   const {
     page: {
       product: { offers, isVariantOf, image },
@@ -53,22 +48,8 @@ export default function GallerySlider(props: Props) {
 
   const { price = 0, listPrice, availability, salePrice } = useOffer(offers);
 
-  // const percent = listPrice && price
-  //   ? Math.round(((listPrice - price) / listPrice) * 100)
-  //   : 0;
-
-  // Filter images when image's alt text matches product name
-  // More info at: https://community.shopify.com/c/shopify-discussions/i-can-not-add-multiple-pictures-for-my-variants/m-p/2416533
   const groupImages = isVariantOf?.image ? image : [];
-  // const filtered = groupImages.filter((img) => img.alternateName);
-  // const images = groupImages.length > 0 ? groupImages : [];
   const inStock = availability === "https://schema.org/InStock";
-
-  const pixObj = product.isVariantOf?.hasVariant
-    .filter((value) => value.url == url)[0]
-    .offers?.offers[0].priceSpecification.filter(
-      (value) => value.name?.toLowerCase() == "pix",
-    )[0];
 
   const off = listPrice && price != listPrice && (listPrice * 100) / price;
 
@@ -80,10 +61,10 @@ export default function GallerySlider(props: Props) {
     <>
       <div
         id={id}
-        class="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-[min-content_1fr] gap-5"
+        class="grid grid-flow-row desktop:grid-flow-col grid-cols-1 desktop:grid-cols-[min-content_1fr] gap-5"
       >
         {/* Image Slider */}
-        <div class="col-start-1 col-span-1 sm:col-start-2">
+        <div class="col-start-1 col-span-1 desktop:col-start-2">
           <div class="relative h-min flex-grow">
             {inStock && offsalePrice && off != 0 && (
               <span
@@ -109,7 +90,6 @@ export default function GallerySlider(props: Props) {
                     alt={img.alternateName}
                     width={WIDTH[device]}
                     height={HEIGHT[device]}
-                    // Preload LCP image for better web vitals
                     preload={index === 0}
                     loading={index === 0 ? "eager" : "lazy"}
                     fetchPriority={index === 0 ? "high" : "low"}
@@ -132,14 +112,6 @@ export default function GallerySlider(props: Props) {
                 <Icon id="chevron-right" />
               </Slider.NextButton>
             )}
-
-            {
-              /* <div class="absolute top-2 right-2 bg-base-100 rounded-full">
-              <label class="btn btn-ghost hidden sm:inline-flex" for={zoomId}>
-                <Icon id="pan_zoom" />
-              </label>
-            </div> */
-            }
           </div>
         </div>
 
@@ -148,7 +120,7 @@ export default function GallerySlider(props: Props) {
           <ul
             class={clx(
               "carousel carousel-center",
-              "sm:carousel-vertical",
+              "desktop:carousel-vertical",
               "gap-2",
             )}
             style={{ maxHeight: "600px" }}

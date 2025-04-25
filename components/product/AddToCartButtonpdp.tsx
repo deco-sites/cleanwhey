@@ -16,6 +16,7 @@ export interface Props extends JSX.HTMLAttributes<HTMLButtonElement> {
   seller: string;
   item: AnalyticsItem;
   ctaText?: string;
+  variantsSubscription: any;
 }
 
 const onClick = (productID: string) => {
@@ -171,7 +172,7 @@ function AddToCartButton(props: Props) {
       >
         {/* Prices */}
         <div class={` flex flex-row `}>
-          <div class="flex flex-col w-1/2 pt-4">
+          <div class="flex flex-col w-full pt-4">
             {availability !== "https://schema.org/InStock"
               ? (
                 <span className="text-red-300 font-bold text-xl">
@@ -224,7 +225,7 @@ function AddToCartButton(props: Props) {
           </div>
         </div>
         {/* Shipping Simulation */}
-        <div class="mt-4">
+        <div class="my-4">
           <ShippingSimulationForm
             items={[{ id: Number(product.sku), quantity: 1, seller: seller }]}
           />
@@ -239,7 +240,7 @@ function AddToCartButton(props: Props) {
         >
           {props.ctaText ?? "COMPRAR AGORA"}
           <svg
-            class="w-4 h-4 md:w-8 md:h-8 lg:w-5 lg:h-5 xl:w-8 xl:h-8"
+            class="w-4 h-4 phone:w-8 phone:h-8 desktop:w-5 desktop:h-5 desktop-sm:w-8 desktop-sm:h-8"
             width="32"
             height="32"
             viewBox="0 0 32 32"

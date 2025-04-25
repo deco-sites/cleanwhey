@@ -29,7 +29,7 @@ export default function DescriptionFullbanner(props: Props) {
   return (
     <section>
       <div
-        class={`relative w-full pb-8 md:pb-16 md:mb-16 bg-no-repeat bg-center bg-cover md:min-h-96 md:px-2 xl:px-0`}
+        class={`relative w-full pb-8 desktop:pb-16 desktop:mb-16 bg-no-repeat bg-center bg-cover desktop:min-h-96 desktop:px-2 desktop-sm:px-0`}
         style={{
           backgroundImage: `${device == "desktop"
               ? `url(${banner?.desktop?.src}`
@@ -60,15 +60,15 @@ export default function DescriptionFullbanner(props: Props) {
         </Picture>
       )} */
         }
-        <div class="w-full top-0 left-0 h-full flex flex-col md:flex-row items-center">
+        <div class="w-full top-0 left-0 h-full flex flex-col desktop:flex-row items-center">
           <div
-            class={`flex px-4 pt-12 md:px-0 md:items-start items-center flex-col md:flex-row h-auto gap-8 md:gap-16 container justify-end mb-96 md:mb-0`}
+            class={`flex px-4 pt-12 desktop:px-0 desktop:items-start items-center flex-col desktop:flex-row h-auto gap-8 desktop:gap-16 container justify-end mb-96 desktop:mb-0`}
           >
             <div class="max-w-[384px]">
-              <h2 class="font-bold text-white text-[32px] mb-2 leading-9 text-center md:text-start">
+              <h2 class="font-bold text-white text-[32px] mb-2 leading-9 text-center desktop:text-start">
                 {title}
               </h2>
-              <p class="font-bold text-base text-white mb-4 text-center md:text-start">
+              <p class="font-bold text-base text-white mb-4 text-center desktop:text-start">
                 {subtitle}
               </p>
               {content && (
