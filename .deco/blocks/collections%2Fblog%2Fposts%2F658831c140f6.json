@@ -1,0 +1,25 @@
+{
+  "name": "collections/blog/posts/658831c140f6",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [
+      {
+        "name": "Clean Whey",
+        "email": "sac@cleanwhey.com.br"
+      }
+    ],
+    "categories": [
+      {
+        "name": "Influencers",
+        "slug": "influencers"
+      }
+    ],
+    "extraProps": [],
+    "title": "TECA",
+    "excerpt": "Tayana Padilha - Nutrição, Saúde e Esporte!",
+    "image": "https://assets.decocache.com/cleanwhey/9ad15cb6-7c98-4b24-b84e-5c49c2b1380d/aa089bcb-f52e-4027-bf41-2daa64fdcb5a.jpeg",
+    "date": "2024-01-01",
+    "slug": "Tayana-Padilha-Teca-Nutrição-Saúde-e-Esporte",
+    "content": "<p><span style=\"font-size: 16pt\">Tayana “Teca” Padilha é advogada e estudante de Nutrição Clínica Funcional que leva ao universo do esporte a mesma disciplina e estratégia do Muay Thai. Apaixonada pelo tatame, ela traduz cada lição de superação, resiliência e autoconfiança em dicas práticas para quem busca saúde e performance.</span></p><ul><li><p><strong><span style=\"font-size: 16pt\">Transformar desafios em metas</span></strong><span style=\"font-size: 16pt\"> — usar pequenos avanços diários para chegar mais longe</span></p></li><li><p><strong><span style=\"font-size: 16pt\">Equilibrar corpo e mente</span></strong><span style=\"font-size: 16pt\"> — combinar treinos intensos com descanso e alimentação inteligente</span></p></li><li><p><strong><span style=\"font-size: 16pt\">Construir hábitos sólidos</span></strong><span style=\"font-size: 16pt\"> — confiar na constância e ajustar seus limites sempre que necessário</span></p></li></ul><p><span style=\"font-size: 16pt\">Teca compartilha cardápios funcionais, receitas rápidas e estratégias de recuperação muscular, sempre reforçando o papel da proteína de soro de leite 100% pura da Clean Whey para turbinar seu rendimento e acelerar a recuperação pós-treino.</span></p><p><span style=\"font-size: 16pt\">Descubra com Teca como unir técnica, nutrição e força de vontade para conquistar resultados mais expressivos — dentro e fora do ringue!</span></p>"
+  }
+}
