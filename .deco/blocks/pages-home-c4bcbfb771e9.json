@@ -16,26 +16,33 @@
       "images": [
         {
           "selos": [],
+          "desktop": "https://assets.decocache.com/cleanwhey/d6871db6-4ce8-4360-b2e2-87dbb210549c/BANNER-SITE-ABRIL-2.png",
+          "mobile": "https://assets.decocache.com/cleanwhey/dafc1165-06dc-4b99-82d5-0b6d1f437854/BANNER-SITE-ABRIL-2-MOBILE.png",
+          "alt": "Clean",
+          "position": "Left"
+        },
+        {
+          "position": "Left",
+          "selos": [],
           "desktop": "https://assets.decocache.com/cleanwhey/b4b2afd6-4223-4e80-a372-e8a25f2ba0d9/CW_Banner_Performance_Web.png",
           "mobile": "https://assets.decocache.com/cleanwhey/7a4e1c59-865c-467c-b178-3dac6a8f4301/CW_Banner_Performance_Mobile.png",
-          "alt": "25 off - consumidor",
-          "extraLink": {
-            "href": "/todos-os-produtos?page=1"
-          },
           "action": {
             "href": "/todos-os-produtos"
           },
-          "position": "Left"
+          "alt": "25 off - consumidor",
+          "extraLink": {
+            "href": "/todos-os-produtos?page=1"
+          }
         },
         {
           "position": "Left",
           "selos": [],
           "desktop": "https://data.decoassets.com/cleanwhey/0f1b41c4-f468-4cb5-9830-22a199cbf5fb/CW_Banner_Creatina_Cupom_NS_v2.png",
           "mobile": "https://data.decoassets.com/cleanwhey/41e9d90b-0a2b-4ed4-a3ac-e0bca9392306/CW_Banner_Creatina_Cupom_Mobile_NS-2_v2.png",
+          "alt": "Creatina",
           "action": {
             "href": "https://shop.cleanwhey.com.br/creatina?page=1"
-          },
-          "alt": "Creatina"
+          }
         },
         {
           "position": "Left",
@@ -49,13 +56,6 @@
           "extraLink": {
             "href": "#"
           }
-        },
-        {
-          "position": "Left",
-          "selos": [],
-          "desktop": "https://assets.decocache.com/cleanwhey/d6871db6-4ce8-4360-b2e2-87dbb210549c/BANNER-SITE-ABRIL-2.png",
-          "mobile": "https://assets.decocache.com/cleanwhey/dafc1165-06dc-4b99-82d5-0b6d1f437854/BANNER-SITE-ABRIL-2-MOBILE.png",
-          "alt": "Clean"
         }
       ],
       "preload": true
