@@ -66,11 +66,11 @@ export default function NutritionalInformation(props: Props) {
   return (
     <section class="bg-white-300 pb-8 desktop:pb-8 desktop:px-2 desktop-sm:px-0 py-12 desktop-sm:py-0" id={"informacao-nutricional"}>
       <div className="container px-4 desktop:px-0">
-        <h2 class={"font-bold mb-6 text-gray-400 text-[32px] desktop:text-5xl"}>
+        <h2 class={"font-bold mb-6 text-gray-400 text-[32px] desktop:text-5xl desktop:text-center"}>
           {title}
         </h2>
       </div>
-      <div className="container flex flex-col desktop:flex-row px-4 desktop:px-0">
+      <div className="container flex flex-col desktop:flex-row px-4 desktop:px-0 desktop:justify-center">
         <div class="tabela mb-6 w-full rounded-lg desktop:px-8 desktop:bg-white desktop:max-w-[730px] desktop:mr-6 ">
           {table && (
             <Picture>
