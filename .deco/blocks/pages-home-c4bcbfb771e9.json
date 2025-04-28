@@ -49,6 +49,13 @@
           "extraLink": {
             "href": "#"
           }
+        },
+        {
+          "position": "Left",
+          "selos": [],
+          "desktop": "https://assets.decocache.com/cleanwhey/d6871db6-4ce8-4360-b2e2-87dbb210549c/BANNER-SITE-ABRIL-2.png",
+          "mobile": "https://assets.decocache.com/cleanwhey/dafc1165-06dc-4b99-82d5-0b6d1f437854/BANNER-SITE-ABRIL-2-MOBILE.png",
+          "alt": "Clean"
         }
       ],
       "preload": true
