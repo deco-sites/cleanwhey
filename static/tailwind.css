@@ -7752,6 +7752,10 @@ flex-grow-1 {
     text-align: left;
   }
 
+  .desktop\:text-center {
+    text-align: center;
+  }
+
   .desktop\:text-start {
     text-align: start;
   }

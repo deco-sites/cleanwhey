@@ -1,0 +1,25 @@
+{
+  "name": "collections/blog/posts/658831c140f6",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [
+      {
+        "name": "Clean Whey",
+        "email": "sac@cleanwhey.com.br"
+      }
+    ],
+    "categories": [
+      {
+        "name": "Influencers",
+        "slug": "influencers"
+      }
+    ],
+    "extraProps": [],
+    "title": "TECA",
+    "excerpt": "Tayana Padilha - Nutrição, Saúde e Esporte!",
+    "image": "https://assets.decocache.com/cleanwhey/9ad15cb6-7c98-4b24-b84e-5c49c2b1380d/aa089bcb-f52e-4027-bf41-2daa64fdcb5a.jpeg",
+    "date": "2024-01-01",
+    "slug": "Tayana-Padilha-Teca-Nutrição-Saúde-e-Esporte",
+    "content": "<p><span style=\"font-size: 16pt\">Teca Padilha, ex-advogada, encontrou sua verdadeira paixão na alimentação saudável e no impacto positivo que ela pode ter na vida das pessoas. Motivada por esse amor, fez uma transição de carreira e começou a cursar nutrição, encontrando ainda mais realização ao ajudar outros a conquistarem uma vida mais equilibrada e saudável. Sempre em busca de conhecimento e estudos, Teca também cultiva outra paixão: o esporte. Atualmente, pratica Muay Thai e musculação, e conta com o whey protein isolado da Clean Whey para ajudá-la a manter e ganhar massa magra, além de melhorar seu desempenho físico nos treinos.</span></p><p><span style=\"font-size: 16pt\">Além dos benefícios para o corpo, Teca aproveita o sabor delicioso dos suplementos da Clean Whey e a vantagem de serem clean label, ou seja, com ingredientes naturais e transparentes. Ela compartilha em seu Instagram receitas incríveis para quem quer aumentar a ingestão de proteínas de forma saudável e saborosa no dia a dia.</span></p><p><span style=\"font-size: 16pt\">Se você se interessa por esportes, nutrição e receitas saudáveis, siga a Teca para descobrir como a Clean Whey pode apoiar seus objetivos de saúde e bem-estar.</span></p>"
+  }
+}

@@ -40,11 +40,11 @@
         {
           "position": "Left",
           "selos": [],
-          "desktop": "https://data.decoassets.com/cleanwhey/b631240d-2293-4f4f-863a-b6a2293d92b8/CW_Banner_Frete_Gratis_02.png",
-          "mobile": "https://data.decoassets.com/cleanwhey/19451be9-667f-48b2-acdd-f1b9baaccb3a/CW_Banner_Mobile_Frete_Gratis_02.png",
+          "desktop": "https://assets.decocache.com/cleanwhey/fd418644-16e5-4199-b9b9-632875aa987a/DESKTOP.jpg",
+          "mobile": "https://assets.decocache.com/cleanwhey/315c3ce1-35e0-46c6-b1a2-e785a5851231/MOBILE.jpg",
           "alt": "Regras de frete",
           "action": {
-            "href": "#"
+            "href": "/todos-os-produtos?page=1"
           },
           "extraLink": {
             "href": "#"
