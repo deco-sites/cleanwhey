@@ -20,7 +20,8 @@
             "__resolveType": "website/functions/requestToParam.ts",
             "param": "slug"
           }
-        }
+        },
+        "button": false
       }
     },
     {
