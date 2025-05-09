@@ -7,10 +7,11 @@ export interface Props extends Omit<BtnProps, "onAddItem"> {
   productID: string;
   /** @format color */
   buttonColor?: string;
+  valuePrice?: number;
 }
 
 function AddToCartButton(
-  { seller, productID, buttonColor }: Props,
+  { seller, productID, buttonColor, valuePrice }: Props,
 ) {
   const { addItems, addItemAttachment, cart } = useCart();
   const count = useSignal(1);
@@ -62,6 +63,7 @@ function AddToCartButton(
       <Button
         buttonColor={buttonColor}
         onAddItem={onAddItem}
+        valuePrice={valuePrice}
       />
     </div>
   );
